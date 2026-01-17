@@ -1174,7 +1174,7 @@
     "href": "module-syllabus.html#learning-objectives",
     "title": "Syllabus",
     "section": "Learning objectives",
-    "text": "Learning objectives\n\nAnalyse and apply programming concepts to develop functional code, showcasing the ability to interpret and create basic programming structures.\nConstruct and execute scripts, using loops, conditionals, and data structures, demonstrating comprehension and practical application.\nEvaluate and debug code, applying systematic approaches to identify and resolve coding issues, enhancing code reliability and performance.\nCreate and manipulate classes and objects, illustrating understanding of object-oriented programming principles.\nSynthesise knowledge of programming to develop solutions for real-world problems, demonstrating creativity and adaptability in coding.",
+    "text": "Learning objectives\n1.    Develop and apply complex workflows using chain calls to LLMs, demonstrating an understanding of automated systems.\n2.    Construct and analyse systems where Python code interacts with both completions and new prompts, showcasing programming proficiency.\n3.    Design a customer service chatbot using learned techniques, reflecting an ability to integrate various aspects of data science technology.\n4.    Evaluate and apply prompt engineering skills in practical scenarios, including chat agent response systems and safety evaluations.\n5.    Synthesise and apply knowledge of vector databases in building applications like retrieval augmented generation (RAG) and multilingual search systems.",
     "crumbs": [
       "Syllabus"
     ]
@@ -1204,17 +1204,17 @@
     "href": "module-syllabus.html#assessments",
     "title": "Syllabus",
     "section": "Assessments",
-    "text": "Assessments\n\nAssessment 1\nProblem Sets: These problem sets will typically be distributed throughout the module and are designed to test the grasp and application of programming concepts ranging from basic syntax to topics like data structures and algorithms. Each set will consist of practical tasks involving various programming challenges.\n\n\nAssessment 2\nProgramming challenge: At the end of the module is the programming challenge, offering students the opportunity to apply their programming skills in developing their own software application. This project encourages creativity and innovation, allowing students to choose any programming language and build an application that is personally meaningful, solves real-world problems, or potentially impacts the community or world at large. While students can opt to work individually, collaboration with up to two classmates is permitted, with the expectation that each member contributes equally to the project’s design and implementation. The complexity of the project should reflect the size of the group, with group projects expected to be more intricate than individual ones. The programming challenge is assessed based on the problem complexity and scope, the effectiveness of the implemented solution, creativity, and the overall quality of the code. For group projects, the assessment also considers individual contributions and the collaborative effort. NB for group projects, the scope and ambition of the project should reflect the size of the group.",
+    "text": "Assessments\n\nAssessment 1\nProject The Real World AI module culminates in a unique summative assessment, consisting of a group project that is both designed and executed by the students supported with supervised class work and discussion, and student support and technical staff. This project is split into two main components: a pitch presentation and the final project creation. In the pitch presentation, reminiscent of a ‘Dragon’s Den’ scenario, groups of students are expected to conceive and present an innovative application of large language models (LLMs) and APIs. This presentation should detail the objectives, technology use (such as vector databases and OpenAI API), methodology, and potential impact of the proposed project. Following the pitch, students collaborate to turn their concept into a reality. This phase involves prompt engineering, crafting efficient data processing systems, and ultimately producing a functional prototype or application that aligns with their initial pitch. The project is assessed on its functionality, innovation, effective use of data science technologies, and overall execution.",
     "crumbs": [
       "Syllabus"
     ]
   },
   {
-    "objectID": "module-syllabus.html#readings-optional",
-    "href": "module-syllabus.html#readings-optional",
+    "objectID": "module-syllabus.html#readings",
+    "href": "module-syllabus.html#readings",
     "title": "Syllabus",
-    "section": "Readings (optional)",
-    "text": "Readings (optional)\nWhile there is no textbook for this module, these readings may be useful.\nShaw, Z. (2024) Learn Python the Hard Way. 5th edition. Hoboken: Addison-Wesley Professional.\nSweigart, A. (2019) Automate the Boring Stuff with Python, 2nd Edition: Practical Programming for Total Beginners. 2nd edition. San Francisco: No Starch Press.",
+    "section": "Readings",
+    "text": "Readings\nMorgan, J. C. 2025. Coding with AI. 1st edition. Manning Publications. Shelter Island, NY.",
     "crumbs": [
       "Syllabus"
     ]
@@ -1244,7 +1244,7 @@
     "href": "module-project.html",
     "title": "Module Project",
     "section": "",
-    "text": "Once you have solved each of the course’s problem sets, it’s time to implement your final project, a Python program of your very own! The design and implementation of your project is entirely up to you, albeit subject to these requirements:\n\nour project must be implemented in Python.\nYour project must have a main function and three or more additional functions. At least three of those additional functions must be accompanied by * tests that can be executed with pytest.\nYour main function must be in a file called project.py, which should be in the “root” (i.e., top-level folder) of your project.\nYour 3 required custom functions other than main must also be in project.py and defined at the same indentation level as main (i.e., not nested under any classes or functions).\nYour test functions must be in a file called test_project.py, which should also be in the “root” of your project. Be sure they have the same name as your custom functions, prepended with test_ (test_custom_function, for example, where custom_function is a function you’ve implemented in project.py).\nYou are welcome to implement additional classes and functions as you see fit beyond the minimum requirement.\nImplementing your project should entail more time and effort than is required by each of the course’s problem sets.\nAny pip-installable libraries that your project requires must be listed, one per line, in a file called requirements.txt in the root of your project.\n\n\n\nproject.py\ndef main():\n    ...\n\n\ndef function_1():\n    ...\n\n\ndef function_2():\n    ...\n\n\ndef function_n():\n    ...\n\n\nif __name__ == \"__main__\":\n    main()\ntest_project.py\ndef test_function_1():\n    ...\n\n\ndef test_function_2():\n    ...\n\n\ndef test_function_n():\n    ...\nYou are welcome, but not required, to collaborate with one or two classmates on your project. But a two- or three-person project should entail twice or thrice the time and effort required by a one-person project!",
+    "text": "Info coming…",
     "crumbs": [
       "Final Project"
     ]
@@ -1254,7 +1254,7 @@
     "href": "module-project.html#final-project",
     "title": "Module Project",
     "section": "",
-    "text": "Once you have solved each of the course’s problem sets, it’s time to implement your final project, a Python program of your very own! The design and implementation of your project is entirely up to you, albeit subject to these requirements:\n\nour project must be implemented in Python.\nYour project must have a main function and three or more additional functions. At least three of those additional functions must be accompanied by * tests that can be executed with pytest.\nYour main function must be in a file called project.py, which should be in the “root” (i.e., top-level folder) of your project.\nYour 3 required custom functions other than main must also be in project.py and defined at the same indentation level as main (i.e., not nested under any classes or functions).\nYour test functions must be in a file called test_project.py, which should also be in the “root” of your project. Be sure they have the same name as your custom functions, prepended with test_ (test_custom_function, for example, where custom_function is a function you’ve implemented in project.py).\nYou are welcome to implement additional classes and functions as you see fit beyond the minimum requirement.\nImplementing your project should entail more time and effort than is required by each of the course’s problem sets.\nAny pip-installable libraries that your project requires must be listed, one per line, in a file called requirements.txt in the root of your project.\n\n\n\nproject.py\ndef main():\n    ...\n\n\ndef function_1():\n    ...\n\n\ndef function_2():\n    ...\n\n\ndef function_n():\n    ...\n\n\nif __name__ == \"__main__\":\n    main()\ntest_project.py\ndef test_function_1():\n    ...\n\n\ndef test_function_2():\n    ...\n\n\ndef test_function_n():\n    ...\nYou are welcome, but not required, to collaborate with one or two classmates on your project. But a two- or three-person project should entail twice or thrice the time and effort required by a one-person project!",
+    "text": "Info coming…",
     "crumbs": [
       "Final Project"
     ]
@@ -1264,7 +1264,7 @@
     "href": "module-project.html#getting-started",
     "title": "Module Project",
     "section": "Getting Started",
-    "text": "Getting Started\nCreating an entire project may seem daunting. Here are some questions that you should think about as you start:\n\nWhat will your software do? What features will it have? How will it be executed?\nWhat new skills will you need to acquire? What topics will you need to research?\nIf working with one or two classmates, who will do what?\nIn the world of software, most everything takes longer to implement than you expect. And so it’s not uncommon to accomplish less in a fixed amount of time than you hope. What might you consider to be a good outcome for your project? A better outcome? The best outcome?\n\nConsider making goal milestones to keep you on track.",
+    "text": "Getting Started",
     "crumbs": [
       "Final Project"
     ]
@@ -1274,7 +1274,7 @@
     "href": "module-project.html#how-to-submit",
     "title": "Module Project",
     "section": "How to Submit",
-    "text": "How to Submit\nOutline: The final project offers students the opportunity to apply programming skills in developing their own software solution. This project encourages creativity and innovation, allowing students to choose any programming language and build an application that is personally meaningful, solves real-world problems, or potentially impacts the community or world at large. While students can opt to work individually, collaboration with up to two classmates is permitted, with the expectation that each member contributes equally to the project’s design and implementation. The complexity of the project should reflect the size of the group, with group projects expected to be more intricate than individual ones. The final project is assessed based on the problem’s complexity and scope, the effectiveness of the implemented solution, creativity, and the overall quality of the code. For group projects, the assessment also considers individual contributions and the collaborative effort. Individuals may choose to complete the project by themselves or to group with up to two other people (i.e., “group” size is 1, 2, or 3 students).\nFor each project, a short 3-minute video that demonstrates the project in action (either using slides, screenshots, voiceovers and/or live action) should be created. This should be uploaded to YouTube and the URL shoul be shared in the project README.md. Videos can be uploaded as an “unlisted” video.\nProjects should be hosted via a GitHub Repository. In addition to all project associated files, this should include a README.md file that includes the following: * Project Title * Names of group members (or individual) * GitHub usernames of all group members * Link to video demo * Link to GitHub Repo * Project description * To do list/task list (For groups this should also include information on which group member contributed to the task)\nOnly one GitHub repository and only one video needs to be created per group.\nDeliverables: A word document or PDF containing the README.md information should be submitted to the turn it in link on the VLE module page. Each individual needs to upload this separately.",
+    "text": "How to Submit",
     "crumbs": [
       "Final Project"
     ]
@@ -1284,37 +1284,7 @@
     "href": "module-faq.html",
     "title": "FAQ",
     "section": "",
-    "text": "Feedback is available during class each week. Further feedback and marks will also be given overall four working weeks after the deadline.",
-    "crumbs": [
-      "FAQ"
-    ]
-  },
-  {
-    "objectID": "module-faq.html#when-will-i-get-feedback-for-assessment-1-problem-sets",
-    "href": "module-faq.html#when-will-i-get-feedback-for-assessment-1-problem-sets",
-    "title": "FAQ",
-    "section": "",
-    "text": "Feedback is available during class each week. Further feedback and marks will also be given overall four working weeks after the deadline.",
-    "crumbs": [
-      "FAQ"
-    ]
-  },
-  {
-    "objectID": "module-faq.html#what-is-the-deadline-for-problem-set-assessments",
-    "href": "module-faq.html#what-is-the-deadline-for-problem-set-assessments",
-    "title": "FAQ",
-    "section": "What is the deadline for problem set assessments?",
-    "text": "What is the deadline for problem set assessments?\nThis is the ultimate deadline for problem sets, set by the university and it can be found in the SQ4007 Assessment (problem set) document linked on the Harper Adams module page. We strongly recommend keeping up with these assignments each week!",
-    "crumbs": [
-      "FAQ"
-    ]
-  },
-  {
-    "objectID": "module-faq.html#can-i-work-ahead-on-the-problem-sets",
-    "href": "module-faq.html#can-i-work-ahead-on-the-problem-sets",
-    "title": "FAQ",
-    "section": "Can I work ahead on the problem sets?",
-    "text": "Can I work ahead on the problem sets?\nYes, you can work ahead on the problem sets, in the sense it is possible and you are not restricted from doing so if they have already been posted in advance. However, we’d prefer you consider doing them on the suggested pace of work, as this will allow you to work as a cohort and make full use of the co-coding sessions during classtime and to interact with your classmates.",
+    "text": "Yes, of course you can and should! But…\nThe point of the flipped classroom is to maximise the time spent in class discussing and solving problems. If you don’t watch the videos and go through the notes for that week before class, you will miss out on this and potentially fall behind while others are getting on with their problem set work during classtime.",
     "crumbs": [
       "FAQ"
     ]
@@ -1323,8 +1293,8 @@
     "objectID": "module-faq.html#flipped-classroom-can-i-still-come-to-lecture-if-i-dont-watch-the-videos-and-go-through-the-notes-for-that-week-before-class",
     "href": "module-faq.html#flipped-classroom-can-i-still-come-to-lecture-if-i-dont-watch-the-videos-and-go-through-the-notes-for-that-week-before-class",
     "title": "FAQ",
-    "section": "Flipped Classroom: Can I still come to lecture if I don’t watch the videos and go through the notes for that week before class?",
-    "text": "Flipped Classroom: Can I still come to lecture if I don’t watch the videos and go through the notes for that week before class?\nYes, of course you can and should! But…\nThe point of the flipped classroom is to maximise the time spent in class discussing and solving problems. If you don’t watch the videos and go through the notes for that week before class, you will miss out on this and potentially fall behind while others are getting on with their problem set work during classtime.",
+    "section": "",
+    "text": "Yes, of course you can and should! But…\nThe point of the flipped classroom is to maximise the time spent in class discussing and solving problems. If you don’t watch the videos and go through the notes for that week before class, you will miss out on this and potentially fall behind while others are getting on with their problem set work during classtime.",
     "crumbs": [
       "FAQ"
     ]
@@ -1334,7 +1304,7 @@
     "href": "module-faq.html#can-i-just-code-on-my-own-computer",
     "title": "FAQ",
     "section": "Can I just code on my own computer?",
-    "text": "Can I just code on my own computer?\nThe short answer is, heck yeah!!, with caveats.\nInstalling and configuring programming and editing software on your own computer is sometimes complicated and irritating, even for very experienced people. Configuring all the tools we will be using in The Sandbox to be exactly the same on your own computer, operating system, etc., will require advanced skills. Still, you can attempt to do it if you want to; most of the tools are open source and free and will work for most tasks. Also, we are here to help support you if you want to try.\nIf you want to explore this path, here are the main things you need to do:\nFor a start…\n\nDownload and install Python (&gt; v3.11): https://www.python.org/downloads/\nDownload and install VS Code (other editors are okay too): https://code.visualstudio.com/download\nInstall and set configure Git: https://happygitwithr.com/install-git.html",
+    "text": "Can I just code on my own computer?\nThe short answer is, heck yeah!!, with caveats.\nInstalling and configuring programming and editing software on your own computer is sometimes complicated and irritating, even for very experienced people. Configuring all the tools we will be using in The Sandbox to be exactly the same on your own computer, operating system, etc., will require advanced skills. Still, you can attempt to do it if you want to; most of the tools are open source and free and will work for most tasks. Also, we are here to help support you if you want to try.",
     "crumbs": [
       "FAQ"
     ]
@@ -1392,7 +1362,7 @@
     "href": "module-schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "🔗 “The Sandbox” coding environment (Github Codespace)\nThis schedule is an outline of the topics, with links to all content, and assignments. Note that this may be updated as the module progresses.\n\n\n\nWeek (HAU)\nTopics\nLectures\nNotes\nCode\nProblem Sets\n\n\n\n\n00 (16)\n🐍 Functions\n💻\n📕\n🤖\n🏠\n\n\n01 (17)\n🐍 Conditionals\n💻\n📕\n🤖\n🏠\n\n\n02 (18)\n🐍 Loops\n💻\n📕\n🤖\n🏠\n\n\n03 (19)\n🐍 Exceptions\n💻\n📕\n🤖\n🏠\n\n\n04 (20)\n🐍 Libraries\n💻\n📕\n🤖\n🏠\n\n\n05 (21)\n🐍 Unit tests\n💻\n📕\n🤖\n🏠\n\n\n06 (22)\n🐍 File I/O\n💻\n📕\n🤖\n🏠\n\n\n\n💥 Mid term Break\n\n\n\n\n\n\n07 (23)\n🐍 RegEx\n💻\n📕\n🤖\n🏠\n\n\n08 (24)\n🐍 OOP\n💻\n📕\n🤖\n🏠\n\n\n09 (25)\n🐍 et cetera\n💻\n📕\n🤖\n\n\n\n10 (26)\n👋 Wrap up, Open lab\n\n\n\n\n\n\n11 (27)\n🚀 Open lab\n\n\n\n\n\n\n12 (28)\n🚀 Open lab",
+    "text": "🔗 “The Sandbox” coding environment (Github Codespace)\nThis schedule is an outline of the topics, with links to all content, and assignments. Note that this may be updated as the module progresses.\n\n\n\nWeek (HAU)\nTopics\nLectures\nNotes + Readings\nCode\n\n\n\n\n00 (16)\n🤖 Gen AI Intro\n💻\n📕 + 📒\n🤖\n\n\n01 (17)\n🤖 AI-assisted Code\n💻\n📕 + 📒\n🤖\n\n\n02 (18)\n🤖 Design\n💻\n📕 + 📒\n🤖\n\n\n03 (19)\n🤖 Code an App\n💻\n📕 + 📒\n🤖\n\n\n04 (20)\n🤖 Base Code Gen\n💻\n📕 + 📒\n🤖\n\n\n05 (21)\n🤖 Backend\n💻\n📕 + 📒\n🤖\n\n\n06 (22)\n🤖 UI\n💻\n📕 + 📒\n🤖\n\n\n\n💥 Mid term Break\n\n\n\n\n\n07 (23)\n🤖 Software Testing\n💻\n📕 + 📒\n🤖\n\n\n08 (24)\n🤖 Prompt Engineering\n💻\n📕 + 📒\n🤖\n\n\n09 (25)\n🤖 Vibe Coding\n💻\n📕 + 📒\n🤖\n\n\n10 (26)\n👋 Wrap up, Open lab\n\n\n\n\n\n11 (27)\n🚀 Open lab\n\n\n\n\n\n12 (28)\n🚀 Open lab",
     "crumbs": [
       "Schedule"
     ]

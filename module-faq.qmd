@@ -2,18 +2,6 @@
 title: "FAQ"
 ---
 
-## When will I get feedback for assessment 1 (Problem Sets)
-
-Feedback is available during class each week. Further feedback and marks will also be given overall four working weeks after the deadline.
-
-## What is the deadline for problem set assessments?
-
-This is the **ultimate** deadline for problem sets, set by the university and it can be found in the SQ4007 Assessment (problem set) document linked on the [Harper Adams module page](https://vle.harper-adams.ac.uk/course/view.php?id=282). We **strongly** recommend keeping up with these assignments each week!
-
-## Can I work ahead on the problem sets?
-
-Yes, you *can* work ahead on the problem sets, in the sense it is possible and you are not restricted from doing so if they have already been posted in advance. However, we'd prefer you consider doing them on the suggested pace of work, as this will allow you to work as a cohort and make full use of the co-coding sessions during classtime and to interact with your classmates.
-
 ## Flipped Classroom: Can I still come to lecture if I don't watch the videos and go through the notes for that week before class?
 
 Yes, of course you can and should! But...
@@ -22,16 +10,10 @@ The point of the flipped classroom is to maximise the time spent in class discus
 
 ## Can I just code on my own computer?
 
-The short answer is, heck yeah!!, with caveats. 
+The short answer is, heck yeah!!, with caveats.
 
 Installing and configuring programming and editing software on your own computer is sometimes complicated and irritating, even for very experienced people. Configuring all the tools we will be using in The Sandbox to be exactly the same on your own computer, operating system, etc., will require advanced skills. Still, you can attempt to do it if you want to; most of the tools are open source and free and will work for most tasks. Also, we are here to help support you if you want to try.
 
-If you want to explore this path, here are the main things you need to do:
 
-For a start...
-
--   Download and install Python (\> v3.11): <https://www.python.org/downloads/>
--   Download and install VS Code (other editors are okay too): <https://code.visualstudio.com/download>
--   Install and set configure Git: <https://happygitwithr.com/install-git.html>
 
 ------------------------------------------------------------------------

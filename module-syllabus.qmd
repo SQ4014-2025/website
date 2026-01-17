@@ -4,15 +4,19 @@ title: "Syllabus"
 
 ## Your instructors
 
-[![Dr. Ed Harris, Module Leader, Data Scientist, Statistician, and coffee enthusiast. NB Ed is away for the beginning of the Spring semester.](images/team/ed.png){fig-align="left" width="200"}](https://weharris.me)
+[![Dr. Ed Harris, Module Leader, Data Scientist, Statistician, and coffee enthusiast. **NB Ed is away for the beginning of the Spring semester.**](images/team/ed.png){fig-align="left" width="200"}](https://weharris.me)
 
 ## Learning objectives
 
-1.	Analyse and apply programming concepts to develop functional code, showcasing the ability to interpret and create basic programming structures.
-2.	Construct and execute scripts, using loops, conditionals, and data structures, demonstrating comprehension and practical application.
-3.	Evaluate and debug code, applying systematic approaches to identify and resolve coding issues, enhancing code reliability and performance.
-4.	Create and manipulate classes and objects, illustrating understanding of object-oriented programming principles.
-5.	Synthesise knowledge of programming to develop solutions for real-world problems, demonstrating creativity and adaptability in coding.
+1.    **Develop** and apply complex workflows using chain calls to LLMs, demonstrating an understanding of automated systems.
+
+2.    **Construct** and analyse systems where Python code interacts with both completions and new prompts, showcasing programming proficiency.
+
+3.    **Design** a customer service chatbot using learned techniques, reflecting an ability to integrate various aspects of data science technology.
+
+4.    **Evaluate** and apply prompt engineering skills in practical scenarios, including chat agent response systems and safety evaluations.
+
+5.    **Synthesise** and apply knowledge of vector databases in building applications like retrieval augmented generation (RAG) and multilingual search systems.
 
 ## Meetings
 
@@ -28,26 +32,18 @@ Material may be livestreamed or otherwise recorded for later viewing.
 
 All lecture notes, assignment instructions, an up-to-date schedule, and other course materials may be found on the [module website](SQ4007-2025.github.io/website). This material is completely open and accessible to all without login or other barriers.
 
-[Harper Adams module website](https://vle.harper-adams.ac.uk/course/view.php?id=286) (university enrolled students only, requires login)
+[Harper Adams module website](https://vle.harper-adams.ac.uk/course/view.php?id=289) (university enrolled students only, requires login)
 
 ## Assessments
 
 ### Assessment 1
 
-**Problem Sets:** These problem sets will typically be distributed throughout the module and are designed to test the grasp and application of programming concepts ranging from basic syntax to topics like data structures and algorithms. Each set will consist of practical tasks involving various programming challenges.
+**Project** The Real World AI module culminates in a unique summative assessment, consisting of a group project that is both designed and executed by the students supported with supervised class work and discussion, and student support and technical staff. This project is split into two main components: a pitch presentation and the final project creation. In the pitch presentation, reminiscent of a 'Dragon's Den' scenario, groups of students are expected to conceive and present an innovative application of large language models (LLMs) and APIs. This presentation should detail the objectives, technology use (such as vector databases and OpenAI API), methodology, and potential impact of the proposed project. Following the pitch, students collaborate to turn their concept into a reality. This phase involves prompt engineering, crafting efficient data processing systems, and ultimately producing a functional prototype or application that aligns with their initial pitch. The project is assessed on its functionality, innovation, effective use of data science technologies, and overall execution.
 
-### Assessment 2
 
-**Programming challenge:** At the end of the module is the programming challenge, offering students the opportunity to apply their programming skills in developing their own software application. This project encourages creativity and innovation, allowing students to choose any programming language and build an application that is personally meaningful, solves real-world problems, or potentially impacts the community or world at large. While students can opt to work individually, collaboration with up to two classmates is permitted, with the expectation that each member contributes equally to the project's design and implementation. The complexity of the project should reflect the size of the group, with group projects expected to be more intricate than individual ones. The programming challenge is assessed based on the problem complexity and scope, the effectiveness of the implemented solution, creativity, and the overall quality of the code. For group projects, the assessment also considers individual contributions and the collaborative effort. ***NB*** for group projects, the scope and ambition of the project should reflect the size of the group.
+## Readings
 
-## Readings (optional)
-
-While there is no textbook for this module, these readings may be useful.
-
-Shaw, Z. (2024) Learn Python the Hard Way. 5th edition. Hoboken: Addison-Wesley Professional.
-
-Sweigart, A. (2019) Automate the Boring Stuff with Python, 2nd Edition: Practical Programming for Total Beginners. 2nd edition. San Francisco: No Starch Press.
-
+Morgan, J. C. 2025. Coding with AI. 1st edition. Manning Publications. Shelter Island, NY.
 
 ## Five tips for success
 

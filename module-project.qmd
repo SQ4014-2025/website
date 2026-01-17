@@ -4,84 +4,15 @@ title: "Module Project"
 
 ## Final Project
 
-Once you have solved each of the course’s problem sets, it’s time to implement your final project, a Python program of your very own! The design and implementation of your project is entirely up to you, albeit subject to these requirements:
-
-* our project must be implemented in Python.
-* Your project must have a main function and three or more additional functions. At least three of those additional functions must be accompanied by * tests that can be executed with pytest.
-* Your main function must be in a file called project.py, which should be in the “root” (i.e., top-level folder) of your project.
-* Your 3 required custom functions other than main must also be in project.py and defined at the same indentation level as main (i.e., not nested under any classes or functions).
-* Your test functions must be in a file called test_project.py, which should also be in the “root” of your project. Be sure they have the same name as your custom functions, prepended with test_ (test_custom_function, for example, where custom_function is a function you’ve implemented in project.py).
-* You are welcome to implement additional classes and functions as you see fit beyond the minimum requirement.
-* Implementing your project should entail more time and effort than is required by each of the course’s problem sets.
-* Any pip-installable libraries that your project requires must be listed, one per line, in a file called requirements.txt in the root of your project.
+Info coming...
 
 ### Example project structure
 
-**project.py**
-```python
-def main():
-    ...
 
-
-def function_1():
-    ...
-
-
-def function_2():
-    ...
-
-
-def function_n():
-    ...
-
-
-if __name__ == "__main__":
-    main()
-```
-
-**test_project.py**
-```python
-def test_function_1():
-    ...
-
-
-def test_function_2():
-    ...
-
-
-def test_function_n():
-    ...
-```
-
-You are welcome, but not required, to collaborate with one or two classmates on your project. But a two- or three-person project should entail twice or thrice the time and effort required by a one-person project!
 
 ## Getting Started
 
-Creating an entire project may seem daunting. Here are some questions that you should think about as you start:
 
-* What will your software do? What features will it have? How will it be executed?
-* What new skills will you need to acquire? What topics will you need to research?
-* If working with one or two classmates, who will do what?
-* In the world of software, most everything takes longer to implement than you expect. And so it’s not uncommon to accomplish less in a fixed amount of time than you hope. What might you consider to be a good outcome for your project? A better outcome? The best outcome?
-
-Consider making goal milestones to keep you on track.
 
 ## How to Submit
 
-Outline: The final project offers students the opportunity to apply programming skills in developing their own software solution. This project encourages creativity and innovation, allowing students to choose any programming language and build an application that is personally meaningful, solves real-world problems, or potentially impacts the community or world at large. While students can opt to work individually, collaboration with up to two classmates is permitted, with the expectation that each member contributes equally to the project's design and implementation. The complexity of the project should reflect the size of the group, with group projects expected to be more intricate than individual ones. The final project is assessed based on the problem's complexity and scope, the effectiveness of the implemented solution, creativity, and the overall quality of the code. For group projects, the assessment also considers individual contributions and the collaborative effort. Individuals may choose to complete the project by themselves or to group with up to two other people (i.e., "group" size is 1, 2, or 3 students).
-
-For each project, a short 3-minute video that demonstrates the project in action (either using slides, screenshots, voiceovers and/or live action) should be created. This should be uploaded to YouTube and the URL shoul be shared in the project README.md. Videos can be uploaded as an “unlisted” video. 
-
-Projects should be hosted via a GitHub Repository. In addition to all project associated files, this should include a README.md file that includes the following: 
-* Project Title
-* Names of group members (or individual)
-* GitHub usernames of all group members
-* Link to video demo
-* Link to GitHub Repo
-* Project description
-* To do list/task list (For groups this should also include information on which group member contributed to the task)
-
-Only one GitHub repository and only one video needs to be created per group. 
-
-
-Deliverables: A word document or PDF containing the README.md information should be submitted to the turn it in link on the VLE module page. Each individual needs to upload this separately. 

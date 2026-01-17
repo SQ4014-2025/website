@@ -123,28 +123,6 @@ website:
             text: "Code 08 🤖"
           - href: https://github.com/SQ4011-2025/website/tree/master/code/src9
             text: "Code 09 🤖"
-
-      - section: "Problem Sets"
-        contents:
-          - href: problems/pset_0/pset_0.md
-            text: "Problem Set 00 🤖"
-          - href: problems/pset_1/pset_1.md
-            text: "Problem Set 01 🤖"
-          - href: problems/pset_2/pset_2.md
-            text: "Problem Set 02 🤖"
-          - href: problems/pset_3/pset_3.md
-            text: "Problem Set 03 🤖"
-          - href: problems/pset_4/pset_4.md
-            text: "Problem Set 04 🤖"
-          - href: problems/pset_5/pset_5.md
-            text: "Problem Set 05 🤖"
-          - href: problems/pset_6/pset_6.md
-            text: "Problem Set 06 🤖"
-          - href: problems/pset_7/pset_7.md
-            text: "Problem Set 07 🤖"
-          - href: problems/pset_8/pset_8.md
-            text: "Problem Set 08 🤖"
-
 format:
   html:
     theme:

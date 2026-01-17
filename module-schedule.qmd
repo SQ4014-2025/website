@@ -8,17 +8,17 @@ This schedule is an outline of the topics, with links to all content, and assign
 
 | Week (HAU) | Topics | Lectures | Notes + Readings | Code |
 |:-------------:|:--------------|:-------------:|:-------------:|:-------------:|
-| 00 (16) | 🤖 Gen AI Intro | 💻 | [📕](notes/notes_0.html "Notes 0") + [📒](book/Chapter_1.pdf "Ch 01") | 🤖 |
-| 01 (17) | 🤖 AI-assisted Code | 💻 | [📕](notes/notes_1.html "Notes 1") + [📒](book/Chapter_2.pdf "Ch 02") | 🤖 |
-| 02 (18) | 🤖 Design | 💻 | [📕](notes/notes_2.html "Notes 2") + [📒](book/Chapter_3.pdf "Ch 03") | 🤖 |
-| 03 (19) | 🤖 Code an App | 💻 | [📕](notes/notes_3.html "Notes 3") + [📒](book/Chapter_4.pdf "Ch 04") | 🤖 |
-| 04 (20) | 🤖 Base Code Gen | 💻 | [📕](notes/notes_4.html "Notes 4") + [📒](book/Chapter_5.pdf "Ch 05") | 🤖 |
-| 05 (21) | 🤖 Backend | 💻 | [📕](notes/notes_5.html "Notes 5") + [📒](book/Chapter_6.pdf "Ch 06") | 🤖 |
-| 06 (22) | 🤖 UI | 💻 | [📕](notes/notes_6.html "Notes 6") + [📒](book/Chapter_7.pdf "Ch 07") | 🤖 |
+| 00 (16) | 🤖 Gen AI Intro | 💻 | [📕](notes/notes_1.html "Notes 0") + [📒](book/Chapter_1.pdf "Ch 01") | 🤖 |
+| 01 (17) | 🤖 AI-assisted Code | 💻 | [📕](notes/notes_2.html "Notes 1") + [📒](book/Chapter_2.pdf "Ch 02") | 🤖 |
+| 02 (18) | 🤖 Design | 💻 | [📕](notes/notes_3.html "Notes 2") + [📒](book/Chapter_3.pdf "Ch 03") | 🤖 |
+| 03 (19) | 🤖 Code an App | 💻 | [📕](notes/notes_4.html "Notes 3") + [📒](book/Chapter_4.pdf "Ch 04") | 🤖 |
+| 04 (20) | 🤖 Base Code Gen | 💻 | [📕](notes/notes_5.html "Notes 4") + [📒](book/Chapter_5.pdf "Ch 05") | 🤖 |
+| 05 (21) | 🤖 Backend | 💻 | [📕](notes/notes_6.html "Notes 5") + [📒](book/Chapter_6.pdf "Ch 06") | 🤖 |
+| 06 (22) | 🤖 UI | 💻 | [📕](notes/notes_7.html "Notes 6") + [📒](book/Chapter_7.pdf "Ch 07") | 🤖 |
 |  | 💥 Mid term Break |  |  |  |
-| 07 (23) | 🤖 Software Testing | 💻 | [📕](notes/notes_7.html "Notes 7") + [📒](book/Chapter_8.pdf "Ch 08") | 🤖 |
-| 08 (24) | 🤖 Prompt Engineering | 💻 | [📕](notes/notes_8.html "Notes 8") + [📒](book/Chapter_9.pdf "Ch 09") | 🤖 |
-| 09 (25) | 🤖 *Vibe Coding* | 💻 | [📕](notes/notes_9.html "Notes 9") + [📒](book/Chapter_10.pdf "Ch 10") | 🤖 |
+| 07 (23) | 🤖 Software Testing | 💻 | [📕](notes/notes_8.html "Notes 7") + [📒](book/Chapter_8.pdf "Ch 08") | 🤖 |
+| 08 (24) | 🤖 Prompt Engineering | 💻 | [📕](notes/notes_9.html "Notes 8") + [📒](book/Chapter_9.pdf "Ch 09") | 🤖 |
+| 09 (25) | 🤖 *Vibe Coding* | 💻 | [📕](notes/notes_10.html "Notes 9") + [📒](book/Chapter_10.pdf "Ch 10") | 🤖 |
 | 10 (26) | 👋 Wrap up, Open lab |  |  |  |
 | 11 (27) | 🚀 Open lab |  |  |  |
 | 12 (28) | 🚀 Open lab |  |  |  |

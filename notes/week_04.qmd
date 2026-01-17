@@ -1,0 +1,509 @@
+# Week 04 — Coding the first version of our application
+
+-   [Week focus](#week-focus)
+-   [From design to code: extracting requirements](#from-design-to-code-extracting-requirements)
+-   [Setting up your Python environment](#setting-up-your-python-environment)
+-   [Laying out the application skeleton](#laying-out-the-application-skeleton)
+-   [Your first Flask app: routes, requests, responses](#your-first-flask-app-routes-requests-responses)
+-   [Templates and pages: keeping logic out of HTML](#templates-and-pages-keeping-logic-out-of-html)
+-   [Configuration, dependencies, and reproducibility](#configuration-dependencies-and-reproducibility)
+-   [Run, observe, iterate](#run-observe-iterate)
+-   [Common failure modes](#common-failure-modes)
+-   [Summing Up](#summing-up)
+
+## Week focus {#week-focus}
+
+-   This week focuses on *Coding the first version of our application*.
+-   This week is deliberately practical: it moves from an idea/design document into a runnable web app skeleton.
+-   Key theme: you don’t need the *perfect* design before you start coding — but you do need a **clear first version**.
+-   We’re practising how to translate text descriptions into code artefacts: folders, files, functions, and routes.
+-   This week includes visual callouts/figures; we'll reference the key ones as we go.
+
+![](images/week_04/fig_01.png)
+
+### Micro-quotes from this week
+
+-   "56 Building applications with AI assistance up project structure and create your first working application"
+-   "Week 05 dives into advanced development techniques using tools such as Tabnine and BlackboxAI"
+-   "Finally Week 06 focuses on building strong user interfaces and managing sessions with AI-generated code"
+-   "I ve done this too"
+-   "Taking time to plan an app s architecture leads to happy users and lower maintenance costs"
+-   "How can generative AI speed up the design process"
+
+## From design to code: extracting requirements {#from-design-to-code-extracting-requirements}
+
+-   This week starts by treating your design notes as an input to development. The goal is to turn vague ideas into **requirements** you can implement.
+-   A *requirement* in this context is a short, testable statement of behaviour: *what the user can do*, or *what the system must store/compute/display*.
+-   A useful trick: rewrite each requirement as a user story: *As a user, I want … so that …*.
+-   Requirements are not only ‘features’. They also include constraints like performance, security, and maintainability.
+-   When you work with AI coding tools, requirements become even more important: they are the anchor that keeps generated code aligned with your intent.
+-   Practical decomposition pattern used in this week:
+-   Start with the smallest end-to-end ‘thin slice’ (a page that loads; a form that submits; a result that displays).
+-   List the minimal data objects you need (e.g., a question bank, callsigns, categories, logs).
+-   Identify the ‘edges’: inputs (forms/API), outputs (HTML pages), and storage (files/DB).
+-   Only then decide folder structure and module boundaries. ![](images/week_04/fig_02.png)
+
+## Setting up your Python environment {#setting-up-your-python-environment}
+
+-   Python projects should isolate libraries per project using a **virtual environment** (often abbreviated *venv*).
+
+-   Isolation matters because different projects need different versions of the same library (a common source of ‘works on my machine’ bugs).
+
+-   In a first-year course, we care about this early because it teaches reproducibility and reduces setup friction later. \### Create and activate a venv
+
+-   Create the environment in your project folder (name is conventional: `.venv`).
+
+-   Activate it before installing packages so installs go into the venv, not your global Python.
+
+```{bash}
+python -m venv .venv
+source .venv/bin/activate  # macOS/Linux
+# .venv\Scripts\activate   # Windows (PowerShell)
+python -m pip install --upgrade pip
+```
+
+### Install Flask and freeze dependencies
+
+-   This week uses **Flask** as the minimal web framework: it's small enough to understand without magic.
+-   Treat dependencies as part of your project: record them in `requirements.txt` so another machine can reproduce the same environment.
+
+```{bash}
+pip install flask
+pip freeze > requirements.txt
+```
+
+## Laying out the application skeleton {#laying-out-the-application-skeleton}
+
+-   Before writing ‘real logic’, you create a **project structure**: folders for app code, templates, static assets, and tests.
+-   A structure is a communication tool: it tells future you (and teammates) where things belong.
+-   This week's key move is creating **stubs**: placeholder functions/routes that define the shape of the app before it is complete. \### A minimal, conventional Flask layout
+
+```         
+myapp/
+  app.py
+  templates/
+    index.html
+  static/
+    style.css
+  requirements.txt
+  README.md
+```
+
+-   You can evolve this into a package layout (`myapp/__init__.py`) later. Start simple.
+-   Keep `templates/` for HTML templates and `static/` for CSS/JS/images, matching Flask conventions. ![](images/week_04/fig_03.jpeg)
+
+## Your first Flask app: routes, requests, responses {#your-first-flask-app-routes-requests-responses}
+
+-   A Flask app is basically a mapping from URLs to Python functions.
+-   Each mapping is a **route**. When a browser requests `/`, Flask calls the function and returns a response.
+-   Your job is to control: input → processing → output. \### The smallest runnable Flask app
+
+```{python}
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.get("/")
+def home():
+    return "Hello! Week 4 app is running."
+
+if __name__ == "__main__":
+    app.run(debug=True)
+```
+
+-   `debug=True` turns on **debug mode**: auto-reload + a helpful error page. Great for learning; disable in production.
+-   When something breaks, read the traceback top-to-bottom: it tells you *where* and often *why*. \### Running the app
+
+```{bash}
+python app.py
+# Then open the printed URL (usually http://127.0.0.1:5000/)
+```
+
+### Thinking in requests and responses
+
+-   A browser makes an HTTP request (method + path + headers + optional body).
+
+-   Your route function returns a response (status code + headers + body).
+
+-   Even when you ‘just return a string’, Flask wraps it into a full HTTP response. \## Templates and pages: keeping logic out of HTML {#templates-and-pages-keeping-logic-out-of-html}
+
+-   Once you move beyond plain strings, you’ll render HTML templates.
+
+-   Templates let you keep Python logic in Python and presentation in HTML.
+
+-   Flask uses Jinja2 templates; you inject values and loops into a mostly-normal HTML page. \### Example: render a template
+
+```{python}
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.get("/")
+def home():
+    return render_template("index.html", title="Real World AI")
+```
+
+```{html}
+<!doctype html>
+<html>
+  <head>
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    <h1>{{ title }}</h1>
+    <p>Your Flask app is rendering templates.</p>
+  </body>
+</html>
+```
+
+-   Jinja placeholders like `{{ title }}` are replaced at render time.
+-   When you later add forms, you’ll pass user-submitted values into templates to show results. ![](images/week_04/fig_04.png)
+
+## Configuration, dependencies, and reproducibility {#configuration-dependencies-and-reproducibility}
+
+-   Treat every external library as a **dependency** you must track.
+-   `requirements.txt` is the simplest approach: it records exact versions so installs are consistent.
+-   A clean workflow: create venv → install deps → freeze → commit both code and requirements.
+-   If a teammate can’t run your app, 80% of the time it’s: wrong venv, wrong Python, or missing deps. \### Recreating the environment from scratch
+
+```{bash}
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+## Run, observe, iterate {#run-observe-iterate}
+
+-   This week's development rhythm is iterative: make a small change, run the app, observe, and repeat.
+-   This is not just ‘coding style’ — it’s risk management. Small steps make bugs easier to locate.
+-   When using AI assistants, keep iterations even smaller: generate a tiny piece, test it, then proceed. \### A tiny iteration loop (conceptual)
+
+```{mermaid}
+flowchart TD
+  A[Write or generate small change] --> B[Run unit of work]
+  B --> C{Did it work?}
+  C -- Yes --> D[Commit / move to next small change]
+  C -- No --> E[Read error, reduce scope, fix]
+  E --> A
+```
+
+## Common failure modes {#common-failure-modes}
+
+-   **Venv not activated**: `pip install` went to global Python; Flask isn’t found when running.
+
+-   Wrong working directory: you run `python app.py` from a different folder and Flask can’t find `templates/`.
+
+-   Port already in use: another process is using 5000; you’ll see an ‘Address already in use’ message.
+
+-   Template errors: misspelt variable names in Jinja; look at the stack trace and the highlighted line.
+
+-   Import cycles when you split files too early: keep it simple until you understand module imports. \## Summing Up {#summing-up}
+
+-   Week 04 is about moving from idea to a runnable first version.
+
+-   You practised translating requirements into a project skeleton and basic routes.
+
+-   You set up a virtual environment, installed Flask, and captured dependencies for reproducibility.
+
+-   You learned the core web mental model: request → route → response, then grew it into templates.
+
+-   Next weeks build on this baseline by generating more code with AI tools and expanding the app's features.
+
+## Appendix: check your understanding {#appendix-check-your-understanding}
+
+-   Explain the difference between a feature request and an implementation detail.
+-   What does a virtual environment protect you from? Give two concrete examples.
+-   Why is `requirements.txt` useful even for a tiny project?
+-   What is a route? How is it different from a function that is never called by Flask?
+-   What is the advantage of templates compared to building HTML with string concatenation?
+-   Describe the iteration loop you should follow when using an AI assistant to generate code.
+
+## Deep dive: mapping requirements to routes {#deep-dive-mapping-requirements-to-routes}
+
+-   A strong starting point is to list user actions, then map each to a URL.
+-   Example: ‘Start a practice session’ might map to `/start`, while ‘Submit an answer’ maps to `/answer`.
+-   Think about which actions change state (POST) versus which only read state (GET).
+-   Even if you ignore REST purity in week 4, using GET/POST correctly prevents common bugs.
+
+## Deep dive: keeping state (for now) {#deep-dive-keeping-state-for-now}
+
+-   Early versions often avoid databases. You can store small state in memory while learning.
+-   But remember: in-memory state resets when the server restarts.
+-   For learning, this is fine — it encourages you to separate ‘core logic’ from ‘storage’.
+-   Later weeks can swap storage without rewriting everything if your code is modular.
+
+## Deep dive: debugging discipline {#deep-dive-debugging-discipline}
+
+-   When an error happens, copy the traceback and identify the *first* line in your codebase.
+-   Add a print/log statement *above* that line to inspect variables.
+-   Change one thing at a time; rerun; confirm the effect.
+-   Avoid random guessing — it’s slower than systematic diagnosis.
+
+## A worked walkthrough: turning the week into a plan {#a-worked-walkthrough-turning-the-week-into-a-plan}
+
+-   This week's core move is: **design artefacts → requirements → code skeleton**.
+
+-   A useful mental model is to treat every paragraph of your design document as one of:
+
+    -   a *feature* (something the user can do)
+    -   a *constraint* (a limit: performance, privacy, usability)
+    -   an *assumption* (something you are betting is true)
+    -   an *open question* (something you must resolve)
+
+-   If you can’t label a paragraph, it’s often “hand-wavy” and needs rewriting.
+
+-   A simple requirement format (good enough for first year) is:
+
+    -   **As a** `<type of user>`
+    -   **I want** `<capability>`
+    -   **So that** `<benefit>`
+
+-   Then add acceptance criteria:
+
+    -   “Given … when … then …” statements (these become tests later).
+
+### Example: extract requirements from a paragraph
+
+-   Suppose your design doc says the app should help someone prepare for an exam.
+
+-   Turn that into requirements:
+
+    -   As a learner, I want to select a topic so I can practise questions.
+    -   As a learner, I want immediate feedback so I can correct misconceptions.
+    -   As a learner, I want progress tracking so I can focus on weak areas.
+
+-   Notice how this immediately suggests data structures and routes.
+
+```{python}
+# A tiny starting point: represent requirements as data
+requirements = [
+    {"as": "learner", "want": "select a topic", "so_that": "practise questions"},
+    {"as": "learner", "want": "immediate feedback", "so_that": "correct misconceptions"},
+    {"as": "learner", "want": "progress tracking", "so_that": "focus on weak areas"},
+]
+
+# Later, you might render this in a template or export to JSON.
+import json
+print(json.dumps(requirements, indent=2))
+```
+
+-   This is intentionally “low-tech” — the goal is to *reduce ambiguity*.
+
+## Setting up your Python environment (deeper notes) {#setting-up-your-python-environment-deeper-notes}
+
+-   Week 04 emphasises a repeatable environment because web apps are dependency-heavy.
+
+-   Two common mistakes by beginners:
+
+    -   installing packages “globally” and then not remembering what you installed
+    -   forgetting to activate the virtual environment and installing into the wrong place
+
+-   A virtual environment is just a folder containing:
+
+    -   a Python interpreter
+    -   site-packages (third-party libraries)
+    -   scripts for activation
+
+### Create and activate a virtual environment
+
+```{bash}
+python -m venv .venv
+
+# macOS / Linux
+source .venv/bin/activate
+
+# Windows (PowerShell)
+# .venv\Scripts\Activate.ps1
+```
+
+-   If activation worked, your shell prompt usually changes (e.g., shows `(.venv)`).
+-   If you get “permission” errors on Windows PowerShell, you may need to adjust the execution policy.
+
+### Freeze dependencies so others can reproduce your setup
+
+```{bash}
+python -m pip install --upgrade pip
+pip install flask
+
+pip freeze > requirements.txt
+cat requirements.txt
+```
+
+-   `requirements.txt` is a “snapshot” of your environment.
+-   Later chapters build on this to make the project easier to share and deploy.
+
+## Laying out the application skeleton (deeper notes) {#laying-out-the-application-skeleton-deeper-notes}
+
+-   The chapter’s approach is basically: create *stubs* first, then fill them in.
+-   A stub is a small piece of code that compiles/runs but doesn’t do much yet.
+
+### A typical Flask project layout
+
+-   The chapter’s screenshots illustrate a clean starting structure.
+-   A common layout is:
+
+```{bash}
+myapp/
+  app.py
+  templates/
+    index.html
+  static/
+    style.css
+  requirements.txt
+  README.md
+```
+
+-   Why separate `templates/` and `static/`?
+
+    -   templates are rendered by Flask (HTML with placeholders)
+    -   static files are served directly (CSS, images, JS)
+
+### Figure: Chapter 4 structure and setup visuals
+
+![](images/week_04/fig_01.png)
+
+![](images/week_04/fig_02.png)
+
+-   Use these figures as reminders of the “shape” of a small web app.
+
+## Flask request lifecycle (what actually happens) {#flask-request-lifecycle-what-actually-happens}
+
+-   Students often think “Flask runs my code top-to-bottom each time”. Not quite.
+
+-   In a Flask server:
+
+    -   Python starts once
+    -   Flask registers routes (URL patterns)
+    -   then waits for requests
+
+-   When a request arrives, Flask:
+
+    -   matches the URL to a route
+    -   calls the function for that route
+    -   returns the response
+
+```{python}
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.get("/")
+def home():
+    # This runs when the browser requests / (not when the file is imported)
+    return "Hello from Week 4"
+
+if __name__ == "__main__":
+    app.run(debug=True)
+```
+
+-   `debug=True` is a development convenience:
+
+    -   auto-reloads when files change
+    -   shows a helpful debug page on errors
+
+-   You must disable debug mode for production.
+
+## Templates (expanded) {#templates-expanded}
+
+-   Chapter 4 pushes you toward templates early, which is good practice.
+-   Templates help you avoid mixing Python logic with HTML.
+
+### Minimal Jinja template example
+
+```{html}
+<!-- templates/index.html -->
+<!doctype html>
+<html>
+  <head>
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    <h1>{{ heading }}</h1>
+    <p>Today we are building the first version.</p>
+  </body>
+</html>
+```
+
+```{python}
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.get("/")
+def index():
+    return render_template("index.html", title="Week 4", heading="Hello, Flask")
+```
+
+-   Key idea: `render_template` fills placeholders like `{{ title }}`.
+
+## Using AI tools without losing control {#using-ai-tools-without-losing-control}
+
+-   Chapter 4 is where the temptation to “let the AI write the whole app” becomes strong.
+
+-   The safe workflow is:
+
+    1.  you define the requirements and the “shape” of the app
+    2.  you ask the AI for *small deltas* (a route, a template, a helper function)
+    3.  you run the code and inspect the results
+
+-   A good prompt pattern is:
+
+    -   give the current file structure
+    -   specify the exact change
+    -   require that the output is a patch/diff
+
+``` text
+You are helping me with a Flask app.
+Current structure:
+- app.py
+- templates/index.html
+Task: add a new route GET /about that renders templates/about.html.
+Constraints:
+- keep app.py minimal
+- do not add new dependencies
+Return: the full updated app.py and new about.html
+```
+
+-   This kind of prompt reduces “AI drift” (the model inventing extra features).
+
+## More micro-quotes from the chapter {#more-micro-quotes-from-the-chapter}
+
+-   Here are a few short phrases from Chapter 4 that capture the intent:
+
+    -   "we’re diving headfirst into the wild world"
+    -   "building a useful application"
+    -   "integrating these tools into your workflow"
+
+-   Use these as “north stars”: the goal is a *working workflow*, not perfect code.
+
+## Extended checklist for students {#extended-checklist-for-students}
+
+-   Before you start coding:
+
+    -   you can explain the user goal in one sentence
+    -   you can list 3–5 requirements
+    -   you know what data your app needs to store (even if it’s just in memory)
+
+-   When you set up the project:
+
+    -   you created `.venv/`
+    -   you can activate it
+    -   `python -m pip -V` points inside `.venv/`
+
+-   When you run Flask:
+
+    -   you can visit `http://127.0.0.1:5000/`
+    -   you can change a file and see it reload
+    -   you can read a stack trace when it breaks
+
+## Summing Up {#summing-up}
+
+-   Chapter 4 is where your project becomes “real”: an app skeleton you can run.
+
+-   The highest-value skills from this week:
+
+    -   turning a vague design idea into concrete requirements
+    -   creating a reproducible Python environment
+    -   building stubs first, then iterating
+    -   understanding the request/response cycle
+    -   using AI tools in small, testable steps

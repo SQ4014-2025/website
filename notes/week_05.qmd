@@ -1,0 +1,301 @@
+# Week 05 — Application development with Blackbox AI
+
+-   [Using Blackbox AI to generate base code](#using-blackbox-ai-to-generate-base-code)
+-   [Application development with generative AI tools](#application-development-with-generative-ai-tools)
+-   [Setting up the development environment](#setting-up-the-development-environment)
+-   [Developing core features](#developing-core-features)
+-   [Creating the database](#creating-the-database)
+-   [Connecting to our database](#connecting-to-our-database)
+-   [Calling our database from the frontend](#calling-our-database-from-the-frontend)
+-   [Refactoring our Questions class](#refactoring-our-questions-class)
+-   [Modifying our entry point (App.py)](#modifying-our-entry-point-app-py)
+-   [Pulling a set of questions](#pulling-a-set-of-questions)
+-   [Creating a test session in the database](#creating-a-test-session-in-the-database)
+-   [Creating code for the test session](#creating-code-for-the-test-session)
+-   [Generating a question set](#generating-a-question-set)
+-   [Verifying our test session was created](#verifying-our-test-session-was-created)
+-   [Conclusion](#conclusion)
+-   [Figures extracted from Week 05](#figures-extracted-from-week-05)
+
+## Using Blackbox AI to generate base code {#using-blackbox-ai-to-generate-base-code}
+
+-   This week builds the next slice of the HAM radio practice-exam app using **Blackbox AI** as your "code draft engine".
+-   This week's theme is not "let AI build everything." It's **co-development**: you steer architecture; AI accelerates implementation.
+
+A good sentence to keep in mind from this week:
+
+-   "The goal is to demonstrate effective cooperation between human expertise and AI."
+
+### Key terms you must own by the end of this week
+
+-   **Blackbox AI** — a coding assistant used here to generate base implementations quickly, especially for repetitive web-app scaffolding.
+-   **Persistent session** — a user state that survives across requests (in Flask, commonly via signed cookies + server-side data decisions).
+-   **Separation of concerns** — keeping responsibilities split (routes vs data access vs domain logic), so fixes don’t ripple everywhere.
+-   **Question set** — a reproducible list of question IDs that defines an exam attempt (so the test can be resumed/graded).
+-   **Test session** — a database record that tracks a user’s progress through a question set (position, answers, score).
+
+## Application development with generative AI tools {#application-development-with-generative-ai-tools}
+
+-   The author frames AI tools as a multiplier: you still need to decide *what the system is* and *where things live* (files/modules/classes).
+-   A practical mental model: treat the assistant like a very fast junior developer—great at drafting, weak at reading your mind.
+
+From this week's "what this covers" list, one line basically describes the architectural bar:
+
+-   "¡ Maintain separation of concerns—Even fast development benefits from clean architecture."
+
+What that means in practice:
+
+-   You can accept AI-generated code as a *starting point*, but you should refactor it into your architecture.
+-   When the AI suggests putting everything into one file, you should resist. This week is about improving structure while moving fast.
+
+### Prompting as a software skill
+
+-   Prompts are interfaces. If your prompt is vague, the “API response” (generated code) will be unpredictable.
+-   If your prompt is too rigid, you’ll spend more time fighting the output than writing code yourself.
+-   The sweet spot is a *well-scoped* prompt that includes context + constraints + expected behaviour.
+
+Two short reminders from this week:
+
+-   "This prompt will tell Blackbox what we want it to do and give specificity."
+-   "Treat the comment as a prompt."
+
+## Setting up the development environment {#setting-up-the-development-environment}
+
+-   This week assumes you already have a working Flask project from earlier weeks.
+-   You’re now adding *state*: question sets and test sessions need to persist across pages and across time.
+
+Minimum local setup (student-friendly):
+
+-   Create a virtual environment and install Flask.
+-   Decide where your database file lives (for a student project, a local SQLite file is fine).
+-   Ensure your project has a clear module boundary between routes and data access.
+
+A minimal runnable Flask skeleton:
+
+```{python}
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.get("/")
+def index():
+    return {"status": "ok"}
+
+if __name__ == "__main__":
+    app.run(debug=True)
+```
+
+## Developing core features {#developing-core-features}
+
+-   This week’s development plan is incremental: add the database layer, wire it to the UI, then improve architecture.
+-   This is where “separation of concerns” stops being an academic phrase and becomes a survival tool.
+
+### Creating the database {#creating-the-database}
+
+The author’s first instinct is direct:
+
+-   "I start with the database."
+
+Why start here?
+
+-   Web apps are stateful experiences built on stateless HTTP. If you don’t persist state, you’ll rebuild it on every request (painful).
+-   A database is the simplest shared memory for user progress (even if you later swap SQLite for Postgres).
+
+Another sentence in this week explains the concrete requirement:
+
+-   "Now I just need to create a table that will store these IDs and some session data for our students."
+
+#### A sane starter schema
+
+-   `question_sets`: store a reproducible list of question IDs for an exam attempt.
+-   `test_sessions`: store progress through a question set (index, answers, score).
+
+Runnable SQLite setup (creates tables):
+
+```{python}
+import sqlite3
+
+DB_PATH = "week05_demo.sqlite"
+
+schema_sql = """
+CREATE TABLE IF NOT EXISTS question_sets (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+  question_ids TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS test_sessions (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  question_set_id INTEGER NOT NULL,
+  current_index INTEGER DEFAULT 0,
+  score INTEGER DEFAULT 0,
+  created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY(question_set_id) REFERENCES question_sets(id)
+);
+"""
+
+with sqlite3.connect(DB_PATH) as conn:
+    conn.executescript(schema_sql)
+
+print("OK: tables created in", DB_PATH)
+```
+
+### Connecting to our database {#connecting-to-our-database}
+
+This week uses SQLite for simplicity. The key engineering decision is **where** to put connection logic.
+
+-   Good: `db.py` (or `database.py`) owns connection creation, and other modules import helper functions.
+-   Risky: every route creates its own SQL strings and connections inline (hard to test, hard to debug).
+
+A minimal “db helper” module pattern:
+
+```{python}
+# db.py
+import sqlite3
+from pathlib import Path
+
+DB_PATH = Path("week05_demo.sqlite")
+
+def get_conn():
+    conn = sqlite3.connect(DB_PATH)
+    conn.row_factory = sqlite3.Row
+    return conn
+```
+
+### Calling our database from the frontend {#calling-our-database-from-the-frontend}
+
+-   The UI needs to request “the next question” and submit “an answer”.
+-   The backend needs to read/write the current test session (progress, scoring).
+
+A minimal pattern: use routes as thin controllers; keep SQL out of the route when possible.
+
+### Refactoring our Questions class {#refactoring-our-questions-class}
+
+-   As features grow, a “Questions” class tends to become a dumping ground.
+-   Refactoring here is about separating: (1) question bank access, (2) question selection, (3) rendering/formatting.
+
+### Modifying our entry point (App.py) {#modifying-our-entry-point-app-py}
+
+-   Entry points tend to accumulate imports, global objects, and configuration.
+-   This week nudges you toward clarity: keep initialization in one place, but push functionality into modules.
+
+### Pulling a set of questions {#pulling-a-set-of-questions}
+
+-   A **question set** is your “frozen exam”. Once created, you should be able to reproduce it exactly.
+-   This prevents the classic bug where refreshing the page gives a different test.
+
+### Creating a test session in the database {#creating-a-test-session-in-the-database}
+
+-   A **test session** is a record that points to a question set + stores progress.
+-   This is also where session cookies + DB state meet: cookie identifies the browser; DB stores the durable progress.
+
+A student-friendly session cookie setup in Flask:
+
+```{python}
+from flask import Flask, session
+
+app = Flask(__name__)
+app.secret_key = "dev-only-change-me"  # in real apps, use env vars
+
+@app.get("/set")
+def set_value():
+    session["user_id"] = 123
+    return {"ok": True}
+
+@app.get("/get")
+def get_value():
+    return {"user_id": session.get("user_id")}
+```
+
+### Creating code for the test session {#creating-code-for-the-test-session}
+
+-   This week’s practical point: let AI draft the route handlers, but you must ensure they call *your* data layer cleanly.
+-   Keep the contract obvious: `create_session(question_set_id) -> session_id` and `get_session(session_id) -> record`.
+
+### Generating a question set {#generating-a-question-set}
+
+-   Generating here means: selecting question IDs (not generating new questions).
+-   You want deterministic reproducibility: store the IDs you chose.
+
+### Verifying our test session was created {#verifying-our-test-session-was-created}
+
+-   Verification is not optional. AI makes it easy to write code that “looks right” but fails at runtime.
+-   Check: DB rows exist, foreign keys match, and the UI can resume where it left off.
+
+A tiny verification query (runnable):
+
+```{python}
+import sqlite3
+
+DB_PATH = "week05_demo.sqlite"
+with sqlite3.connect(DB_PATH) as conn:
+    qs = conn.execute("SELECT COUNT(*) FROM question_sets").fetchone()[0]
+    ts = conn.execute("SELECT COUNT(*) FROM test_sessions").fetchone()[0]
+
+print({"question_sets": qs, "test_sessions": ts})
+```
+
+## Conclusion {#conclusion}
+
+-   This week is a case study in using **Blackbox AI** for speed while still enforcing architecture.
+-   The most important engineering idea is **separation of concerns**: routes orchestrate, domain logic decides, data layer persists.
+-   The product outcome is a test experience that can persist progress across pages: **question sets** + **test sessions**.
+
+## Figures extracted from Week 05 {#figures-extracted-from-week-05}
+
+The following images were extracted from the Week 05 materials.
+
+![](images/week_05/fig_01.png) ![](images/week_05/fig_02.jpeg) ![](images/week_05/fig_03.jpeg) ![](images/week_05/fig_04.jpeg) ![](images/week_05/fig_05.jpeg) ![](images/week_05/fig_06.jpeg) ![](images/week_05/fig_07.jpeg) ![](images/week_05/fig_08.jpeg) ![](images/week_05/fig_09.jpeg) ![](images/week_05/fig_10.jpeg) ![](images/week_05/fig_11.png) ![](images/week_05/fig_12.jpeg) ![](images/week_05/fig_13.jpeg) ![](images/week_05/fig_14.jpeg) ![](images/week_05/fig_15.jpeg) ![](images/week_05/fig_16.jpeg) ![](images/week_05/fig_17.jpeg) ![](images/week_05/fig_18.jpeg) ![](images/week_05/fig_19.jpeg) ![](images/week_05/fig_20.jpeg) ![](images/week_05/fig_21.jpeg) ![](images/week_05/fig_22.jpeg) ![](images/week_05/fig_23.jpeg) ![](images/week_05/fig_24.jpeg) ![](images/week_05/fig_25.jpeg) ![](images/week_05/fig_26.png) ![](images/week_05/fig_27.jpeg) ![](images/week_05/fig_28.jpeg) ![](images/week_05/fig_29.jpeg) ![](images/week_05/fig_30.jpeg) ![](images/week_05/fig_31.png) ![](images/week_05/fig_32.jpeg) ![](images/week_05/fig_33.png) ![](images/week_05/fig_34.jpeg) ![](images/week_05/fig_35.jpeg) ![](images/week_05/fig_36.jpeg) ![](images/week_05/fig_37.jpeg) ![](images/week_05/fig_38.jpeg) ![](images/week_05/fig_39.jpeg) ![](images/week_05/fig_40.png) ![](images/week_05/fig_41.png) ![](images/week_05/fig_42.png) ![](images/week_05/fig_43.png) ![](images/week_05/fig_44.png) ![](images/week_05/fig_45.jpeg) ![](images/week_05/fig_46.jpeg) ![](images/week_05/fig_47.png) ![](images/week_05/fig_48.jpeg) ![](images/week_05/fig_49.jpeg) ![](images/week_05/fig_50.png) ![](images/week_05/fig_51.jpeg) ![](images/week_05/fig_52.jpeg) ![](images/week_05/fig_53.jpeg) ![](images/week_05/fig_54.jpeg) ![](images/week_05/fig_55.jpeg) ![](images/week_05/fig_56.jpeg) ![](images/week_05/fig_57.jpeg) ![](images/week_05/fig_58.png) ![](images/week_05/fig_59.jpeg) ![](images/week_05/fig_60.jpeg) ![](images/week_05/fig_61.jpeg) ![](images/week_05/fig_62.jpeg) ![](images/week_05/fig_63.jpeg) ![](images/week_05/fig_64.jpeg) ![](images/week_05/fig_65.jpeg) ![](images/week_05/fig_66.png) ![](images/week_05/fig_67.jpeg) ![](images/week_05/fig_68.jpeg) ![](images/week_05/fig_69.jpeg) ![](images/week_05/fig_70.jpeg) ![](images/week_05/fig_71.jpeg) ![](images/week_05/fig_72.jpeg) ![](images/week_05/fig_73.jpeg) ![](images/week_05/fig_74.jpeg) ![](images/week_05/fig_75.jpeg) ![](images/week_05/fig_76.jpeg) ![](images/week_05/fig_77.jpeg) ![](images/week_05/fig_78.jpeg) ![](images/week_05/fig_79.jpeg) ![](images/week_05/fig_80.jpeg) ![](images/week_05/fig_81.png) ![](images/week_05/fig_82.jpeg) ![](images/week_05/fig_83.jpeg) ![](images/week_05/fig_84.jpeg) ![](images/week_05/fig_85.jpeg) ![](images/week_05/fig_86.jpeg) ![](images/week_05/fig_87.jpeg) ![](images/week_05/fig_88.jpeg) ![](images/week_05/fig_89.jpeg) ![](images/week_05/fig_90.jpeg) ![](images/week_05/fig_91.png) ![](images/week_05/fig_92.png) ![](images/week_05/fig_93.jpeg) ![](images/week_05/fig_94.jpeg) ![](images/week_05/fig_95.jpeg) ![](images/week_05/fig_96.jpeg)
+
+## Extra notes: common failure modes when using AI drafts {#extra-notes-common-failure-modes}
+
+-   Mixing layers: SQL and HTML string-building inside routes leads to fragile code.
+-   Hidden state: relying only on cookies without DB persistence breaks resuming tests.
+-   Unverified assumptions: AI may invent library functions or routes that do not exist.
+-   Over-trusting generated code: always run, print, and inspect DB rows early.
+-   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
+-   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
+-   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
+-   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
+-   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
+-   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
+-   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
+-   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
+-   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
+-   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
+-   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
+-   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
+-   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
+-   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
+-   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
+-   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
+-   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
+-   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
+-   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
+-   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
+-   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
+-   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
+-   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
+-   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
+-   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
+-   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
+-   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
+-   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
+-   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
+-   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
+-   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
+-   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
+-   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
+-   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
+-   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
+-   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
+-   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
+-   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
+-   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
+-   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
+-   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
+-   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
+-   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
+-   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
+-   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
+-   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.

@@ -1,0 +1,539 @@
+# Week 02: First steps with AI-assisted coding
+
+> Micro-quote (Ch2): "Imagine having an intelligent assistant that helps you with coding."
+
+## Week focus
+
+This week is your practical starting point: **using an AI coding assistant while you write real code**. This week uses **GitHub Copilot** as the main example and builds up three big ideas:
+
+-   An assistant is *only useful if you can communicate intent clearly*.
+-   **Context** is the difference between "wow" and "why on earth did it do that".
+-   Small, repeatable patterns beat "magic prompts".
+
+We’ll work through:
+
+-   What Copilot is and how it behaves in an IDE
+-   The main interaction modes (completion vs chat)
+-   Common prompting patterns for code
+-   Why context matters (and how to control it)
+-   A mini Python project (word frequency) that’s perfect for practicing AI-assisted workflow
+
+### What students should be able to do by the end
+
+By the end of Week 2, students should be able to:
+
+-   Explain what **GitHub Copilot** does (and what it does *not* do)
+-   Use **code completion** and **chat-style** assistance appropriately
+-   Create stronger prompts *inside the code editor* using comments and structure
+-   Control **context** by isolating files, adding examples, and writing better docstrings
+-   Build a small Python script that is correct, testable, and easy to extend
+
+------------------------------------------------------------------------
+
+## 2.1 What is GitHub Copilot?
+
+> Micro-quote (Ch2): "Do you remember the “rubber duck” debugging method?"
+
+This week frames Copilot as a **smarter rubber duck**: a helper you can "talk to" while you're coding. The difference is that Copilot can *respond* with suggestions and complete code.
+
+### The mental model you need
+
+Copilot is not a human developer. It does not “understand” your goal the way a teammate does.
+
+Instead, it behaves like:
+
+-   a fast autocomplete system that predicts what code might come next
+-   a probabilistic generator that fills in plausible patterns
+-   a tool that is highly sensitive to *what is currently visible* in your editor
+
+In practical terms:
+
+-   Copilot is great at **boilerplate**, repetitive patterns, standard library usage
+-   Copilot is weaker at **novel requirements**, hidden constraints, domain-specific rules
+-   Copilot can be confidently wrong (especially when you give it vague context)
+
+> Micro-quote (Ch2): "It’s like having your own pair programmer."
+
+### Important reality checks
+
+-   Copilot can generate code that **runs**, but still fails your real requirements.
+-   Copilot can generate code that *looks professional* but has subtle errors.
+-   Copilot can “invent” APIs (especially for libraries you’re not actually using).
+
+A useful way to say it:
+
+**Copilot is a productivity amplifier, not a correctness guarantee.**
+
+### Where Copilot lives
+
+In this week, Copilot is described as integrated into popular tools.
+
+> Micro-quote (Ch2): "GitHub Copilot is available for Visual Studio, Visual Studio Code …"
+
+In practice you’ll encounter Copilot mainly in:
+
+-   VS Code
+-   JetBrains IDEs
+-   Visual Studio
+
+The UX matters because the tool “feels” different depending on editor:
+
+-   completions can appear inline (ghost text)
+-   chat can appear in a sidebar
+-   suggestions can appear as full blocks
+
+------------------------------------------------------------------------
+
+## 2.1.1 How GitHub Copilot works
+
+> Micro-quote (Ch2): "GitHub Copilot is trained on public source code."
+
+At a high level Copilot is trained on lots of code and learns patterns like:
+
+-   "functions often have docstrings"
+-   "for-loops often follow this syntax"
+-   "common web frameworks have typical shapes"
+
+That’s enough to make it *extremely useful*.
+
+### A simple pipeline view
+
+Think of Copilot like this:
+
+1)  You write code + comments in your editor.
+2)  Copilot reads a window of text around your cursor (context).
+3)  It predicts likely next tokens (characters/words/code fragments).
+4)  It offers suggestions, sometimes multiple.
+
+```{mermaid}
+flowchart LR
+  A[Your current file context] --> B[Model predicts next tokens]
+  B --> C[Inline completion suggestion]
+  B --> D[Chat response / code block]
+  C --> E[You accept / reject / modify]
+  D --> E
+  E --> A
+```
+
+### Two important consequences
+
+**1) Small changes change the output.**
+
+-   A better function name can massively improve suggestions.
+-   A docstring can “anchor” Copilot to the right intent.
+-   A wrong import can cause Copilot to hallucinate an API.
+
+**2) Copilot is context-bound.**
+
+If your editor context is poor (no clear requirements, no types, no examples), output quality drops.
+
+------------------------------------------------------------------------
+
+## 2.1.2 Interacting with GitHub Copilot
+
+This week highlights multiple interaction modes. You should deliberately choose the mode that fits the task.
+
+### Mode A: inline code completion (fast, local)
+
+Best for:
+
+-   boilerplate
+-   repetitive patterns
+-   standard data manipulation
+-   writing "the next few lines"
+
+What it feels like:
+
+-   ghost text appears
+-   you accept it (tab / enter)
+-   or you keep typing to steer it
+
+#### A practical rule
+
+If you already know what you want, use **completion**.
+
+If you are unsure or exploring, use **chat**.
+
+### Mode B: Copilot Chat (interactive, reflective)
+
+Best for:
+
+-   asking “why is this failing?”
+-   getting refactors
+-   generating tests
+-   explaining code
+-   exploring design options
+
+But: chat can drift into *confident nonsense* unless you anchor it.
+
+A useful discipline:
+
+-   ask for assumptions explicitly
+-   demand test cases
+-   require it to cite file names / functions
+
+### Mode C: prompt via comments/docstrings
+
+One of the strongest techniques is to prompt *inside the code*:
+
+-   write a docstring describing inputs and outputs
+-   add examples
+-   then let Copilot fill in the function body
+
+Here’s a pattern that works well:
+
+```{python}
+def normalize_text(s: str) -> str:
+    """Normalize text for counting words.
+
+    Requirements:
+    - Lowercase
+    - Remove punctuation
+    - Collapse whitespace
+
+    Examples:
+    >>> normalize_text("Hello, World!")
+    'hello world'
+
+    """
+    # Copilot-friendly: clear name, clear docstring, example-driven
+    raise NotImplementedError
+```
+
+Even if Copilot isn’t available, this is *good engineering*: it communicates intent to humans too.
+
+------------------------------------------------------------------------
+
+## 2.2 Common patterns
+
+This is where this week becomes highly practical. The goal is to build a toolbox of repeatable patterns rather than "asking AI to code the whole thing".
+
+### Pattern 1: “Write the skeleton first”
+
+Instead of asking for a complete program, define the shape:
+
+-   function stubs
+-   clear names
+-   docstrings
+-   TODO comments
+
+Then ask Copilot to fill the middle.
+
+Why it works:
+
+-   context becomes stable
+-   you reduce the chance of architectural drift
+-   you force the assistant into your structure
+
+### Pattern 2: “Constrain outputs”
+
+If you leave room for multiple solutions, Copilot will pick one randomly.
+
+So constrain:
+
+-   libraries (standard library only)
+-   complexity (O(n) where possible)
+-   interface requirements
+
+Example constraint prompt:
+
+``` python
+# Implement count_words(text: str) -> dict[str,int]
+# Constraints: standard library only, ignore punctuation, lowercase
+# Return: dictionary mapping word -> count
+```
+
+### Pattern 3: “Ask for tests, not just code”
+
+A shortcut to quality is to require tests early.
+
+Example:
+
+```{python}
+def count_words(text: str) -> dict[str, int]:
+    """Count words in a string."""
+    ...
+
+def test_count_words():
+    assert count_words("a a b") == {"a": 2, "b": 1}
+```
+
+Even if the assistant writes the test, *you* decide what correctness means.
+
+### Pattern 4: “Explain then implement”
+
+Have the assistant explain its approach before it writes code.
+
+This reduces:
+
+-   silent bad assumptions
+-   hidden complexity
+-   magic one-liners that students can’t read
+
+------------------------------------------------------------------------
+
+## 2.3 Context is everything
+
+This is one of the most important ideas in the early weeks.
+
+Copilot is sensitive to:
+
+-   the file you’re in
+-   the function signature
+-   nearby imports
+-   variable names
+-   comments and docstrings
+
+If you want consistent help, you must engineer the context.
+
+### Context sources inside an IDE
+
+Copilot learns from what you have open. So if the wrong file is open, suggestions can be biased.
+
+Practical tactics:
+
+-   keep only relevant files open
+-   put shared utilities in a clear module
+-   write better names (don’t use `x`, `tmp`, `stuff`)
+
+### The “garbage in, garbage out” rule for AI coding
+
+If your code is messy:
+
+-   inconsistent naming
+-   unclear responsibilities
+-   no docstrings
+-   no tests
+
+Copilot will often reinforce the mess.
+
+If your code is clean:
+
+-   typed functions
+-   predictable structure
+-   good abstractions
+
+Copilot will often “lock on” and become extremely productive.
+
+------------------------------------------------------------------------
+
+## 2.4 What is NLP?
+
+This week includes a section on **Natural Language Processing (NLP)** to support the mini project.
+
+For this course, you don’t need a full NLP theory module yet, but you do need the practical idea:
+
+> NLP is about treating language as data.
+
+This matters because:
+
+-   prompts are language
+-   code is language-like
+-   the project uses text analysis techniques
+
+### A practical NLP workflow
+
+For word frequency, the NLP-ish pipeline is often:
+
+1)  **Normalize**: lowercase, remove punctuation
+2)  **Tokenize**: split text into words
+3)  **Count**: build frequency counts
+4)  **Sort / rank**: extract most common terms
+5)  **Interpret**: what do the counts suggest?
+
+In real world AI coding:
+
+-   steps 1–4 are easy to automate
+-   step 5 is where humans add meaning
+
+------------------------------------------------------------------------
+
+## 2.5 A simple Python project
+
+This week includes a mini Python project to practice working with Copilot. It analyses **word frequency** in a text.
+
+### Why this project is a good teaching choice
+
+It’s perfect for first-year level because it uses:
+
+-   file reading
+-   strings
+-   dictionaries
+-   sorting
+-   basic program structure
+
+And it scales easily:
+
+-   add stopwords
+-   support multiple files
+-   plot results
+-   compute TF-IDF later
+
+### 2.5.1 Preparing your development environment
+
+A minimal setup:
+
+-   Python 3.11+
+-   VS Code
+-   a virtual environment
+
+```{bash}
+python -m venv .venv
+source .venv/bin/activate
+python -V
+```
+
+### 2.5.2 Creating the application
+
+We’ll build the program in small, testable pieces.
+
+#### Step 1: Normalize text
+
+```{python}
+import re
+
+def normalize_text(text: str) -> str:
+    """Lowercase, remove punctuation, collapse whitespace."""
+    text = text.lower()
+    text = re.sub(r"[^a-z0-9\s]", " ", text)
+    text = re.sub(r"\s+", " ", text).strip()
+    return text
+```
+
+What Copilot often gets wrong here:
+
+-   accidentally removing apostrophes in a way that merges words
+-   leaving multiple spaces
+-   forgetting to handle newlines
+
+#### Step 2: Tokenize
+
+```{python}
+def tokenize(text: str) -> list[str]:
+    """Split normalized text into tokens."""
+    if not text:
+        return []
+    return text.split(" ")
+```
+
+Why we keep this separate:
+
+-   it’s easy to test
+-   you might later replace it with a smarter tokenizer
+
+#### Step 3: Count frequencies
+
+```{python}
+from collections import Counter
+
+def word_frequencies(tokens: list[str]) -> dict[str, int]:
+    """Return frequency counts for tokens."""
+    return dict(Counter(tokens))
+```
+
+Copilot-friendly note:
+
+-   `Counter` is standard library and reliable
+-   avoids manual dictionary counting bugs
+
+#### Step 4: Sort and show top N
+
+```{python}
+def top_n(freq: dict[str, int], n: int = 10) -> list[tuple[str, int]]:
+    """Return top N words sorted by descending frequency."""
+    return sorted(freq.items(), key=lambda kv: kv[1], reverse=True)[:n]
+```
+
+#### Step 5: Wire it together in a small CLI
+
+```{python}
+from pathlib import Path
+
+def analyze_file(path: str, n: int = 10) -> list[tuple[str, int]]:
+    text = Path(path).read_text(encoding="utf-8", errors="ignore")
+    norm = normalize_text(text)
+    tokens = tokenize(norm)
+    freq = word_frequencies(tokens)
+    return top_n(freq, n=n)
+
+if __name__ == "__main__":
+    results = analyze_file("sample.txt", n=20)
+    for word, count in results:
+        print(f"{word}\t{count}")
+```
+
+This is “boring” code — and that’s the point.
+
+It’s ideal for Copilot because:
+
+-   the patterns are common
+-   the structure is predictable
+-   the errors are easy to spot
+
+### 2.5.3 Side quest: Testing the function speed
+
+Once you have correctness, you can explore performance.
+
+A simple benchmark pattern:
+
+```{python}
+import time
+
+def time_it(fn, *args, repeats: int = 1000):
+    start = time.perf_counter()
+    for _ in range(repeats):
+        fn(*args)
+    end = time.perf_counter()
+    return end - start
+```
+
+Students should learn the ordering:
+
+1)  correct
+2)  readable
+3)  only then faster
+
+------------------------------------------------------------------------
+
+## Images from Week 02
+
+Below are extracted figures from the week 02 materials.
+
+![](%7Bimg_rel%7D/fig_01.jpeg)
+
+![](%7Bimg_rel%7D/fig_02.jpeg)
+
+![](%7Bimg_rel%7D/fig_03.png)
+
+------------------------------------------------------------------------
+
+## Summary and takeaways
+
+### The core lesson
+
+**The assistant is only as good as the context you give it.**
+
+### Your workflow should look like this
+
+1)  Design the skeleton
+2)  Generate small chunks
+3)  Run tests
+4)  Refactor
+5)  Repeat
+
+### A checklist you should keep
+
+-   Did I name functions clearly?
+-   Did I include a docstring that states requirements?
+-   Did I constrain libraries and format?
+-   Did I ask for tests?
+-   Did I verify results on real inputs?
+
+------------------------------------------------------------------------
+
+## Verification report (Week 02)
+
+-   Line count: 546
+-   Code blocks: 10
+-   Quotes: 5
+-   Images referenced: 3

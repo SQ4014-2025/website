@@ -1,0 +1,11 @@
+---
+title: "Programming Concepts"
+---
+
+![](images/background.png){fig-alt="A forward-thrusting student coding their heart out." width="500"}
+
+> Code must be written for people to read, and, only incidentally, for machines to execute.
+
+Welcome!
+
+**This module offers an engaging introduction and an overview to programming utilising Python. Designed to accommodate both novices and those with some programming background, it covers a spectrum of fundamental concepts of coding.** Key topics include reading and writing code, testing, debugging with Python-specific features. This module provides essential underpinning skills for other computer science modules. The content will be highly relevant and adaptable, enhancing employability and professional development in technology-driven industries.

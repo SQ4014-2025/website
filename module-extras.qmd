@@ -1,0 +1,13 @@
+---
+title: "Extra Meetings"
+---
+
+## Harper Adams Data Club (HADC!)
+
+HADC! is a group of people (students, researchers, and staff) who are interested in statistics and data science. We typically meet regularly to discuss practical statistics and data science topics. [Check out the HADC! website for the schedule.](https://hadataclub.github.io/website/hadc_schedule.html)
+
+## Code Club
+
+The Code Club is an outreach-based initiative that aims to help school students learn programming and data science. Our first Code Club will be held regularly (keep your eyes open for announcements). This is an opportunity for you to help mentor younger students - it is fun, rewarding, and a great way to build your CV.
+
+##

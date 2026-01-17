@@ -1,0 +1,160 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  page-navigation: true
+  title: "Real World AI"
+  description: "Real World Artificial Intelligence (AI) is an innovative module that focuses on the application of large language models (LLMs) and application programming interfaces (APIs) to automate generative AI workflows. The module introduces students to the dynamic world of data science, emphasising the use of cutting-edge technologies like vector databases and the OpenAI API. It is designed to develop skills in prompt engineering and the creation of efficient data processing systems, including customer service chatbots. This module is crucial for students aiming to excel in the rapidly evolving field of data science and technology, providing them with the skills necessary for developing advanced applications in various sectors"
+  site-url: "https://SQ4014-2025.github.io/website/"
+  favicon: "images/favicon.ico"
+
+  repo-url: https://github.com/SQ4014-2025/website
+  repo-branch: master
+  repo-actions: [edit, issue]
+
+  open-graph: true
+
+  twitter-card:
+    creator: "@EdHarris9000"
+    image: "images/twitter-card.png"
+
+  page-footer:
+    left: "&copy; 2026 🐊 [W. Edwin Harris](https://weharris.me)"
+    center: "📊 [The Statistics Lab](https://thestatisticslab.com)"
+    right: "🚀 Built with [Quarto](https://quarto.org/)."
+    background: "#D9E3E4"
+
+  sidebar:
+    background: "#D9E3E4"
+    logo: "images/logo.png"
+    pinned: true
+    align: center
+    tools:
+      - icon: github
+        href: https://github.com/weharris
+        text: "Course GitHub repo"
+      - icon: youtube
+        href: https://youtube.com/@TheStatisticsLab
+        text: "YouTube"
+      - icon: discord
+        href: https://discord.gg/dnNTE6xhhu
+        text: "Join our Discord"
+
+    style: "docked"
+    search: true
+    collapse-level: 1 
+    contents:
+      - href: index.qmd
+        text: Welcome!
+      - href: module-schedule.qmd
+        text: Schedule
+      - href: module-syllabus.qmd
+        text: Syllabus
+      - href: module-links.qmd
+        text: Useful links
+      - href: module-faq.qmd
+        text: FAQ
+      - href: module-project.qmd
+        text: Final Project
+      - section: "Lectures"
+        contents:
+          - href: lectures/slides_0.pptx
+            text: "Lecture 00 🐍"
+          - href: lectures/slides_1.pptx
+            text: "Lecture 01 🐍"
+          - href: lectures/slides_2.pptx
+            text: "Lecture 02 🐍"
+          - href: lectures/slides_3.pptx
+            text: "Lecture 03 🐍"
+          - href: lectures/slides_4.pptx
+            text: "Lecture 04 🐍"
+          - href: lectures/slides_5.pptx
+            text: "Lecture 05 🐍"
+          - href: lectures/slides_6.pptx
+            text: "Lecture 06 🐍"
+          - href: lectures/slides_7.pptx
+            text: "Lecture 07 🐍"
+          - href: lectures/slides_8.pptx
+            text: "Lecture 08 🐍"
+          - href: lectures/slides_9.pptx
+            text: "Lecture 09 🐍"
+      - section: "Notes"
+        contents:
+          - href: notes/notes_0.qmd
+            text: "Notes 00 🐍"
+          - href: notes/notes_1.qmd
+            text: "Notes 01 🐍"
+          - href: notes/notes_2.qmd
+            text: "Notes 02 🐍"
+          - href: notes/notes_3.qmd
+            text: "Notes 03 🐍"
+          - href: notes/notes_4.qmd
+            text: "Notes 04 🐍"
+          - href: notes/notes_5.qmd
+            text: "Notes 05 🐍"
+          - href: notes/notes_6.qmd
+            text: "Notes 06 🐍"
+          - href: notes/notes_7.qmd
+            text: "Notes 07 🐍"
+          - href: notes/notes_8.qmd
+            text: "Notes 08 🐍"
+          - href: notes/notes_9.qmd
+            text: "Notes 09 🐍"
+      - section: "Code"
+        contents:
+          - href: https://github.com/SQ4011-2025/website/tree/master/code/src0
+            text: "Code 00 🐍"
+          - href: https://github.com/SQ4011-2025/website/tree/master/code/src1
+            text: "Code 01 🐍"
+          - href: https://github.com/SQ4011-2025/website/tree/master/code/src2
+            text: "Code 02 🐍"
+          - href: https://github.com/SQ4011-2025/website/tree/master/code/src3
+            text: "Code 03 🐍"
+          - href: https://github.com/SQ4011-2025/website/tree/master/code/src4
+            text: "Code 04 🐍"
+          - href: https://github.com/SQ4011-2025/website/tree/master/code/src5
+            text: "Code 05 🐍"
+          - href: https://github.com/SQ4011-2025/website/tree/master/code/src6
+            text: "Code 06 🐍"
+          - href: https://github.com/SQ4011-2025/website/tree/master/code/src7
+            text: "Code 07 🐍"
+          - href: https://github.com/SQ4011-2025/website/tree/master/code/src8
+            text: "Code 08 🐍"
+          - href: https://github.com/SQ4011-2025/website/tree/master/code/src9
+            text: "Code 09 🐍"
+
+      - section: "Problem Sets"
+        contents:
+          - href: problems/pset_0/pset_0.md
+            text: "Problem Set 00 🐍"
+          - href: problems/pset_1/pset_1.md
+            text: "Problem Set 01 🐍"
+          - href: problems/pset_2/pset_2.md
+            text: "Problem Set 02 🐍"
+          - href: problems/pset_3/pset_3.md
+            text: "Problem Set 03 🐍"
+          - href: problems/pset_4/pset_4.md
+            text: "Problem Set 04 🐍"
+          - href: problems/pset_5/pset_5.md
+            text: "Problem Set 05 🐍"
+          - href: problems/pset_6/pset_6.md
+            text: "Problem Set 06 🐍"
+          - href: problems/pset_7/pset_7.md
+            text: "Problem Set 07 🐍"
+          - href: problems/pset_8/pset_8.md
+            text: "Problem Set 08 🐍"
+
+format:
+  html:
+    theme:
+      light: [cosmo, theme.scss]
+      dark: [cosmo, theme-dark.scss]
+    mainfont: "Atkinson Hyperlegible"
+    code-copy: true
+    code-overflow: wrap
+    toc: true
+
+freeze: auto
+
+editor: visual

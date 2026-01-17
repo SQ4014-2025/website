@@ -1,0 +1,17 @@
+{
+  "hash": "f60e9e52bb78bc011d35e829e1105a8f",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Schedule\"\n---\n\n🔗 [\"The Sandbox\" coding environment (Github Codespace)](https://classroom.github.com/a/n-LXZmS6)\n\nThis schedule is an outline of the topics, with links to all content, and assignments. Note that this may be updated as the module progresses.\n\n| Week (HAU) | Topics | Lectures | Notes | Code | Problem Sets |\n|:----------:|:-----------|:----------:|:----------:|:----------:|:----------:|\n| 00 (16) | 🐍 Functions | [💻](lectures/slides_0.pptx) | [📕](notes/notes_0.html \"Notes 0\") | [🤖](https://github.com/SQ4011-2025/website/tree/master/code/src0) | [🏠](problems/pset_0/pset_0.md) |\n| 01 (17) | 🐍 Conditionals | [💻](lectures/slides_1.pptx) | [📕](notes/notes_1.html \"Notes 1\") | [🤖](https://github.com/SQ4011-2025/website/tree/master/code/src1) | [🏠](problems/pset_1/pset_1.md) |\n| 02 (18) | 🐍 Loops | [💻](lectures/slides_2.pptx) | [📕](notes/notes_2.html \"Notes 2\") | [🤖](https://github.com/SQ4011-2025/website/tree/master/code/src2) | [🏠](problems/pset_2/pset_2.md) |\n| 03 (19) | 🐍 Exceptions | [💻](lectures/slides_3.pptx) | [📕](notes/notes_3.html \"Notes 3\") | [🤖](https://github.com/SQ4011-2025/website/tree/master/code/src3) | [🏠](problems/pset_3/pset_3.md) |\n| 04 (20) | 🐍 Libraries | [💻](lectures/slides_4.pptx) | [📕](notes/notes_4.html \"Notes 4\") | [🤖](https://github.com/SQ4011-2025/website/tree/master/code/src4) | [🏠](problems/pset_4/pset_4.md) |\n| 05 (21) | 🐍 Unit tests | [💻](lectures/slides_5.pptx) | [📕](notes/notes_5.html \"Notes 5\") | [🤖](https://github.com/SQ4011-2025/website/tree/master/code/src5) | [🏠](problems/pset_5/pset_5.md) |\n| 06 (22) | 🐍 File I/O | [💻](lectures/slides_6.pptx) | [📕](notes/notes_6.html \"Notes 6\") | [🤖](https://github.com/SQ4011-2025/website/tree/master/code/src6) | [🏠](problems/pset_6/pset_6.md) |\n|  | 💥 Mid term Break |  |  |  |  |\n| 07 (23) | 🐍 RegEx | [💻](lectures/slides_7.pptx) | [📕](notes/notes_7.html \"Notes 7\") | [🤖](https://github.com/SQ4011-2025/website/tree/master/code/src7) | [🏠](problems/pset_7/pset_7.md) |\n| 08 (24) | 🐍 OOP | [💻](lectures/slides_8.pptx) | [📕](notes/notes_8.html \"Notes 8\") | [🤖](https://github.com/SQ4011-2025/website/tree/master/code/src8) | [🏠](problems/pset_8/pset_8.md) |\n| 09 (25) | 🐍 *et cetera* | [💻](lectures/slides_9.pptx) | [📕](notes/notes_9.html \"Notes 9\") | [🤖](https://github.com/SQ4011-2025/website/tree/master/code/src9) |  |\n| 10 (26) | 👋 Wrap up, Open lab |  |  |  |  |\n| 11 (27) | 🚀 Open lab |  |  |  |  |\n| 12 (28) | 🚀 Open lab |  |  |  |  |\n\n\n::: {.cell}\n\n:::\n",
+    "supporting": [
+      "module-schedule_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

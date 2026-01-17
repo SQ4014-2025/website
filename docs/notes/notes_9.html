@@ -1,0 +1,1837 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>notes_9 – Programming Concepts</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../problems/pset_0/pset_0.html" rel="next">
+<link href="../notes/notes_8.html" rel="prev">
+<link href="../images/favicon.ico" rel="icon">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-959d52b38afcd125cd930becff87d068.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-82fbd4854bc8d0254b5d015f55c763a4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-959d52b38afcd125cd930becff87d068.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<meta property="og:title" content="Programming Concepts">
+<meta property="og:site_name" content="Programming Concepts">
+<meta name="twitter:title" content="Programming Concepts">
+<meta name="twitter:image" content="https://SQ4011-2025.github.io/website/notes/images/twitter-card.png">
+<meta name="twitter:creator" content="@EdHarris9000">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/notes_0.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/notes_9.html">Notes 09 🐍</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../images/logo.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../images/logo.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      </a>
+      <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/weharris" title="Course GitHub repo" class="quarto-navigation-tool px-1" aria-label="Course GitHub repo"><i class="bi bi-github"></i></a>
+    <a href="https://youtube.com/@TheStatisticsLab" title="YouTube" class="quarto-navigation-tool px-1" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+    <a href="https://discord.gg/dnNTE6xhhu" title="Join our Discord" class="quarto-navigation-tool px-1" aria-label="Join our Discord"><i class="bi bi-discord"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome!</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../module-schedule.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schedule</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../module-syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../module-links.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Useful links</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../module-faq.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FAQ</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../module-project.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Final Project</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Lectures</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lectures/slides_0.pptx" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 00 🐍</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lectures/slides_1.pptx" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 01 🐍</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lectures/slides_2.pptx" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 02 🐍</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lectures/slides_3.pptx" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 03 🐍</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lectures/slides_4.pptx" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 04 🐍</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lectures/slides_5.pptx" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 05 🐍</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lectures/slides_6.pptx" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 06 🐍</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lectures/slides_7.pptx" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 07 🐍</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lectures/slides_8.pptx" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 08 🐍</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lectures/slides_9.pptx" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture 09 🐍</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Notes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/notes_0.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes 00 🐍</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/notes_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes 01 🐍</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/notes_2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes 02 🐍</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/notes_3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes 03 🐍</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/notes_4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes 04 🐍</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/notes_5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes 05 🐍</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/notes_6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes 06 🐍</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/notes_7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes 07 🐍</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/notes_8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes 08 🐍</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/notes_9.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Notes 09 🐍</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Code</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://github.com/SQ4011-2025/website/tree/master/code/src0" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Code 00 🐍</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://github.com/SQ4011-2025/website/tree/master/code/src1" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Code 01 🐍</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://github.com/SQ4011-2025/website/tree/master/code/src2" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Code 02 🐍</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://github.com/SQ4011-2025/website/tree/master/code/src3" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Code 03 🐍</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://github.com/SQ4011-2025/website/tree/master/code/src4" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Code 04 🐍</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://github.com/SQ4011-2025/website/tree/master/code/src5" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Code 05 🐍</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://github.com/SQ4011-2025/website/tree/master/code/src6" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Code 06 🐍</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://github.com/SQ4011-2025/website/tree/master/code/src7" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Code 07 🐍</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://github.com/SQ4011-2025/website/tree/master/code/src8" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Code 08 🐍</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="https://github.com/SQ4011-2025/website/tree/master/code/src9" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Code 09 🐍</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Problem Sets</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/pset_0/pset_0.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 00 🐍</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/pset_1/pset_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 01 🐍</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/pset_2/pset_2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 02 🐍</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/pset_3/pset_3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 03 🐍</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/pset_4/pset_4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 04 🐍</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/pset_5/pset_5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 05 🐍</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/pset_6/pset_6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 06 🐍</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/pset_7/pset_7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 07 🐍</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../problems/pset_8/pset_8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem Set 08 🐍</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#week-9-notes" id="toc-week-9-notes" class="nav-link active" data-scroll-target="#week-9-notes">Week 9 Notes</a></li>
+  <li><a href="#lecture-9" id="toc-lecture-9" class="nav-link" data-scroll-target="#lecture-9">Lecture 9</a>
+  <ul class="collapse">
+  <li><a href="#et-cetera" id="toc-et-cetera" class="nav-link" data-scroll-target="#et-cetera">Et Cetera</a></li>
+  <li><a href="#set" id="toc-set" class="nav-link" data-scroll-target="#set"><code>set</code></a></li>
+  <li><a href="#global-variables" id="toc-global-variables" class="nav-link" data-scroll-target="#global-variables">Global Variables</a></li>
+  <li><a href="#constants" id="toc-constants" class="nav-link" data-scroll-target="#constants">Constants</a></li>
+  <li><a href="#type-hints" id="toc-type-hints" class="nav-link" data-scroll-target="#type-hints">Type Hints</a></li>
+  <li><a href="#docstrings" id="toc-docstrings" class="nav-link" data-scroll-target="#docstrings">Docstrings</a></li>
+  <li><a href="#argparse" id="toc-argparse" class="nav-link" data-scroll-target="#argparse"><code>argparse</code></a></li>
+  <li><a href="#unpacking" id="toc-unpacking" class="nav-link" data-scroll-target="#unpacking">Unpacking</a></li>
+  <li><a href="#args-and-kwargs" id="toc-args-and-kwargs" class="nav-link" data-scroll-target="#args-and-kwargs"><code>args</code> and <code>kwargs</code></a></li>
+  <li><a href="#map" id="toc-map" class="nav-link" data-scroll-target="#map"><code>map</code></a></li>
+  <li><a href="#list-comprehensions" id="toc-list-comprehensions" class="nav-link" data-scroll-target="#list-comprehensions">List Comprehensions</a></li>
+  <li><a href="#filter" id="toc-filter" class="nav-link" data-scroll-target="#filter"><code>filter</code></a></li>
+  <li><a href="#dictionary-comprehensions" id="toc-dictionary-comprehensions" class="nav-link" data-scroll-target="#dictionary-comprehensions">Dictionary Comprehensions</a></li>
+  <li><a href="#enumerate" id="toc-enumerate" class="nav-link" data-scroll-target="#enumerate"><code>enumerate</code></a></li>
+  <li><a href="#generators-and-iterators" id="toc-generators-and-iterators" class="nav-link" data-scroll-target="#generators-and-iterators">Generators and Iterators</a></li>
+  <li><a href="#congratulations" id="toc-congratulations" class="nav-link" data-scroll-target="#congratulations">Congratulations!</a></li>
+  <li><a href="#this-was-programming-concepts" id="toc-this-was-programming-concepts" class="nav-link" data-scroll-target="#this-was-programming-concepts">This was Programming Concepts!</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/SQ4011-2025/website/edit/master/notes/notes_9.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/SQ4011-2025/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/notes_0.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/notes_9.html">Notes 09 🐍</a></li></ol></nav></header>
+
+
+
+
+
+<section id="week-9-notes" class="level1">
+<h1>Week 9 Notes</h1>
+<hr>
+</section>
+<section id="lecture-9" class="level1">
+<h1>Lecture 9</h1>
+<ul>
+<li><a href="#et-cetera">Et Cetera</a></li>
+<li><a href="#set"><code>set</code></a></li>
+<li><a href="#global-variables">Global Variables</a></li>
+<li><a href="#constants">Constants</a></li>
+<li><a href="#type-hints">Type Hints</a></li>
+<li><a href="#docstrings">Docstrings</a></li>
+<li><a href="#argparse"><code>argparse</code></a></li>
+<li><a href="#unpacking">Unpacking</a></li>
+<li><a href="#args-and-kwargs"><code>args</code> and <code>kwargs</code></a></li>
+<li><a href="#map"><code>map</code></a></li>
+<li><a href="#list-comprehensions">List Comprehensions</a></li>
+<li><a href="#filter"><code>filter</code></a></li>
+<li><a href="#dictionary-comprehensions">Dictionary Comprehensions</a></li>
+<li><a href="#enumerate"><code>enumerate</code></a></li>
+<li><a href="#generators-and-iterators">Generators and Iterators</a></li>
+<li><a href="#congratulations">Congratulations!</a></li>
+<li><a href="#this-was-programming-concepts">This was Programming Concepts!</a></li>
+</ul>
+<section id="et-cetera" class="level2">
+<h2 class="anchored" data-anchor-id="et-cetera">Et Cetera</h2>
+<ul>
+<li>Over the many past lessons, we have covered so much related to Python!</li>
+<li>In this lesson, we will be focusing upon many of the “et cetera” items not previously discussed. “Et cetera” literally means “and the rest”!</li>
+<li>Indeed, if you look at the Python documentation, you will find quite “the rest” of other features.</li>
+</ul>
+</section>
+<section id="set" class="level2">
+<h2 class="anchored" data-anchor-id="set"><code>set</code></h2>
+<ul>
+<li><p>In math, a set would be considered a set of numbers without any duplicates.</p></li>
+<li><p>In the text editor window, code as follows:</p>
+<pre><code>students = [
+    {"name": "Hermione", "house": "Gryffindor"},
+    {"name": "Harry", "house": "Gryffindor"},
+    {"name": "Ron", "house": "Gryffindor"},
+    {"name": "Draco", "house": "Slytherin"},
+    {"name": "Padma", "house": "Ravenclaw"},
+]
+
+houses = []
+for student in students:
+    if student["house"] not in houses:
+        houses.append(student["house"])
+
+for house in sorted(houses):
+    print(house)</code></pre>
+<p>Notice how we have a list of dictionaries, each being a student. An empty list called <code>houses</code> is created. We iterate through each <code>student</code> in <code>students</code>. If a student’s <code>house</code> is not in <code>houses</code>, we append to our list of <code>houses</code>.</p></li>
+<li><p>It turns out we can use the built-in <code>set</code> features to eliminate duplicates.</p></li>
+<li><p>In the text editor window, code as follows:</p>
+<pre><code>students = [
+    {"name": "Hermione", "house": "Gryffindor"},
+    {"name": "Harry", "house": "Gryffindor"},
+    {"name": "Ron", "house": "Gryffindor"},
+    {"name": "Draco", "house": "Slytherin"},
+    {"name": "Padma", "house": "Ravenclaw"},
+]
+
+houses = set()
+for student in students:
+    houses.add(student["house"])
+
+for house in sorted(houses):
+    print(house)</code></pre>
+<p>Notice how no checking needs to be included to ensure there are no duplicates. The <code>set</code> object takes care of this for us automatically.</p></li>
+<li><p>You can learn more in Python’s documentation of <a href="https://docs.python.org/3/library/stdtypes.html#set"><code>set</code></a>.</p></li>
+</ul>
+</section>
+<section id="global-variables" class="level2">
+<h2 class="anchored" data-anchor-id="global-variables">Global Variables</h2>
+<ul>
+<li><p>In other programming languages, there is the notion of global variables that are accessible to any function.</p></li>
+<li><p>We can leverage this ability within Python. In the text editor window, code as follows:</p>
+<pre><code>balance = 0
+
+
+def main():
+    print("Balance:", balance)
+
+
+if __name__ == "__main__":
+    main()</code></pre>
+<p>Notice how we create a global variable called <code>balance</code>, outside of any function.</p></li>
+<li><p>Since no errors are presented by executing the code above, you’d think all is well. However, it is not! In the text editor window, code as follows:</p>
+<pre><code>balance = 0
+
+
+def main():
+    print("Balance:", balance)
+    deposit(100)
+    withdraw(50)
+    print("Balance:", balance)
+
+
+def deposit(n):
+    balance += n
+
+
+def withdraw(n):
+    balance -= n
+
+
+if __name__ == "__main__":
+    main()</code></pre>
+<p>Notice how we now add the functionality to add and withdraw funds to and from <code>balance</code>. However, executing this code, we are presented with an error! We see an error called <code>UnboundLocalError</code>. You might be able to guess that, at least in the way we’ve currently coded <code>balance</code> and our <code>deposit</code> and <code>withdraw</code> functions, we can’t reassign it a new value inside a function.</p></li>
+<li><p>To interact with a global variable inside a function, the solution is to use the <code>global</code> keyword. In the text editor window, code as follows:</p>
+<pre><code>balance = 0
+
+
+def main():
+    print("Balance:", balance)
+    deposit(100)
+    withdraw(50)
+    print("Balance:", balance)
+
+
+def deposit(n):
+    global balance
+    balance += n
+
+
+def withdraw(n):
+    global balance
+    balance -= n
+
+
+if __name__ == "__main__":
+    main()</code></pre>
+<p>Notice how the <code>global</code> keyword tells each function that <code>balance</code> does not refer to a local variable: instead, it refers to the global variable we originally placed at the top of our code. Now, our code functions!</p></li>
+<li><p>Utilizing our powers from our experience with object-oriented programming, we can modify our code to use a class instead of a global variable. In the text editor window, code as follows:</p>
+<pre><code>class Account:
+    def __init__(self):
+        self._balance = 0
+
+    @property
+    def balance(self):
+        return self._balance
+
+    def deposit(self, n):
+        self._balance += n
+
+    def withdraw(self, n):
+        self._balance -= n
+
+
+def main():
+    account = Account()
+    print("Balance:", account.balance)
+    account.deposit(100)
+    account.withdraw(50)
+    print("Balance:", account.balance)
+
+
+if __name__ == "__main__":
+    main()</code></pre>
+<p>Notice how we use <code>account = Account()</code> to create an account. Classes allow us to solve this issue of needing a global variable more cleanly because these instance variables are accessible to all the methods of this class utilizing <code>self</code>.</p></li>
+<li><p>Generally speaking, global variables should be used quite sparingly, if at all!</p></li>
+</ul>
+</section>
+<section id="constants" class="level2">
+<h2 class="anchored" data-anchor-id="constants">Constants</h2>
+<ul>
+<li><p>Some languages allow you to create variables that are unchangeable, called “constants”. Constants allow one to program defensively and reduce the opportunities for important values to be altered.</p></li>
+<li><p>In the text editor window, code as follows:</p>
+<pre><code>MEOWS = 3
+
+for _ in range(MEOWS):
+    print("meow")</code></pre>
+<p>Notice <code>MEOWS</code> is our constant in this case. Constants are typically denoted by capital variable names and are placed at the top of our code. Though this <em>looks</em> like a constant, in reality, Python actually has no mechanism to prevent us from changing that value within our code! Instead, you’re on the honor system: if a variable name is written in all caps, just don’t change it!</p></li>
+<li><p>One can create a class “constant”, now in quotes because we know Python doesn’t quite support “constants”. In the text editor window, code as follows:</p>
+<pre><code>class Cat:
+    MEOWS = 3
+
+    def meow(self):
+        for _ in range(Cat.MEOWS):
+            print("meow")
+
+
+cat = Cat()
+cat.meow()</code></pre>
+<p>Because <code>MEOWS</code> is defined outside of any particular class method, all of them have access to that value via <code>Cat.MEOWS</code>.</p></li>
+</ul>
+</section>
+<section id="type-hints" class="level2">
+<h2 class="anchored" data-anchor-id="type-hints">Type Hints</h2>
+<ul>
+<li>In other programming languages, one expresses explicitly what variable type you want to use.</li>
+<li>As we saw earlier in the course, Python does not require the explicit declaration of types.</li>
+<li>Nevertheless, it’s good practice need to ensure all of your variables are of the right type.</li>
+<li><code>mypy</code> is a program that can help you test to make sure all your variables are of the right type.</li>
+<li>You can install <code>mypy</code> by executing in your terminal window: <code>pip install mypy</code>.</li>
+</ul>
+<p>In the text editor window, code as follows:</p>
+<pre><code>  def meow(n):
+      for _ in range(n):
+          print("meow")
+
+
+  number = input("Number: ")
+  meow(number)</code></pre>
+<p>You may already see that <code>number = input("Number: )"</code> returns a <code>string</code>, not an <code>int</code>. But <code>meow</code> will likely want an <code>int</code>!</p>
+<ul>
+<li><p>A type hint can be added to give Python a hint of what type of variable <code>meow</code> should expect. In the text editor window, code as follows:</p>
+<pre><code>def meow(n: int):
+    for _ in range(n):
+        print("meow")
+
+
+number = input("Number: ")
+meow(number)</code></pre>
+<p>Notice, though, that our program still throws an error.</p></li>
+<li><p>After installing <code>mypy</code>, execute <code>mypy meows.py</code> in the terminal window. <code>mypy</code> will provide some guidance about how to fix this error.</p></li>
+<li><p>You can annotate all your variables. In the text editor window, code as follows:</p>
+<pre><code>def meow(n: int):
+    for _ in range(n):
+        print("meow")
+
+
+number: int = input("Number: ")
+meow(number)</code></pre>
+<p>Notice how <code>number</code> is now provided a type hint.</p></li>
+<li><p>Again, executing <code>mypy meows.py</code> in the terminal window provides much more specific feedback to you, the programmer.</p></li>
+<li><p>We can fix our final error by coding as follows:</p>
+<pre><code>def meow(n: int):
+    for _ in range(n):
+        print("meow")
+
+
+number: int = int(input("Number: "))
+meow(number)</code></pre>
+<p>Notice how running <code>mypy</code> now produces no errors because we cast our input to an integer.</p></li>
+<li><p>Let’s introduce a new error by assuming that <code>meow</code> will return to us a string, or <code>str</code>. In the text editor window, code as follows:</p>
+<pre><code>def meow(n: int):
+    for _ in range(n):
+        print("meow")
+
+
+number: int = int(input("Number: "))
+meows: str = meow(number)
+print(meows)</code></pre>
+<p>Notice how the <code>meow</code> function has only a side effect. Because we only attempt to print “meow”, not return a value, an error is thrown when we try to store the return value of <code>meow</code> in <code>meows</code>.</p></li>
+<li><p>We can further use type hints to check for errors, this time annotating the return values of functions. In the text editor window, code as follows:</p>
+<pre><code>def meow(n: int) -&gt; None:
+    for _ in range(n):
+        print("meow")
+
+
+number: int = int(input("Number: "))
+meows: str = meow(number)
+print(meows)</code></pre>
+<p>Notice how the notation <code>-&gt; None</code> tells <code>mypy</code> that there is no return value.</p></li>
+<li><p>We can modify our code to return a string if we wish:</p>
+<pre><code>def meow(n: int) -&gt; str:
+    return "meow\n" * n
+
+
+number: int = int(input("Number: "))
+meows: str = meow(number)
+print(meows, end="")</code></pre>
+<p>Notice how we store in <code>meows</code> multiple <code>str</code>s. Running <code>mypy</code> produces no errors.</p></li>
+<li><p>You can learn more in Python’s documentation of <a href="https://docs.python.org/3/library/typing.html">Type Hints</a>.</p></li>
+<li><p>You can learn more about <a href="https://mypy.readthedocs.io/"><code>mypy</code></a> through the program’s own documentation.</p></li>
+</ul>
+</section>
+<section id="docstrings" class="level2">
+<h2 class="anchored" data-anchor-id="docstrings">Docstrings</h2>
+<ul>
+<li><p>A standard way of commenting your function’s purpose is to use a docstring. In the text editor window, code as follows:</p>
+<pre><code>def meow(n):
+    """Meow n times."""
+    return "meow\n" * n
+
+
+number = int(input("Number: "))
+meows = meow(number)
+print(meows, end="")</code></pre>
+<p>Notice how the three double quotes designate what the function does.</p></li>
+<li><p>You can use docstrings to standardize how you document the features of a function. In the text editor window, code as follows:</p>
+<pre><code>def meow(n):
+    """
+    Meow n times.
+
+    :param n: Number of times to meow
+    :type n: int
+    :raise TypeError: If n is not an int
+    :return: A string of n meows, one per line
+    :rtype: str
+    """
+    return "meow\n" * n
+
+
+number = int(input("Number: "))
+meows = meow(number)
+print(meows, end="")</code></pre>
+<p>Notice how multiple docstring arguments are included. For example, it describes the parameters taken by the function and what is returned by the function.</p></li>
+<li><p>Established tools, such as <a href="https://www.sphinx-doc.org/en/master/index.html">Sphinx</a>, can be used to parse docstrings and automatically create documentation for us in the form of web pages and PDF files such that you can publish and share with others.</p></li>
+<li><p>You can learn more in Python’s documentation of <a href="https://peps.python.org/pep-0257/">docstrings</a>.</p></li>
+</ul>
+</section>
+<section id="argparse" class="level2">
+<h2 class="anchored" data-anchor-id="argparse"><code>argparse</code></h2>
+<ul>
+<li><p>Suppose we want to use command-line arguments in our program. In the text editor window, code as follows:</p>
+<pre><code>import sys
+
+if len(sys.argv) == 1:
+    print("meow")
+elif len(sys.argv) == 3 and sys.argv[1] == "-n":
+    n = int(sys.argv[2])
+    for _ in range(n):
+        print("meow")
+else:
+    print("usage: meows.py [-n NUMBER]")</code></pre>
+<p>Notice how <code>sys</code> is imported, from which we get access to <code>sys.argv</code>, an array of command-line arguments given to our program when run. We can use several <code>if</code> statements to check whether the user has run our program properly.</p></li>
+<li><p>Let’s assume that this program will be getting much more complicated. How could we check all the arguments that could be inserted by the user? We might give up if we have more than a few command-line arguments!</p></li>
+<li><p>Luckily, <code>argparse</code> is a library that handles all the parsing of complicated strings of command-line arguments. In the text editor window, code as follows:</p>
+<pre><code>import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("-n")
+args = parser.parse_args()
+
+for _ in range(int(args.n)):
+    print("meow")</code></pre>
+<p>Notice how <code>argparse</code> is imported instead of <code>sys</code>. An object called <code>parser</code> is created from an <code>ArgumentParser</code> class. That class’s <code>add_argument</code> method is used to tell <code>argparse</code> what arguments we should expect from the user when they run our program. Finally, running the parser’s <code>parse_args</code> method ensures that all of the arguments have been included properly by the user.</p></li>
+<li><p>We can also program more cleanly, such that our user can get some information about the proper usage of our code when they fail to use the program correctly. In the text editor window, code as follows:</p>
+<pre><code>import argparse
+
+parser = argparse.ArgumentParser(description="Meow like a cat")
+parser.add_argument("-n", help="number of times to meow")
+args = parser.parse_args()
+
+for _ in range(int(args.n)):
+    print("meow")</code></pre>
+<p>Notice how the user is provided some documentation. Specifically, a <code>help</code> argument is provided. Now, if the user executes <code>python meows.py --help</code> or <code>-h</code>, the user will be presented with some clues about how to use this program.</p></li>
+<li><p>We can further improve this program. In the text editor window, code as follows:</p>
+<pre><code>import argparse
+
+parser = argparse.ArgumentParser(description="Meow like a cat")
+parser.add_argument("-n", default=1, help="number of times to meow", type=int)
+args = parser.parse_args()
+
+for _ in range(args.n):
+    print("meow")</code></pre>
+<p>Notice how not only is help documentation included, but you can provide a <code>default</code> value when no arguments are provided by the user.</p></li>
+<li><p>You can learn more in Python’s documentation of <a href="https://docs.python.org/3/library/argparse.html"><code>argparse</code></a>.</p></li>
+</ul>
+</section>
+<section id="unpacking" class="level2">
+<h2 class="anchored" data-anchor-id="unpacking">Unpacking</h2>
+<ul>
+<li><p>Would it not be nice to be able to split a single variable into two variables? In the text editor window, code as follows:</p>
+<pre><code>first, _ = input("What's your name? ").split(" ")
+print(f"hello, {first}")</code></pre>
+<p>Notice how this program tries to get a user’s first name by naively splitting on a single space.</p></li>
+<li><p>It turns out there are other ways to unpack variables. You can write more powerful and elegant code by understanding how to unpack variables in seemingly more advanced ways. In the text editor window, code as follows:</p>
+<pre><code>def total(galleons, sickles, knuts):
+    return (galleons * 17 + sickles) * 29 + knuts
+
+
+print(total(100, 50, 25), "Knuts")</code></pre>
+<p>Notice how this returns the total value of Knuts.</p></li>
+<li><p>What if we wanted to store our coins in a list? In the text editor window, code as follows:</p>
+<pre><code>def total(galleons, sickles, knuts):
+    return (galleons * 17 + sickles) * 29 + knuts
+
+
+coins = [100, 50, 25]
+
+print(total(coins[0], coins[1], coins[2]), "Knuts")</code></pre>
+<p>Notice how a list called <code>coins</code> is created. We can pass each value in by indexing using <code>0</code>, <code>1</code>, and so on.</p></li>
+<li><p>This is getting quite verbose. Wouldn’t it be nice if we could simply pass the list of coins to our function?</p></li>
+<li><p>To enable the possibility of passing the entire list, we can use unpacking. In the text editor window, code as follows:</p>
+<pre><code>def total(galleons, sickles, knuts):
+    return (galleons * 17 + sickles) * 29 + knuts
+
+
+coins = [100, 50, 25]
+
+print(total(*coins), "Knuts")</code></pre>
+<p>Notice how a <code>*</code> unpacks the sequence of the list of coins and passes in each of its individual elements to <code>total</code>.</p></li>
+<li><p>Suppose that we could pass in the names of the currency in any order? In the text editor window, code as follows:</p>
+<pre><code>def total(galleons, sickles, knuts):
+    return (galleons * 17 + sickles) * 29 + knuts
+
+
+print(total(galleons=100, sickles=50, knuts=25), "Knuts")</code></pre>
+<p>Notice how this still calculates correctly.</p></li>
+<li><p>When you start talking about “names” and “values,” dictionaries might start coming to mind! You can implement this as a dictionary. In the text editor window, code as follows:</p>
+<pre><code>def total(galleons, sickles, knuts):
+    return (galleons * 17 + sickles) * 29 + knuts
+
+
+coins = {"galleons": 100, "sickles": 50, "knuts": 25}
+
+print(total(coins["galleons"], coins["sickles"], coins["knuts"]), "Knuts")</code></pre>
+<p>Notice how a dictionary called <code>coins</code> is provided. We can index into it using keys, such as “galleons” or “sickles”.</p></li>
+<li><p>Since the <code>total</code> function expects three arguments, we cannot pass in a dictionary. We can use unpacking to help with this. In the text editor window, code as follows:</p>
+<pre><code>def total(galleons, sickles, knuts):
+    return (galleons * 17 + sickles) * 29 + knuts
+
+
+coins = {"galleons": 100, "sickles": 50, "knuts": 25}
+
+print(total(**coins), "Knuts")</code></pre>
+<p>Notice how <code>**</code> allows you to unpack a dictionary. When unpacking a dictionary, it provides both the keys and values.</p></li>
+</ul>
+</section>
+<section id="args-and-kwargs" class="level2">
+<h2 class="anchored" data-anchor-id="args-and-kwargs"><code>args</code> and <code>kwargs</code></h2>
+<ul>
+<li><p>Recall the <code>print</code> documentation we looked at earlier in this course:</p>
+<pre><code>print(*objects, sep=' ', end='\n', file=sys.stdout, flush=False)</code></pre></li>
+<li><p><code>args</code> are positional arguments, such as those we provide to print like <code>print("Hello", "World")</code>.</p></li>
+<li><p><code>kwargs</code> are named arguments, or “keyword arguments”, such as those we provide to print like <code>print(end="")</code>.</p></li>
+<li><p>As we see in the prototype for the <code>print</code> function above, we can tell our function to expect a presently unknown number positional arguments. We can also tell it to expect a presently unknown number of keyword arguments. In the text editor window, code as follows:</p>
+<pre><code>def f(*args, **kwargs):
+    print("Positional:", args)
+
+
+f(100, 50, 25)</code></pre>
+<p>Notice how executing this code will be printed as positional arguments.</p></li>
+<li><p>We can even pass in named arguments. In the text editor window, code as follows:</p>
+<pre><code>def f(*args, **kwargs):
+    print("Named:", kwargs)
+
+
+f(galleons=100, sickles=50, knuts=25)</code></pre>
+<p>Notice how the named values are provided in the form of a dictionary.</p></li>
+<li><p>Thinking about the <code>print</code> function above, you can see how <code>*objects</code> takes any number of positional arguments.</p></li>
+<li><p>You can learn more in Python’s documentation of <a href="https://docs.python.org/3/library/functions.html#print"><code>print</code></a>.</p></li>
+</ul>
+</section>
+<section id="map" class="level2">
+<h2 class="anchored" data-anchor-id="map"><code>map</code></h2>
+<ul>
+<li><p>Early on, we began with procedural programming.</p></li>
+<li><p>We later revealed Python is an object oriented programming language.</p></li>
+<li><p>We saw hints of functional programming, where functions have side effects without a return value. We can illustrate this in the text editor window, type <code>code yell.py</code> and code as follows:</p>
+<pre><code>def main():
+    yell("This is Programming Concepts")
+
+
+def yell(word):
+    print(word.upper())
+
+
+if __name__ == "__main__":
+    main()</code></pre>
+<p>Notice how the <code>yell</code> function is simply yelled.</p></li>
+<li><p>Wouldn’t it be nice to yell a list of unlimited words? Modify your code as follows:</p>
+<pre><code>def main():
+    yell(["This", "is", "Programming Concepts"])
+
+
+def yell(words):
+    uppercased = []
+    for word in words:
+        uppercased.append(word.upper())
+    print(*uppercased)
+
+
+if __name__ == "__main__":
+    main()</code></pre>
+<p>Notice we accumulate the uppercase words, iterating over each of the words and “uppercasing” them. The uppercase list is printed utilizing the <code>*</code> to unpack it.</p></li>
+<li><p>Removing the brackets, we can pass the words in as arguments. In the text editor window, code as follows:</p>
+<pre><code>def main():
+    yell("This", "is", "CS50")
+
+
+def yell(*words):
+    uppercased = []
+    for word in words:
+        uppercased.append(word.upper())
+    print(*uppercased)
+
+
+if __name__ == "__main__":
+    main()</code></pre>
+<p>Notice how <code>*words</code> allows for many arguments to be taken by the function.</p></li>
+<li><p><code>map</code> allows you to map a function to a sequence of values. In practice, we can code as follows:</p>
+<pre><code>def main():
+    yell("This", "is", "Programming Concepts")
+
+
+def yell(*words):
+    uppercased = map(str.upper, words)
+    print(*uppercased)
+
+
+if __name__ == "__main__":
+    main()</code></pre>
+<p>Notice how <code>map</code> takes two arguments. First, it takes a function we want applied to every element of a list. Second, it takes that list itself, to which we’ll apply the aforementioned function. Hence, all words in <code>words</code> will be handed to the <code>str.upper</code> function and returned to <code>uppercased</code>.</p></li>
+<li><p>You can learn more in Python’s documentation of <a href="https://docs.python.org/3/library/functions.html#map"><code>map</code></a>.</p></li>
+</ul>
+</section>
+<section id="list-comprehensions" class="level2">
+<h2 class="anchored" data-anchor-id="list-comprehensions">List Comprehensions</h2>
+<ul>
+<li><p>List comprehensions allow you to create a list on the fly in one elegant one-liner.</p></li>
+<li><p>We can implement this in our code as follows:</p>
+<pre><code>def main():
+    yell("This", "is", "Programming Concepts")
+
+
+def yell(*words):
+    uppercased = [arg.upper() for arg in words]
+    print(*uppercased)
+
+
+if __name__ == "__main__":
+    main()</code></pre>
+<p>Notice how instead of using <code>map</code>, we write a Python expression within square brackets. For each argument, <code>.upper</code> is applied to it.</p></li>
+<li><p>Taking this concept further, let’s pivot toward another program.</p></li>
+<li><p>In the text editor window, type <code>code gryffindors.py</code> and code as follows:</p>
+<pre><code>students = [
+    {"name": "Hermione", "house": "Gryffindor"},
+    {"name": "Harry", "house": "Gryffindor"},
+    {"name": "Ron", "house": "Gryffindor"},
+    {"name": "Draco", "house": "Slytherin"},
+]
+
+gryffindors = []
+for student in students:
+    if student["house"] == "Gryffindor":
+        gryffindors.append(student["name"])
+
+for gryffindor in sorted(gryffindors):
+    print(gryffindor)</code></pre>
+<p>Notice we have a conditional while we’re creating our list. <em>If</em> the student’s house is Gryffindor, we append the student to the list of names. Finally, we print all the names.</p></li>
+<li><p>More elegantly, we can simplify this code with a list comprehension as follows:</p>
+<pre><code>students = [
+    {"name": "Hermione", "house": "Gryffindor"},
+    {"name": "Harry", "house": "Gryffindor"},
+    {"name": "Ron", "house": "Gryffindor"},
+    {"name": "Draco", "house": "Slytherin"},
+]
+
+gryffindors = [
+    student["name"] for student in students if student["house"] == "Gryffindor"
+]
+
+for gryffindor in sorted(gryffindors):
+    print(gryffindor)</code></pre>
+<p>Notice how the list comprehension is on a single line!</p></li>
+</ul>
+</section>
+<section id="filter" class="level2">
+<h2 class="anchored" data-anchor-id="filter"><code>filter</code></h2>
+<ul>
+<li><p>Using Python’s <code>filter</code> function allows us to return a subset of a sequence for which a certain condition is true.</p></li>
+<li><p>In the text editor window, code as follows:</p>
+<pre><code>students = [
+    {"name": "Hermione", "house": "Gryffindor"},
+    {"name": "Harry", "house": "Gryffindor"},
+    {"name": "Ron", "house": "Gryffindor"},
+    {"name": "Draco", "house": "Slytherin"},
+]
+
+
+def is_gryffindor(s):
+    return s["house"] == "Gryffindor"
+
+
+gryffindors = filter(is_gryffindor, students)
+
+for gryffindor in sorted(gryffindors, key=lambda s: s["name"]):
+    print(gryffindor["name"])</code></pre>
+<p>Notice how a function called <code>is_gryffindor</code> is created. This is our filtering function that will take a student <code>s</code>, and return <code>True</code> or <code>False</code> depending on whether the student’s house is Gryffindor. You can see the new <code>filter</code> function takes two arguments. First, it takes the function that will be applied to each element in a sequence—in this case, <code>is_gryffindor</code>. Second, it takes the sequence to which it will apply the filtering function—in this case, <code>students</code>. In <code>gryffindors</code>, we should see only those students who are in Gryffindor.</p></li>
+<li><p><code>filter</code> can also use lambda functions as follows:</p>
+<pre><code>students = [
+    {"name": "Hermione", "house": "Gryffindor"},
+    {"name": "Harry", "house": "Gryffindor"},
+    {"name": "Ron", "house": "Gryffindor"},
+    {"name": "Draco", "house": "Slytherin"},
+]
+
+
+gryffindors = filter(lambda s: s["house"] == "Gryffindor", students)
+
+for gryffindor in sorted(gryffindors, key=lambda s: s["name"]):
+    print(gryffindor["name"])</code></pre>
+<p>Notice how the same list of students is provided.</p></li>
+<li><p>You can learn more in Python’s documentation of <a href="https://docs.python.org/3/library/functions.html#filter"><code>filter</code></a>.</p></li>
+</ul>
+</section>
+<section id="dictionary-comprehensions" class="level2">
+<h2 class="anchored" data-anchor-id="dictionary-comprehensions">Dictionary Comprehensions</h2>
+<ul>
+<li><p>We can apply the same idea behind list comprehensions to dictionaries. In the text editor window, code as follows:</p>
+<pre><code>students = ["Hermione", "Harry", "Ron"]
+
+gryffindors = []
+
+for student in students:
+    gryffindors.append({"name": student, "house": "Gryffindor"})
+
+print(gryffindors)</code></pre>
+<p>Notice how this code doesn’t (yet!) use any comprehensions. Instead, it follows the same paradigms we have seen before.</p></li>
+<li><p>We can now apply dictionary comprehensions by modifying our code as follows:</p>
+<pre><code>students = ["Hermione", "Harry", "Ron"]
+
+gryffindors = [{"name": student, "house": "Gryffindor"} for student in students]
+
+print(gryffindors)</code></pre>
+<p>Notice how all the prior code is simplified into a single line where the structure of the dictionary is provided for each <code>student</code> in <code>students</code>.</p></li>
+<li><p>We can even simplify further as follows:</p>
+<pre><code>students = ["Hermione", "Harry", "Ron"]
+
+gryffindors = {student: "Gryffindor" for student in students}
+
+print(gryffindors)</code></pre>
+<p>Notice how the dictionary will be constructed with key-value pairs.</p></li>
+</ul>
+</section>
+<section id="enumerate" class="level2">
+<h2 class="anchored" data-anchor-id="enumerate"><code>enumerate</code></h2>
+<ul>
+<li><p>We may wish to provide some ranking of each student. In the text editor window, code as follows:</p>
+<pre><code>students = ["Hermione", "Harry", "Ron"]
+
+for i in range(len(students)):
+    print(i + 1, students[i])</code></pre>
+<p>Notice how each student is enumerated when running this code.</p></li>
+<li><p>Utilizing enumeration, we can do the same:</p>
+<pre><code>students = ["Hermione", "Harry", "Ron"]
+
+for i, student in enumerate(students):
+    print(i + 1, student)</code></pre>
+<p>Notice how enumerate presents the index and the value of each <code>student</code>.</p></li>
+<li><p>You can learn more in Python’s documentation of <a href="https://docs.python.org/3/library/functions.html#enumerate"><code>enumerate</code></a>.</p></li>
+</ul>
+</section>
+<section id="generators-and-iterators" class="level2">
+<h2 class="anchored" data-anchor-id="generators-and-iterators">Generators and Iterators</h2>
+<ul>
+<li><p>In Python, there is a way to protect against your system running out of resources the problems they are addressing become too large.</p></li>
+<li><p>In the United States, it’s customary to “count sheep” in one’s mind when one is having a hard time falling asleep.</p></li>
+<li><p>In the text editor window, type <code>code sleep.py</code> and code as follows:</p>
+<pre><code>n = int(input("What's n? "))
+for i in range(n):
+    print("🐑" * i)</code></pre>
+<p>Notice how this program will count the number of sheep you ask of it.</p></li>
+<li><p>We can make our program more sophisticated by adding a <code>main</code> function by coding as follows:</p>
+<pre><code>def main():
+    n = int(input("What's n? "))
+    for i in range(n):
+        print("🐑" * i)
+
+
+if __name__ == "__main__":
+    main()</code></pre>
+<p>Notice how a <code>main</code> function is provided.</p></li>
+<li><p>We have been getting into the habit of abstracting away parts of our code.</p></li>
+<li><p>We can call a sheep function by modifying our code as follows:</p>
+<pre><code>def main():
+    n = int(input("What's n? "))
+    for i in range(n):
+        print(sheep(i))
+
+
+def sheep(n):
+    return "🐑" * n
+
+
+if __name__ == "__main__":
+    main()</code></pre>
+<p>Notice how the <code>main</code> function does the iteration.</p></li>
+<li><p>We can provide the <code>sheep</code> function more abilities. In the text editor window, code as follows:</p>
+<pre><code>def main():
+    n = int(input("What's n? "))
+    for s in sheep(n):
+        print(s)
+
+
+def sheep(n):
+    flock = []
+    for i in range(n):
+        flock.append("🐑" * i)
+    return flock
+
+
+if __name__ == "__main__":
+    main()</code></pre>
+<p>Notice how we create a flock of sheep and return the <code>flock</code>.</p></li>
+<li><p>Executing our code, you might try different numbers of sheep such as <code>10</code>, <code>1000</code>, and <code>10000</code>. What if you asked for <code>1000000</code> sheep, your program might completely hang or crash. Because you have attempted to generate a massive list of sheep, your computer may be struggling to complete the computation.</p></li>
+<li><p>The <code>yield</code> generator can solve this problem by returning a small bit of the results at a time. In the text editor window, code as follows:</p>
+<pre><code>def main():
+    n = int(input("What's n? "))
+    for s in sheep(n):
+        print(s)
+
+
+def sheep(n):
+    for i in range(n):
+        yield "🐑" * i
+
+
+if __name__ == "__main__":
+    main()</code></pre>
+<p>Notice how <code>yield</code> provides only one value at a time while the <code>for</code> loop keeps working.</p></li>
+<li><p>You can learn more in Python’s documentation of <a href="https://docs.python.org/3/howto/functional.html#generators">generators</a>.</p></li>
+<li><p>You can learn more in Python’s documentation of <a href="https://docs.python.org/3/howto/functional.html#iterators">iterators</a>.</p></li>
+</ul>
+</section>
+<section id="congratulations" class="level2">
+<h2 class="anchored" data-anchor-id="congratulations">Congratulations!</h2>
+<ul>
+<li>As you exit from this course, you have more of a mental model and toolbox to address programming-related problems.</li>
+<li>First, you learned about functions and variables.</li>
+<li>Second, you learned about conditionals.</li>
+<li>Third, you learned about loops.</li>
+<li>Fourth, you learned about exceptions.</li>
+<li>Fifth, you learned about libraries.</li>
+<li>Sixth, you learned about unit tests.</li>
+<li>Seventh, you learned about file I/O.</li>
+<li>Eighth, you learned about regular expressions.</li>
+<li>Most recently, you learned about object-oriented programming.</li>
+<li>Today, you learned about many other tools you can use.</li>
+</ul>
+</section>
+<section id="this-was-programming-concepts" class="level2">
+<h2 class="anchored" data-anchor-id="this-was-programming-concepts">This was Programming Concepts!</h2>
+<ul>
+<li><p>Creating a final program together, type <code>code say.py</code> in your terminal window and code as follows:</p>
+<pre><code>import cowsay
+import pyttsx3
+
+engine = pyttsx3.init()
+this = input("What's this? ")
+cowsay.cow(this)
+engine.say(this)
+engine.runAndWait()</code></pre>
+<p>Notice how running this program provides you with a spirited send-off.</p></li>
+<li><p>Our great hope is that you will use what you learned in this course to address real problems in the world, making our globe a better place.</p></li>
+<li><p>This was Programming Concepts!</p></li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/SQ4011-2025\.github\.io\/website\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../notes/notes_8.html" class="pagination-link" aria-label="Notes 08 🐍">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Notes 08 🐍</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../problems/pset_0/pset_0.html" class="pagination-link" aria-label="Problem Set 00 🐍">
+        <span class="nav-page-text">Problem Set 00 🐍</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2026 🐊 <a href="https://weharris.me">W. Edwin Harris</a></p>
+</div>   
+    <div class="nav-footer-center">
+<p>📊 <a href="https://thestatisticslab.com">The Statistics Lab</a></p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/SQ4011-2025/website/edit/master/notes/notes_9.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/SQ4011-2025/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>🚀 Built with <a href="https://quarto.org/">Quarto</a>.</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

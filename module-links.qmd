@@ -1,0 +1,9 @@
+---
+title: "Useful links"
+---
+
+🔗 [Reference manual for Python](https://docs.python.org/3/) - Probably very useful...
+
+🔗 [🎤 HADC! & Code Club meetings](module-extras.html)
+
+🔗 [🏢 Harper Adams VLE site for this module (HAU enrolled students only)](https://vle.harper-adams.ac.uk/course/view.php?id=286)

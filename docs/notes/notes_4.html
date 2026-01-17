@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -74,10 +109,16 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <meta property="og:title" content="Real World AI">
+<meta property="og:image" content="https://SQ4014-2025.github.io/website/notes/images/week_04/fig_01.png">
 <meta property="og:site_name" content="Real World AI">
+<meta property="og:image:height" content="93">
+<meta property="og:image:width" content="93">
 <meta name="twitter:title" content="Real World AI">
 <meta name="twitter:image" content="https://SQ4014-2025.github.io/website/notes/images/twitter-card.png">
 <meta name="twitter:creator" content="@EdHarris9000">
@@ -255,7 +296,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/notes_0.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/notes_4.html">Notes 04 🐍</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/notes_1.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/notes_4.html">Notes 04 🤖</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -335,61 +376,61 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_0.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 00 🐍</span></a>
+ <span class="menu-text">Lecture 00 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_1.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 01 🐍</span></a>
+ <span class="menu-text">Lecture 01 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_2.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 02 🐍</span></a>
+ <span class="menu-text">Lecture 02 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_3.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 03 🐍</span></a>
+ <span class="menu-text">Lecture 03 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_4.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 04 🐍</span></a>
+ <span class="menu-text">Lecture 04 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_5.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 05 🐍</span></a>
+ <span class="menu-text">Lecture 05 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_6.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 06 🐍</span></a>
+ <span class="menu-text">Lecture 06 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_7.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 07 🐍</span></a>
+ <span class="menu-text">Lecture 07 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_8.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 08 🐍</span></a>
+ <span class="menu-text">Lecture 08 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_9.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 09 🐍</span></a>
+ <span class="menu-text">Lecture 09 🤖</span></a>
   </div>
 </li>
       </ul>
@@ -405,62 +446,62 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notes/notes_0.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 00 🐍</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../notes/notes_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 01 🐍</span></a>
+ <span class="menu-text">Notes 01 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 02 🐍</span></a>
+ <span class="menu-text">Notes 02 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 03 🐍</span></a>
+ <span class="menu-text">Notes 03 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_4.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Notes 04 🐍</span></a>
+ <span class="menu-text">Notes 04 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 05 🐍</span></a>
+ <span class="menu-text">Notes 05 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 06 🐍</span></a>
+ <span class="menu-text">Notes 06 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 07 🐍</span></a>
+ <span class="menu-text">Notes 07 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 08 🐍</span></a>
+ <span class="menu-text">Notes 08 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 09 🐍</span></a>
+ <span class="menu-text">Notes 09 🤖</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/notes_10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes 10 🤖</span></a>
   </div>
 </li>
       </ul>
@@ -477,61 +518,61 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src0" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 00 🐍</span></a>
+ <span class="menu-text">Code 00 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src1" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 01 🐍</span></a>
+ <span class="menu-text">Code 01 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src2" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 02 🐍</span></a>
+ <span class="menu-text">Code 02 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src3" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 03 🐍</span></a>
+ <span class="menu-text">Code 03 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src4" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 04 🐍</span></a>
+ <span class="menu-text">Code 04 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src5" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 05 🐍</span></a>
+ <span class="menu-text">Code 05 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src6" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 06 🐍</span></a>
+ <span class="menu-text">Code 06 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src7" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 07 🐍</span></a>
+ <span class="menu-text">Code 07 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src8" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 08 🐍</span></a>
+ <span class="menu-text">Code 08 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src9" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 09 🐍</span></a>
+ <span class="menu-text">Code 09 🤖</span></a>
   </div>
 </li>
       </ul>
@@ -548,55 +589,55 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_0/pset_0.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 00 🐍</span></a>
+ <span class="menu-text">Problem Set 00 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_1/pset_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 01 🐍</span></a>
+ <span class="menu-text">Problem Set 01 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_2/pset_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 02 🐍</span></a>
+ <span class="menu-text">Problem Set 02 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_3/pset_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 03 🐍</span></a>
+ <span class="menu-text">Problem Set 03 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_4/pset_4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 04 🐍</span></a>
+ <span class="menu-text">Problem Set 04 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_5/pset_5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 05 🐍</span></a>
+ <span class="menu-text">Problem Set 05 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_6/pset_6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 06 🐍</span></a>
+ <span class="menu-text">Problem Set 06 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_7/pset_7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 07 🐍</span></a>
+ <span class="menu-text">Problem Set 07 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_8/pset_8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 08 🐍</span></a>
+ <span class="menu-text">Problem Set 08 🤖</span></a>
   </div>
 </li>
       </ul>
@@ -611,278 +652,578 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#week-4-notes" id="toc-week-4-notes" class="nav-link active" data-scroll-target="#week-4-notes">Week 4 Notes</a></li>
-  <li><a href="#lecture-4" id="toc-lecture-4" class="nav-link" data-scroll-target="#lecture-4">Lecture 4</a>
+  <li><a href="#week-04-coding-the-first-version-of-our-application" id="toc-week-04-coding-the-first-version-of-our-application" class="nav-link active" data-scroll-target="#week-04-coding-the-first-version-of-our-application">Week 04 — Coding the first version of our application</a>
   <ul class="collapse">
-  <li><a href="#libraries" id="toc-libraries" class="nav-link" data-scroll-target="#libraries">Libraries</a></li>
-  <li><a href="#random" id="toc-random" class="nav-link" data-scroll-target="#random">Random</a></li>
-  <li><a href="#statistics" id="toc-statistics" class="nav-link" data-scroll-target="#statistics">Statistics</a></li>
-  <li><a href="#command-line-arguments" id="toc-command-line-arguments" class="nav-link" data-scroll-target="#command-line-arguments">Command-Line Arguments</a></li>
-  <li><a href="#slice" id="toc-slice" class="nav-link" data-scroll-target="#slice"><code>slice</code></a></li>
-  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
-  <li><a href="#apis" id="toc-apis" class="nav-link" data-scroll-target="#apis">APIs</a></li>
-  <li><a href="#making-your-own-libraries" id="toc-making-your-own-libraries" class="nav-link" data-scroll-target="#making-your-own-libraries">Making Your Own Libraries</a></li>
+  <li><a href="#week-focus" id="toc-week-focus" class="nav-link" data-scroll-target="#week-focus">Week focus</a>
+  <ul class="collapse">
+  <li><a href="#micro-quotes-from-this-week" id="toc-micro-quotes-from-this-week" class="nav-link" data-scroll-target="#micro-quotes-from-this-week">Micro-quotes from this week</a></li>
+  </ul></li>
+  <li><a href="#from-design-to-code-extracting-requirements" id="toc-from-design-to-code-extracting-requirements" class="nav-link" data-scroll-target="#from-design-to-code-extracting-requirements">From design to code: extracting requirements</a></li>
+  <li><a href="#setting-up-your-python-environment" id="toc-setting-up-your-python-environment" class="nav-link" data-scroll-target="#setting-up-your-python-environment">Setting up your Python environment</a>
+  <ul class="collapse">
+  <li><a href="#install-flask-and-freeze-dependencies" id="toc-install-flask-and-freeze-dependencies" class="nav-link" data-scroll-target="#install-flask-and-freeze-dependencies">Install Flask and freeze dependencies</a></li>
+  </ul></li>
+  <li><a href="#laying-out-the-application-skeleton" id="toc-laying-out-the-application-skeleton" class="nav-link" data-scroll-target="#laying-out-the-application-skeleton">Laying out the application skeleton</a></li>
+  <li><a href="#your-first-flask-app-routes-requests-responses" id="toc-your-first-flask-app-routes-requests-responses" class="nav-link" data-scroll-target="#your-first-flask-app-routes-requests-responses">Your first Flask app: routes, requests, responses</a>
+  <ul class="collapse">
+  <li><a href="#thinking-in-requests-and-responses" id="toc-thinking-in-requests-and-responses" class="nav-link" data-scroll-target="#thinking-in-requests-and-responses">Thinking in requests and responses</a></li>
+  </ul></li>
+  <li><a href="#configuration-dependencies-and-reproducibility" id="toc-configuration-dependencies-and-reproducibility" class="nav-link" data-scroll-target="#configuration-dependencies-and-reproducibility">Configuration, dependencies, and reproducibility</a></li>
+  <li><a href="#run-observe-iterate" id="toc-run-observe-iterate" class="nav-link" data-scroll-target="#run-observe-iterate">Run, observe, iterate</a></li>
+  <li><a href="#common-failure-modes" id="toc-common-failure-modes" class="nav-link" data-scroll-target="#common-failure-modes">Common failure modes</a></li>
+  <li><a href="#appendix-check-your-understanding" id="toc-appendix-check-your-understanding" class="nav-link" data-scroll-target="#appendix-check-your-understanding">Appendix: check your understanding</a></li>
+  <li><a href="#deep-dive-mapping-requirements-to-routes" id="toc-deep-dive-mapping-requirements-to-routes" class="nav-link" data-scroll-target="#deep-dive-mapping-requirements-to-routes">Deep dive: mapping requirements to routes</a></li>
+  <li><a href="#deep-dive-keeping-state-for-now" id="toc-deep-dive-keeping-state-for-now" class="nav-link" data-scroll-target="#deep-dive-keeping-state-for-now">Deep dive: keeping state (for now)</a></li>
+  <li><a href="#deep-dive-debugging-discipline" id="toc-deep-dive-debugging-discipline" class="nav-link" data-scroll-target="#deep-dive-debugging-discipline">Deep dive: debugging discipline</a></li>
+  <li><a href="#a-worked-walkthrough-turning-the-week-into-a-plan" id="toc-a-worked-walkthrough-turning-the-week-into-a-plan" class="nav-link" data-scroll-target="#a-worked-walkthrough-turning-the-week-into-a-plan">A worked walkthrough: turning the week into a plan</a>
+  <ul class="collapse">
+  <li><a href="#example-extract-requirements-from-a-paragraph" id="toc-example-extract-requirements-from-a-paragraph" class="nav-link" data-scroll-target="#example-extract-requirements-from-a-paragraph">Example: extract requirements from a paragraph</a></li>
+  </ul></li>
+  <li><a href="#setting-up-your-python-environment-deeper-notes" id="toc-setting-up-your-python-environment-deeper-notes" class="nav-link" data-scroll-target="#setting-up-your-python-environment-deeper-notes">Setting up your Python environment (deeper notes)</a>
+  <ul class="collapse">
+  <li><a href="#create-and-activate-a-virtual-environment" id="toc-create-and-activate-a-virtual-environment" class="nav-link" data-scroll-target="#create-and-activate-a-virtual-environment">Create and activate a virtual environment</a></li>
+  <li><a href="#freeze-dependencies-so-others-can-reproduce-your-setup" id="toc-freeze-dependencies-so-others-can-reproduce-your-setup" class="nav-link" data-scroll-target="#freeze-dependencies-so-others-can-reproduce-your-setup">Freeze dependencies so others can reproduce your setup</a></li>
+  </ul></li>
+  <li><a href="#laying-out-the-application-skeleton-deeper-notes" id="toc-laying-out-the-application-skeleton-deeper-notes" class="nav-link" data-scroll-target="#laying-out-the-application-skeleton-deeper-notes">Laying out the application skeleton (deeper notes)</a>
+  <ul class="collapse">
+  <li><a href="#a-typical-flask-project-layout" id="toc-a-typical-flask-project-layout" class="nav-link" data-scroll-target="#a-typical-flask-project-layout">A typical Flask project layout</a></li>
+  <li><a href="#figure-chapter-4-structure-and-setup-visuals" id="toc-figure-chapter-4-structure-and-setup-visuals" class="nav-link" data-scroll-target="#figure-chapter-4-structure-and-setup-visuals">Figure: Chapter 4 structure and setup visuals</a></li>
+  </ul></li>
+  <li><a href="#flask-request-lifecycle-what-actually-happens" id="toc-flask-request-lifecycle-what-actually-happens" class="nav-link" data-scroll-target="#flask-request-lifecycle-what-actually-happens">Flask request lifecycle (what actually happens)</a></li>
+  <li><a href="#templates-expanded" id="toc-templates-expanded" class="nav-link" data-scroll-target="#templates-expanded">Templates (expanded)</a>
+  <ul class="collapse">
+  <li><a href="#minimal-jinja-template-example" id="toc-minimal-jinja-template-example" class="nav-link" data-scroll-target="#minimal-jinja-template-example">Minimal Jinja template example</a></li>
+  </ul></li>
+  <li><a href="#using-ai-tools-without-losing-control" id="toc-using-ai-tools-without-losing-control" class="nav-link" data-scroll-target="#using-ai-tools-without-losing-control">Using AI tools without losing control</a></li>
+  <li><a href="#more-micro-quotes-from-the-chapter" id="toc-more-micro-quotes-from-the-chapter" class="nav-link" data-scroll-target="#more-micro-quotes-from-the-chapter">More micro-quotes from the chapter</a></li>
+  <li><a href="#extended-checklist-for-students" id="toc-extended-checklist-for-students" class="nav-link" data-scroll-target="#extended-checklist-for-students">Extended checklist for students</a></li>
   <li><a href="#summing-up" id="toc-summing-up" class="nav-link" data-scroll-target="#summing-up">Summing Up</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/SQ4014-2025/website/edit/master/notes/notes_4.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/SQ4014-2025/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/notes_0.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/notes_4.html">Notes 04 🐍</a></li></ol></nav></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/notes_1.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/notes_4.html">Notes 04 🤖</a></li></ol></nav></header>
 
 
 
 
 
-<section id="week-4-notes" class="level1">
-<h1>Week 4 Notes</h1>
-<hr>
-</section>
-<section id="lecture-4" class="level1">
-<h1>Lecture 4</h1>
+<section id="week-04-coding-the-first-version-of-our-application" class="level1">
+<h1>Week 04 — Coding the first version of our application</h1>
 <ul>
-<li><a href="#libraries">Libraries</a></li>
-<li><a href="#random">Random</a></li>
-<li><a href="#statistics">Statistics</a></li>
-<li><a href="#command-line-arguments">Command-Line Arguments</a></li>
-<li><a href="#slice"><code>slice</code></a></li>
-<li><a href="#packages">Packages</a></li>
-<li><a href="#apis">APIs</a></li>
-<li><a href="#making-your-own-libraries">Making Your Own Libraries</a></li>
+<li><a href="#week-focus">Week focus</a></li>
+<li><a href="#from-design-to-code-extracting-requirements">From design to code: extracting requirements</a></li>
+<li><a href="#setting-up-your-python-environment">Setting up your Python environment</a></li>
+<li><a href="#laying-out-the-application-skeleton">Laying out the application skeleton</a></li>
+<li><a href="#your-first-flask-app-routes-requests-responses">Your first Flask app: routes, requests, responses</a></li>
+<li><a href="#templates-and-pages-keeping-logic-out-of-html">Templates and pages: keeping logic out of HTML</a></li>
+<li><a href="#configuration-dependencies-and-reproducibility">Configuration, dependencies, and reproducibility</a></li>
+<li><a href="#run-observe-iterate">Run, observe, iterate</a></li>
+<li><a href="#common-failure-modes">Common failure modes</a></li>
 <li><a href="#summing-up">Summing Up</a></li>
 </ul>
-<section id="libraries" class="level2">
-<h2 class="anchored" data-anchor-id="libraries">Libraries</h2>
+<section id="week-focus" class="level2">
+<h2 class="anchored" data-anchor-id="week-focus">Week focus</h2>
 <ul>
-<li>Generally, libraries are bits of code written by you or others that you can use in your program.</li>
-<li>Python allows you to share functions or features with others as “modules”.</li>
-<li>If you copy and paste code from an old project, chances are you can create such a module or library that you could bring into your new project.</li>
+<li>This week focuses on <em>Coding the first version of our application</em>.</li>
+<li>This week is deliberately practical: it moves from an idea/design document into a runnable web app skeleton.</li>
+<li>Key theme: you don’t need the <em>perfect</em> design before you start coding — but you do need a <strong>clear first version</strong>.</li>
+<li>We’re practising how to translate text descriptions into code artefacts: folders, files, functions, and routes.</li>
+<li>This week includes visual callouts/figures; we’ll reference the key ones as we go.</li>
+</ul>
+<p><img src="images/week_04/fig_01.png" class="img-fluid"></p>
+<section id="micro-quotes-from-this-week" class="level3">
+<h3 class="anchored" data-anchor-id="micro-quotes-from-this-week">Micro-quotes from this week</h3>
+<ul>
+<li>“56 Building applications with AI assistance up project structure and create your first working application”</li>
+<li>“Week 05 dives into advanced development techniques using tools such as Tabnine and BlackboxAI”</li>
+<li>“Finally Week 06 focuses on building strong user interfaces and managing sessions with AI-generated code”</li>
+<li>“I ve done this too”</li>
+<li>“Taking time to plan an app s architecture leads to happy users and lower maintenance costs”</li>
+<li>“How can generative AI speed up the design process”</li>
 </ul>
 </section>
-<section id="random" class="level2">
-<h2 class="anchored" data-anchor-id="random">Random</h2>
+</section>
+<section id="from-design-to-code-extracting-requirements" class="level2">
+<h2 class="anchored" data-anchor-id="from-design-to-code-extracting-requirements">From design to code: extracting requirements</h2>
 <ul>
-<li><p><code>random</code> is a library that comes with Python that you could import into your own project.</p></li>
-<li><p>It’s easier as a coder to stand on the shoulders of prior coders.</p></li>
-<li><p>So, how do you load a module into your own program? You can use the word <code>import</code> in your program.</p></li>
-<li><p>Inside the <code>random</code> module, there is a built-in function called <code>random.choice(seq)</code>. <code>random</code> is the module you are importing. Inside that module, there is the <code>choice</code> function. That function takes into it a <code>seq</code> or sequence that is a list.</p></li>
-<li><p>In your terminal window type <code>code generate.py</code>. In your text editor, code as follows:</p>
-<pre><code>import random
-
-coin = random.choice(["heads", "tails"])
-print(coin)</code></pre>
-<p>Notice that the list within <code>choice</code> has square braces, quotes, and a comma. Since you have passed in two items, Python does the math and gives a 50% chance for heads and tails. Running your code, you will notice that this code, indeed, does function well!</p></li>
-<li><p>We can improve our code. <code>from</code> allows us to be very specific about what we’d like to import. Prior, our <code>import</code> line of code is bringing the entire contents of the functions of <code>random</code>. However, what if we want to only load a small part of a module? Modify your code as follows:</p>
-<pre><code>from random import choice
-
-coin = choice(["heads", "tails"])
-print(coin)</code></pre>
-<p>Notice that we now can import just the <code>choice</code> function of <code>random</code>. From that point forward, we no longer need to code <code>random.choice</code>. We can now only code <code>choice</code> alone. <code>choice</code> is loaded explicitly into our program. This saves system resources and potentially can make our code run faster!</p></li>
-<li><p>Moving on, consider the function <code>random.randint(a, b)</code>. This function will generate a random number between <code>a</code> and <code>b</code>. Modify your code as follows:</p>
-<pre><code>import random
-
-number = random.randint(1, 10)
-print(number)</code></pre>
-<p>Notice that our code will randomly generate a number between <code>1</code> and <code>10</code>.</p></li>
-<li><p>We can introduce the function <code>random.shuffle(x)</code>, which shuffles a list into a random order.</p>
-<pre><code>import random
-
-cards = ["jack", "queen", "king"]
-random.shuffle(cards)
-for card in cards:
-    print(card)</code></pre>
-<p>Notice that <code>random.shuffle</code> will shuffle the cards in place. Unlike other functions, it will not return a value. Instead, it will take the <code>cards</code> list and shuffle them inside that list. Run your code a few times to see the code functioning.</p></li>
-<li><p>We now have these three ways above to generate random information.</p></li>
-<li><p>You can learn more in Python’s documentation of <a href="https://docs.python.org/3/library/random.html"><code>random</code></a>.</p></li>
+<li>This week starts by treating your design notes as an input to development. The goal is to turn vague ideas into <strong>requirements</strong> you can implement.</li>
+<li>A <em>requirement</em> in this context is a short, testable statement of behaviour: <em>what the user can do</em>, or <em>what the system must store/compute/display</em>.</li>
+<li>A useful trick: rewrite each requirement as a user story: <em>As a user, I want … so that …</em>.</li>
+<li>Requirements are not only ‘features’. They also include constraints like performance, security, and maintainability.</li>
+<li>When you work with AI coding tools, requirements become even more important: they are the anchor that keeps generated code aligned with your intent.</li>
+<li>Practical decomposition pattern used in this week:</li>
+<li>Start with the smallest end-to-end ‘thin slice’ (a page that loads; a form that submits; a result that displays).</li>
+<li>List the minimal data objects you need (e.g., a question bank, callsigns, categories, logs).</li>
+<li>Identify the ‘edges’: inputs (forms/API), outputs (HTML pages), and storage (files/DB).</li>
+<li>Only then decide folder structure and module boundaries. <img src="images/week_04/fig_02.png" class="img-fluid"></li>
 </ul>
 </section>
-<section id="statistics" class="level2">
-<h2 class="anchored" data-anchor-id="statistics">Statistics</h2>
+<section id="setting-up-your-python-environment" class="level2">
+<h2 class="anchored" data-anchor-id="setting-up-your-python-environment">Setting up your Python environment</h2>
 <ul>
-<li><p>Python comes with a built-in <code>statistics</code> library. How might we use this module?</p></li>
-<li><p><code>mean</code> is a function of this library that is quite useful. In your terminal window, type <code>code average.py</code>. In the text editor window, modify your code as follows:</p>
-<pre><code>import statistics
-
-print(statistics.mean([100, 90]))</code></pre>
-<p>Notice that we imported a different library called <code>statistics</code>. The <code>mean</code> function takes a list of values. This will print the average of these values. In your terminal window, type <code>python average.py</code>.</p></li>
-<li><p>Consider the possibilities of using the <code>statistics</code> module in your own programs.</p></li>
-<li><p>You can learn more in Python’s documentation of <a href="https://docs.python.org/3/library/statistics.html"><code>statistics</code></a>.</p></li>
+<li><p>Python projects should isolate libraries per project using a <strong>virtual environment</strong> (often abbreviated <em>venv</em>).</p></li>
+<li><p>Isolation matters because different projects need different versions of the same library (a common source of ‘works on my machine’ bugs).</p></li>
+<li><p>In a first-year course, we care about this early because it teaches reproducibility and reduces setup friction later. ### Create and activate a venv</p></li>
+<li><p>Create the environment in your project folder (name is conventional: <code>.venv</code>).</p></li>
+<li><p>Activate it before installing packages so installs go into the venv, not your global Python.</p></li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> venv .venv</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> .venv/bin/activate  <span class="co"># macOS/Linux</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># .venv\Scripts\activate   # Windows (PowerShell)</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> pip install <span class="at">--upgrade</span> pip</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="install-flask-and-freeze-dependencies" class="level3">
+<h3 class="anchored" data-anchor-id="install-flask-and-freeze-dependencies">Install Flask and freeze dependencies</h3>
+<ul>
+<li>This week uses <strong>Flask</strong> as the minimal web framework: it’s small enough to understand without magic.</li>
+<li>Treat dependencies as part of your project: record them in <code>requirements.txt</code> so another machine can reproduce the same environment.</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install flask</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> freeze <span class="op">&gt;</span> requirements.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="laying-out-the-application-skeleton" class="level2">
+<h2 class="anchored" data-anchor-id="laying-out-the-application-skeleton">Laying out the application skeleton</h2>
+<ul>
+<li>Before writing ‘real logic’, you create a <strong>project structure</strong>: folders for app code, templates, static assets, and tests.</li>
+<li>A structure is a communication tool: it tells future you (and teammates) where things belong.</li>
+<li>This week’s key move is creating <strong>stubs</strong>: placeholder functions/routes that define the shape of the app before it is complete. ### A minimal, conventional Flask layout</li>
+</ul>
+<pre><code>myapp/
+  app.py
+  templates/
+    index.html
+  static/
+    style.css
+  requirements.txt
+  README.md</code></pre>
+<ul>
+<li>You can evolve this into a package layout (<code>myapp/__init__.py</code>) later. Start simple.</li>
+<li>Keep <code>templates/</code> for HTML templates and <code>static/</code> for CSS/JS/images, matching Flask conventions. <img src="images/week_04/fig_03.jpeg" class="img-fluid"></li>
 </ul>
 </section>
-<section id="command-line-arguments" class="level2">
-<h2 class="anchored" data-anchor-id="command-line-arguments">Command-Line Arguments</h2>
+<section id="your-first-flask-app-routes-requests-responses" class="level2">
+<h2 class="anchored" data-anchor-id="your-first-flask-app-routes-requests-responses">Your first Flask app: routes, requests, responses</h2>
 <ul>
-<li><p>So far, we have been providing all values within the program that we have created. What if we wanted to be able to take input from the command-line? For example, rather than typing <code>python average.py</code> in the terminal, what if we wanted to be able to type <code>python average.py 100 90</code> and be able to get the average between <code>100</code> and <code>90</code>?</p></li>
-<li><p><code>sys</code> is a module that allows us to take arguments at the command line.</p></li>
-<li><p><code>argv</code> is a list within the <code>sys</code> module that records what the user typed on the command line.</p></li>
-<li><p>Notice how you will see <code>sys.argv</code> utilized in the code below. In the terminal window, type <code>code name.py</code>. In the text editor, code as follows:</p>
-<pre><code>import sys
-
-print("hello, my name is", sys.argv[1])</code></pre>
-<p>Notice that the program is going to look at what the user typed in the command line. Currently, if you type <code>python name.py David</code> into the terminal window, you will see <code>hello, my name is David</code>. Notice that <code>sys.argv[1]</code> is where <code>David</code> is being stored. Why is that? Well, in prior lessons, you might remember that lists start at the <code>0</code>th element. What do you think is held currently in <code>sys.argv[0]</code>? If you guessed <code>name.py</code>, you would be correct!</p></li>
-<li><p>There is a small problem with our program as it stands. What if the user does not type in the name at the command line? Try it yourself. Type <code>python name.py</code> into the terminal window. An error <code>list index out of range</code> will be presented by the interpreter. The reason for this is that there is nothing at <code>sys.argv[1]</code> because nothing was typed! Here’s how we can protect our program from this type of error:</p>
-<pre><code>import sys
-
-try:
-    print("hello, my name is", sys.argv[1])
-except IndexError:
-    print("Too few arguments")</code></pre>
-<p>Notice that the user will now be prompted with a useful hint about how to make the program work if they forget to type in a name. However, could we be more defensive to ensure the user inputs the right values?</p></li>
-<li><p>Our program can be improved as follows:</p>
-<pre><code>import sys
-
-if len(sys.argv) &lt; 2:
-    print("Too few arguments")
-elif len(sys.argv) &gt; 2:
-    print("Too many arguments")
-else:
-    print("hello, my name is", sys.argv[1])</code></pre>
-<p>Notice how if you test your code, you will see how these exceptions are handled, providing the user with more refined advice. Even if the user types in too many or too few arguments, the user is provided clear instructions about how to fix the issue.</p></li>
-<li><p>Right now, our code is logically correct. However, there is something very nice about keeping our error checking separate from the remainder of our code. How could we separate out our error handling? Modify your code as follows:</p>
-<pre><code>import sys
-
-if len(sys.argv) &lt; 2:
-    sys.exit("Too few arguments")
-elif len(sys.argv) &gt; 2:
-    sys.exit("Too many arguments")
-
-print("hello, my name is", sys.argv[1])</code></pre>
-<p>Notice how we are using a built-in function of <code>sys</code> called <code>exit</code> that allows us to exit the program if an error was introduced by the user. We can rest assured now that the program will never execute the final line of code and trigger an error. Therefore, <code>sys.argv</code> provides a way by which users can introduce information from the command line. <code>sys.exit</code> provides a means by which the program can exit if an error arises.</p></li>
-<li><p>You can learn more in Python’s documentation of <a href="https://docs.python.org/3/library/sys.html"><code>sys</code></a>.</p></li>
+<li>A Flask app is basically a mapping from URLs to Python functions.</li>
+<li>Each mapping is a <strong>route</strong>. When a browser requests <code>/</code>, Flask calls the function and returns a response.</li>
+<li>Your job is to control: input → processing → output. ### The smallest runnable Flask app</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> flask <span class="im">import</span> Flask</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>app <span class="op">=</span> Flask(<span class="va">__name__</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="at">@app.get</span>(<span class="st">"/"</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> home():</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"Hello! Week 4 app is running."</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    app.run(debug<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li><code>debug=True</code> turns on <strong>debug mode</strong>: auto-reload + a helpful error page. Great for learning; disable in production.</li>
+<li>When something breaks, read the traceback top-to-bottom: it tells you <em>where</em> and often <em>why</em>. ### Running the app</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> app.py</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Then open the printed URL (usually http://127.0.0.1:5000/)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="thinking-in-requests-and-responses" class="level3">
+<h3 class="anchored" data-anchor-id="thinking-in-requests-and-responses">Thinking in requests and responses</h3>
+<ul>
+<li><p>A browser makes an HTTP request (method + path + headers + optional body).</p></li>
+<li><p>Your route function returns a response (status code + headers + body).</p></li>
+<li><p>Even when you ‘just return a string’, Flask wraps it into a full HTTP response. ## Templates and pages: keeping logic out of HTML {#templates-and-pages-keeping-logic-out-of-html}</p></li>
+<li><p>Once you move beyond plain strings, you’ll render HTML templates.</p></li>
+<li><p>Templates let you keep Python logic in Python and presentation in HTML.</p></li>
+<li><p>Flask uses Jinja2 templates; you inject values and loops into a mostly-normal HTML page. ### Example: render a template</p></li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> flask <span class="im">import</span> Flask, render_template</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>app <span class="op">=</span> Flask(<span class="va">__name__</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="at">@app.get</span>(<span class="st">"/"</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> home():</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> render_template(<span class="st">"index.html"</span>, title<span class="op">=</span><span class="st">"Real World AI"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!doctype</span> html<span class="dt">&gt;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>{{ title }}<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>{{ title }}<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>Your Flask app is rendering templates.<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>Jinja placeholders like <code>{ title }</code> are replaced at render time.</li>
+<li>When you later add forms, you’ll pass user-submitted values into templates to show results. <img src="images/week_04/fig_04.png" class="img-fluid"></li>
 </ul>
 </section>
-<section id="slice" class="level2">
-<h2 class="anchored" data-anchor-id="slice"><code>slice</code></h2>
+</section>
+<section id="configuration-dependencies-and-reproducibility" class="level2">
+<h2 class="anchored" data-anchor-id="configuration-dependencies-and-reproducibility">Configuration, dependencies, and reproducibility</h2>
 <ul>
-<li><p><code>slice</code> is a command that allows us to take a <code>list</code> and tell the interpreter where we want the interpreter to consider the start of the <code>list</code> and the end of the <code>list</code>. For example, modify your code as follows:</p>
-<pre><code>import sys
-
-if len(sys.argv) &lt; 2:
-    sys.exit("Too few arguments")
-
-for arg in sys.argv:
-    print("hello, my name is", arg)</code></pre>
-<p>Notice that if you type <code>python name.py David Carter Rongxin</code> into the terminal window, the interpreter will output not just the intended output of the names, but also <code>hello, my name is name.py</code>. How then could we ensure that the interpreter ignores the first element of the list where <code>name.py</code> is currently being stored?</p></li>
-<li><p><code>slice</code> can be employed in our code to start the list somewhere different! Modify your code as follows:</p>
-<pre><code>import sys
-
-if len(sys.argv) &lt; 2:
-    sys.exit("Too few arguments")
-
-for arg in sys.argv[1:]:
-    print("hello, my name is", arg)</code></pre>
-<p>Notice that rather than starting the list at <code>0</code>, we use square brackets to tell the interpreter to start at <code>1</code> and go to the end using the <code>1:</code> argument. Running this code, you’ll notice that we can improve our code using relatively simple syntax.</p></li>
+<li>Treat every external library as a <strong>dependency</strong> you must track.</li>
+<li><code>requirements.txt</code> is the simplest approach: it records exact versions so installs are consistent.</li>
+<li>A clean workflow: create venv → install deps → freeze → commit both code and requirements.</li>
+<li>If a teammate can’t run your app, 80% of the time it’s: wrong venv, wrong Python, or missing deps. ### Recreating the environment from scratch</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> venv .venv</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> .venv/bin/activate</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">-r</span> requirements.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="run-observe-iterate" class="level2">
+<h2 class="anchored" data-anchor-id="run-observe-iterate">Run, observe, iterate</h2>
+<ul>
+<li>This week’s development rhythm is iterative: make a small change, run the app, observe, and repeat.</li>
+<li>This is not just ‘coding style’ — it’s risk management. Small steps make bugs easier to locate.</li>
+<li>When using AI assistants, keep iterations even smaller: generate a tiny piece, test it, then proceed. ### A tiny iteration loop (conceptual)</li>
+</ul>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
+  A[Write or generate small change] --&gt; B[Run unit of work]
+  B --&gt; C{Did it work?}
+  C -- Yes --&gt; D[Commit / move to next small change]
+  C -- No --&gt; E[Read error, reduce scope, fix]
+  E --&gt; A
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="common-failure-modes" class="level2">
+<h2 class="anchored" data-anchor-id="common-failure-modes">Common failure modes</h2>
+<ul>
+<li><p><strong>Venv not activated</strong>: <code>pip install</code> went to global Python; Flask isn’t found when running.</p></li>
+<li><p>Wrong working directory: you run <code>python app.py</code> from a different folder and Flask can’t find <code>templates/</code>.</p></li>
+<li><p>Port already in use: another process is using 5000; you’ll see an ‘Address already in use’ message.</p></li>
+<li><p>Template errors: misspelt variable names in Jinja; look at the stack trace and the highlighted line.</p></li>
+<li><p>Import cycles when you split files too early: keep it simple until you understand module imports. ## Summing Up {#summing-up}</p></li>
+<li><p>Week 04 is about moving from idea to a runnable first version.</p></li>
+<li><p>You practised translating requirements into a project skeleton and basic routes.</p></li>
+<li><p>You set up a virtual environment, installed Flask, and captured dependencies for reproducibility.</p></li>
+<li><p>You learned the core web mental model: request → route → response, then grew it into templates.</p></li>
+<li><p>Next weeks build on this baseline by generating more code with AI tools and expanding the app’s features.</p></li>
 </ul>
 </section>
-<section id="packages" class="level2">
-<h2 class="anchored" data-anchor-id="packages">Packages</h2>
+<section id="appendix-check-your-understanding" class="level2">
+<h2 class="anchored" data-anchor-id="appendix-check-your-understanding">Appendix: check your understanding</h2>
 <ul>
-<li><p>One of the reasons Python is so popular is that there are numerous powerful third-party libraries that add functionality. We call these third-party libraries, implemented as a folder, “packages”.</p></li>
-<li><p>PyPI is a repository or directory of all available third-party packages currently available.</p></li>
-<li><p><code>cowsay</code> is a well-known package that allows a cow to talk to the user.</p></li>
-<li><p>Python has a package manager called <code>pip</code> that allows you to install packages quickly onto your system.</p></li>
-<li><p>In the terminal window, you can install the <code>cowsay</code> package by typing <code>pip install cowsay</code>. After a bit of output, you can now go about using this package in your code.</p></li>
-<li><p>In your terminal window type <code>code say.py</code>. In the text editor, code as follows:</p>
-<pre><code>import cowsay
-import sys
-
-if len(sys.argv) == 2:
-    cowsay.cow("hello, " + sys.argv[1])</code></pre>
-<p>Notice that the program first checks that the user inputted at least two arguments at the command line. Then, the cow should speak to the user. Type <code>python say.py David</code> and you’ll see a cow saying “hello” to David.</p></li>
-<li><p>Further modify your code:</p>
-<pre><code>import cowsay
-import sys
-
-if len(sys.argv) == 2:
-    cowsay.trex("hello, " + sys.argv[1])</code></pre>
-<p>Notice that a t-rex is now saying “hello”.</p></li>
-<li><p>You now can see how you could install third-party packages.</p></li>
-<li><p>You can learn more on PyPI’s entry for <a href="https://pypi.org/project/cowsay/"><code>cowsay</code></a></p></li>
-<li><p>You can find other third-party packages at <a href="https://pypi.org/">PyPI</a></p></li>
+<li>Explain the difference between a feature request and an implementation detail.</li>
+<li>What does a virtual environment protect you from? Give two concrete examples.</li>
+<li>Why is <code>requirements.txt</code> useful even for a tiny project?</li>
+<li>What is a route? How is it different from a function that is never called by Flask?</li>
+<li>What is the advantage of templates compared to building HTML with string concatenation?</li>
+<li>Describe the iteration loop you should follow when using an AI assistant to generate code.</li>
 </ul>
 </section>
-<section id="apis" class="level2">
-<h2 class="anchored" data-anchor-id="apis">APIs</h2>
+<section id="deep-dive-mapping-requirements-to-routes" class="level2">
+<h2 class="anchored" data-anchor-id="deep-dive-mapping-requirements-to-routes">Deep dive: mapping requirements to routes</h2>
 <ul>
-<li><p>APIs or “application program interfaces” allow you to connect to the code of others.</p></li>
-<li><p><code>requests</code> is a package that allows your program to behave as a web browser would.</p></li>
-<li><p>In your terminal, type <code>pip install requests</code>. Then, type <code>code itunes.py</code>.</p></li>
-<li><p>It turns out that Apple iTunes has its own API that you can access in your programs. In your internet browser, you can visit <a href="https://itunes.apple.com/search?entity=song&amp;limit=1&amp;term=weezer" class="uri">https://itunes.apple.com/search?entity=song&amp;limit=1&amp;term=weezer</a> and a text file will be downloaded. This URL was constructed by reading Apple’s API documentation. Notice how this query is looking for a <code>song</code>, with a <code>limit</code> of one result, that relates to the <code>term</code> called <code>weezer</code>. Looking at this text file that is downloaded, you might find the format to be similar to that we’ve programmed previously in Python.</p></li>
-<li><p>The format in the downloaded text file is called JSON, a text-based format that is used to exchange text-based data between applications. Literally, Apple is providing a JSON file that we could interpret in our own Python program.</p></li>
-<li><p>In the terminal window, type <code>code itunes.py</code>. Code as follows:</p>
-<pre><code>import requests
-import sys
-
-if len(sys.argv) != 2:
-    sys.exit()
-
-response = requests.get("https://itunes.apple.com/search?entity=song&amp;limit=1&amp;term=" + sys.argv[1])
-print(response.json())</code></pre>
-<p>Notice how the returned value of <code>requests.get</code> will be stored in <code>response</code>. Having read the Apple documentation about this API, you’d know that what is returned is a JSON file. Running <code>python itunes.py weezer</code>, you will see the JSON file returned by Apple. However, the JSON response is converted by Python into a dictionary. Looking at the output, it can be quite dizzying!</p></li>
-<li><p>It turns out that Python has a built-in JSON library that can help us interpret the data received. Modify your code as follows:</p>
-<pre><code>import json
-import requests
-import sys
-
-if len(sys.argv) != 2:
-    sys.exit()
-
-response = requests.get("https://itunes.apple.com/search?entity=song&amp;limit=1&amp;term=" + sys.argv[1])
-print(json.dumps(response.json(), indent=2))</code></pre>
-<p>Notice that <code>json.dumps</code> is implemented such that it utilizes <code>indent</code> to make the output more readable. Running <code>python itunes.py weezer</code>, you will see the same JSON file. However, this time, it is much more readable. Notice now that you will see a dictionary called <code>results</code> inside the output. Inside that dictionary called <code>results</code> there are numerous keys present. Look at the <code>trackName</code> value in the output. What track name do you see in your results?</p></li>
-<li><p>How could we simply output the name of just that track name? Modify your code as follows:</p>
-<pre><code>import json
-import requests
-import sys
-
-if len(sys.argv) != 2:
-    sys.exit()
-
-response = requests.get("https://itunes.apple.com/search?entity=song&amp;limit=50&amp;term=" + sys.argv[1])
-
-o = response.json()
-for result in o["results"]:
-    print(result["trackName"])</code></pre>
-<p>Notice how we are taking the result of <code>response.json()</code> and storing it in <code>o</code> (as in the lowercase letter). Then, we are iterating through the <code>results</code> in <code>o</code> and printing each <code>trackName</code>. Also notice how we have increased the limit number of results to <code>50</code>. Run your program. See the results.</p></li>
-<li><p>You can learn more about <code>requests</code> through the <a href="https://docs.python-requests.org/">library’s documentation</a>.</p></li>
-<li><p>You can learn more about JSON in Python’s documentation of <a href="https://docs.python.org/3/library/json.html">JSON</a>.</p></li>
+<li>A strong starting point is to list user actions, then map each to a URL.</li>
+<li>Example: ‘Start a practice session’ might map to <code>/start</code>, while ‘Submit an answer’ maps to <code>/answer</code>.</li>
+<li>Think about which actions change state (POST) versus which only read state (GET).</li>
+<li>Even if you ignore REST purity in week 4, using GET/POST correctly prevents common bugs.</li>
 </ul>
 </section>
-<section id="making-your-own-libraries" class="level2">
-<h2 class="anchored" data-anchor-id="making-your-own-libraries">Making Your Own Libraries</h2>
+<section id="deep-dive-keeping-state-for-now" class="level2">
+<h2 class="anchored" data-anchor-id="deep-dive-keeping-state-for-now">Deep dive: keeping state (for now)</h2>
 <ul>
-<li><p>You have the ability as a Python programmer to create your own library!</p></li>
-<li><p>Imagine situations where you may want to re-use bits of code time and time again or even share them with others!</p></li>
-<li><p>We have been writing lots of code to say “hello” so far in this course. Let’s create a package to allow us to say “hello” and “goodbye”. In your terminal window, type <code>code sayings.py</code>. In the text editor, code as follows:</p>
-<pre><code>def hello(name):
-    print(f"hello, {name}")
-
-
-def goodbye(name):
-    print(f"goodbye, {name}")</code></pre>
-<p>Notice that this code in and of itself does not do anything for the user. However, if a programmer were to import this package into their own program, the abilities created by the functions above could be implemented in their code.</p></li>
-<li><p>Let’s see how we could implement code utilizing this package that we created. In the terminal window, type <code>code say.py</code>. In this new file in your text editor, type the following:</p>
-<pre><code>import sys
-
-from sayings import goodbye
-
-if len(sys.argv) == 2:
-    goodbye(sys.argv[1])</code></pre>
-<p>Notice that this code imports the abilities of <code>goodbye</code> from the <code>sayings</code> package. If the user inputted at least two arguments at the command line, it will say “goodbye” along with the string inputted at the command line.</p></li>
+<li>Early versions often avoid databases. You can store small state in memory while learning.</li>
+<li>But remember: in-memory state resets when the server restarts.</li>
+<li>For learning, this is fine — it encourages you to separate ‘core logic’ from ‘storage’.</li>
+<li>Later weeks can swap storage without rewriting everything if your code is modular.</li>
+</ul>
+</section>
+<section id="deep-dive-debugging-discipline" class="level2">
+<h2 class="anchored" data-anchor-id="deep-dive-debugging-discipline">Deep dive: debugging discipline</h2>
+<ul>
+<li>When an error happens, copy the traceback and identify the <em>first</em> line in your codebase.</li>
+<li>Add a print/log statement <em>above</em> that line to inspect variables.</li>
+<li>Change one thing at a time; rerun; confirm the effect.</li>
+<li>Avoid random guessing — it’s slower than systematic diagnosis.</li>
+</ul>
+</section>
+<section id="a-worked-walkthrough-turning-the-week-into-a-plan" class="level2">
+<h2 class="anchored" data-anchor-id="a-worked-walkthrough-turning-the-week-into-a-plan">A worked walkthrough: turning the week into a plan</h2>
+<ul>
+<li><p>This week’s core move is: <strong>design artefacts → requirements → code skeleton</strong>.</p></li>
+<li><p>A useful mental model is to treat every paragraph of your design document as one of:</p>
+<ul>
+<li>a <em>feature</em> (something the user can do)</li>
+<li>a <em>constraint</em> (a limit: performance, privacy, usability)</li>
+<li>an <em>assumption</em> (something you are betting is true)</li>
+<li>an <em>open question</em> (something you must resolve)</li>
+</ul></li>
+<li><p>If you can’t label a paragraph, it’s often “hand-wavy” and needs rewriting.</p></li>
+<li><p>A simple requirement format (good enough for first year) is:</p>
+<ul>
+<li><strong>As a</strong> <code>&lt;type of user&gt;</code></li>
+<li><strong>I want</strong> <code>&lt;capability&gt;</code></li>
+<li><strong>So that</strong> <code>&lt;benefit&gt;</code></li>
+</ul></li>
+<li><p>Then add acceptance criteria:</p>
+<ul>
+<li>“Given … when … then …” statements (these become tests later).</li>
+</ul></li>
+</ul>
+<section id="example-extract-requirements-from-a-paragraph" class="level3">
+<h3 class="anchored" data-anchor-id="example-extract-requirements-from-a-paragraph">Example: extract requirements from a paragraph</h3>
+<ul>
+<li><p>Suppose your design doc says the app should help someone prepare for an exam.</p></li>
+<li><p>Turn that into requirements:</p>
+<ul>
+<li>As a learner, I want to select a topic so I can practise questions.</li>
+<li>As a learner, I want immediate feedback so I can correct misconceptions.</li>
+<li>As a learner, I want progress tracking so I can focus on weak areas.</li>
+</ul></li>
+<li><p>Notice how this immediately suggests data structures and routes.</p></li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A tiny starting point: represent requirements as data</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>requirements <span class="op">=</span> [</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"as"</span>: <span class="st">"learner"</span>, <span class="st">"want"</span>: <span class="st">"select a topic"</span>, <span class="st">"so_that"</span>: <span class="st">"practise questions"</span>},</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"as"</span>: <span class="st">"learner"</span>, <span class="st">"want"</span>: <span class="st">"immediate feedback"</span>, <span class="st">"so_that"</span>: <span class="st">"correct misconceptions"</span>},</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"as"</span>: <span class="st">"learner"</span>, <span class="st">"want"</span>: <span class="st">"progress tracking"</span>, <span class="st">"so_that"</span>: <span class="st">"focus on weak areas"</span>},</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Later, you might render this in a template or export to JSON.</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(json.dumps(requirements, indent<span class="op">=</span><span class="dv">2</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>This is intentionally “low-tech” — the goal is to <em>reduce ambiguity</em>.</li>
+</ul>
+</section>
+</section>
+<section id="setting-up-your-python-environment-deeper-notes" class="level2">
+<h2 class="anchored" data-anchor-id="setting-up-your-python-environment-deeper-notes">Setting up your Python environment (deeper notes)</h2>
+<ul>
+<li><p>Week 04 emphasises a repeatable environment because web apps are dependency-heavy.</p></li>
+<li><p>Two common mistakes by beginners:</p>
+<ul>
+<li>installing packages “globally” and then not remembering what you installed</li>
+<li>forgetting to activate the virtual environment and installing into the wrong place</li>
+</ul></li>
+<li><p>A virtual environment is just a folder containing:</p>
+<ul>
+<li>a Python interpreter</li>
+<li>site-packages (third-party libraries)</li>
+<li>scripts for activation</li>
+</ul></li>
+</ul>
+<section id="create-and-activate-a-virtual-environment" class="level3">
+<h3 class="anchored" data-anchor-id="create-and-activate-a-virtual-environment">Create and activate a virtual environment</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> venv .venv</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># macOS / Linux</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> .venv/bin/activate</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Windows (PowerShell)</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co"># .venv\Scripts\Activate.ps1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>If activation worked, your shell prompt usually changes (e.g., shows <code>(.venv)</code>).</li>
+<li>If you get “permission” errors on Windows PowerShell, you may need to adjust the execution policy.</li>
+</ul>
+</section>
+<section id="freeze-dependencies-so-others-can-reproduce-your-setup" class="level3">
+<h3 class="anchored" data-anchor-id="freeze-dependencies-so-others-can-reproduce-your-setup">Freeze dependencies so others can reproduce your setup</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> pip install <span class="at">--upgrade</span> pip</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install flask</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> freeze <span class="op">&gt;</span> requirements.txt</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> requirements.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li><code>requirements.txt</code> is a “snapshot” of your environment.</li>
+<li>Later chapters build on this to make the project easier to share and deploy.</li>
+</ul>
+</section>
+</section>
+<section id="laying-out-the-application-skeleton-deeper-notes" class="level2">
+<h2 class="anchored" data-anchor-id="laying-out-the-application-skeleton-deeper-notes">Laying out the application skeleton (deeper notes)</h2>
+<ul>
+<li>The chapter’s approach is basically: create <em>stubs</em> first, then fill them in.</li>
+<li>A stub is a small piece of code that compiles/runs but doesn’t do much yet.</li>
+</ul>
+<section id="a-typical-flask-project-layout" class="level3">
+<h3 class="anchored" data-anchor-id="a-typical-flask-project-layout">A typical Flask project layout</h3>
+<ul>
+<li>The chapter’s screenshots illustrate a clean starting structure.</li>
+<li>A common layout is:</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">myapp/</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="ex">app.py</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="ex">templates/</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">index.html</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="ex">static/</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">style.css</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="ex">requirements.txt</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="ex">README.md</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li><p>Why separate <code>templates/</code> and <code>static/</code>?</p>
+<ul>
+<li>templates are rendered by Flask (HTML with placeholders)</li>
+<li>static files are served directly (CSS, images, JS)</li>
+</ul></li>
+</ul>
+</section>
+<section id="figure-chapter-4-structure-and-setup-visuals" class="level3">
+<h3 class="anchored" data-anchor-id="figure-chapter-4-structure-and-setup-visuals">Figure: Chapter 4 structure and setup visuals</h3>
+<p><img src="images/week_04/fig_01.png" class="img-fluid"></p>
+<p><img src="images/week_04/fig_02.png" class="img-fluid"></p>
+<ul>
+<li>Use these figures as reminders of the “shape” of a small web app.</li>
+</ul>
+</section>
+</section>
+<section id="flask-request-lifecycle-what-actually-happens" class="level2">
+<h2 class="anchored" data-anchor-id="flask-request-lifecycle-what-actually-happens">Flask request lifecycle (what actually happens)</h2>
+<ul>
+<li><p>Students often think “Flask runs my code top-to-bottom each time”. Not quite.</p></li>
+<li><p>In a Flask server:</p>
+<ul>
+<li>Python starts once</li>
+<li>Flask registers routes (URL patterns)</li>
+<li>then waits for requests</li>
+</ul></li>
+<li><p>When a request arrives, Flask:</p>
+<ul>
+<li>matches the URL to a route</li>
+<li>calls the function for that route</li>
+<li>returns the response</li>
+</ul></li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> flask <span class="im">import</span> Flask</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>app <span class="op">=</span> Flask(<span class="va">__name__</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="at">@app.get</span>(<span class="st">"/"</span>)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> home():</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># This runs when the browser requests / (not when the file is imported)</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"Hello from Week 4"</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    app.run(debug<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li><p><code>debug=True</code> is a development convenience:</p>
+<ul>
+<li>auto-reloads when files change</li>
+<li>shows a helpful debug page on errors</li>
+</ul></li>
+<li><p>You must disable debug mode for production.</p></li>
+</ul>
+</section>
+<section id="templates-expanded" class="level2">
+<h2 class="anchored" data-anchor-id="templates-expanded">Templates (expanded)</h2>
+<ul>
+<li>Chapter 4 pushes you toward templates early, which is good practice.</li>
+<li>Templates help you avoid mixing Python logic with HTML.</li>
+</ul>
+<section id="minimal-jinja-template-example" class="level3">
+<h3 class="anchored" data-anchor-id="minimal-jinja-template-example">Minimal Jinja template example</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- templates/index.html --&gt;</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!doctype</span> html<span class="dt">&gt;</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>{{ title }}<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>{{ heading }}<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>Today we are building the first version.<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> flask <span class="im">import</span> Flask, render_template</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>app <span class="op">=</span> Flask(<span class="va">__name__</span>)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="at">@app.get</span>(<span class="st">"/"</span>)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> index():</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> render_template(<span class="st">"index.html"</span>, title<span class="op">=</span><span class="st">"Week 4"</span>, heading<span class="op">=</span><span class="st">"Hello, Flask"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>Key idea: <code>render_template</code> fills placeholders like <code>{ title }</code>.</li>
+</ul>
+</section>
+</section>
+<section id="using-ai-tools-without-losing-control" class="level2">
+<h2 class="anchored" data-anchor-id="using-ai-tools-without-losing-control">Using AI tools without losing control</h2>
+<ul>
+<li><p>Chapter 4 is where the temptation to “let the AI write the whole app” becomes strong.</p></li>
+<li><p>The safe workflow is:</p>
+<ol type="1">
+<li>you define the requirements and the “shape” of the app</li>
+<li>you ask the AI for <em>small deltas</em> (a route, a template, a helper function)</li>
+<li>you run the code and inspect the results</li>
+</ol></li>
+<li><p>A good prompt pattern is:</p>
+<ul>
+<li>give the current file structure</li>
+<li>specify the exact change</li>
+<li>require that the output is a patch/diff</li>
+</ul></li>
+</ul>
+<pre class="text"><code>You are helping me with a Flask app.
+Current structure:
+- app.py
+- templates/index.html
+Task: add a new route GET /about that renders templates/about.html.
+Constraints:
+- keep app.py minimal
+- do not add new dependencies
+Return: the full updated app.py and new about.html</code></pre>
+<ul>
+<li>This kind of prompt reduces “AI drift” (the model inventing extra features).</li>
+</ul>
+</section>
+<section id="more-micro-quotes-from-the-chapter" class="level2">
+<h2 class="anchored" data-anchor-id="more-micro-quotes-from-the-chapter">More micro-quotes from the chapter</h2>
+<ul>
+<li><p>Here are a few short phrases from Chapter 4 that capture the intent:</p>
+<ul>
+<li>“we’re diving headfirst into the wild world”</li>
+<li>“building a useful application”</li>
+<li>“integrating these tools into your workflow”</li>
+</ul></li>
+<li><p>Use these as “north stars”: the goal is a <em>working workflow</em>, not perfect code.</p></li>
+</ul>
+</section>
+<section id="extended-checklist-for-students" class="level2">
+<h2 class="anchored" data-anchor-id="extended-checklist-for-students">Extended checklist for students</h2>
+<ul>
+<li><p>Before you start coding:</p>
+<ul>
+<li>you can explain the user goal in one sentence</li>
+<li>you can list 3–5 requirements</li>
+<li>you know what data your app needs to store (even if it’s just in memory)</li>
+</ul></li>
+<li><p>When you set up the project:</p>
+<ul>
+<li>you created <code>.venv/</code></li>
+<li>you can activate it</li>
+<li><code>python -m pip -V</code> points inside <code>.venv/</code></li>
+</ul></li>
+<li><p>When you run Flask:</p>
+<ul>
+<li>you can visit <code>http://127.0.0.1:5000/</code></li>
+<li>you can change a file and see it reload</li>
+<li>you can read a stack trace when it breaks</li>
+</ul></li>
 </ul>
 </section>
 <section id="summing-up" class="level2">
 <h2 class="anchored" data-anchor-id="summing-up">Summing Up</h2>
-<p>Libraries extend the abilities of Python. Some libraries are included by default with Python and simply need to be imported. Others are third-party packages that need to be installed using <code>pip</code>. You can make your own packages for use by yourself or others! In this lecture, you learned about…</p>
 <ul>
-<li>Libraries</li>
-<li>Random</li>
-<li>Statistics</li>
-<li>Command-Line Arguments</li>
-<li>Slice</li>
-<li>Packages</li>
-<li>APIs</li>
-<li>Making Your Own Libraries</li>
+<li><p>Chapter 4 is where your project becomes “real”: an app skeleton you can run.</p></li>
+<li><p>The highest-value skills from this week:</p>
+<ul>
+<li>turning a vague design idea into concrete requirements</li>
+<li>creating a reproducible Python environment</li>
+<li>building stubs first, then iterating</li>
+<li>understanding the request/response cycle</li>
+<li>using AI tools in small, testable steps</li>
+</ul></li>
 </ul>
 
 
@@ -1305,13 +1646,13 @@ if len(sys.argv) == 2:
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../notes/notes_3.html" class="pagination-link" aria-label="Notes 03 🐍">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Notes 03 🐍</span>
+      <a href="../notes/notes_3.html" class="pagination-link" aria-label="Notes 03 🤖">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Notes 03 🤖</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../notes/notes_5.html" class="pagination-link" aria-label="Notes 05 🐍">
-        <span class="nav-page-text">Notes 05 🐍</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../notes/notes_5.html" class="pagination-link" aria-label="Notes 05 🤖">
+        <span class="nav-page-text">Notes 05 🤖</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

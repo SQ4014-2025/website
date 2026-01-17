@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -77,7 +112,11 @@ ul.task-list li input[type="checkbox"] {
 
 
 <meta property="og:title" content="Real World AI">
+<meta property="og:image" content="https://SQ4014-2025.github.io/website/notes/images/week_03/fig_01.png">
 <meta property="og:site_name" content="Real World AI">
+<meta property="og:image:alt" content="Figure from Week 03">
+<meta property="og:image:height" content="658">
+<meta property="og:image:width" content="1129">
 <meta name="twitter:title" content="Real World AI">
 <meta name="twitter:image" content="https://SQ4014-2025.github.io/website/notes/images/twitter-card.png">
 <meta name="twitter:creator" content="@EdHarris9000">
@@ -255,7 +294,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/notes_0.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/notes_3.html">Notes 03 🐍</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/notes_1.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/notes_3.html">Notes 03 🤖</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -335,61 +374,61 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_0.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 00 🐍</span></a>
+ <span class="menu-text">Lecture 00 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_1.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 01 🐍</span></a>
+ <span class="menu-text">Lecture 01 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_2.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 02 🐍</span></a>
+ <span class="menu-text">Lecture 02 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_3.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 03 🐍</span></a>
+ <span class="menu-text">Lecture 03 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_4.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 04 🐍</span></a>
+ <span class="menu-text">Lecture 04 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_5.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 05 🐍</span></a>
+ <span class="menu-text">Lecture 05 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_6.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 06 🐍</span></a>
+ <span class="menu-text">Lecture 06 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_7.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 07 🐍</span></a>
+ <span class="menu-text">Lecture 07 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_8.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 08 🐍</span></a>
+ <span class="menu-text">Lecture 08 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_9.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 09 🐍</span></a>
+ <span class="menu-text">Lecture 09 🤖</span></a>
   </div>
 </li>
       </ul>
@@ -405,62 +444,62 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notes/notes_0.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 00 🐍</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../notes/notes_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 01 🐍</span></a>
+ <span class="menu-text">Notes 01 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 02 🐍</span></a>
+ <span class="menu-text">Notes 02 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_3.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Notes 03 🐍</span></a>
+ <span class="menu-text">Notes 03 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 04 🐍</span></a>
+ <span class="menu-text">Notes 04 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 05 🐍</span></a>
+ <span class="menu-text">Notes 05 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 06 🐍</span></a>
+ <span class="menu-text">Notes 06 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 07 🐍</span></a>
+ <span class="menu-text">Notes 07 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 08 🐍</span></a>
+ <span class="menu-text">Notes 08 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 09 🐍</span></a>
+ <span class="menu-text">Notes 09 🤖</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/notes_10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes 10 🤖</span></a>
   </div>
 </li>
       </ul>
@@ -477,61 +516,61 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src0" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 00 🐍</span></a>
+ <span class="menu-text">Code 00 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src1" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 01 🐍</span></a>
+ <span class="menu-text">Code 01 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src2" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 02 🐍</span></a>
+ <span class="menu-text">Code 02 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src3" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 03 🐍</span></a>
+ <span class="menu-text">Code 03 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src4" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 04 🐍</span></a>
+ <span class="menu-text">Code 04 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src5" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 05 🐍</span></a>
+ <span class="menu-text">Code 05 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src6" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 06 🐍</span></a>
+ <span class="menu-text">Code 06 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src7" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 07 🐍</span></a>
+ <span class="menu-text">Code 07 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src8" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 08 🐍</span></a>
+ <span class="menu-text">Code 08 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src9" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 09 🐍</span></a>
+ <span class="menu-text">Code 09 🤖</span></a>
   </div>
 </li>
       </ul>
@@ -548,55 +587,55 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_0/pset_0.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 00 🐍</span></a>
+ <span class="menu-text">Problem Set 00 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_1/pset_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 01 🐍</span></a>
+ <span class="menu-text">Problem Set 01 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_2/pset_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 02 🐍</span></a>
+ <span class="menu-text">Problem Set 02 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_3/pset_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 03 🐍</span></a>
+ <span class="menu-text">Problem Set 03 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_4/pset_4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 04 🐍</span></a>
+ <span class="menu-text">Problem Set 04 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_5/pset_5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 05 🐍</span></a>
+ <span class="menu-text">Problem Set 05 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_6/pset_6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 06 🐍</span></a>
+ <span class="menu-text">Problem Set 06 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_7/pset_7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 07 🐍</span></a>
+ <span class="menu-text">Problem Set 07 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_8/pset_8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 08 🐍</span></a>
+ <span class="menu-text">Problem Set 08 🤖</span></a>
   </div>
 </li>
       </ul>
@@ -611,222 +650,419 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#week-3-notes" id="toc-week-3-notes" class="nav-link active" data-scroll-target="#week-3-notes">Week 3 Notes</a></li>
-  <li><a href="#lecture-3" id="toc-lecture-3" class="nav-link" data-scroll-target="#lecture-3">Lecture 3</a>
+  <li><a href="#week-03-designing-your-first-prompt" id="toc-week-03-designing-your-first-prompt" class="nav-link active" data-scroll-target="#week-03-designing-your-first-prompt">Week 03 — Designing Your First Prompt</a>
   <ul class="collapse">
-  <li><a href="#exceptions" id="toc-exceptions" class="nav-link" data-scroll-target="#exceptions">Exceptions</a></li>
-  <li><a href="#runtime-errors" id="toc-runtime-errors" class="nav-link" data-scroll-target="#runtime-errors">Runtime Errors</a></li>
-  <li><a href="#try" id="toc-try" class="nav-link" data-scroll-target="#try"><code>try</code></a></li>
-  <li><a href="#else" id="toc-else" class="nav-link" data-scroll-target="#else"><code>else</code></a></li>
-  <li><a href="#creating-a-function-to-get-an-integer" id="toc-creating-a-function-to-get-an-integer" class="nav-link" data-scroll-target="#creating-a-function-to-get-an-integer">Creating a Function to Get an Integer</a></li>
-  <li><a href="#pass" id="toc-pass" class="nav-link" data-scroll-target="#pass"><code>pass</code></a></li>
-  <li><a href="#summing-up" id="toc-summing-up" class="nav-link" data-scroll-target="#summing-up">Summing Up</a></li>
+  <li><a href="#contents" id="toc-contents" class="nav-link" data-scroll-target="#contents">Contents</a></li>
+  <li><a href="#figures-used-in-this-week" id="toc-figures-used-in-this-week" class="nav-link" data-scroll-target="#figures-used-in-this-week">Figures used in this week</a></li>
+  <li><a href="#why-prompting-is-a-design-skill" id="toc-why-prompting-is-a-design-skill" class="nav-link" data-scroll-target="#why-prompting-is-a-design-skill">1. Why prompting is a design skill</a>
+  <ul class="collapse">
+  <li><a href="#micro-quote" id="toc-micro-quote" class="nav-link" data-scroll-target="#micro-quote">Micro-quote</a></li>
+  </ul></li>
+  <li><a href="#prompt-anatomy" id="toc-prompt-anatomy" class="nav-link" data-scroll-target="#prompt-anatomy">2. Prompt anatomy</a>
+  <ul class="collapse">
+  <li><a href="#chapter-keywords-bold-first-use" id="toc-chapter-keywords-bold-first-use" class="nav-link" data-scroll-target="#chapter-keywords-bold-first-use">Chapter keywords (bold first use)</a></li>
+  <li><a href="#example-minimal-vs-engineered-prompt" id="toc-example-minimal-vs-engineered-prompt" class="nav-link" data-scroll-target="#example-minimal-vs-engineered-prompt">Example: minimal vs engineered prompt</a></li>
+  </ul></li>
+  <li><a href="#from-vague-to-specific" id="toc-from-vague-to-specific" class="nav-link" data-scroll-target="#from-vague-to-specific">3. From vague to specific</a>
+  <ul class="collapse">
+  <li><a href="#micro-quote-1" id="toc-micro-quote-1" class="nav-link" data-scroll-target="#micro-quote-1">Micro-quote</a></li>
+  <li><a href="#a-reusable-rewrite-pattern" id="toc-a-reusable-rewrite-pattern" class="nav-link" data-scroll-target="#a-reusable-rewrite-pattern">A reusable rewrite pattern</a></li>
+  </ul></li>
+  <li><a href="#constraints-rubrics-and-acceptance-tests" id="toc-constraints-rubrics-and-acceptance-tests" class="nav-link" data-scroll-target="#constraints-rubrics-and-acceptance-tests">4. Constraints, rubrics, and acceptance tests</a>
+  <ul class="collapse">
+  <li><a href="#micro-quote-2" id="toc-micro-quote-2" class="nav-link" data-scroll-target="#micro-quote-2">Micro-quote</a></li>
+  <li><a href="#code-acceptance-test-mindset" id="toc-code-acceptance-test-mindset" class="nav-link" data-scroll-target="#code-acceptance-test-mindset">Code: acceptance-test mindset</a></li>
+  </ul></li>
+  <li><a href="#few-shot-examples" id="toc-few-shot-examples" class="nav-link" data-scroll-target="#few-shot-examples">5. Few-shot examples</a>
+  <ul class="collapse">
+  <li><a href="#when-few-shot-helps" id="toc-when-few-shot-helps" class="nav-link" data-scroll-target="#when-few-shot-helps">When few-shot helps</a></li>
+  <li><a href="#micro-quote-3" id="toc-micro-quote-3" class="nav-link" data-scroll-target="#micro-quote-3">Micro-quote</a></li>
+  <li><a href="#example-prompt-with-one-example-pair" id="toc-example-prompt-with-one-example-pair" class="nav-link" data-scroll-target="#example-prompt-with-one-example-pair">Example prompt with one example pair</a></li>
+  </ul></li>
+  <li><a href="#output-formats-that-dont-break" id="toc-output-formats-that-dont-break" class="nav-link" data-scroll-target="#output-formats-that-dont-break">6. Output formats that don’t break</a>
+  <ul class="collapse">
+  <li><a href="#micro-quote-4" id="toc-micro-quote-4" class="nav-link" data-scroll-target="#micro-quote-4">Micro-quote</a></li>
+  <li><a href="#code-strict-json-parsing" id="toc-code-strict-json-parsing" class="nav-link" data-scroll-target="#code-strict-json-parsing">Code: strict JSON parsing</a></li>
+  </ul></li>
+  <li><a href="#iteration-loop" id="toc-iteration-loop" class="nav-link" data-scroll-target="#iteration-loop">7. Iteration loop</a>
+  <ul class="collapse">
+  <li><a href="#micro-quote-5" id="toc-micro-quote-5" class="nav-link" data-scroll-target="#micro-quote-5">Micro-quote</a></li>
+  <li><a href="#code-prompt-versioning-idea" id="toc-code-prompt-versioning-idea" class="nav-link" data-scroll-target="#code-prompt-versioning-idea">Code: prompt versioning idea</a></li>
+  </ul></li>
+  <li><a href="#failure-modes-debugging-prompts" id="toc-failure-modes-debugging-prompts" class="nav-link" data-scroll-target="#failure-modes-debugging-prompts">8. Failure modes + debugging prompts</a>
+  <ul class="collapse">
+  <li><a href="#debug-prompt-template" id="toc-debug-prompt-template" class="nav-link" data-scroll-target="#debug-prompt-template">Debug prompt template</a></li>
+  </ul></li>
+  <li><a href="#prompt-patterns-you-can-reuse" id="toc-prompt-patterns-you-can-reuse" class="nav-link" data-scroll-target="#prompt-patterns-you-can-reuse">9. Prompt patterns you can reuse</a>
+  <ul class="collapse">
+  <li><a href="#pattern-a-do-x-then-verify" id="toc-pattern-a-do-x-then-verify" class="nav-link" data-scroll-target="#pattern-a-do-x-then-verify">Pattern A: “Do X, then verify”</a></li>
+  <li><a href="#pattern-b-teach-me-then-quiz-me" id="toc-pattern-b-teach-me-then-quiz-me" class="nav-link" data-scroll-target="#pattern-b-teach-me-then-quiz-me">Pattern B: “Teach me, then quiz me”</a></li>
+  <li><a href="#pattern-c-generate-options-trade-offs" id="toc-pattern-c-generate-options-trade-offs" class="nav-link" data-scroll-target="#pattern-c-generate-options-trade-offs">Pattern C: “Generate options + trade-offs”</a></li>
+  </ul></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">10. Summary</a></li>
+  <li><a href="#appendix-a-worked-walkthrough-building-a-prompt-step-by-step" id="toc-appendix-a-worked-walkthrough-building-a-prompt-step-by-step" class="nav-link" data-scroll-target="#appendix-a-worked-walkthrough-building-a-prompt-step-by-step">Appendix A — Worked walkthrough: building a prompt step by step</a>
+  <ul class="collapse">
+  <li><a href="#step-1-start-vague" id="toc-step-1-start-vague" class="nav-link" data-scroll-target="#step-1-start-vague">Step 1: Start vague</a></li>
+  <li><a href="#step-2-add-audience-purpose" id="toc-step-2-add-audience-purpose" class="nav-link" data-scroll-target="#step-2-add-audience-purpose">Step 2: Add audience + purpose</a></li>
+  <li><a href="#step-3-add-constraints" id="toc-step-3-add-constraints" class="nav-link" data-scroll-target="#step-3-add-constraints">Step 3: Add constraints</a></li>
+  <li><a href="#step-4-add-success-criteria-rubric" id="toc-step-4-add-success-criteria-rubric" class="nav-link" data-scroll-target="#step-4-add-success-criteria-rubric">Step 4: Add success criteria (rubric)</a></li>
+  <li><a href="#step-5-add-output-format" id="toc-step-5-add-output-format" class="nav-link" data-scroll-target="#step-5-add-output-format">Step 5: Add output format</a></li>
+  <li><a href="#step-6-add-examples-few-shot" id="toc-step-6-add-examples-few-shot" class="nav-link" data-scroll-target="#step-6-add-examples-few-shot">Step 6: Add examples (few-shot)</a></li>
+  <li><a href="#step-7-iterate-with-failure-analysis" id="toc-step-7-iterate-with-failure-analysis" class="nav-link" data-scroll-target="#step-7-iterate-with-failure-analysis">Step 7: Iterate with failure analysis</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/SQ4014-2025/website/edit/master/notes/notes_3.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/SQ4014-2025/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/notes_0.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/notes_3.html">Notes 03 🐍</a></li></ol></nav></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/notes_1.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/notes_3.html">Notes 03 🤖</a></li></ol></nav></header>
 
 
 
 
 
-<section id="week-3-notes" class="level1">
-<h1>Week 3 Notes</h1>
+<section id="week-03-designing-your-first-prompt" class="level1">
+<h1>Week 03 — Designing Your First Prompt</h1>
+<blockquote class="blockquote">
+<p><strong>Week focus:</strong> turning vague intent into reliable, testable prompt instructions.</p>
+</blockquote>
+<section id="contents" class="level2">
+<h2 class="anchored" data-anchor-id="contents">Contents</h2>
+<ul>
+<li><a href="#1-why-prompting-is-a-design-skill">1. Why prompting is a design skill</a></li>
+<li><a href="#2-prompt-anatomy">2. Prompt anatomy</a></li>
+<li><a href="#3-from-vague-to-specific">3. From vague to specific</a></li>
+<li><a href="#4-constraints-rubrics-and-acceptance-tests">4. Constraints, rubrics, and acceptance tests</a></li>
+<li><a href="#5-few-shot-examples">5. Few-shot examples</a></li>
+<li><a href="#6-output-formats-that-dont-break">6. Output formats that don’t break</a></li>
+<li><a href="#7-iteration-loop">7. Iteration loop</a></li>
+<li><a href="#8-failure-modes--debugging-prompts">8. Failure modes + debugging prompts</a></li>
+<li><a href="#9-prompt-patterns-you-can-reuse">9. Prompt patterns you can reuse</a></li>
+<li><a href="#10-summary">10. Summary</a></li>
+</ul>
+</section>
+<section id="figures-used-in-this-week" class="level2">
+<h2 class="anchored" data-anchor-id="figures-used-in-this-week">Figures used in this week</h2>
+<p><img src="images/week_03/fig_01.png" class="img-fluid" style="width:85.0%" alt="Figure from Week 03"> <img src="images/week_03/fig_02.png" class="img-fluid" style="width:85.0%" alt="Figure from Week 03"></p>
 <hr>
 </section>
-<section id="lecture-3" class="level1">
-<h1>Lecture 3</h1>
+<section id="why-prompting-is-a-design-skill" class="level2">
+<h2 class="anchored" data-anchor-id="why-prompting-is-a-design-skill">1. Why prompting is a design skill</h2>
+<p>Prompting is not “asking nicely”. In the real world, you use prompts to <strong>specify behaviour</strong> under constraints:</p>
 <ul>
-<li><a href="#exceptions">Exceptions</a></li>
-<li><a href="#runtime-errors">Runtime Errors</a></li>
-<li><a href="#try"><code>try</code></a></li>
-<li><a href="#else"><code>else</code></a></li>
-<li><a href="#creating-a-function-to-get-an-integer">Creating a Function to Get an Integer</a></li>
-<li><a href="#pass"><code>pass</code></a></li>
-<li><a href="#summing-up">Summing Up</a></li>
+<li>you want <em>repeatable</em> outputs</li>
+<li>you want outputs that are <em>checkable</em></li>
+<li>you want the model to use the <em>right information</em></li>
+<li>you want it to behave sensibly when information is missing</li>
 </ul>
-<section id="exceptions" class="level2">
-<h2 class="anchored" data-anchor-id="exceptions">Exceptions</h2>
+<p>A useful mindset: a prompt is closer to a <strong>function signature</strong> than a conversation.</p>
+<section id="micro-quote" class="level3">
+<h3 class="anchored" data-anchor-id="micro-quote">Micro-quote</h3>
+<blockquote class="blockquote">
+<p>“A prompt is a program in natural language.”</p>
+</blockquote>
+<section id="the-two-jobs-of-a-good-prompt" class="level4">
+<h4 class="anchored" data-anchor-id="the-two-jobs-of-a-good-prompt">The two jobs of a good prompt</h4>
+<ol type="1">
+<li><strong>Explain the task</strong> (what success looks like)</li>
+<li><strong>Constrain the output</strong> (how the response must be shaped)</li>
+</ol>
+<hr>
+</section>
+</section>
+</section>
+<section id="prompt-anatomy" class="level2">
+<h2 class="anchored" data-anchor-id="prompt-anatomy">2. Prompt anatomy</h2>
+<p>A practical prompt usually contains these parts (not always in this order):</p>
 <ul>
-<li><p>Exceptions are things that go wrong within our coding.</p></li>
-<li><p>Exceptions are problems that arise while your program is running.</p></li>
-<li><p>In our text editor, type <code>code hello.py</code> to create a new file. Type as follows (with the intentional errors included):</p>
-<pre><code>print("hello, world)</code></pre>
-<p>Notice that we intentionally left out a quotation mark.</p></li>
-<li><p>Running <code>python hello.py</code> in the terminal produces an error. The interpreter reports a syntax error. Syntax errors generally mean you should double-check that you typed your code correctly.</p></li>
-<li><p>You can learn more in Python’s documentation of <a href="https://docs.python.org/3/tutorial/errors.html">Errors and Exceptions</a>.</p></li>
+<li><strong>Role</strong>: “You are a …” (useful when behaviour matters)</li>
+<li><strong>Goal</strong>: what to produce</li>
+<li><strong>Context</strong>: what the model should know or assume</li>
+<li><strong>Inputs</strong>: what you are providing (data, text, code, constraints)</li>
+<li><strong>Rules</strong>: explicit do/don’t constraints</li>
+<li><strong>Output format</strong>: JSON, Markdown, table, bullet list, etc</li>
+<li><strong>Quality bar</strong>: rubric / checklist / tests</li>
+</ul>
+<section id="chapter-keywords-bold-first-use" class="level3">
+<h3 class="anchored" data-anchor-id="chapter-keywords-bold-first-use">Chapter keywords (bold first use)</h3>
+<ul>
+<li><strong>Role prompting</strong>: framing the model’s perspective and responsibilities.</li>
+<li><strong>Constraints</strong>: explicit limits that prevent unwanted behaviour or formats.</li>
+<li><strong>Few-shot prompting</strong>: teaching by giving examples of desired input→output.</li>
+<li><strong>Rubric</strong>: a checklist the model should satisfy.</li>
+<li><strong>Output schema</strong>: a formal structure the output must follow (e.g., JSON).</li>
 </ul>
 </section>
-<section id="runtime-errors" class="level2">
-<h2 class="anchored" data-anchor-id="runtime-errors">Runtime Errors</h2>
+<section id="example-minimal-vs-engineered-prompt" class="level3">
+<h3 class="anchored" data-anchor-id="example-minimal-vs-engineered-prompt">Example: minimal vs engineered prompt</h3>
+<p>Bad (vague):</p>
+<pre class="text"><code>Write a good explanation of SQL joins.</code></pre>
+<p>Better (engineered):</p>
+<pre class="text"><code>You are a first-year teaching assistant.
+Explain SQL joins to beginners using:
+- exactly 3 join types (INNER, LEFT, FULL)
+- one simple table example
+- one common mistake per join type
+Output as markdown with headings and a final summary.</code></pre>
+<hr>
+</section>
+</section>
+<section id="from-vague-to-specific" class="level2">
+<h2 class="anchored" data-anchor-id="from-vague-to-specific">3. From vague to specific</h2>
+<p>Most student prompts fail because they skip <strong>specification</strong>. You can convert vague intent into a usable prompt by answering:</p>
 <ul>
-<li><p>Runtime errors refer to those created by unexpected behavior within your code. For example, perhaps you intended for a user to input a number, but they input a character instead. Your program may throw an error because of this unexpected input from the user.</p></li>
-<li><p>In your terminal window, run <code>code number.py</code>. Code as follows in your text editor:</p>
-<pre><code>x = int(input("What's x? "))
-print(f"x is {x}")</code></pre>
-<p>Notice that by including the <code>f</code>, we tell Python to interpolate what is in the curly braces as the value of <code>x</code>. Further, testing out your code, you can imagine how one could easily type in a string or a character instead of a number. Even still, a user could type nothing at all – simply hitting the enter key.</p></li>
-<li><p>As programmers, we should be defensive to ensure that our users are entering what we expected.</p></li>
-<li><p>If we run this program and type “cat”, we’ll see <code>ValueError: invalid literal for int() with base 10: 'cat'</code>. In other words, the <code>int</code> function cannot convert the text “cat” into a number.</p></li>
-<li><p>An effective strategy to fix this potential error would be to create “error handling” to ensure the user behaves as we intend.</p></li>
-<li><p>You can learn more in Python’s documentation of <a href="https://docs.python.org/3/tutorial/errors.html">Errors and Exceptions</a>.</p></li>
+<li>What is the <em>deliverable</em>? (an explanation / a plan / code / critique)</li>
+<li>Who is the <em>audience</em>?</li>
+<li>What <em>constraints</em> exist? (length, style, tools, time)</li>
+<li>What does <em>success</em> look like? (rubric / checklist)</li>
+<li>What should <em>never</em> happen? (anti-requirements)</li>
+</ul>
+<section id="micro-quote-1" class="level3">
+<h3 class="anchored" data-anchor-id="micro-quote-1">Micro-quote</h3>
+<blockquote class="blockquote">
+<p>“Be specific about what you want and what you don’t want.”</p>
+</blockquote>
+</section>
+<section id="a-reusable-rewrite-pattern" class="level3">
+<h3 class="anchored" data-anchor-id="a-reusable-rewrite-pattern">A reusable rewrite pattern</h3>
+<p>Take the vague prompt:</p>
+<pre class="text"><code>Help me debug my Python.</code></pre>
+<p>Rewrite it into something testable:</p>
+<pre class="text"><code>You are a Python tutor. I will paste code and an error message.
+1) Explain what the error means in plain language
+2) Identify the exact line likely causing it
+3) Provide a fixed version of the code
+4) Add one print/debug statement that proves the fix works
+Keep changes minimal.</code></pre>
+<hr>
+</section>
+</section>
+<section id="constraints-rubrics-and-acceptance-tests" class="level2">
+<h2 class="anchored" data-anchor-id="constraints-rubrics-and-acceptance-tests">4. Constraints, rubrics, and acceptance tests</h2>
+<p>If you want outputs you can trust, you need a <strong>quality gate</strong>. This can be:</p>
+<ul>
+<li>A short rubric (“must include X, avoid Y”)</li>
+<li>An acceptance test (unit tests, schema validation)</li>
+<li>A format requirement (JSON schema, markdown headings)</li>
+</ul>
+<section id="micro-quote-2" class="level3">
+<h3 class="anchored" data-anchor-id="micro-quote-2">Micro-quote</h3>
+<blockquote class="blockquote">
+<p>“Make the output easy to verify.”</p>
+</blockquote>
+</section>
+<section id="code-acceptance-test-mindset" class="level3">
+<h3 class="anchored" data-anchor-id="code-acceptance-test-mindset">Code: acceptance-test mindset</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A tiny “acceptance test” for AI-written text outputs</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> contains_required_phrases(text: <span class="bu">str</span>, required: <span class="bu">list</span>[<span class="bu">str</span>]) <span class="op">-&gt;</span> <span class="bu">bool</span>:</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">all</span>(phrase.lower() <span class="kw">in</span> text.lower() <span class="cf">for</span> phrase <span class="kw">in</span> required)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>sample <span class="op">=</span> <span class="st">"This answer covers INNER JOIN, LEFT JOIN and FULL JOIN."</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(contains_required_phrases(sample, [<span class="st">"INNER JOIN"</span>, <span class="st">"LEFT JOIN"</span>, <span class="st">"FULL JOIN"</span>]))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+</section>
+<section id="few-shot-examples" class="level2">
+<h2 class="anchored" data-anchor-id="few-shot-examples">5. Few-shot examples</h2>
+<p><strong>Few-shot prompting</strong> is when you show the model examples of the behaviour you want. This is especially powerful when you want consistent style or formatting.</p>
+<section id="when-few-shot-helps" class="level3">
+<h3 class="anchored" data-anchor-id="when-few-shot-helps">When few-shot helps</h3>
+<ul>
+<li>When outputs must match a “house style”</li>
+<li>When the task is ambiguous (many valid interpretations)</li>
+<li>When you care about edge-cases</li>
 </ul>
 </section>
-<section id="try" class="level2">
-<h2 class="anchored" data-anchor-id="try"><code>try</code></h2>
-<ul>
-<li><p>In Python <code>try</code> and <code>except</code> are ways of testing out user input before something goes wrong. Modify your code as follows:</p>
-<pre><code>try:
-    x = int(input("What's x?"))
-    print(f"x is {x}")
-except ValueError:
-    print("x is not an integer")</code></pre>
-<p>Notice how, running this code, inputting <code>50</code> will be accepted. However, typing in <code>cat</code> will produce an error visible to the user, instructing them why their input was not accepted.</p></li>
-<li><p>This is still not the best way to implement this code. Notice that we are trying to do two lines of code. For best practice, we should only <code>try</code> the fewest lines of code possible that we are concerned could fail. Adjust your code as follows:</p>
-<pre><code>try:
-    x = int(input("What's x?"))
-except ValueError:
-    print("x is not an integer")
+<section id="micro-quote-3" class="level3">
+<h3 class="anchored" data-anchor-id="micro-quote-3">Micro-quote</h3>
+<blockquote class="blockquote">
+<p>“Examples reduce ambiguity.”</p>
+</blockquote>
+</section>
+<section id="example-prompt-with-one-example-pair" class="level3">
+<h3 class="anchored" data-anchor-id="example-prompt-with-one-example-pair">Example prompt with one example pair</h3>
+<pre class="text"><code>Task: Convert short notes into a structured study card.
+Format:
+- Term
+- Definition
+- Example
+- Common mistake
 
-print(f"x is {x}")</code></pre>
-<p>Notice that while this accomplishes our goal of trying as few lines as possible, we now face a new error! We face a <code>NameError</code> where <code>x is not defined</code>. Look at this code and consider: Why is x not defined in some cases?</p></li>
-<li><p>Indeed, if you examine the order of operations in <code>x = int(input("What's x?"))</code>, working right to left, it could take an incorrectly inputted character and attempt to assign it as an integer. If this fails, the assignment of the value of <code>x</code> never occurs. Therefore, there is no x to print on our final line of code.</p></li>
+Example input:
+"SQL LEFT JOIN keeps all rows from the left table"
+Example output:
+Term: LEFT JOIN
+Definition: Returns all rows from left table plus matching right rows.
+Example: ...
+Common mistake: Confusing with INNER JOIN.
+
+Now do the same for: "FULL JOIN keeps all rows from both"</code></pre>
+<hr>
+</section>
+</section>
+<section id="output-formats-that-dont-break" class="level2">
+<h2 class="anchored" data-anchor-id="output-formats-that-dont-break">6. Output formats that don’t break</h2>
+<p>In real workflows, AI output often becomes input to something else: - a script - a web app - a report - a database</p>
+<p>That means formatting matters. If you don’t force structure, you’ll get “pretty” output that is unusable.</p>
+<section id="micro-quote-4" class="level3">
+<h3 class="anchored" data-anchor-id="micro-quote-4">Micro-quote</h3>
+<blockquote class="blockquote">
+<p>“Ask for the output format you need.”</p>
+</blockquote>
+</section>
+<section id="code-strict-json-parsing" class="level3">
+<h3 class="anchored" data-anchor-id="code-strict-json-parsing">Code: strict JSON parsing</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>raw <span class="op">=</span> <span class="st">"""{</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="st">  "title": "Study card",</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="st">  "points": ["one", "two"]</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="st">}"""</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> json.loads(raw)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data[<span class="st">"title"</span>], data[<span class="st">"points"</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+</section>
+<section id="iteration-loop" class="level2">
+<h2 class="anchored" data-anchor-id="iteration-loop">7. Iteration loop</h2>
+<p>Prompting is iterative. A common loop is:</p>
+<ol type="1">
+<li>Draft prompt</li>
+<li>Run it on a few cases</li>
+<li>Diagnose failure modes</li>
+<li>Add constraints / examples</li>
+<li>Re-run</li>
+</ol>
+<section id="micro-quote-5" class="level3">
+<h3 class="anchored" data-anchor-id="micro-quote-5">Micro-quote</h3>
+<blockquote class="blockquote">
+<p>“Iterate on prompts like you iterate on code.”</p>
+</blockquote>
+</section>
+<section id="code-prompt-versioning-idea" class="level3">
+<h3 class="anchored" data-anchor-id="code-prompt-versioning-idea">Code: prompt versioning idea</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>PROMPT_V1 <span class="op">=</span> <span class="st">"Summarise this article."</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>PROMPT_V2 <span class="op">=</span> <span class="st">"Summarise this article in 5 bullets for first-year students."</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>PROMPT_V3 <span class="op">=</span> PROMPT_V2 <span class="op">+</span> <span class="st">" Include one limitation and one question."</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, p <span class="kw">in</span> <span class="bu">enumerate</span>([PROMPT_V1, PROMPT_V2, PROMPT_V3], start<span class="op">=</span><span class="dv">1</span>):</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"v</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>p<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+</section>
+<section id="failure-modes-debugging-prompts" class="level2">
+<h2 class="anchored" data-anchor-id="failure-modes-debugging-prompts">8. Failure modes + debugging prompts</h2>
+<p>Common failure modes in early prompting:</p>
+<ul>
+<li><strong>Overly broad instructions</strong> → generic output</li>
+<li><strong>Missing constraints</strong> → wrong format, wrong length</li>
+<li><strong>Unclear audience</strong> → tone mismatch</li>
+<li><strong>No examples</strong> → inconsistent style</li>
+<li><strong>No rubric</strong> → “sounds good” but incomplete</li>
+</ul>
+<section id="debug-prompt-template" class="level3">
+<h3 class="anchored" data-anchor-id="debug-prompt-template">Debug prompt template</h3>
+<pre class="text"><code>You produced an answer that failed these requirements:
+- (list failures)
+Explain why it failed and produce a corrected version.
+Then provide a checklist to prevent the same failure next time.</code></pre>
+<hr>
+</section>
+</section>
+<section id="prompt-patterns-you-can-reuse" class="level2">
+<h2 class="anchored" data-anchor-id="prompt-patterns-you-can-reuse">9. Prompt patterns you can reuse</h2>
+<p>Below are reusable patterns you can copy into real work.</p>
+<section id="pattern-a-do-x-then-verify" class="level3">
+<h3 class="anchored" data-anchor-id="pattern-a-do-x-then-verify">Pattern A: “Do X, then verify”</h3>
+<pre class="text"><code>Do the task. Then verify your output against this checklist:
+- ...
+If anything fails, fix and re-check.</code></pre>
+</section>
+<section id="pattern-b-teach-me-then-quiz-me" class="level3">
+<h3 class="anchored" data-anchor-id="pattern-b-teach-me-then-quiz-me">Pattern B: “Teach me, then quiz me”</h3>
+<pre class="text"><code>Explain this concept simply. Then ask me 5 questions, increasing difficulty.
+Give answers at the end.</code></pre>
+</section>
+<section id="pattern-c-generate-options-trade-offs" class="level3">
+<h3 class="anchored" data-anchor-id="pattern-c-generate-options-trade-offs">Pattern C: “Generate options + trade-offs”</h3>
+<pre class="text"><code>Give 3 options. For each, include: benefits, drawbacks, best use-case.
+Finish with a recommendation for a beginner.</code></pre>
+<hr>
+</section>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">10. Summary</h2>
+<ul>
+<li>Prompting is best treated as <strong>specification</strong> and <strong>design</strong>.</li>
+<li>Good prompts include constraints, a format, and a quality gate.</li>
+<li>Few-shot examples reduce ambiguity and increase consistency.</li>
+<li>Iteration is normal: test, debug, refine.</li>
+<li>Outputs should be structured so they can be verified and reused.</li>
+</ul>
+<hr>
+</section>
+<section id="appendix-a-worked-walkthrough-building-a-prompt-step-by-step" class="level2">
+<h2 class="anchored" data-anchor-id="appendix-a-worked-walkthrough-building-a-prompt-step-by-step">Appendix A — Worked walkthrough: building a prompt step by step</h2>
+<section id="step-1-start-vague" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-start-vague">Step 1: Start vague</h3>
+<ul>
+<li>We begin with an intent that a human understands but a model can misinterpret.</li>
+<li>Example intent: <em>Make this explanation better.</em></li>
+<li>The phrase <em>better</em> is underspecified: better for who, in what way, with what constraints?</li>
+<li>If you leave this vague, the model may change style, length, or even meaning.</li>
 </ul>
 </section>
-<section id="else" class="level2">
-<h2 class="anchored" data-anchor-id="else"><code>else</code></h2>
+<section id="step-2-add-audience-purpose" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-add-audience-purpose">Step 2: Add audience + purpose</h3>
 <ul>
-<li><p>It turns out that there is another way to implement <code>try</code> that could catch errors of this nature.</p></li>
-<li><p>Adjust your code as follows:</p>
-<pre><code>try:
-    x = int(input("What's x?"))
-except ValueError:
-    print("x is not an integer")
-else:
-    print(f"x is {x}")</code></pre>
-<p>Notice that if no exception occurs, it will then run the block of code within <code>else</code>. Running <code>python number.py</code> and supplying <code>50</code>, you’ll notice that the result will be printed. Trying again, this time supplying <code>cat</code>, you’ll notice that the program now catches the error.</p></li>
-<li><p>Considering improving our code, notice that we are being a bit rude to our user. If our user does not cooperate, we currently simply end our program. Consider how we can use a loop to prompt the user for <code>x</code> and if they don’t prompt again!</p>
-<pre><code>while True:
-    try:
-        x = int(input("What's x?"))
-    except ValueError:
-        print("x is not an integer")
-    else:
-        break
-
-print(f"x is {x}")</code></pre>
-<p>Notice that <code>while True</code> will loop forever. If the user succeeds in supplying the correct input, we can break from the loop and then print the output. Now, a user that inputs something incorrectly will be asked for input again.</p></li>
+<li>Decide who the output is for (audience).</li>
+<li>For week 3, our audience is <em>first-year university students</em>.</li>
+<li>Purpose might be: quick revision notes, lecture handout, or tutorial support.</li>
+<li>Audience + purpose affect tone, vocabulary, and example choice.</li>
 </ul>
 </section>
-<section id="creating-a-function-to-get-an-integer" class="level2">
-<h2 class="anchored" data-anchor-id="creating-a-function-to-get-an-integer">Creating a Function to Get an Integer</h2>
+<section id="step-3-add-constraints" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-add-constraints">Step 3: Add constraints</h3>
 <ul>
-<li><p>Surely, there are many times that we would want to get an integer from our user. Modify your code as follows:</p>
-<pre><code>def main():
-    x = get_int()
-    print(f"x is {x}")
-
-
-def get_int():
-    while True:
-        try:
-            x = int(input("What's x?"))
-        except ValueError:
-            print("x is not an integer")
-        else:
-            break
-    return x
-
-
-main()</code></pre>
-<p>Notice that we are manifesting many great properties. First, we have abstracted away the ability to get an integer. Now, this whole program boils down to the first three lines of the program.</p></li>
-<li><p>Even still, we can improve this program. Consider what else you could do to improve this program. Modify your code as follows:</p>
-<pre><code>def main():
-    x = get_int()
-    print(f"x is {x}")
-
-
-def get_int():
-    while True:
-        try:
-            x = int(input("What's x?"))
-        except ValueError:
-            print("x is not an integer")
-        else:
-            return x
-
-
-main()</code></pre>
-<p>Notice that <code>return</code> will not only break you out of a loop, but it will also return a value.</p></li>
-<li><p>Some people may argue you could do the following:</p>
-<pre><code>def main():
-    x = get_int()
-    print(f"x is {x}")
-
-
-def get_int():
-    while True:
-        try:
-            return int(input("What's x?"))
-        except ValueError:
-            print("x is not an integer")
-
-
-main()</code></pre>
-<p>Notice this does the same thing as the previous iteration of our code, simply with fewer lines.</p></li>
+<li>Constraints prevent ‘creative drift’.</li>
+<li>Common constraints: word count, formatting, required sections, no jargon.</li>
+<li>Constraints also help the model prioritise: if space is limited, it must focus.</li>
 </ul>
 </section>
-<section id="pass" class="level2">
-<h2 class="anchored" data-anchor-id="pass"><code>pass</code></h2>
+<section id="step-4-add-success-criteria-rubric" class="level3">
+<h3 class="anchored" data-anchor-id="step-4-add-success-criteria-rubric">Step 4: Add success criteria (rubric)</h3>
 <ul>
-<li><p>We can make it such that our code does not warn our user, but simply re-asks them our prompting question by modifying our code as follows:</p>
-<pre><code>def main():
-    x = get_int()
-    print(f"x is {x}")
-
-
-def get_int():
-    while True:
-        try:
-            return int(input("What's x?"))
-        except ValueError:
-            pass
-
-
-main()</code></pre>
-<p>Notice that our code will still function but will not repeatedly inform the user of their error. In some cases, you’ll want to be very clear to the user what error is being produced. Other times, you might decide that you simply want to ask them for input again.</p></li>
-<li><p>One final refinement that could improve the implementation of this <code>get_int</code> function. Right now, notice that we are relying currently upon the honor system that the <code>x</code> is in both the <code>main</code> and <code>get_int</code> functions. We probably want to pass in a prompt that the user sees when asked for input. Modify your code as follows.</p>
-<pre><code>def main():
-    x = get_int("What's x? ")
-    print(f"x is {x}")
-
-
-def get_int(prompt):
-    while True:
-        try:
-            return int(input(prompt))
-        except ValueError:
-            pass
-
-
-main()</code></pre></li>
-<li><p>You can learn more in Python’s documentation of <a href="https://docs.python.org/3/tutorial/controlflow.html#pass-statements"><code>pass</code></a>.</p></li>
+<li>A rubric is a checklist your output should pass.</li>
+<li>Rubrics are powerful because they are <em>explicit</em>, <em>testable</em>, and <em>reusable</em>.</li>
+<li>Example rubric: must include 1 analogy, 1 code example, 3 bullet takeaways.</li>
 </ul>
 </section>
-<section id="summing-up" class="level2">
-<h2 class="anchored" data-anchor-id="summing-up">Summing Up</h2>
-<p>Errors are inevitable in your code. However, you have the opportunity to use what was learned today to help prevent these errors. In this lecture, you learned about…</p>
+<section id="step-5-add-output-format" class="level3">
+<h3 class="anchored" data-anchor-id="step-5-add-output-format">Step 5: Add output format</h3>
 <ul>
-<li>Exceptions</li>
-<li>Value Errors</li>
-<li>Runtime Errors</li>
-<li><code>try</code></li>
-<li><code>else</code></li>
-<li><code>pass</code></li>
+<li>If the output must feed another tool, specify a strict format.</li>
+<li>Examples: JSON, Markdown headings, CSV, YAML front matter.</li>
+<li>In Quarto notes, Markdown + headings is usually enough.</li>
+</ul>
+</section>
+<section id="step-6-add-examples-few-shot" class="level3">
+<h3 class="anchored" data-anchor-id="step-6-add-examples-few-shot">Step 6: Add examples (few-shot)</h3>
+<ul>
+<li>If you care about style, show the model the style.</li>
+<li>One example pair can dramatically increase consistency.</li>
+<li>Too many examples can bloat the prompt, so start small.</li>
+</ul>
+</section>
+<section id="step-7-iterate-with-failure-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="step-7-iterate-with-failure-analysis">Step 7: Iterate with failure analysis</h3>
+<ul>
+<li>When output fails, don’t just re-run: diagnose.</li>
+<li>Ask: which instruction was ignored? Was it ambiguous? Was it missing?</li>
+<li>Then modify the prompt so the failure becomes impossible or unlikely.</li>
 </ul>
 
 
+</section>
 </section>
 </section>
 
@@ -1246,13 +1482,13 @@ main()</code></pre></li>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../notes/notes_2.html" class="pagination-link" aria-label="Notes 02 🐍">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Notes 02 🐍</span>
+      <a href="../notes/notes_2.html" class="pagination-link" aria-label="Notes 02 🤖">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Notes 02 🤖</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../notes/notes_4.html" class="pagination-link" aria-label="Notes 04 🐍">
-        <span class="nav-page-text">Notes 04 🐍</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../notes/notes_4.html" class="pagination-link" aria-label="Notes 04 🤖">
+        <span class="nav-page-text">Notes 04 🤖</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

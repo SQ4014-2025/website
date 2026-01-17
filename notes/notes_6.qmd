@@ -1,0 +1,525 @@
+# Week 06 — Generating a software backend
+
+This week focuses on *Generating a software backend*.
+
+We are continuing the HAM radio practice-test app. In Week 05 we got a working scaffold (database + basic page). In **Week 06** the focus shifts from "it runs" to "it behaves like a real application": it must keep track of a test-taker over multiple clicks, handle restarts, and recover cleanly from bugs.
+
+## What this week covers (in plain language)
+
+-   Turning a static “dump of questions” into an interactive workflow.
+-   Creating and maintaining **persistent sessions** so each student sees a consistent test flow.
+-   Implementing backend features in **Flask** with **database integration**.
+-   Using **Tabnine** to:
+    -   generate code (scaffolds and functions)
+    -   debug and fix errors
+    -   refactor toward cleaner modules
+-   Crafting prompts that produce *useful* help instead of vague output.
+
+# Key terms
+
+-   **Tabnine** — AI coding assistant integrated into IDEs (VS Code etc.) that can autocomplete, chat, and help refactor.
+-   **session** — A way to remember who the user is between requests; this week focuses on keeping “test-taker state”.
+-   **Flask** — A lightweight Python web framework; here it serves pages and handles requests for the practice test app.
+-   **SQLite** — A file-based relational database used to store questions; errors often surface when files/paths/locks are wrong.
+-   **user state** — The data you must track during a test: which question number, chosen answers, score, and timing.
+
+# Where we are in the project
+
+## Recap of the app architecture so far
+
+By now you have:
+
+-   A **SQLite** database file (for example `data/questions.db`).
+-   Model code that opens a connection and fetches question data.
+-   A **Flask** app entry point that defines routes and renders templates.
+
+The problem: the app *works once*, then fails on reload / restart / second session.
+
+That is a classic “state + lifecycle” bug.
+
+## Why backend work matters here
+
+A lot of beginner web apps fail because they confuse:
+
+-   **a request** (one browser hit)
+-   **a session** (a user across many requests)
+-   **an application run** (the server process)
+
+When you build a “test” experience, you are building a mini state machine:
+
+-   Start test → choose 35 questions → show question 1 → record answer → show question 2 → … → show results.
+
+If you don’t store state, every click resets you.
+
+# Sessions: the core idea
+
+A browser talks to your server with HTTP. HTTP is *stateless*.
+
+So you must choose where to store “memory”:
+
+-   client-side (cookies / local storage)
+-   server-side (in-memory, file, database, cache)
+-   hybrid (cookie contains a session key; server stores the session data)
+
+In Flask, the default **session** object is cookie-based (signed) — good for small, non-sensitive state.
+
+### What you should store in a test session
+
+Typical items:
+
+-   `session_id` (or a server-side key)
+-   `question_ids` selected for this test
+-   `current_index` (which question the student is on)
+-   `answers` (dictionary mapping question_id → chosen option)
+-   `start_time` (optional)
+-   `score` (optional, may be computed at end)
+
+### What you should *not* store
+
+-   the entire question database
+-   secrets (API keys)
+-   large blobs of data
+
+# Debugging the “works once” problem
+
+## Symptom-driven debugging
+
+When an app works once and fails on the second run, the cause is often one of:
+
+-   state is not reset correctly
+-   file handles are not closed
+-   database locks persist
+-   cached objects survive between sessions
+-   assumptions about directory paths are wrong
+
+This week shows a concrete example: a **SQLite error** that appears when loading again.
+
+## Why this is a good learning bug
+
+It forces you to think in layers:
+
+1.  What is the *user action* (reload, restart, new browser)?
+2.  What is the *server lifecycle* (process reused, dev server reload)?
+3.  What is the *data layer lifecycle* (connection, cursor, transaction)?
+
+# Working with Tabnine as a coding partner
+
+## What Tabnine is good at
+
+-   producing “starter” implementations quickly
+-   suggesting fixes when you show a stack trace
+-   refactoring repetitive code into functions/classes
+-   generating tests and edge cases (if you ask clearly)
+
+## What Tabnine is bad at (unless you guide it)
+
+-   understanding your full codebase without context
+-   making architectural decisions *for you*
+-   reliably preserving your project conventions
+
+### Practical prompting pattern
+
+When you ask for help, include:
+
+-   the goal in one sentence
+-   the current behavior
+-   the error message / stack trace
+-   the relevant file(s) and function(s)
+-   what you already tried
+
+Example prompt structure (adapt for Tabnine or any assistant):
+
+> I have a Flask app that selects 35 questions from SQLite. It works on first load but fails on reload with this error: ... Here is my DatabaseConnection context manager and the route handler. Please diagnose the root cause and suggest a minimal fix.
+
+# Implementing the backend features (Flask + DB)
+
+## A minimal but clean Flask app structure
+
+A simple, testable structure often looks like:
+
+-   `app/__init__.py` (create_app)
+-   `app/routes.py` (blueprints)
+-   `app/models/` (db + query logic)
+-   `app/templates/` (Jinja2 HTML)
+-   `tests/` (pytest)
+
+This week keeps things lightweight but pushes toward separation:
+
+-   routes should be thin
+-   database code should be isolated
+-   “session state” should be explicit
+
+## Code example: enabling sessions and setting a secret key
+
+```python
+from flask import Flask
+
+def create_app():
+    app = Flask(__name__)
+    # In production: load from environment variable
+    app.config["SECRET_KEY"] = "dev-only-change-me"
+    return app
+```
+
+### Why `SECRET_KEY` matters
+
+Flask signs session cookies. If the key changes between runs, the server can’t validate old cookies. That can look like “random” session failures.
+
+## Code example: selecting questions once per session
+
+```python
+import random
+from flask import session
+
+def init_test_session(question_ids, n=35):
+    # Store a stable random selection for this user
+    chosen = random.sample(question_ids, n)
+    session["question_ids"] = chosen
+    session["current_index"] = 0
+    session["answers"] = {}
+```
+
+### Pitfall
+
+If you re-sample on every request, the test becomes inconsistent.
+
+## Code example: route that shows the current question
+
+```python
+from flask import render_template, session, redirect, url_for
+
+@app.route("/question")
+def show_question():
+    ids = session.get("question_ids")
+    if not ids:
+        return redirect(url_for("start_test"))
+
+    idx = session.get("current_index", 0)
+    qid = ids[idx]
+    question = Questions(cursor).fetch_by_id(qid)
+
+    return render_template("question.html", question=question, index=idx+1, total=len(ids))
+```
+
+## Code example: recording an answer (POST)
+
+```python
+from flask import request
+
+@app.post("/answer")
+def record_answer():
+    qid = request.form["question_id"]
+    choice = request.form["choice"]
+
+    answers = session.get("answers", {})
+    answers[qid] = choice
+    session["answers"] = answers
+
+    session["current_index"] = session.get("current_index", 0) + 1
+    return redirect(url_for("show_question"))
+```
+
+### Why we reassign `session["answers"]`
+
+With cookie-based sessions, Flask detects modifications when you set a key. Mutating a nested dict *may not* be detected consistently unless you reassign.
+
+# Testing and troubleshooting
+
+## Make failures reproducible
+
+Good debugging is about making “sometimes” become “always”.
+
+Try:
+
+-   restart server, load app, answer 1 question, reload
+-   open private window (new session), repeat
+-   delete cookies, repeat
+
+## Code example: quick smoke test with requests
+
+```python
+import requests
+
+base = "http://127.0.0.1:5000"
+with requests.Session() as s:
+    r = s.get(f"{base}/start")
+    r.raise_for_status()
+    r = s.get(f"{base}/question")
+    print(r.status_code, len(r.text))
+```
+
+## Common error classes in this week
+
+-   SQLite “database is locked”
+-   file path errors (relative vs absolute)
+-   session cookie invalidation
+-   KeyError from missing session keys
+
+# Figures from Chapter 6 (extracted)
+
+![](images/week_06/fig_001.jpeg){fig-alt="Extracted figure 1 from Chapter 6"} ![](images/week_06/fig_002.jpeg){fig-alt="Extracted figure 2 from Chapter 6"} ![](images/week_06/fig_003.png){fig-alt="Extracted figure 3 from Chapter 6"} ![](images/week_06/fig_004.jpeg){fig-alt="Extracted figure 4 from Chapter 6"} ![](images/week_06/fig_005.jpeg){fig-alt="Extracted figure 5 from Chapter 6"} ![](images/week_06/fig_006.jpeg){fig-alt="Extracted figure 6 from Chapter 6"} ![](images/week_06/fig_007.png){fig-alt="Extracted figure 7 from Chapter 6"} ![](images/week_06/fig_008.jpeg){fig-alt="Extracted figure 8 from Chapter 6"} ![](images/week_06/fig_009.jpeg){fig-alt="Extracted figure 9 from Chapter 6"} ![](images/week_06/fig_010.png){fig-alt="Extracted figure 10 from Chapter 6"} ![](images/week_06/fig_011.jpeg){fig-alt="Extracted figure 11 from Chapter 6"} ![](images/week_06/fig_012.png){fig-alt="Extracted figure 12 from Chapter 6"} ![](images/week_06/fig_013.jpeg){fig-alt="Extracted figure 13 from Chapter 6"} ![](images/week_06/fig_014.jpeg){fig-alt="Extracted figure 14 from Chapter 6"} ![](images/week_06/fig_015.jpeg){fig-alt="Extracted figure 15 from Chapter 6"} ![](images/week_06/fig_016.jpeg){fig-alt="Extracted figure 16 from Chapter 6"} ![](images/week_06/fig_017.jpeg){fig-alt="Extracted figure 17 from Chapter 6"} ![](images/week_06/fig_018.png){fig-alt="Extracted figure 18 from Chapter 6"} ![](images/week_06/fig_019.jpeg){fig-alt="Extracted figure 19 from Chapter 6"} ![](images/week_06/fig_020.jpeg){fig-alt="Extracted figure 20 from Chapter 6"} ![](images/week_06/fig_021.jpeg){fig-alt="Extracted figure 21 from Chapter 6"} ![](images/week_06/fig_022.jpeg){fig-alt="Extracted figure 22 from Chapter 6"} ![](images/week_06/fig_023.jpeg){fig-alt="Extracted figure 23 from Chapter 6"} ![](images/week_06/fig_024.jpeg){fig-alt="Extracted figure 24 from Chapter 6"} ![](images/week_06/fig_025.jpeg){fig-alt="Extracted figure 25 from Chapter 6"} ![](images/week_06/fig_026.jpeg){fig-alt="Extracted figure 26 from Chapter 6"} ![](images/week_06/fig_027.jpeg){fig-alt="Extracted figure 27 from Chapter 6"} ![](images/week_06/fig_028.jpeg){fig-alt="Extracted figure 28 from Chapter 6"} ![](images/week_06/fig_029.jpeg){fig-alt="Extracted figure 29 from Chapter 6"} ![](images/week_06/fig_030.jpeg){fig-alt="Extracted figure 30 from Chapter 6"} ![](images/week_06/fig_031.jpeg){fig-alt="Extracted figure 31 from Chapter 6"} ![](images/week_06/fig_032.jpeg){fig-alt="Extracted figure 32 from Chapter 6"} ![](images/week_06/fig_033.jpeg){fig-alt="Extracted figure 33 from Chapter 6"} ![](images/week_06/fig_034.jpeg){fig-alt="Extracted figure 34 from Chapter 6"} ![](images/week_06/fig_035.jpeg){fig-alt="Extracted figure 35 from Chapter 6"} ![](images/week_06/fig_036.png){fig-alt="Extracted figure 36 from Chapter 6"} ![](images/week_06/fig_037.jpeg){fig-alt="Extracted figure 37 from Chapter 6"} ![](images/week_06/fig_038.jpeg){fig-alt="Extracted figure 38 from Chapter 6"} ![](images/week_06/fig_039.jpeg){fig-alt="Extracted figure 39 from Chapter 6"} ![](images/week_06/fig_040.jpeg){fig-alt="Extracted figure 40 from Chapter 6"} ![](images/week_06/fig_041.jpeg){fig-alt="Extracted figure 41 from Chapter 6"} ![](images/week_06/fig_042.jpeg){fig-alt="Extracted figure 42 from Chapter 6"} ![](images/week_06/fig_043.png){fig-alt="Extracted figure 43 from Chapter 6"} ![](images/week_06/fig_044.jpeg){fig-alt="Extracted figure 44 from Chapter 6"} ![](images/week_06/fig_045.png){fig-alt="Extracted figure 45 from Chapter 6"} ![](images/week_06/fig_046.jpeg){fig-alt="Extracted figure 46 from Chapter 6"}
+
+# Summing up
+
+-   Chapter 6 is about turning a basic Flask + SQLite app into an interactive experience.
+-   The technical core is **sessions**: how to persist a user’s progress across requests.
+-   The practical workflow skill is using **Tabnine** effectively: provide context, ask for minimal diffs, and validate with tests.
+
+## Checks for understanding
+
+-   Explain the difference between a request, a session, and a server process.
+-   List 5 pieces of state you need for a practice test workflow.
+-   Describe one reason a SQLite app works once but fails on reload.
+-   Give an example of a *good* debugging prompt for Tabnine.
+
+# Guided walkthrough (dense notes)
+
+## Step 1: What are we trying to achieve?
+
+-   Goal: make the app behave consistently for a single test-taker across multiple requests.
+
+-   Why it matters: without stable state, a ‘test’ is just random page loads.
+
+-   What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.
+
+-   Common pitfall: changing too many things at once; fix the minimal root cause first.
+
+## Step 2: What are we trying to achieve?
+
+-   Goal: make the app behave consistently for a single test-taker across multiple requests.
+
+-   Why it matters: without stable state, a ‘test’ is just random page loads.
+
+-   What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.
+
+-   Common pitfall: changing too many things at once; fix the minimal root cause first.
+
+## Step 3: What are we trying to achieve?
+
+-   Goal: make the app behave consistently for a single test-taker across multiple requests.
+
+-   Why it matters: without stable state, a ‘test’ is just random page loads.
+
+-   What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.
+
+-   Common pitfall: changing too many things at once; fix the minimal root cause first.
+
+## Step 4: What are we trying to achieve?
+
+-   Goal: make the app behave consistently for a single test-taker across multiple requests.
+
+-   Why it matters: without stable state, a ‘test’ is just random page loads.
+
+-   What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.
+
+-   Common pitfall: changing too many things at once; fix the minimal root cause first.
+
+## Step 5: What are we trying to achieve?
+
+-   Goal: make the app behave consistently for a single test-taker across multiple requests.
+
+-   Why it matters: without stable state, a ‘test’ is just random page loads.
+
+-   What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.
+
+-   Common pitfall: changing too many things at once; fix the minimal root cause first.
+
+## Step 6: What are we trying to achieve?
+
+-   Goal: make the app behave consistently for a single test-taker across multiple requests.
+
+-   Why it matters: without stable state, a ‘test’ is just random page loads.
+
+-   What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.
+
+-   Common pitfall: changing too many things at once; fix the minimal root cause first.
+
+## Step 7: What are we trying to achieve?
+
+-   Goal: make the app behave consistently for a single test-taker across multiple requests.
+
+-   Why it matters: without stable state, a ‘test’ is just random page loads.
+
+-   What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.
+
+-   Common pitfall: changing too many things at once; fix the minimal root cause first.
+
+## Step 8: What are we trying to achieve?
+
+-   Goal: make the app behave consistently for a single test-taker across multiple requests.
+
+-   Why it matters: without stable state, a ‘test’ is just random page loads.
+
+-   What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.
+
+-   Common pitfall: changing too many things at once; fix the minimal root cause first.
+
+## Step 9: What are we trying to achieve?
+
+-   Goal: make the app behave consistently for a single test-taker across multiple requests.
+
+-   Why it matters: without stable state, a ‘test’ is just random page loads.
+
+-   What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.
+
+-   Common pitfall: changing too many things at once; fix the minimal root cause first.
+
+## Step 10: What are we trying to achieve?
+
+-   Goal: make the app behave consistently for a single test-taker across multiple requests.
+
+-   Why it matters: without stable state, a ‘test’ is just random page loads.
+
+-   What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.
+
+-   Common pitfall: changing too many things at once; fix the minimal root cause first.
+
+## Step 11: What are we trying to achieve?
+
+-   Goal: make the app behave consistently for a single test-taker across multiple requests.
+
+-   Why it matters: without stable state, a ‘test’ is just random page loads.
+
+-   What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.
+
+-   Common pitfall: changing too many things at once; fix the minimal root cause first.
+
+## Step 12: What are we trying to achieve?
+
+-   Goal: make the app behave consistently for a single test-taker across multiple requests.
+
+-   Why it matters: without stable state, a ‘test’ is just random page loads.
+
+-   What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.
+
+-   Common pitfall: changing too many things at once; fix the minimal root cause first.
+
+## Step 13: What are we trying to achieve?
+
+-   Goal: make the app behave consistently for a single test-taker across multiple requests.
+
+-   Why it matters: without stable state, a ‘test’ is just random page loads.
+
+-   What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.
+
+-   Common pitfall: changing too many things at once; fix the minimal root cause first.
+
+## Step 14: What are we trying to achieve?
+
+-   Goal: make the app behave consistently for a single test-taker across multiple requests.
+
+-   Why it matters: without stable state, a ‘test’ is just random page loads.
+
+-   What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.
+
+-   Common pitfall: changing too many things at once; fix the minimal root cause first.
+
+## Step 15: What are we trying to achieve?
+
+-   Goal: make the app behave consistently for a single test-taker across multiple requests.
+
+-   Why it matters: without stable state, a ‘test’ is just random page loads.
+
+-   What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.
+
+-   Common pitfall: changing too many things at once; fix the minimal root cause first.
+
+## Step 16: What are we trying to achieve?
+
+-   Goal: make the app behave consistently for a single test-taker across multiple requests.
+
+-   Why it matters: without stable state, a ‘test’ is just random page loads.
+
+-   What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.
+
+-   Common pitfall: changing too many things at once; fix the minimal root cause first.
+
+## Step 17: What are we trying to achieve?
+
+-   Goal: make the app behave consistently for a single test-taker across multiple requests.
+
+-   Why it matters: without stable state, a ‘test’ is just random page loads.
+
+-   What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.
+
+-   Common pitfall: changing too many things at once; fix the minimal root cause first.
+
+## Step 18: What are we trying to achieve?
+
+-   Goal: make the app behave consistently for a single test-taker across multiple requests.
+
+-   Why it matters: without stable state, a ‘test’ is just random page loads.
+
+-   What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.
+
+-   Common pitfall: changing too many things at once; fix the minimal root cause first.
+
+## Step 19: What are we trying to achieve?
+
+-   Goal: make the app behave consistently for a single test-taker across multiple requests.
+
+-   Why it matters: without stable state, a ‘test’ is just random page loads.
+
+-   What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.
+
+-   Common pitfall: changing too many things at once; fix the minimal root cause first.
+
+## Step 20: What are we trying to achieve?
+
+-   Goal: make the app behave consistently for a single test-taker across multiple requests.
+
+-   Why it matters: without stable state, a ‘test’ is just random page loads.
+
+-   What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.
+
+-   Common pitfall: changing too many things at once; fix the minimal root cause first.
+
+## Step 21: What are we trying to achieve?
+
+-   Goal: make the app behave consistently for a single test-taker across multiple requests.
+
+-   Why it matters: without stable state, a ‘test’ is just random page loads.
+
+-   What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.
+
+-   Common pitfall: changing too many things at once; fix the minimal root cause first.
+
+## Step 22: What are we trying to achieve?
+
+-   Goal: make the app behave consistently for a single test-taker across multiple requests.
+
+-   Why it matters: without stable state, a ‘test’ is just random page loads.
+
+-   What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.
+
+-   Common pitfall: changing too many things at once; fix the minimal root cause first.
+
+## Step 23: What are we trying to achieve?
+
+-   Goal: make the app behave consistently for a single test-taker across multiple requests.
+
+-   Why it matters: without stable state, a ‘test’ is just random page loads.
+
+-   What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.
+
+-   Common pitfall: changing too many things at once; fix the minimal root cause first.
+
+## Step 24: What are we trying to achieve?
+
+-   Goal: make the app behave consistently for a single test-taker across multiple requests.
+
+-   Why it matters: without stable state, a ‘test’ is just random page loads.
+
+-   What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.
+
+-   Common pitfall: changing too many things at once; fix the minimal root cause first.
+
+## Step 25: What are we trying to achieve?
+
+-   Goal: make the app behave consistently for a single test-taker across multiple requests.
+
+-   Why it matters: without stable state, a ‘test’ is just random page loads.
+
+-   What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.
+
+-   Common pitfall: changing too many things at once; fix the minimal root cause first.

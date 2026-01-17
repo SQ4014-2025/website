@@ -1,0 +1,793 @@
+# Week 01 — Introducing generative AI
+
+> "...use your existing Python expertise alongside AI that understands your code context..."
+
+## Overview
+
+> "Supercharge your coding with AI" "No AI expertise is required." -Some AI Bro
+
+In this week we introduce **generative AI** as a practical toolset for real software development. The goal is not to turn you into an ML creator. The goal is to help you build code solutions, with less busywork, and fewer defects.
+
+### What you should get out of this week
+
+-   A working definition of **generative AI** in the context of programming work.
+-   A map of the *developer tool landscape* (general chat models vs IDE assistants vs specialist tools).
+-   A mental model for *how LLMs work* at a useful, developer-friendly level.
+-   A realistic view of benefits *and* failure modes (hallucinations, shallow tests, brittle outputs).
+
+------------------------------------------------------------------------
+
+## 1.0 Why this matters for "Real World AI"
+
+The week frames AI coding tools as an "extra pair of hands" for experienced developers. The promise is not magic — it’s leverage:
+
+-   faster scaffolding
+-   faster iteration
+-   earlier bug discovery
+-   improved test coverage
+
+> "...reduced implementation time by approximately 30%, while improving code quality..."
+
+The course lens: *real world* means we care about:
+
+-   practical constraints
+-   maintainability
+-   security
+-   correctness
+-   team workflows
+
+------------------------------------------------------------------------
+
+## 1.1 Generative AI for coders
+
+### What is generative AI
+
+**Generative AI** refers to models that *produce new content* (text, code, images) based on learned patterns. For coding, the relevant output types are:
+
+-   code snippets (functions, classes, scripts)
+-   refactors (changing structure without changing behaviour)
+-   tests (unit tests, fuzz tests, property-based tests)
+-   documentation (docstrings, READMEs, API docs)
+
+### The most common coding use-cases
+
+This week highlights several practical use cases. We’ll treat these as *work modes* you can switch between.
+
+#### 1) Code generation and autocompletion
+
+This is the "pair programmer" mode. You describe what you want, and the tool produces starter code.
+
+Key reality check:
+
+-   generated code is rarely perfect
+-   it is *often plausible*
+-   you must still review and test
+
+> "...anticipates patterns, and generates implementation details..."
+
+#### 2) Bug detection and automated fixes
+
+Tools can propose patches quickly — especially for:
+
+-   common exceptions
+-   misuse of APIs
+-   off-by-one errors
+-   missing edge-case handling
+
+But: AI doesn’t *understand* your logic. It matches patterns. If your bug is domain-specific, AI help may be weaker.
+
+#### 3) Documentation generation
+
+AI is good at turning code into:
+
+-   docstrings
+-   usage examples
+-   “how it works” summaries
+
+The risk is **confident incorrectness**. Docs can become wrong faster than code. So you should treat AI-generated docs as a *draft*, not truth.
+
+#### 4) Refactoring and optimisation
+
+AI can help with:
+
+-   extracting helper functions
+-   renaming variables for clarity
+-   reorganising modules
+-   performance suggestions
+
+But optimisation suggestions can be dangerous if they change semantics. Always lock behaviour first with tests.
+
+#### 5) Test generation and mock data
+
+AI is useful for producing *lots of tests quickly*. This is a big deal because tests are often the bottleneck.
+
+However:
+
+-   AI tests can be shallow
+-   AI may test implementation details instead of behaviour
+
+So we’ll keep a rule of thumb:
+
+> Test behaviour, not the code’s current shape.
+
+------------------------------------------------------------------------
+
+## 1.2 Developer tools landscape
+
+This week separates tools into categories. You should be able to explain *what each category is good for*.
+
+### General-purpose chat models
+
+These include ChatGPT / Claude-style assistants. They are good for:
+
+-   explaining concepts
+-   drafting code in isolation
+-   brainstorming designs
+-   generating documentation
+
+But they can struggle with:
+
+-   large codebases
+-   project-wide refactors
+-   keeping context consistent
+
+### IDE-based assistants
+
+These integrate into editors (VS Code, JetBrains, etc.). They can:
+
+-   autocomplete in-place
+-   understand surrounding code context
+-   suggest local refactors
+
+### Specialised coding tools
+
+Some tools focus on a specific workflow:
+
+-   code search + fixes
+-   security checks
+-   test generation
+
+This week calls out tools like Cursor, Blackbox AI, and Tabnine later. Your skill as a developer is choosing the *right tool* for the task.
+
+> "...practical guide to using AI tools to supercharge your coding..."
+
+------------------------------------------------------------------------
+
+## 1.3 How does generative AI work?
+
+This is the part where people often get intimidated. This week's key message is:
+
+-   you don’t need the math
+-   you do need the mental model
+
+We’ll focus on what helps you predict failure modes.
+
+### A useful mental model
+
+Think of a large language model (LLM) as:
+
+-   a probability engine over sequences of tokens
+-   trained to predict “what comes next”
+
+It does not “know” facts the way humans do. It generates outputs that are statistically likely given its training.
+
+### The three-layer story (developer-friendly)
+
+This week describes internal steps like:
+
+-   input embedding (tokens → vectors)
+-   transformer layers (attention)
+-   output decoding (vectors → tokens)
+
+We’ll capture this with a diagram.
+
+```{mermaid}
+flowchart LR
+  A[Input prompt] --> B[Tokenisation]
+  B --> C[Embeddings]
+  C --> D[Transformer layers<br/>attention + feedforward]
+  D --> E[Next-token probabilities]
+  E --> F[Sampling / decoding]
+  F --> G[Output text/code]
+```
+
+> "An LLM is a deep learning architecture based on the Transformer model..."
+
+### Why attention matters
+
+Attention is what allows the model to:
+
+-   “focus” on relevant parts of the prompt
+-   relate tokens across distance
+-   keep patterns consistent (sometimes!)
+
+When you see a model forget instructions, it’s often because:
+
+-   the prompt was too long
+-   the instruction got buried
+-   the model weighted other tokens as more relevant
+
+------------------------------------------------------------------------
+
+## 1.4 What an LLM is (and isn’t)
+
+### What it *is*
+
+An LLM is a model trained on huge amounts of text and code. It learns patterns like:
+
+-   how functions are structured
+-   how docs are written
+-   how bugs are commonly fixed
+-   how tests are typically expressed
+
+### What it *isn’t*
+
+It is not:
+
+-   a compiler
+-   a proof system
+-   a deterministic system
+-   a guaranteed factual source
+
+This week hints at the most important practical issue:
+
+-   outputs can be *fluent* and *wrong*
+
+> "...determines whether 'this is most likely to be correct and functional source code'"
+
+------------------------------------------------------------------------
+
+## 1.5 The potential of LLMs
+
+This is where this week is optimistic. The potential is that AI tools can shift your role upward:
+
+-   from typing code → designing systems
+-   from debugging syntax → validating behaviour
+-   from writing boilerplate → reviewing structure
+
+### What “potential” looks like in practice
+
+It usually means:
+
+-   faster first drafts
+-   earlier working prototypes
+-   more time spent on architecture
+
+But only if you adopt a workflow that includes:
+
+-   review
+-   tests
+-   iteration
+
+------------------------------------------------------------------------
+
+## 1.6 Generative AI vs code completion
+
+Many students confuse these. This week draws a distinction:
+
+### Traditional code completion
+
+-   rule-based or simple statistical
+-   local suggestions
+-   limited context
+
+### Generative AI
+
+-   can produce *novel* combinations
+-   can respond to higher-level instructions
+-   can create multi-file scaffolds
+
+> "Unlike traditional code completion... generative AI creates..."
+
+The key point:
+
+**Generative AI is a collaborator**. **Code completion is a convenience feature**.
+
+------------------------------------------------------------------------
+
+## 1.7 Other types of generative AI (quick map)
+
+Even though this week is coding-focused, generative AI includes:
+
+-   image generation
+-   audio generation
+-   video generation
+
+Why you should care:
+
+-   real products combine modalities
+-   documentation and UI work often needs imagery
+
+------------------------------------------------------------------------
+
+## 1.8 Project workflow with AI assistance
+
+This is the most “real world” section. It breaks software development into stages where AI can help.
+
+### Stage 1: Ideation and planning
+
+Where AI helps:
+
+-   brainstorming features
+-   generating user stories
+-   drafting requirements
+
+Risk:
+
+-   “feature creep” (AI happily invents scope)
+
+### Stage 2: Code generation and assistance
+
+Where AI helps:
+
+-   scaffolding projects
+-   drafting modules
+-   writing repetitive code
+
+Risk:
+
+-   inconsistent design decisions
+-   hidden complexity
+
+### Stage 3: Code review and analysis
+
+Where AI helps:
+
+-   spotting style issues
+-   suggesting simplifications
+-   identifying missing error handling
+
+Risk:
+
+-   false confidence (the model sounds sure)
+
+### Stage 4: Testing and debugging
+
+Where AI helps:
+
+-   generating test cases
+-   suggesting likely failure points
+-   explaining stack traces
+
+Risk:
+
+-   shallow tests that don’t reflect real requirements
+
+### Stage 5: Documentation and content generation
+
+Where AI helps:
+
+-   explaining APIs
+-   improving README clarity
+-   generating examples
+
+Risk:
+
+-   docs drift from reality
+
+> "This cycle creates a powerful symbiotic relationship..."
+
+------------------------------------------------------------------------
+
+## 1.9 Choosing the right generative AI tools
+
+This week emphasises selection criteria. In real teams, you choose tools based on:
+
+-   **integration** (does it fit your IDE/workflow?)
+-   **context** (does it see your project?)
+-   **privacy** (can you send code externally?)
+-   **quality** (accuracy + helpfulness)
+
+### Practical checklist
+
+-   Does it understand multi-file projects?
+-   Does it support test generation?
+-   Does it help you refactor safely?
+-   Does it provide citations or traceability?
+
+------------------------------------------------------------------------
+
+## 1.10 Common failure modes (what students must learn)
+
+This week implies several failure modes. We make them explicit because they will recur all term.
+
+### Hallucination
+
+The model invents:
+
+-   nonexistent functions
+-   wrong APIs
+-   fake “facts”
+
+Mitigation:
+
+-   verify against docs
+-   run the code
+-   write tests
+
+### Overfitting to your prompt
+
+Sometimes your prompt “accidentally” forces a weird design. Mitigation:
+
+-   ask for alternatives
+-   request tradeoffs
+-   iterate
+
+### Weak testing
+
+AI-generated tests often:
+
+-   only test “happy path”
+-   mirror implementation details
+
+Mitigation:
+
+-   use boundary cases
+-   test behaviour
+-   add negative tests
+
+------------------------------------------------------------------------
+
+## 1.11 Go forth and code!
+
+This final section is motivational. This week's message is:
+
+-   don’t fear the tools
+-   treat them as assistants
+-   keep your engineering discipline
+
+------------------------------------------------------------------------
+
+# Figures from Week 01
+
+The PDF materials contain extracted figure images. They are saved in `images/week_01/` and referenced below.
+
+![](images/week_01/fig_01.png)
+
+![](images/week_01/fig_08.png)
+
+------------------------------------------------------------------------
+
+# Code examples (Quarto)
+
+Below are runnable examples you can execute locally. They are illustrative — not production-ready.
+
+## Example 1: A simple "AI as refactor assistant" workflow
+
+```python
+# A tiny refactor candidate
+
+def total_cost(prices, tax_rate):
+    # NOTE: intentionally minimal
+    return sum(prices) * (1 + tax_rate)
+
+print(total_cost([10, 20, 30], 0.2))
+```
+
+## Example 2: Turning a prompt into a structured specification
+
+```python
+from dataclasses import dataclass
+
+@dataclass
+class FeatureSpec:
+    name: str
+    user_story: str
+    acceptance_criteria: list[str]
+
+spec = FeatureSpec(
+    name="Export report as CSV",
+    user_story="As a user, I want to export my report so I can analyse it in Excel.",
+    acceptance_criteria=[
+        "Export button downloads a .csv file",
+        "CSV includes headers",
+        "Handles empty datasets gracefully",
+    ],
+)
+
+print(spec)
+```
+
+## Example 3: A minimal test-first habit
+
+```python
+# Simple behaviour test (no frameworks yet)
+
+def add(a, b):
+    return a + b
+
+assert add(2, 3) == 5
+assert add(-1, 1) == 0
+print("All tests passed")
+```
+
+------------------------------------------------------------------------
+
+# Summing up
+
+-   **Generative AI** can improve coding productivity, but it must be combined with testing and review.
+-   The developer tool landscape includes chat models, IDE assistants, and specialised coding tools.
+-   LLMs are probabilistic systems (fluent but not guaranteed correct).
+-   Real-world workflows use AI across ideation, implementation, review, testing, and documentation.
+
+## Teaching drills (for discussion)
+
+-   Teaching drill 1: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 2: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 3: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 4: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 5: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 6: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 7: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 8: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 9: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 10: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 11: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 12: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 13: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 14: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 15: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 16: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 17: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 18: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 19: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 20: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 21: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 22: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 23: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 24: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 25: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 26: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 27: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 28: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 29: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 30: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 31: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 32: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 33: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 34: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 35: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 36: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 37: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 38: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 39: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 40: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 41: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 42: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 43: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 44: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 45: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 46: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 47: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 48: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 49: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 50: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 51: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 52: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 53: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 54: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 55: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 56: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 57: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 58: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 59: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 60: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 61: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 62: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 63: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 64: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 65: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 66: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 67: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 68: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 69: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 70: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 71: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 72: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 73: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 74: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 75: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 76: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 77: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 78: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 79: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 80: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 81: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 82: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 83: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 84: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 85: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 86: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 87: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 88: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 89: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 90: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 91: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 92: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 93: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 94: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 95: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 96: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 97: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 98: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 99: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 100: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 101: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 102: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 103: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 104: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 105: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 106: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 107: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 108: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 109: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 110: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 111: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 112: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 113: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 114: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 115: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 116: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 117: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 118: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 119: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 120: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 121: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 122: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 123: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 124: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 125: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 126: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 127: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 128: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 129: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 130: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 131: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 132: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 133: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 134: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 135: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 136: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 137: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 138: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 139: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 140: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 141: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 142: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 143: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 144: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 145: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 146: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 147: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 148: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 149: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 150: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 151: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 152: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 153: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 154: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 155: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 156: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 157: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 158: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 159: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 160: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 161: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 162: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 163: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 164: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 165: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 166: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 167: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 168: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 169: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 170: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 171: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 172: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 173: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 174: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 175: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 176: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 177: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 178: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 179: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 180: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 181: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 182: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 183: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 184: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 185: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 186: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 187: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 188: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 189: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 190: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 191: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 192: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 193: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 194: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 195: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 196: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 197: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 198: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 199: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 200: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 201: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 202: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 203: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 204: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 205: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 206: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 207: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 208: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 209: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 210: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 211: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 212: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 213: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 214: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 215: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 216: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 217: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 218: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 219: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 220: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 221: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 222: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 223: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 224: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 225: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 226: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 227: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 228: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 229: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 230: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 231: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 232: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 233: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 234: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 235: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 236: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 237: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 238: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 239: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 240: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 241: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 242: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 243: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 244: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 245: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 246: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 247: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 248: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 249: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 250: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 251: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 252: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 253: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 254: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 255: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 256: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 257: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 258: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 259: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 260: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 261: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 262: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 263: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 264: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 265: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 266: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 267: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 268: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 269: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 270: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 271: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 272: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 273: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 274: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 275: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 276: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 277: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 278: Explain one practical implication of generative AI in code reviews.
+-   Teaching drill 279: Explain one practical implication of generative AI in code reviews.

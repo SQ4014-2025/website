@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -29,7 +64,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../problems/pset_0/pset_0.html" rel="next">
+<link href="../notes/notes_10.html" rel="next">
 <link href="../notes/notes_8.html" rel="prev">
 <link href="../images/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
@@ -77,7 +112,10 @@ ul.task-list li input[type="checkbox"] {
 
 
 <meta property="og:title" content="Real World AI">
+<meta property="og:image" content="https://SQ4014-2025.github.io/website/notes/images/week_09/fig_01.png">
 <meta property="og:site_name" content="Real World AI">
+<meta property="og:image:height" content="620">
+<meta property="og:image:width" content="1475">
 <meta name="twitter:title" content="Real World AI">
 <meta name="twitter:image" content="https://SQ4014-2025.github.io/website/notes/images/twitter-card.png">
 <meta name="twitter:creator" content="@EdHarris9000">
@@ -255,7 +293,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/notes_0.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/notes_9.html">Notes 09 🐍</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/notes_1.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/notes_9.html">Notes 09 🤖</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -335,61 +373,61 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_0.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 00 🐍</span></a>
+ <span class="menu-text">Lecture 00 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_1.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 01 🐍</span></a>
+ <span class="menu-text">Lecture 01 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_2.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 02 🐍</span></a>
+ <span class="menu-text">Lecture 02 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_3.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 03 🐍</span></a>
+ <span class="menu-text">Lecture 03 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_4.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 04 🐍</span></a>
+ <span class="menu-text">Lecture 04 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_5.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 05 🐍</span></a>
+ <span class="menu-text">Lecture 05 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_6.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 06 🐍</span></a>
+ <span class="menu-text">Lecture 06 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_7.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 07 🐍</span></a>
+ <span class="menu-text">Lecture 07 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_8.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 08 🐍</span></a>
+ <span class="menu-text">Lecture 08 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_9.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 09 🐍</span></a>
+ <span class="menu-text">Lecture 09 🤖</span></a>
   </div>
 </li>
       </ul>
@@ -405,62 +443,62 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notes/notes_0.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 00 🐍</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../notes/notes_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 01 🐍</span></a>
+ <span class="menu-text">Notes 01 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 02 🐍</span></a>
+ <span class="menu-text">Notes 02 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 03 🐍</span></a>
+ <span class="menu-text">Notes 03 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 04 🐍</span></a>
+ <span class="menu-text">Notes 04 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 05 🐍</span></a>
+ <span class="menu-text">Notes 05 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 06 🐍</span></a>
+ <span class="menu-text">Notes 06 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 07 🐍</span></a>
+ <span class="menu-text">Notes 07 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 08 🐍</span></a>
+ <span class="menu-text">Notes 08 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_9.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Notes 09 🐍</span></a>
+ <span class="menu-text">Notes 09 🤖</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/notes_10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes 10 🤖</span></a>
   </div>
 </li>
       </ul>
@@ -477,61 +515,61 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src0" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 00 🐍</span></a>
+ <span class="menu-text">Code 00 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src1" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 01 🐍</span></a>
+ <span class="menu-text">Code 01 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src2" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 02 🐍</span></a>
+ <span class="menu-text">Code 02 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src3" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 03 🐍</span></a>
+ <span class="menu-text">Code 03 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src4" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 04 🐍</span></a>
+ <span class="menu-text">Code 04 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src5" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 05 🐍</span></a>
+ <span class="menu-text">Code 05 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src6" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 06 🐍</span></a>
+ <span class="menu-text">Code 06 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src7" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 07 🐍</span></a>
+ <span class="menu-text">Code 07 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src8" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 08 🐍</span></a>
+ <span class="menu-text">Code 08 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src9" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 09 🐍</span></a>
+ <span class="menu-text">Code 09 🤖</span></a>
   </div>
 </li>
       </ul>
@@ -548,55 +586,55 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_0/pset_0.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 00 🐍</span></a>
+ <span class="menu-text">Problem Set 00 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_1/pset_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 01 🐍</span></a>
+ <span class="menu-text">Problem Set 01 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_2/pset_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 02 🐍</span></a>
+ <span class="menu-text">Problem Set 02 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_3/pset_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 03 🐍</span></a>
+ <span class="menu-text">Problem Set 03 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_4/pset_4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 04 🐍</span></a>
+ <span class="menu-text">Problem Set 04 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_5/pset_5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 05 🐍</span></a>
+ <span class="menu-text">Problem Set 05 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_6/pset_6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 06 🐍</span></a>
+ <span class="menu-text">Problem Set 06 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_7/pset_7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 07 🐍</span></a>
+ <span class="menu-text">Problem Set 07 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_8/pset_8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 08 🐍</span></a>
+ <span class="menu-text">Problem Set 08 🤖</span></a>
   </div>
 </li>
       </ul>
@@ -611,779 +649,592 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#week-9-notes" id="toc-week-9-notes" class="nav-link active" data-scroll-target="#week-9-notes">Week 9 Notes</a></li>
-  <li><a href="#lecture-9" id="toc-lecture-9" class="nav-link" data-scroll-target="#lecture-9">Lecture 9</a>
+  <li><a href="#week-09-prompt-engineering" id="toc-week-09-prompt-engineering" class="nav-link active" data-scroll-target="#week-09-prompt-engineering">Week 09 — Prompt engineering</a>
   <ul class="collapse">
-  <li><a href="#et-cetera" id="toc-et-cetera" class="nav-link" data-scroll-target="#et-cetera">Et Cetera</a></li>
-  <li><a href="#set" id="toc-set" class="nav-link" data-scroll-target="#set"><code>set</code></a></li>
-  <li><a href="#global-variables" id="toc-global-variables" class="nav-link" data-scroll-target="#global-variables">Global Variables</a></li>
-  <li><a href="#constants" id="toc-constants" class="nav-link" data-scroll-target="#constants">Constants</a></li>
-  <li><a href="#type-hints" id="toc-type-hints" class="nav-link" data-scroll-target="#type-hints">Type Hints</a></li>
-  <li><a href="#docstrings" id="toc-docstrings" class="nav-link" data-scroll-target="#docstrings">Docstrings</a></li>
-  <li><a href="#argparse" id="toc-argparse" class="nav-link" data-scroll-target="#argparse"><code>argparse</code></a></li>
-  <li><a href="#unpacking" id="toc-unpacking" class="nav-link" data-scroll-target="#unpacking">Unpacking</a></li>
-  <li><a href="#args-and-kwargs" id="toc-args-and-kwargs" class="nav-link" data-scroll-target="#args-and-kwargs"><code>args</code> and <code>kwargs</code></a></li>
-  <li><a href="#map" id="toc-map" class="nav-link" data-scroll-target="#map"><code>map</code></a></li>
-  <li><a href="#list-comprehensions" id="toc-list-comprehensions" class="nav-link" data-scroll-target="#list-comprehensions">List Comprehensions</a></li>
-  <li><a href="#filter" id="toc-filter" class="nav-link" data-scroll-target="#filter"><code>filter</code></a></li>
-  <li><a href="#dictionary-comprehensions" id="toc-dictionary-comprehensions" class="nav-link" data-scroll-target="#dictionary-comprehensions">Dictionary Comprehensions</a></li>
-  <li><a href="#enumerate" id="toc-enumerate" class="nav-link" data-scroll-target="#enumerate"><code>enumerate</code></a></li>
-  <li><a href="#generators-and-iterators" id="toc-generators-and-iterators" class="nav-link" data-scroll-target="#generators-and-iterators">Generators and Iterators</a></li>
-  <li><a href="#congratulations" id="toc-congratulations" class="nav-link" data-scroll-target="#congratulations">Congratulations!</a></li>
-  <li><a href="#this-was-programming-concepts" id="toc-this-was-programming-concepts" class="nav-link" data-scroll-target="#this-was-programming-concepts">This was Programming Concepts!</a></li>
+  <li><a href="#week-map-what-were-actually-learning" id="toc-week-map-what-were-actually-learning" class="nav-link" data-scroll-target="#week-map-what-were-actually-learning">Week map (what we’re actually learning)</a></li>
+  <li><a href="#micro-quotes-from-this-week-short-placed-where-relevant" id="toc-micro-quotes-from-this-week-short-placed-where-relevant" class="nav-link" data-scroll-target="#micro-quotes-from-this-week-short-placed-where-relevant">Micro-quotes from this week (short + placed where relevant)</a></li>
+  <li><a href="#key-terms-bold-on-first-use" id="toc-key-terms-bold-on-first-use" class="nav-link" data-scroll-target="#key-terms-bold-on-first-use">Key terms (bold on first use)</a></li>
+  <li><a href="#figures-used-in-these-notes-10-max-placed-where-they-matter" id="toc-figures-used-in-these-notes-10-max-placed-where-they-matter" class="nav-link" data-scroll-target="#figures-used-in-these-notes-10-max-placed-where-they-matter">Figures used in these notes (≈10 max, placed where they matter)</a></li>
+  <li><a href="#understanding-prompt-engineering" id="toc-understanding-prompt-engineering" class="nav-link" data-scroll-target="#understanding-prompt-engineering">9.1 Understanding prompt engineering</a>
+  <ul class="collapse">
+  <li><a href="#why-prompts-fail-in-coding" id="toc-why-prompts-fail-in-coding" class="nav-link" data-scroll-target="#why-prompts-fail-in-coding">Why prompts fail in coding</a></li>
+  <li><a href="#the-bad-prompt-bad-output-pattern" id="toc-the-bad-prompt-bad-output-pattern" class="nav-link" data-scroll-target="#the-bad-prompt-bad-output-pattern">The “bad prompt → bad output” pattern</a></li>
+  </ul></li>
+  <li><a href="#anatomy-of-a-prompt" id="toc-anatomy-of-a-prompt" class="nav-link" data-scroll-target="#anatomy-of-a-prompt">9.2 Anatomy of a prompt</a>
+  <ul class="collapse">
+  <li><a href="#context-what-counts-as-context" id="toc-context-what-counts-as-context" class="nav-link" data-scroll-target="#context-what-counts-as-context">Context: what counts as context?</a></li>
+  <li><a href="#instructions-verbs-matter" id="toc-instructions-verbs-matter" class="nav-link" data-scroll-target="#instructions-verbs-matter">Instructions: verbs matter</a></li>
+  <li><a href="#examples-show-what-good-looks-like" id="toc-examples-show-what-good-looks-like" class="nav-link" data-scroll-target="#examples-show-what-good-looks-like">Examples: show what “good” looks like</a></li>
+  <li><a href="#format-contract-stop-the-model-drifting" id="toc-format-contract-stop-the-model-drifting" class="nav-link" data-scroll-target="#format-contract-stop-the-model-drifting">Format contract: stop the model drifting</a></li>
+  </ul></li>
+  <li><a href="#crafting-the-ultimate-prompt" id="toc-crafting-the-ultimate-prompt" class="nav-link" data-scroll-target="#crafting-the-ultimate-prompt">9.3 Crafting the ultimate prompt</a>
+  <ul class="collapse">
+  <li><a href="#prompt-refinement-template" id="toc-prompt-refinement-template" class="nav-link" data-scroll-target="#prompt-refinement-template">Prompt-refinement template</a></li>
+  </ul></li>
+  <li><a href="#fundamental-prompt-types" id="toc-fundamental-prompt-types" class="nav-link" data-scroll-target="#fundamental-prompt-types">9.4 Fundamental prompt types</a>
+  <ul class="collapse">
+  <li><a href="#zero-shot-prompting" id="toc-zero-shot-prompting" class="nav-link" data-scroll-target="#zero-shot-prompting">9.4.1 Zero-shot prompting</a></li>
+  <li><a href="#few-shot-prompting" id="toc-few-shot-prompting" class="nav-link" data-scroll-target="#few-shot-prompting">9.4.2 Few-shot prompting</a></li>
+  <li><a href="#open-ended-prompts" id="toc-open-ended-prompts" class="nav-link" data-scroll-target="#open-ended-prompts">9.4.3 Open-ended prompts</a></li>
+  <li><a href="#constrained-prompts" id="toc-constrained-prompts" class="nav-link" data-scroll-target="#constrained-prompts">9.4.4 Constrained prompts</a></li>
+  <li><a href="#iterative-prompts" id="toc-iterative-prompts" class="nav-link" data-scroll-target="#iterative-prompts">9.4.5 Iterative prompts</a></li>
+  <li><a href="#structured-prompts" id="toc-structured-prompts" class="nav-link" data-scroll-target="#structured-prompts">9.4.6 Structured prompts</a></li>
+  </ul></li>
+  <li><a href="#advanced-prompt-types" id="toc-advanced-prompt-types" class="nav-link" data-scroll-target="#advanced-prompt-types">9.5 Advanced prompt types</a>
+  <ul class="collapse">
+  <li><a href="#chain-of-thought-prompting" id="toc-chain-of-thought-prompting" class="nav-link" data-scroll-target="#chain-of-thought-prompting">9.5.1 Chain-of-thought prompting</a></li>
+  <li><a href="#recursive-prompting" id="toc-recursive-prompting" class="nav-link" data-scroll-target="#recursive-prompting">9.5.2 Recursive prompting</a></li>
+  <li><a href="#context-manipulation" id="toc-context-manipulation" class="nav-link" data-scroll-target="#context-manipulation">9.5.3 Context manipulation</a></li>
+  <li><a href="#instruction-refinement" id="toc-instruction-refinement" class="nav-link" data-scroll-target="#instruction-refinement">9.5.4 Instruction refinement</a></li>
+  <li><a href="#output-control" id="toc-output-control" class="nav-link" data-scroll-target="#output-control">9.5.5 Output control</a></li>
+  </ul></li>
+  <li><a href="#prompt-techniques-for-programmers" id="toc-prompt-techniques-for-programmers" class="nav-link" data-scroll-target="#prompt-techniques-for-programmers">9.6 Prompt techniques for programmers</a>
+  <ul class="collapse">
+  <li><a href="#use-prompts-like-tool-interfaces" id="toc-use-prompts-like-tool-interfaces" class="nav-link" data-scroll-target="#use-prompts-like-tool-interfaces">Use prompts like tool interfaces</a></li>
+  <li><a href="#a-reliable-prompt-pattern-copypaste" id="toc-a-reliable-prompt-pattern-copypaste" class="nav-link" data-scroll-target="#a-reliable-prompt-pattern-copypaste">A reliable prompt pattern (copy/paste)</a></li>
+  </ul></li>
+  <li><a href="#worked-examples-week-aligned" id="toc-worked-examples-week-aligned" class="nav-link" data-scroll-target="#worked-examples-week-aligned">Worked examples (week-aligned)</a>
+  <ul class="collapse">
+  <li><a href="#example-a-debugging-with-context-constraints" id="toc-example-a-debugging-with-context-constraints" class="nav-link" data-scroll-target="#example-a-debugging-with-context-constraints">Example A: Debugging with context + constraints</a></li>
+  <li><a href="#example-b-generating-documentation-with-output-control" id="toc-example-b-generating-documentation-with-output-control" class="nav-link" data-scroll-target="#example-b-generating-documentation-with-output-control">Example B: Generating documentation with output control</a></li>
+  <li><a href="#example-c-writing-tests-as-a-contract" id="toc-example-c-writing-tests-as-a-contract" class="nav-link" data-scroll-target="#example-c-writing-tests-as-a-contract">Example C: Writing tests as a contract</a></li>
+  </ul></li>
+  <li><a href="#pitfalls-and-anti-patterns" id="toc-pitfalls-and-anti-patterns" class="nav-link" data-scroll-target="#pitfalls-and-anti-patterns">Pitfalls and anti-patterns</a>
+  <ul class="collapse">
+  <li><a href="#assuming-the-model-knows-what-you-mean" id="toc-assuming-the-model-knows-what-you-mean" class="nav-link" data-scroll-target="#assuming-the-model-knows-what-you-mean">1) Assuming the model “knows what you mean”</a></li>
+  <li><a href="#treating-a-correct-looking-answer-as-correct" id="toc-treating-a-correct-looking-answer-as-correct" class="nav-link" data-scroll-target="#treating-a-correct-looking-answer-as-correct">2) Treating a correct-looking answer as correct</a></li>
+  <li><a href="#overloading-the-prompt" id="toc-overloading-the-prompt" class="nav-link" data-scroll-target="#overloading-the-prompt">3) Overloading the prompt</a></li>
+  </ul></li>
+  <li><a href="#summary-what-you-should-actually-remember" id="toc-summary-what-you-should-actually-remember" class="nav-link" data-scroll-target="#summary-what-you-should-actually-remember">Summary: what you should actually remember</a></li>
+  <li><a href="#quick-self-check-5-minutes" id="toc-quick-self-check-5-minutes" class="nav-link" data-scroll-target="#quick-self-check-5-minutes">Quick self-check (5 minutes)</a></li>
+  <li><a href="#verification-report-week-9" id="toc-verification-report-week-9" class="nav-link" data-scroll-target="#verification-report-week-9">Verification report (Week 9)</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/SQ4014-2025/website/edit/master/notes/notes_9.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/SQ4014-2025/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/notes_0.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/notes_9.html">Notes 09 🐍</a></li></ol></nav></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/notes_1.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/notes_9.html">Notes 09 🤖</a></li></ol></nav></header>
 
 
 
 
 
-<section id="week-9-notes" class="level1">
-<h1>Week 9 Notes</h1>
+<section id="week-09-prompt-engineering" class="level1">
+<h1>Week 09 — Prompt engineering</h1>
+<blockquote class="blockquote">
+<p><strong>Core idea:</strong> Prompt engineering is <em>interface design</em> for AI tools. You are not “asking a question” — you are specifying an input contract (context + constraints + success criteria) so the output is testable.</p>
+</blockquote>
+<section id="week-map-what-were-actually-learning" class="level2">
+<h2 class="anchored" data-anchor-id="week-map-what-were-actually-learning">Week map (what we’re actually learning)</h2>
+<p>This week builds a practical toolkit for getting reliable work out of coding assistants.</p>
+<ul>
+<li><strong>9.1 Understanding prompt engineering</strong>: why prompts fail, and what “better prompts” look like</li>
+<li><strong>9.2 Anatomy of a prompt</strong>: context, instructions, examples, and expected format</li>
+<li><strong>9.3 Crafting the ultimate prompt</strong>: using the model to improve your own prompts</li>
+<li><strong>9.4 Fundamental prompt types</strong>: zero-shot, few-shot, open-ended, constrained, structured</li>
+<li><strong>9.5 Advanced prompt types</strong>: chain-of-thought, recursive prompting, context manipulation, refinement, output control</li>
+<li><strong>9.6 Prompt techniques for programmers</strong>: how this becomes a daily workflow habit</li>
+</ul>
 <hr>
 </section>
-<section id="lecture-9" class="level1">
-<h1>Lecture 9</h1>
+<section id="micro-quotes-from-this-week-short-placed-where-relevant" class="level2">
+<h2 class="anchored" data-anchor-id="micro-quotes-from-this-week-short-placed-where-relevant">Micro-quotes from this week (short + placed where relevant)</h2>
+<blockquote class="blockquote">
+<p>“Instead of getting generic responses, strong prompts can greatly enhance the quality, accuracy, and usefulness of AI-generated code and documents.”</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>“Some parts of prompt engineering may seem natural—like how we learned to improve our search engine questions over time.”</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>“Let’s explore how to create better prompts to get the best results, save time, and increase productivity.”</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>“Context is the backbone of any good prompt.”</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>“Provide concrete examples to illustrate desired output.”</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>“Zero-shot prompts are very basic and concise.”</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>“Few-shot prompting lets models generate from just a few examples.”</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>“These types of prompts limit the scope of the model’s response.”</p>
+</blockquote>
+<hr>
+</section>
+<section id="key-terms-bold-on-first-use" class="level2">
+<h2 class="anchored" data-anchor-id="key-terms-bold-on-first-use">Key terms (bold on first use)</h2>
 <ul>
-<li><a href="#et-cetera">Et Cetera</a></li>
-<li><a href="#set"><code>set</code></a></li>
-<li><a href="#global-variables">Global Variables</a></li>
-<li><a href="#constants">Constants</a></li>
-<li><a href="#type-hints">Type Hints</a></li>
-<li><a href="#docstrings">Docstrings</a></li>
-<li><a href="#argparse"><code>argparse</code></a></li>
-<li><a href="#unpacking">Unpacking</a></li>
-<li><a href="#args-and-kwargs"><code>args</code> and <code>kwargs</code></a></li>
-<li><a href="#map"><code>map</code></a></li>
-<li><a href="#list-comprehensions">List Comprehensions</a></li>
-<li><a href="#filter"><code>filter</code></a></li>
-<li><a href="#dictionary-comprehensions">Dictionary Comprehensions</a></li>
-<li><a href="#enumerate"><code>enumerate</code></a></li>
-<li><a href="#generators-and-iterators">Generators and Iterators</a></li>
-<li><a href="#congratulations">Congratulations!</a></li>
-<li><a href="#this-was-programming-concepts">This was Programming Concepts!</a></li>
+<li><strong>prompt</strong>: the input you send the model; in practice it’s a <em>specification</em> of what you want.</li>
+<li><strong>context</strong>: background info the model needs to interpret the task (code, data shape, constraints).</li>
+<li><strong>constraints</strong>: boundaries you set (language, complexity, libraries, performance, security rules).</li>
+<li><strong>few-shot</strong>: showing a couple of examples so the model copies the pattern.</li>
+<li><strong>structured prompt</strong>: a prompt that forces the output into a predictable structure (JSON, table, sections).</li>
+<li><strong>output control</strong>: techniques that reduce randomness by restricting response shape.</li>
 </ul>
-<section id="et-cetera" class="level2">
-<h2 class="anchored" data-anchor-id="et-cetera">Et Cetera</h2>
+<hr>
+</section>
+<section id="figures-used-in-these-notes-10-max-placed-where-they-matter" class="level2">
+<h2 class="anchored" data-anchor-id="figures-used-in-these-notes-10-max-placed-where-they-matter">Figures used in these notes (≈10 max, placed where they matter)</h2>
+<blockquote class="blockquote">
+<p>These images were extracted from the Week 09 PDF and are used inline below.</p>
+</blockquote>
+<hr>
+</section>
+<section id="understanding-prompt-engineering" class="level2">
+<h2 class="anchored" data-anchor-id="understanding-prompt-engineering">9.1 Understanding prompt engineering</h2>
+<p>Prompt engineering is not “tricking” the model. It’s about <strong>reducing ambiguity</strong>.</p>
+<section id="why-prompts-fail-in-coding" class="level3">
+<h3 class="anchored" data-anchor-id="why-prompts-fail-in-coding">Why prompts fail in coding</h3>
+<p>Coding tasks are brittle:</p>
 <ul>
-<li>Over the many past lessons, we have covered so much related to Python!</li>
-<li>In this lesson, we will be focusing upon many of the “et cetera” items not previously discussed. “Et cetera” literally means “and the rest”!</li>
-<li>Indeed, if you look at the Python documentation, you will find quite “the rest” of other features.</li>
+<li>small mistakes cause crashes</li>
+<li>missing constraints produce insecure or inefficient code</li>
+<li>a “mostly correct” solution can still be useless</li>
+</ul>
+<p>When prompts fail, it’s usually one of these reasons:</p>
+<ol type="1">
+<li><strong>Unclear task</strong> (what action do you want?)</li>
+<li><strong>Missing context</strong> (what codebase? what inputs?)</li>
+<li><strong>No success criteria</strong> (how do we judge “good”?)</li>
+<li><strong>No output format</strong> (what should the response look like?)</li>
+<li><strong>No constraints</strong> (libraries? style? performance?)</li>
+</ol>
+<p><img src="images/week_09/fig_01.png" class="img-fluid"></p>
+</section>
+<section id="the-bad-prompt-bad-output-pattern" class="level3">
+<h3 class="anchored" data-anchor-id="the-bad-prompt-bad-output-pattern">The “bad prompt → bad output” pattern</h3>
+<p>A classic failure is:</p>
+<ul>
+<li>Prompt: <em>“Fix this code”</em></li>
+<li>Output: generic advice, or wrong assumptions</li>
+</ul>
+<p>Instead, you want a prompt that provides:</p>
+<ul>
+<li>the exact error</li>
+<li>the code</li>
+<li>the expected behaviour</li>
+<li>what you already tried</li>
+<li>how you want the answer returned</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="anatomy-of-a-prompt" class="level2">
+<h2 class="anchored" data-anchor-id="anatomy-of-a-prompt">9.2 Anatomy of a prompt</h2>
+<p>A good prompt is a <strong>communication bundle</strong>.</p>
+<p>Think of it as four parts:</p>
+<ol type="1">
+<li><strong>Context</strong> — what the model needs to know</li>
+<li><strong>Instructions</strong> — what to do</li>
+<li><strong>Examples</strong> — patterns to follow</li>
+<li><strong>Format contract</strong> — the exact structure of the response</li>
+</ol>
+<p><img src="images/week_09/fig_02.png" class="img-fluid"></p>
+<section id="context-what-counts-as-context" class="level3">
+<h3 class="anchored" data-anchor-id="context-what-counts-as-context">Context: what counts as context?</h3>
+<p>Context can be:</p>
+<ul>
+<li>the code you’re working on</li>
+<li>the data format / schema</li>
+<li>environment details (OS, Python version)</li>
+<li>constraints: libraries allowed, complexity limits</li>
+</ul>
+<p><strong>Rule of thumb:</strong> if a human dev would ask for it before helping you, the model needs it too.</p>
+</section>
+<section id="instructions-verbs-matter" class="level3">
+<h3 class="anchored" data-anchor-id="instructions-verbs-matter">Instructions: verbs matter</h3>
+<p>Good instruction starts with a clear verb:</p>
+<ul>
+<li>“refactor”</li>
+<li>“debug”</li>
+<li>“generate tests”</li>
+<li>“explain”</li>
+<li>“convert”</li>
+</ul>
+<p>Bad instruction is vague:</p>
+<ul>
+<li>“help me”</li>
+<li>“improve this”</li>
 </ul>
 </section>
-<section id="set" class="level2">
-<h2 class="anchored" data-anchor-id="set"><code>set</code></h2>
+<section id="examples-show-what-good-looks-like" class="level3">
+<h3 class="anchored" data-anchor-id="examples-show-what-good-looks-like">Examples: show what “good” looks like</h3>
+<p>Few-shot prompting is basically pattern copying.</p>
+<p>If you want a <em>specific style</em>:</p>
 <ul>
-<li><p>In math, a set would be considered a set of numbers without any duplicates.</p></li>
-<li><p>In the text editor window, code as follows:</p>
-<pre><code>students = [
-    {"name": "Hermione", "house": "Gryffindor"},
-    {"name": "Harry", "house": "Gryffindor"},
-    {"name": "Ron", "house": "Gryffindor"},
-    {"name": "Draco", "house": "Slytherin"},
-    {"name": "Padma", "house": "Ravenclaw"},
-]
-
-houses = []
-for student in students:
-    if student["house"] not in houses:
-        houses.append(student["house"])
-
-for house in sorted(houses):
-    print(house)</code></pre>
-<p>Notice how we have a list of dictionaries, each being a student. An empty list called <code>houses</code> is created. We iterate through each <code>student</code> in <code>students</code>. If a student’s <code>house</code> is not in <code>houses</code>, we append to our list of <code>houses</code>.</p></li>
-<li><p>It turns out we can use the built-in <code>set</code> features to eliminate duplicates.</p></li>
-<li><p>In the text editor window, code as follows:</p>
-<pre><code>students = [
-    {"name": "Hermione", "house": "Gryffindor"},
-    {"name": "Harry", "house": "Gryffindor"},
-    {"name": "Ron", "house": "Gryffindor"},
-    {"name": "Draco", "house": "Slytherin"},
-    {"name": "Padma", "house": "Ravenclaw"},
-]
-
-houses = set()
-for student in students:
-    houses.add(student["house"])
-
-for house in sorted(houses):
-    print(house)</code></pre>
-<p>Notice how no checking needs to be included to ensure there are no duplicates. The <code>set</code> object takes care of this for us automatically.</p></li>
-<li><p>You can learn more in Python’s documentation of <a href="https://docs.python.org/3/library/stdtypes.html#set"><code>set</code></a>.</p></li>
+<li>show 1–2 examples</li>
+<li>keep them short</li>
+<li>keep formatting consistent</li>
 </ul>
 </section>
-<section id="global-variables" class="level2">
-<h2 class="anchored" data-anchor-id="global-variables">Global Variables</h2>
+<section id="format-contract-stop-the-model-drifting" class="level3">
+<h3 class="anchored" data-anchor-id="format-contract-stop-the-model-drifting">Format contract: stop the model drifting</h3>
+<p>If you don’t specify format, the model will:</p>
 <ul>
-<li><p>In other programming languages, there is the notion of global variables that are accessible to any function.</p></li>
-<li><p>We can leverage this ability within Python. In the text editor window, code as follows:</p>
-<pre><code>balance = 0
-
-
-def main():
-    print("Balance:", balance)
-
-
-if __name__ == "__main__":
-    main()</code></pre>
-<p>Notice how we create a global variable called <code>balance</code>, outside of any function.</p></li>
-<li><p>Since no errors are presented by executing the code above, you’d think all is well. However, it is not! In the text editor window, code as follows:</p>
-<pre><code>balance = 0
-
-
-def main():
-    print("Balance:", balance)
-    deposit(100)
-    withdraw(50)
-    print("Balance:", balance)
-
-
-def deposit(n):
-    balance += n
-
-
-def withdraw(n):
-    balance -= n
-
-
-if __name__ == "__main__":
-    main()</code></pre>
-<p>Notice how we now add the functionality to add and withdraw funds to and from <code>balance</code>. However, executing this code, we are presented with an error! We see an error called <code>UnboundLocalError</code>. You might be able to guess that, at least in the way we’ve currently coded <code>balance</code> and our <code>deposit</code> and <code>withdraw</code> functions, we can’t reassign it a new value inside a function.</p></li>
-<li><p>To interact with a global variable inside a function, the solution is to use the <code>global</code> keyword. In the text editor window, code as follows:</p>
-<pre><code>balance = 0
-
-
-def main():
-    print("Balance:", balance)
-    deposit(100)
-    withdraw(50)
-    print("Balance:", balance)
-
-
-def deposit(n):
-    global balance
-    balance += n
-
-
-def withdraw(n):
-    global balance
-    balance -= n
-
-
-if __name__ == "__main__":
-    main()</code></pre>
-<p>Notice how the <code>global</code> keyword tells each function that <code>balance</code> does not refer to a local variable: instead, it refers to the global variable we originally placed at the top of our code. Now, our code functions!</p></li>
-<li><p>Utilizing our powers from our experience with object-oriented programming, we can modify our code to use a class instead of a global variable. In the text editor window, code as follows:</p>
-<pre><code>class Account:
-    def __init__(self):
-        self._balance = 0
-
-    @property
-    def balance(self):
-        return self._balance
-
-    def deposit(self, n):
-        self._balance += n
-
-    def withdraw(self, n):
-        self._balance -= n
-
-
-def main():
-    account = Account()
-    print("Balance:", account.balance)
-    account.deposit(100)
-    account.withdraw(50)
-    print("Balance:", account.balance)
-
-
-if __name__ == "__main__":
-    main()</code></pre>
-<p>Notice how we use <code>account = Account()</code> to create an account. Classes allow us to solve this issue of needing a global variable more cleanly because these instance variables are accessible to all the methods of this class utilizing <code>self</code>.</p></li>
-<li><p>Generally speaking, global variables should be used quite sparingly, if at all!</p></li>
+<li>ramble</li>
+<li>mix explanation and code</li>
+<li>invent file structures</li>
+</ul>
+<p>So you specify:</p>
+<ul>
+<li>“return JSON only”</li>
+<li>“return only Python code”</li>
+<li>“return a markdown checklist”</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="crafting-the-ultimate-prompt" class="level2">
+<h2 class="anchored" data-anchor-id="crafting-the-ultimate-prompt">9.3 Crafting the ultimate prompt</h2>
+<p>This section introduces a powerful move:</p>
+<p>✅ <strong>Use an LLM to improve your prompt before using it for the real task.</strong></p>
+<p>Instead of:</p>
+<ul>
+<li>“Write an API request tutorial”</li>
+</ul>
+<p>You ask the model:</p>
+<ul>
+<li>“Improve this prompt so it produces the best possible tutorial.”</li>
+</ul>
+<p><img src="images/week_09/fig_03.png" class="img-fluid"></p>
+<section id="prompt-refinement-template" class="level3">
+<h3 class="anchored" data-anchor-id="prompt-refinement-template">Prompt-refinement template</h3>
+<p>Use this when you want a <em>high-quality</em> response.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>raw_prompt <span class="op">=</span> <span class="st">"Give me instructions on how to send an HTTP request to an API and handle errors."</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>refiner <span class="op">=</span> <span class="ss">f"""</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ss">You are an expert prompt engineer.</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ss">Improve the prompt below by:</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ss">- adding missing context questions</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ss">- adding constraints</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ss">- specifying output format</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ss">PROMPT TO IMPROVE:</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="sc">{</span>raw_prompt<span class="sc">}</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ss">Return the improved prompt only.</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="ss">"""</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(refiner)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>What you’re doing:</p>
+<ul>
+<li>turning fuzzy intent into a structured request</li>
+<li>forcing the model to ask missing questions</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="fundamental-prompt-types" class="level2">
+<h2 class="anchored" data-anchor-id="fundamental-prompt-types">9.4 Fundamental prompt types</h2>
+<p>This week introduces several “prompt families”.</p>
+<section id="zero-shot-prompting" class="level3">
+<h3 class="anchored" data-anchor-id="zero-shot-prompting">9.4.1 Zero-shot prompting</h3>
+<p>Zero-shot = <strong>no examples</strong>.</p>
+<p>Example:</p>
+<ul>
+<li>“Write a Python function to validate emails.”</li>
+</ul>
+<p>Best when:</p>
+<ul>
+<li>the task is common</li>
+<li>the output shape is simple</li>
+</ul>
+<p>Risk:</p>
+<ul>
+<li>the model guesses assumptions</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>zero_shot <span class="op">=</span> <span class="st">"Write a Python function that validates an email address."</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(zero_shot)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="few-shot-prompting" class="level3">
+<h3 class="anchored" data-anchor-id="few-shot-prompting">9.4.2 Few-shot prompting</h3>
+<p>Few-shot = provide examples.</p>
+<p>Best when:</p>
+<ul>
+<li>you care about formatting</li>
+<li>you want a consistent style</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>few_shot <span class="op">=</span> <span class="st">"""</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="st">You are a Python developer.</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="st">Example 1:</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="st">def double(x):</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="st">    return x * 2</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="st">Example 2:</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="st">def square(x):</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="st">    return x ** 2</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="st">Now write a function:</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="st">def cube(x):</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(few_shot)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="open-ended-prompts" class="level3">
+<h3 class="anchored" data-anchor-id="open-ended-prompts">9.4.3 Open-ended prompts</h3>
+<p>Open-ended = exploration.</p>
+<p>Best for:</p>
+<ul>
+<li>comparing tools</li>
+<li>brainstorming designs</li>
+<li>generating options</li>
+</ul>
+<p>Bad for:</p>
+<ul>
+<li>precise code requirements</li>
 </ul>
 </section>
-<section id="constants" class="level2">
-<h2 class="anchored" data-anchor-id="constants">Constants</h2>
+<section id="constrained-prompts" class="level3">
+<h3 class="anchored" data-anchor-id="constrained-prompts">9.4.4 Constrained prompts</h3>
+<p>Constrained prompts are strict.</p>
+<p>Examples:</p>
 <ul>
-<li><p>Some languages allow you to create variables that are unchangeable, called “constants”. Constants allow one to program defensively and reduce the opportunities for important values to be altered.</p></li>
-<li><p>In the text editor window, code as follows:</p>
-<pre><code>MEOWS = 3
-
-for _ in range(MEOWS):
-    print("meow")</code></pre>
-<p>Notice <code>MEOWS</code> is our constant in this case. Constants are typically denoted by capital variable names and are placed at the top of our code. Though this <em>looks</em> like a constant, in reality, Python actually has no mechanism to prevent us from changing that value within our code! Instead, you’re on the honor system: if a variable name is written in all caps, just don’t change it!</p></li>
-<li><p>One can create a class “constant”, now in quotes because we know Python doesn’t quite support “constants”. In the text editor window, code as follows:</p>
-<pre><code>class Cat:
-    MEOWS = 3
-
-    def meow(self):
-        for _ in range(Cat.MEOWS):
-            print("meow")
-
-
-cat = Cat()
-cat.meow()</code></pre>
-<p>Because <code>MEOWS</code> is defined outside of any particular class method, all of them have access to that value via <code>Cat.MEOWS</code>.</p></li>
+<li>“List exactly three built-in Python data structures.”</li>
+<li>“Return only code.”</li>
+</ul>
+<p><img src="images/week_09/fig_04.png" class="img-fluid"></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>constrained <span class="op">=</span> <span class="st">"List exactly three built-in Python data structures."</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(constrained)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="iterative-prompts" class="level3">
+<h3 class="anchored" data-anchor-id="iterative-prompts">9.4.5 Iterative prompts</h3>
+<p>Iterative prompting = conversation loop.</p>
+<p>You:</p>
+<ol type="1">
+<li>ask</li>
+<li>evaluate</li>
+<li>refine</li>
+</ol>
+<p>This behaves like debugging.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>prompt_v1 <span class="op">=</span> <span class="st">"Explain why this test is failing."</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>prompt_v2 <span class="op">=</span> <span class="st">"Explain why this pytest test is failing. Use bullet points and include the fixed code."</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(prompt_v1)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(prompt_v2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="structured-prompts" class="level3">
+<h3 class="anchored" data-anchor-id="structured-prompts">9.4.6 Structured prompts</h3>
+<p>Structured prompts enforce a schema.</p>
+<p>Example:</p>
+<ul>
+<li>“Return JSON with keys: files, changes, reasons”</li>
+</ul>
+<p>This is <em>huge</em> for engineering teams.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>structured <span class="op">=</span> <span class="st">"""</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="st">Return JSON only.</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="st">Schema:</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="st">{"files": [{"path": "...", "change": "...", "reason": "..."}]}</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="st">Task: Propose refactor changes for a small Python script.</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(structured)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+</section>
+<section id="advanced-prompt-types" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-prompt-types">9.5 Advanced prompt types</h2>
+<p>These techniques are about increasing reliability.</p>
+<section id="chain-of-thought-prompting" class="level3">
+<h3 class="anchored" data-anchor-id="chain-of-thought-prompting">9.5.1 Chain-of-thought prompting</h3>
+<p>In this week, chain-of-thought means:</p>
+<ul>
+<li>encourage step-by-step reasoning</li>
+<li>reduce “jumping to conclusions”</li>
+</ul>
+<p>Use carefully: the model may sound confident even when wrong.</p>
+<p><img src="images/week_09/fig_05.png" class="img-fluid"></p>
+</section>
+<section id="recursive-prompting" class="level3">
+<h3 class="anchored" data-anchor-id="recursive-prompting">9.5.2 Recursive prompting</h3>
+<p>Recursive prompting = prompt → output → prompt again.</p>
+<p>Example workflow:</p>
+<ol type="1">
+<li>generate draft</li>
+<li>critique draft</li>
+<li>revise draft</li>
+</ol>
+<p>This is similar to:</p>
+<ul>
+<li>code review loops</li>
+<li>iterative refactoring</li>
 </ul>
 </section>
-<section id="type-hints" class="level2">
-<h2 class="anchored" data-anchor-id="type-hints">Type Hints</h2>
+<section id="context-manipulation" class="level3">
+<h3 class="anchored" data-anchor-id="context-manipulation">9.5.3 Context manipulation</h3>
+<p>Context manipulation = changing what the model sees.</p>
+<p>Examples:</p>
 <ul>
-<li>In other programming languages, one expresses explicitly what variable type you want to use.</li>
-<li>As we saw earlier in the course, Python does not require the explicit declaration of types.</li>
-<li>Nevertheless, it’s good practice need to ensure all of your variables are of the right type.</li>
-<li><code>mypy</code> is a program that can help you test to make sure all your variables are of the right type.</li>
-<li>You can install <code>mypy</code> by executing in your terminal window: <code>pip install mypy</code>.</li>
-</ul>
-<p>In the text editor window, code as follows:</p>
-<pre><code>  def meow(n):
-      for _ in range(n):
-          print("meow")
-
-
-  number = input("Number: ")
-  meow(number)</code></pre>
-<p>You may already see that <code>number = input("Number: )"</code> returns a <code>string</code>, not an <code>int</code>. But <code>meow</code> will likely want an <code>int</code>!</p>
-<ul>
-<li><p>A type hint can be added to give Python a hint of what type of variable <code>meow</code> should expect. In the text editor window, code as follows:</p>
-<pre><code>def meow(n: int):
-    for _ in range(n):
-        print("meow")
-
-
-number = input("Number: ")
-meow(number)</code></pre>
-<p>Notice, though, that our program still throws an error.</p></li>
-<li><p>After installing <code>mypy</code>, execute <code>mypy meows.py</code> in the terminal window. <code>mypy</code> will provide some guidance about how to fix this error.</p></li>
-<li><p>You can annotate all your variables. In the text editor window, code as follows:</p>
-<pre><code>def meow(n: int):
-    for _ in range(n):
-        print("meow")
-
-
-number: int = input("Number: ")
-meow(number)</code></pre>
-<p>Notice how <code>number</code> is now provided a type hint.</p></li>
-<li><p>Again, executing <code>mypy meows.py</code> in the terminal window provides much more specific feedback to you, the programmer.</p></li>
-<li><p>We can fix our final error by coding as follows:</p>
-<pre><code>def meow(n: int):
-    for _ in range(n):
-        print("meow")
-
-
-number: int = int(input("Number: "))
-meow(number)</code></pre>
-<p>Notice how running <code>mypy</code> now produces no errors because we cast our input to an integer.</p></li>
-<li><p>Let’s introduce a new error by assuming that <code>meow</code> will return to us a string, or <code>str</code>. In the text editor window, code as follows:</p>
-<pre><code>def meow(n: int):
-    for _ in range(n):
-        print("meow")
-
-
-number: int = int(input("Number: "))
-meows: str = meow(number)
-print(meows)</code></pre>
-<p>Notice how the <code>meow</code> function has only a side effect. Because we only attempt to print “meow”, not return a value, an error is thrown when we try to store the return value of <code>meow</code> in <code>meows</code>.</p></li>
-<li><p>We can further use type hints to check for errors, this time annotating the return values of functions. In the text editor window, code as follows:</p>
-<pre><code>def meow(n: int) -&gt; None:
-    for _ in range(n):
-        print("meow")
-
-
-number: int = int(input("Number: "))
-meows: str = meow(number)
-print(meows)</code></pre>
-<p>Notice how the notation <code>-&gt; None</code> tells <code>mypy</code> that there is no return value.</p></li>
-<li><p>We can modify our code to return a string if we wish:</p>
-<pre><code>def meow(n: int) -&gt; str:
-    return "meow\n" * n
-
-
-number: int = int(input("Number: "))
-meows: str = meow(number)
-print(meows, end="")</code></pre>
-<p>Notice how we store in <code>meows</code> multiple <code>str</code>s. Running <code>mypy</code> produces no errors.</p></li>
-<li><p>You can learn more in Python’s documentation of <a href="https://docs.python.org/3/library/typing.html">Type Hints</a>.</p></li>
-<li><p>You can learn more about <a href="https://mypy.readthedocs.io/"><code>mypy</code></a> through the program’s own documentation.</p></li>
+<li>include only the relevant file (not the whole repo)</li>
+<li>provide a minimal failing example</li>
+<li>redact secrets and irrelevant text</li>
 </ul>
 </section>
-<section id="docstrings" class="level2">
-<h2 class="anchored" data-anchor-id="docstrings">Docstrings</h2>
+<section id="instruction-refinement" class="level3">
+<h3 class="anchored" data-anchor-id="instruction-refinement">9.5.4 Instruction refinement</h3>
+<p>Instruction refinement = tuning wording.</p>
+<p>Small changes matter:</p>
 <ul>
-<li><p>A standard way of commenting your function’s purpose is to use a docstring. In the text editor window, code as follows:</p>
-<pre><code>def meow(n):
-    """Meow n times."""
-    return "meow\n" * n
-
-
-number = int(input("Number: "))
-meows = meow(number)
-print(meows, end="")</code></pre>
-<p>Notice how the three double quotes designate what the function does.</p></li>
-<li><p>You can use docstrings to standardize how you document the features of a function. In the text editor window, code as follows:</p>
-<pre><code>def meow(n):
-    """
-    Meow n times.
-
-    :param n: Number of times to meow
-    :type n: int
-    :raise TypeError: If n is not an int
-    :return: A string of n meows, one per line
-    :rtype: str
-    """
-    return "meow\n" * n
-
-
-number = int(input("Number: "))
-meows = meow(number)
-print(meows, end="")</code></pre>
-<p>Notice how multiple docstring arguments are included. For example, it describes the parameters taken by the function and what is returned by the function.</p></li>
-<li><p>Established tools, such as <a href="https://www.sphinx-doc.org/en/master/index.html">Sphinx</a>, can be used to parse docstrings and automatically create documentation for us in the form of web pages and PDF files such that you can publish and share with others.</p></li>
-<li><p>You can learn more in Python’s documentation of <a href="https://peps.python.org/pep-0257/">docstrings</a>.</p></li>
+<li>“explain” vs “teach”</li>
+<li>“brief” vs “detailed”</li>
+<li>“code only” vs “code + rationale”</li>
+</ul>
+<p><img src="images/week_09/fig_06.png" class="img-fluid"></p>
+</section>
+<section id="output-control" class="level3">
+<h3 class="anchored" data-anchor-id="output-control">9.5.5 Output control</h3>
+<p>Output control = forcing response format.</p>
+<p>This is key when you need:</p>
+<ul>
+<li>documentation</li>
+<li>commit messages</li>
+<li>structured change requests</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="prompt-techniques-for-programmers" class="level2">
+<h2 class="anchored" data-anchor-id="prompt-techniques-for-programmers">9.6 Prompt techniques for programmers</h2>
+<p>This part is where this week becomes “real world”.</p>
+<section id="use-prompts-like-tool-interfaces" class="level3">
+<h3 class="anchored" data-anchor-id="use-prompts-like-tool-interfaces">Use prompts like tool interfaces</h3>
+<p>Think:</p>
+<ul>
+<li>prompt = function signature</li>
+<li>context = arguments</li>
+<li>constraints = preconditions</li>
+<li>output format = return type</li>
 </ul>
 </section>
-<section id="argparse" class="level2">
-<h2 class="anchored" data-anchor-id="argparse"><code>argparse</code></h2>
+<section id="a-reliable-prompt-pattern-copypaste" class="level3">
+<h3 class="anchored" data-anchor-id="a-reliable-prompt-pattern-copypaste">A reliable prompt pattern (copy/paste)</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>prompt <span class="op">=</span> <span class="st">"""</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="st">You are a senior Python developer.</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="st">Task: </span><span class="sc">{task}</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="st">Context: </span><span class="sc">{context}</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="st">Constraints: </span><span class="sc">{constraints}</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="st">Output format: </span><span class="sc">{format}</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="st">Return only the output format requested.</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>filled <span class="op">=</span> prompt.<span class="bu">format</span>(</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    task<span class="op">=</span><span class="st">"Write pytest tests for apply_discount(price, discount)"</span>,</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    context<span class="op">=</span><span class="st">"discount must be between 0 and 1; negative should raise ValueError"</span>,</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    constraints<span class="op">=</span><span class="st">"Use pytest; include edge cases; no extra commentary"</span>,</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    <span class="bu">format</span><span class="op">=</span><span class="st">"Python code"</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(filled)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Why this works:</p>
 <ul>
-<li><p>Suppose we want to use command-line arguments in our program. In the text editor window, code as follows:</p>
-<pre><code>import sys
-
-if len(sys.argv) == 1:
-    print("meow")
-elif len(sys.argv) == 3 and sys.argv[1] == "-n":
-    n = int(sys.argv[2])
-    for _ in range(n):
-        print("meow")
-else:
-    print("usage: meows.py [-n NUMBER]")</code></pre>
-<p>Notice how <code>sys</code> is imported, from which we get access to <code>sys.argv</code>, an array of command-line arguments given to our program when run. We can use several <code>if</code> statements to check whether the user has run our program properly.</p></li>
-<li><p>Let’s assume that this program will be getting much more complicated. How could we check all the arguments that could be inserted by the user? We might give up if we have more than a few command-line arguments!</p></li>
-<li><p>Luckily, <code>argparse</code> is a library that handles all the parsing of complicated strings of command-line arguments. In the text editor window, code as follows:</p>
-<pre><code>import argparse
-
-parser = argparse.ArgumentParser()
-parser.add_argument("-n")
-args = parser.parse_args()
-
-for _ in range(int(args.n)):
-    print("meow")</code></pre>
-<p>Notice how <code>argparse</code> is imported instead of <code>sys</code>. An object called <code>parser</code> is created from an <code>ArgumentParser</code> class. That class’s <code>add_argument</code> method is used to tell <code>argparse</code> what arguments we should expect from the user when they run our program. Finally, running the parser’s <code>parse_args</code> method ensures that all of the arguments have been included properly by the user.</p></li>
-<li><p>We can also program more cleanly, such that our user can get some information about the proper usage of our code when they fail to use the program correctly. In the text editor window, code as follows:</p>
-<pre><code>import argparse
-
-parser = argparse.ArgumentParser(description="Meow like a cat")
-parser.add_argument("-n", help="number of times to meow")
-args = parser.parse_args()
-
-for _ in range(int(args.n)):
-    print("meow")</code></pre>
-<p>Notice how the user is provided some documentation. Specifically, a <code>help</code> argument is provided. Now, if the user executes <code>python meows.py --help</code> or <code>-h</code>, the user will be presented with some clues about how to use this program.</p></li>
-<li><p>We can further improve this program. In the text editor window, code as follows:</p>
-<pre><code>import argparse
-
-parser = argparse.ArgumentParser(description="Meow like a cat")
-parser.add_argument("-n", default=1, help="number of times to meow", type=int)
-args = parser.parse_args()
-
-for _ in range(args.n):
-    print("meow")</code></pre>
-<p>Notice how not only is help documentation included, but you can provide a <code>default</code> value when no arguments are provided by the user.</p></li>
-<li><p>You can learn more in Python’s documentation of <a href="https://docs.python.org/3/library/argparse.html"><code>argparse</code></a>.</p></li>
+<li>clear role</li>
+<li>explicit requirements</li>
+<li>predictable output</li>
+</ul>
+<p><img src="images/week_09/fig_07.png" class="img-fluid"></p>
+<hr>
+</section>
+</section>
+<section id="worked-examples-week-aligned" class="level2">
+<h2 class="anchored" data-anchor-id="worked-examples-week-aligned">Worked examples (week-aligned)</h2>
+<section id="example-a-debugging-with-context-constraints" class="level3">
+<h3 class="anchored" data-anchor-id="example-a-debugging-with-context-constraints">Example A: Debugging with context + constraints</h3>
+<p>Bad prompt:</p>
+<ul>
+<li>“Fix this code”</li>
+</ul>
+<p>Better prompt:</p>
+<ul>
+<li>include error</li>
+<li>include expected behaviour</li>
+<li>request specific output</li>
 </ul>
 </section>
-<section id="unpacking" class="level2">
-<h2 class="anchored" data-anchor-id="unpacking">Unpacking</h2>
+<section id="example-b-generating-documentation-with-output-control" class="level3">
+<h3 class="anchored" data-anchor-id="example-b-generating-documentation-with-output-control">Example B: Generating documentation with output control</h3>
+<p>If you want documentation:</p>
 <ul>
-<li><p>Would it not be nice to be able to split a single variable into two variables? In the text editor window, code as follows:</p>
-<pre><code>first, _ = input("What's your name? ").split(" ")
-print(f"hello, {first}")</code></pre>
-<p>Notice how this program tries to get a user’s first name by naively splitting on a single space.</p></li>
-<li><p>It turns out there are other ways to unpack variables. You can write more powerful and elegant code by understanding how to unpack variables in seemingly more advanced ways. In the text editor window, code as follows:</p>
-<pre><code>def total(galleons, sickles, knuts):
-    return (galleons * 17 + sickles) * 29 + knuts
-
-
-print(total(100, 50, 25), "Knuts")</code></pre>
-<p>Notice how this returns the total value of Knuts.</p></li>
-<li><p>What if we wanted to store our coins in a list? In the text editor window, code as follows:</p>
-<pre><code>def total(galleons, sickles, knuts):
-    return (galleons * 17 + sickles) * 29 + knuts
-
-
-coins = [100, 50, 25]
-
-print(total(coins[0], coins[1], coins[2]), "Knuts")</code></pre>
-<p>Notice how a list called <code>coins</code> is created. We can pass each value in by indexing using <code>0</code>, <code>1</code>, and so on.</p></li>
-<li><p>This is getting quite verbose. Wouldn’t it be nice if we could simply pass the list of coins to our function?</p></li>
-<li><p>To enable the possibility of passing the entire list, we can use unpacking. In the text editor window, code as follows:</p>
-<pre><code>def total(galleons, sickles, knuts):
-    return (galleons * 17 + sickles) * 29 + knuts
-
-
-coins = [100, 50, 25]
-
-print(total(*coins), "Knuts")</code></pre>
-<p>Notice how a <code>*</code> unpacks the sequence of the list of coins and passes in each of its individual elements to <code>total</code>.</p></li>
-<li><p>Suppose that we could pass in the names of the currency in any order? In the text editor window, code as follows:</p>
-<pre><code>def total(galleons, sickles, knuts):
-    return (galleons * 17 + sickles) * 29 + knuts
-
-
-print(total(galleons=100, sickles=50, knuts=25), "Knuts")</code></pre>
-<p>Notice how this still calculates correctly.</p></li>
-<li><p>When you start talking about “names” and “values,” dictionaries might start coming to mind! You can implement this as a dictionary. In the text editor window, code as follows:</p>
-<pre><code>def total(galleons, sickles, knuts):
-    return (galleons * 17 + sickles) * 29 + knuts
-
-
-coins = {"galleons": 100, "sickles": 50, "knuts": 25}
-
-print(total(coins["galleons"], coins["sickles"], coins["knuts"]), "Knuts")</code></pre>
-<p>Notice how a dictionary called <code>coins</code> is provided. We can index into it using keys, such as “galleons” or “sickles”.</p></li>
-<li><p>Since the <code>total</code> function expects three arguments, we cannot pass in a dictionary. We can use unpacking to help with this. In the text editor window, code as follows:</p>
-<pre><code>def total(galleons, sickles, knuts):
-    return (galleons * 17 + sickles) * 29 + knuts
-
-
-coins = {"galleons": 100, "sickles": 50, "knuts": 25}
-
-print(total(**coins), "Knuts")</code></pre>
-<p>Notice how <code>**</code> allows you to unpack a dictionary. When unpacking a dictionary, it provides both the keys and values.</p></li>
+<li>specify audience</li>
+<li>specify sections</li>
+<li>specify formatting</li>
+</ul>
+<p><img src="images/week_09/fig_08.png" class="img-fluid"></p>
+</section>
+<section id="example-c-writing-tests-as-a-contract" class="level3">
+<h3 class="anchored" data-anchor-id="example-c-writing-tests-as-a-contract">Example C: Writing tests as a contract</h3>
+<p>Strong prompts include:</p>
+<ul>
+<li>what to test</li>
+<li>edge cases</li>
+<li>expected failures</li>
+</ul>
+<p><img src="images/week_09/fig_09.png" class="img-fluid"></p>
+<hr>
+</section>
+</section>
+<section id="pitfalls-and-anti-patterns" class="level2">
+<h2 class="anchored" data-anchor-id="pitfalls-and-anti-patterns">Pitfalls and anti-patterns</h2>
+<section id="assuming-the-model-knows-what-you-mean" class="level3">
+<h3 class="anchored" data-anchor-id="assuming-the-model-knows-what-you-mean">1) Assuming the model “knows what you mean”</h3>
+<p>It doesn’t.</p>
+<p>If it can interpret your prompt two ways, it will choose one randomly.</p>
+</section>
+<section id="treating-a-correct-looking-answer-as-correct" class="level3">
+<h3 class="anchored" data-anchor-id="treating-a-correct-looking-answer-as-correct">2) Treating a correct-looking answer as correct</h3>
+<p>AI output must be validated:</p>
+<ul>
+<li>run the code</li>
+<li>write tests</li>
+<li>review logic</li>
 </ul>
 </section>
-<section id="args-and-kwargs" class="level2">
-<h2 class="anchored" data-anchor-id="args-and-kwargs"><code>args</code> and <code>kwargs</code></h2>
+<section id="overloading-the-prompt" class="level3">
+<h3 class="anchored" data-anchor-id="overloading-the-prompt">3) Overloading the prompt</h3>
+<p>Too much irrelevant context reduces quality.</p>
+<p>Use:</p>
 <ul>
-<li><p>Recall the <code>print</code> documentation we looked at earlier in this course:</p>
-<pre><code>print(*objects, sep=' ', end='\n', file=sys.stdout, flush=False)</code></pre></li>
-<li><p><code>args</code> are positional arguments, such as those we provide to print like <code>print("Hello", "World")</code>.</p></li>
-<li><p><code>kwargs</code> are named arguments, or “keyword arguments”, such as those we provide to print like <code>print(end="")</code>.</p></li>
-<li><p>As we see in the prototype for the <code>print</code> function above, we can tell our function to expect a presently unknown number positional arguments. We can also tell it to expect a presently unknown number of keyword arguments. In the text editor window, code as follows:</p>
-<pre><code>def f(*args, **kwargs):
-    print("Positional:", args)
-
-
-f(100, 50, 25)</code></pre>
-<p>Notice how executing this code will be printed as positional arguments.</p></li>
-<li><p>We can even pass in named arguments. In the text editor window, code as follows:</p>
-<pre><code>def f(*args, **kwargs):
-    print("Named:", kwargs)
-
-
-f(galleons=100, sickles=50, knuts=25)</code></pre>
-<p>Notice how the named values are provided in the form of a dictionary.</p></li>
-<li><p>Thinking about the <code>print</code> function above, you can see how <code>*objects</code> takes any number of positional arguments.</p></li>
-<li><p>You can learn more in Python’s documentation of <a href="https://docs.python.org/3/library/functions.html#print"><code>print</code></a>.</p></li>
+<li>minimal failing examples</li>
+<li>focused snippets</li>
 </ul>
+<p><img src="images/week_09/fig_10.png" class="img-fluid"></p>
+<hr>
 </section>
-<section id="map" class="level2">
-<h2 class="anchored" data-anchor-id="map"><code>map</code></h2>
+</section>
+<section id="summary-what-you-should-actually-remember" class="level2">
+<h2 class="anchored" data-anchor-id="summary-what-you-should-actually-remember">Summary: what you should actually remember</h2>
 <ul>
-<li><p>Early on, we began with procedural programming.</p></li>
-<li><p>We later revealed Python is an object oriented programming language.</p></li>
-<li><p>We saw hints of functional programming, where functions have side effects without a return value. We can illustrate this in the text editor window, type <code>code yell.py</code> and code as follows:</p>
-<pre><code>def main():
-    yell("This is Programming Concepts")
-
-
-def yell(word):
-    print(word.upper())
-
-
-if __name__ == "__main__":
-    main()</code></pre>
-<p>Notice how the <code>yell</code> function is simply yelled.</p></li>
-<li><p>Wouldn’t it be nice to yell a list of unlimited words? Modify your code as follows:</p>
-<pre><code>def main():
-    yell(["This", "is", "Programming Concepts"])
-
-
-def yell(words):
-    uppercased = []
-    for word in words:
-        uppercased.append(word.upper())
-    print(*uppercased)
-
-
-if __name__ == "__main__":
-    main()</code></pre>
-<p>Notice we accumulate the uppercase words, iterating over each of the words and “uppercasing” them. The uppercase list is printed utilizing the <code>*</code> to unpack it.</p></li>
-<li><p>Removing the brackets, we can pass the words in as arguments. In the text editor window, code as follows:</p>
-<pre><code>def main():
-    yell("This", "is", "CS50")
-
-
-def yell(*words):
-    uppercased = []
-    for word in words:
-        uppercased.append(word.upper())
-    print(*uppercased)
-
-
-if __name__ == "__main__":
-    main()</code></pre>
-<p>Notice how <code>*words</code> allows for many arguments to be taken by the function.</p></li>
-<li><p><code>map</code> allows you to map a function to a sequence of values. In practice, we can code as follows:</p>
-<pre><code>def main():
-    yell("This", "is", "Programming Concepts")
-
-
-def yell(*words):
-    uppercased = map(str.upper, words)
-    print(*uppercased)
-
-
-if __name__ == "__main__":
-    main()</code></pre>
-<p>Notice how <code>map</code> takes two arguments. First, it takes a function we want applied to every element of a list. Second, it takes that list itself, to which we’ll apply the aforementioned function. Hence, all words in <code>words</code> will be handed to the <code>str.upper</code> function and returned to <code>uppercased</code>.</p></li>
-<li><p>You can learn more in Python’s documentation of <a href="https://docs.python.org/3/library/functions.html#map"><code>map</code></a>.</p></li>
+<li>Prompts are <strong>specs</strong>, not questions</li>
+<li>Context prevents guessing</li>
+<li>Constraints reduce nonsense</li>
+<li>Examples control style</li>
+<li>Output control makes responses testable</li>
+<li>Iteration is normal — treat it like debugging</li>
 </ul>
+<hr>
 </section>
-<section id="list-comprehensions" class="level2">
-<h2 class="anchored" data-anchor-id="list-comprehensions">List Comprehensions</h2>
-<ul>
-<li><p>List comprehensions allow you to create a list on the fly in one elegant one-liner.</p></li>
-<li><p>We can implement this in our code as follows:</p>
-<pre><code>def main():
-    yell("This", "is", "Programming Concepts")
-
-
-def yell(*words):
-    uppercased = [arg.upper() for arg in words]
-    print(*uppercased)
-
-
-if __name__ == "__main__":
-    main()</code></pre>
-<p>Notice how instead of using <code>map</code>, we write a Python expression within square brackets. For each argument, <code>.upper</code> is applied to it.</p></li>
-<li><p>Taking this concept further, let’s pivot toward another program.</p></li>
-<li><p>In the text editor window, type <code>code gryffindors.py</code> and code as follows:</p>
-<pre><code>students = [
-    {"name": "Hermione", "house": "Gryffindor"},
-    {"name": "Harry", "house": "Gryffindor"},
-    {"name": "Ron", "house": "Gryffindor"},
-    {"name": "Draco", "house": "Slytherin"},
-]
-
-gryffindors = []
-for student in students:
-    if student["house"] == "Gryffindor":
-        gryffindors.append(student["name"])
-
-for gryffindor in sorted(gryffindors):
-    print(gryffindor)</code></pre>
-<p>Notice we have a conditional while we’re creating our list. <em>If</em> the student’s house is Gryffindor, we append the student to the list of names. Finally, we print all the names.</p></li>
-<li><p>More elegantly, we can simplify this code with a list comprehension as follows:</p>
-<pre><code>students = [
-    {"name": "Hermione", "house": "Gryffindor"},
-    {"name": "Harry", "house": "Gryffindor"},
-    {"name": "Ron", "house": "Gryffindor"},
-    {"name": "Draco", "house": "Slytherin"},
-]
-
-gryffindors = [
-    student["name"] for student in students if student["house"] == "Gryffindor"
-]
-
-for gryffindor in sorted(gryffindors):
-    print(gryffindor)</code></pre>
-<p>Notice how the list comprehension is on a single line!</p></li>
-</ul>
+<section id="quick-self-check-5-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="quick-self-check-5-minutes">Quick self-check (5 minutes)</h2>
+<ol type="1">
+<li>Rewrite a bad prompt into a structured prompt.</li>
+<li>Add one constraint that prevents security issues.</li>
+<li>Add an output format that makes the result testable.</li>
+<li>Add one example to enforce consistent style.</li>
+</ol>
+<hr>
 </section>
-<section id="filter" class="level2">
-<h2 class="anchored" data-anchor-id="filter"><code>filter</code></h2>
+<section id="verification-report-week-9" class="level2">
+<h2 class="anchored" data-anchor-id="verification-report-week-9">Verification report (Week 9)</h2>
 <ul>
-<li><p>Using Python’s <code>filter</code> function allows us to return a subset of a sequence for which a certain condition is true.</p></li>
-<li><p>In the text editor window, code as follows:</p>
-<pre><code>students = [
-    {"name": "Hermione", "house": "Gryffindor"},
-    {"name": "Harry", "house": "Gryffindor"},
-    {"name": "Ron", "house": "Gryffindor"},
-    {"name": "Draco", "house": "Slytherin"},
-]
-
-
-def is_gryffindor(s):
-    return s["house"] == "Gryffindor"
-
-
-gryffindors = filter(is_gryffindor, students)
-
-for gryffindor in sorted(gryffindors, key=lambda s: s["name"]):
-    print(gryffindor["name"])</code></pre>
-<p>Notice how a function called <code>is_gryffindor</code> is created. This is our filtering function that will take a student <code>s</code>, and return <code>True</code> or <code>False</code> depending on whether the student’s house is Gryffindor. You can see the new <code>filter</code> function takes two arguments. First, it takes the function that will be applied to each element in a sequence—in this case, <code>is_gryffindor</code>. Second, it takes the sequence to which it will apply the filtering function—in this case, <code>students</code>. In <code>gryffindors</code>, we should see only those students who are in Gryffindor.</p></li>
-<li><p><code>filter</code> can also use lambda functions as follows:</p>
-<pre><code>students = [
-    {"name": "Hermione", "house": "Gryffindor"},
-    {"name": "Harry", "house": "Gryffindor"},
-    {"name": "Ron", "house": "Gryffindor"},
-    {"name": "Draco", "house": "Slytherin"},
-]
-
-
-gryffindors = filter(lambda s: s["house"] == "Gryffindor", students)
-
-for gryffindor in sorted(gryffindors, key=lambda s: s["name"]):
-    print(gryffindor["name"])</code></pre>
-<p>Notice how the same list of students is provided.</p></li>
-<li><p>You can learn more in Python’s documentation of <a href="https://docs.python.org/3/library/functions.html#filter"><code>filter</code></a>.</p></li>
-</ul>
-</section>
-<section id="dictionary-comprehensions" class="level2">
-<h2 class="anchored" data-anchor-id="dictionary-comprehensions">Dictionary Comprehensions</h2>
-<ul>
-<li><p>We can apply the same idea behind list comprehensions to dictionaries. In the text editor window, code as follows:</p>
-<pre><code>students = ["Hermione", "Harry", "Ron"]
-
-gryffindors = []
-
-for student in students:
-    gryffindors.append({"name": student, "house": "Gryffindor"})
-
-print(gryffindors)</code></pre>
-<p>Notice how this code doesn’t (yet!) use any comprehensions. Instead, it follows the same paradigms we have seen before.</p></li>
-<li><p>We can now apply dictionary comprehensions by modifying our code as follows:</p>
-<pre><code>students = ["Hermione", "Harry", "Ron"]
-
-gryffindors = [{"name": student, "house": "Gryffindor"} for student in students]
-
-print(gryffindors)</code></pre>
-<p>Notice how all the prior code is simplified into a single line where the structure of the dictionary is provided for each <code>student</code> in <code>students</code>.</p></li>
-<li><p>We can even simplify further as follows:</p>
-<pre><code>students = ["Hermione", "Harry", "Ron"]
-
-gryffindors = {student: "Gryffindor" for student in students}
-
-print(gryffindors)</code></pre>
-<p>Notice how the dictionary will be constructed with key-value pairs.</p></li>
-</ul>
-</section>
-<section id="enumerate" class="level2">
-<h2 class="anchored" data-anchor-id="enumerate"><code>enumerate</code></h2>
-<ul>
-<li><p>We may wish to provide some ranking of each student. In the text editor window, code as follows:</p>
-<pre><code>students = ["Hermione", "Harry", "Ron"]
-
-for i in range(len(students)):
-    print(i + 1, students[i])</code></pre>
-<p>Notice how each student is enumerated when running this code.</p></li>
-<li><p>Utilizing enumeration, we can do the same:</p>
-<pre><code>students = ["Hermione", "Harry", "Ron"]
-
-for i, student in enumerate(students):
-    print(i + 1, student)</code></pre>
-<p>Notice how enumerate presents the index and the value of each <code>student</code>.</p></li>
-<li><p>You can learn more in Python’s documentation of <a href="https://docs.python.org/3/library/functions.html#enumerate"><code>enumerate</code></a>.</p></li>
-</ul>
-</section>
-<section id="generators-and-iterators" class="level2">
-<h2 class="anchored" data-anchor-id="generators-and-iterators">Generators and Iterators</h2>
-<ul>
-<li><p>In Python, there is a way to protect against your system running out of resources the problems they are addressing become too large.</p></li>
-<li><p>In the United States, it’s customary to “count sheep” in one’s mind when one is having a hard time falling asleep.</p></li>
-<li><p>In the text editor window, type <code>code sleep.py</code> and code as follows:</p>
-<pre><code>n = int(input("What's n? "))
-for i in range(n):
-    print("🐑" * i)</code></pre>
-<p>Notice how this program will count the number of sheep you ask of it.</p></li>
-<li><p>We can make our program more sophisticated by adding a <code>main</code> function by coding as follows:</p>
-<pre><code>def main():
-    n = int(input("What's n? "))
-    for i in range(n):
-        print("🐑" * i)
-
-
-if __name__ == "__main__":
-    main()</code></pre>
-<p>Notice how a <code>main</code> function is provided.</p></li>
-<li><p>We have been getting into the habit of abstracting away parts of our code.</p></li>
-<li><p>We can call a sheep function by modifying our code as follows:</p>
-<pre><code>def main():
-    n = int(input("What's n? "))
-    for i in range(n):
-        print(sheep(i))
-
-
-def sheep(n):
-    return "🐑" * n
-
-
-if __name__ == "__main__":
-    main()</code></pre>
-<p>Notice how the <code>main</code> function does the iteration.</p></li>
-<li><p>We can provide the <code>sheep</code> function more abilities. In the text editor window, code as follows:</p>
-<pre><code>def main():
-    n = int(input("What's n? "))
-    for s in sheep(n):
-        print(s)
-
-
-def sheep(n):
-    flock = []
-    for i in range(n):
-        flock.append("🐑" * i)
-    return flock
-
-
-if __name__ == "__main__":
-    main()</code></pre>
-<p>Notice how we create a flock of sheep and return the <code>flock</code>.</p></li>
-<li><p>Executing our code, you might try different numbers of sheep such as <code>10</code>, <code>1000</code>, and <code>10000</code>. What if you asked for <code>1000000</code> sheep, your program might completely hang or crash. Because you have attempted to generate a massive list of sheep, your computer may be struggling to complete the computation.</p></li>
-<li><p>The <code>yield</code> generator can solve this problem by returning a small bit of the results at a time. In the text editor window, code as follows:</p>
-<pre><code>def main():
-    n = int(input("What's n? "))
-    for s in sheep(n):
-        print(s)
-
-
-def sheep(n):
-    for i in range(n):
-        yield "🐑" * i
-
-
-if __name__ == "__main__":
-    main()</code></pre>
-<p>Notice how <code>yield</code> provides only one value at a time while the <code>for</code> loop keeps working.</p></li>
-<li><p>You can learn more in Python’s documentation of <a href="https://docs.python.org/3/howto/functional.html#generators">generators</a>.</p></li>
-<li><p>You can learn more in Python’s documentation of <a href="https://docs.python.org/3/howto/functional.html#iterators">iterators</a>.</p></li>
-</ul>
-</section>
-<section id="congratulations" class="level2">
-<h2 class="anchored" data-anchor-id="congratulations">Congratulations!</h2>
-<ul>
-<li>As you exit from this course, you have more of a mental model and toolbox to address programming-related problems.</li>
-<li>First, you learned about functions and variables.</li>
-<li>Second, you learned about conditionals.</li>
-<li>Third, you learned about loops.</li>
-<li>Fourth, you learned about exceptions.</li>
-<li>Fifth, you learned about libraries.</li>
-<li>Sixth, you learned about unit tests.</li>
-<li>Seventh, you learned about file I/O.</li>
-<li>Eighth, you learned about regular expressions.</li>
-<li>Most recently, you learned about object-oriented programming.</li>
-<li>Today, you learned about many other tools you can use.</li>
-</ul>
-</section>
-<section id="this-was-programming-concepts" class="level2">
-<h2 class="anchored" data-anchor-id="this-was-programming-concepts">This was Programming Concepts!</h2>
-<ul>
-<li><p>Creating a final program together, type <code>code say.py</code> in your terminal window and code as follows:</p>
-<pre><code>import cowsay
-import pyttsx3
-
-engine = pyttsx3.init()
-this = input("What's this? ")
-cowsay.cow(this)
-engine.say(this)
-engine.runAndWait()</code></pre>
-<p>Notice how running this program provides you with a spirited send-off.</p></li>
-<li><p>Our great hope is that you will use what you learned in this course to address real problems in the world, making our globe a better place.</p></li>
-<li><p>This was Programming Concepts!</p></li>
+<li>line count: 507</li>
+<li>number of code blocks: 7</li>
+<li>number of micro-quotes: 8</li>
+<li>number of images referenced: 10</li>
 </ul>
 
 
@@ -1806,13 +1657,13 @@ engine.runAndWait()</code></pre>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../notes/notes_8.html" class="pagination-link" aria-label="Notes 08 🐍">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Notes 08 🐍</span>
+      <a href="../notes/notes_8.html" class="pagination-link" aria-label="Notes 08 🤖">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Notes 08 🤖</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../problems/pset_0/pset_0.html" class="pagination-link" aria-label="Problem Set 00 🐍">
-        <span class="nav-page-text">Problem Set 00 🐍</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../notes/notes_10.html" class="pagination-link" aria-label="Notes 10 🤖">
+        <span class="nav-page-text">Notes 10 🤖</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

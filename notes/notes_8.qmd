@@ -1,0 +1,466 @@
+# Week 08 — Building effective tests with generative AI
+
+-   [Why testing matters in AI-assisted coding](#why-testing-matters)
+-   [Key terms you must be able to use](#key-terms)
+-   [AI-assisted test generation workflow](#ai-workflow)
+-   [unittest vs pytest and when to use each](#unittest-vs-pytest)
+-   [In-memory databases for isolated tests](#in-memory-db)
+-   [Prompting patterns for high-quality tests](#prompting-patterns)
+-   [Evaluating and fixing AI-generated tests](#evaluating)
+-   [Common failure modes and how to debug](#failure-modes)
+-   [Using generated tests in CI](#ci)
+-   [Summing up](#summing-up)
+
+## Why testing matters in AI-assisted coding {#why-testing-matters}
+
+-   Week 08 focuses on using generative AI to produce tests, but this week is really about *trust*.
+-   A test suite is your “contract” with future you: it describes what must stay true as code changes.
+-   AI can write tests quickly, but speed is useless if the tests are brittle, shallow, or wrong.
+-   "Generative AI tools are changing this boring, repetitive process."
+-   "They can automatically create detailed test suites, spot edge cases, and generate boilerplate code."
+-   In AI-assisted workflows, tests do two jobs at once:
+-   
+    1)  catch regressions, and 2) detect when the AI has hallucinated an API, edge case, or assumption.
+-   A bad test suite can make things worse by giving you false confidence.
+
+## Key terms you must be able to use {#key-terms}
+
+-   **test oracle** — what counts as correct output (and what your test is really asserting).
+-   **fixture** — a repeatable setup/teardown wrapper that makes tests readable and reliable.
+-   **mock** — a controlled stand‑in that isolates your code from external systems.
+-   **in‑memory database** — a temporary database (often SQLite) used for fast, isolated tests.
+-   **regression test** — a test that locks in behaviour so future changes don’t break it.
+-   **property‑based testing** — testing broad invariants by generating many inputs automatically.
+
+## AI-assisted test generation workflow {#ai-workflow}
+
+-   Start by writing a clear *spec* (even if it is only a paragraph). AI cannot test what you cannot describe.
+-   Decide what level you are testing: unit (small), integration (multiple parts), or end-to-end (system).
+-   Give the AI: the function signature, expected behaviour, edge cases, and any invariants.
+-   Ask for tests *and* a short explanation of why each test exists.
+-   "This week shows how GitHub Copilot, Tabnine, and Blackbox AI can enhance your testing workflow."
+-   Run the tests immediately. If they fail, treat that as feedback about either the code or the prompt.
+-   Refactor the generated tests: rename, remove duplicates, add missing assertions, and simplify setup.
+
+## unittest vs pytest and when to use each {#unittest-vs-pytest}
+
+-   Both frameworks can express the same logic; the difference is *ergonomics* and ecosystem conventions.
+-   unittest is batteries-included and class-based; pytest is function-first and heavily fixture-driven.
+-   If a project already uses one, prefer consistency over personal preference.
+-   AI tends to produce verbose unittest boilerplate unless you explicitly ask for pytest.
+-   "They can help you build strong, maintain­ able test suites quickly, while upholding quality."
+-   Ask the AI to follow your project’s test naming and folder conventions.
+-   Do not accept tests that assert implementation details (e.g., exact SQL query strings) unless required.
+
+## In-memory databases for isolated tests {#in-memory-db}
+
+-   An in-memory DB makes tests fast and isolated: every test starts from a clean slate.
+-   This week demonstrates creating temporary databases and seeding minimal data for reproducibility.
+-   "211 Why use generative AI for testing?"
+-   Key idea: tests should not depend on a developer’s local environment (paths, ports, or existing data).
+-   When you use SQLite in-memory, ensure your app’s DB layer can accept a connection string override.
+
+## Prompting patterns for high-quality tests {#prompting-patterns}
+
+-   Use prompts that are specific about *assertions*, not just “write tests”.
+-   Always list edge cases you care about (empty inputs, None/null, boundary values, malformed data).
+-   If you want parameterised tests, say so explicitly.
+-   If you want mocks, name the dependencies to mock and the behaviour they should simulate.
+-   "High-quality tests are vital for reliable software."
+-   Ask for one test per behaviour: big “kitchen sink” tests are hard to debug.
+-   Ask the AI to include comments that link each test back to a requirement line.
+
+## Evaluating and fixing AI-generated tests {#evaluating}
+
+-   Treat AI-generated tests as a draft. Your job is to make them *true* and *useful*.
+-   Check: does the test actually fail when the code is wrong? (mutation testing mindset).
+-   Check for false positives: tests that pass even if you delete the core logic.
+-   Check for brittle fixtures: random data, timestamps, network calls, global state.
+-   "They catch bugs early and ensure new features don't break existing code."
+-   Prefer explicit assertions over printing/logging output.
+
+## Common failure modes and how to debug {#failure-modes}
+
+-   Hallucinated imports: AI may invent packages or functions that do not exist in your environment.
+-   Over-mocking: if everything is mocked, you are not testing meaningful behaviour.
+-   Testing the wrong thing: asserting internal variable values rather than outputs or side effects.
+-   Nondeterminism: tests that depend on ordering, random seeds, time, or network.
+-   "They also document how the code should behave."
+-   Fix strategy: reduce the test to the minimal reproducer, then rebuild structure with fixtures.
+
+## Using generated tests in CI {#ci}
+
+-   A CI pipeline turns “works on my machine” into “works for everyone”.
+-   AI-generated tests are only valuable if they run reliably in a clean environment.
+-   Make dependencies explicit (requirements file / lockfile).
+-   Pin versions when your tests rely on specific behaviour.
+-   Keep secrets out of tests; use environment variables and test doubles.
+
+### A minimal pytest example (pure function)
+
+```python
+import pytest
+
+def add(a, b):
+    return a + b
+
+def test_add_basic():
+    assert add(2, 3) == 5
+
+@pytest.mark.parametrize('a,b,expected', [(0,0,0), (-1,1,0), (2,-5,-3)])
+def test_add_parametrized(a,b,expected):
+    assert add(a,b) == expected
+```
+
+### A unittest-style equivalent (class-based)
+
+```python
+import unittest
+
+def add(a, b):
+    return a + b
+
+class TestAdd(unittest.TestCase):
+    def test_add_basic(self):
+        self.assertEqual(add(2,3), 5)
+
+if __name__ == '__main__':
+    unittest.main()
+```
+
+### SQLite in-memory test setup (pattern)
+
+```python
+import sqlite3
+
+def make_db():
+    conn = sqlite3.connect(':memory:')
+    cur = conn.cursor()
+    cur.execute('CREATE TABLE users(id INTEGER PRIMARY KEY, name TEXT)')
+    cur.execute('INSERT INTO users(name) VALUES (?)', ('Ada',))
+    conn.commit()
+    return conn
+
+def test_user_seed():
+    conn = make_db()
+    cur = conn.cursor()
+    cur.execute('SELECT COUNT(*) FROM users')
+    assert cur.fetchone()[0] == 1
+```
+
+### Mocking an external dependency (requests)
+
+```python
+from unittest.mock import Mock
+
+class Client:
+    def __init__(self, http_get):
+        self.http_get = http_get
+
+    def fetch_status(self, url):
+        resp = self.http_get(url)
+        return resp.status_code
+
+def test_fetch_status_mocked():
+    fake_resp = Mock()
+    fake_resp.status_code = 200
+    http_get = Mock(return_value=fake_resp)
+
+    c = Client(http_get=http_get)
+    assert c.fetch_status('https://example.com') == 200
+    http_get.assert_called_once()
+```
+
+### Prompt template you can reuse (stored as a string)
+
+```python
+PROMPT = '''
+You are generating tests for Python code.
+
+Context:
+- Framework: pytest
+- File under test: app/service.py
+- Function signatures: <paste here>
+
+Requirements:
+1) Write one test per requirement.
+2) Include edge cases: empty input, None, boundary values.
+3) Use fixtures for setup; avoid global state.
+4) Explain each test in 1 line comment.
+
+Output: a complete pytest test module.
+'''
+print(PROMPT)
+```
+
+### A tiny evaluation trick: do tests fail when code is wrong?
+
+```python
+# Demonstration: if you break the function, does a test fail?
+
+def area(radius):
+    return 3.14159 * radius * radius
+
+def test_area_positive():
+    assert area(2) == 12.56636
+
+# Try changing area() to return 0 and rerun the test.
+```
+
+## Extracted figures from Week 08 {#figures}
+
+![](images/week_08/fig_01.png){fig-alt="Week 08 extracted figure 1"} ![](images/week_08/fig_02.png){fig-alt="Week 08 extracted figure 2"} ![](images/week_08/fig_03.png){fig-alt="Week 08 extracted figure 3"} ![](images/week_08/fig_04.png){fig-alt="Week 08 extracted figure 4"} ![](images/week_08/fig_05.png){fig-alt="Week 08 extracted figure 5"} ![](images/week_08/fig_06.png){fig-alt="Week 08 extracted figure 6"} ![](images/week_08/fig_07.png){fig-alt="Week 08 extracted figure 7"} ![](images/week_08/fig_08.png){fig-alt="Week 08 extracted figure 8"} ![](images/week_08/fig_09.png){fig-alt="Week 08 extracted figure 9"} ![](images/week_08/fig_10.png){fig-alt="Week 08 extracted figure 10"}
+
+## Summing up {#summing-up}
+
+-   AI is a powerful assistant for *drafting* tests, but you still own correctness.
+-   The best prompts specify behaviour, edge cases, and constraints (framework, fixtures, mocking).
+-   Always run, review, and refactor generated tests; treat them like code written by a junior dev.
+-   In-memory databases and isolated environments are key to reliable automated testing.
+
+## Sanity checks and self-test {#sanity}
+
+-   Quick checklist before you trust an AI-generated test suite:
+
+-   Does each test name describe behaviour (not implementation)?
+
+-   Do the tests include at least one negative case?
+
+-   Are edge cases explicit, not implied?
+
+-   Is the database/file system/network isolated or mocked?
+
+-   Would the tests still pass if you replaced your function body with `pass`?
+
+-   Do failures produce actionable error messages?
+
+-   Do fixtures reduce duplication (but not hide important details)?
+
+-   Are time-dependent values controlled (freeze time or inject clocks)?
+
+-   Are random values seeded?
+
+-   Are you asserting the right thing (outputs/side effects) rather than intermediate variables?
+
+-   Mini Q&A (the kinds of questions you should be able to answer):
+
+-   What is a “test oracle” and why is it hard for AI?
+
+-   When is mocking harmful?
+
+-   Why is an in-memory database useful but sometimes misleading?
+
+-   How do you know a test is not “too shallow”?
+
+-   What prompt information tends to improve assertion quality?
+
+## Prompt patterns for test generation {#prompt-patterns-for-test-generation}
+
+-   Week 08 keeps returning to a simple idea: tests get better when the *specification* is clearer than the code.
+-   When you prompt a tool to generate tests, you are effectively writing a mini test plan.
+
+### A practical prompt template
+
+-   Use this structure (adapt the wording, keep the slots):
+
+-   **System/role**: “You are a software tester writing pytest tests.”
+
+-   **Goal**: “Generate tests for function `X`.”
+
+-   **Behaviour spec**: list rules as bullets.
+
+-   **Edge cases**: list edge cases explicitly.
+
+-   **Constraints**:
+
+-   
+
+    ```         
+    - no network
+    ```
+
+-   
+
+    ```         
+    - no real filesystem writes
+    ```
+
+-   
+
+    ```         
+    - deterministic outcomes (freeze time or inject clock)
+    ```
+
+-   **Output format**: “Return only test code in one file.”
+
+-   A useful trick: ask the model to first list *test cases* (names + what they check), then write the code.
+
+-   If you do that, you can review the case list quickly before trusting the code.
+
+### Prompt levers that usually improve assertions
+
+-   Ask for *meaningful assertions* rather than “just coverage”.
+-   Ask for *failure-mode tests*:
+-   invalid inputs
+-   boundary values
+-   empty collections
+-   missing keys
+-   duplicates
+-   If the code touches randomness, instruct: “inject a seed or mock the RNG.”
+
+### Prompt levers that usually improve fixtures
+
+-   Ask for fixtures with clear names: `user_factory`, `db_session`, `tmp_project`.
+-   Ask the tool to explain (briefly) what each fixture is responsible for.
+-   If the tool creates a fixture that does too much, split it.
+
+## Worked example: turning vague prompts into strong tests {#worked-example}
+
+-   Below is a deliberately small example to illustrate the *workflow* Week 08 argues for:
+-   start with a vague prompt → get weak tests → tighten the prompt → get stronger tests.
+
+### Code under test
+
+```python
+#| echo: true
+#| eval: false
+
+def normalise_score(x: float) -> float:
+    """Clamp to [0, 1] and round to 2dp."""
+    if x != x:  # NaN
+        raise ValueError("NaN")
+    if x < 0:
+        return 0.0
+    if x > 1:
+        return 1.0
+    return round(x, 2)
+```
+
+### What weak tests look like
+
+-   Weak tests often:
+-   only test the “happy path”,
+-   assert very little,
+-   miss NaN / boundary cases.
+
+```python
+#| echo: true
+#| eval: false
+
+import pytest
+
+
+def test_normalise_score_basic():
+    assert normalise_score(0.2) == 0.2
+```
+
+### A stronger test set (what you want AI to generate)
+
+```python
+#| echo: true
+#| eval: false
+
+import math
+import pytest
+
+
+def test_clamps_low_values_to_zero():
+    assert normalise_score(-0.0001) == 0.0
+
+
+def test_clamps_high_values_to_one():
+    assert normalise_score(1.0001) == 1.0
+
+
+def test_rounds_to_two_decimal_places():
+    assert normalise_score(0.126) == 0.13
+
+
+def test_boundary_values_are_stable():
+    assert normalise_score(0.0) == 0.0
+    assert normalise_score(1.0) == 1.0
+
+
+def test_nan_raises_value_error():
+    with pytest.raises(ValueError):
+        normalise_score(math.nan)
+```
+
+-   This is the kind of result you get when you prompt with explicit rules and edge cases.
+
+## In-memory databases and isolated testing {#in-memory-databases}
+
+-   Week 08 discusses isolated environments because test reliability depends on *control*.
+-   A database is a common source of hidden coupling:
+-   leftover rows from previous runs
+-   schema drift
+-   tests that require manual setup
+
+### SQLite in-memory pattern
+
+-   SQLite can run entirely in memory by using `:memory:`.
+-   Benefit: every test run starts from a clean slate.
+-   Tradeoff: behaviour can differ from your production database (types, constraints, concurrency).
+
+```python
+#| echo: true
+#| eval: false
+
+import sqlite3
+
+
+def make_db():
+    conn = sqlite3.connect(":memory:")
+    cur = conn.cursor()
+    cur.execute("CREATE TABLE items(id INTEGER PRIMARY KEY, name TEXT)")
+    conn.commit()
+    return conn
+
+
+def test_insert_and_query():
+    conn = make_db()
+    cur = conn.cursor()
+    cur.execute("INSERT INTO items(name) VALUES (?)", ("apple",))
+    conn.commit()
+    cur.execute("SELECT name FROM items WHERE id=1")
+    assert cur.fetchone()[0] == "apple"
+```
+
+-   If you’re using an ORM (SQLAlchemy), you can build a test session bound to an in-memory engine.
+-   Prompt tip: explicitly name the stack (SQLite + SQLAlchemy + pytest fixtures) so the model doesn’t invent libraries.
+
+## Where AI-generated tests go wrong {#where-ai-tests-go-wrong}
+
+-   Common failure patterns (and how to spot them):
+
+-   **Asserting implementation details**: tests break when you refactor harmlessly.
+
+-   **Brittle data**: hard-coded timestamps, random ids, order-dependent lists.
+
+-   **Mocking the wrong thing**: you end up testing the mock, not the behaviour.
+
+-   **Testing the tool’s hallucination**: the model invents functions/options that do not exist.
+
+-   Defensive habits:
+
+-   run tests immediately
+
+-   read assertions carefully
+
+-   check that fixtures actually model the real domain
+
+## Micro-quotes from Week 08 {#micro-quotes-week8}
+
+-   "Generative AI tools are changing this boring, repetitive process."
+-   "They can automatically create detailed test suites, spot edge cases, and generate boilerplate code."
+-   "This week shows how GitHub Copilot, Tabnine, and Blackbox AI can enhance your testing workflow."
+-   "High-quality tests are vital for reliable software."
+-   "They catch bugs early and ensure new features don’t break existing code."
+-   "They also document how the code should behave."
+
+## Summing Up {#summing-up-week8}
+
+-   Week 08's main message: AI can draft tests quickly, but *good tests require judgement*.
+-   Your workflow should be:
+-   specify behaviour → generate tests → run → review assertions → improve prompts → repeat.
+-   The fastest way to level up is to treat tests as communication: a clear story about what the code must do.

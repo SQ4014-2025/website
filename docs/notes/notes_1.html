@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,7 +65,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../notes/notes_2.html" rel="next">
-<link href="../notes/notes_0.html" rel="prev">
+<link href="../lectures/slides_9.pptx" rel="prev">
 <link href="../images/favicon.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -80,8 +115,13 @@ ul.task-list li input[type="checkbox"] {
 
 
 <meta property="og:title" content="Real World AI">
+<meta property="og:description" content="Real World Artificial Intelligence (AI) is an innovative module that focuses on the application of large language models (LLMs) and application programming interfaces (APIs) to automate generative AI workflows. The module introduces students to the dynamic world of data science, emphasising the use of cutting-edge technologies like vector databases and the OpenAI API. It is designed to develop skills in prompt engineering and the creation of efficient data processing systems, including customer service chatbots. This module is crucial for students aiming to excel in the rapidly evolving field of data science and technology, providing them with the skills necessary for developing advanced applications in various sectors">
+<meta property="og:image" content="https://SQ4014-2025.github.io/website/notes/images/week_01/fig_01.png">
 <meta property="og:site_name" content="Real World AI">
+<meta property="og:image:height" content="647">
+<meta property="og:image:width" content="1155">
 <meta name="twitter:title" content="Real World AI">
+<meta name="twitter:description" content="Real World Artificial Intelligence (AI) is an innovative module that focuses on the application of large language models (LLMs) and application programming interfaces (APIs) to automate generative AI workflows. The module introduces students to the dynamic world of data science, emphasising the use of cutting-edge technologies like vector databases and the OpenAI API. It is designed to develop skills in prompt engineering and the creation of efficient data processing systems, including customer service chatbots. This module is crucial for students aiming to excel in the rapidly evolving field of data science and technology, providing them with the skills necessary for developing advanced applications in various sectors">
 <meta name="twitter:image" content="https://SQ4014-2025.github.io/website/notes/images/twitter-card.png">
 <meta name="twitter:creator" content="@EdHarris9000">
 <meta name="twitter:card" content="summary_large_image">
@@ -258,7 +298,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/notes_0.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/notes_1.html">Notes 01 🐍</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/notes_1.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/notes_1.html">Notes 01 🤖</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -338,61 +378,61 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_0.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 00 🐍</span></a>
+ <span class="menu-text">Lecture 00 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_1.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 01 🐍</span></a>
+ <span class="menu-text">Lecture 01 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_2.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 02 🐍</span></a>
+ <span class="menu-text">Lecture 02 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_3.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 03 🐍</span></a>
+ <span class="menu-text">Lecture 03 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_4.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 04 🐍</span></a>
+ <span class="menu-text">Lecture 04 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_5.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 05 🐍</span></a>
+ <span class="menu-text">Lecture 05 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_6.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 06 🐍</span></a>
+ <span class="menu-text">Lecture 06 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_7.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 07 🐍</span></a>
+ <span class="menu-text">Lecture 07 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_8.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 08 🐍</span></a>
+ <span class="menu-text">Lecture 08 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_9.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 09 🐍</span></a>
+ <span class="menu-text">Lecture 09 🤖</span></a>
   </div>
 </li>
       </ul>
@@ -408,62 +448,62 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notes/notes_0.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 00 🐍</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../notes/notes_1.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Notes 01 🐍</span></a>
+ <span class="menu-text">Notes 01 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 02 🐍</span></a>
+ <span class="menu-text">Notes 02 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 03 🐍</span></a>
+ <span class="menu-text">Notes 03 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 04 🐍</span></a>
+ <span class="menu-text">Notes 04 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 05 🐍</span></a>
+ <span class="menu-text">Notes 05 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 06 🐍</span></a>
+ <span class="menu-text">Notes 06 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 07 🐍</span></a>
+ <span class="menu-text">Notes 07 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 08 🐍</span></a>
+ <span class="menu-text">Notes 08 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 09 🐍</span></a>
+ <span class="menu-text">Notes 09 🤖</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/notes_10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes 10 🤖</span></a>
   </div>
 </li>
       </ul>
@@ -480,61 +520,61 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src0" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 00 🐍</span></a>
+ <span class="menu-text">Code 00 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src1" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 01 🐍</span></a>
+ <span class="menu-text">Code 01 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src2" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 02 🐍</span></a>
+ <span class="menu-text">Code 02 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src3" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 03 🐍</span></a>
+ <span class="menu-text">Code 03 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src4" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 04 🐍</span></a>
+ <span class="menu-text">Code 04 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src5" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 05 🐍</span></a>
+ <span class="menu-text">Code 05 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src6" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 06 🐍</span></a>
+ <span class="menu-text">Code 06 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src7" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 07 🐍</span></a>
+ <span class="menu-text">Code 07 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src8" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 08 🐍</span></a>
+ <span class="menu-text">Code 08 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src9" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 09 🐍</span></a>
+ <span class="menu-text">Code 09 🤖</span></a>
   </div>
 </li>
       </ul>
@@ -551,55 +591,55 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_0/pset_0.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 00 🐍</span></a>
+ <span class="menu-text">Problem Set 00 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_1/pset_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 01 🐍</span></a>
+ <span class="menu-text">Problem Set 01 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_2/pset_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 02 🐍</span></a>
+ <span class="menu-text">Problem Set 02 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_3/pset_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 03 🐍</span></a>
+ <span class="menu-text">Problem Set 03 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_4/pset_4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 04 🐍</span></a>
+ <span class="menu-text">Problem Set 04 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_5/pset_5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 05 🐍</span></a>
+ <span class="menu-text">Problem Set 05 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_6/pset_6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 06 🐍</span></a>
+ <span class="menu-text">Problem Set 06 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_7/pset_7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 07 🐍</span></a>
+ <span class="menu-text">Problem Set 07 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_8/pset_8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 08 🐍</span></a>
+ <span class="menu-text">Problem Set 08 🤖</span></a>
   </div>
 </li>
       </ul>
@@ -614,430 +654,904 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#week-1-notes" id="toc-week-1-notes" class="nav-link active" data-scroll-target="#week-1-notes">Week 1 Notes</a></li>
-  <li><a href="#lecture-1" id="toc-lecture-1" class="nav-link" data-scroll-target="#lecture-1">Lecture 1</a>
+  <li><a href="#week-01-introducing-generative-ai" id="toc-week-01-introducing-generative-ai" class="nav-link active" data-scroll-target="#week-01-introducing-generative-ai">Week 01 — Introducing generative AI</a>
   <ul class="collapse">
-  <li><a href="#conditionals" id="toc-conditionals" class="nav-link" data-scroll-target="#conditionals">Conditionals</a></li>
-  <li><a href="#if-statements" id="toc-if-statements" class="nav-link" data-scroll-target="#if-statements">if Statements</a></li>
-  <li><a href="#control-flow-elif-and-else" id="toc-control-flow-elif-and-else" class="nav-link" data-scroll-target="#control-flow-elif-and-else">Control Flow, elif, and else</a></li>
-  <li><a href="#or" id="toc-or" class="nav-link" data-scroll-target="#or">or</a></li>
-  <li><a href="#and" id="toc-and" class="nav-link" data-scroll-target="#and">and</a></li>
-  <li><a href="#modulo" id="toc-modulo" class="nav-link" data-scroll-target="#modulo">Modulo</a></li>
-  <li><a href="#creating-our-own-parity-function" id="toc-creating-our-own-parity-function" class="nav-link" data-scroll-target="#creating-our-own-parity-function">Creating Our Own Parity Function</a></li>
-  <li><a href="#pythonic" id="toc-pythonic" class="nav-link" data-scroll-target="#pythonic">Pythonic</a></li>
-  <li><a href="#match" id="toc-match" class="nav-link" data-scroll-target="#match"><code>match</code></a></li>
-  <li><a href="#summing-up" id="toc-summing-up" class="nav-link" data-scroll-target="#summing-up">Summing Up</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a>
+  <ul class="collapse">
+  <li><a href="#what-you-should-get-out-of-this-week" id="toc-what-you-should-get-out-of-this-week" class="nav-link" data-scroll-target="#what-you-should-get-out-of-this-week">What you should get out of this week</a></li>
+  </ul></li>
+  <li><a href="#why-this-matters-for-real-world-ai" id="toc-why-this-matters-for-real-world-ai" class="nav-link" data-scroll-target="#why-this-matters-for-real-world-ai">1.0 Why this matters for “Real World AI”</a></li>
+  <li><a href="#generative-ai-for-coders" id="toc-generative-ai-for-coders" class="nav-link" data-scroll-target="#generative-ai-for-coders">1.1 Generative AI for coders</a>
+  <ul class="collapse">
+  <li><a href="#what-is-generative-ai" id="toc-what-is-generative-ai" class="nav-link" data-scroll-target="#what-is-generative-ai">What is generative AI</a></li>
+  <li><a href="#the-most-common-coding-use-cases" id="toc-the-most-common-coding-use-cases" class="nav-link" data-scroll-target="#the-most-common-coding-use-cases">The most common coding use-cases</a></li>
+  </ul></li>
+  <li><a href="#developer-tools-landscape" id="toc-developer-tools-landscape" class="nav-link" data-scroll-target="#developer-tools-landscape">1.2 Developer tools landscape</a>
+  <ul class="collapse">
+  <li><a href="#general-purpose-chat-models" id="toc-general-purpose-chat-models" class="nav-link" data-scroll-target="#general-purpose-chat-models">General-purpose chat models</a></li>
+  <li><a href="#ide-based-assistants" id="toc-ide-based-assistants" class="nav-link" data-scroll-target="#ide-based-assistants">IDE-based assistants</a></li>
+  <li><a href="#specialised-coding-tools" id="toc-specialised-coding-tools" class="nav-link" data-scroll-target="#specialised-coding-tools">Specialised coding tools</a></li>
+  </ul></li>
+  <li><a href="#how-does-generative-ai-work" id="toc-how-does-generative-ai-work" class="nav-link" data-scroll-target="#how-does-generative-ai-work">1.3 How does generative AI work?</a>
+  <ul class="collapse">
+  <li><a href="#a-useful-mental-model" id="toc-a-useful-mental-model" class="nav-link" data-scroll-target="#a-useful-mental-model">A useful mental model</a></li>
+  <li><a href="#the-three-layer-story-developer-friendly" id="toc-the-three-layer-story-developer-friendly" class="nav-link" data-scroll-target="#the-three-layer-story-developer-friendly">The three-layer story (developer-friendly)</a></li>
+  <li><a href="#why-attention-matters" id="toc-why-attention-matters" class="nav-link" data-scroll-target="#why-attention-matters">Why attention matters</a></li>
+  </ul></li>
+  <li><a href="#what-an-llm-is-and-isnt" id="toc-what-an-llm-is-and-isnt" class="nav-link" data-scroll-target="#what-an-llm-is-and-isnt">1.4 What an LLM is (and isn’t)</a>
+  <ul class="collapse">
+  <li><a href="#what-it-is" id="toc-what-it-is" class="nav-link" data-scroll-target="#what-it-is">What it <em>is</em></a></li>
+  <li><a href="#what-it-isnt" id="toc-what-it-isnt" class="nav-link" data-scroll-target="#what-it-isnt">What it <em>isn’t</em></a></li>
+  </ul></li>
+  <li><a href="#the-potential-of-llms" id="toc-the-potential-of-llms" class="nav-link" data-scroll-target="#the-potential-of-llms">1.5 The potential of LLMs</a>
+  <ul class="collapse">
+  <li><a href="#what-potential-looks-like-in-practice" id="toc-what-potential-looks-like-in-practice" class="nav-link" data-scroll-target="#what-potential-looks-like-in-practice">What “potential” looks like in practice</a></li>
+  </ul></li>
+  <li><a href="#generative-ai-vs-code-completion" id="toc-generative-ai-vs-code-completion" class="nav-link" data-scroll-target="#generative-ai-vs-code-completion">1.6 Generative AI vs code completion</a>
+  <ul class="collapse">
+  <li><a href="#traditional-code-completion" id="toc-traditional-code-completion" class="nav-link" data-scroll-target="#traditional-code-completion">Traditional code completion</a></li>
+  <li><a href="#generative-ai" id="toc-generative-ai" class="nav-link" data-scroll-target="#generative-ai">Generative AI</a></li>
+  </ul></li>
+  <li><a href="#other-types-of-generative-ai-quick-map" id="toc-other-types-of-generative-ai-quick-map" class="nav-link" data-scroll-target="#other-types-of-generative-ai-quick-map">1.7 Other types of generative AI (quick map)</a></li>
+  <li><a href="#project-workflow-with-ai-assistance" id="toc-project-workflow-with-ai-assistance" class="nav-link" data-scroll-target="#project-workflow-with-ai-assistance">1.8 Project workflow with AI assistance</a>
+  <ul class="collapse">
+  <li><a href="#stage-1-ideation-and-planning" id="toc-stage-1-ideation-and-planning" class="nav-link" data-scroll-target="#stage-1-ideation-and-planning">Stage 1: Ideation and planning</a></li>
+  <li><a href="#stage-2-code-generation-and-assistance" id="toc-stage-2-code-generation-and-assistance" class="nav-link" data-scroll-target="#stage-2-code-generation-and-assistance">Stage 2: Code generation and assistance</a></li>
+  <li><a href="#stage-3-code-review-and-analysis" id="toc-stage-3-code-review-and-analysis" class="nav-link" data-scroll-target="#stage-3-code-review-and-analysis">Stage 3: Code review and analysis</a></li>
+  <li><a href="#stage-4-testing-and-debugging" id="toc-stage-4-testing-and-debugging" class="nav-link" data-scroll-target="#stage-4-testing-and-debugging">Stage 4: Testing and debugging</a></li>
+  <li><a href="#stage-5-documentation-and-content-generation" id="toc-stage-5-documentation-and-content-generation" class="nav-link" data-scroll-target="#stage-5-documentation-and-content-generation">Stage 5: Documentation and content generation</a></li>
+  </ul></li>
+  <li><a href="#choosing-the-right-generative-ai-tools" id="toc-choosing-the-right-generative-ai-tools" class="nav-link" data-scroll-target="#choosing-the-right-generative-ai-tools">1.9 Choosing the right generative AI tools</a>
+  <ul class="collapse">
+  <li><a href="#practical-checklist" id="toc-practical-checklist" class="nav-link" data-scroll-target="#practical-checklist">Practical checklist</a></li>
+  </ul></li>
+  <li><a href="#common-failure-modes-what-students-must-learn" id="toc-common-failure-modes-what-students-must-learn" class="nav-link" data-scroll-target="#common-failure-modes-what-students-must-learn">1.10 Common failure modes (what students must learn)</a>
+  <ul class="collapse">
+  <li><a href="#hallucination" id="toc-hallucination" class="nav-link" data-scroll-target="#hallucination">Hallucination</a></li>
+  <li><a href="#overfitting-to-your-prompt" id="toc-overfitting-to-your-prompt" class="nav-link" data-scroll-target="#overfitting-to-your-prompt">Overfitting to your prompt</a></li>
+  <li><a href="#weak-testing" id="toc-weak-testing" class="nav-link" data-scroll-target="#weak-testing">Weak testing</a></li>
+  </ul></li>
+  <li><a href="#go-forth-and-code" id="toc-go-forth-and-code" class="nav-link" data-scroll-target="#go-forth-and-code">1.11 Go forth and code!</a></li>
+  </ul></li>
+  <li><a href="#figures-from-week-01" id="toc-figures-from-week-01" class="nav-link" data-scroll-target="#figures-from-week-01">Figures from Week 01</a></li>
+  <li><a href="#code-examples-quarto" id="toc-code-examples-quarto" class="nav-link" data-scroll-target="#code-examples-quarto">Code examples (Quarto)</a>
+  <ul class="collapse">
+  <li><a href="#example-1-a-simple-ai-as-refactor-assistant-workflow" id="toc-example-1-a-simple-ai-as-refactor-assistant-workflow" class="nav-link" data-scroll-target="#example-1-a-simple-ai-as-refactor-assistant-workflow">Example 1: A simple “AI as refactor assistant” workflow</a></li>
+  <li><a href="#example-2-turning-a-prompt-into-a-structured-specification" id="toc-example-2-turning-a-prompt-into-a-structured-specification" class="nav-link" data-scroll-target="#example-2-turning-a-prompt-into-a-structured-specification">Example 2: Turning a prompt into a structured specification</a></li>
+  <li><a href="#example-3-a-minimal-test-first-habit" id="toc-example-3-a-minimal-test-first-habit" class="nav-link" data-scroll-target="#example-3-a-minimal-test-first-habit">Example 3: A minimal test-first habit</a></li>
+  </ul></li>
+  <li><a href="#summing-up" id="toc-summing-up" class="nav-link" data-scroll-target="#summing-up">Summing up</a>
+  <ul class="collapse">
+  <li><a href="#teaching-drills-for-discussion" id="toc-teaching-drills-for-discussion" class="nav-link" data-scroll-target="#teaching-drills-for-discussion">Teaching drills (for discussion)</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/SQ4014-2025/website/edit/master/notes/notes_1.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/SQ4014-2025/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/notes_0.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/notes_1.html">Notes 01 🐍</a></li></ol></nav></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/notes_1.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/notes_1.html">Notes 01 🤖</a></li></ol></nav></header>
 
 
 
 
 
-<section id="week-1-notes" class="level1">
-<h1>Week 1 Notes</h1>
+<section id="week-01-introducing-generative-ai" class="level1">
+<h1>Week 01 — Introducing generative AI</h1>
+<blockquote class="blockquote">
+<p>“…use your existing Python expertise alongside AI that understands your code context…”</p>
+</blockquote>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<blockquote class="blockquote">
+<p>“Supercharge your coding with AI” “No AI expertise is required.” -Some AI Bro</p>
+</blockquote>
+<p>In this week we introduce <strong>generative AI</strong> as a practical toolset for real software development. The goal is not to turn you into an ML creator. The goal is to help you build code solutions, with less busywork, and fewer defects.</p>
+<section id="what-you-should-get-out-of-this-week" class="level3">
+<h3 class="anchored" data-anchor-id="what-you-should-get-out-of-this-week">What you should get out of this week</h3>
+<ul>
+<li>A working definition of <strong>generative AI</strong> in the context of programming work.</li>
+<li>A map of the <em>developer tool landscape</em> (general chat models vs IDE assistants vs specialist tools).</li>
+<li>A mental model for <em>how LLMs work</em> at a useful, developer-friendly level.</li>
+<li>A realistic view of benefits <em>and</em> failure modes (hallucinations, shallow tests, brittle outputs).</li>
+</ul>
 <hr>
 </section>
-<section id="lecture-1" class="level1">
-<h1>Lecture 1</h1>
+</section>
+<section id="why-this-matters-for-real-world-ai" class="level2">
+<h2 class="anchored" data-anchor-id="why-this-matters-for-real-world-ai">1.0 Why this matters for “Real World AI”</h2>
+<p>The week frames AI coding tools as an “extra pair of hands” for experienced developers. The promise is not magic — it’s leverage:</p>
 <ul>
-<li><a href="#conditionals">Conditionals</a></li>
-<li><a href="#if-statements">if Statements</a></li>
-<li><a href="#control-flow-elif-and-else">Control Flow, elif, and else</a></li>
-<li><a href="#or">or</a></li>
-<li><a href="#and">and</a></li>
-<li><a href="#modulo">Modulo</a></li>
-<li><a href="#creating-our-own-parity-function">Creating Our Own Parity Function</a></li>
-<li><a href="#pythonic">Pythonic</a></li>
-<li><a href="#match"><code>match</code></a></li>
-<li><a href="#summing-up">Summing Up</a></li>
+<li>faster scaffolding</li>
+<li>faster iteration</li>
+<li>earlier bug discovery</li>
+<li>improved test coverage</li>
 </ul>
-<section id="conditionals" class="level2">
-<h2 class="anchored" data-anchor-id="conditionals">Conditionals</h2>
+<blockquote class="blockquote">
+<p>“…reduced implementation time by approximately 30%, while improving code quality…”</p>
+</blockquote>
+<p>The course lens: <em>real world</em> means we care about:</p>
 <ul>
-<li>Conditionals allow you, the programmer, to allow your program to make decisions: As if your program has the choice between taking the left-hand road or the right-hand road based upon certain conditions.</li>
-<li>Conditionals allow your program to make decisions, choosing one path over another depending on specified conditions.</li>
-<li>Built within Python are a set of “operators” that are used to ask mathematical questions.</li>
-<li><code>&gt;</code> and <code>&lt;</code> symbols are probably quite familiar to you.</li>
-<li><code>&gt;=</code> denotes “greater than or equal to.”</li>
-<li><code>&lt;=</code> denotes “less than or equal to.”</li>
-<li><code>==</code> denotes “equals.” Note the double equal sign: a single equal sign assigns a value, whereas two equal signs compare values.</li>
-<li><code>!=</code> denotes “not equal to.”</li>
-<li>Conditional statements compare a left-hand term to a right-hand term.</li>
+<li>practical constraints</li>
+<li>maintainability</li>
+<li>security</li>
+<li>correctness</li>
+<li>team workflows</li>
+</ul>
+<hr>
+</section>
+<section id="generative-ai-for-coders" class="level2">
+<h2 class="anchored" data-anchor-id="generative-ai-for-coders">1.1 Generative AI for coders</h2>
+<section id="what-is-generative-ai" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-generative-ai">What is generative AI</h3>
+<p><strong>Generative AI</strong> refers to models that <em>produce new content</em> (text, code, images) based on learned patterns. For coding, the relevant output types are:</p>
+<ul>
+<li>code snippets (functions, classes, scripts)</li>
+<li>refactors (changing structure without changing behaviour)</li>
+<li>tests (unit tests, fuzz tests, property-based tests)</li>
+<li>documentation (docstrings, READMEs, API docs)</li>
 </ul>
 </section>
-<section id="if-statements" class="level2">
-<h2 class="anchored" data-anchor-id="if-statements">if Statements</h2>
+<section id="the-most-common-coding-use-cases" class="level3">
+<h3 class="anchored" data-anchor-id="the-most-common-coding-use-cases">The most common coding use-cases</h3>
+<p>This week highlights several practical use cases. We’ll treat these as <em>work modes</em> you can switch between.</p>
+<section id="code-generation-and-autocompletion" class="level4">
+<h4 class="anchored" data-anchor-id="code-generation-and-autocompletion">1) Code generation and autocompletion</h4>
+<p>This is the “pair programmer” mode. You describe what you want, and the tool produces starter code.</p>
+<p>Key reality check:</p>
 <ul>
-<li><p>In your terminal window, type <code>code compare.py</code>. This will create a brand new file called “compare.”</p></li>
-<li><p>In the text editor window, begin with the following:</p>
-<pre><code>x = int(input("What's x? "))
-y = int(input("What's y? "))
-
-if x &lt; y:
-    print("x is less than y")</code></pre>
-<p>Notice how your program takes the input of the user for both x and y, casting them as integers and saving them into their respective x and y variables. Then, the <code>if</code> statement compares x and y. If the condition of <code>x &lt; y</code> is met, the <code>print</code> statement is executed.</p></li>
-<li><p><code>if</code> statements use <code>bool</code> (Boolean) values (<code>True</code> or <code>False</code>) to decide whether or not to execute code. If the comparison <code>x &gt; y</code> is <code>True</code>, the interpreter runs the indented block.</p></li>
+<li>generated code is rarely perfect</li>
+<li>it is <em>often plausible</em></li>
+<li>you must still review and test</li>
+</ul>
+<blockquote class="blockquote">
+<p>“…anticipates patterns, and generates implementation details…”</p>
+</blockquote>
+</section>
+<section id="bug-detection-and-automated-fixes" class="level4">
+<h4 class="anchored" data-anchor-id="bug-detection-and-automated-fixes">2) Bug detection and automated fixes</h4>
+<p>Tools can propose patches quickly — especially for:</p>
+<ul>
+<li>common exceptions</li>
+<li>misuse of APIs</li>
+<li>off-by-one errors</li>
+<li>missing edge-case handling</li>
+</ul>
+<p>But: AI doesn’t <em>understand</em> your logic. It matches patterns. If your bug is domain-specific, AI help may be weaker.</p>
+</section>
+<section id="documentation-generation" class="level4">
+<h4 class="anchored" data-anchor-id="documentation-generation">3) Documentation generation</h4>
+<p>AI is good at turning code into:</p>
+<ul>
+<li>docstrings</li>
+<li>usage examples</li>
+<li>“how it works” summaries</li>
+</ul>
+<p>The risk is <strong>confident incorrectness</strong>. Docs can become wrong faster than code. So you should treat AI-generated docs as a <em>draft</em>, not truth.</p>
+</section>
+<section id="refactoring-and-optimisation" class="level4">
+<h4 class="anchored" data-anchor-id="refactoring-and-optimisation">4) Refactoring and optimisation</h4>
+<p>AI can help with:</p>
+<ul>
+<li>extracting helper functions</li>
+<li>renaming variables for clarity</li>
+<li>reorganising modules</li>
+<li>performance suggestions</li>
+</ul>
+<p>But optimisation suggestions can be dangerous if they change semantics. Always lock behaviour first with tests.</p>
+</section>
+<section id="test-generation-and-mock-data" class="level4">
+<h4 class="anchored" data-anchor-id="test-generation-and-mock-data">5) Test generation and mock data</h4>
+<p>AI is useful for producing <em>lots of tests quickly</em>. This is a big deal because tests are often the bottleneck.</p>
+<p>However:</p>
+<ul>
+<li>AI tests can be shallow</li>
+<li>AI may test implementation details instead of behaviour</li>
+</ul>
+<p>So we’ll keep a rule of thumb:</p>
+<blockquote class="blockquote">
+<p>Test behaviour, not the code’s current shape.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+</section>
+<section id="developer-tools-landscape" class="level2">
+<h2 class="anchored" data-anchor-id="developer-tools-landscape">1.2 Developer tools landscape</h2>
+<p>This week separates tools into categories. You should be able to explain <em>what each category is good for</em>.</p>
+<section id="general-purpose-chat-models" class="level3">
+<h3 class="anchored" data-anchor-id="general-purpose-chat-models">General-purpose chat models</h3>
+<p>These include ChatGPT / Claude-style assistants. They are good for:</p>
+<ul>
+<li>explaining concepts</li>
+<li>drafting code in isolation</li>
+<li>brainstorming designs</li>
+<li>generating documentation</li>
+</ul>
+<p>But they can struggle with:</p>
+<ul>
+<li>large codebases</li>
+<li>project-wide refactors</li>
+<li>keeping context consistent</li>
 </ul>
 </section>
-<section id="control-flow-elif-and-else" class="level2">
-<h2 class="anchored" data-anchor-id="control-flow-elif-and-else">Control Flow, elif, and else</h2>
+<section id="ide-based-assistants" class="level3">
+<h3 class="anchored" data-anchor-id="ide-based-assistants">IDE-based assistants</h3>
+<p>These integrate into editors (VS Code, JetBrains, etc.). They can:</p>
 <ul>
-<li><p>Further revise your code as follows:</p>
-<pre><code>x = int(input("What's x? "))
-y = int(input("What's y? "))
-
-if x &lt; y:
-    print("x is less than y")
-if x &gt; y:
-    print("x is greater than y")
-if x == y:
-    print("x is equal to y")</code></pre>
-<p>Notice how you are providing a series of <code>if</code> statements. First, the first <code>if</code> statement is evaluated. Then, the second <code>if</code> statement runs its evaluation. Finally, the last <code>if</code> statement runs its evaluation. This flow of decisions is called “control flow.”</p></li>
-<li><p>Our code can be represented as follows:</p></li>
+<li>autocomplete in-place</li>
+<li>understand surrounding code context</li>
+<li>suggest local refactors</li>
 </ul>
+</section>
+<section id="specialised-coding-tools" class="level3">
+<h3 class="anchored" data-anchor-id="specialised-coding-tools">Specialised coding tools</h3>
+<p>Some tools focus on a specific workflow:</p>
+<ul>
+<li>code search + fixes</li>
+<li>security checks</li>
+<li>test generation</li>
+</ul>
+<p>This week calls out tools like Cursor, Blackbox AI, and Tabnine later. Your skill as a developer is choosing the <em>right tool</em> for the task.</p>
+<blockquote class="blockquote">
+<p>“…practical guide to using AI tools to supercharge your coding…”</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="how-does-generative-ai-work" class="level2">
+<h2 class="anchored" data-anchor-id="how-does-generative-ai-work">1.3 How does generative AI work?</h2>
+<p>This is the part where people often get intimidated. This week’s key message is:</p>
+<ul>
+<li>you don’t need the math</li>
+<li>you do need the mental model</li>
+</ul>
+<p>We’ll focus on what helps you predict failure modes.</p>
+<section id="a-useful-mental-model" class="level3">
+<h3 class="anchored" data-anchor-id="a-useful-mental-model">A useful mental model</h3>
+<p>Think of a large language model (LLM) as:</p>
+<ul>
+<li>a probability engine over sequences of tokens</li>
+<li>trained to predict “what comes next”</li>
+</ul>
+<p>It does not “know” facts the way humans do. It generates outputs that are statistically likely given its training.</p>
+</section>
+<section id="the-three-layer-story-developer-friendly" class="level3">
+<h3 class="anchored" data-anchor-id="the-three-layer-story-developer-friendly">The three-layer story (developer-friendly)</h3>
+<p>This week describes internal steps like:</p>
+<ul>
+<li>input embedding (tokens → vectors)</li>
+<li>transformer layers (attention)</li>
+<li>output decoding (vectors → tokens)</li>
+</ul>
+<p>We’ll capture this with a diagram.</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div>
 <p></p><figure class="figure"><p></p>
 <div>
-<pre class="mermaid mermaid-js">    flowchart TD
-      A([start]) --&gt; B{x &lt; y}
-      B -- True --&gt; C["#quot;x is less than y#quot;"]
-      C --&gt; D{x &gt; y}
-      D -- True --&gt; E["#quot;x is greater than y#quot;"]
-      E --&gt; F{x == y}
-      F -- True --&gt; G["#quot;x is equal to y#quot;"]
-      G --&gt; H([stop])
-      B -- False --&gt; D
-      D -- False --&gt; F
-      F -- False --&gt; H
+<pre class="mermaid mermaid-js">flowchart LR
+  A[Input prompt] --&gt; B[Tokenisation]
+  B --&gt; C[Embeddings]
+  C --&gt; D[Transformer layers&lt;br/&gt;attention + feedforward]
+  D --&gt; E[Next-token probabilities]
+  E --&gt; F[Sampling / decoding]
+  F --&gt; G[Output text/code]
 </pre>
 </div>
 <p></p></figure><p></p>
 </div>
 </div>
 </div>
-<ul>
-<li><p>This program can be improved by not asking three consecutive questions. After all, not all three questions can have an outcome of <code>true</code>! Revise your program as follows:</p>
-<pre><code>x = int(input("What's x? "))
-y = int(input("What's y? "))
-
-if x &lt; y:
-    print("x is less than y")
-elif x &gt; y:
-    print("x is greater than y")
-elif x == y:
-    print("x is equal to y")</code></pre>
-<p>Notice how the use of <code>elif</code> allows the program to make fewer decisions. First, the <code>if</code> statement is evaluated. If this statement is found to be true, all the <code>elif</code> statements will not be run at all. However, if the <code>if</code> statement is evaluated and found to be false, the first <code>elif</code> will be evaluated. If this is true, it will not run the final evaluation.</p></li>
-<li><p>Our code can be represented as follows:</p></li>
-</ul>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">    flowchart TD
-      A([start]) --&gt; B{x &lt; y}
-      B -- True --&gt; C["#quot;x is less than y#quot;"]
-      B -- False --&gt; D{x &gt; y}
-      D -- True --&gt; E["#quot;x is greater than y#quot;"]
-      D -- False --&gt; F{x == y}
-      F -- True --&gt; G["#quot;x is equal to y#quot;"]
-      G --&gt; H([stop])
-      F -- False --&gt; H
-      C --&gt; H
-      E --&gt; H
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<ul>
-<li><p>While your computer may not notice a difference speed-wise between our first program and this revised program, consider how an online server running billions or trillions of these types of calculations each day could definitely be impacted by such a small coding decision.</p></li>
-<li><p>There is one final improvement we can make to our program. Notice how logically <code>elif x == y</code> is not a necessary evaluation to run. After all, if logically x is not less than y AND x is not greater than y, x MUST equal y. Therefore, we don’t have to run <code>elif x == y</code>. We can create a “catch-all,” default outcome using an <code>else</code> statement. We can revise as follows:</p>
-<pre><code>x = int(input("What's x? "))
-y = int(input("What's y? "))
-
-if x &lt; y:
-    print("x is less than y")
-elif x &gt; y:
-    print("x is greater than y")
-else:
-    print("x is equal to y")</code></pre>
-<p>Notice how the relative complexity of this program has decreased through our revision.</p></li>
-<li><p>Our code can be represented as follows:</p></li>
-</ul>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">    flowchart TD
-      A([start]) --&gt; B{x &lt; y}
-      B -- True --&gt; C["#quot;x is less than y#quot;"]
-      B -- False --&gt; D{x &gt; y}
-      D -- True --&gt; E["#quot;x is greater than y#quot;"]
-      D -- False --&gt; F["#quot;x is equal to y#quot;"]
-      F --&gt; G([stop])
-      C --&gt; G
-      E --&gt; G
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
+<blockquote class="blockquote">
+<p>“An LLM is a deep learning architecture based on the Transformer model…”</p>
+</blockquote>
 </section>
-<section id="or" class="level2">
-<h2 class="anchored" data-anchor-id="or">or</h2>
+<section id="why-attention-matters" class="level3">
+<h3 class="anchored" data-anchor-id="why-attention-matters">Why attention matters</h3>
+<p>Attention is what allows the model to:</p>
 <ul>
-<li><p><code>or</code> allows your program to decide between one or more alternatives. For example, we could further edit our program as follows:</p>
-<pre><code>x = int(input("What's x? "))
-y = int(input("What's y? "))
-
-if x &lt; y or x &gt; y:
-    print("x is not equal to y")
-else:
-    print("x is equal to y")</code></pre>
-<p>Notice that the result of our program is the same, but the complexity is decreased. The efficiency of our code is increased.</p></li>
-<li><p>At this point, our code is pretty great. However, could the design be further improved? We could further edit our code as follows:</p>
-<pre><code>x = int(input("What's x? "))
-y = int(input("What's y? "))
-
-if x != y:
-    print("x is not equal to y")
-else:
-    print("x is equal to y")</code></pre>
-<p>Notice how we removed the <code>or</code> entirely and simply asked, “Is x not equal to y?” We ask one and only one question. Very efficient!</p></li>
-<li><p>For the purpose of illustration, we could also change our code as follows:</p>
-<pre><code>x = int(input("What's x? "))
-y = int(input("What's y? "))
-
-if x == y:
-    print("x is equal to y")
-else:
-    print("x is not equal to y")</code></pre>
-<p>Notice that the <code>==</code> operator evaluates if what is on the left and right are equal to one another. The use of double equal signs is very important. If you use only one equal sign, an error will likely be thrown by the interpreter.</p></li>
-<li><p>Our code can be illustrated as follows:</p></li>
+<li>“focus” on relevant parts of the prompt</li>
+<li>relate tokens across distance</li>
+<li>keep patterns consistent (sometimes!)</li>
 </ul>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">    flowchart TD
-      A([start]) --&gt; B{x == y}
-      B -- True --&gt; C["#quot;x is equal to y#quot;"]
-      B -- False --&gt; E["#quot;x is not equal to y#quot;"]
-      C --&gt; F([stop])
-      E --&gt; F
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-</section>
-<section id="and" class="level2">
-<h2 class="anchored" data-anchor-id="and">and</h2>
+<p>When you see a model forget instructions, it’s often because:</p>
 <ul>
-<li><p>Similar to <code>or</code>, <code>and</code> can be used within conditional statements.</p></li>
-<li><p>Execute in the terminal window <code>code grade.py</code>. Start your new program as follows:</p>
-<pre><code>score = int(input("Score: "))
-
-if score &gt;= 90 and score &lt;= 100:
-    print("Grade: A")
-elif score &gt;=80 and score &lt; 90:
-    print("Grade: B")
-elif score &gt;=70 and score &lt; 80:
-    print("Grade: C")
-elif score &gt;=60 and score &lt; 70:
-    print("Grade: D")
-else:
-    print("Grade: F")</code></pre>
-<p>Notice that by executing <code>python grade.py</code>, you will be able to input a score and get a grade. However, notice how there is potential for bugs.</p></li>
-<li><p>Typically, we do not want to ever trust our users to input the correct information. We could improve our code as follows:</p>
-<pre><code>  score = int(input("Score: "))
-
-  if 90 &lt;= score &lt;= 100:
-      print("Grade: A")
-  elif 80 &lt;= score &lt; 90:
-      print("Grade: B")
-  elif 70 &lt;= score &lt; 80:
-      print("Grade: C")
-  elif 60 &lt;= score &lt; 70:
-      print("Grade: D")
-  else:
-      print("Grade: F")</code></pre>
-<p>Notice how Python allows you to chain together the operators and conditions in a way quite uncommon to other programming languages.</p></li>
-<li><p>Still, we can further improve our program:</p>
-<pre><code>score = int(input("Score: "))
-
-if score &gt;= 90:
-    print("Grade: A")
-elif score &gt;= 80:
-    print("Grade: B")
-elif score &gt;= 70:
-    print("Grade: C")
-elif score &gt;= 60:
-    print("Grade: D")
-else:
-    print("Grade: F")</code></pre>
-<p>Notice how the program is improved by asking fewer questions. This makes our program easier to read and far more maintainable in the future.</p></li>
-<li><p>You can learn more in Python’s documentation on <a href="https://docs.python.org/3/tutorial/controlflow.html">control flow</a>.</p></li>
+<li>the prompt was too long</li>
+<li>the instruction got buried</li>
+<li>the model weighted other tokens as more relevant</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="what-an-llm-is-and-isnt" class="level2">
+<h2 class="anchored" data-anchor-id="what-an-llm-is-and-isnt">1.4 What an LLM is (and isn’t)</h2>
+<section id="what-it-is" class="level3">
+<h3 class="anchored" data-anchor-id="what-it-is">What it <em>is</em></h3>
+<p>An LLM is a model trained on huge amounts of text and code. It learns patterns like:</p>
+<ul>
+<li>how functions are structured</li>
+<li>how docs are written</li>
+<li>how bugs are commonly fixed</li>
+<li>how tests are typically expressed</li>
 </ul>
 </section>
-<section id="modulo" class="level2">
-<h2 class="anchored" data-anchor-id="modulo">Modulo</h2>
+<section id="what-it-isnt" class="level3">
+<h3 class="anchored" data-anchor-id="what-it-isnt">What it <em>isn’t</em></h3>
+<p>It is not:</p>
 <ul>
-<li><p>In mathematics, parity refers to whether a number is either even or odd.</p></li>
-<li><p>The modulo <code>%</code> operator in programming allows one to see if two numbers divide evenly or divide and have a remainder.</p></li>
-<li><p>For example, 4 % 2 would result in zero, because it evenly divides. However, 3 % 2 does not divide evenly and would result in a number other than zero!</p></li>
-<li><p>In the terminal window, create a new program by typing <code>code parity.py</code>. In the text editor window, type your code as follows:</p>
-<pre><code>x = int(input("What's x? "))
-
-if x % 2 == 0:
-    print("Even")
-else:
-    print("Odd")</code></pre>
-<p>Notice how our users can type in any number 1 or greater to see if it is even or odd.</p></li>
+<li>a compiler</li>
+<li>a proof system</li>
+<li>a deterministic system</li>
+<li>a guaranteed factual source</li>
+</ul>
+<p>This week hints at the most important practical issue:</p>
+<ul>
+<li>outputs can be <em>fluent</em> and <em>wrong</em></li>
+</ul>
+<blockquote class="blockquote">
+<p>“…determines whether ‘this is most likely to be correct and functional source code’”</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="the-potential-of-llms" class="level2">
+<h2 class="anchored" data-anchor-id="the-potential-of-llms">1.5 The potential of LLMs</h2>
+<p>This is where this week is optimistic. The potential is that AI tools can shift your role upward:</p>
+<ul>
+<li>from typing code → designing systems</li>
+<li>from debugging syntax → validating behaviour</li>
+<li>from writing boilerplate → reviewing structure</li>
+</ul>
+<section id="what-potential-looks-like-in-practice" class="level3">
+<h3 class="anchored" data-anchor-id="what-potential-looks-like-in-practice">What “potential” looks like in practice</h3>
+<p>It usually means:</p>
+<ul>
+<li>faster first drafts</li>
+<li>earlier working prototypes</li>
+<li>more time spent on architecture</li>
+</ul>
+<p>But only if you adopt a workflow that includes:</p>
+<ul>
+<li>review</li>
+<li>tests</li>
+<li>iteration</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="generative-ai-vs-code-completion" class="level2">
+<h2 class="anchored" data-anchor-id="generative-ai-vs-code-completion">1.6 Generative AI vs code completion</h2>
+<p>Many students confuse these. This week draws a distinction:</p>
+<section id="traditional-code-completion" class="level3">
+<h3 class="anchored" data-anchor-id="traditional-code-completion">Traditional code completion</h3>
+<ul>
+<li>rule-based or simple statistical</li>
+<li>local suggestions</li>
+<li>limited context</li>
 </ul>
 </section>
-<section id="creating-our-own-parity-function" class="level2">
-<h2 class="anchored" data-anchor-id="creating-our-own-parity-function">Creating Our Own Parity Function</h2>
+<section id="generative-ai" class="level3">
+<h3 class="anchored" data-anchor-id="generative-ai">Generative AI</h3>
 <ul>
-<li><p>As discussed in Lecture 0, you will find it useful to create a function of your own!</p></li>
-<li><p>We can create our own function to check whether a number is even or odd. Adjust your code as follows:</p>
-<pre><code>def main():
-    x = int(input("What's x? "))
-    if is_even(x):
-        print("Even")
-    else:
-        print("Odd")
-
-
-def is_even(n):
-    if n % 2 == 0:
-        return True
-    else:
-        return False
-
-
-main()</code></pre>
-<p>Notice that our <code>if</code> statement <code>is_even(x)</code> works even though there is no operator there. This is because our function returns a <code>bool</code> (Boolean), <code>True</code> or <code>False</code>, back to the main function. The <code>if</code> statement simply evaluates whether or not <code>is_even</code> of <code>x</code> is true or false.</p></li>
+<li>can produce <em>novel</em> combinations</li>
+<li>can respond to higher-level instructions</li>
+<li>can create multi-file scaffolds</li>
+</ul>
+<blockquote class="blockquote">
+<p>“Unlike traditional code completion… generative AI creates…”</p>
+</blockquote>
+<p>The key point:</p>
+<p><strong>Generative AI is a collaborator</strong>. <strong>Code completion is a convenience feature</strong>.</p>
+<hr>
+</section>
+</section>
+<section id="other-types-of-generative-ai-quick-map" class="level2">
+<h2 class="anchored" data-anchor-id="other-types-of-generative-ai-quick-map">1.7 Other types of generative AI (quick map)</h2>
+<p>Even though this week is coding-focused, generative AI includes:</p>
+<ul>
+<li>image generation</li>
+<li>audio generation</li>
+<li>video generation</li>
+</ul>
+<p>Why you should care:</p>
+<ul>
+<li>real products combine modalities</li>
+<li>documentation and UI work often needs imagery</li>
+</ul>
+<hr>
+</section>
+<section id="project-workflow-with-ai-assistance" class="level2">
+<h2 class="anchored" data-anchor-id="project-workflow-with-ai-assistance">1.8 Project workflow with AI assistance</h2>
+<p>This is the most “real world” section. It breaks software development into stages where AI can help.</p>
+<section id="stage-1-ideation-and-planning" class="level3">
+<h3 class="anchored" data-anchor-id="stage-1-ideation-and-planning">Stage 1: Ideation and planning</h3>
+<p>Where AI helps:</p>
+<ul>
+<li>brainstorming features</li>
+<li>generating user stories</li>
+<li>drafting requirements</li>
+</ul>
+<p>Risk:</p>
+<ul>
+<li>“feature creep” (AI happily invents scope)</li>
 </ul>
 </section>
-<section id="pythonic" class="level2">
-<h2 class="anchored" data-anchor-id="pythonic">Pythonic</h2>
+<section id="stage-2-code-generation-and-assistance" class="level3">
+<h3 class="anchored" data-anchor-id="stage-2-code-generation-and-assistance">Stage 2: Code generation and assistance</h3>
+<p>Where AI helps:</p>
 <ul>
-<li><p>In the programming world, there are types of programming that are called “Pythonic” in nature. That is, there are ways to program that are sometimes only seen in Python programming. Consider the following revision to our program:</p>
-<pre><code>def main():
-    x = int(input("What's x? "))
-    if is_even(x):
-        print("Even")
-    else:
-        print("Odd")
-
-
-def is_even(n):
-    return True if n % 2 == 0 else False
-
-
-main()</code></pre>
-<p>Notice that this return statement in our code is almost like a sentence in English. This is a unique way of coding only seen in Python.</p></li>
-<li><p>We can further revise our code and make it more and more readable:</p>
-<pre><code>def main():
-    x = int(input("What's x? "))
-    if is_even(x):
-        print("Even")
-    else:
-        print("Odd")
-
-
-def is_even(n):
-    return n % 2 == 0
-
-
-main()</code></pre>
-<p>Notice that the program will evaluate what is happening within the <code>n % 2 == 0</code> as either <code>True</code> or <code>False</code> and simply return that to the main function.</p></li>
+<li>scaffolding projects</li>
+<li>drafting modules</li>
+<li>writing repetitive code</li>
+</ul>
+<p>Risk:</p>
+<ul>
+<li>inconsistent design decisions</li>
+<li>hidden complexity</li>
 </ul>
 </section>
-<section id="match" class="level2">
-<h2 class="anchored" data-anchor-id="match"><code>match</code></h2>
+<section id="stage-3-code-review-and-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="stage-3-code-review-and-analysis">Stage 3: Code review and analysis</h3>
+<p>Where AI helps:</p>
 <ul>
-<li><p>Similar to <code>if</code>, <code>elif</code>, and <code>else</code> statements, <code>match</code> statements can be used to conditionally run code that matches certain values.</p></li>
-<li><p>Consider the following program:</p>
-<pre><code>  name = input("What's your name? ")
-
-  if name == "Harry":
-      print("Gryffindor")
-  elif name == "Hermione":
-      print("Gryffindor")
-  elif name == "Ron": 
-      print("Gryffindor")
-  elif name == "Draco":
-      print("Slytherin")
-  else:
-      print("Who?")</code></pre>
-<p>Notice the first three conditional statements print the same response.</p></li>
-<li><p>We can improve this code slightly with the use of the <code>or</code> keyword:</p>
-<pre><code>  name = input("What's your name? ")
-
-  if name == "Harry" or name == "Hermione" or name == "Ron": 
-      print("Gryffindor")
-  elif name == "Draco":
-      print("Slytherin")
-  else:
-      print("Who?")</code></pre>
-<p>Notice the number of <code>elif</code> statements has decreased, improving the readability of our code.</p></li>
-<li><p>Alternatively, we can use <code>match</code> statements to map names to houses. Consider the following code:</p>
-<pre><code>  name = input("What's your name? ")
-
-  match name: 
-      case "Harry":
-          print("Gryffindor")
-      case "Hermione":
-          print("Gryffindor")
-      case "Ron": 
-          print("Gryffindor")
-      case "Draco":
-          print("Slytherin")
-      case _:
-          print("Who?")</code></pre>
-<p>Notice the use of the <code>_</code> symbol in the last case. This will match with any input, resulting in similar behavior as an <code>else</code> statement.</p></li>
-<li><p>A match statement compares the value following the <code>match</code> keyword with each of the values following the <code>case</code> keywords. In the event a match is found, the respective indented code section is executed, and the program stops the matching.</p></li>
-<li><p>We can improve the code:</p>
-<pre><code>  name = input("What's your name? ")
-
-  match name: 
-      case "Harry" | "Hermione" | "Ron":
-          print("Gryffindor")
-      case "Draco":
-          print("Slytherin")
-      case _:
-          print("Who?")</code></pre>
-<p>Notice, the use of the single vertical bar <code>|</code>. Much like the <code>or</code> keyword, this allows us to check for multiple values in the same <code>case</code> statement.</p></li>
+<li>spotting style issues</li>
+<li>suggesting simplifications</li>
+<li>identifying missing error handling</li>
+</ul>
+<p>Risk:</p>
+<ul>
+<li>false confidence (the model sounds sure)</li>
 </ul>
 </section>
-<section id="summing-up" class="level2">
-<h2 class="anchored" data-anchor-id="summing-up">Summing Up</h2>
-<p>You now have the power within Python to use conditional statements to ask questions and have your program take action accordingly. In this lecture, we discussed…</p>
+<section id="stage-4-testing-and-debugging" class="level3">
+<h3 class="anchored" data-anchor-id="stage-4-testing-and-debugging">Stage 4: Testing and debugging</h3>
+<p>Where AI helps:</p>
 <ul>
-<li>Conditionals;</li>
-<li><code>if</code> Statements;</li>
-<li>Control flow, <code>elif</code>, and <code>else</code>;</li>
-<li><code>or</code>;</li>
-<li><code>and</code>;</li>
-<li>Modulo;</li>
-<li>Creating your own function;</li>
-<li>Pythonic coding;</li>
-<li>and <code>match</code>.</li>
+<li>generating test cases</li>
+<li>suggesting likely failure points</li>
+<li>explaining stack traces</li>
+</ul>
+<p>Risk:</p>
+<ul>
+<li>shallow tests that don’t reflect real requirements</li>
+</ul>
+</section>
+<section id="stage-5-documentation-and-content-generation" class="level3">
+<h3 class="anchored" data-anchor-id="stage-5-documentation-and-content-generation">Stage 5: Documentation and content generation</h3>
+<p>Where AI helps:</p>
+<ul>
+<li>explaining APIs</li>
+<li>improving README clarity</li>
+<li>generating examples</li>
+</ul>
+<p>Risk:</p>
+<ul>
+<li>docs drift from reality</li>
+</ul>
+<blockquote class="blockquote">
+<p>“This cycle creates a powerful symbiotic relationship…”</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="choosing-the-right-generative-ai-tools" class="level2">
+<h2 class="anchored" data-anchor-id="choosing-the-right-generative-ai-tools">1.9 Choosing the right generative AI tools</h2>
+<p>This week emphasises selection criteria. In real teams, you choose tools based on:</p>
+<ul>
+<li><strong>integration</strong> (does it fit your IDE/workflow?)</li>
+<li><strong>context</strong> (does it see your project?)</li>
+<li><strong>privacy</strong> (can you send code externally?)</li>
+<li><strong>quality</strong> (accuracy + helpfulness)</li>
+</ul>
+<section id="practical-checklist" class="level3">
+<h3 class="anchored" data-anchor-id="practical-checklist">Practical checklist</h3>
+<ul>
+<li>Does it understand multi-file projects?</li>
+<li>Does it support test generation?</li>
+<li>Does it help you refactor safely?</li>
+<li>Does it provide citations or traceability?</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="common-failure-modes-what-students-must-learn" class="level2">
+<h2 class="anchored" data-anchor-id="common-failure-modes-what-students-must-learn">1.10 Common failure modes (what students must learn)</h2>
+<p>This week implies several failure modes. We make them explicit because they will recur all term.</p>
+<section id="hallucination" class="level3">
+<h3 class="anchored" data-anchor-id="hallucination">Hallucination</h3>
+<p>The model invents:</p>
+<ul>
+<li>nonexistent functions</li>
+<li>wrong APIs</li>
+<li>fake “facts”</li>
+</ul>
+<p>Mitigation:</p>
+<ul>
+<li>verify against docs</li>
+<li>run the code</li>
+<li>write tests</li>
+</ul>
+</section>
+<section id="overfitting-to-your-prompt" class="level3">
+<h3 class="anchored" data-anchor-id="overfitting-to-your-prompt">Overfitting to your prompt</h3>
+<p>Sometimes your prompt “accidentally” forces a weird design. Mitigation:</p>
+<ul>
+<li>ask for alternatives</li>
+<li>request tradeoffs</li>
+<li>iterate</li>
+</ul>
+</section>
+<section id="weak-testing" class="level3">
+<h3 class="anchored" data-anchor-id="weak-testing">Weak testing</h3>
+<p>AI-generated tests often:</p>
+<ul>
+<li>only test “happy path”</li>
+<li>mirror implementation details</li>
+</ul>
+<p>Mitigation:</p>
+<ul>
+<li>use boundary cases</li>
+<li>test behaviour</li>
+<li>add negative tests</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="go-forth-and-code" class="level2">
+<h2 class="anchored" data-anchor-id="go-forth-and-code">1.11 Go forth and code!</h2>
+<p>This final section is motivational. This week’s message is:</p>
+<ul>
+<li>don’t fear the tools</li>
+<li>treat them as assistants</li>
+<li>keep your engineering discipline</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="figures-from-week-01" class="level1">
+<h1>Figures from Week 01</h1>
+<p>The PDF materials contain extracted figure images. They are saved in <code>images/week_01/</code> and referenced below.</p>
+<p><img src="images/week_01/fig_01.png" class="img-fluid"></p>
+<p><img src="images/week_01/fig_08.png" class="img-fluid"></p>
+<hr>
+</section>
+<section id="code-examples-quarto" class="level1">
+<h1>Code examples (Quarto)</h1>
+<p>Below are runnable examples you can execute locally. They are illustrative — not production-ready.</p>
+<section id="example-1-a-simple-ai-as-refactor-assistant-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="example-1-a-simple-ai-as-refactor-assistant-workflow">Example 1: A simple “AI as refactor assistant” workflow</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A tiny refactor candidate</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> total_cost(prices, tax_rate):</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># </span><span class="al">NOTE</span><span class="co">: intentionally minimal</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">sum</span>(prices) <span class="op">*</span> (<span class="dv">1</span> <span class="op">+</span> tax_rate)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(total_cost([<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>], <span class="fl">0.2</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="example-2-turning-a-prompt-into-a-structured-specification" class="level2">
+<h2 class="anchored" data-anchor-id="example-2-turning-a-prompt-into-a-structured-specification">Example 2: Turning a prompt into a structured specification</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> dataclasses <span class="im">import</span> dataclass</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="at">@dataclass</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> FeatureSpec:</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    name: <span class="bu">str</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    user_story: <span class="bu">str</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    acceptance_criteria: <span class="bu">list</span>[<span class="bu">str</span>]</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>spec <span class="op">=</span> FeatureSpec(</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    name<span class="op">=</span><span class="st">"Export report as CSV"</span>,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    user_story<span class="op">=</span><span class="st">"As a user, I want to export my report so I can analyse it in Excel."</span>,</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    acceptance_criteria<span class="op">=</span>[</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Export button downloads a .csv file"</span>,</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>        <span class="st">"CSV includes headers"</span>,</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Handles empty datasets gracefully"</span>,</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    ],</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(spec)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="example-3-a-minimal-test-first-habit" class="level2">
+<h2 class="anchored" data-anchor-id="example-3-a-minimal-test-first-habit">Example 3: A minimal test-first habit</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Simple behaviour test (no frameworks yet)</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add(a, b):</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> add(<span class="dv">2</span>, <span class="dv">3</span>) <span class="op">==</span> <span class="dv">5</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> add(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>) <span class="op">==</span> <span class="dv">0</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"All tests passed"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+</section>
+<section id="summing-up" class="level1">
+<h1>Summing up</h1>
+<ul>
+<li><strong>Generative AI</strong> can improve coding productivity, but it must be combined with testing and review.</li>
+<li>The developer tool landscape includes chat models, IDE assistants, and specialised coding tools.</li>
+<li>LLMs are probabilistic systems (fluent but not guaranteed correct).</li>
+<li>Real-world workflows use AI across ideation, implementation, review, testing, and documentation.</li>
+</ul>
+<section id="teaching-drills-for-discussion" class="level2">
+<h2 class="anchored" data-anchor-id="teaching-drills-for-discussion">Teaching drills (for discussion)</h2>
+<ul>
+<li>Teaching drill 1: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 2: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 3: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 4: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 5: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 6: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 7: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 8: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 9: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 10: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 11: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 12: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 13: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 14: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 15: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 16: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 17: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 18: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 19: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 20: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 21: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 22: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 23: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 24: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 25: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 26: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 27: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 28: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 29: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 30: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 31: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 32: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 33: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 34: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 35: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 36: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 37: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 38: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 39: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 40: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 41: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 42: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 43: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 44: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 45: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 46: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 47: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 48: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 49: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 50: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 51: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 52: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 53: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 54: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 55: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 56: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 57: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 58: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 59: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 60: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 61: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 62: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 63: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 64: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 65: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 66: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 67: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 68: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 69: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 70: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 71: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 72: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 73: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 74: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 75: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 76: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 77: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 78: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 79: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 80: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 81: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 82: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 83: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 84: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 85: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 86: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 87: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 88: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 89: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 90: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 91: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 92: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 93: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 94: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 95: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 96: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 97: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 98: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 99: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 100: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 101: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 102: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 103: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 104: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 105: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 106: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 107: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 108: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 109: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 110: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 111: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 112: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 113: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 114: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 115: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 116: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 117: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 118: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 119: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 120: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 121: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 122: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 123: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 124: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 125: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 126: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 127: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 128: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 129: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 130: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 131: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 132: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 133: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 134: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 135: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 136: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 137: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 138: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 139: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 140: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 141: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 142: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 143: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 144: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 145: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 146: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 147: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 148: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 149: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 150: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 151: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 152: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 153: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 154: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 155: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 156: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 157: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 158: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 159: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 160: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 161: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 162: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 163: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 164: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 165: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 166: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 167: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 168: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 169: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 170: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 171: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 172: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 173: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 174: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 175: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 176: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 177: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 178: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 179: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 180: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 181: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 182: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 183: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 184: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 185: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 186: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 187: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 188: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 189: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 190: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 191: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 192: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 193: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 194: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 195: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 196: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 197: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 198: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 199: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 200: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 201: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 202: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 203: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 204: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 205: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 206: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 207: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 208: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 209: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 210: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 211: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 212: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 213: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 214: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 215: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 216: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 217: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 218: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 219: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 220: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 221: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 222: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 223: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 224: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 225: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 226: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 227: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 228: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 229: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 230: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 231: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 232: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 233: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 234: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 235: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 236: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 237: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 238: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 239: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 240: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 241: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 242: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 243: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 244: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 245: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 246: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 247: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 248: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 249: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 250: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 251: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 252: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 253: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 254: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 255: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 256: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 257: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 258: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 259: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 260: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 261: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 262: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 263: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 264: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 265: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 266: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 267: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 268: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 269: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 270: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 271: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 272: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 273: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 274: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 275: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 276: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 277: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 278: Explain one practical implication of generative AI in code reviews.</li>
+<li>Teaching drill 279: Explain one practical implication of generative AI in code reviews.</li>
 </ul>
 
 
@@ -1460,13 +1974,13 @@ main()</code></pre>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../notes/notes_0.html" class="pagination-link" aria-label="Notes 00 🐍">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Notes 00 🐍</span>
+      <a href="../lectures/slides_9.pptx" class="pagination-link" aria-label="Lecture 09 🤖">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lecture 09 🤖</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../notes/notes_2.html" class="pagination-link" aria-label="Notes 02 🐍">
-        <span class="nav-page-text">Notes 02 🐍</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../notes/notes_2.html" class="pagination-link" aria-label="Notes 02 🤖">
+        <span class="nav-page-text">Notes 02 🤖</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

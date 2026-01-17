@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -77,7 +112,11 @@ ul.task-list li input[type="checkbox"] {
 
 
 <meta property="og:title" content="Real World AI">
+<meta property="og:image" content="https://SQ4014-2025.github.io/website/notes/images/week_08/fig_01.png">
 <meta property="og:site_name" content="Real World AI">
+<meta property="og:image:alt" content="Week 08 extracted figure 1">
+<meta property="og:image:height" content="1196">
+<meta property="og:image:width" content="1249">
 <meta name="twitter:title" content="Real World AI">
 <meta name="twitter:image" content="https://SQ4014-2025.github.io/website/notes/images/twitter-card.png">
 <meta name="twitter:creator" content="@EdHarris9000">
@@ -255,7 +294,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/notes_0.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/notes_8.html">Notes 08 🐍</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/notes_1.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/notes_8.html">Notes 08 🤖</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -335,61 +374,61 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_0.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 00 🐍</span></a>
+ <span class="menu-text">Lecture 00 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_1.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 01 🐍</span></a>
+ <span class="menu-text">Lecture 01 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_2.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 02 🐍</span></a>
+ <span class="menu-text">Lecture 02 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_3.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 03 🐍</span></a>
+ <span class="menu-text">Lecture 03 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_4.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 04 🐍</span></a>
+ <span class="menu-text">Lecture 04 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_5.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 05 🐍</span></a>
+ <span class="menu-text">Lecture 05 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_6.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 06 🐍</span></a>
+ <span class="menu-text">Lecture 06 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_7.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 07 🐍</span></a>
+ <span class="menu-text">Lecture 07 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_8.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 08 🐍</span></a>
+ <span class="menu-text">Lecture 08 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_9.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 09 🐍</span></a>
+ <span class="menu-text">Lecture 09 🤖</span></a>
   </div>
 </li>
       </ul>
@@ -405,62 +444,62 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notes/notes_0.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 00 🐍</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../notes/notes_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 01 🐍</span></a>
+ <span class="menu-text">Notes 01 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 02 🐍</span></a>
+ <span class="menu-text">Notes 02 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 03 🐍</span></a>
+ <span class="menu-text">Notes 03 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 04 🐍</span></a>
+ <span class="menu-text">Notes 04 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 05 🐍</span></a>
+ <span class="menu-text">Notes 05 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 06 🐍</span></a>
+ <span class="menu-text">Notes 06 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 07 🐍</span></a>
+ <span class="menu-text">Notes 07 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_8.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Notes 08 🐍</span></a>
+ <span class="menu-text">Notes 08 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 09 🐍</span></a>
+ <span class="menu-text">Notes 09 🤖</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/notes_10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes 10 🤖</span></a>
   </div>
 </li>
       </ul>
@@ -477,61 +516,61 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src0" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 00 🐍</span></a>
+ <span class="menu-text">Code 00 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src1" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 01 🐍</span></a>
+ <span class="menu-text">Code 01 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src2" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 02 🐍</span></a>
+ <span class="menu-text">Code 02 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src3" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 03 🐍</span></a>
+ <span class="menu-text">Code 03 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src4" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 04 🐍</span></a>
+ <span class="menu-text">Code 04 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src5" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 05 🐍</span></a>
+ <span class="menu-text">Code 05 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src6" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 06 🐍</span></a>
+ <span class="menu-text">Code 06 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src7" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 07 🐍</span></a>
+ <span class="menu-text">Code 07 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src8" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 08 🐍</span></a>
+ <span class="menu-text">Code 08 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src9" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 09 🐍</span></a>
+ <span class="menu-text">Code 09 🤖</span></a>
   </div>
 </li>
       </ul>
@@ -548,55 +587,55 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_0/pset_0.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 00 🐍</span></a>
+ <span class="menu-text">Problem Set 00 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_1/pset_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 01 🐍</span></a>
+ <span class="menu-text">Problem Set 01 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_2/pset_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 02 🐍</span></a>
+ <span class="menu-text">Problem Set 02 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_3/pset_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 03 🐍</span></a>
+ <span class="menu-text">Problem Set 03 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_4/pset_4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 04 🐍</span></a>
+ <span class="menu-text">Problem Set 04 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_5/pset_5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 05 🐍</span></a>
+ <span class="menu-text">Problem Set 05 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_6/pset_6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 06 🐍</span></a>
+ <span class="menu-text">Problem Set 06 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_7/pset_7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 07 🐍</span></a>
+ <span class="menu-text">Problem Set 07 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_8/pset_8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 08 🐍</span></a>
+ <span class="menu-text">Problem Set 08 🤖</span></a>
   </div>
 </li>
       </ul>
@@ -611,691 +650,502 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#week-8-notes" id="toc-week-8-notes" class="nav-link active" data-scroll-target="#week-8-notes">Week 8 Notes</a></li>
-  <li><a href="#lecture-8" id="toc-lecture-8" class="nav-link" data-scroll-target="#lecture-8">Lecture 8</a>
+  <li><a href="#week-08-building-effective-tests-with-generative-ai" id="toc-week-08-building-effective-tests-with-generative-ai" class="nav-link active" data-scroll-target="#week-08-building-effective-tests-with-generative-ai">Week 08 — Building effective tests with generative AI</a>
   <ul class="collapse">
-  <li><a href="#object-oriented-programming" id="toc-object-oriented-programming" class="nav-link" data-scroll-target="#object-oriented-programming">Object-Oriented Programming</a></li>
-  <li><a href="#classes" id="toc-classes" class="nav-link" data-scroll-target="#classes">Classes</a></li>
-  <li><a href="#raise" id="toc-raise" class="nav-link" data-scroll-target="#raise"><code>raise</code></a></li>
-  <li><a href="#decorators" id="toc-decorators" class="nav-link" data-scroll-target="#decorators">Decorators</a></li>
-  <li><a href="#connecting-to-previous-work-in-this-course" id="toc-connecting-to-previous-work-in-this-course" class="nav-link" data-scroll-target="#connecting-to-previous-work-in-this-course">Connecting to Previous Work in this Course</a></li>
-  <li><a href="#class-methods" id="toc-class-methods" class="nav-link" data-scroll-target="#class-methods">Class Methods</a></li>
-  <li><a href="#static-methods" id="toc-static-methods" class="nav-link" data-scroll-target="#static-methods">Static Methods</a></li>
-  <li><a href="#inheritance" id="toc-inheritance" class="nav-link" data-scroll-target="#inheritance">Inheritance</a></li>
-  <li><a href="#inheritance-and-exceptions" id="toc-inheritance-and-exceptions" class="nav-link" data-scroll-target="#inheritance-and-exceptions">Inheritance and Exceptions</a></li>
-  <li><a href="#operator-overloading" id="toc-operator-overloading" class="nav-link" data-scroll-target="#operator-overloading">Operator Overloading</a></li>
-  <li><a href="#summing-up" id="toc-summing-up" class="nav-link" data-scroll-target="#summing-up">Summing Up</a></li>
+  <li><a href="#why-testing-matters" id="toc-why-testing-matters" class="nav-link" data-scroll-target="#why-testing-matters">Why testing matters in AI-assisted coding</a></li>
+  <li><a href="#key-terms" id="toc-key-terms" class="nav-link" data-scroll-target="#key-terms">Key terms you must be able to use</a></li>
+  <li><a href="#ai-workflow" id="toc-ai-workflow" class="nav-link" data-scroll-target="#ai-workflow">AI-assisted test generation workflow</a></li>
+  <li><a href="#unittest-vs-pytest" id="toc-unittest-vs-pytest" class="nav-link" data-scroll-target="#unittest-vs-pytest">unittest vs pytest and when to use each</a></li>
+  <li><a href="#in-memory-db" id="toc-in-memory-db" class="nav-link" data-scroll-target="#in-memory-db">In-memory databases for isolated tests</a></li>
+  <li><a href="#prompting-patterns" id="toc-prompting-patterns" class="nav-link" data-scroll-target="#prompting-patterns">Prompting patterns for high-quality tests</a></li>
+  <li><a href="#evaluating" id="toc-evaluating" class="nav-link" data-scroll-target="#evaluating">Evaluating and fixing AI-generated tests</a></li>
+  <li><a href="#failure-modes" id="toc-failure-modes" class="nav-link" data-scroll-target="#failure-modes">Common failure modes and how to debug</a></li>
+  <li><a href="#ci" id="toc-ci" class="nav-link" data-scroll-target="#ci">Using generated tests in CI</a>
+  <ul class="collapse">
+  <li><a href="#a-minimal-pytest-example-pure-function" id="toc-a-minimal-pytest-example-pure-function" class="nav-link" data-scroll-target="#a-minimal-pytest-example-pure-function">A minimal pytest example (pure function)</a></li>
+  <li><a href="#a-unittest-style-equivalent-class-based" id="toc-a-unittest-style-equivalent-class-based" class="nav-link" data-scroll-target="#a-unittest-style-equivalent-class-based">A unittest-style equivalent (class-based)</a></li>
+  <li><a href="#sqlite-in-memory-test-setup-pattern" id="toc-sqlite-in-memory-test-setup-pattern" class="nav-link" data-scroll-target="#sqlite-in-memory-test-setup-pattern">SQLite in-memory test setup (pattern)</a></li>
+  <li><a href="#mocking-an-external-dependency-requests" id="toc-mocking-an-external-dependency-requests" class="nav-link" data-scroll-target="#mocking-an-external-dependency-requests">Mocking an external dependency (requests)</a></li>
+  <li><a href="#prompt-template-you-can-reuse-stored-as-a-string" id="toc-prompt-template-you-can-reuse-stored-as-a-string" class="nav-link" data-scroll-target="#prompt-template-you-can-reuse-stored-as-a-string">Prompt template you can reuse (stored as a string)</a></li>
+  <li><a href="#a-tiny-evaluation-trick-do-tests-fail-when-code-is-wrong" id="toc-a-tiny-evaluation-trick-do-tests-fail-when-code-is-wrong" class="nav-link" data-scroll-target="#a-tiny-evaluation-trick-do-tests-fail-when-code-is-wrong">A tiny evaluation trick: do tests fail when code is wrong?</a></li>
+  </ul></li>
+  <li><a href="#figures" id="toc-figures" class="nav-link" data-scroll-target="#figures">Extracted figures from Week 08</a></li>
+  <li><a href="#summing-up" id="toc-summing-up" class="nav-link" data-scroll-target="#summing-up">Summing up</a></li>
+  <li><a href="#sanity" id="toc-sanity" class="nav-link" data-scroll-target="#sanity">Sanity checks and self-test</a></li>
+  <li><a href="#prompt-patterns-for-test-generation" id="toc-prompt-patterns-for-test-generation" class="nav-link" data-scroll-target="#prompt-patterns-for-test-generation">Prompt patterns for test generation</a>
+  <ul class="collapse">
+  <li><a href="#a-practical-prompt-template" id="toc-a-practical-prompt-template" class="nav-link" data-scroll-target="#a-practical-prompt-template">A practical prompt template</a></li>
+  <li><a href="#prompt-levers-that-usually-improve-assertions" id="toc-prompt-levers-that-usually-improve-assertions" class="nav-link" data-scroll-target="#prompt-levers-that-usually-improve-assertions">Prompt levers that usually improve assertions</a></li>
+  <li><a href="#prompt-levers-that-usually-improve-fixtures" id="toc-prompt-levers-that-usually-improve-fixtures" class="nav-link" data-scroll-target="#prompt-levers-that-usually-improve-fixtures">Prompt levers that usually improve fixtures</a></li>
+  </ul></li>
+  <li><a href="#worked-example" id="toc-worked-example" class="nav-link" data-scroll-target="#worked-example">Worked example: turning vague prompts into strong tests</a>
+  <ul class="collapse">
+  <li><a href="#code-under-test" id="toc-code-under-test" class="nav-link" data-scroll-target="#code-under-test">Code under test</a></li>
+  <li><a href="#what-weak-tests-look-like" id="toc-what-weak-tests-look-like" class="nav-link" data-scroll-target="#what-weak-tests-look-like">What weak tests look like</a></li>
+  <li><a href="#a-stronger-test-set-what-you-want-ai-to-generate" id="toc-a-stronger-test-set-what-you-want-ai-to-generate" class="nav-link" data-scroll-target="#a-stronger-test-set-what-you-want-ai-to-generate">A stronger test set (what you want AI to generate)</a></li>
+  </ul></li>
+  <li><a href="#in-memory-databases" id="toc-in-memory-databases" class="nav-link" data-scroll-target="#in-memory-databases">In-memory databases and isolated testing</a>
+  <ul class="collapse">
+  <li><a href="#sqlite-in-memory-pattern" id="toc-sqlite-in-memory-pattern" class="nav-link" data-scroll-target="#sqlite-in-memory-pattern">SQLite in-memory pattern</a></li>
+  </ul></li>
+  <li><a href="#where-ai-tests-go-wrong" id="toc-where-ai-tests-go-wrong" class="nav-link" data-scroll-target="#where-ai-tests-go-wrong">Where AI-generated tests go wrong</a></li>
+  <li><a href="#micro-quotes-week8" id="toc-micro-quotes-week8" class="nav-link" data-scroll-target="#micro-quotes-week8">Micro-quotes from Week 08</a></li>
+  <li><a href="#summing-up-week8" id="toc-summing-up-week8" class="nav-link" data-scroll-target="#summing-up-week8">Summing Up</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/SQ4014-2025/website/edit/master/notes/notes_8.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/SQ4014-2025/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/notes_0.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/notes_8.html">Notes 08 🐍</a></li></ol></nav></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/notes_1.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/notes_8.html">Notes 08 🤖</a></li></ol></nav></header>
 
 
 
 
 
-<section id="week-8-notes" class="level1">
-<h1>Week 8 Notes</h1>
-<hr>
-</section>
-<section id="lecture-8" class="level1">
-<h1>Lecture 8</h1>
+<section id="week-08-building-effective-tests-with-generative-ai" class="level1">
+<h1>Week 08 — Building effective tests with generative AI</h1>
 <ul>
-<li><a href="#object-oriented-programming">Object-Oriented Programming</a></li>
-<li><a href="#classes">Classes</a></li>
-<li><a href="#raise"><code>raise</code></a></li>
-<li><a href="#decorators">Decorators</a></li>
-<li><a href="#connecting-to-previous-work-in-this-course">Connecting to Previous Work in this Course</a></li>
-<li><a href="#class-methods">Class Methods</a></li>
-<li><a href="#static-methods">Static Methods</a></li>
-<li><a href="#inheritance">Inheritance</a></li>
-<li><a href="#inheritance-and-exceptions">Inheritance and Exceptions</a></li>
-<li><a href="#operator-overloading">Operator Overloading</a></li>
-<li><a href="#summing-up">Summing Up</a></li>
+<li><a href="#why-testing-matters">Why testing matters in AI-assisted coding</a></li>
+<li><a href="#key-terms">Key terms you must be able to use</a></li>
+<li><a href="#ai-workflow">AI-assisted test generation workflow</a></li>
+<li><a href="#unittest-vs-pytest">unittest vs pytest and when to use each</a></li>
+<li><a href="#in-memory-db">In-memory databases for isolated tests</a></li>
+<li><a href="#prompting-patterns">Prompting patterns for high-quality tests</a></li>
+<li><a href="#evaluating">Evaluating and fixing AI-generated tests</a></li>
+<li><a href="#failure-modes">Common failure modes and how to debug</a></li>
+<li><a href="#ci">Using generated tests in CI</a></li>
+<li><a href="#summing-up">Summing up</a></li>
 </ul>
-<section id="object-oriented-programming" class="level2">
-<h2 class="anchored" data-anchor-id="object-oriented-programming">Object-Oriented Programming</h2>
+<section id="why-testing-matters" class="level2">
+<h2 class="anchored" data-anchor-id="why-testing-matters">Why testing matters in AI-assisted coding</h2>
 <ul>
-<li><p>There are different paradigms of programming. As you learn other languages, you will start recognizing patterns like these.</p></li>
-<li><p>Up until this point, you have worked procedurally step-by-step.</p></li>
-<li><p>Object-oriented programming (OOP) is a compelling solution to programming-related problems.</p></li>
-<li><p>To begin, type <code>code student.py</code> in the terminal window and code as follows:</p>
-<pre><code>name = input("Name: ")
-house = input("House: ")
-print(f"{name} from {house}")</code></pre>
-<p>Notice that this program follows a procedural, step-by-step paradigm: Much like you have seen in prior parts of this course.</p></li>
-<li><p>Drawing on our work from previous weeks, we can create functions to abstract away parts of this program.</p>
-<pre><code>def main():
-    name = get_name()
-    house = get_house()
-    print(f"{name} from {house}")
-
-
-def get_name():
-    return input("Name: ")
-
-
-def get_house():
-    return input("House: ")
-
-
-if __name__ == "__main__":
-    main()</code></pre>
-<p>Notice how <code>get_name</code> and <code>get_house</code> abstract away some of the needs of our <code>main</code> function. Further, notice how the final lines of the code above tell the interpreter to run the <code>main</code> function.</p></li>
-<li><p>We can further simplify our program by storing the student as a <code>tuple</code>. A <code>tuple</code> is a sequence of values. Unlike a <code>list</code>, a <code>tuple</code> can’t be modified. In spirit, we are returning two values.</p>
-<pre><code>def main():
-    name, house = get_student()
-    print(f"{name} from {house}")
-
-
-def get_student():
-    name = input("Name: ")
-    house = input("House: ")
-    return name, house
-
-
-if __name__ == "__main__":
-    main()</code></pre>
-<p>Notice how <code>get_student</code> returns <code>name, house</code>.</p></li>
-<li><p>Packing that <code>tuple</code>, such that we are able to return both items to a variable called <code>student</code>, we can modify our code as follows.</p>
-<pre><code>def main():
-    student = get_student()
-    print(f"{student[0]} from {student[1]}")
-
-
-def get_student():
-    name = input("Name: ")
-    house = input("House: ")
-    return (name, house)
-
-
-if __name__ == "__main__":
-    main()</code></pre>
-<p>Notice that <code>(name, house)</code> explicitly tells anyone reading our code that we are returning two values within one. Further, notice how we can index into <code>tuple</code>s using <code>student[0]</code> or <code>student[1]</code>.</p></li>
-<li><p><code>tuple</code>s are immutable, meaning we cannot change those values. Immutability is a way by which we can program defensively.</p>
-<pre><code>def main():
-    student = get_student()
-    if student[0] == "Padma":
-        student[1] = "Ravenclaw"
-    print(f"{student[0]} from {student[1]}")
-
-
-def get_student():
-    name = input("Name: ")
-    house = input("House: ")
-    return name, house
-
-
-if __name__ == "__main__":
-    main()</code></pre>
-<p>Notice that this code produces an error. Since <code>tuple</code>s are immutable, we’re not able to reassign the value of <code>student[1]</code>.</p></li>
-<li><p>If we wanted to provide our fellow programmers flexibility, we could utilize a <code>list</code> as follows.</p>
-<pre><code>def main():
-    student = get_student()
-    if student[0] == "Padma":
-        student[1] = "Ravenclaw"
-    print(f"{student[0]} from {student[1]}")
-
-
-def get_student():
-    name = input("Name: ")
-    house = input("House: ")
-    return [name, house]
-
-
-if __name__ == "__main__":
-    main()</code></pre>
-<p>Note that lists are mutable. That is, the order of <code>house</code> and <code>name</code> can be switched by a programmer. You might decide to utilize this in some cases where you want to provide more flexibility at the cost of the security of your code. After all, if the order of those values is changeable, programmers that work with you could make mistakes down the road.</p></li>
-<li><p>A dictionary could also be utilized in this implementation. Recall that dictionaries provide a key-value pair.</p>
-<pre><code>def main():
-    student = get_student()
-    print(f"{student['name']} from {student['house']}")
-
-
-def get_student():
-    student = {}
-    student["name"] = input("Name: ")
-    student["house"] = input("House: ")
-    return student
-
-
-if __name__ == "__main__":
-    main()</code></pre>
-<p>Notice in this case, two key-value pairs are returned. An advantage of this approach is that we can index into this dictionary using the keys.</p></li>
-<li><p>Still, our code can be further improved. Notice that there is an unneeded variable. We can remove <code>student = {}</code> because we don’t need to create an empty dictionary.</p>
-<pre><code>def main():
-    student = get_student()
-    print(f"{student['name']} from {student['house']}")
-
-
-def get_student():
-    name = input("Name: ")
-    house = input("House: ")
-    return {"name": name, "house": house}
-
-
-if __name__ == "__main__":
-    main()</code></pre>
-<p>Notice we can utilize <code>{}</code> braces in the <code>return</code> statement to create the dictionary and return it all in the same line.</p></li>
-<li><p>We can provide our special case with Padma in our dictionary version of our code.</p>
-<pre><code>def main():
-    student = get_student()
-    if student["name"] == "Padma":
-        student["house"] = "Ravenclaw"
-    print(f"{student['name']} from {student['house']}")
-
-
-def get_student():
-    name = input("Name: ")
-    house = input("House: ")
-    return {"name": name, "house": house}
-
-
-if __name__ == "__main__":
-    main()</code></pre>
-<p>Notice how, similar in spirit to our previous iterations of this code, we can utilize the key names to index into our student dictionary.</p></li>
+<li>Week 08 focuses on using generative AI to produce tests, but this week is really about <em>trust</em>.</li>
+<li>A test suite is your “contract” with future you: it describes what must stay true as code changes.</li>
+<li>AI can write tests quickly, but speed is useless if the tests are brittle, shallow, or wrong.</li>
+<li>“Generative AI tools are changing this boring, repetitive process.”</li>
+<li>“They can automatically create detailed test suites, spot edge cases, and generate boilerplate code.”</li>
+<li>In AI-assisted workflows, tests do two jobs at once:</li>
+<li><ol type="1">
+<li>catch regressions, and 2) detect when the AI has hallucinated an API, edge case, or assumption.</li>
+</ol></li>
+<li>A bad test suite can make things worse by giving you false confidence.</li>
 </ul>
 </section>
-<section id="classes" class="level2">
-<h2 class="anchored" data-anchor-id="classes">Classes</h2>
+<section id="key-terms" class="level2">
+<h2 class="anchored" data-anchor-id="key-terms">Key terms you must be able to use</h2>
 <ul>
-<li><p>Classes are a way by which, in object-oriented programming, we can create our own type of data and give them names.</p></li>
-<li><p>A class is like a mold for a type of data – where we can invent our own data type and give them a name.</p></li>
-<li><p>We can modify our code as follows to implement our own class called <code>Student</code>:</p>
-<pre><code>class Student:
-    ...
-
-
-def main():
-    student = get_student()
-    print(f"{student.name} from {student.house}")
-
-
-def get_student():
-    student = Student()
-    student.name = input("Name: ")
-    student.house = input("House: ")
-    return student
-
-
-if __name__ == "__main__":
-    main()</code></pre>
-<p>Notice by convention that <code>Student</code> is capitalized. Further, notice the <code>...</code> simply means that we will later return to finish that portion of our code. Further, notice that in <code>get_student</code>, we can create a <code>student</code> of class <code>Student</code> using the syntax <code>student = Student()</code>. Further, notice that we utilize “dot notation” to access attributes of this variable <code>student</code> of class <code>Student</code>.</p></li>
-<li><p>Any time you create a class and you utilize that blueprint to create something, you create what is called an “object” or an “instance”. In the case of our code, <code>student</code> is an object.</p></li>
-<li><p>Further, we can lay some groundwork for the attributes that are expected inside an object whose class is <code>Student</code>. We can modify our code as follows:</p>
-<pre><code>class Student:
-    def __init__(self, name, house):
-        self.name = name
-        self.house = house
-
-
-def main():
-    student = get_student()
-    print(f"{student.name} from {student.house}")
-
-
-def get_student():
-    name = input("Name: ")
-    house = input("House: ")
-    student = Student(name, house)
-    return student
-
-
-if __name__ == "__main__":
-    main()</code></pre>
-<p>Notice that within <code>Student</code>, we standardize the attributes of this class. We can create a function within <code>class Student</code>, called a “method”, that determines the behavior of an object of class <code>Student</code>. Within this function, it takes the <code>name</code> and <code>house</code> passed to it and assigns these variables to this object. Further, notice how the constructor <code>student = Student(name, house)</code> calls this function within the <code>Student</code> class and creates a <code>student</code>. <code>self</code> refers to the current object that was just created.</p></li>
-<li><p>We can simplify our code as follows:</p>
-<pre><code>class Student:
-    def __init__(self, name, house):
-        self.name = name
-        self.house = house
-
-
-def main():
-    student = get_student()
-    print(f"{student.name} from {student.house}")
-
-
-def get_student():
-    name = input("Name: ")
-    house = input("House: ")
-    return Student(name, house)
-
-
-if __name__ == "__main__":
-    main()</code></pre>
-<p>Notice how <code>return Student(name, house)</code> simplifies the previous iteration of our code where the constructor statement was run on its own line.</p></li>
-<li><p>You can learn more in Python’s documentation of <a href="https://docs.python.org/3/tutorial/classes.html">classes</a>.</p></li>
+<li><strong>test oracle</strong> — what counts as correct output (and what your test is really asserting).</li>
+<li><strong>fixture</strong> — a repeatable setup/teardown wrapper that makes tests readable and reliable.</li>
+<li><strong>mock</strong> — a controlled stand‑in that isolates your code from external systems.</li>
+<li><strong>in‑memory database</strong> — a temporary database (often SQLite) used for fast, isolated tests.</li>
+<li><strong>regression test</strong> — a test that locks in behaviour so future changes don’t break it.</li>
+<li><strong>property‑based testing</strong> — testing broad invariants by generating many inputs automatically.</li>
 </ul>
 </section>
-<section id="raise" class="level2">
-<h2 class="anchored" data-anchor-id="raise"><code>raise</code></h2>
+<section id="ai-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="ai-workflow">AI-assisted test generation workflow</h2>
 <ul>
-<li><p>Object-oriented programming encourages you to encapsulate all the functionality of a class within the class definition. What if something goes wrong? What if someone tries to type in something random? What if someone tries to create a student without a name? Modify your code as follows:</p>
-<pre><code>class Student:
-    def __init__(self, name, house):
-        if not name:
-            raise ValueError("Missing name")
-        if house not in ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]:
-            raise ValueError("Invalid house")
-        self.name = name
-        self.house = house
-
-
-def main():
-    student = get_student()
-    print(f"{student.name} from {student.house}")
-
-
-def get_student():
-    name = input("Name: ")
-    house = input("House: ")
-    return Student(name, house)
-
-
-if __name__ == "__main__":
-    main()</code></pre>
-<p>Notice how we check now that a name is provided and a proper house is designated. It turns out we can create our own exceptions that alerts the programmer to a potential error created by the user called <code>raise</code>. In the case above, we raise <code>ValueError</code> with a specific error message.</p></li>
-<li><p>It just so happens that Python allows you to create a specific function by which you can print the attributes of an object. Modify your code as follows:</p>
-<pre><code>class Student:
-    def __init__(self, name, house, patronus):
-        if not name:
-            raise ValueError("Missing name")
-        if house not in ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]:
-            raise ValueError("Invalid house")
-        self.name = name
-        self.house = house
-        self.patronus = patronus
-
-    def __str__(self):
-        return f"{self.name} from {self.house}"
-
-
-def main():
-    student = get_student()
-    print(student)
-
-
-def get_student():
-    name = input("Name: ")
-    house = input("House: ")
-    patronus = input("Patronus: ")
-    return Student(name, house, patronus)
-
-
-if __name__ == "__main__":
-    main()</code></pre>
-<p>Notice how <code>def __str__(self)</code> provides a means by which a student is returned when called. Therefore, you can now, as the programmer, print an object, its attributes, or almost anything you desire related to that object.</p></li>
-<li><p><code>__str__</code> is a built-in method that comes with Python classes. It just so happens that we can create our own methods for a class as well! Modify your code as follows:</p>
-<pre><code>class Student:
-    def __init__(self, name, house, patronus=None):
-        if not name:
-            raise ValueError("Missing name")
-        if house not in ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]:
-            raise ValueError("Invalid house")
-        if patronus and patronus not in ["Stag", "Otter", "Jack Russell terrier"]:
-            raise ValueError("Invalid patronus")
-        self.name = name
-        self.house = house
-        self.patronus = patronus
-
-    def __str__(self):
-        return f"{self.name} from {self.house}"
-
-    def charm(self):
-        match self.patronus:
-            case "Stag":
-                return "🐴"
-            case "Otter":
-                return "🦦"
-            case "Jack Russell terrier":
-                return "🐶"
-            case _:
-                return "🪄"
-
-
-def main():
-    student = get_student()
-    print("Expecto Patronum!")
-    print(student.charm())
-
-
-def get_student():
-    name = input("Name: ")
-    house = input("House: ")
-    patronus = input("Patronus: ") or None
-    return Student(name, house, patronus)
-
-
-if __name__ == "__main__":
-    main()</code></pre>
-<p>Notice how we define our own method <code>charm</code>. Unlike dictionaries, classes can have built-in functions called methods. In this case, we define our <code>charm</code> method where specific cases have specific results. Further, notice that Python has the ability to utilize emojis directly in our code.</p></li>
-<li><p>Before moving forward, let us remove our patronus code. Modify your code as follows:</p>
-<pre><code>class Student:
-    def __init__(self, name, house):
-        if not name:
-            raise ValueError("Invalid name")
-        if house not in ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]:
-            raise ValueError("Invalid house")
-        self.name = name
-        self.house = house
-
-    def __str__(self):
-        return f"{self.name} from {self.house}"
-
-
-def main():
-    student = get_student()
-    student.house = "Number Four, Privet Drive"
-    print(student)
-
-
-def get_student():
-    name = input("Name: ")
-    house = input("House: ")
-    return Student(name, house)
-
-
-if __name__ == "__main__":
-    main()</code></pre>
-<p>Notice how we have only two methods: <code>__init__</code> and <code>__str__</code>.</p></li>
+<li>Start by writing a clear <em>spec</em> (even if it is only a paragraph). AI cannot test what you cannot describe.</li>
+<li>Decide what level you are testing: unit (small), integration (multiple parts), or end-to-end (system).</li>
+<li>Give the AI: the function signature, expected behaviour, edge cases, and any invariants.</li>
+<li>Ask for tests <em>and</em> a short explanation of why each test exists.</li>
+<li>“This week shows how GitHub Copilot, Tabnine, and Blackbox AI can enhance your testing workflow.”</li>
+<li>Run the tests immediately. If they fail, treat that as feedback about either the code or the prompt.</li>
+<li>Refactor the generated tests: rename, remove duplicates, add missing assertions, and simplify setup.</li>
 </ul>
 </section>
-<section id="decorators" class="level2">
-<h2 class="anchored" data-anchor-id="decorators">Decorators</h2>
+<section id="unittest-vs-pytest" class="level2">
+<h2 class="anchored" data-anchor-id="unittest-vs-pytest">unittest vs pytest and when to use each</h2>
 <ul>
-<li><p>Properties can be utilized to harden our code. In Python, we define properties using function “decorators”, which begin with <code>@</code>. Modify your code as follows:</p>
-<pre><code>class Student:
-    def __init__(self, name, house):
-        if not name:
-            raise ValueError("Invalid name")
-        self.name = name
-        self.house = house
-
-    def __str__(self):
-        return f"{self.name} from {self.house}"
-
-    # Getter for house
-    @property
-    def house(self):
-        return self._house
-
-    # Setter for house
-    @house.setter
-    def house(self, house):
-        if house not in ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]:
-            raise ValueError("Invalid house")
-        self._house = house
-
-
-def main():
-    student = get_student()
-    print(student)
-
-
-def get_student():
-    name = input("Name: ")
-    house = input("House: ")
-    return Student(name, house)
-
-
-if __name__ == "__main__":
-    main()</code></pre>
-<p>Notice how we’ve written <code>@property</code> above a function called <code>house</code>. Doing so defines <code>house</code> as a property of our class. With <code>house</code> as a property, we gain the ability to define how some attribute of our class, <code>_house</code>, should be set and retrieved. Indeed, we can now define a function called a “setter”, via <code>@house.setter</code>, which will be called whenever the house property is set—for example, with <code>student.house = "Gryffindor"</code>. Here, we’ve made our setter validate values of <code>house</code> for us. Notice how we raise a <code>ValueError</code> if the value of <code>house</code> is not any of the Harry Potter houses, otherwise, we’ll use <code>house</code> to update the value of <code>_house</code>. Why <code>_house</code> and not <code>house</code>? <code>house</code> is a property of our class, with functions via which a user attempts to set our class attribute. <code>_house</code> is that class attribute itself. The leading underscore, <code>_</code>, indicates to users they need not (and indeed, shouldn’t!) modify this value directly. <code>_house</code> should <em>only</em> be set through the <code>house</code> setter. Notice how the <code>house</code> property simply returns that value of <code>_house</code>, our class attribute that has presumably been validated using our <code>house</code> setter. When a user calls <code>student.house</code>, they’re getting the value of <code>_house</code> through our <code>house</code> “getter”.</p></li>
-<li><p>In addition to the name of the house, we can protect the name of our student as well. Modify your code as follows:</p>
-<pre><code>class Student:
-    def __init__(self, name, house):
-        self.name = name
-        self.house = house
-
-    def __str__(self):
-        return f"{self.name} from {self.house}"
-
-    # Getter for name
-    @property
-    def name(self):
-        return self._name
-
-    # Setter for name
-    @name.setter
-    def name(self, name):
-        if not name:
-            raise ValueError("Invalid name")
-        self._name = name
-
-    @property
-    def house(self):
-        return self._house
-
-    @house.setter
-    def house(self, house):
-        if house not in ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]:
-            raise ValueError("Invalid house")
-        self._house = house
-
-
-def main():
-    student = get_student()
-    print(student)
-
-
-def get_student():
-    name = input("Name: ")
-    house = input("House: ")
-    return Student(name, house)
-
-
-if __name__ == "__main__":
-    main()</code></pre>
-<p>Notice how, much like the previous code, we provide a getter and setter for the name.</p></li>
-<li><p>You can learn more in Python’s documentation of <a href="https://docs.python.org/3/tutorial/classes.html">methods</a>.</p></li>
+<li>Both frameworks can express the same logic; the difference is <em>ergonomics</em> and ecosystem conventions.</li>
+<li>unittest is batteries-included and class-based; pytest is function-first and heavily fixture-driven.</li>
+<li>If a project already uses one, prefer consistency over personal preference.</li>
+<li>AI tends to produce verbose unittest boilerplate unless you explicitly ask for pytest.</li>
+<li>“They can help you build strong, maintain­ able test suites quickly, while upholding quality.”</li>
+<li>Ask the AI to follow your project’s test naming and folder conventions.</li>
+<li>Do not accept tests that assert implementation details (e.g., exact SQL query strings) unless required.</li>
 </ul>
 </section>
-<section id="connecting-to-previous-work-in-this-course" class="level2">
-<h2 class="anchored" data-anchor-id="connecting-to-previous-work-in-this-course">Connecting to Previous Work in this Course</h2>
+<section id="in-memory-db" class="level2">
+<h2 class="anchored" data-anchor-id="in-memory-db">In-memory databases for isolated tests</h2>
 <ul>
-<li><p>While not explicitly stated in past portions of this course, you have been using classes and objects the whole way through.</p></li>
-<li><p>If you dig into the documentation of <code>int</code>, you’ll see that it is a class with a constructor. It’s a blueprint for creating objects of type <code>int</code>. You can learn more in Python’s documentation of <a href="https://docs.python.org/3/library/functions.html#int"><code>int</code></a>.</p></li>
-<li><p>Strings too are also a class. If you have used <code>str.lower()</code>, you were using a method that came within the <code>str</code> class. You can learn more in Python’s documentation of <a href="https://docs.python.org/3/library/stdtypes.html#str"><code>str</code></a>.</p></li>
-<li><p><code>list</code> is also a class. Looking at that documentation for <code>list</code>, you can see the methods that are contained therein, like <code>list.append()</code>. You can learn more in Python’s documentation of <a href="https://docs.python.org/3/library/stdtypes.html#list"><code>list</code></a>.</p></li>
-<li><p><code>dict</code> is also a class within Python. You can learn more in Python’s documentation of <a href="https://docs.python.org/3/library/stdtypes.html#dict"><code>dict</code></a>.</p></li>
-<li><p>To see how you have been using classes all along, go to your console and type <code>code type.py</code> and then code as follows:</p>
-<pre><code>print(type(50))</code></pre>
-<p>Notice how by executing this code, it will display that the class of <code>50</code> is <code>int</code>.</p></li>
-<li><p>We can also apply this to <code>str</code> as follows:</p>
-<pre><code>print(type("hello, world"))</code></pre>
-<p>Notice how executing this code will indicate this is of the class <code>str</code>.</p></li>
-<li><p>We can also apply this to <code>list</code> as follows:</p>
-<pre><code>print(type([]))</code></pre>
-<p>Notice how executing this code will indicate this is of the class <code>list</code>.</p></li>
-<li><p>We can also apply this to a <code>list</code> using the name of Python’s built-in <code>list</code> class as follows:</p>
-<pre><code>print(type(list()))</code></pre>
-<p>Notice how executing this code will indicate this is of the class <code>list</code>.</p></li>
-<li><p>We can also apply this to <code>dict</code> as follows:</p>
-<pre><code>print(type({}))</code></pre>
-<p>Notice how executing this code will indicate this is of the class <code>dict</code>.</p></li>
-<li><p>We can also apply this to a <code>dict</code> using the name of Python’s built in <code>dict</code> class as follows:</p>
-<pre><code>print(type(dict()))</code></pre>
-<p>Notice how executing this code will indicate this is of the class <code>dict</code>.</p></li>
+<li>An in-memory DB makes tests fast and isolated: every test starts from a clean slate.</li>
+<li>This week demonstrates creating temporary databases and seeding minimal data for reproducibility.</li>
+<li>“211 Why use generative AI for testing?”</li>
+<li>Key idea: tests should not depend on a developer’s local environment (paths, ports, or existing data).</li>
+<li>When you use SQLite in-memory, ensure your app’s DB layer can accept a connection string override.</li>
 </ul>
 </section>
-<section id="class-methods" class="level2">
-<h2 class="anchored" data-anchor-id="class-methods">Class Methods</h2>
+<section id="prompting-patterns" class="level2">
+<h2 class="anchored" data-anchor-id="prompting-patterns">Prompting patterns for high-quality tests</h2>
 <ul>
-<li><p>Sometimes, we want to add functionality to a class itself, not to instances of that class.</p></li>
-<li><p><code>@classmethod</code> is a function that we can use to add functionality to a class as a whole.</p></li>
-<li><p>Here’s an example of <em>not</em> using a class method. In your terminal window, type <code>code hat.py</code> and code as follows:</p>
-<pre><code>import random
-
-
-class Hat:
-    def __init__(self):
-        self.houses = ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]
-
-    def sort(self, name):
-        print(name, "is in", random.choice(self.houses))
-
-
-hat = Hat()
-hat.sort("Harry")</code></pre>
-<p>Notice how when we pass the name of the student to the sorting hat, it will tell us what house is assigned to the student. Notice that <code>hat = Hat()</code> instantiates a <code>hat</code>. The <code>sort</code> functionality is always handled by the <em>instance</em> of the class <code>Hat</code>. By executing <code>hat.sort("Harry")</code>, we pass the name of the student to the <code>sort</code> method of the particular instance of <code>Hat</code>, which we’ve called <code>hat</code>.</p></li>
-<li><p>We may want, though, to run the <code>sort</code> function without creating a particular instance of the sorting hat (there’s only one, after all!). We can modify our code as follows:</p>
-<pre><code>import random
-
-
-class Hat:
-
-    houses = ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]
-
-    @classmethod
-    def sort(cls, name):
-        print(name, "is in", random.choice(cls.houses))
-
-
-Hat.sort("Harry")</code></pre>
-<p>Notice how the <code>__init__</code> method is removed because we don’t need to instantiate a hat anywhere in our code. <code>self</code>, therefore, is no longer relevant and is removed. We specify this <code>sort</code> as a <code>@classmethod</code>, replacing <code>self</code> with <code>cls</code>. Finally, notice how <code>Hat</code> is capitalized by convention near the end of this code, because this is the name of our class.</p></li>
-<li><p>Returning back to <code>students.py</code> we can modify our code as follows, addressing some missed opportunities related to <code>@classmethod</code>s:</p>
-<pre><code>class Student:
-    def __init__(self, name, house):
-        self.name = name
-        self.house = house
-
-    def __str__(self):
-        return f"{self.name} from {self.house}"
-
-    @classmethod
-    def get(cls):
-        name = input("Name: ")
-        house = input("House: ")
-        return cls(name, house)
-
-
-def main():
-    student = Student.get()
-    print(student)
-
-
-if __name__ == "__main__":
-    main()</code></pre>
-<p>Notice that <code>get_student</code> is removed and a <code>@classmethod</code> called <code>get</code> is created. This method can now be called without having to create a student first.</p></li>
+<li>Use prompts that are specific about <em>assertions</em>, not just “write tests”.</li>
+<li>Always list edge cases you care about (empty inputs, None/null, boundary values, malformed data).</li>
+<li>If you want parameterised tests, say so explicitly.</li>
+<li>If you want mocks, name the dependencies to mock and the behaviour they should simulate.</li>
+<li>“High-quality tests are vital for reliable software.”</li>
+<li>Ask for one test per behaviour: big “kitchen sink” tests are hard to debug.</li>
+<li>Ask the AI to include comments that link each test back to a requirement line.</li>
 </ul>
 </section>
-<section id="static-methods" class="level2">
-<h2 class="anchored" data-anchor-id="static-methods">Static Methods</h2>
+<section id="evaluating" class="level2">
+<h2 class="anchored" data-anchor-id="evaluating">Evaluating and fixing AI-generated tests</h2>
 <ul>
-<li>It turns out that besides <code>@classmethod</code>s, which are distinct from instance methods, there are other types of methods as well.</li>
-<li>Using <code>@staticmethod</code> may be something you might wish to explore. While not covered explicitly in this course, you are welcome to go and learn more about static methods and their distinction from class methods.</li>
+<li>Treat AI-generated tests as a draft. Your job is to make them <em>true</em> and <em>useful</em>.</li>
+<li>Check: does the test actually fail when the code is wrong? (mutation testing mindset).</li>
+<li>Check for false positives: tests that pass even if you delete the core logic.</li>
+<li>Check for brittle fixtures: random data, timestamps, network calls, global state.</li>
+<li>“They catch bugs early and ensure new features don’t break existing code.”</li>
+<li>Prefer explicit assertions over printing/logging output.</li>
 </ul>
 </section>
-<section id="inheritance" class="level2">
-<h2 class="anchored" data-anchor-id="inheritance">Inheritance</h2>
+<section id="failure-modes" class="level2">
+<h2 class="anchored" data-anchor-id="failure-modes">Common failure modes and how to debug</h2>
 <ul>
-<li><p>Inheritance is, perhaps, the most powerful feature of object-oriented programming.</p></li>
-<li><p>It just so happens that you can create a class that “inherits” methods, variables, and attributes from another class.</p></li>
-<li><p>In the terminal, execute <code>code wizard.py</code>. Code as follows:</p>
-<pre><code>class Wizard:
-    def __init__(self, name):
-        if not name:
-            raise ValueError("Missing name")
-        self.name = name
-
-    ...
-
-
-class Student(Wizard):
-    def __init__(self, name, house):
-        super().__init__(name)
-        self.house = house
-
-    ...
-
-
-class Professor(Wizard):
-    def __init__(self, name, subject):
-        super().__init__(name)
-        self.subject = subject
-
-    ...
-
-
-wizard = Wizard("Albus")
-student = Student("Harry", "Gryffindor")
-professor = Professor("Severus", "Defense Against the Dark Arts")
-...</code></pre>
-<p>Notice that there is a class above called <code>Wizard</code> and a class called <code>Student</code>. Further, notice that there is a class called <code>Professor</code>. Both students and professors have names. Also, both students and professors are wizards. Therefore, both <code>Student</code> and <code>Professor</code> inherit the characteristics of <code>Wizard</code>. Within the “child” class <code>Student</code>, <code>Student</code> can inherit from the “parent” or “super” class <code>Wizard</code> as the line <code>super().__init__(name)</code> runs the <code>init</code> method of <code>Wizard</code>. Finally, notice that the last lines of this code create a wizard called Albus, a student called Harry, and so on.</p></li>
+<li>Hallucinated imports: AI may invent packages or functions that do not exist in your environment.</li>
+<li>Over-mocking: if everything is mocked, you are not testing meaningful behaviour.</li>
+<li>Testing the wrong thing: asserting internal variable values rather than outputs or side effects.</li>
+<li>Nondeterminism: tests that depend on ordering, random seeds, time, or network.</li>
+<li>“They also document how the code should behave.”</li>
+<li>Fix strategy: reduce the test to the minimal reproducer, then rebuild structure with fixtures.</li>
 </ul>
 </section>
-<section id="inheritance-and-exceptions" class="level2">
-<h2 class="anchored" data-anchor-id="inheritance-and-exceptions">Inheritance and Exceptions</h2>
+<section id="ci" class="level2">
+<h2 class="anchored" data-anchor-id="ci">Using generated tests in CI</h2>
 <ul>
-<li><p>While we have just introduced inheritance, we have been using this all along during our use of exceptions.</p></li>
-<li><p>It just so happens that exceptions come in a hierarchy, where there are children, parent, and grandparent classes. These are illustrated below:</p>
-<pre><code>BaseException
- +-- KeyboardInterrupt
- +-- Exception
-      +-- ArithmeticError
-      |    +-- ZeroDivisionError
-      +-- AssertionError
-      +-- AttributeError
-      +-- EOFError
-      +-- ImportError
-      |    +-- ModuleNotFoundError
-      +-- LookupError
-      |    +-- KeyError
-      +-- NameError
-      +-- SyntaxError
-      |    +-- IndentationError
-      +-- ValueError
- ...</code></pre></li>
-<li><p>You can learn more in Python’s documentation of <a href="https://docs.python.org/3/library/exceptions.html">exceptions</a>.</p></li>
+<li>A CI pipeline turns “works on my machine” into “works for everyone”.</li>
+<li>AI-generated tests are only valuable if they run reliably in a clean environment.</li>
+<li>Make dependencies explicit (requirements file / lockfile).</li>
+<li>Pin versions when your tests rely on specific behaviour.</li>
+<li>Keep secrets out of tests; use environment variables and test doubles.</li>
 </ul>
+<section id="a-minimal-pytest-example-pure-function" class="level3">
+<h3 class="anchored" data-anchor-id="a-minimal-pytest-example-pure-function">A minimal pytest example (pure function)</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pytest</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add(a, b):</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_add_basic():</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> add(<span class="dv">2</span>, <span class="dv">3</span>) <span class="op">==</span> <span class="dv">5</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="at">@pytest.mark.parametrize</span>(<span class="st">'a,b,expected'</span>, [(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>), (<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>), (<span class="dv">2</span>,<span class="op">-</span><span class="dv">5</span>,<span class="op">-</span><span class="dv">3</span>)])</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_add_parametrized(a,b,expected):</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> add(a,b) <span class="op">==</span> expected</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="operator-overloading" class="level2">
-<h2 class="anchored" data-anchor-id="operator-overloading">Operator Overloading</h2>
-<ul>
-<li><p>Some operators such as <code>+</code> and <code>-</code> can be “overloaded” such that they can have more abilities beyond simple arithmetic.</p></li>
-<li><p>In your terminal window, type <code>code vault.py</code>. Then, code as follows:</p>
-<pre><code>class Vault:
-    def __init__(self, galleons=0, sickles=0, knuts=0):
-        self.galleons = galleons
-        self.sickles = sickles
-        self.knuts = knuts
-
-    def __str__(self):
-        return f"{self.galleons} Galleons, {self.sickles} Sickles, {self.knuts} Knuts"
-
-    def __add__(self, other):
-        galleons = self.galleons + other.galleons
-        sickles = self.sickles + other.sickles
-        knuts = self.knuts + other.knuts
-        return Vault(galleons, sickles, knuts)
-
-
-potter = Vault(100, 50, 25)
-print(potter)
-
-weasley = Vault(25, 50, 100)
-print(weasley)
-
-total = potter + weasley
-print(total)</code></pre>
-<p>Notice how the <code>__str__</code> method returns a formatted string. Further, notice how the <code>__add__</code> method allows for the addition of the values of two vaults. <code>self</code> is what is on the left of the <code>+</code> operand. <code>other</code> is what is right of the <code>+</code>.</p></li>
-<li><p>You can learn more in Python’s documentation of <a href="https://docs.python.org/3/reference/datamodel.html#special-method-names">operator overloading</a>.</p></li>
-</ul>
+<section id="a-unittest-style-equivalent-class-based" class="level3">
+<h3 class="anchored" data-anchor-id="a-unittest-style-equivalent-class-based">A unittest-style equivalent (class-based)</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> unittest</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add(a, b):</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> TestAdd(unittest.TestCase):</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> test_add_basic(<span class="va">self</span>):</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.assertEqual(add(<span class="dv">2</span>,<span class="dv">3</span>), <span class="dv">5</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    unittest.main()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="sqlite-in-memory-test-setup-pattern" class="level3">
+<h3 class="anchored" data-anchor-id="sqlite-in-memory-test-setup-pattern">SQLite in-memory test setup (pattern)</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> make_db():</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    conn <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">':memory:'</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    cur <span class="op">=</span> conn.cursor()</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    cur.execute(<span class="st">'CREATE TABLE users(id INTEGER PRIMARY KEY, name TEXT)'</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    cur.execute(<span class="st">'INSERT INTO users(name) VALUES (?)'</span>, (<span class="st">'Ada'</span>,))</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    conn.commit()</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> conn</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_user_seed():</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    conn <span class="op">=</span> make_db()</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    cur <span class="op">=</span> conn.cursor()</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    cur.execute(<span class="st">'SELECT COUNT(*) FROM users'</span>)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> cur.fetchone()[<span class="dv">0</span>] <span class="op">==</span> <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="mocking-an-external-dependency-requests" class="level3">
+<h3 class="anchored" data-anchor-id="mocking-an-external-dependency-requests">Mocking an external dependency (requests)</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> unittest.mock <span class="im">import</span> Mock</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Client:</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, http_get):</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.http_get <span class="op">=</span> http_get</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> fetch_status(<span class="va">self</span>, url):</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>        resp <span class="op">=</span> <span class="va">self</span>.http_get(url)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> resp.status_code</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_fetch_status_mocked():</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    fake_resp <span class="op">=</span> Mock()</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    fake_resp.status_code <span class="op">=</span> <span class="dv">200</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    http_get <span class="op">=</span> Mock(return_value<span class="op">=</span>fake_resp)</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    c <span class="op">=</span> Client(http_get<span class="op">=</span>http_get)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> c.fetch_status(<span class="st">'https://example.com'</span>) <span class="op">==</span> <span class="dv">200</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    http_get.assert_called_once()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="prompt-template-you-can-reuse-stored-as-a-string" class="level3">
+<h3 class="anchored" data-anchor-id="prompt-template-you-can-reuse-stored-as-a-string">Prompt template you can reuse (stored as a string)</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>PROMPT <span class="op">=</span> <span class="st">'''</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="st">You are generating tests for Python code.</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="st">Context:</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="st">- Framework: pytest</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="st">- File under test: app/service.py</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="st">- Function signatures: &lt;paste here&gt;</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="st">Requirements:</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="st">1) Write one test per requirement.</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="st">2) Include edge cases: empty input, None, boundary values.</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="st">3) Use fixtures for setup; avoid global state.</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="st">4) Explain each test in 1 line comment.</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="st">Output: a complete pytest test module.</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="st">'''</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(PROMPT)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="a-tiny-evaluation-trick-do-tests-fail-when-code-is-wrong" class="level3">
+<h3 class="anchored" data-anchor-id="a-tiny-evaluation-trick-do-tests-fail-when-code-is-wrong">A tiny evaluation trick: do tests fail when code is wrong?</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Demonstration: if you break the function, does a test fail?</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> area(radius):</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fl">3.14159</span> <span class="op">*</span> radius <span class="op">*</span> radius</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_area_positive():</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> area(<span class="dv">2</span>) <span class="op">==</span> <span class="fl">12.56636</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Try changing area() to return 0 and rerun the test.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="figures" class="level2">
+<h2 class="anchored" data-anchor-id="figures">Extracted figures from Week 08</h2>
+<p><img src="images/week_08/fig_01.png" class="img-fluid" alt="Week 08 extracted figure 1"> <img src="images/week_08/fig_02.png" class="img-fluid" alt="Week 08 extracted figure 2"> <img src="images/week_08/fig_03.png" class="img-fluid" alt="Week 08 extracted figure 3"> <img src="images/week_08/fig_04.png" class="img-fluid" alt="Week 08 extracted figure 4"> <img src="images/week_08/fig_05.png" class="img-fluid" alt="Week 08 extracted figure 5"> <img src="images/week_08/fig_06.png" class="img-fluid" alt="Week 08 extracted figure 6"> <img src="images/week_08/fig_07.png" class="img-fluid" alt="Week 08 extracted figure 7"> <img src="images/week_08/fig_08.png" class="img-fluid" alt="Week 08 extracted figure 8"> <img src="images/week_08/fig_09.png" class="img-fluid" alt="Week 08 extracted figure 9"> <img src="images/week_08/fig_10.png" class="img-fluid" alt="Week 08 extracted figure 10"></p>
 </section>
 <section id="summing-up" class="level2">
-<h2 class="anchored" data-anchor-id="summing-up">Summing Up</h2>
-<p>Now, you’ve learned a whole new level of capability through object-oriented programming.</p>
+<h2 class="anchored" data-anchor-id="summing-up">Summing up</h2>
 <ul>
-<li>Object-oriented programming</li>
-<li>Classes</li>
-<li><code>raise</code></li>
-<li>Class Methods</li>
-<li>Static Methods</li>
-<li>Inheritance</li>
-<li>Operator Overloading</li>
+<li>AI is a powerful assistant for <em>drafting</em> tests, but you still own correctness.</li>
+<li>The best prompts specify behaviour, edge cases, and constraints (framework, fixtures, mocking).</li>
+<li>Always run, review, and refactor generated tests; treat them like code written by a junior dev.</li>
+<li>In-memory databases and isolated environments are key to reliable automated testing.</li>
+</ul>
+</section>
+<section id="sanity" class="level2">
+<h2 class="anchored" data-anchor-id="sanity">Sanity checks and self-test</h2>
+<ul>
+<li><p>Quick checklist before you trust an AI-generated test suite:</p></li>
+<li><p>Does each test name describe behaviour (not implementation)?</p></li>
+<li><p>Do the tests include at least one negative case?</p></li>
+<li><p>Are edge cases explicit, not implied?</p></li>
+<li><p>Is the database/file system/network isolated or mocked?</p></li>
+<li><p>Would the tests still pass if you replaced your function body with <code>pass</code>?</p></li>
+<li><p>Do failures produce actionable error messages?</p></li>
+<li><p>Do fixtures reduce duplication (but not hide important details)?</p></li>
+<li><p>Are time-dependent values controlled (freeze time or inject clocks)?</p></li>
+<li><p>Are random values seeded?</p></li>
+<li><p>Are you asserting the right thing (outputs/side effects) rather than intermediate variables?</p></li>
+<li><p>Mini Q&amp;A (the kinds of questions you should be able to answer):</p></li>
+<li><p>What is a “test oracle” and why is it hard for AI?</p></li>
+<li><p>When is mocking harmful?</p></li>
+<li><p>Why is an in-memory database useful but sometimes misleading?</p></li>
+<li><p>How do you know a test is not “too shallow”?</p></li>
+<li><p>What prompt information tends to improve assertion quality?</p></li>
+</ul>
+</section>
+<section id="prompt-patterns-for-test-generation" class="level2">
+<h2 class="anchored" data-anchor-id="prompt-patterns-for-test-generation">Prompt patterns for test generation</h2>
+<ul>
+<li>Week 08 keeps returning to a simple idea: tests get better when the <em>specification</em> is clearer than the code.</li>
+<li>When you prompt a tool to generate tests, you are effectively writing a mini test plan.</li>
+</ul>
+<section id="a-practical-prompt-template" class="level3">
+<h3 class="anchored" data-anchor-id="a-practical-prompt-template">A practical prompt template</h3>
+<ul>
+<li><p>Use this structure (adapt the wording, keep the slots):</p></li>
+<li><p><strong>System/role</strong>: “You are a software tester writing pytest tests.”</p></li>
+<li><p><strong>Goal</strong>: “Generate tests for function <code>X</code>.”</p></li>
+<li><p><strong>Behaviour spec</strong>: list rules as bullets.</p></li>
+<li><p><strong>Edge cases</strong>: list edge cases explicitly.</p></li>
+<li><p><strong>Constraints</strong>:</p></li>
+<li><pre><code>- no network</code></pre></li>
+<li><pre><code>- no real filesystem writes</code></pre></li>
+<li><pre><code>- deterministic outcomes (freeze time or inject clock)</code></pre></li>
+<li><p><strong>Output format</strong>: “Return only test code in one file.”</p></li>
+<li><p>A useful trick: ask the model to first list <em>test cases</em> (names + what they check), then write the code.</p></li>
+<li><p>If you do that, you can review the case list quickly before trusting the code.</p></li>
+</ul>
+</section>
+<section id="prompt-levers-that-usually-improve-assertions" class="level3">
+<h3 class="anchored" data-anchor-id="prompt-levers-that-usually-improve-assertions">Prompt levers that usually improve assertions</h3>
+<ul>
+<li>Ask for <em>meaningful assertions</em> rather than “just coverage”.</li>
+<li>Ask for <em>failure-mode tests</em>:</li>
+<li>invalid inputs</li>
+<li>boundary values</li>
+<li>empty collections</li>
+<li>missing keys</li>
+<li>duplicates</li>
+<li>If the code touches randomness, instruct: “inject a seed or mock the RNG.”</li>
+</ul>
+</section>
+<section id="prompt-levers-that-usually-improve-fixtures" class="level3">
+<h3 class="anchored" data-anchor-id="prompt-levers-that-usually-improve-fixtures">Prompt levers that usually improve fixtures</h3>
+<ul>
+<li>Ask for fixtures with clear names: <code>user_factory</code>, <code>db_session</code>, <code>tmp_project</code>.</li>
+<li>Ask the tool to explain (briefly) what each fixture is responsible for.</li>
+<li>If the tool creates a fixture that does too much, split it.</li>
+</ul>
+</section>
+</section>
+<section id="worked-example" class="level2">
+<h2 class="anchored" data-anchor-id="worked-example">Worked example: turning vague prompts into strong tests</h2>
+<ul>
+<li>Below is a deliberately small example to illustrate the <em>workflow</em> Week 08 argues for:</li>
+<li>start with a vague prompt → get weak tests → tighten the prompt → get stronger tests.</li>
+</ul>
+<section id="code-under-test" class="level3">
+<h3 class="anchored" data-anchor-id="code-under-test">Code under test</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> normalise_score(x: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Clamp to [0, 1] and round to 2dp."""</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> x <span class="op">!=</span> x:  <span class="co"># NaN</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">"NaN"</span>)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> x <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="fl">0.0</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">1</span>:</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="fl">1.0</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">round</span>(x, <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="what-weak-tests-look-like" class="level3">
+<h3 class="anchored" data-anchor-id="what-weak-tests-look-like">What weak tests look like</h3>
+<ul>
+<li>Weak tests often:</li>
+<li>only test the “happy path”,</li>
+<li>assert very little,</li>
+<li>miss NaN / boundary cases.</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pytest</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_normalise_score_basic():</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> normalise_score(<span class="fl">0.2</span>) <span class="op">==</span> <span class="fl">0.2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="a-stronger-test-set-what-you-want-ai-to-generate" class="level3">
+<h3 class="anchored" data-anchor-id="a-stronger-test-set-what-you-want-ai-to-generate">A stronger test set (what you want AI to generate)</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pytest</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_clamps_low_values_to_zero():</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> normalise_score(<span class="op">-</span><span class="fl">0.0001</span>) <span class="op">==</span> <span class="fl">0.0</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_clamps_high_values_to_one():</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> normalise_score(<span class="fl">1.0001</span>) <span class="op">==</span> <span class="fl">1.0</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_rounds_to_two_decimal_places():</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> normalise_score(<span class="fl">0.126</span>) <span class="op">==</span> <span class="fl">0.13</span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_boundary_values_are_stable():</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> normalise_score(<span class="fl">0.0</span>) <span class="op">==</span> <span class="fl">0.0</span></span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> normalise_score(<span class="fl">1.0</span>) <span class="op">==</span> <span class="fl">1.0</span></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_nan_raises_value_error():</span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> pytest.raises(<span class="pp">ValueError</span>):</span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>        normalise_score(math.nan)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>This is the kind of result you get when you prompt with explicit rules and edge cases.</li>
+</ul>
+</section>
+</section>
+<section id="in-memory-databases" class="level2">
+<h2 class="anchored" data-anchor-id="in-memory-databases">In-memory databases and isolated testing</h2>
+<ul>
+<li>Week 08 discusses isolated environments because test reliability depends on <em>control</em>.</li>
+<li>A database is a common source of hidden coupling:</li>
+<li>leftover rows from previous runs</li>
+<li>schema drift</li>
+<li>tests that require manual setup</li>
+</ul>
+<section id="sqlite-in-memory-pattern" class="level3">
+<h3 class="anchored" data-anchor-id="sqlite-in-memory-pattern">SQLite in-memory pattern</h3>
+<ul>
+<li>SQLite can run entirely in memory by using <code>:memory:</code>.</li>
+<li>Benefit: every test run starts from a clean slate.</li>
+<li>Tradeoff: behaviour can differ from your production database (types, constraints, concurrency).</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> make_db():</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    conn <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="st">":memory:"</span>)</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    cur <span class="op">=</span> conn.cursor()</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    cur.execute(<span class="st">"CREATE TABLE items(id INTEGER PRIMARY KEY, name TEXT)"</span>)</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    conn.commit()</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> conn</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_insert_and_query():</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>    conn <span class="op">=</span> make_db()</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>    cur <span class="op">=</span> conn.cursor()</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>    cur.execute(<span class="st">"INSERT INTO items(name) VALUES (?)"</span>, (<span class="st">"apple"</span>,))</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>    conn.commit()</span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>    cur.execute(<span class="st">"SELECT name FROM items WHERE id=1"</span>)</span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> cur.fetchone()[<span class="dv">0</span>] <span class="op">==</span> <span class="st">"apple"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>If you’re using an ORM (SQLAlchemy), you can build a test session bound to an in-memory engine.</li>
+<li>Prompt tip: explicitly name the stack (SQLite + SQLAlchemy + pytest fixtures) so the model doesn’t invent libraries.</li>
+</ul>
+</section>
+</section>
+<section id="where-ai-tests-go-wrong" class="level2">
+<h2 class="anchored" data-anchor-id="where-ai-tests-go-wrong">Where AI-generated tests go wrong</h2>
+<ul>
+<li><p>Common failure patterns (and how to spot them):</p></li>
+<li><p><strong>Asserting implementation details</strong>: tests break when you refactor harmlessly.</p></li>
+<li><p><strong>Brittle data</strong>: hard-coded timestamps, random ids, order-dependent lists.</p></li>
+<li><p><strong>Mocking the wrong thing</strong>: you end up testing the mock, not the behaviour.</p></li>
+<li><p><strong>Testing the tool’s hallucination</strong>: the model invents functions/options that do not exist.</p></li>
+<li><p>Defensive habits:</p></li>
+<li><p>run tests immediately</p></li>
+<li><p>read assertions carefully</p></li>
+<li><p>check that fixtures actually model the real domain</p></li>
+</ul>
+</section>
+<section id="micro-quotes-week8" class="level2">
+<h2 class="anchored" data-anchor-id="micro-quotes-week8">Micro-quotes from Week 08</h2>
+<ul>
+<li>“Generative AI tools are changing this boring, repetitive process.”</li>
+<li>“They can automatically create detailed test suites, spot edge cases, and generate boilerplate code.”</li>
+<li>“This week shows how GitHub Copilot, Tabnine, and Blackbox AI can enhance your testing workflow.”</li>
+<li>“High-quality tests are vital for reliable software.”</li>
+<li>“They catch bugs early and ensure new features don’t break existing code.”</li>
+<li>“They also document how the code should behave.”</li>
+</ul>
+</section>
+<section id="summing-up-week8" class="level2">
+<h2 class="anchored" data-anchor-id="summing-up-week8">Summing Up</h2>
+<ul>
+<li>Week 08’s main message: AI can draft tests quickly, but <em>good tests require judgement</em>.</li>
+<li>Your workflow should be:</li>
+<li>specify behaviour → generate tests → run → review assertions → improve prompts → repeat.</li>
+<li>The fastest way to level up is to treat tests as communication: a clear story about what the code must do.</li>
 </ul>
 
 
@@ -1718,13 +1568,13 @@ print(total)</code></pre>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../notes/notes_7.html" class="pagination-link" aria-label="Notes 07 🐍">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Notes 07 🐍</span>
+      <a href="../notes/notes_7.html" class="pagination-link" aria-label="Notes 07 🤖">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Notes 07 🤖</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../notes/notes_9.html" class="pagination-link" aria-label="Notes 09 🐍">
-        <span class="nav-page-text">Notes 09 🐍</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../notes/notes_9.html" class="pagination-link" aria-label="Notes 09 🤖">
+        <span class="nav-page-text">Notes 09 🤖</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

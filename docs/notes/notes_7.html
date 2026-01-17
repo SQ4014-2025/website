@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -77,11 +112,11 @@ ul.task-list li input[type="checkbox"] {
 
 
 <meta property="og:title" content="Real World AI">
-<meta property="og:image" content="https://SQ4014-2025.github.io/website/notes/images/week_7/cs50pWeek7Slide8.png">
+<meta property="og:image" content="https://SQ4014-2025.github.io/website/notes/images/week_07/fig_01.png">
 <meta property="og:site_name" content="Real World AI">
-<meta property="og:image:alt" content="State Machine.">
-<meta property="og:image:height" content="800">
-<meta property="og:image:width" content="1600">
+<meta property="og:image:alt" content="Week 07 extracted figure 1">
+<meta property="og:image:height" content="93">
+<meta property="og:image:width" content="93">
 <meta name="twitter:title" content="Real World AI">
 <meta name="twitter:image" content="https://SQ4014-2025.github.io/website/notes/images/twitter-card.png">
 <meta name="twitter:creator" content="@EdHarris9000">
@@ -259,7 +294,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/notes_0.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/notes_7.html">Notes 07 🐍</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/notes_1.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/notes_7.html">Notes 07 🤖</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -339,61 +374,61 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_0.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 00 🐍</span></a>
+ <span class="menu-text">Lecture 00 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_1.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 01 🐍</span></a>
+ <span class="menu-text">Lecture 01 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_2.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 02 🐍</span></a>
+ <span class="menu-text">Lecture 02 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_3.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 03 🐍</span></a>
+ <span class="menu-text">Lecture 03 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_4.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 04 🐍</span></a>
+ <span class="menu-text">Lecture 04 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_5.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 05 🐍</span></a>
+ <span class="menu-text">Lecture 05 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_6.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 06 🐍</span></a>
+ <span class="menu-text">Lecture 06 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_7.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 07 🐍</span></a>
+ <span class="menu-text">Lecture 07 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_8.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 08 🐍</span></a>
+ <span class="menu-text">Lecture 08 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_9.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 09 🐍</span></a>
+ <span class="menu-text">Lecture 09 🤖</span></a>
   </div>
 </li>
       </ul>
@@ -409,62 +444,62 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notes/notes_0.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 00 🐍</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../notes/notes_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 01 🐍</span></a>
+ <span class="menu-text">Notes 01 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 02 🐍</span></a>
+ <span class="menu-text">Notes 02 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 03 🐍</span></a>
+ <span class="menu-text">Notes 03 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 04 🐍</span></a>
+ <span class="menu-text">Notes 04 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 05 🐍</span></a>
+ <span class="menu-text">Notes 05 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 06 🐍</span></a>
+ <span class="menu-text">Notes 06 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_7.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Notes 07 🐍</span></a>
+ <span class="menu-text">Notes 07 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 08 🐍</span></a>
+ <span class="menu-text">Notes 08 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 09 🐍</span></a>
+ <span class="menu-text">Notes 09 🤖</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/notes_10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes 10 🤖</span></a>
   </div>
 </li>
       </ul>
@@ -481,61 +516,61 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src0" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 00 🐍</span></a>
+ <span class="menu-text">Code 00 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src1" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 01 🐍</span></a>
+ <span class="menu-text">Code 01 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src2" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 02 🐍</span></a>
+ <span class="menu-text">Code 02 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src3" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 03 🐍</span></a>
+ <span class="menu-text">Code 03 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src4" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 04 🐍</span></a>
+ <span class="menu-text">Code 04 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src5" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 05 🐍</span></a>
+ <span class="menu-text">Code 05 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src6" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 06 🐍</span></a>
+ <span class="menu-text">Code 06 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src7" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 07 🐍</span></a>
+ <span class="menu-text">Code 07 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src8" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 08 🐍</span></a>
+ <span class="menu-text">Code 08 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src9" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 09 🐍</span></a>
+ <span class="menu-text">Code 09 🤖</span></a>
   </div>
 </li>
       </ul>
@@ -552,55 +587,55 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_0/pset_0.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 00 🐍</span></a>
+ <span class="menu-text">Problem Set 00 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_1/pset_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 01 🐍</span></a>
+ <span class="menu-text">Problem Set 01 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_2/pset_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 02 🐍</span></a>
+ <span class="menu-text">Problem Set 02 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_3/pset_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 03 🐍</span></a>
+ <span class="menu-text">Problem Set 03 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_4/pset_4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 04 🐍</span></a>
+ <span class="menu-text">Problem Set 04 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_5/pset_5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 05 🐍</span></a>
+ <span class="menu-text">Problem Set 05 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_6/pset_6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 06 🐍</span></a>
+ <span class="menu-text">Problem Set 06 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_7/pset_7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 07 🐍</span></a>
+ <span class="menu-text">Problem Set 07 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_8/pset_8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 08 🐍</span></a>
+ <span class="menu-text">Problem Set 08 🤖</span></a>
   </div>
 </li>
       </ul>
@@ -615,406 +650,212 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#week-7-notes" id="toc-week-7-notes" class="nav-link active" data-scroll-target="#week-7-notes">Week 7 Notes</a></li>
-  <li><a href="#lecture-7" id="toc-lecture-7" class="nav-link" data-scroll-target="#lecture-7">Lecture 7</a>
+  <li><a href="#week-07-building-user-interfaces-with-chatgpt" id="toc-week-07-building-user-interfaces-with-chatgpt" class="nav-link active" data-scroll-target="#week-07-building-user-interfaces-with-chatgpt">Week 07 — Building user interfaces with ChatGPT</a>
   <ul class="collapse">
-  <li><a href="#regular-expressions" id="toc-regular-expressions" class="nav-link" data-scroll-target="#regular-expressions">Regular Expressions</a></li>
-  <li><a href="#case-sensitivity" id="toc-case-sensitivity" class="nav-link" data-scroll-target="#case-sensitivity">Case Sensitivity</a></li>
-  <li><a href="#cleaning-up-user-input" id="toc-cleaning-up-user-input" class="nav-link" data-scroll-target="#cleaning-up-user-input">Cleaning Up User Input</a></li>
-  <li><a href="#extracting-user-input" id="toc-extracting-user-input" class="nav-link" data-scroll-target="#extracting-user-input">Extracting User Input</a></li>
-  <li><a href="#summing-up" id="toc-summing-up" class="nav-link" data-scroll-target="#summing-up">Summing Up</a></li>
+  <li><a href="#what-this-week-is-doing-big-picture" id="toc-what-this-week-is-doing-big-picture" class="nav-link" data-scroll-target="#what-this-week-is-doing-big-picture">What this week is doing (big picture)</a></li>
+  <li><a href="#key-terms-bolded-the-first-time" id="toc-key-terms-bolded-the-first-time" class="nav-link" data-scroll-target="#key-terms-bolded-the-first-time">Key terms (bolded the first time)</a></li>
+  <li><a href="#figures-extracted-from-the-pdf" id="toc-figures-extracted-from-the-pdf" class="nav-link" data-scroll-target="#figures-extracted-from-the-pdf">Figures extracted from the PDF</a></li>
+  <li><a href="#getting-our-strategy-from-our-ai-tools" id="toc-getting-our-strategy-from-our-ai-tools" class="nav-link" data-scroll-target="#getting-our-strategy-from-our-ai-tools">7.1 Getting our strategy from our AI tools</a>
+  <ul class="collapse">
+  <li><a href="#why-strategy-first-matters" id="toc-why-strategy-first-matters" class="nav-link" data-scroll-target="#why-strategy-first-matters">Why “strategy first” matters</a></li>
+  <li><a href="#this-weeks-prompt-pattern-prompt-scaffolding" id="toc-this-weeks-prompt-pattern-prompt-scaffolding" class="nav-link" data-scroll-target="#this-weeks-prompt-pattern-prompt-scaffolding">This week’s prompt pattern (prompt scaffolding)</a></li>
+  </ul></li>
+  <li><a href="#worked-example-prompting-for-a-ui-plan-quarto-runnable-code" id="toc-worked-example-prompting-for-a-ui-plan-quarto-runnable-code" class="nav-link" data-scroll-target="#worked-example-prompting-for-a-ui-plan-quarto-runnable-code">Worked example: prompting for a UI plan (Quarto runnable code)</a></li>
+  <li><a href="#from-flows-to-pages-what-screens-does-the-user-need" id="toc-from-flows-to-pages-what-screens-does-the-user-need" class="nav-link" data-scroll-target="#from-flows-to-pages-what-screens-does-the-user-need">7.2 From flows to pages: what screens does the user need?</a></li>
+  <li><a href="#translating-requirements-into-template-structure" id="toc-translating-requirements-into-template-structure" class="nav-link" data-scroll-target="#translating-requirements-into-template-structure">7.3 Translating requirements into template structure</a></li>
+  <li><a href="#wireframes-how-to-ask-the-ai-for-layout-help" id="toc-wireframes-how-to-ask-the-ai-for-layout-help" class="nav-link" data-scroll-target="#wireframes-how-to-ask-the-ai-for-layout-help">7.4 Wireframes: how to ask the AI for layout help</a></li>
+  <li><a href="#responsive-design-basics-what-this-week-wants-you-to-learn" id="toc-responsive-design-basics-what-this-week-wants-you-to-learn" class="nav-link" data-scroll-target="#responsive-design-basics-what-this-week-wants-you-to-learn">7.5 Responsive design basics (what this week wants you to learn)</a></li>
+  <li><a href="#jinja2-integration-ui-that-actually-connects-to-backend-data" id="toc-jinja2-integration-ui-that-actually-connects-to-backend-data" class="nav-link" data-scroll-target="#jinja2-integration-ui-that-actually-connects-to-backend-data">7.6 Jinja2 integration: UI that actually connects to backend data</a></li>
+  <li><a href="#building-components-avoiding-copypaste-templates" id="toc-building-components-avoiding-copypaste-templates" class="nav-link" data-scroll-target="#building-components-avoiding-copypaste-templates">7.7 Building components: avoiding copy/paste templates</a></li>
+  <li><a href="#testing-ui-logic-lightweight-sanity-checks" id="toc-testing-ui-logic-lightweight-sanity-checks" class="nav-link" data-scroll-target="#testing-ui-logic-lightweight-sanity-checks">7.8 Testing UI logic (lightweight sanity checks)</a></li>
+  <li><a href="#code-example-simple-jinja2-loop-for-quiz-list" id="toc-code-example-simple-jinja2-loop-for-quiz-list" class="nav-link" data-scroll-target="#code-example-simple-jinja2-loop-for-quiz-list">Code example: simple Jinja2 loop for quiz list</a></li>
+  <li><a href="#code-example-minimal-responsive-css-skeleton" id="toc-code-example-minimal-responsive-css-skeleton" class="nav-link" data-scroll-target="#code-example-minimal-responsive-css-skeleton">Code example: minimal responsive CSS skeleton</a></li>
+  <li><a href="#summing-up" id="toc-summing-up" class="nav-link" data-scroll-target="#summing-up">Summing up</a></li>
+  <li><a href="#quick-checklist-week-skills" id="toc-quick-checklist-week-skills" class="nav-link" data-scroll-target="#quick-checklist-week-skills">Quick checklist (week skills)</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/SQ4014-2025/website/edit/master/notes/notes_7.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/SQ4014-2025/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/notes_0.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/notes_7.html">Notes 07 🐍</a></li></ol></nav></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/notes_1.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/notes_7.html">Notes 07 🤖</a></li></ol></nav></header>
 
 
 
 
 
-<section id="week-7-notes" class="level1">
-<h1>Week 7 Notes</h1>
-<hr>
-</section>
-<section id="lecture-7" class="level1">
-<h1>Lecture 7</h1>
+<section id="week-07-building-user-interfaces-with-chatgpt" class="level1">
+<h1>Week 07 — Building user interfaces with ChatGPT</h1>
+<blockquote class="blockquote">
+<p><strong>Micro-quotes:</strong> “Even seasoned developers can find UI design tough, and generative AI tools help tremendously.” “AI tools provide a big boost for developers who aren’t great at UI.” “First, we need to build a great prompt for this.” “7.1 Getting our strategy from our AI tools Before we approach these tools, we should think carefully about our prompt.” “If we say “generate a frontend for my application” without enough information, the guidance will be too vague.” “There is a time and a place for brief prompts.”</p>
+</blockquote>
+<section id="what-this-week-is-doing-big-picture" class="level2">
+<h2 class="anchored" data-anchor-id="what-this-week-is-doing-big-picture">What this week is doing (big picture)</h2>
+<p>This week switches focus from <strong>backend logic</strong> to the part users actually <em>touch</em>: the <strong>user interface (UI)</strong>. The aim is to use chat-based generative AI (especially ChatGPT) as a <em>pair designer + pair developer</em> to:</p>
 <ul>
-<li><a href="#regular-expressions">Regular Expressions</a></li>
-<li><a href="#case-sensitivity">Case Sensitivity</a></li>
-<li><a href="#cleaning-up-user-input">Cleaning Up User Input</a></li>
-<li><a href="#extracting-user-input">Extracting User Input</a></li>
-<li><a href="#summing-up">Summing Up</a></li>
+<li>propose a UI strategy (pages around 179–181)</li>
+<li>write structured prompts that produce targeted UI guidance and code</li>
+<li>convert wireframes and flows into Flask templates + components</li>
+<li>add responsive HTML/CSS elements without being a frontend expert</li>
 </ul>
-<section id="regular-expressions" class="level2">
-<h2 class="anchored" data-anchor-id="regular-expressions">Regular Expressions</h2>
+<p>This week is very <em>workflow heavy</em>: it is less “what is a transformer?” and more “how do we get from backend routes to a usable application screen?”</p>
+</section>
+<section id="key-terms-bolded-the-first-time" class="level2">
+<h2 class="anchored" data-anchor-id="key-terms-bolded-the-first-time">Key terms (bolded the first time)</h2>
+<p>We will use these week-specific ideas repeatedly:</p>
 <ul>
-<li><p>Regular expressions or “regexes” will enable us to examine patterns within our code. For example, we might want to validate that an email address is formatted correctly. Regular expressions will enable us to examine expressions in this fashion.</p></li>
-<li><p>To begin, type <code>code validate.py</code> in the terminal window. Then, code as follows in the text editor:</p>
-<pre><code>email = input("What's your email? ").strip()
-
-if "@" in email:
-    print("Valid")
-else:
-    print("Invalid")</code></pre>
-<p>Notice that <code>strip</code> will remove whitespace at the beginning or end of the input. Running this program, you will see that as long as an <code>@</code> symbol is inputted, the program will regard the input as valid.</p></li>
-<li><p>You can imagine, however, that one could input <code>@@</code> alone and the input could be regarded as valid. We could regard an email address as having at least one <code>@</code> and a <code>.</code> somewhere within it. Modify your code as follows:</p>
-<pre><code>email = input("What's your email? ").strip()
-
-if "@" in email and "." in email:
-    print("Valid")
-else:
-    print("Invalid")</code></pre>
-<p>Notice that while this works as expected, our user could be adversarial, typing simply <code>@.</code> would result in the program returning <code>valid</code>.</p></li>
-<li><p>We can improve the logic of our program as follows:</p>
-<pre><code>email = input("What's your email? ").strip()
-
-username, domain = email.split("@")
-
-if username and "." in domain:
-    print("Valid")
-else:
-    print("Invalid")</code></pre>
-<p>Notice how the <code>strip</code> method is used to determine if <code>username</code> exists and if <code>.</code> is inside the <code>domain</code> variable. Running this program, a standard email address typed in by you could be considered <code>valid</code>. Typing in <code>malan@harvard</code> alone, you’ll find that the program regards this input as <code>invalid</code>.</p></li>
-<li><p>We can be even more precise, modifying our code as follows:</p>
-<pre><code>email = input("What's your email? ").strip()
-
-username, domain = email.split("@")
-
-if username and domain.endswith(".edu"):
-    print("Valid")
-else:
-    print("Invalid")</code></pre>
-<p>Notice how the <code>endswith</code> method will check to see if <code>domain</code> contains <code>.edu</code>. Still, however, a nefarious user could still break our code. For example, a user could type in <code>malan@.edu</code> and it would be considered valid.</p></li>
-<li><p>Indeed, we could keep iterating upon this code ourselves. However, it turns out that Python has an existing library called <code>re</code> that has a number of built-in functions that can validate user inputs against patterns.</p></li>
-<li><p>One of the most versatile functions within the library <code>re</code> is <code>search</code>.</p></li>
-<li><p>The <code>search</code> function follows the signature <code>re.search(pattern, string, flags=0)</code>. Following this signature, we can modify our code as follows:</p>
-<pre><code>import re
-
-email = input("What's your email? ").strip()
-
-if re.search("@", email):
-    print("Valid")
-else:
-    print("Invalid")</code></pre>
-<p>Notice this does not increase the functionality of our program at all. In fact, it is somewhat a step back.</p></li>
-<li><p>We can further our program’s functionality. However, we need to advance our vocabulary around <code>validation</code>. It turns out that in the world of regular expressions there are certain symbols that allow us to identify patterns. At this point, we have only been checking for specific pieces of text like <code>@</code>. It so happens that many special symbols can be passed to the interpreter for the purpose of engaging in validation. A non-exhaustive list of those patterns is as follows:</p>
-<pre><code>.   any character except a new line
-*   0 or more repetitions
-+   1 or more repetitions
-?   0 or 1 repetition
-{m} m repetitions
-{m,n} m-n repetitions</code></pre></li>
-<li><p>Implementing this inside of our code, modify yours as follows:</p>
-<pre><code>import re
-
-email = input("What's your email? ").strip()
-
-if re.search(".+@.+", email):
-    print("Valid")
-else:
-    print("Invalid")</code></pre>
-<p>Notice that we don’t care what the username or domain is. What we care about is the pattern. <code>.+</code> is used to determine if anything is to the left of the email address and if anything is to the right of the email address. Running your code, typing in <code>malan@</code>, you’ll notice that the input is regarded as <code>invalid</code> as we would hope.</p></li>
-<li><p>Had we used a regular expression <code>.*@.*</code> in our code above, you can visualize this as follows: <img src="images/week_7/cs50pWeek7Slide8.png" title="cs50pWeek7Slide8.png" class="img-fluid" alt="State Machine."></p>
-<p>Notice the depiction of the <code>state machine</code> of our regular expression. On the left, the interpreter begins evaluating the statement from left to right. Once we reach <code>q1</code> or question 1, the interpreter reads time and time again based on the expression handed to it. Then, the state is changed looking now at <code>q2</code> or the second question being validated. Again, the arrow indicates how the expression will be evaluated time and time again based upon our programming. Then, as depicted by the double circle, the final state of state machine is reached.</p></li>
-<li><p>Considering the regular expression we used in our code, <code>.+@.+</code>, you can visualize it as follows: <img src="images/week_7/cs50pWeek7Slide10.png" title="cs50pWeek7Slide10.png" class="img-fluid" alt="State Machine."></p>
-<p>Notice how <code>q1</code> is any character provided by the user, including ‘q2’ as 1 or more repetitions of characters. This is followed by the ‘@’ symbol. Then, <code>q3</code> looks for any character provided by the user, including <code>q4</code> as 1 or more repetitions of characters.</p></li>
-<li><p>The <code>re</code> and <code>re.search</code> functions and ones like them look for patterns.</p></li>
-<li><p>Continuing our improvement of this code, we could improve our code as follows:</p>
-<pre><code>import re
-
-email = input("What's your email? ").strip()
-
-if re.search(".+@.+.edu", email):
-    print("Valid")
-else:
-    print("Invalid")</code></pre>
-<p>Notice, however, that one could type in <code>malan@harvard?edu</code> and it could be considered valid. Why is this the case? You might recognize that in the language of validation, a <code>.</code> means any character!</p></li>
-<li><p>We can modify our code as follows:</p>
-<pre><code>import re
-
-email = input("What's your email? ").strip()
-
-if re.search(r".+@.+\.edu", email):
-    print("Valid")
-else:
-    print("Invalid")</code></pre>
-<p>Notice how we utilize the “escape character” or <code>\</code> as a way of regarding the <code>.</code> as part of our string instead of our validation expression. Testing your code, you will notice that <code>malan@harvard.edu</code> is regarded as valid, where <code>malan@harvard?edu</code> is invalid.</p></li>
-<li><p>Now that we’re using escape characters, it’s a good time to introduce “raw strings”. In Python, raw strings are strings that <em>don’t</em> format special characters—instead, each character is taken at face-value. Imagine <code>\n</code>, for example. We’ve seen in an earlier lecture how, in a regular string, these two characters become one: a special newline character. In a raw string, however, <code>\n</code> is treated not as <code>\n</code>, the special character, but as a single <code>\</code> and a single <code>n</code>. Placing an <code>r</code> in front of a string tells the Python interpreter to treat the string as a raw string, similar to how placing an <code>f</code> in front of a string tells the Python interpreter to treat the string as a format string:</p>
-<pre><code>import re
-
-email = input("What's your email? ").strip()
-
-if re.search(r"^.+@.+\.edu$", email):
-    print("Valid")
-else:
-    print("Invalid")</code></pre>
-<p>Now we’ve ensured the Python interpreter won’t treat <code>\.</code> as a special character. Instead, simply as a <code>\</code> followed by a <code>.</code>—which, in regular expression terms, means matching a literal “.”.</p></li>
-<li><p>You can imagine still how our users could create problems for us! For example, you could type in a sentence such as <code>My email address is malan@harvard.edu.</code> and this whole sentence would be considered valid. We can be even more precise in our coding.</p></li>
-<li><p>It just so happens we have more special symbols at our disposal in validation:</p>
-<pre><code>^   matches the start of the string
-$   matches the end of the string or just before the newline at the end of the string</code></pre></li>
-<li><p>We can modify our code using our added vocabulary as follows:</p>
-<pre><code>import re
-
-email = input("What's your email? ").strip()
-
-if re.search(r"^.+@.+\.edu$", email):
-    print("Valid")
-else:
-    print("Invalid")</code></pre>
-<p>Notice this has the effect of looking for this exact pattern matching to the start and end of the expression being validated. Typing in a sentence such as <code>My email address is malan@harvard.edu.</code> now is regarded as invalid.</p></li>
-<li><p>We propose we can do even better! Even though we are now looking for the username at the start of the string, the <code>@</code> symbol, and the domain name at the end, we could type in as many <code>@</code> symbols as we wish! <code>malan@@@harvard.edu</code> is considered valid!</p></li>
-<li><p>We can add to our vocabulary as follows:</p>
-<pre><code>[]    set of characters
-[^]   complementing the set</code></pre></li>
-<li><p>Using these newfound abilities, we can modify our expression as follows:</p>
-<pre><code>import re
-
-email = input("What's your email? ").strip()
-
-if re.search(r"^[^@]+@[^@]+\.edu$", email):
-    print("Valid")
-else:
-    print("Invalid")</code></pre>
-<p>Notice that <code>^</code> means to match at the start of the string. All the way at the end of our expression, <code>$</code> means to match at the end of the string. <code>[^@]+</code> means any character except an <code>@</code>. Then, we have a literal <code>@</code>. <code>[^@]+\.edu</code> means any character except an <code>@</code> followed by an expression ending in <code>.edu</code>. Typing in <code>malan@@@harvard.edu</code> is now regarded as invalid.</p></li>
-<li><p>We can still improve this regular expression further. It turns out there are certain requirements for what an email address can be! Currently, our validation expression is far too accommodating. We might only want to allow for characters normally used in a sentence. We can modify our code as follows:</p>
-<pre><code>import re
-
-email = input("What's your email? ").strip()
-
-if re.search(r"^[a-zA-Z0-9_]+@[a-zA-Z0-9_]+\.edu$", email):
-    print("Valid")
-else:
-    print("Invalid")</code></pre>
-<p>Notice that <code>[a-zA-Z0-9_]</code> tells the validation that characters must be between <code>a</code> and <code>z</code>, between <code>A</code> and <code>Z</code>, between <code>0</code> and <code>9</code> and potentially include an <code>_</code> symbol. Testing the input, you’ll find that many potential user mistakes can be indicated.</p></li>
-<li><p>Thankfully, common patterns have been built into regular expressions by hard-working programmers. In this case, you can modify your code as follows:</p>
-<pre><code>import re
-
-email = input("What's your email? ").strip()
-
-if re.search(r"^\w+@\w+\.edu$", email):
-    print("Valid")
-else:
-    print("Invalid")</code></pre>
-<p>Notice that <code>\w</code> is the same as <code>[a-zA-Z0-9_]</code>. Thanks, hard-working programmers!</p></li>
-<li><p>Here are some additional patterns we can add to our vocabulary:</p>
-<pre><code>\d    decimal digit
-\D    not a decimal digit
-\s    whitespace characters
-\S    not a whitespace character
-\w    word character, as well as numbers and the underscore
-\W    not a word character</code></pre></li>
-<li><p>Now, we know that there are not simply <code>.edu</code> email addresses. We could modify our code as follows:</p>
-<pre><code>import re
-
-email = input("What's your email? ").strip()
-
-if re.search(r"^\w+@\w.+\.(com|edu|gov|net|org)$", email):
-    print("Valid")
-else:
-    print("Invalid")</code></pre>
-<p>Notice that the <code>|</code> has the impact of an <code>or</code> in our expression.</p></li>
-<li><p>Adding even more symbols to our vocabulary, here are some more to consider:</p>
-<pre><code>A|B     either A or B
-(...)   a group
-(?:...) non-capturing version</code></pre></li>
+<li><strong>Wireframe</strong> — a sketch (boxes + labels) of what the UI should contain and roughly how it should be laid out.</li>
+<li><strong>Flask templates</strong> — HTML files rendered by Flask (often using Jinja2), letting you combine content + layout + Python variables.</li>
+<li><strong>Jinja2</strong> — the templating language Flask uses to inject variables/loops/conditionals into HTML.</li>
+<li><strong>Responsive design</strong> — designing pages so they work on different screen sizes (mobile, tablet, desktop).</li>
+<li><strong>Prompt scaffolding</strong> — structuring a prompt into sections (objective, constraints, inputs, outputs) so the AI returns usable results.</li>
 </ul>
 </section>
-<section id="case-sensitivity" class="level2">
-<h2 class="anchored" data-anchor-id="case-sensitivity">Case Sensitivity</h2>
+<section id="figures-extracted-from-the-pdf" class="level2">
+<h2 class="anchored" data-anchor-id="figures-extracted-from-the-pdf">Figures extracted from the PDF</h2>
+<p>These are images embedded in the PDF pages for Week 07. Not all are equally useful (some are icons/background elements), but they are extracted and downloadable.</p>
+<p><img src="images/week_07/fig_01.png" class="img-fluid" alt="Week 07 extracted figure 1"></p>
+<p><img src="images/week_07/fig_02.png" class="img-fluid" alt="Week 07 extracted figure 2"></p>
+<p><img src="images/week_07/fig_03.png" class="img-fluid" alt="Week 07 extracted figure 3"></p>
+<p><img src="images/week_07/fig_04.png" class="img-fluid" alt="Week 07 extracted figure 4"></p>
+<p><img src="images/week_07/fig_05.png" class="img-fluid" alt="Week 07 extracted figure 5"></p>
+<p><img src="images/week_07/fig_06.png" class="img-fluid" alt="Week 07 extracted figure 6"></p>
+</section>
+<section id="getting-our-strategy-from-our-ai-tools" class="level2">
+<h2 class="anchored" data-anchor-id="getting-our-strategy-from-our-ai-tools">7.1 Getting our strategy from our AI tools</h2>
+<p>A key idea early in this week: do <strong>strategy first</strong>, then <strong>code second</strong>. The point is that you can waste a lot of time prompting for code before you have agreed what the UI is supposed to <em>do</em> and <em>feel like</em>.</p>
+<section id="why-strategy-first-matters" class="level3">
+<h3 class="anchored" data-anchor-id="why-strategy-first-matters">Why “strategy first” matters</h3>
 <ul>
-<li><p>To illustrate how you might address issues around case sensitivity, where there is a difference between <code>EDU</code> and <code>edu</code> and the like, let’s rewind our code to the following:</p>
-<pre><code>import re
-
-email = input("What's your email? ").strip()
-
-if re.search(r"^\w+@\w+\.edu$", email):
-    print("Valid")
-else:
-    print("Invalid")</code></pre>
-<p>Notice how we have removed the <code>|</code> statements provided previously.</p></li>
-<li><p>Recall that within the <code>re.search</code> function, there is a parameter for <code>flags</code>.</p></li>
-<li><p>Some built-in flag variables are:</p>
-<pre><code>re.IGNORECASE
-re.MULTILINE
-re.DOTALL</code></pre>
-<p>Consider how you might use these in your code.</p></li>
-<li><p>Therefore, we can change our code as follows.</p>
-<pre><code>import re
-
-email = input("What's your email? ").strip()
-
-if re.search(r"^\w+@\w+\.edu$", email, re.IGNORECASE):
-    print("Valid")
-else:
-    print("Invalid")</code></pre>
-<p>Notice how we added a third parameter <code>re.IGNORECASE</code>. Running this program with <code>MALAN@HARVARD.EDU</code>, the input is now considered valid.</p></li>
-<li><p>Consider the following email address <code>importantProfessor@harper-adams.edu</code>. Using our code above, this would be considered invalid. Why might that be?</p></li>
-<li><p>Since there is an additional <code>.</code>, the program considers this invalid.</p></li>
-<li><p>It turns out that we can, looking at our vocabulary from before, we can group together ideas.</p>
-<pre><code>A|B     either A or B
-(...)   a group
-(?:...) non-capturing version</code></pre></li>
-<li><p>We can modify our code as follows:</p>
-<pre><code>import re
-
-email = input("What's your email? ").strip()
-
-if re.search(r"^\w+@(\w+\.)?\w+\.edu$", email, re.IGNORECASE):
-    print("Valid")
-else:
-    print("Invalid")</code></pre>
-<p>Notice how the <code>(\w+\.)?</code> communicates to the interpreter that this new expression can be there once or not at all. Hence, both <code>importantProfessor@harper-adams.edu</code> and <code>importantProfessor@agridat.harper-adams.edu</code> are considered valid.</p></li>
-<li><p>Interestingly enough, the edits we have done so far to our code do not fully encompass all the checking that could be done to ensure a valid email address. Indeed, here is the full expression that one would have to type to ensure that a valid email is inputted:</p>
-<pre><code>^[a-zA-Z0-9.!#$%&amp;'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$</code></pre></li>
-<li><p>There are other functions within the <code>re</code> library you might find useful. <code>re.match</code> and <code>re.fullmatch</code> are ones you might find exceedingly useful.</p></li>
-<li><p>You can learn more in Python’s documentation of <a href="https://docs.python.org/3/library/re.html">re</a>.</p></li>
+<li>If you ask for “a frontend” without specifics, the AI returns generic boilerplate.</li>
+<li>Strategy prompts help you decide: pages, navigation, user flow, components, and naming.</li>
+<li>You get a UI that matches your backend data model instead of fighting it later.</li>
 </ul>
 </section>
-<section id="cleaning-up-user-input" class="level2">
-<h2 class="anchored" data-anchor-id="cleaning-up-user-input">Cleaning Up User Input</h2>
+<section id="this-weeks-prompt-pattern-prompt-scaffolding" class="level3">
+<h3 class="anchored" data-anchor-id="this-weeks-prompt-pattern-prompt-scaffolding">This week’s prompt pattern (prompt scaffolding)</h3>
+<p>This week demonstrates writing a prompt with explicit blocks:</p>
 <ul>
-<li><p>You should never expect your users to always follow your hopes for clean input. Indeed, users will often violate your intentions as a programmer.</p></li>
-<li><p>There are ways to clean up your data.</p></li>
-<li><p>In the terminal window, type <code>code format.py</code>. Then, in the text-editor, code as follows:</p>
-<pre><code>name = input("What's your name? ").strip()
-print(f"hello, {name}")</code></pre>
-<p>Notice that we have created, essentially, a “hello world” program. Running this program and typing in <code>David</code>, it works well! However, typing in <code>Malan, David</code> notice how the program does not function as intended. How could we modify our program to clean up this input?</p></li>
-<li><p>Modify your code as follows.</p>
-<pre><code>name = input("What's your name? ").strip()
-if "," in name:
-    last, first = name.split(", ")
-    name = f"{first} {last}"
-print(f"hello, {name}")</code></pre>
-<p>Notice how <code>last, first = name.split(", ")</code> is run if there is a <code>,</code> in the name. Then, the name is standardized as first and last. Running our code, typing in <code>Malan, David</code>, you can see how this program does clean up at least one scenario where a user types in something unexpected.</p></li>
-<li><p>You might notice that typing in <code>Malan,David</code> with no space causes the interpreter to throw an error. Since we now know some regular expression syntax, let’s apply that to our code:</p>
-<pre><code>import re
-
-name = input("What's your name? ").strip()
-matches = re.search(r"^(.+), (.+)$", name)
-if matches:
-    last, first = matches.groups()
-    name = first + " " + last
-print(f"hello, {name}")</code></pre>
-<p>Notice that <code>re.search</code> can return a set of matches that are extracted from the user’s input. If matches are returned by <code>re.search</code>. Running this program, typing in <code>David Malan</code> notice how the <code>if</code> condition is not run and the name is returned. If you run the program by typing <code>Malan, David</code>, the name is also returned properly.</p></li>
-<li><p>It just so happens that we can request specific groups back using <code>matches.group</code>. We can modify our code as follows:</p>
-<pre><code>import re
-
-name = input("What's your name? ").strip()
-matches = re.search(r"^(.+), (.+)$", name)
-if matches:
-    name = matches.group(2) + " " + matches.group(1)
-print(f"hello, {name}")</code></pre>
-<p>Notice how, in this implementation, <code>group</code> is not plural (there is no <code>s</code>).</p></li>
-<li><p>Our code can be further tightened as follows:</p>
-<pre><code>import re
-
-name = input("What's your name? ").strip()
-matches = re.search(r"^(.+), (.+)$", name)
-if matches:
-    name = matches.group(2) + " " + matches.group(1)
-print(f"hello, {name}")</code></pre>
-<p>Notice how <code>group(2)</code> and <code>group(1)</code> are concatenated together with a space. The first group is that which is left of the comma. The second group is that which is right of the comma.</p></li>
-<li><p>Recognize still that typing in <code>Malan,David</code> with no space will still break our code. Therefore, we can make the following modification:</p>
-<pre><code>import re
-
-name = input("What's your name? ").strip()
-matches = re.search(r"^(.+), *(.+)$", name)
-if matches:
-    name = matches.group(2) + " " + matches.group(1)
-print(f"hello, {name}")</code></pre>
-<p>Notice the addition of the <code>*</code> in our validation statement. This code will now accept and properly process <code>Malan,David</code>. Further, it will properly handle <code>David,Malan</code>with many spaces in front of<code>David</code>.</p></li>
-<li><p>It is very common to utilize <code>re.search</code> as we have in the previous examples, where <code>matches</code> is on a line of code after. However, we can combine these statements:</p>
-<pre><code>import re
-
-name = input("What's your name? ").strip()
-if matches := re.search(r"^(.+), *(.+)$", name):
-    name = matches.group(2) + " " + matches.group(1)
-print(f"hello, {name}")</code></pre>
-<p>Notice how we combine two lines of our code. The walrus <code>:=</code> operator assigns a value from right to left and allows us to ask a boolean question at the same time. Turn your head sideways and you’ll see why this is called a walrus operator.</p></li>
-<li><p>You can learn more in Python’s documentation of <a href="https://docs.python.org/3/library/re.html">re</a>.</p></li>
+<li><strong>Role</strong> (who the AI should act as)</li>
+<li><strong>Objective</strong> (what the UI needs to achieve)</li>
+<li><strong>Context</strong> (what already exists: backend routes, DB, etc.)</li>
+<li><strong>Constraints</strong> (Flask templates, mobile-friendly, accessible)</li>
+<li><strong>Deliverables</strong> (pages list, wireframe descriptions, template structure, CSS suggestions)</li>
 </ul>
+<blockquote class="blockquote">
+<p>“If we say”generate a frontend for my application” without enough information, the guidance will be too vague.”</p>
+</blockquote>
 </section>
-<section id="extracting-user-input" class="level2">
-<h2 class="anchored" data-anchor-id="extracting-user-input">Extracting User Input</h2>
-<ul>
-<li><p>So far, we have validated the user’s input and cleaned up the user’s input.</p></li>
-<li><p>Now, let’s extract some specific information from user input. In the terminal window, type <code>code twitter.py</code> and code as follows in the text editor window:</p>
-<pre><code>url = input("URL: ").strip()
-print(url)</code></pre>
-<p>Notice that if we type in <code>https://twitter.com/davidjmalan</code>, it shows exactly what the user typed. However, how would we be able to extract just the username and ignore the rest of the URL?</p></li>
-<li><p>You can imagine how we would simply be able to get rid of the beginning of the standard Twitter URL. We can attempt this as follows:</p>
-<pre><code>url = input("URL: ").strip()
-
-username = url.replace("https://twitter.com/", "")
-print(f"Username: {username}")</code></pre>
-<p>Notice how the <code>replace</code> method allows us to find one item and replace it with another. In this case, we are finding part of the URL and replacing it with nothing. Typing in the full URL <code>https://twitter.com/davidjmalan</code>, the program effectively outputs the username. However, what are some shortcomings of this current program?</p></li>
-<li><p>What if the user simply typed <code>twitter.com</code> instead of including the <code>https://</code> and the like? You can imagine many scenarios where the user may input or neglect to input parts of the URL that would create strange output by this program. To improve this program, we can code as follows:</p>
-<pre><code>url = input("URL: ").strip()
-
-username = url.removeprefix("https://twitter.com/")
-print(f"Username: {username}")</code></pre>
-<p>Notice how we utilize the <code>removeprefix</code> method. This method will remove the beginning of a string.</p></li>
-<li><p>Regular expressions simply allow us to succinctly express the patterns and goals.</p></li>
-<li><p>Within the <code>re</code> library, there is a method called <code>sub</code>. This method allows us to substitute a pattern with something else.</p></li>
-<li><p>The signature of the <code>sub</code> method is as follows</p>
-<pre><code>re.sub(pattern, repl, string, count=0, flags=0)</code></pre>
-<p>Notice how <code>pattern</code> refers to the regular expression we are looking for. Then, there is a <code>repl</code> string that we can replace the pattern with. Finally, there is the <code>string</code> that we want to do the substitution on.</p></li>
-<li><p>Implementing this method in our code, we can modify our program as follows:</p>
-<pre><code>import re
-
-url = input("URL: ").strip()
-
-username = re.sub(r"https://twitter.com/", "", url)
-print(f"Username: {username}")</code></pre>
-<p>Notice how executing this program and inputting <code>https://twitter.com/davidjmalan</code> produces the correct outcome. However, there are some problems still present in our code.</p></li>
-<li><p>The protocol, subdomain, and the possibility that the user inputted any part of the URL after the username are all reasons that this code is still not ideal. We can further address these shortcomings as follows:</p>
-<pre><code>import re
-
-url = input("URL: ").strip()
-
-username = re.sub(r"^(https?://)?(www\.)?twitter\.com/", "", url)
-print(f"Username: {username}")</code></pre>
-<p>Notice how the <code>^</code> caret was added to the url. Notice also how the <code>.</code> could be interpreted improperly by the interpreter. Therefore, we escape it using a <code>\</code> to make it <code>\.</code> For the purpose of tolerating both <code>http</code> and <code>https</code>, we add a <code>?</code> to the end of <code>https?</code>, making the <code>s</code> optional. Further, to accommodate <code>www</code> we add <code>(www\.)?</code> to our code. Finally, just in case the user decides to leave out the protocol altogether, the <code>http://</code> or <code>https://</code> is made optional using <code>(https?://)</code>.</p></li>
-<li><p>Still, we are blindly expecting that what the user inputted a url that, indeed, has a username.</p></li>
-<li><p>Using our knowledge of <code>re.search</code>, we can further improve our code.</p>
-<pre><code>import re
-
-url = input("URL: ").strip()
-
-matches = re.search(r"^https?://(www\.)?twitter\.com/(.+)$", url, re.IGNORECASE)
-if matches:
-    print(f"Username:", matches.group(2))</code></pre>
-<p>Notice how we are searching for the regular expression above in the string provided by the user. In particular, we are capturing that which appears at the end of the URL using <code>(.+)$</code> regular expression. Therefore, if the user fails to input a URL without a username, no input will be presented.</p></li>
-<li><p>Even further tightening up our program, we can utilize our <code>:=</code> operator as follows:</p>
-<pre><code>import re
-
-url = input("URL: ").strip()
-
-if matches := re.search(r"^https?://(?:www\.)?twitter\.com/(.+)$", url, re.IGNORECASE):
-    print(f"Username:", matches.group(1))</code></pre>
-<p>Notice that the <code>?:</code> tells the interpreter it does not have to capture what is in that spot in our regular expression.</p></li>
-<li><p>Still, we can be more explicit to ensure that the username inputted is correct. Using Twitter’s documentation, we can add the following to our regular expression:</p>
-<pre><code>import re
-
-url = input("URL: ").strip()
-
-if matches := re.search(r"^https?://(?:www\.)?twitter\.com/([a-z0-9_]+)", url, re.IGNORECASE):
-    print(f"Username:", matches.group(1))</code></pre>
-<p>Notice that the <code>[a-z0-9_]+</code> tells the interpreter to only expect <code>a-z</code>, <code>0-9</code>, and <code>_</code> as part of the regular expression. The <code>+</code> indicates that we are expecting one or more characters.</p></li>
-<li><p>You can learn more in Python’s documentation of <a href="https://docs.python.org/3/library/re.html">re</a>.</p></li>
-</ul>
+</section>
+<section id="worked-example-prompting-for-a-ui-plan-quarto-runnable-code" class="level2">
+<h2 class="anchored" data-anchor-id="worked-example-prompting-for-a-ui-plan-quarto-runnable-code">Worked example: prompting for a UI plan (Quarto runnable code)</h2>
+<p>Below is a “prompt builder” approach: you store prompt sections as strings and assemble them. This makes prompts easier to iterate and reuse.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ui-prompt-scaffold</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>role <span class="op">=</span> <span class="st">"Act as a professional Python developer specialising in Flask and UX."</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>objective <span class="op">=</span> <span class="st">"Design a front end for a database-driven Flask quiz application."</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>context <span class="op">=</span> <span class="st">"Backend exists with routes for login, quizzes, and results."</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>constraints <span class="op">=</span> <span class="st">"Use Flask templates (Jinja2). Keep it responsive and accessible."</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>deliverables <span class="op">=</span> <span class="st">"Return: (1) page list, (2) nav structure, (3) template folder structure, (4) CSS starter."</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>prompt <span class="op">=</span> <span class="st">"</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="er">".join([role, objective, context, constraints, deliverables])</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="er">print</span>(prompt)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="from-flows-to-pages-what-screens-does-the-user-need" class="level2">
+<h2 class="anchored" data-anchor-id="from-flows-to-pages-what-screens-does-the-user-need">7.2 From flows to pages: what screens does the user need?</h2>
+<p>This week frames UI work as a <strong>user journey</strong>: what does the user do first, next, and last?</p>
+<p>A practical approach is to list screens as verbs: <em>Log in</em>, <em>Choose a quiz</em>, <em>Answer questions</em>, <em>See results</em>.</p>
+<p>Once screens exist, you map navigation: where can the user go from each screen?</p>
+<p>This is where AI is helpful: it can suggest missing pages (e.g., error states, empty-state screens).</p>
+</section>
+<section id="translating-requirements-into-template-structure" class="level2">
+<h2 class="anchored" data-anchor-id="translating-requirements-into-template-structure">7.3 Translating requirements into template structure</h2>
+<p>This week emphasises organising your project so templates don’t become a mess.</p>
+<p>In Flask, a common pattern is a <code>templates/</code> folder and a <code>static/</code> folder.</p>
+<p>Templates contain HTML/Jinja; static contains CSS, JavaScript, and images.</p>
+<p>AI can draft a sensible baseline structure, but <em>you</em> must keep it consistent.</p>
+<p>If your templates are inconsistent (different nav bars per page), your UI will feel broken.</p>
+</section>
+<section id="wireframes-how-to-ask-the-ai-for-layout-help" class="level2">
+<h2 class="anchored" data-anchor-id="wireframes-how-to-ask-the-ai-for-layout-help">7.4 Wireframes: how to ask the AI for layout help</h2>
+<p>A <strong>wireframe</strong> is not pretty — it is a constraint tool.</p>
+<p>You describe boxes: header, sidebar, main content, footer.</p>
+<p>This week shows using AI to turn a description into HTML skeleton.</p>
+<p>When prompting: specify grid/layout system (Flexbox, CSS grid, Bootstrap) or you’ll get random HTML.</p>
+<p>Be explicit about which elements repeat across pages (navbar, footer).</p>
+</section>
+<section id="responsive-design-basics-what-this-week-wants-you-to-learn" class="level2">
+<h2 class="anchored" data-anchor-id="responsive-design-basics-what-this-week-wants-you-to-learn">7.5 Responsive design basics (what this week wants you to learn)</h2>
+<p>This week’s promise: you can achieve modern UI behaviour without deep frontend knowledge.</p>
+<p>Responsive design usually means: a single codebase that adapts to screen width.</p>
+<p>Practical knobs: <code>max-width</code>, <code>min-width</code>, breakpoints, and flexible grids.</p>
+<p>AI is good at generating starter CSS, but you need to test in the browser.</p>
+<p>Common failure: the UI looks fine on desktop but unusable on mobile.</p>
+</section>
+<section id="jinja2-integration-ui-that-actually-connects-to-backend-data" class="level2">
+<h2 class="anchored" data-anchor-id="jinja2-integration-ui-that-actually-connects-to-backend-data">7.6 Jinja2 integration: UI that actually connects to backend data</h2>
+<p>Static HTML is easy. The challenge is making pages dynamic.</p>
+<p>This week expects you to connect templates to Flask route variables.</p>
+<p>In Jinja2 you often loop over data: quizzes, questions, or results.</p>
+<p>AI can generate the loop structure quickly, but you must match variable names to your actual Python.</p>
+<p>Always confirm: what does the route pass into the template?</p>
+</section>
+<section id="building-components-avoiding-copypaste-templates" class="level2">
+<h2 class="anchored" data-anchor-id="building-components-avoiding-copypaste-templates">7.7 Building components: avoiding copy/paste templates</h2>
+<p>As your UI grows, duplication becomes the enemy.</p>
+<p>In Flask/Jinja, you can create a base template and extend it.</p>
+<p>This week’s workflow benefits from: a base layout, then child pages.</p>
+<p>AI can scaffold a <code>base.html</code> with blocks (<code>content</code>, <code>scripts</code>).</p>
+<p>Pitfall: students forget to keep blocks consistent and pages break silently.</p>
+</section>
+<section id="testing-ui-logic-lightweight-sanity-checks" class="level2">
+<h2 class="anchored" data-anchor-id="testing-ui-logic-lightweight-sanity-checks">7.8 Testing UI logic (lightweight sanity checks)</h2>
+<p>Week 07 is not a testing week, but UI work still needs verification.</p>
+<p>At minimum: confirm routes render, form submissions work, and nav links don’t 404.</p>
+<p>AI can help generate checklists for manual testing.</p>
+<p>If you have time, write a tiny smoke test using Flask’s test client.</p>
+</section>
+<section id="code-example-simple-jinja2-loop-for-quiz-list" class="level2">
+<h2 class="anchored" data-anchor-id="code-example-simple-jinja2-loop-for-quiz-list">Code example: simple Jinja2 loop for quiz list</h2>
+<p>This matches this week’s theme of converting backend data into pages.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>{% extends "base.html" %}</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>{% block content %}</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>Available quizzes<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">ul</span><span class="dt">&gt;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  {% for quiz in quizzes %}</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"/quiz/{{ quiz.id }}"</span><span class="dt">&gt;</span>{{ quiz.title }}<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  {% endfor %}</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">ul</span><span class="dt">&gt;</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>{% endblock %}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="code-example-minimal-responsive-css-skeleton" class="level2">
+<h2 class="anchored" data-anchor-id="code-example-minimal-responsive-css-skeleton">Code example: minimal responsive CSS skeleton</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>body { <span class="kw">max-width</span><span class="ch">:</span> <span class="dv">960</span><span class="dt">px</span><span class="op">;</span> <span class="kw">margin</span><span class="ch">:</span> <span class="dv">0</span> <span class="bu">auto</span><span class="op">;</span> <span class="kw">padding</span><span class="ch">:</span> <span class="dv">1</span><span class="dt">rem</span><span class="op">;</span> }</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>nav a { <span class="kw">margin-right</span><span class="ch">:</span> <span class="dv">1</span><span class="dt">rem</span><span class="op">;</span> }</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">@media</span> <span class="fu">(</span><span class="kw">max-width</span><span class="ch">:</span> <span class="dv">600</span><span class="dt">px</span><span class="fu">)</span> {</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  body { <span class="kw">padding</span><span class="ch">:</span> <span class="dv">0.5</span><span class="dt">rem</span><span class="op">;</span> }</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  nav a { <span class="kw">display</span><span class="ch">:</span> <span class="dv">block</span><span class="op">;</span> <span class="kw">margin</span><span class="ch">:</span> <span class="dv">0.25</span><span class="dt">rem</span> <span class="dv">0</span><span class="op">;</span> }</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="summing-up" class="level2">
-<h2 class="anchored" data-anchor-id="summing-up">Summing Up</h2>
-<p>Now, you’ve learned a whole new language of regular expressions that can be utilized to validate, clean up, and extract user input.</p>
+<h2 class="anchored" data-anchor-id="summing-up">Summing up</h2>
 <ul>
-<li>Regular Expressions</li>
-<li>Case Sensitivity</li>
-<li>Cleaning Up User Input</li>
-<li>Extracting User Input</li>
+<li>Week 07 uses ChatGPT to move from “backend works” to “users can actually use it”.</li>
+<li>The skill is not magic HTML generation: it’s <strong>prompt scaffolding</strong> + iteration.</li>
+<li>Wireframes + flows keep AI output grounded.</li>
+<li>Flask templates + Jinja2 are the bridge between Python data and the UI.</li>
+<li>Responsive design is essential: test on multiple screen sizes early.</li>
+</ul>
+</section>
+<section id="quick-checklist-week-skills" class="level2">
+<h2 class="anchored" data-anchor-id="quick-checklist-week-skills">Quick checklist (week skills)</h2>
+<ul class="task-list">
+<li><label><input type="checkbox">I can write a “strategy prompt” before asking for UI code.</label></li>
+<li><label><input type="checkbox">I can list UI screens for a Flask app and map navigation between them.</label></li>
+<li><label><input type="checkbox">I can scaffold templates/static folders for a maintainable frontend.</label></li>
+<li><label><input type="checkbox">I can implement a base template + child templates with Jinja2 blocks.</label></li>
+<li><label><input type="checkbox">I can add basic responsive CSS and verify it in a browser.</label></li>
 </ul>
 
 
@@ -1437,13 +1278,13 @@ if matches := re.search(r"^https?://(?:www\.)?twitter\.com/([a-z0-9_]+)", url, r
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../notes/notes_6.html" class="pagination-link" aria-label="Notes 06 🐍">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Notes 06 🐍</span>
+      <a href="../notes/notes_6.html" class="pagination-link" aria-label="Notes 06 🤖">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Notes 06 🤖</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../notes/notes_8.html" class="pagination-link" aria-label="Notes 08 🐍">
-        <span class="nav-page-text">Notes 08 🐍</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../notes/notes_8.html" class="pagination-link" aria-label="Notes 08 🤖">
+        <span class="nav-page-text">Notes 08 🤖</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

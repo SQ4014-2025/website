@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -80,10 +115,8 @@ ul.task-list li input[type="checkbox"] {
 
 
 <meta property="og:title" content="Real World AI">
-<meta property="og:image" content="https://SQ4014-2025.github.io/website/notes/images/week_2/cs50pWeek2Slide17.png">
+<meta property="og:image" content="https://SQ4014-2025.github.io/website/notes/{img_rel}/fig_01.jpeg">
 <meta property="og:site_name" content="Real World AI">
-<meta property="og:image:height" content="143">
-<meta property="og:image:width" content="719">
 <meta name="twitter:title" content="Real World AI">
 <meta name="twitter:image" content="https://SQ4014-2025.github.io/website/notes/images/twitter-card.png">
 <meta name="twitter:creator" content="@EdHarris9000">
@@ -261,7 +294,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/notes_0.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/notes_2.html">Notes 02 🐍</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/notes_1.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/notes_2.html">Notes 02 🤖</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -341,61 +374,61 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_0.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 00 🐍</span></a>
+ <span class="menu-text">Lecture 00 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_1.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 01 🐍</span></a>
+ <span class="menu-text">Lecture 01 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_2.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 02 🐍</span></a>
+ <span class="menu-text">Lecture 02 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_3.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 03 🐍</span></a>
+ <span class="menu-text">Lecture 03 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_4.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 04 🐍</span></a>
+ <span class="menu-text">Lecture 04 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_5.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 05 🐍</span></a>
+ <span class="menu-text">Lecture 05 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_6.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 06 🐍</span></a>
+ <span class="menu-text">Lecture 06 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_7.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 07 🐍</span></a>
+ <span class="menu-text">Lecture 07 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_8.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 08 🐍</span></a>
+ <span class="menu-text">Lecture 08 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_9.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 09 🐍</span></a>
+ <span class="menu-text">Lecture 09 🤖</span></a>
   </div>
 </li>
       </ul>
@@ -411,62 +444,62 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notes/notes_0.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 00 🐍</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../notes/notes_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 01 🐍</span></a>
+ <span class="menu-text">Notes 01 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_2.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Notes 02 🐍</span></a>
+ <span class="menu-text">Notes 02 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 03 🐍</span></a>
+ <span class="menu-text">Notes 03 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 04 🐍</span></a>
+ <span class="menu-text">Notes 04 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 05 🐍</span></a>
+ <span class="menu-text">Notes 05 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 06 🐍</span></a>
+ <span class="menu-text">Notes 06 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 07 🐍</span></a>
+ <span class="menu-text">Notes 07 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 08 🐍</span></a>
+ <span class="menu-text">Notes 08 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 09 🐍</span></a>
+ <span class="menu-text">Notes 09 🤖</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/notes_10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes 10 🤖</span></a>
   </div>
 </li>
       </ul>
@@ -483,61 +516,61 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src0" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 00 🐍</span></a>
+ <span class="menu-text">Code 00 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src1" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 01 🐍</span></a>
+ <span class="menu-text">Code 01 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src2" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 02 🐍</span></a>
+ <span class="menu-text">Code 02 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src3" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 03 🐍</span></a>
+ <span class="menu-text">Code 03 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src4" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 04 🐍</span></a>
+ <span class="menu-text">Code 04 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src5" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 05 🐍</span></a>
+ <span class="menu-text">Code 05 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src6" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 06 🐍</span></a>
+ <span class="menu-text">Code 06 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src7" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 07 🐍</span></a>
+ <span class="menu-text">Code 07 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src8" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 08 🐍</span></a>
+ <span class="menu-text">Code 08 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src9" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 09 🐍</span></a>
+ <span class="menu-text">Code 09 🤖</span></a>
   </div>
 </li>
       </ul>
@@ -554,55 +587,55 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_0/pset_0.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 00 🐍</span></a>
+ <span class="menu-text">Problem Set 00 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_1/pset_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 01 🐍</span></a>
+ <span class="menu-text">Problem Set 01 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_2/pset_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 02 🐍</span></a>
+ <span class="menu-text">Problem Set 02 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_3/pset_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 03 🐍</span></a>
+ <span class="menu-text">Problem Set 03 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_4/pset_4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 04 🐍</span></a>
+ <span class="menu-text">Problem Set 04 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_5/pset_5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 05 🐍</span></a>
+ <span class="menu-text">Problem Set 05 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_6/pset_6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 06 🐍</span></a>
+ <span class="menu-text">Problem Set 06 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_7/pset_7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 07 🐍</span></a>
+ <span class="menu-text">Problem Set 07 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_8/pset_8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 08 🐍</span></a>
+ <span class="menu-text">Problem Set 08 🤖</span></a>
   </div>
 </li>
       </ul>
@@ -617,409 +650,588 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#week-2-notes" id="toc-week-2-notes" class="nav-link active" data-scroll-target="#week-2-notes">Week 2 Notes</a></li>
-  <li><a href="#lecture-2" id="toc-lecture-2" class="nav-link" data-scroll-target="#lecture-2">Lecture 2</a>
+  <li><a href="#week-02-first-steps-with-ai-assisted-coding" id="toc-week-02-first-steps-with-ai-assisted-coding" class="nav-link active" data-scroll-target="#week-02-first-steps-with-ai-assisted-coding">Week 02: First steps with AI-assisted coding</a>
   <ul class="collapse">
-  <li><a href="#loops" id="toc-loops" class="nav-link" data-scroll-target="#loops">Loops</a></li>
-  <li><a href="#while-loops" id="toc-while-loops" class="nav-link" data-scroll-target="#while-loops">While Loops</a></li>
-  <li><a href="#for-loops" id="toc-for-loops" class="nav-link" data-scroll-target="#for-loops">For Loops</a></li>
-  <li><a href="#improving-with-user-input" id="toc-improving-with-user-input" class="nav-link" data-scroll-target="#improving-with-user-input">Improving with User Input</a></li>
-  <li><a href="#more-about-lists" id="toc-more-about-lists" class="nav-link" data-scroll-target="#more-about-lists">More About Lists</a></li>
-  <li><a href="#length" id="toc-length" class="nav-link" data-scroll-target="#length">Length</a></li>
-  <li><a href="#dictionaries" id="toc-dictionaries" class="nav-link" data-scroll-target="#dictionaries">Dictionaries</a></li>
-  <li><a href="#mario" id="toc-mario" class="nav-link" data-scroll-target="#mario">Mario</a></li>
-  <li><a href="#summing-up" id="toc-summing-up" class="nav-link" data-scroll-target="#summing-up">Summing Up</a></li>
+  <li><a href="#week-focus" id="toc-week-focus" class="nav-link" data-scroll-target="#week-focus">Week focus</a>
+  <ul class="collapse">
+  <li><a href="#what-students-should-be-able-to-do-by-the-end" id="toc-what-students-should-be-able-to-do-by-the-end" class="nav-link" data-scroll-target="#what-students-should-be-able-to-do-by-the-end">What students should be able to do by the end</a></li>
+  </ul></li>
+  <li><a href="#what-is-github-copilot" id="toc-what-is-github-copilot" class="nav-link" data-scroll-target="#what-is-github-copilot">2.1 What is GitHub Copilot?</a>
+  <ul class="collapse">
+  <li><a href="#the-mental-model-you-need" id="toc-the-mental-model-you-need" class="nav-link" data-scroll-target="#the-mental-model-you-need">The mental model you need</a></li>
+  <li><a href="#important-reality-checks" id="toc-important-reality-checks" class="nav-link" data-scroll-target="#important-reality-checks">Important reality checks</a></li>
+  <li><a href="#where-copilot-lives" id="toc-where-copilot-lives" class="nav-link" data-scroll-target="#where-copilot-lives">Where Copilot lives</a></li>
+  </ul></li>
+  <li><a href="#how-github-copilot-works" id="toc-how-github-copilot-works" class="nav-link" data-scroll-target="#how-github-copilot-works">2.1.1 How GitHub Copilot works</a>
+  <ul class="collapse">
+  <li><a href="#a-simple-pipeline-view" id="toc-a-simple-pipeline-view" class="nav-link" data-scroll-target="#a-simple-pipeline-view">A simple pipeline view</a></li>
+  <li><a href="#two-important-consequences" id="toc-two-important-consequences" class="nav-link" data-scroll-target="#two-important-consequences">Two important consequences</a></li>
+  </ul></li>
+  <li><a href="#interacting-with-github-copilot" id="toc-interacting-with-github-copilot" class="nav-link" data-scroll-target="#interacting-with-github-copilot">2.1.2 Interacting with GitHub Copilot</a>
+  <ul class="collapse">
+  <li><a href="#mode-a-inline-code-completion-fast-local" id="toc-mode-a-inline-code-completion-fast-local" class="nav-link" data-scroll-target="#mode-a-inline-code-completion-fast-local">Mode A: inline code completion (fast, local)</a></li>
+  <li><a href="#mode-b-copilot-chat-interactive-reflective" id="toc-mode-b-copilot-chat-interactive-reflective" class="nav-link" data-scroll-target="#mode-b-copilot-chat-interactive-reflective">Mode B: Copilot Chat (interactive, reflective)</a></li>
+  <li><a href="#mode-c-prompt-via-commentsdocstrings" id="toc-mode-c-prompt-via-commentsdocstrings" class="nav-link" data-scroll-target="#mode-c-prompt-via-commentsdocstrings">Mode C: prompt via comments/docstrings</a></li>
+  </ul></li>
+  <li><a href="#common-patterns" id="toc-common-patterns" class="nav-link" data-scroll-target="#common-patterns">2.2 Common patterns</a>
+  <ul class="collapse">
+  <li><a href="#pattern-1-write-the-skeleton-first" id="toc-pattern-1-write-the-skeleton-first" class="nav-link" data-scroll-target="#pattern-1-write-the-skeleton-first">Pattern 1: “Write the skeleton first”</a></li>
+  <li><a href="#pattern-2-constrain-outputs" id="toc-pattern-2-constrain-outputs" class="nav-link" data-scroll-target="#pattern-2-constrain-outputs">Pattern 2: “Constrain outputs”</a></li>
+  <li><a href="#pattern-3-ask-for-tests-not-just-code" id="toc-pattern-3-ask-for-tests-not-just-code" class="nav-link" data-scroll-target="#pattern-3-ask-for-tests-not-just-code">Pattern 3: “Ask for tests, not just code”</a></li>
+  <li><a href="#pattern-4-explain-then-implement" id="toc-pattern-4-explain-then-implement" class="nav-link" data-scroll-target="#pattern-4-explain-then-implement">Pattern 4: “Explain then implement”</a></li>
+  </ul></li>
+  <li><a href="#context-is-everything" id="toc-context-is-everything" class="nav-link" data-scroll-target="#context-is-everything">2.3 Context is everything</a>
+  <ul class="collapse">
+  <li><a href="#context-sources-inside-an-ide" id="toc-context-sources-inside-an-ide" class="nav-link" data-scroll-target="#context-sources-inside-an-ide">Context sources inside an IDE</a></li>
+  <li><a href="#the-garbage-in-garbage-out-rule-for-ai-coding" id="toc-the-garbage-in-garbage-out-rule-for-ai-coding" class="nav-link" data-scroll-target="#the-garbage-in-garbage-out-rule-for-ai-coding">The “garbage in, garbage out” rule for AI coding</a></li>
+  </ul></li>
+  <li><a href="#what-is-nlp" id="toc-what-is-nlp" class="nav-link" data-scroll-target="#what-is-nlp">2.4 What is NLP?</a>
+  <ul class="collapse">
+  <li><a href="#a-practical-nlp-workflow" id="toc-a-practical-nlp-workflow" class="nav-link" data-scroll-target="#a-practical-nlp-workflow">A practical NLP workflow</a></li>
+  </ul></li>
+  <li><a href="#a-simple-python-project" id="toc-a-simple-python-project" class="nav-link" data-scroll-target="#a-simple-python-project">2.5 A simple Python project</a>
+  <ul class="collapse">
+  <li><a href="#why-this-project-is-a-good-teaching-choice" id="toc-why-this-project-is-a-good-teaching-choice" class="nav-link" data-scroll-target="#why-this-project-is-a-good-teaching-choice">Why this project is a good teaching choice</a></li>
+  <li><a href="#preparing-your-development-environment" id="toc-preparing-your-development-environment" class="nav-link" data-scroll-target="#preparing-your-development-environment">2.5.1 Preparing your development environment</a></li>
+  <li><a href="#creating-the-application" id="toc-creating-the-application" class="nav-link" data-scroll-target="#creating-the-application">2.5.2 Creating the application</a></li>
+  <li><a href="#side-quest-testing-the-function-speed" id="toc-side-quest-testing-the-function-speed" class="nav-link" data-scroll-target="#side-quest-testing-the-function-speed">2.5.3 Side quest: Testing the function speed</a></li>
+  </ul></li>
+  <li><a href="#images-from-week-02" id="toc-images-from-week-02" class="nav-link" data-scroll-target="#images-from-week-02">Images from Week 02</a></li>
+  <li><a href="#summary-and-takeaways" id="toc-summary-and-takeaways" class="nav-link" data-scroll-target="#summary-and-takeaways">Summary and takeaways</a>
+  <ul class="collapse">
+  <li><a href="#the-core-lesson" id="toc-the-core-lesson" class="nav-link" data-scroll-target="#the-core-lesson">The core lesson</a></li>
+  <li><a href="#your-workflow-should-look-like-this" id="toc-your-workflow-should-look-like-this" class="nav-link" data-scroll-target="#your-workflow-should-look-like-this">Your workflow should look like this</a></li>
+  <li><a href="#a-checklist-you-should-keep" id="toc-a-checklist-you-should-keep" class="nav-link" data-scroll-target="#a-checklist-you-should-keep">A checklist you should keep</a></li>
+  </ul></li>
+  <li><a href="#verification-report-week-02" id="toc-verification-report-week-02" class="nav-link" data-scroll-target="#verification-report-week-02">Verification report (Week 02)</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/SQ4014-2025/website/edit/master/notes/notes_2.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/SQ4014-2025/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/notes_0.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/notes_2.html">Notes 02 🐍</a></li></ol></nav></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/notes_1.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/notes_2.html">Notes 02 🤖</a></li></ol></nav></header>
 
 
 
 
 
-<section id="week-2-notes" class="level1">
-<h1>Week 2 Notes</h1>
+<section id="week-02-first-steps-with-ai-assisted-coding" class="level1">
+<h1>Week 02: First steps with AI-assisted coding</h1>
+<blockquote class="blockquote">
+<p>Micro-quote (Ch2): “Imagine having an intelligent assistant that helps you with coding.”</p>
+</blockquote>
+<section id="week-focus" class="level2">
+<h2 class="anchored" data-anchor-id="week-focus">Week focus</h2>
+<p>This week is your practical starting point: <strong>using an AI coding assistant while you write real code</strong>. This week uses <strong>GitHub Copilot</strong> as the main example and builds up three big ideas:</p>
+<ul>
+<li>An assistant is <em>only useful if you can communicate intent clearly</em>.</li>
+<li><strong>Context</strong> is the difference between “wow” and “why on earth did it do that”.</li>
+<li>Small, repeatable patterns beat “magic prompts”.</li>
+</ul>
+<p>We’ll work through:</p>
+<ul>
+<li>What Copilot is and how it behaves in an IDE</li>
+<li>The main interaction modes (completion vs chat)</li>
+<li>Common prompting patterns for code</li>
+<li>Why context matters (and how to control it)</li>
+<li>A mini Python project (word frequency) that’s perfect for practicing AI-assisted workflow</li>
+</ul>
+<section id="what-students-should-be-able-to-do-by-the-end" class="level3">
+<h3 class="anchored" data-anchor-id="what-students-should-be-able-to-do-by-the-end">What students should be able to do by the end</h3>
+<p>By the end of Week 2, students should be able to:</p>
+<ul>
+<li>Explain what <strong>GitHub Copilot</strong> does (and what it does <em>not</em> do)</li>
+<li>Use <strong>code completion</strong> and <strong>chat-style</strong> assistance appropriately</li>
+<li>Create stronger prompts <em>inside the code editor</em> using comments and structure</li>
+<li>Control <strong>context</strong> by isolating files, adding examples, and writing better docstrings</li>
+<li>Build a small Python script that is correct, testable, and easy to extend</li>
+</ul>
 <hr>
 </section>
-<section id="lecture-2" class="level1">
-<h1>Lecture 2</h1>
-<ul>
-<li><a href="#loops">Loops</a></li>
-<li><a href="#while-loops">While Loops</a></li>
-<li><a href="#for-loops">For Loops</a></li>
-<li><a href="#improving-with-user-input">Improving with User Input</a></li>
-<li><a href="#more-about-lists">More About Lists</a></li>
-<li><a href="#length">Length</a></li>
-<li><a href="#dictionaries">Dictionaries</a></li>
-<li><a href="#mario">Mario</a></li>
-<li><a href="#summing-up">Summing Up</a></li>
-</ul>
-<section id="loops" class="level2">
-<h2 class="anchored" data-anchor-id="loops">Loops</h2>
-<ul>
-<li><p>Essentially, loops are a way to do something over and over again.</p></li>
-<li><p>Begin by typing <code>code cat.py</code> in the terminal window.</p></li>
-<li><p>In the text editor, begin with the following code:</p>
-<pre><code>print("meow")
-print("meow")
-print("meow")</code></pre>
-<p>Running this code by typing <code>python cat.py</code>, you’ll notice that the program meows three times.</p></li>
-<li><p>In developing as a programmer, you want to consider how one could improve areas of one’s code where one types the same thing over and over again. Imagine where one might want to “meow” 500 times. Would it be logical to type that same expression of <code>print("meow")</code> over and over again?</p></li>
-<li><p>Loops enable you to create a block of code that executes over and over again.</p></li>
-</ul>
 </section>
-<section id="while-loops" class="level2">
-<h2 class="anchored" data-anchor-id="while-loops">While Loops</h2>
+<section id="what-is-github-copilot" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-github-copilot">2.1 What is GitHub Copilot?</h2>
+<blockquote class="blockquote">
+<p>Micro-quote (Ch2): “Do you remember the “rubber duck” debugging method?”</p>
+</blockquote>
+<p>This week frames Copilot as a <strong>smarter rubber duck</strong>: a helper you can “talk to” while you’re coding. The difference is that Copilot can <em>respond</em> with suggestions and complete code.</p>
+<section id="the-mental-model-you-need" class="level3">
+<h3 class="anchored" data-anchor-id="the-mental-model-you-need">The mental model you need</h3>
+<p>Copilot is not a human developer. It does not “understand” your goal the way a teammate does.</p>
+<p>Instead, it behaves like:</p>
 <ul>
-<li><p>The <code>while</code> loop is nearly universal throughout all coding languages.</p></li>
-<li><p>Such a loop will repeat a block of code over and over again.</p></li>
-<li><p>In the text editor window, edit your code as follows:</p>
-<pre><code>i = 3
-while i != 0:
-    print("meow")</code></pre>
-<p>Notice how even though this code will execute <code>print("meow")</code> multiple times, it will never stop! It will loop forever. <code>while</code> loops work by repeatedly asking if the condition of the loop has been fulfilled. In this case, the interpreter is asking, “does <code>i</code> not equal zero?” When you get stuck in a loop that executes forever, you can press <code>Ctrl+C</code> on your keyboard to break out of the loop.</p></li>
-<li><p>To fix this loop that lasts forever, we can edit our code as follows</p>
-<pre><code>i = 3
-while i != 0:
-  print("meow")
-  i = i - 1</code></pre>
-<p>Notice that now our code executes properly, reducing <code>i</code> by <code>1</code> for each “iteration” through the loop. The term iteration has special significance within coding. By iteration, we mean one cycle through the loop. The first iteration is the “0th” iteration through the loop. The second is the “1st” iteration. In programming, we count starting with 0, then 1, then 2.</p></li>
-<li><p>We can further improve our code as follows:</p>
-<pre><code>  i = 1
-  while i &lt;= 3:
-      print("meow")
-      i = i + 1</code></pre>
-<p>Notice that when we code <code>i = i + 1</code> we assign the value of <code>i</code> from the right to the left. Above, we are starting <code>i</code> at one, like most humans count (1, 2, 3). If you execute the code above, you’ll see it meows three times. It’s best practice in programming to begin counting with zero.</p></li>
-<li><p>We can improve our code to start counting with zero:</p>
-<pre><code>i = 0
-while i &lt; 3:
-    print("meow")
-    i += 1</code></pre>
-<p>Notice how changing the operator to <code>i &lt; 3</code> allows our code to function as intended. We begin by counting with 0 and it iterates through our loop three times, producing three meows. Also, notice how <code>i += 1</code> is the same as saying <code>i = i + 1</code>.</p></li>
-<li><p>Our code at this point is illustrated as follows:</p></li>
+<li>a fast autocomplete system that predicts what code might come next</li>
+<li>a probabilistic generator that fills in plausible patterns</li>
+<li>a tool that is highly sensitive to <em>what is currently visible</em> in your editor</li>
 </ul>
+<p>In practical terms:</p>
+<ul>
+<li>Copilot is great at <strong>boilerplate</strong>, repetitive patterns, standard library usage</li>
+<li>Copilot is weaker at <strong>novel requirements</strong>, hidden constraints, domain-specific rules</li>
+<li>Copilot can be confidently wrong (especially when you give it vague context)</li>
+</ul>
+<blockquote class="blockquote">
+<p>Micro-quote (Ch2): “It’s like having your own pair programmer.”</p>
+</blockquote>
+</section>
+<section id="important-reality-checks" class="level3">
+<h3 class="anchored" data-anchor-id="important-reality-checks">Important reality checks</h3>
+<ul>
+<li>Copilot can generate code that <strong>runs</strong>, but still fails your real requirements.</li>
+<li>Copilot can generate code that <em>looks professional</em> but has subtle errors.</li>
+<li>Copilot can “invent” APIs (especially for libraries you’re not actually using).</li>
+</ul>
+<p>A useful way to say it:</p>
+<p><strong>Copilot is a productivity amplifier, not a correctness guarantee.</strong></p>
+</section>
+<section id="where-copilot-lives" class="level3">
+<h3 class="anchored" data-anchor-id="where-copilot-lives">Where Copilot lives</h3>
+<p>In this week, Copilot is described as integrated into popular tools.</p>
+<blockquote class="blockquote">
+<p>Micro-quote (Ch2): “GitHub Copilot is available for Visual Studio, Visual Studio Code …”</p>
+</blockquote>
+<p>In practice you’ll encounter Copilot mainly in:</p>
+<ul>
+<li>VS Code</li>
+<li>JetBrains IDEs</li>
+<li>Visual Studio</li>
+</ul>
+<p>The UX matters because the tool “feels” different depending on editor:</p>
+<ul>
+<li>completions can appear inline (ghost text)</li>
+<li>chat can appear in a sidebar</li>
+<li>suggestions can appear as full blocks</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="how-github-copilot-works" class="level2">
+<h2 class="anchored" data-anchor-id="how-github-copilot-works">2.1.1 How GitHub Copilot works</h2>
+<blockquote class="blockquote">
+<p>Micro-quote (Ch2): “GitHub Copilot is trained on public source code.”</p>
+</blockquote>
+<p>At a high level Copilot is trained on lots of code and learns patterns like:</p>
+<ul>
+<li>“functions often have docstrings”</li>
+<li>“for-loops often follow this syntax”</li>
+<li>“common web frameworks have typical shapes”</li>
+</ul>
+<p>That’s enough to make it <em>extremely useful</em>.</p>
+<section id="a-simple-pipeline-view" class="level3">
+<h3 class="anchored" data-anchor-id="a-simple-pipeline-view">A simple pipeline view</h3>
+<p>Think of Copilot like this:</p>
+<ol type="1">
+<li>You write code + comments in your editor.</li>
+<li>Copilot reads a window of text around your cursor (context).</li>
+<li>It predicts likely next tokens (characters/words/code fragments).</li>
+<li>It offers suggestions, sometimes multiple.</li>
+</ol>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div>
 <p></p><figure class="figure"><p></p>
 <div>
-<pre class="mermaid mermaid-js">    flowchart TD
-      A([start]) --&gt; B[i = 0]
-      B --&gt; C{i &lt; 3}
-      C -- True --&gt; D["#quot;meow#quot;"]
-      D --&gt; E[i += 1]
-      E --&gt; C
-      C -- False --&gt; F([stop])
+<pre class="mermaid mermaid-js">flowchart LR
+  A[Your current file context] --&gt; B[Model predicts next tokens]
+  B --&gt; C[Inline completion suggestion]
+  B --&gt; D[Chat response / code block]
+  C --&gt; E[You accept / reject / modify]
+  D --&gt; E
+  E --&gt; A
 </pre>
 </div>
 <p></p></figure><p></p>
 </div>
 </div>
 </div>
-<pre><code>Notice how our loop counts i up to, but not through `3`.</code></pre>
 </section>
-<section id="for-loops" class="level2">
-<h2 class="anchored" data-anchor-id="for-loops">For Loops</h2>
+<section id="two-important-consequences" class="level3">
+<h3 class="anchored" data-anchor-id="two-important-consequences">Two important consequences</h3>
+<p><strong>1) Small changes change the output.</strong></p>
 <ul>
-<li><p>A <code>for</code> loop is a different type of loop.</p></li>
-<li><p>To best understand a <code>for</code> loop, it’s best to begin by talking about a new variable type called a <code>list</code> in Python. As in other areas of our lives, we can have a grocery list, a to-do list, etc.</p></li>
-<li><p>A <code>for</code> loop iterates through a <code>list</code> of items. For example, in the text editor window, modify your <code>cat.py</code> code as follows:</p>
-<pre><code>for i in [0, 1, 2]:
-    print("meow")</code></pre>
-<p>Notice how clean this code is compared to your previous <code>while</code> loop code. In this code, <code>i</code> begins with <code>0</code>, meows, <code>i</code> is assigned <code>1</code>, meows, and, finally, <code>i</code> is assigned <code>2</code>, meows, and then ends.</p></li>
-<li><p>While this code accomplishes what we want, there are some possibilities for improving our code for extreme cases. At first glance, our code looks great. However, what if you wanted to iterate up to a million? It’s best to create code that can work with such extreme cases. Accordingly, we can improve our code as follows:</p>
-<pre><code>for i in range(3):
-    print("meow")</code></pre>
-<p>Notice how <code>range(3)</code> provides back three values (<code>0</code>, <code>1</code>, and <code>2</code>) automatically. This code will execute and produce the intended effect, meowing three times.</p></li>
-<li><p>Our code can be further improved. Notice how we never use <code>i</code> explicitly in our code. That is, while Python needs the <code>i</code> as a place to store the number of the iteration of the loop, we never use it for any other purpose. In Python, if such a variable does not have any other significance in our code, we can simply represent this variable as a single underscore <code>_</code>. Therefore, you can modify your code as follows:</p>
-<pre><code>for _ in range(3):
-    print("meow")</code></pre>
-<p>Notice how changing the <code>i</code> to <code>_</code> has zero impact on the functioning of our program.</p></li>
-<li><p>Our code can be further improved. To stretch your mind to the possibilities within Python, consider the following code:</p>
-<pre><code>print("meow" * 3)</code></pre>
-<p>Notice how it will meow three times, but the program will produce <code>meowmeowmeow</code> as the result. Consider: How could you create a line break at the end of each meow?</p></li>
-<li><p>Indeed, you can edit your code as follows:</p>
-<pre><code>print("meow\n" * 3, end="")</code></pre>
-<p>Notice how this code produces three meows, each on a separate line. By adding <code>end=""</code> and the <code>\n</code> we tell the interpreter to add a line break at the end of each meow.</p></li>
+<li>A better function name can massively improve suggestions.</li>
+<li>A docstring can “anchor” Copilot to the right intent.</li>
+<li>A wrong import can cause Copilot to hallucinate an API.</li>
+</ul>
+<p><strong>2) Copilot is context-bound.</strong></p>
+<p>If your editor context is poor (no clear requirements, no types, no examples), output quality drops.</p>
+<hr>
+</section>
+</section>
+<section id="interacting-with-github-copilot" class="level2">
+<h2 class="anchored" data-anchor-id="interacting-with-github-copilot">2.1.2 Interacting with GitHub Copilot</h2>
+<p>This week highlights multiple interaction modes. You should deliberately choose the mode that fits the task.</p>
+<section id="mode-a-inline-code-completion-fast-local" class="level3">
+<h3 class="anchored" data-anchor-id="mode-a-inline-code-completion-fast-local">Mode A: inline code completion (fast, local)</h3>
+<p>Best for:</p>
+<ul>
+<li>boilerplate</li>
+<li>repetitive patterns</li>
+<li>standard data manipulation</li>
+<li>writing “the next few lines”</li>
+</ul>
+<p>What it feels like:</p>
+<ul>
+<li>ghost text appears</li>
+<li>you accept it (tab / enter)</li>
+<li>or you keep typing to steer it</li>
+</ul>
+<section id="a-practical-rule" class="level4">
+<h4 class="anchored" data-anchor-id="a-practical-rule">A practical rule</h4>
+<p>If you already know what you want, use <strong>completion</strong>.</p>
+<p>If you are unsure or exploring, use <strong>chat</strong>.</p>
+</section>
+</section>
+<section id="mode-b-copilot-chat-interactive-reflective" class="level3">
+<h3 class="anchored" data-anchor-id="mode-b-copilot-chat-interactive-reflective">Mode B: Copilot Chat (interactive, reflective)</h3>
+<p>Best for:</p>
+<ul>
+<li>asking “why is this failing?”</li>
+<li>getting refactors</li>
+<li>generating tests</li>
+<li>explaining code</li>
+<li>exploring design options</li>
+</ul>
+<p>But: chat can drift into <em>confident nonsense</em> unless you anchor it.</p>
+<p>A useful discipline:</p>
+<ul>
+<li>ask for assumptions explicitly</li>
+<li>demand test cases</li>
+<li>require it to cite file names / functions</li>
 </ul>
 </section>
-<section id="improving-with-user-input" class="level2">
-<h2 class="anchored" data-anchor-id="improving-with-user-input">Improving with User Input</h2>
+<section id="mode-c-prompt-via-commentsdocstrings" class="level3">
+<h3 class="anchored" data-anchor-id="mode-c-prompt-via-commentsdocstrings">Mode C: prompt via comments/docstrings</h3>
+<p>One of the strongest techniques is to prompt <em>inside the code</em>:</p>
 <ul>
-<li><p>Perhaps we want to get input from our user. We can use loops as a way of validating the input of the user.</p></li>
-<li><p>A common paradigm within Python is to use a <code>while</code> loop to validate the input of the user.</p></li>
-<li><p>For example, let’s try prompting the user for a number greater than or equal to 0:</p>
-<pre><code>while True:
-    n = int(input("What's n? "))
-    if n &lt; 0:
-        continue
-    else:
-        break</code></pre></li>
-<li><p>Notice that we’ve introduced two new keywords in Python, <code>continue</code> and <code>break</code>. <code>continue</code> explicitly tells Python to go to the next iteration of a loop. <code>break</code>, on the other hand, tells Python to “break out” of a loop early before it has finished all of its iterations. In this case, we’ll <code>continue</code> to the next iteration of the loop when <code>n</code> is less than 0—ultimately reprompting the user with “What’s n?”. If, though, <code>n</code> is greater than or equal to 0, we’ll <code>break</code> out of the loop and allow the rest of our program to run.</p></li>
-<li><p>It turns out that the <code>continue</code> keyword is redundant in this case. We can improve our code as follows:</p>
-<pre><code>while True:
-    n = int(input("What's n? "))
-    if n &gt; 0:
-        break
-
-for _ in range(n):
-    print("meow")</code></pre>
-<p>Notice how this while loop will always run (forever) until <code>n</code> is greater than <code>0</code>. When <code>n</code> is greater than <code>0</code>, the loop breaks.</p></li>
-<li><p>Bringing in our prior learning, we can use functions to further improve our code:</p>
-<pre><code>def main():
-    meow(get_number())
-
-
-def get_number():
-    while True:
-        n = int(input("What's n? "))
-        if n &gt; 0:
-            return n
-
-
-def meow(n):
-    for _ in range(n):
-        print("meow")
-
-
-main()</code></pre>
-<p>Notice how not only did we change your code to operate in multiple functions, but we also used a <code>return</code> statement to <code>return</code> the value of <code>n</code> back to the <code>main</code> function.</p></li>
+<li>write a docstring describing inputs and outputs</li>
+<li>add examples</li>
+<li>then let Copilot fill in the function body</li>
+</ul>
+<p>Here’s a pattern that works well:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> normalize_text(s: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Normalize text for counting words.</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">    Requirements:</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">    - Lowercase</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">    - Remove punctuation</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">    - Collapse whitespace</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">    Examples:</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">    &gt;&gt;&gt; normalize_text("Hello, World!")</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">    'hello world'</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Copilot-friendly: clear name, clear docstring, example-driven</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">raise</span> <span class="pp">NotImplementedError</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Even if Copilot isn’t available, this is <em>good engineering</em>: it communicates intent to humans too.</p>
+<hr>
+</section>
+</section>
+<section id="common-patterns" class="level2">
+<h2 class="anchored" data-anchor-id="common-patterns">2.2 Common patterns</h2>
+<p>This is where this week becomes highly practical. The goal is to build a toolbox of repeatable patterns rather than “asking AI to code the whole thing”.</p>
+<section id="pattern-1-write-the-skeleton-first" class="level3">
+<h3 class="anchored" data-anchor-id="pattern-1-write-the-skeleton-first">Pattern 1: “Write the skeleton first”</h3>
+<p>Instead of asking for a complete program, define the shape:</p>
+<ul>
+<li>function stubs</li>
+<li>clear names</li>
+<li>docstrings</li>
+<li>TODO comments</li>
+</ul>
+<p>Then ask Copilot to fill the middle.</p>
+<p>Why it works:</p>
+<ul>
+<li>context becomes stable</li>
+<li>you reduce the chance of architectural drift</li>
+<li>you force the assistant into your structure</li>
 </ul>
 </section>
-<section id="more-about-lists" class="level2">
-<h2 class="anchored" data-anchor-id="more-about-lists">More About Lists</h2>
+<section id="pattern-2-constrain-outputs" class="level3">
+<h3 class="anchored" data-anchor-id="pattern-2-constrain-outputs">Pattern 2: “Constrain outputs”</h3>
+<p>If you leave room for multiple solutions, Copilot will pick one randomly.</p>
+<p>So constrain:</p>
 <ul>
-<li><p>Consider the world of Hogwarts from the famed Harry Potter universe.</p></li>
-<li><p>In the terminal, type <code>code hogwarts.py</code>.</p></li>
-<li><p>In the text editor, code as follows:</p>
-<pre><code>students = ["Hermione", "Harry", "Ron"]
-
-print(students[0])
-print(students[1])
-print(students[2])</code></pre>
-<p>Notice how we have a <code>list</code> of students with their names as above. We then print the student who is at the 0th location, “Hermione”. Each of the other students is printed as well.</p></li>
-<li><p>Just as we illustrated previously, we can use a loop to iterate over the list. You can improve your code as follows:</p>
-<pre><code>students = ["Hermione", "Harry", "Ron"]
-
-for student in students:
-    print(student)</code></pre>
-<p>Notice that for each <code>student</code> in the <code>students</code> list, it will print the student as intended. You might wonder why we did not use the <code>_</code> designation as discussed prior. We choose not to do this because <code>student</code> is explicitly used in our code.</p></li>
-<li><p>You can learn more in Python’s documentation of <a href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">lists</a>.</p></li>
+<li>libraries (standard library only)</li>
+<li>complexity (O(n) where possible)</li>
+<li>interface requirements</li>
+</ul>
+<p>Example constraint prompt:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Implement count_words(text: str) -&gt; dict[str,int]</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Constraints: standard library only, ignore punctuation, lowercase</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Return: dictionary mapping word -&gt; count</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="pattern-3-ask-for-tests-not-just-code" class="level3">
+<h3 class="anchored" data-anchor-id="pattern-3-ask-for-tests-not-just-code">Pattern 3: “Ask for tests, not just code”</h3>
+<p>A shortcut to quality is to require tests early.</p>
+<p>Example:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> count_words(text: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">int</span>]:</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Count words in a string."""</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    ...</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test_count_words():</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> count_words(<span class="st">"a a b"</span>) <span class="op">==</span> {<span class="st">"a"</span>: <span class="dv">2</span>, <span class="st">"b"</span>: <span class="dv">1</span>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Even if the assistant writes the test, <em>you</em> decide what correctness means.</p>
+</section>
+<section id="pattern-4-explain-then-implement" class="level3">
+<h3 class="anchored" data-anchor-id="pattern-4-explain-then-implement">Pattern 4: “Explain then implement”</h3>
+<p>Have the assistant explain its approach before it writes code.</p>
+<p>This reduces:</p>
+<ul>
+<li>silent bad assumptions</li>
+<li>hidden complexity</li>
+<li>magic one-liners that students can’t read</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="context-is-everything" class="level2">
+<h2 class="anchored" data-anchor-id="context-is-everything">2.3 Context is everything</h2>
+<p>This is one of the most important ideas in the early weeks.</p>
+<p>Copilot is sensitive to:</p>
+<ul>
+<li>the file you’re in</li>
+<li>the function signature</li>
+<li>nearby imports</li>
+<li>variable names</li>
+<li>comments and docstrings</li>
+</ul>
+<p>If you want consistent help, you must engineer the context.</p>
+<section id="context-sources-inside-an-ide" class="level3">
+<h3 class="anchored" data-anchor-id="context-sources-inside-an-ide">Context sources inside an IDE</h3>
+<p>Copilot learns from what you have open. So if the wrong file is open, suggestions can be biased.</p>
+<p>Practical tactics:</p>
+<ul>
+<li>keep only relevant files open</li>
+<li>put shared utilities in a clear module</li>
+<li>write better names (don’t use <code>x</code>, <code>tmp</code>, <code>stuff</code>)</li>
 </ul>
 </section>
-<section id="length" class="level2">
-<h2 class="anchored" data-anchor-id="length">Length</h2>
+<section id="the-garbage-in-garbage-out-rule-for-ai-coding" class="level3">
+<h3 class="anchored" data-anchor-id="the-garbage-in-garbage-out-rule-for-ai-coding">The “garbage in, garbage out” rule for AI coding</h3>
+<p>If your code is messy:</p>
 <ul>
-<li><p>We can utilize <code>len</code> as a way of checking the length of the <code>list</code> called <code>students</code>.</p></li>
-<li><p>Imagine that you don’t simply want to print the name of the student but also their position in the list. To accomplish this, you can edit your code as follows:</p>
-<pre><code>students = ["Hermione", "Harry", "Ron"]
-
-for i in range(len(students)):
-    print(i + 1, students[i])</code></pre>
-<p>Notice how executing this code results in not only getting the position of each student plus one using <code>i + 1</code>, but also prints the name of each student. <code>len</code> allows you to dynamically see how long the list of the students is regardless of how much it grows.</p></li>
-<li><p>You can learn more in Python’s documentation of <a href="https://docs.python.org/3/library/functions.html?highlight=len#len">len</a>.</p></li>
+<li>inconsistent naming</li>
+<li>unclear responsibilities</li>
+<li>no docstrings</li>
+<li>no tests</li>
+</ul>
+<p>Copilot will often reinforce the mess.</p>
+<p>If your code is clean:</p>
+<ul>
+<li>typed functions</li>
+<li>predictable structure</li>
+<li>good abstractions</li>
+</ul>
+<p>Copilot will often “lock on” and become extremely productive.</p>
+<hr>
+</section>
+</section>
+<section id="what-is-nlp" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-nlp">2.4 What is NLP?</h2>
+<p>This week includes a section on <strong>Natural Language Processing (NLP)</strong> to support the mini project.</p>
+<p>For this course, you don’t need a full NLP theory module yet, but you do need the practical idea:</p>
+<blockquote class="blockquote">
+<p>NLP is about treating language as data.</p>
+</blockquote>
+<p>This matters because:</p>
+<ul>
+<li>prompts are language</li>
+<li>code is language-like</li>
+<li>the project uses text analysis techniques</li>
+</ul>
+<section id="a-practical-nlp-workflow" class="level3">
+<h3 class="anchored" data-anchor-id="a-practical-nlp-workflow">A practical NLP workflow</h3>
+<p>For word frequency, the NLP-ish pipeline is often:</p>
+<ol type="1">
+<li><strong>Normalize</strong>: lowercase, remove punctuation</li>
+<li><strong>Tokenize</strong>: split text into words</li>
+<li><strong>Count</strong>: build frequency counts</li>
+<li><strong>Sort / rank</strong>: extract most common terms</li>
+<li><strong>Interpret</strong>: what do the counts suggest?</li>
+</ol>
+<p>In real world AI coding:</p>
+<ul>
+<li>steps 1–4 are easy to automate</li>
+<li>step 5 is where humans add meaning</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="a-simple-python-project" class="level2">
+<h2 class="anchored" data-anchor-id="a-simple-python-project">2.5 A simple Python project</h2>
+<p>This week includes a mini Python project to practice working with Copilot. It analyses <strong>word frequency</strong> in a text.</p>
+<section id="why-this-project-is-a-good-teaching-choice" class="level3">
+<h3 class="anchored" data-anchor-id="why-this-project-is-a-good-teaching-choice">Why this project is a good teaching choice</h3>
+<p>It’s perfect for first-year level because it uses:</p>
+<ul>
+<li>file reading</li>
+<li>strings</li>
+<li>dictionaries</li>
+<li>sorting</li>
+<li>basic program structure</li>
+</ul>
+<p>And it scales easily:</p>
+<ul>
+<li>add stopwords</li>
+<li>support multiple files</li>
+<li>plot results</li>
+<li>compute TF-IDF later</li>
 </ul>
 </section>
-<section id="dictionaries" class="level2">
-<h2 class="anchored" data-anchor-id="dictionaries">Dictionaries</h2>
+<section id="preparing-your-development-environment" class="level3">
+<h3 class="anchored" data-anchor-id="preparing-your-development-environment">2.5.1 Preparing your development environment</h3>
+<p>A minimal setup:</p>
 <ul>
-<li><p><code>dict</code>s or dictionaries <strong>are</strong> a data structure that allows you to associate keys with values.</p></li>
-<li><p>Where a <code>list</code> is a list of multiple values, a <code>dict</code> associates a key with a value.</p></li>
-<li><p>Considering the houses of Hogwarts, we might assign specific students to specific houses.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/week_2/cs50pWeek2Slide17.png" title="Harry Potter Names." class="img-fluid figure-img"></p>
-<figcaption>Harry Potter Names.</figcaption>
-</figure>
-</div></li>
-<li><p>We could use <code>list</code>s alone to accomplish this:</p>
-<pre><code>students = ["Hermione", "Harry", "Ron", "Draco"]
-houses = ["Gryffindor", "Gryffindor", "Griffindor", "Slytherin"]</code></pre>
-<p>Notice that we can promise that we will always keep these lists in order. The individual at the first position of <code>students</code> is associated with the house at the first position of the <code>houses</code> list, and so on. However, this can become quite cumbersome as our lists grow!</p></li>
-<li><p>We can better our code using a <code>dict</code> as follows:</p>
-<pre><code>students = {
-    "Hermione": "Gryffindor",
-    "Harry": "Gryffindor",
-    "Ron": "Gryffindor",
-    "Draco": "Slytherin",
-}
-print(students["Hermione"])
-print(students["Harry"])
-print(students["Ron"])
-print(students["Draco"])</code></pre>
-<p>Notice how we use <code>{}</code> curly braces to create a dictionary. Where <code>list</code>s use numbers to iterate through the list, <code>dict</code>s allow us to use words.</p></li>
-<li><p>Run your code and make sure your output is as follows:</p>
-<pre><code>$ python hogwarts.py
-Gryffindor
-Gryffindor
-Gryffindor
-Slytherin</code></pre></li>
-<li><p>We can improve our code as follows:</p>
-<pre><code>students = {
-    "Hermione": "Gryffindor",
-    "Harry": "Gryffindor",
-    "Ron": "Gryffindor",
-    "Draco": "Slytherin",
-}
-for student in students:
-    print(student)</code></pre>
-<p>Notice how, executing this code, the for loop will only iterate through all the keys, resulting in a list of the names of the students. How could we print out both values and keys?</p></li>
-<li><p>Modify your code as follows:</p>
-<pre><code>students = {
-    "Hermione": "Gryffindor",
-    "Harry": "Gryffindor",
-    "Ron": "Gryffindor",
-    "Draco": "Slytherin",
-}
-for student in students:
-    print(student, students[student])</code></pre>
-<p>Notice how <code>students[student]</code> will go to each student’s key and find the value of their house. Execute your code, and you’ll notice how the output is a bit messy.</p></li>
-<li><p>We can clean up the print function by improving our code as follows:</p>
-<pre><code>students = {
-    "Hermione": "Gryffindor",
-    "Harry": "Gryffindor",
-    "Ron": "Gryffindor",
-    "Draco": "Slytherin",
-}
-for student in students:
-    print(student, students[student], sep=", ")</code></pre>
-<p>Notice how this creates a clean separation of a <code>,</code> between each item printed.</p></li>
-<li><p>If you execute <code>python hogwarts.py</code>, you should see the following:</p>
-<pre><code>$ python hogwarts.py
-Hermione, Gryffindor
-Harry, Gryffindor
-Ron, Gryffindor
-Draco, Slytherin</code></pre></li>
-<li><p>What if we have more information about our students? How could we associate more data with each of the students?</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/week_2/cs50pWeek2Slide18.png" title="Harry Potter Names." class="img-fluid figure-img"></p>
-<figcaption>Harry Potter Names.</figcaption>
-</figure>
-</div></li>
-<li><p>You can imagine wanting to have lots of data associated with multiple keys. Enhance your code as follows:</p>
-<pre><code>students = [
-    {"name": "Hermione", "house": "Gryffindor", "patronus": "Otter"},
-    {"name": "Harry", "house": "Gryffindor", "patronus": "Stag"},
-    {"name": "Ron", "house": "Gryffindor", "patronus": "Jack Russell terrier"},
-    {"name": "Draco", "house": "Slytherin", "patronus": None},
-]</code></pre>
-<p>Notice how this code creates a <code>list</code> of <code>dict</code>s. The <code>list</code> called <code>students</code> has four <code>dicts</code> within it: One for each student. Also, notice that Python has a special <code>None</code> designation where there is no value associated with a key.</p></li>
-<li><p>Now, you have access to a whole host of interesting data about these students. Now, further modify your code as follows:</p>
-<pre><code>students = [
-    {"name": "Hermione", "house": "Gryffindor", "patronus": "Otter"},
-    {"name": "Harry", "house": "Gryffindor", "patronus": "Stag"},
-    {"name": "Ron", "house": "Gryffindor", "patronus": "Jack Russell terrier"},
-    {"name": "Draco", "house": "Slytherin", "patronus": None},
-]
-
-for student in students:
-    print(student["name"], student["house"], student["patronus"], sep=", ")</code></pre>
-<p>Notice how the <code>for</code> loop will iterate through each of the <code>dict</code>s inside the <code>list</code> called <code>students</code>.</p></li>
-<li><p>You can learn more in Python’s Documentation of <a href="https://docs.python.org/3/tutorial/datastructures.html#dictionaries"><code>dict</code>s</a>.</p></li>
+<li>Python 3.11+</li>
+<li>VS Code</li>
+<li>a virtual environment</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> venv .venv</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> .venv/bin/activate</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-V</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="creating-the-application" class="level3">
+<h3 class="anchored" data-anchor-id="creating-the-application">2.5.2 Creating the application</h3>
+<p>We’ll build the program in small, testable pieces.</p>
+<section id="step-1-normalize-text" class="level4">
+<h4 class="anchored" data-anchor-id="step-1-normalize-text">Step 1: Normalize text</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> normalize_text(text: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Lowercase, remove punctuation, collapse whitespace."""</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    text <span class="op">=</span> text.lower()</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    text <span class="op">=</span> re.sub(<span class="vs">r"</span><span class="pp">[^a-z0-9</span><span class="dv">\s</span><span class="pp">]</span><span class="vs">"</span>, <span class="st">" "</span>, text)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    text <span class="op">=</span> re.sub(<span class="vs">r"</span><span class="dv">\s</span><span class="op">+</span><span class="vs">"</span>, <span class="st">" "</span>, text).strip()</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> text</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>What Copilot often gets wrong here:</p>
+<ul>
+<li>accidentally removing apostrophes in a way that merges words</li>
+<li>leaving multiple spaces</li>
+<li>forgetting to handle newlines</li>
 </ul>
 </section>
-<section id="mario" class="level2">
-<h2 class="anchored" data-anchor-id="mario">Mario</h2>
+<section id="step-2-tokenize" class="level4">
+<h4 class="anchored" data-anchor-id="step-2-tokenize">Step 2: Tokenize</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> tokenize(text: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">list</span>[<span class="bu">str</span>]:</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Split normalized text into tokens."""</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> text:</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> []</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> text.split(<span class="st">" "</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Why we keep this separate:</p>
 <ul>
-<li><p>Remember that the classic game Mario has a hero jumping over bricks. Let’s create a textual representation of this game.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/week_2/cs50pWeek2Slide21.png" title="Mario Block." class="img-fluid figure-img"></p>
-<figcaption>Mario Block.</figcaption>
-</figure>
-</div></li>
-<li><p>Begin coding as follows:</p>
-<pre><code>print("#")
-print("#")
-print("#")</code></pre>
-<p>Notice how we are copying and pasting the same code over and over again.</p></li>
-<li><p>Consider how we could better the code as follows:</p>
-<pre><code>for _ in range(3):
-    print("#")</code></pre>
-<p>Notice how this accomplishes essentially what we want to create.</p></li>
-<li><p>Consider: Could we further abstract for solving more sophisticated problems later with this code? Modify your code as follows:</p>
-<pre><code>def main():
-    print_column(3)
-
-
-def print_column(height):
-    for _ in range(height):
-        print("#")
-
-
-main()</code></pre>
-<p>Notice how our column can grow as much as we want without any hard coding.</p></li>
-<li><p>Now, let’s try to print a row horizontally. Modify your code as follows:</p>
-<pre><code>def main():
-    print_row(4)
-
-
-def print_row(width):
-    print("?" * width)
-
-
-main()</code></pre>
-<p>Notice how we now have code that can create left-to-right blocks.</p></li>
-<li><p>Examining the slide below, notice how Mario has both rows and columns of blocks.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/week_2/cs50pWeek2Slide24.png" title="Mario Underground." class="img-fluid figure-img"></p>
-<figcaption>Mario Underground.</figcaption>
-</figure>
-</div></li>
-<li><p>Consider: How could we implement both rows and columns within our code? Modify your code as follows:</p>
-<pre><code>def main():
-    print_square(3)
-
-
-def print_square(size):
-
-    # For each row in square
-    for i in range(size):
-
-        # For each brick in row
-        for j in range(size):
-
-            #  Print brick
-            print("#", end="")
-
-        # Print blank line
-        print()
-
-
-main()</code></pre>
-<p>Notice that we have an outer loop that addresses each row in the square. Then, we have an inner loop that prints a brick in each row. Finally, we have a <code>print</code> statement that prints a blank line.</p></li>
-<li><p>We can further abstract away our code:</p>
-<pre><code>def main():
-    print_square(3)
-
-
-def print_square(size):
-    for i in range(size):
-        print_row(size)
-
-
-def print_row(width):
-    print("#" * width)
-
-
-main()</code></pre></li>
+<li>it’s easy to test</li>
+<li>you might later replace it with a smarter tokenizer</li>
 </ul>
 </section>
-<section id="summing-up" class="level2">
-<h2 class="anchored" data-anchor-id="summing-up">Summing Up</h2>
-<p>You now have another power in your growing list of your Python abilities. In this lecture, we addressed…</p>
+<section id="step-3-count-frequencies" class="level4">
+<h4 class="anchored" data-anchor-id="step-3-count-frequencies">Step 3: Count frequencies</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> collections <span class="im">import</span> Counter</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> word_frequencies(tokens: <span class="bu">list</span>[<span class="bu">str</span>]) <span class="op">-&gt;</span> <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">int</span>]:</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Return frequency counts for tokens."""</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">dict</span>(Counter(tokens))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Copilot-friendly note:</p>
 <ul>
-<li>Loops</li>
-<li><code>while</code></li>
-<li><code>for</code></li>
-<li><code>len</code></li>
-<li><code>list</code></li>
-<li><code>dict</code></li>
+<li><code>Counter</code> is standard library and reliable</li>
+<li>avoids manual dictionary counting bugs</li>
+</ul>
+</section>
+<section id="step-4-sort-and-show-top-n" class="level4">
+<h4 class="anchored" data-anchor-id="step-4-sort-and-show-top-n">Step 4: Sort and show top N</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> top_n(freq: <span class="bu">dict</span>[<span class="bu">str</span>, <span class="bu">int</span>], n: <span class="bu">int</span> <span class="op">=</span> <span class="dv">10</span>) <span class="op">-&gt;</span> <span class="bu">list</span>[<span class="bu">tuple</span>[<span class="bu">str</span>, <span class="bu">int</span>]]:</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Return top N words sorted by descending frequency."""</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">sorted</span>(freq.items(), key<span class="op">=</span><span class="kw">lambda</span> kv: kv[<span class="dv">1</span>], reverse<span class="op">=</span><span class="va">True</span>)[:n]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="step-5-wire-it-together-in-a-small-cli" class="level4">
+<h4 class="anchored" data-anchor-id="step-5-wire-it-together-in-a-small-cli">Step 5: Wire it together in a small CLI</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> analyze_file(path: <span class="bu">str</span>, n: <span class="bu">int</span> <span class="op">=</span> <span class="dv">10</span>) <span class="op">-&gt;</span> <span class="bu">list</span>[<span class="bu">tuple</span>[<span class="bu">str</span>, <span class="bu">int</span>]]:</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    text <span class="op">=</span> Path(path).read_text(encoding<span class="op">=</span><span class="st">"utf-8"</span>, errors<span class="op">=</span><span class="st">"ignore"</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    norm <span class="op">=</span> normalize_text(text)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    tokens <span class="op">=</span> tokenize(norm)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    freq <span class="op">=</span> word_frequencies(tokens)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> top_n(freq, n<span class="op">=</span>n)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    results <span class="op">=</span> analyze_file(<span class="st">"sample.txt"</span>, n<span class="op">=</span><span class="dv">20</span>)</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> word, count <span class="kw">in</span> results:</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>word<span class="sc">}</span><span class="ch">\t</span><span class="sc">{</span>count<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This is “boring” code — and that’s the point.</p>
+<p>It’s ideal for Copilot because:</p>
+<ul>
+<li>the patterns are common</li>
+<li>the structure is predictable</li>
+<li>the errors are easy to spot</li>
+</ul>
+</section>
+</section>
+<section id="side-quest-testing-the-function-speed" class="level3">
+<h3 class="anchored" data-anchor-id="side-quest-testing-the-function-speed">2.5.3 Side quest: Testing the function speed</h3>
+<p>Once you have correctness, you can explore performance.</p>
+<p>A simple benchmark pattern:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> time_it(fn, <span class="op">*</span>args, repeats: <span class="bu">int</span> <span class="op">=</span> <span class="dv">1000</span>):</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    start <span class="op">=</span> time.perf_counter()</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(repeats):</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>        fn(<span class="op">*</span>args)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    end <span class="op">=</span> time.perf_counter()</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> end <span class="op">-</span> start</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Students should learn the ordering:</p>
+<ol type="1">
+<li>correct</li>
+<li>readable</li>
+<li>only then faster</li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="images-from-week-02" class="level2">
+<h2 class="anchored" data-anchor-id="images-from-week-02">Images from Week 02</h2>
+<p>Below are extracted figures from the week 02 materials.</p>
+<p><img src="{img_rel}/fig_01.jpeg" class="img-fluid"></p>
+<p><img src="{img_rel}/fig_02.jpeg" class="img-fluid"></p>
+<p><img src="{img_rel}/fig_03.png" class="img-fluid"></p>
+<hr>
+</section>
+<section id="summary-and-takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="summary-and-takeaways">Summary and takeaways</h2>
+<section id="the-core-lesson" class="level3">
+<h3 class="anchored" data-anchor-id="the-core-lesson">The core lesson</h3>
+<p><strong>The assistant is only as good as the context you give it.</strong></p>
+</section>
+<section id="your-workflow-should-look-like-this" class="level3">
+<h3 class="anchored" data-anchor-id="your-workflow-should-look-like-this">Your workflow should look like this</h3>
+<ol type="1">
+<li>Design the skeleton</li>
+<li>Generate small chunks</li>
+<li>Run tests</li>
+<li>Refactor</li>
+<li>Repeat</li>
+</ol>
+</section>
+<section id="a-checklist-you-should-keep" class="level3">
+<h3 class="anchored" data-anchor-id="a-checklist-you-should-keep">A checklist you should keep</h3>
+<ul>
+<li>Did I name functions clearly?</li>
+<li>Did I include a docstring that states requirements?</li>
+<li>Did I constrain libraries and format?</li>
+<li>Did I ask for tests?</li>
+<li>Did I verify results on real inputs?</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="verification-report-week-02" class="level2">
+<h2 class="anchored" data-anchor-id="verification-report-week-02">Verification report (Week 02)</h2>
+<ul>
+<li>Line count: 546</li>
+<li>Code blocks: 10</li>
+<li>Quotes: 5</li>
+<li>Images referenced: 3</li>
 </ul>
 
 
@@ -1442,13 +1654,13 @@ main()</code></pre></li>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../notes/notes_1.html" class="pagination-link" aria-label="Notes 01 🐍">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Notes 01 🐍</span>
+      <a href="../notes/notes_1.html" class="pagination-link" aria-label="Notes 01 🤖">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Notes 01 🤖</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../notes/notes_3.html" class="pagination-link" aria-label="Notes 03 🐍">
-        <span class="nav-page-text">Notes 03 🐍</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../notes/notes_3.html" class="pagination-link" aria-label="Notes 03 🤖">
+        <span class="nav-page-text">Notes 03 🤖</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

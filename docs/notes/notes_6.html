@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -77,9 +112,12 @@ ul.task-list li input[type="checkbox"] {
 
 
 <meta property="og:title" content="Real World AI">
-<meta property="og:image" content="https://SQ4014-2025.github.io/website/notes/images/week_6/costume1.gif">
+<meta property="og:description" content="Real World Artificial Intelligence (AI) is an innovative module that focuses on the application of large language models (LLMs) and application programming interfaces (APIs) to automate generative AI workflows. The module introduces students to the dynamic world of data science, emphasising the use of cutting-edge technologies like vector databases and the OpenAI API. It is designed to develop skills in prompt engineering and the creation of efficient data processing systems, including customer service chatbots. This module is crucial for students aiming to excel in the rapidly evolving field of data science and technology, providing them with the skills necessary for developing advanced applications in various sectors">
+<meta property="og:image" content="https://SQ4014-2025.github.io/website/notes/images/week_06/fig_001.jpeg">
 <meta property="og:site_name" content="Real World AI">
+<meta property="og:image:alt" content="Extracted figure 1 from Chapter 6">
 <meta name="twitter:title" content="Real World AI">
+<meta name="twitter:description" content="Real World Artificial Intelligence (AI) is an innovative module that focuses on the application of large language models (LLMs) and application programming interfaces (APIs) to automate generative AI workflows. The module introduces students to the dynamic world of data science, emphasising the use of cutting-edge technologies like vector databases and the OpenAI API. It is designed to develop skills in prompt engineering and the creation of efficient data processing systems, including customer service chatbots. This module is crucial for students aiming to excel in the rapidly evolving field of data science and technology, providing them with the skills necessary for developing advanced applications in various sectors">
 <meta name="twitter:image" content="https://SQ4014-2025.github.io/website/notes/images/twitter-card.png">
 <meta name="twitter:creator" content="@EdHarris9000">
 <meta name="twitter:card" content="summary_large_image">
@@ -256,7 +294,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/notes_0.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/notes_6.html">Notes 06 🐍</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/notes_1.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/notes_6.html">Notes 06 🤖</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -336,61 +374,61 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_0.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 00 🐍</span></a>
+ <span class="menu-text">Lecture 00 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_1.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 01 🐍</span></a>
+ <span class="menu-text">Lecture 01 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_2.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 02 🐍</span></a>
+ <span class="menu-text">Lecture 02 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_3.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 03 🐍</span></a>
+ <span class="menu-text">Lecture 03 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_4.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 04 🐍</span></a>
+ <span class="menu-text">Lecture 04 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_5.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 05 🐍</span></a>
+ <span class="menu-text">Lecture 05 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_6.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 06 🐍</span></a>
+ <span class="menu-text">Lecture 06 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_7.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 07 🐍</span></a>
+ <span class="menu-text">Lecture 07 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_8.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 08 🐍</span></a>
+ <span class="menu-text">Lecture 08 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_9.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 09 🐍</span></a>
+ <span class="menu-text">Lecture 09 🤖</span></a>
   </div>
 </li>
       </ul>
@@ -406,62 +444,62 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notes/notes_0.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 00 🐍</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../notes/notes_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 01 🐍</span></a>
+ <span class="menu-text">Notes 01 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 02 🐍</span></a>
+ <span class="menu-text">Notes 02 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 03 🐍</span></a>
+ <span class="menu-text">Notes 03 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 04 🐍</span></a>
+ <span class="menu-text">Notes 04 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 05 🐍</span></a>
+ <span class="menu-text">Notes 05 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_6.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Notes 06 🐍</span></a>
+ <span class="menu-text">Notes 06 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 07 🐍</span></a>
+ <span class="menu-text">Notes 07 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 08 🐍</span></a>
+ <span class="menu-text">Notes 08 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 09 🐍</span></a>
+ <span class="menu-text">Notes 09 🤖</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/notes_10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes 10 🤖</span></a>
   </div>
 </li>
       </ul>
@@ -478,61 +516,61 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src0" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 00 🐍</span></a>
+ <span class="menu-text">Code 00 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src1" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 01 🐍</span></a>
+ <span class="menu-text">Code 01 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src2" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 02 🐍</span></a>
+ <span class="menu-text">Code 02 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src3" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 03 🐍</span></a>
+ <span class="menu-text">Code 03 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src4" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 04 🐍</span></a>
+ <span class="menu-text">Code 04 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src5" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 05 🐍</span></a>
+ <span class="menu-text">Code 05 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src6" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 06 🐍</span></a>
+ <span class="menu-text">Code 06 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src7" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 07 🐍</span></a>
+ <span class="menu-text">Code 07 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src8" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 08 🐍</span></a>
+ <span class="menu-text">Code 08 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src9" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 09 🐍</span></a>
+ <span class="menu-text">Code 09 🤖</span></a>
   </div>
 </li>
       </ul>
@@ -549,55 +587,55 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_0/pset_0.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 00 🐍</span></a>
+ <span class="menu-text">Problem Set 00 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_1/pset_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 01 🐍</span></a>
+ <span class="menu-text">Problem Set 01 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_2/pset_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 02 🐍</span></a>
+ <span class="menu-text">Problem Set 02 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_3/pset_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 03 🐍</span></a>
+ <span class="menu-text">Problem Set 03 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_4/pset_4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 04 🐍</span></a>
+ <span class="menu-text">Problem Set 04 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_5/pset_5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 05 🐍</span></a>
+ <span class="menu-text">Problem Set 05 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_6/pset_6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 06 🐍</span></a>
+ <span class="menu-text">Problem Set 06 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_7/pset_7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 07 🐍</span></a>
+ <span class="menu-text">Problem Set 07 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_8/pset_8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 08 🐍</span></a>
+ <span class="menu-text">Problem Set 08 🤖</span></a>
   </div>
 </li>
       </ul>
@@ -612,354 +650,613 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#week-6-notes" id="toc-week-6-notes" class="nav-link active" data-scroll-target="#week-6-notes">Week 6 Notes</a></li>
-  <li><a href="#lecture-6" id="toc-lecture-6" class="nav-link" data-scroll-target="#lecture-6">Lecture 6</a>
+  <li><a href="#week-06-generating-a-software-backend" id="toc-week-06-generating-a-software-backend" class="nav-link active" data-scroll-target="#week-06-generating-a-software-backend">Week 06 — Generating a software backend</a>
   <ul class="collapse">
-  <li><a href="#file-io" id="toc-file-io" class="nav-link" data-scroll-target="#file-io">File I/O</a></li>
-  <li><a href="#open" id="toc-open" class="nav-link" data-scroll-target="#open"><code>open</code></a></li>
-  <li><a href="#with" id="toc-with" class="nav-link" data-scroll-target="#with"><code>with</code></a></li>
-  <li><a href="#csv" id="toc-csv" class="nav-link" data-scroll-target="#csv">CSV</a></li>
-  <li><a href="#binary-files-and-pil" id="toc-binary-files-and-pil" class="nav-link" data-scroll-target="#binary-files-and-pil">Binary Files and <code>PIL</code></a></li>
-  <li><a href="#summing-up" id="toc-summing-up" class="nav-link" data-scroll-target="#summing-up">Summing Up</a></li>
+  <li><a href="#what-this-week-covers-in-plain-language" id="toc-what-this-week-covers-in-plain-language" class="nav-link" data-scroll-target="#what-this-week-covers-in-plain-language">What this week covers (in plain language)</a></li>
+  </ul></li>
+  <li><a href="#key-terms" id="toc-key-terms" class="nav-link" data-scroll-target="#key-terms">Key terms</a></li>
+  <li><a href="#where-we-are-in-the-project" id="toc-where-we-are-in-the-project" class="nav-link" data-scroll-target="#where-we-are-in-the-project">Where we are in the project</a>
+  <ul class="collapse">
+  <li><a href="#recap-of-the-app-architecture-so-far" id="toc-recap-of-the-app-architecture-so-far" class="nav-link" data-scroll-target="#recap-of-the-app-architecture-so-far">Recap of the app architecture so far</a></li>
+  <li><a href="#why-backend-work-matters-here" id="toc-why-backend-work-matters-here" class="nav-link" data-scroll-target="#why-backend-work-matters-here">Why backend work matters here</a></li>
+  </ul></li>
+  <li><a href="#sessions-the-core-idea" id="toc-sessions-the-core-idea" class="nav-link" data-scroll-target="#sessions-the-core-idea">Sessions: the core idea</a>
+  <ul class="collapse">
+  <li><a href="#what-you-should-store-in-a-test-session" id="toc-what-you-should-store-in-a-test-session" class="nav-link" data-scroll-target="#what-you-should-store-in-a-test-session">What you should store in a test session</a></li>
+  <li><a href="#what-you-should-not-store" id="toc-what-you-should-not-store" class="nav-link" data-scroll-target="#what-you-should-not-store">What you should <em>not</em> store</a></li>
+  </ul></li>
+  <li><a href="#debugging-the-works-once-problem" id="toc-debugging-the-works-once-problem" class="nav-link" data-scroll-target="#debugging-the-works-once-problem">Debugging the “works once” problem</a>
+  <ul class="collapse">
+  <li><a href="#symptom-driven-debugging" id="toc-symptom-driven-debugging" class="nav-link" data-scroll-target="#symptom-driven-debugging">Symptom-driven debugging</a></li>
+  <li><a href="#why-this-is-a-good-learning-bug" id="toc-why-this-is-a-good-learning-bug" class="nav-link" data-scroll-target="#why-this-is-a-good-learning-bug">Why this is a good learning bug</a></li>
+  </ul></li>
+  <li><a href="#working-with-tabnine-as-a-coding-partner" id="toc-working-with-tabnine-as-a-coding-partner" class="nav-link" data-scroll-target="#working-with-tabnine-as-a-coding-partner">Working with Tabnine as a coding partner</a>
+  <ul class="collapse">
+  <li><a href="#what-tabnine-is-good-at" id="toc-what-tabnine-is-good-at" class="nav-link" data-scroll-target="#what-tabnine-is-good-at">What Tabnine is good at</a></li>
+  <li><a href="#what-tabnine-is-bad-at-unless-you-guide-it" id="toc-what-tabnine-is-bad-at-unless-you-guide-it" class="nav-link" data-scroll-target="#what-tabnine-is-bad-at-unless-you-guide-it">What Tabnine is bad at (unless you guide it)</a>
+  <ul class="collapse">
+  <li><a href="#practical-prompting-pattern" id="toc-practical-prompting-pattern" class="nav-link" data-scroll-target="#practical-prompting-pattern">Practical prompting pattern</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#implementing-the-backend-features-flask-db" id="toc-implementing-the-backend-features-flask-db" class="nav-link" data-scroll-target="#implementing-the-backend-features-flask-db">Implementing the backend features (Flask + DB)</a>
+  <ul class="collapse">
+  <li><a href="#a-minimal-but-clean-flask-app-structure" id="toc-a-minimal-but-clean-flask-app-structure" class="nav-link" data-scroll-target="#a-minimal-but-clean-flask-app-structure">A minimal but clean Flask app structure</a></li>
+  <li><a href="#code-example-enabling-sessions-and-setting-a-secret-key" id="toc-code-example-enabling-sessions-and-setting-a-secret-key" class="nav-link" data-scroll-target="#code-example-enabling-sessions-and-setting-a-secret-key">Code example: enabling sessions and setting a secret key</a>
+  <ul class="collapse">
+  <li><a href="#why-secret_key-matters" id="toc-why-secret_key-matters" class="nav-link" data-scroll-target="#why-secret_key-matters">Why <code>SECRET_KEY</code> matters</a></li>
+  </ul></li>
+  <li><a href="#code-example-selecting-questions-once-per-session" id="toc-code-example-selecting-questions-once-per-session" class="nav-link" data-scroll-target="#code-example-selecting-questions-once-per-session">Code example: selecting questions once per session</a>
+  <ul class="collapse">
+  <li><a href="#pitfall" id="toc-pitfall" class="nav-link" data-scroll-target="#pitfall">Pitfall</a></li>
+  </ul></li>
+  <li><a href="#code-example-route-that-shows-the-current-question" id="toc-code-example-route-that-shows-the-current-question" class="nav-link" data-scroll-target="#code-example-route-that-shows-the-current-question">Code example: route that shows the current question</a></li>
+  <li><a href="#code-example-recording-an-answer-post" id="toc-code-example-recording-an-answer-post" class="nav-link" data-scroll-target="#code-example-recording-an-answer-post">Code example: recording an answer (POST)</a>
+  <ul class="collapse">
+  <li><a href="#why-we-reassign-sessionanswers" id="toc-why-we-reassign-sessionanswers" class="nav-link" data-scroll-target="#why-we-reassign-sessionanswers">Why we reassign <code>session["answers"]</code></a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#testing-and-troubleshooting" id="toc-testing-and-troubleshooting" class="nav-link" data-scroll-target="#testing-and-troubleshooting">Testing and troubleshooting</a>
+  <ul class="collapse">
+  <li><a href="#make-failures-reproducible" id="toc-make-failures-reproducible" class="nav-link" data-scroll-target="#make-failures-reproducible">Make failures reproducible</a></li>
+  <li><a href="#code-example-quick-smoke-test-with-requests" id="toc-code-example-quick-smoke-test-with-requests" class="nav-link" data-scroll-target="#code-example-quick-smoke-test-with-requests">Code example: quick smoke test with requests</a></li>
+  <li><a href="#common-error-classes-in-this-week" id="toc-common-error-classes-in-this-week" class="nav-link" data-scroll-target="#common-error-classes-in-this-week">Common error classes in this week</a></li>
+  </ul></li>
+  <li><a href="#figures-from-chapter-6-extracted" id="toc-figures-from-chapter-6-extracted" class="nav-link" data-scroll-target="#figures-from-chapter-6-extracted">Figures from Chapter 6 (extracted)</a></li>
+  <li><a href="#summing-up" id="toc-summing-up" class="nav-link" data-scroll-target="#summing-up">Summing up</a>
+  <ul class="collapse">
+  <li><a href="#checks-for-understanding" id="toc-checks-for-understanding" class="nav-link" data-scroll-target="#checks-for-understanding">Checks for understanding</a></li>
+  </ul></li>
+  <li><a href="#guided-walkthrough-dense-notes" id="toc-guided-walkthrough-dense-notes" class="nav-link" data-scroll-target="#guided-walkthrough-dense-notes">Guided walkthrough (dense notes)</a>
+  <ul class="collapse">
+  <li><a href="#step-1-what-are-we-trying-to-achieve" id="toc-step-1-what-are-we-trying-to-achieve" class="nav-link" data-scroll-target="#step-1-what-are-we-trying-to-achieve">Step 1: What are we trying to achieve?</a></li>
+  <li><a href="#step-2-what-are-we-trying-to-achieve" id="toc-step-2-what-are-we-trying-to-achieve" class="nav-link" data-scroll-target="#step-2-what-are-we-trying-to-achieve">Step 2: What are we trying to achieve?</a></li>
+  <li><a href="#step-3-what-are-we-trying-to-achieve" id="toc-step-3-what-are-we-trying-to-achieve" class="nav-link" data-scroll-target="#step-3-what-are-we-trying-to-achieve">Step 3: What are we trying to achieve?</a></li>
+  <li><a href="#step-4-what-are-we-trying-to-achieve" id="toc-step-4-what-are-we-trying-to-achieve" class="nav-link" data-scroll-target="#step-4-what-are-we-trying-to-achieve">Step 4: What are we trying to achieve?</a></li>
+  <li><a href="#step-5-what-are-we-trying-to-achieve" id="toc-step-5-what-are-we-trying-to-achieve" class="nav-link" data-scroll-target="#step-5-what-are-we-trying-to-achieve">Step 5: What are we trying to achieve?</a></li>
+  <li><a href="#step-6-what-are-we-trying-to-achieve" id="toc-step-6-what-are-we-trying-to-achieve" class="nav-link" data-scroll-target="#step-6-what-are-we-trying-to-achieve">Step 6: What are we trying to achieve?</a></li>
+  <li><a href="#step-7-what-are-we-trying-to-achieve" id="toc-step-7-what-are-we-trying-to-achieve" class="nav-link" data-scroll-target="#step-7-what-are-we-trying-to-achieve">Step 7: What are we trying to achieve?</a></li>
+  <li><a href="#step-8-what-are-we-trying-to-achieve" id="toc-step-8-what-are-we-trying-to-achieve" class="nav-link" data-scroll-target="#step-8-what-are-we-trying-to-achieve">Step 8: What are we trying to achieve?</a></li>
+  <li><a href="#step-9-what-are-we-trying-to-achieve" id="toc-step-9-what-are-we-trying-to-achieve" class="nav-link" data-scroll-target="#step-9-what-are-we-trying-to-achieve">Step 9: What are we trying to achieve?</a></li>
+  <li><a href="#step-10-what-are-we-trying-to-achieve" id="toc-step-10-what-are-we-trying-to-achieve" class="nav-link" data-scroll-target="#step-10-what-are-we-trying-to-achieve">Step 10: What are we trying to achieve?</a></li>
+  <li><a href="#step-11-what-are-we-trying-to-achieve" id="toc-step-11-what-are-we-trying-to-achieve" class="nav-link" data-scroll-target="#step-11-what-are-we-trying-to-achieve">Step 11: What are we trying to achieve?</a></li>
+  <li><a href="#step-12-what-are-we-trying-to-achieve" id="toc-step-12-what-are-we-trying-to-achieve" class="nav-link" data-scroll-target="#step-12-what-are-we-trying-to-achieve">Step 12: What are we trying to achieve?</a></li>
+  <li><a href="#step-13-what-are-we-trying-to-achieve" id="toc-step-13-what-are-we-trying-to-achieve" class="nav-link" data-scroll-target="#step-13-what-are-we-trying-to-achieve">Step 13: What are we trying to achieve?</a></li>
+  <li><a href="#step-14-what-are-we-trying-to-achieve" id="toc-step-14-what-are-we-trying-to-achieve" class="nav-link" data-scroll-target="#step-14-what-are-we-trying-to-achieve">Step 14: What are we trying to achieve?</a></li>
+  <li><a href="#step-15-what-are-we-trying-to-achieve" id="toc-step-15-what-are-we-trying-to-achieve" class="nav-link" data-scroll-target="#step-15-what-are-we-trying-to-achieve">Step 15: What are we trying to achieve?</a></li>
+  <li><a href="#step-16-what-are-we-trying-to-achieve" id="toc-step-16-what-are-we-trying-to-achieve" class="nav-link" data-scroll-target="#step-16-what-are-we-trying-to-achieve">Step 16: What are we trying to achieve?</a></li>
+  <li><a href="#step-17-what-are-we-trying-to-achieve" id="toc-step-17-what-are-we-trying-to-achieve" class="nav-link" data-scroll-target="#step-17-what-are-we-trying-to-achieve">Step 17: What are we trying to achieve?</a></li>
+  <li><a href="#step-18-what-are-we-trying-to-achieve" id="toc-step-18-what-are-we-trying-to-achieve" class="nav-link" data-scroll-target="#step-18-what-are-we-trying-to-achieve">Step 18: What are we trying to achieve?</a></li>
+  <li><a href="#step-19-what-are-we-trying-to-achieve" id="toc-step-19-what-are-we-trying-to-achieve" class="nav-link" data-scroll-target="#step-19-what-are-we-trying-to-achieve">Step 19: What are we trying to achieve?</a></li>
+  <li><a href="#step-20-what-are-we-trying-to-achieve" id="toc-step-20-what-are-we-trying-to-achieve" class="nav-link" data-scroll-target="#step-20-what-are-we-trying-to-achieve">Step 20: What are we trying to achieve?</a></li>
+  <li><a href="#step-21-what-are-we-trying-to-achieve" id="toc-step-21-what-are-we-trying-to-achieve" class="nav-link" data-scroll-target="#step-21-what-are-we-trying-to-achieve">Step 21: What are we trying to achieve?</a></li>
+  <li><a href="#step-22-what-are-we-trying-to-achieve" id="toc-step-22-what-are-we-trying-to-achieve" class="nav-link" data-scroll-target="#step-22-what-are-we-trying-to-achieve">Step 22: What are we trying to achieve?</a></li>
+  <li><a href="#step-23-what-are-we-trying-to-achieve" id="toc-step-23-what-are-we-trying-to-achieve" class="nav-link" data-scroll-target="#step-23-what-are-we-trying-to-achieve">Step 23: What are we trying to achieve?</a></li>
+  <li><a href="#step-24-what-are-we-trying-to-achieve" id="toc-step-24-what-are-we-trying-to-achieve" class="nav-link" data-scroll-target="#step-24-what-are-we-trying-to-achieve">Step 24: What are we trying to achieve?</a></li>
+  <li><a href="#step-25-what-are-we-trying-to-achieve" id="toc-step-25-what-are-we-trying-to-achieve" class="nav-link" data-scroll-target="#step-25-what-are-we-trying-to-achieve">Step 25: What are we trying to achieve?</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/SQ4014-2025/website/edit/master/notes/notes_6.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/SQ4014-2025/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/notes_0.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/notes_6.html">Notes 06 🐍</a></li></ol></nav></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/notes_1.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/notes_6.html">Notes 06 🤖</a></li></ol></nav></header>
 
 
 
 
 
-<section id="week-6-notes" class="level1">
-<h1>Week 6 Notes</h1>
-<hr>
-</section>
-<section id="lecture-6" class="level1">
-<h1>Lecture 6</h1>
+<section id="week-06-generating-a-software-backend" class="level1">
+<h1>Week 06 — Generating a software backend</h1>
+<p>This week focuses on <em>Generating a software backend</em>.</p>
+<p>We are continuing the HAM radio practice-test app. In Week 05 we got a working scaffold (database + basic page). In <strong>Week 06</strong> the focus shifts from “it runs” to “it behaves like a real application”: it must keep track of a test-taker over multiple clicks, handle restarts, and recover cleanly from bugs.</p>
+<section id="what-this-week-covers-in-plain-language" class="level2">
+<h2 class="anchored" data-anchor-id="what-this-week-covers-in-plain-language">What this week covers (in plain language)</h2>
 <ul>
-<li><a href="#file-io">File I/O</a></li>
-<li><a href="#open"><code>open</code></a></li>
-<li><a href="#with"><code>with</code></a></li>
-<li><a href="#csv">CSV</a></li>
-<li><a href="#binary-files-and-pil">Binary Files and <code>PIL</code></a></li>
-<li><a href="#summing-up">Summing Up</a></li>
-</ul>
-<section id="file-io" class="level2">
-<h2 class="anchored" data-anchor-id="file-io">File I/O</h2>
+<li>Turning a static “dump of questions” into an interactive workflow.</li>
+<li>Creating and maintaining <strong>persistent sessions</strong> so each student sees a consistent test flow.</li>
+<li>Implementing backend features in <strong>Flask</strong> with <strong>database integration</strong>.</li>
+<li>Using <strong>Tabnine</strong> to:
 <ul>
-<li><p>Up until now, everything we’ve programmed has stored information in memory. That is, once the program is ended, all information gathered from the user or generated by the program is lost.</p></li>
-<li><p>File I/O is the ability of a program to take a file as input or create a file as output.</p></li>
-<li><p>To begin, in the terminal window type <code>code names.py</code> and code as follows:</p>
-<pre><code>name = input("What's your name?" )
-print(f"hello, {name}")</code></pre>
-<p>Notice that running this code has the desired output. The user can input a name. The output is as expected.</p></li>
-<li><p>However, what if we wanted to allow multiple names to be inputted? How might we achieve this? Recall that a <code>list</code> is a data structure that allows us to store multiple values into a single variable. Code as follows:</p>
-<pre><code>names = []
-
-for _ in range(3):
-    name = input("What's your name?" )
-    names.append(name)</code></pre>
-<p>Notice that the user will be prompted three times for input. The <code>append</code> method is used to add the <code>name</code> to our <code>names</code> list.</p></li>
-<li><p>This code could be simplified to the following:</p>
-<pre><code>names = []
-
-for _ in range(3):
-    names.append(input("What's your name?" ))</code></pre>
-<p>Notice that this has the same result as the prior block of code.</p>
-<ul>
-<li>Now, let’s enable the ability to print the list of names as a sorted list. Code as follows:</li>
-</ul>
-<pre><code>names = []
-
-for _ in range(3):
-    names.append(input("What's your name?" ))
-
-for name in sorted(names):
-    print(f"hello, {name}")</code></pre>
-<p>Notice that once this program is executed, all information is lost. File I/O allows your program to store this information such that it can be used later.</p></li>
-<li><p>You can learn more in Python’s documentation of <a href="https://docs.python.org/3/library/functions.html#sorted">sorted</a>.</p></li>
+<li>generate code (scaffolds and functions)</li>
+<li>debug and fix errors</li>
+<li>refactor toward cleaner modules</li>
+</ul></li>
+<li>Crafting prompts that produce <em>useful</em> help instead of vague output.</li>
 </ul>
 </section>
-<section id="open" class="level2">
-<h2 class="anchored" data-anchor-id="open"><code>open</code></h2>
+</section>
+<section id="key-terms" class="level1">
+<h1>Key terms</h1>
 <ul>
-<li><p><code>open</code> is a functionality built into Python that allows you to open a file and utilize it in your program. The <code>open</code> function allows you to open a file such that you can read from it or write to it.</p></li>
-<li><p>To show you how to enable file I/O in your program, let’s rewind a bit and code as follows:</p>
-<pre><code>name = input("What's your name? ")
-
-file = open("names.txt", "w")
-file.write(name)
-file.close()</code></pre>
-<p>Notice that the <code>open</code> function opens a file called <code>names.txt</code> with writing enabled, as signified by the <code>w</code>. The code above assigns that opened file to a variable called <code>file</code>. The line <code>file.write(name)</code> writes the name to the text file. The line after that closes the file.</p></li>
-<li><p>Testing out your code by typing <code>python names.py</code>, you can input a name and it saves to the text file. However, if you run your program multiple times using different names, you will notice that this program will entirely rewrite the <code>names.txt</code> file each time.</p></li>
-<li><p>Ideally, we want to be able to append each of our names to the file. Remove the existing text file by typing <code>rm names.txt</code> in the terminal window. Then, modify your code as follows:</p>
-<pre><code>name = input("What's your name? ")
-
-file = open("names.txt", "a")
-file.write(name)
-file.close()</code></pre>
-<p>Notice that the only change to our code is that the <code>w</code> has been changed to <code>a</code> for “append”. Rerunning this program multiple times, you will notice that names will be added to the file. However, you will notice a new problem!</p></li>
-<li><p>Examining your text file after running your program multiple times, you’ll notice that the names are running together. The names are being appended without any gaps between each of the names. You can fix this issue. Again, remove the existing text file by typing <code>rm names.txt</code> in the terminal window. Then, modify your code as follows:</p>
-<pre><code>name = input("What's your name? ")
-
-file = open("names.txt", "a")
-file.write(f"{name}\n")
-file.close()</code></pre>
-<p>Notice that the line with <code>file.write</code> has been modified to add a line break at the end of each name.</p></li>
-<li><p>This code is working quite well. However, there are ways to improve this program. It so happens that it’s quite easy to forget to close the file.</p></li>
-<li><p>You can learn more in Python’s documentation of <a href="https://docs.python.org/3/library/functions.html#open">open</a>.</p></li>
+<li><strong>Tabnine</strong> — AI coding assistant integrated into IDEs (VS Code etc.) that can autocomplete, chat, and help refactor.</li>
+<li><strong>session</strong> — A way to remember who the user is between requests; this week focuses on keeping “test-taker state”.</li>
+<li><strong>Flask</strong> — A lightweight Python web framework; here it serves pages and handles requests for the practice test app.</li>
+<li><strong>SQLite</strong> — A file-based relational database used to store questions; errors often surface when files/paths/locks are wrong.</li>
+<li><strong>user state</strong> — The data you must track during a test: which question number, chosen answers, score, and timing.</li>
 </ul>
 </section>
-<section id="with" class="level2">
-<h2 class="anchored" data-anchor-id="with"><code>with</code></h2>
+<section id="where-we-are-in-the-project" class="level1">
+<h1>Where we are in the project</h1>
+<section id="recap-of-the-app-architecture-so-far" class="level2">
+<h2 class="anchored" data-anchor-id="recap-of-the-app-architecture-so-far">Recap of the app architecture so far</h2>
+<p>By now you have:</p>
 <ul>
-<li><p>The keyword <code>with</code> allows you to automate the closing of a file.</p></li>
-<li><p>Modify your code as follows:</p>
-<pre><code>name = input("What's your name? ")
-
-with open("names.txt", "a") as file:
-    file.write(f"{name}\n")</code></pre>
-<p>Notice that the line below <code>with</code> is indented.</p></li>
-<li><p>Up until this point, we have been exclusively writing to a file. What if we want to read from a file? To enable this functionality, modify your code as follows:</p>
-<pre><code>with open("names.txt", "r") as file:
-    lines = file.readlines()
-
-for line in lines:
-    print("hello,", line)</code></pre>
-<p>Notice that <code>readlines</code> has a special ability to read all the lines of a file and store them in a list called <code>lines</code>. Running your program, you will notice that the output is quite ugly. There seem to be multiple line breaks where there should be only one.</p></li>
-<li><p>There are many approaches to fix this issue. However, here is a simple way to fix this error in our code:</p>
-<pre><code>with open("names.txt", "r") as file:
-    lines = file.readlines()
-
-for line in lines:
-    print("hello,", line.rstrip())</code></pre>
-<p>Notice that <code>rstrip</code> has the effect of removing the extraneous line break at the end of each line.</p></li>
-<li><p>Still, this code could be simplified even further:</p>
-<pre><code>with open("names.txt", "r") as file:
-    for line in file:
-        print("hello,", line.rstrip())</code></pre>
-<p>Notice that running this code, it is correct. However, notice that we are not sorting the names.</p></li>
-<li><p>This code could be further improved to allow for the sorting of the names:</p>
-<pre><code>names = []
-
-with open("names.txt") as file:
-    for line in file:
-        names.append(line.rstrip())
-
-for name in sorted(names):
-    print(f"hello, {name}")</code></pre>
-<p>Notice that <code>names</code> is a blank list where we can collect the names. Each name is appended to the <code>names</code> list in memory. Then, each name in the sorted list in memory is printed. Running your code, you will see that the names are now properly sorted.</p></li>
-<li><p>What if we wanted the ability to store more than just the names of students? What if we wanted to store both the student’s name and their house as well?</p></li>
+<li>A <strong>SQLite</strong> database file (for example <code>data/questions.db</code>).</li>
+<li>Model code that opens a connection and fetches question data.</li>
+<li>A <strong>Flask</strong> app entry point that defines routes and renders templates.</li>
+</ul>
+<p>The problem: the app <em>works once</em>, then fails on reload / restart / second session.</p>
+<p>That is a classic “state + lifecycle” bug.</p>
+</section>
+<section id="why-backend-work-matters-here" class="level2">
+<h2 class="anchored" data-anchor-id="why-backend-work-matters-here">Why backend work matters here</h2>
+<p>A lot of beginner web apps fail because they confuse:</p>
+<ul>
+<li><strong>a request</strong> (one browser hit)</li>
+<li><strong>a session</strong> (a user across many requests)</li>
+<li><strong>an application run</strong> (the server process)</li>
+</ul>
+<p>When you build a “test” experience, you are building a mini state machine:</p>
+<ul>
+<li>Start test → choose 35 questions → show question 1 → record answer → show question 2 → … → show results.</li>
+</ul>
+<p>If you don’t store state, every click resets you.</p>
+</section>
+</section>
+<section id="sessions-the-core-idea" class="level1">
+<h1>Sessions: the core idea</h1>
+<p>A browser talks to your server with HTTP. HTTP is <em>stateless</em>.</p>
+<p>So you must choose where to store “memory”:</p>
+<ul>
+<li>client-side (cookies / local storage)</li>
+<li>server-side (in-memory, file, database, cache)</li>
+<li>hybrid (cookie contains a session key; server stores the session data)</li>
+</ul>
+<p>In Flask, the default <strong>session</strong> object is cookie-based (signed) — good for small, non-sensitive state.</p>
+<section id="what-you-should-store-in-a-test-session" class="level3">
+<h3 class="anchored" data-anchor-id="what-you-should-store-in-a-test-session">What you should store in a test session</h3>
+<p>Typical items:</p>
+<ul>
+<li><code>session_id</code> (or a server-side key)</li>
+<li><code>question_ids</code> selected for this test</li>
+<li><code>current_index</code> (which question the student is on)</li>
+<li><code>answers</code> (dictionary mapping question_id → chosen option)</li>
+<li><code>start_time</code> (optional)</li>
+<li><code>score</code> (optional, may be computed at end)</li>
 </ul>
 </section>
-<section id="csv" class="level2">
-<h2 class="anchored" data-anchor-id="csv">CSV</h2>
+<section id="what-you-should-not-store" class="level3">
+<h3 class="anchored" data-anchor-id="what-you-should-not-store">What you should <em>not</em> store</h3>
 <ul>
-<li><p>CSV stands for “comma separated values”.</p></li>
-<li><p>In your terminal window, type <code>code students.csv</code>. Ensure your new CSV file looks like the following:</p>
-<pre><code>Hermione,Gryffindor
-Harry,Gryffindor
-Ron,Gryffindor
-Draco,Slytherin</code></pre></li>
-<li><p>Let’s create a new program by typing <code>code students.py</code> and code as follows:</p>
-<pre><code>with open("students.csv") as file:
-    for line in file:
-        row = line.rstrip().split(",")
-        print(f"{row[0]} is in {row[1]}")</code></pre>
-<p>Notice that <code>rstrip</code> removes the end of each line in our CSV file. <code>split</code> tells the interpreter where to find the end of each of our values in our CSV file. <code>row[0]</code> is the first element in each line of our CSV file. <code>row[1]</code> is the second element in each line in our CSV file.</p></li>
-<li><p>The above code is effective at dividing each line or “record” of our CSV file. However, it’s a bit cryptic to look at if you are unfamiliar with this type of syntax. Python has built-in ability that could further simplify this code. Modify your code as follows:</p>
-<pre><code>with open("students.csv") as file:
-    for line in file:
-        name, house = line.rstrip().split(",")
-        print(f"{name} is in {house}")</code></pre>
-<p>Notice that the <code>split</code> function actually returns two values: The one before the comma and the one after the comma. Accordingly, we can rely upon that functionality to assign two variables at once instead of one!</p></li>
-<li><p>Imagine that we would again like to provide this list as sorted output? You can modify your code as follows:</p>
-<pre><code>students = []
-
-with open("students.csv") as file:
-    for line in file:
-        name, house = line.rstrip().split(",")
-        students.append(f"{name} is in {house}")
-
-for student in sorted(students):
-    print(student)</code></pre>
-<p>Notice that we create a <code>list</code> called <code>students</code>. We <code>append</code> each string to this list. Then, we output a sorted version of our list.</p></li>
-<li><p>Recall that Python allows for <code>dictionaries</code> where a key can be associated with a value. This code could be further improved</p>
-<pre><code>students = []
-
-with open("students.csv") as file:
-    for line in file:
-        name, house = line.rstrip().split(",")
-        student = {}
-        student["name"] = name
-        student["house"] = house
-        students.append(student)
-
-for student in students:
-    print(f"{student['name']} is in {student['house']}")</code></pre>
-<p>Notice that we create an empty dictionary called <code>student</code>. We add the values for each student, including their name and house into the <code>student</code> dictionary. Then, we append that student to the <code>list</code> called <code>students</code>.</p></li>
-<li><p>We can improve our code to illustrate this as follows:</p>
-<pre><code>students = []
-
-with open("students.csv") as file:
-    for line in file:
-        name, house = line.rstrip().split(",")
-        student = {"name": name, "house": house}
-        students.append(student)
-
-for student in students:
-    print(f"{student['name']} is in {student['house']}")</code></pre>
-<p>Notice that this produces the desired outcome, minus the sorting of students.</p></li>
-<li><p>Unfortunately, we cannot sort the students as we had prior because each student is now a dictionary inside of a list. It would be helpful if Python could sort the <code>students</code> list of <code>student</code> dictionaries that sorts this list of dictionaries by the student’s name.</p></li>
-<li><p>To implement this in our code, make the following changes:</p>
-<pre><code>students = []
-
-with open("students.csv") as file:
-    for line in file:
-        name, house = line.rstrip().split(",")
-        students.append({"name": name, "house": house})
-
-
-def get_name(student):
-    return student["name"]
-
-
-for student in sorted(students, key=get_name):
-    print(f"{student['name']} is in {student['house']}")</code></pre>
-<p>Notice that <code>sorted</code> needs to know how to get the key of each student. Python allows for a parameter called <code>key</code> where we can define on what “key” the list of students will be sorted. Therefore, the <code>get_name</code> function simply returns the key of <code>student["name"]</code>. Running this program, you will now see that the list is now sorted by name.</p></li>
-<li><p>Still, our code can be further improved upon. It just so happens that if you are only going to use a function like <code>get_name</code> once, you can simplify your code in the manner presented below. Modify your code as follows:</p>
-<pre><code>students = []
-
-with open("students.csv") as file:
-    for line in file:
-        name, house = line.rstrip().split(",")
-        students.append({"name": name, "house": house})
-
-for student in sorted(students, key=lambda student: student["name"]):
-    print(f"{student['name']} is in {student['house']}")</code></pre>
-<p>Notice how we use a <code>lambda</code> function, an anonymous function, that says “Hey Python, here is a function that has no name: Given a <code>student</code>, access their <code>name</code> and return that to the <code>key</code>.</p></li>
-<li><p>Unfortunately, our code is a bit fragile. Suppose that we changed our CSV file such that we indicated where each student grew up. What would be the impact of this upon our program? First, modify your <code>students.csv</code> file as follows:</p></li>
-</ul>
-<pre><code>Harry,"Number Four, Privet Drive"
-Ron,The Burrow
-Draco,Malfoy Manor</code></pre>
-<p>Notice how running our program how will produce a number of errors.</p>
-<ul>
-<li><p>Now that we’re dealing with homes instead of houses, modify your code as follows:</p>
-<pre><code>students = []
-
-with open("students.csv") as file:
-    for line in file:
-        name, home = line.rstrip().split(",")
-        students.append({"name": name, "home": home})
-
-for student in sorted(students, key=lambda student: student["name"]):
-    print(f"{student['name']} is in {student['home']}")</code></pre>
-<p>Notice that running our program still does not work properly. Can you guess why?</p></li>
-<li><p>The <code>ValueError: too many values to unpack</code> error produced by the interpreter is a result of the fact that we previously created this program expecting the CSV file is <code>split</code> using a <code>,</code> (comma). We could spend more time addressing this, but indeed someone else has already developed a way to “parse” (that is, to read) CSV files!</p></li>
-<li><p>Python’s built-in <code>csv</code> library comes with an object called a <code>reader</code>. As the name suggests, we can use a <code>reader</code> to read our CSV file despite the extra comma in “Number Four, Privet Drive”. A <code>reader</code> works in a <code>for</code> loop, where each iteration the <code>reader</code> gives us another row from our CSV file. This row itself is a list, where each value in the list corresponds to an element in that row. <code>row[0]</code>, for example, is the first element of the given row, while <code>row[1]</code> is the second element.</p>
-<pre><code>import csv
-
-students = []
-
-with open("students.csv") as file:
-    reader = csv.reader(file)
-    for row in reader:
-        students.append({"name": row[0], "home": row[1]})
-
-for student in sorted(students, key=lambda student: student["name"]):
-    print(f"{student['name']} is from {student['home']}")</code></pre>
-<p>Notice that our program now works as expected.</p></li>
-<li><p>Up until this point, we have been relying upon our program to specifically decide what parts of our CSV file are the names and what parts are the homes. It’s better design, though, to bake this directly into our CSV file by editing it as follows:</p>
-<pre><code>name,home
-Harry,"Number Four, Privet Drive"
-Ron,The Burrow
-Draco,Malfoy Manor</code></pre>
-<p>Notice how we are explicitly saying in our CSV file that anything reading it should expect there to be a name value and a home value in each line.</p></li>
-<li><p>We can modify our code to use a part of the <code>csv</code> library called a <code>DictReader</code> to treat our CSV file with even more flexibilty:</p>
-<pre><code>import csv
-
-students = []
-
-with open("students.csv") as file:
-    reader = csv.DictReader(file)
-    for row in reader:
-        students.append({"name": row["name"], "home": row["home"]})
-
-for student in sorted(students, key=lambda student: student["name"]):
-    print(f"{student['name']} is in {student['home']}")</code></pre>
-<p>Notice that we have replaced <code>reader</code> with <code>DictReader</code>, which returns one dictionary at a time. Also, notice that the interpreter will directly access the <code>row</code> dictionary, getting the <code>name</code> and <code>home</code> of each student. This is an example of coding defensively. As long as the person designing the CSV file has inputted the correct header information on the first line, we can access that information using our program.</p></li>
-<li><p>Up until this point, we have been reading CSV files. What if we want to write to a CSV file?</p></li>
-<li><p>To begin, let’s clean up our files a bit. First, delete the <code>students.csv</code> file by typing <code>rm students.csv</code> in the terminal window. This command will only work if you’re in the same folder as your <code>students.csv</code> file.</p></li>
-<li><p>Then, in <code>students.py</code>, modify your code as follows:</p>
-<pre><code>import csv
-
-name = input("What's your name? ")
-home = input("Where's your home? ")
-
-with open("students.csv", "a") as file:
-    writer = csv.DictWriter(file, fieldnames=["name", "home"])
-    writer.writerow({"name": name, "home": home})</code></pre>
-<p>Notice how we are leveraging the built-in functionality of <code>DictWriter</code>, which takes two parameters: the <code>file</code> being written to and the <code>fieldnames</code> to write. Further, notice how the <code>writerow</code> function takes a dictionary as its parameter. Quite literally, we are telling the interpreter to write a row with two fields called <code>name</code> and <code>home</code>.</p></li>
-<li><p>Note that there are many types of files that you can read from and write to.</p></li>
-<li><p>You can learn more in Python’s documentation of <a href="https://docs.python.org/3/library/csv.html">CSV</a>.</p></li>
+<li>the entire question database</li>
+<li>secrets (API keys)</li>
+<li>large blobs of data</li>
 </ul>
 </section>
-<section id="binary-files-and-pil" class="level2">
-<h2 class="anchored" data-anchor-id="binary-files-and-pil">Binary Files and <code>PIL</code></h2>
+</section>
+<section id="debugging-the-works-once-problem" class="level1">
+<h1>Debugging the “works once” problem</h1>
+<section id="symptom-driven-debugging" class="level2">
+<h2 class="anchored" data-anchor-id="symptom-driven-debugging">Symptom-driven debugging</h2>
+<p>When an app works once and fails on the second run, the cause is often one of:</p>
 <ul>
-<li>One more type of file that we will discuss today is a binary file. A binary file is simply a collection of ones and zeros. This type of file can store anything including, music and image data.</li>
-<li>There is a popular Python library called <code>PIL</code> that works well with image files.</li>
-<li>Animated GIFs are a popular type of image file that has many image files within it that are played in sequence over and over again, creating a simplistic animation or video effect.</li>
-<li>Imagine that we have a series of costumes, as illustrated below.</li>
-<li>Here is <code>costume1.gif</code>.</li>
+<li>state is not reset correctly</li>
+<li>file handles are not closed</li>
+<li>database locks persist</li>
+<li>cached objects survive between sessions</li>
+<li>assumptions about directory paths are wrong</li>
 </ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/week_6/costume1.gif" title="costume1.gif" class="img-fluid figure-img"></p>
-<figcaption>Cat number 1.</figcaption>
-</figure>
-</div>
+<p>This week shows a concrete example: a <strong>SQLite error</strong> that appears when loading again.</p>
+</section>
+<section id="why-this-is-a-good-learning-bug" class="level2">
+<h2 class="anchored" data-anchor-id="why-this-is-a-good-learning-bug">Why this is a good learning bug</h2>
+<p>It forces you to think in layers:</p>
+<ol type="1">
+<li>What is the <em>user action</em> (reload, restart, new browser)?</li>
+<li>What is the <em>server lifecycle</em> (process reused, dev server reload)?</li>
+<li>What is the <em>data layer lifecycle</em> (connection, cursor, transaction)?</li>
+</ol>
+</section>
+</section>
+<section id="working-with-tabnine-as-a-coding-partner" class="level1">
+<h1>Working with Tabnine as a coding partner</h1>
+<section id="what-tabnine-is-good-at" class="level2">
+<h2 class="anchored" data-anchor-id="what-tabnine-is-good-at">What Tabnine is good at</h2>
 <ul>
-<li>Here is another one called <code>costume2.gif</code>. Notice how the leg positions are slightly different.</li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/week_6/costume2.gif" title="costume2.gif" class="img-fluid figure-img"></p>
-<figcaption>Cat number 2.</figcaption>
-</figure>
-</div>
-<ul>
-<li><p>Before proceeding, please make sure that you have downloaded the source code files from the course website. It will not be possible for you to code the following without having the two images above in your possession and stored in your IDE.</p></li>
-<li><p>In the terminal window type <code>code costumes.py</code> and code as follows:</p>
-<pre><code>import sys
-
-from PIL import Image
-
-images = []
-
-for arg in sys.argv[1:]:
-    image = Image.open(arg)
-    images.append(image)
-
-images[0].save(
-    "costumes.gif", save_all=True, append_images=[images[1]], duration=200, loop=0
-)</code></pre>
-<p>Notice that we import the <code>Image</code> functionality from <code>PIL</code>. Notice that the first <code>for</code> loop simply loops through the images provided as command-line arguments and stores theme into the <code>list</code> called <code>images</code>. The <code>1:</code> starts slicing <code>argv</code> at its second element. The last lines of code saves the first image and also appends a second image to it as well, creating an animated gif. Typing <code>python costumes.py costume1.gif costume2.gif</code> into the terminal. Now, type <code>code costumes.gif</code> into the terminal window, and you can now see an animated GIF.</p></li>
-<li><p>You can learn more in Pillow’s documentation of <a href="https://pillow.readthedocs.io/">PIL</a>.</p></li>
+<li>producing “starter” implementations quickly</li>
+<li>suggesting fixes when you show a stack trace</li>
+<li>refactoring repetitive code into functions/classes</li>
+<li>generating tests and edge cases (if you ask clearly)</li>
 </ul>
 </section>
-<section id="summing-up" class="level2">
-<h2 class="anchored" data-anchor-id="summing-up">Summing Up</h2>
-<p>Now, we have not only seen that we can write and read files textually—we can also read and write files using ones and zeros. We can’t wait to see what you achieve with these new abilities next.</p>
+<section id="what-tabnine-is-bad-at-unless-you-guide-it" class="level2">
+<h2 class="anchored" data-anchor-id="what-tabnine-is-bad-at-unless-you-guide-it">What Tabnine is bad at (unless you guide it)</h2>
 <ul>
-<li>File I/O</li>
-<li><code>open</code></li>
-<li><code>with</code></li>
-<li>CSV</li>
-<li><code>PIL</code></li>
+<li>understanding your full codebase without context</li>
+<li>making architectural decisions <em>for you</em></li>
+<li>reliably preserving your project conventions</li>
+</ul>
+<section id="practical-prompting-pattern" class="level3">
+<h3 class="anchored" data-anchor-id="practical-prompting-pattern">Practical prompting pattern</h3>
+<p>When you ask for help, include:</p>
+<ul>
+<li>the goal in one sentence</li>
+<li>the current behavior</li>
+<li>the error message / stack trace</li>
+<li>the relevant file(s) and function(s)</li>
+<li>what you already tried</li>
+</ul>
+<p>Example prompt structure (adapt for Tabnine or any assistant):</p>
+<blockquote class="blockquote">
+<p>I have a Flask app that selects 35 questions from SQLite. It works on first load but fails on reload with this error: … Here is my DatabaseConnection context manager and the route handler. Please diagnose the root cause and suggest a minimal fix.</p>
+</blockquote>
+</section>
+</section>
+</section>
+<section id="implementing-the-backend-features-flask-db" class="level1">
+<h1>Implementing the backend features (Flask + DB)</h1>
+<section id="a-minimal-but-clean-flask-app-structure" class="level2">
+<h2 class="anchored" data-anchor-id="a-minimal-but-clean-flask-app-structure">A minimal but clean Flask app structure</h2>
+<p>A simple, testable structure often looks like:</p>
+<ul>
+<li><code>app/__init__.py</code> (create_app)</li>
+<li><code>app/routes.py</code> (blueprints)</li>
+<li><code>app/models/</code> (db + query logic)</li>
+<li><code>app/templates/</code> (Jinja2 HTML)</li>
+<li><code>tests/</code> (pytest)</li>
+</ul>
+<p>This week keeps things lightweight but pushes toward separation:</p>
+<ul>
+<li>routes should be thin</li>
+<li>database code should be isolated</li>
+<li>“session state” should be explicit</li>
+</ul>
+</section>
+<section id="code-example-enabling-sessions-and-setting-a-secret-key" class="level2">
+<h2 class="anchored" data-anchor-id="code-example-enabling-sessions-and-setting-a-secret-key">Code example: enabling sessions and setting a secret key</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> flask <span class="im">import</span> Flask</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> create_app():</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    app <span class="op">=</span> Flask(<span class="va">__name__</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># In production: load from environment variable</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    app.config[<span class="st">"SECRET_KEY"</span>] <span class="op">=</span> <span class="st">"dev-only-change-me"</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> app</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="why-secret_key-matters" class="level3">
+<h3 class="anchored" data-anchor-id="why-secret_key-matters">Why <code>SECRET_KEY</code> matters</h3>
+<p>Flask signs session cookies. If the key changes between runs, the server can’t validate old cookies. That can look like “random” session failures.</p>
+</section>
+</section>
+<section id="code-example-selecting-questions-once-per-session" class="level2">
+<h2 class="anchored" data-anchor-id="code-example-selecting-questions-once-per-session">Code example: selecting questions once per session</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> flask <span class="im">import</span> session</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> init_test_session(question_ids, n<span class="op">=</span><span class="dv">35</span>):</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Store a stable random selection for this user</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    chosen <span class="op">=</span> random.sample(question_ids, n)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    session[<span class="st">"question_ids"</span>] <span class="op">=</span> chosen</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    session[<span class="st">"current_index"</span>] <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    session[<span class="st">"answers"</span>] <span class="op">=</span> {}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="pitfall" class="level3">
+<h3 class="anchored" data-anchor-id="pitfall">Pitfall</h3>
+<p>If you re-sample on every request, the test becomes inconsistent.</p>
+</section>
+</section>
+<section id="code-example-route-that-shows-the-current-question" class="level2">
+<h2 class="anchored" data-anchor-id="code-example-route-that-shows-the-current-question">Code example: route that shows the current question</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> flask <span class="im">import</span> render_template, session, redirect, url_for</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">@app.route</span>(<span class="st">"/question"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> show_question():</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    ids <span class="op">=</span> session.get(<span class="st">"question_ids"</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> ids:</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> redirect(url_for(<span class="st">"start_test"</span>))</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    idx <span class="op">=</span> session.get(<span class="st">"current_index"</span>, <span class="dv">0</span>)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    qid <span class="op">=</span> ids[idx]</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    question <span class="op">=</span> Questions(cursor).fetch_by_id(qid)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> render_template(<span class="st">"question.html"</span>, question<span class="op">=</span>question, index<span class="op">=</span>idx<span class="op">+</span><span class="dv">1</span>, total<span class="op">=</span><span class="bu">len</span>(ids))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="code-example-recording-an-answer-post" class="level2">
+<h2 class="anchored" data-anchor-id="code-example-recording-an-answer-post">Code example: recording an answer (POST)</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> flask <span class="im">import</span> request</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="at">@app.post</span>(<span class="st">"/answer"</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> record_answer():</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    qid <span class="op">=</span> request.form[<span class="st">"question_id"</span>]</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    choice <span class="op">=</span> request.form[<span class="st">"choice"</span>]</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    answers <span class="op">=</span> session.get(<span class="st">"answers"</span>, {})</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    answers[qid] <span class="op">=</span> choice</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    session[<span class="st">"answers"</span>] <span class="op">=</span> answers</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    session[<span class="st">"current_index"</span>] <span class="op">=</span> session.get(<span class="st">"current_index"</span>, <span class="dv">0</span>) <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> redirect(url_for(<span class="st">"show_question"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="why-we-reassign-sessionanswers" class="level3">
+<h3 class="anchored" data-anchor-id="why-we-reassign-sessionanswers">Why we reassign <code>session["answers"]</code></h3>
+<p>With cookie-based sessions, Flask detects modifications when you set a key. Mutating a nested dict <em>may not</em> be detected consistently unless you reassign.</p>
+</section>
+</section>
+</section>
+<section id="testing-and-troubleshooting" class="level1">
+<h1>Testing and troubleshooting</h1>
+<section id="make-failures-reproducible" class="level2">
+<h2 class="anchored" data-anchor-id="make-failures-reproducible">Make failures reproducible</h2>
+<p>Good debugging is about making “sometimes” become “always”.</p>
+<p>Try:</p>
+<ul>
+<li>restart server, load app, answer 1 question, reload</li>
+<li>open private window (new session), repeat</li>
+<li>delete cookies, repeat</li>
+</ul>
+</section>
+<section id="code-example-quick-smoke-test-with-requests" class="level2">
+<h2 class="anchored" data-anchor-id="code-example-quick-smoke-test-with-requests">Code example: quick smoke test with requests</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>base <span class="op">=</span> <span class="st">"http://127.0.0.1:5000"</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> requests.Session() <span class="im">as</span> s:</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    r <span class="op">=</span> s.get(<span class="ss">f"</span><span class="sc">{</span>base<span class="sc">}</span><span class="ss">/start"</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    r.raise_for_status()</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    r <span class="op">=</span> s.get(<span class="ss">f"</span><span class="sc">{</span>base<span class="sc">}</span><span class="ss">/question"</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(r.status_code, <span class="bu">len</span>(r.text))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="common-error-classes-in-this-week" class="level2">
+<h2 class="anchored" data-anchor-id="common-error-classes-in-this-week">Common error classes in this week</h2>
+<ul>
+<li>SQLite “database is locked”</li>
+<li>file path errors (relative vs absolute)</li>
+<li>session cookie invalidation</li>
+<li>KeyError from missing session keys</li>
+</ul>
+</section>
+</section>
+<section id="figures-from-chapter-6-extracted" class="level1">
+<h1>Figures from Chapter 6 (extracted)</h1>
+<p><img src="images/week_06/fig_001.jpeg" class="img-fluid" alt="Extracted figure 1 from Chapter 6"> <img src="images/week_06/fig_002.jpeg" class="img-fluid" alt="Extracted figure 2 from Chapter 6"> <img src="images/week_06/fig_003.png" class="img-fluid" alt="Extracted figure 3 from Chapter 6"> <img src="images/week_06/fig_004.jpeg" class="img-fluid" alt="Extracted figure 4 from Chapter 6"> <img src="images/week_06/fig_005.jpeg" class="img-fluid" alt="Extracted figure 5 from Chapter 6"> <img src="images/week_06/fig_006.jpeg" class="img-fluid" alt="Extracted figure 6 from Chapter 6"> <img src="images/week_06/fig_007.png" class="img-fluid" alt="Extracted figure 7 from Chapter 6"> <img src="images/week_06/fig_008.jpeg" class="img-fluid" alt="Extracted figure 8 from Chapter 6"> <img src="images/week_06/fig_009.jpeg" class="img-fluid" alt="Extracted figure 9 from Chapter 6"> <img src="images/week_06/fig_010.png" class="img-fluid" alt="Extracted figure 10 from Chapter 6"> <img src="images/week_06/fig_011.jpeg" class="img-fluid" alt="Extracted figure 11 from Chapter 6"> <img src="images/week_06/fig_012.png" class="img-fluid" alt="Extracted figure 12 from Chapter 6"> <img src="images/week_06/fig_013.jpeg" class="img-fluid" alt="Extracted figure 13 from Chapter 6"> <img src="images/week_06/fig_014.jpeg" class="img-fluid" alt="Extracted figure 14 from Chapter 6"> <img src="images/week_06/fig_015.jpeg" class="img-fluid" alt="Extracted figure 15 from Chapter 6"> <img src="images/week_06/fig_016.jpeg" class="img-fluid" alt="Extracted figure 16 from Chapter 6"> <img src="images/week_06/fig_017.jpeg" class="img-fluid" alt="Extracted figure 17 from Chapter 6"> <img src="images/week_06/fig_018.png" class="img-fluid" alt="Extracted figure 18 from Chapter 6"> <img src="images/week_06/fig_019.jpeg" class="img-fluid" alt="Extracted figure 19 from Chapter 6"> <img src="images/week_06/fig_020.jpeg" class="img-fluid" alt="Extracted figure 20 from Chapter 6"> <img src="images/week_06/fig_021.jpeg" class="img-fluid" alt="Extracted figure 21 from Chapter 6"> <img src="images/week_06/fig_022.jpeg" class="img-fluid" alt="Extracted figure 22 from Chapter 6"> <img src="images/week_06/fig_023.jpeg" class="img-fluid" alt="Extracted figure 23 from Chapter 6"> <img src="images/week_06/fig_024.jpeg" class="img-fluid" alt="Extracted figure 24 from Chapter 6"> <img src="images/week_06/fig_025.jpeg" class="img-fluid" alt="Extracted figure 25 from Chapter 6"> <img src="images/week_06/fig_026.jpeg" class="img-fluid" alt="Extracted figure 26 from Chapter 6"> <img src="images/week_06/fig_027.jpeg" class="img-fluid" alt="Extracted figure 27 from Chapter 6"> <img src="images/week_06/fig_028.jpeg" class="img-fluid" alt="Extracted figure 28 from Chapter 6"> <img src="images/week_06/fig_029.jpeg" class="img-fluid" alt="Extracted figure 29 from Chapter 6"> <img src="images/week_06/fig_030.jpeg" class="img-fluid" alt="Extracted figure 30 from Chapter 6"> <img src="images/week_06/fig_031.jpeg" class="img-fluid" alt="Extracted figure 31 from Chapter 6"> <img src="images/week_06/fig_032.jpeg" class="img-fluid" alt="Extracted figure 32 from Chapter 6"> <img src="images/week_06/fig_033.jpeg" class="img-fluid" alt="Extracted figure 33 from Chapter 6"> <img src="images/week_06/fig_034.jpeg" class="img-fluid" alt="Extracted figure 34 from Chapter 6"> <img src="images/week_06/fig_035.jpeg" class="img-fluid" alt="Extracted figure 35 from Chapter 6"> <img src="images/week_06/fig_036.png" class="img-fluid" alt="Extracted figure 36 from Chapter 6"> <img src="images/week_06/fig_037.jpeg" class="img-fluid" alt="Extracted figure 37 from Chapter 6"> <img src="images/week_06/fig_038.jpeg" class="img-fluid" alt="Extracted figure 38 from Chapter 6"> <img src="images/week_06/fig_039.jpeg" class="img-fluid" alt="Extracted figure 39 from Chapter 6"> <img src="images/week_06/fig_040.jpeg" class="img-fluid" alt="Extracted figure 40 from Chapter 6"> <img src="images/week_06/fig_041.jpeg" class="img-fluid" alt="Extracted figure 41 from Chapter 6"> <img src="images/week_06/fig_042.jpeg" class="img-fluid" alt="Extracted figure 42 from Chapter 6"> <img src="images/week_06/fig_043.png" class="img-fluid" alt="Extracted figure 43 from Chapter 6"> <img src="images/week_06/fig_044.jpeg" class="img-fluid" alt="Extracted figure 44 from Chapter 6"> <img src="images/week_06/fig_045.png" class="img-fluid" alt="Extracted figure 45 from Chapter 6"> <img src="images/week_06/fig_046.jpeg" class="img-fluid" alt="Extracted figure 46 from Chapter 6"></p>
+</section>
+<section id="summing-up" class="level1">
+<h1>Summing up</h1>
+<ul>
+<li>Chapter 6 is about turning a basic Flask + SQLite app into an interactive experience.</li>
+<li>The technical core is <strong>sessions</strong>: how to persist a user’s progress across requests.</li>
+<li>The practical workflow skill is using <strong>Tabnine</strong> effectively: provide context, ask for minimal diffs, and validate with tests.</li>
+</ul>
+<section id="checks-for-understanding" class="level2">
+<h2 class="anchored" data-anchor-id="checks-for-understanding">Checks for understanding</h2>
+<ul>
+<li>Explain the difference between a request, a session, and a server process.</li>
+<li>List 5 pieces of state you need for a practice test workflow.</li>
+<li>Describe one reason a SQLite app works once but fails on reload.</li>
+<li>Give an example of a <em>good</em> debugging prompt for Tabnine.</li>
+</ul>
+</section>
+</section>
+<section id="guided-walkthrough-dense-notes" class="level1">
+<h1>Guided walkthrough (dense notes)</h1>
+<section id="step-1-what-are-we-trying-to-achieve" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-what-are-we-trying-to-achieve">Step 1: What are we trying to achieve?</h2>
+<ul>
+<li><p>Goal: make the app behave consistently for a single test-taker across multiple requests.</p></li>
+<li><p>Why it matters: without stable state, a ‘test’ is just random page loads.</p></li>
+<li><p>What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.</p></li>
+<li><p>Common pitfall: changing too many things at once; fix the minimal root cause first.</p></li>
+</ul>
+</section>
+<section id="step-2-what-are-we-trying-to-achieve" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-what-are-we-trying-to-achieve">Step 2: What are we trying to achieve?</h2>
+<ul>
+<li><p>Goal: make the app behave consistently for a single test-taker across multiple requests.</p></li>
+<li><p>Why it matters: without stable state, a ‘test’ is just random page loads.</p></li>
+<li><p>What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.</p></li>
+<li><p>Common pitfall: changing too many things at once; fix the minimal root cause first.</p></li>
+</ul>
+</section>
+<section id="step-3-what-are-we-trying-to-achieve" class="level2">
+<h2 class="anchored" data-anchor-id="step-3-what-are-we-trying-to-achieve">Step 3: What are we trying to achieve?</h2>
+<ul>
+<li><p>Goal: make the app behave consistently for a single test-taker across multiple requests.</p></li>
+<li><p>Why it matters: without stable state, a ‘test’ is just random page loads.</p></li>
+<li><p>What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.</p></li>
+<li><p>Common pitfall: changing too many things at once; fix the minimal root cause first.</p></li>
+</ul>
+</section>
+<section id="step-4-what-are-we-trying-to-achieve" class="level2">
+<h2 class="anchored" data-anchor-id="step-4-what-are-we-trying-to-achieve">Step 4: What are we trying to achieve?</h2>
+<ul>
+<li><p>Goal: make the app behave consistently for a single test-taker across multiple requests.</p></li>
+<li><p>Why it matters: without stable state, a ‘test’ is just random page loads.</p></li>
+<li><p>What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.</p></li>
+<li><p>Common pitfall: changing too many things at once; fix the minimal root cause first.</p></li>
+</ul>
+</section>
+<section id="step-5-what-are-we-trying-to-achieve" class="level2">
+<h2 class="anchored" data-anchor-id="step-5-what-are-we-trying-to-achieve">Step 5: What are we trying to achieve?</h2>
+<ul>
+<li><p>Goal: make the app behave consistently for a single test-taker across multiple requests.</p></li>
+<li><p>Why it matters: without stable state, a ‘test’ is just random page loads.</p></li>
+<li><p>What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.</p></li>
+<li><p>Common pitfall: changing too many things at once; fix the minimal root cause first.</p></li>
+</ul>
+</section>
+<section id="step-6-what-are-we-trying-to-achieve" class="level2">
+<h2 class="anchored" data-anchor-id="step-6-what-are-we-trying-to-achieve">Step 6: What are we trying to achieve?</h2>
+<ul>
+<li><p>Goal: make the app behave consistently for a single test-taker across multiple requests.</p></li>
+<li><p>Why it matters: without stable state, a ‘test’ is just random page loads.</p></li>
+<li><p>What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.</p></li>
+<li><p>Common pitfall: changing too many things at once; fix the minimal root cause first.</p></li>
+</ul>
+</section>
+<section id="step-7-what-are-we-trying-to-achieve" class="level2">
+<h2 class="anchored" data-anchor-id="step-7-what-are-we-trying-to-achieve">Step 7: What are we trying to achieve?</h2>
+<ul>
+<li><p>Goal: make the app behave consistently for a single test-taker across multiple requests.</p></li>
+<li><p>Why it matters: without stable state, a ‘test’ is just random page loads.</p></li>
+<li><p>What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.</p></li>
+<li><p>Common pitfall: changing too many things at once; fix the minimal root cause first.</p></li>
+</ul>
+</section>
+<section id="step-8-what-are-we-trying-to-achieve" class="level2">
+<h2 class="anchored" data-anchor-id="step-8-what-are-we-trying-to-achieve">Step 8: What are we trying to achieve?</h2>
+<ul>
+<li><p>Goal: make the app behave consistently for a single test-taker across multiple requests.</p></li>
+<li><p>Why it matters: without stable state, a ‘test’ is just random page loads.</p></li>
+<li><p>What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.</p></li>
+<li><p>Common pitfall: changing too many things at once; fix the minimal root cause first.</p></li>
+</ul>
+</section>
+<section id="step-9-what-are-we-trying-to-achieve" class="level2">
+<h2 class="anchored" data-anchor-id="step-9-what-are-we-trying-to-achieve">Step 9: What are we trying to achieve?</h2>
+<ul>
+<li><p>Goal: make the app behave consistently for a single test-taker across multiple requests.</p></li>
+<li><p>Why it matters: without stable state, a ‘test’ is just random page loads.</p></li>
+<li><p>What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.</p></li>
+<li><p>Common pitfall: changing too many things at once; fix the minimal root cause first.</p></li>
+</ul>
+</section>
+<section id="step-10-what-are-we-trying-to-achieve" class="level2">
+<h2 class="anchored" data-anchor-id="step-10-what-are-we-trying-to-achieve">Step 10: What are we trying to achieve?</h2>
+<ul>
+<li><p>Goal: make the app behave consistently for a single test-taker across multiple requests.</p></li>
+<li><p>Why it matters: without stable state, a ‘test’ is just random page loads.</p></li>
+<li><p>What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.</p></li>
+<li><p>Common pitfall: changing too many things at once; fix the minimal root cause first.</p></li>
+</ul>
+</section>
+<section id="step-11-what-are-we-trying-to-achieve" class="level2">
+<h2 class="anchored" data-anchor-id="step-11-what-are-we-trying-to-achieve">Step 11: What are we trying to achieve?</h2>
+<ul>
+<li><p>Goal: make the app behave consistently for a single test-taker across multiple requests.</p></li>
+<li><p>Why it matters: without stable state, a ‘test’ is just random page loads.</p></li>
+<li><p>What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.</p></li>
+<li><p>Common pitfall: changing too many things at once; fix the minimal root cause first.</p></li>
+</ul>
+</section>
+<section id="step-12-what-are-we-trying-to-achieve" class="level2">
+<h2 class="anchored" data-anchor-id="step-12-what-are-we-trying-to-achieve">Step 12: What are we trying to achieve?</h2>
+<ul>
+<li><p>Goal: make the app behave consistently for a single test-taker across multiple requests.</p></li>
+<li><p>Why it matters: without stable state, a ‘test’ is just random page loads.</p></li>
+<li><p>What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.</p></li>
+<li><p>Common pitfall: changing too many things at once; fix the minimal root cause first.</p></li>
+</ul>
+</section>
+<section id="step-13-what-are-we-trying-to-achieve" class="level2">
+<h2 class="anchored" data-anchor-id="step-13-what-are-we-trying-to-achieve">Step 13: What are we trying to achieve?</h2>
+<ul>
+<li><p>Goal: make the app behave consistently for a single test-taker across multiple requests.</p></li>
+<li><p>Why it matters: without stable state, a ‘test’ is just random page loads.</p></li>
+<li><p>What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.</p></li>
+<li><p>Common pitfall: changing too many things at once; fix the minimal root cause first.</p></li>
+</ul>
+</section>
+<section id="step-14-what-are-we-trying-to-achieve" class="level2">
+<h2 class="anchored" data-anchor-id="step-14-what-are-we-trying-to-achieve">Step 14: What are we trying to achieve?</h2>
+<ul>
+<li><p>Goal: make the app behave consistently for a single test-taker across multiple requests.</p></li>
+<li><p>Why it matters: without stable state, a ‘test’ is just random page loads.</p></li>
+<li><p>What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.</p></li>
+<li><p>Common pitfall: changing too many things at once; fix the minimal root cause first.</p></li>
+</ul>
+</section>
+<section id="step-15-what-are-we-trying-to-achieve" class="level2">
+<h2 class="anchored" data-anchor-id="step-15-what-are-we-trying-to-achieve">Step 15: What are we trying to achieve?</h2>
+<ul>
+<li><p>Goal: make the app behave consistently for a single test-taker across multiple requests.</p></li>
+<li><p>Why it matters: without stable state, a ‘test’ is just random page loads.</p></li>
+<li><p>What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.</p></li>
+<li><p>Common pitfall: changing too many things at once; fix the minimal root cause first.</p></li>
+</ul>
+</section>
+<section id="step-16-what-are-we-trying-to-achieve" class="level2">
+<h2 class="anchored" data-anchor-id="step-16-what-are-we-trying-to-achieve">Step 16: What are we trying to achieve?</h2>
+<ul>
+<li><p>Goal: make the app behave consistently for a single test-taker across multiple requests.</p></li>
+<li><p>Why it matters: without stable state, a ‘test’ is just random page loads.</p></li>
+<li><p>What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.</p></li>
+<li><p>Common pitfall: changing too many things at once; fix the minimal root cause first.</p></li>
+</ul>
+</section>
+<section id="step-17-what-are-we-trying-to-achieve" class="level2">
+<h2 class="anchored" data-anchor-id="step-17-what-are-we-trying-to-achieve">Step 17: What are we trying to achieve?</h2>
+<ul>
+<li><p>Goal: make the app behave consistently for a single test-taker across multiple requests.</p></li>
+<li><p>Why it matters: without stable state, a ‘test’ is just random page loads.</p></li>
+<li><p>What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.</p></li>
+<li><p>Common pitfall: changing too many things at once; fix the minimal root cause first.</p></li>
+</ul>
+</section>
+<section id="step-18-what-are-we-trying-to-achieve" class="level2">
+<h2 class="anchored" data-anchor-id="step-18-what-are-we-trying-to-achieve">Step 18: What are we trying to achieve?</h2>
+<ul>
+<li><p>Goal: make the app behave consistently for a single test-taker across multiple requests.</p></li>
+<li><p>Why it matters: without stable state, a ‘test’ is just random page loads.</p></li>
+<li><p>What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.</p></li>
+<li><p>Common pitfall: changing too many things at once; fix the minimal root cause first.</p></li>
+</ul>
+</section>
+<section id="step-19-what-are-we-trying-to-achieve" class="level2">
+<h2 class="anchored" data-anchor-id="step-19-what-are-we-trying-to-achieve">Step 19: What are we trying to achieve?</h2>
+<ul>
+<li><p>Goal: make the app behave consistently for a single test-taker across multiple requests.</p></li>
+<li><p>Why it matters: without stable state, a ‘test’ is just random page loads.</p></li>
+<li><p>What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.</p></li>
+<li><p>Common pitfall: changing too many things at once; fix the minimal root cause first.</p></li>
+</ul>
+</section>
+<section id="step-20-what-are-we-trying-to-achieve" class="level2">
+<h2 class="anchored" data-anchor-id="step-20-what-are-we-trying-to-achieve">Step 20: What are we trying to achieve?</h2>
+<ul>
+<li><p>Goal: make the app behave consistently for a single test-taker across multiple requests.</p></li>
+<li><p>Why it matters: without stable state, a ‘test’ is just random page loads.</p></li>
+<li><p>What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.</p></li>
+<li><p>Common pitfall: changing too many things at once; fix the minimal root cause first.</p></li>
+</ul>
+</section>
+<section id="step-21-what-are-we-trying-to-achieve" class="level2">
+<h2 class="anchored" data-anchor-id="step-21-what-are-we-trying-to-achieve">Step 21: What are we trying to achieve?</h2>
+<ul>
+<li><p>Goal: make the app behave consistently for a single test-taker across multiple requests.</p></li>
+<li><p>Why it matters: without stable state, a ‘test’ is just random page loads.</p></li>
+<li><p>What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.</p></li>
+<li><p>Common pitfall: changing too many things at once; fix the minimal root cause first.</p></li>
+</ul>
+</section>
+<section id="step-22-what-are-we-trying-to-achieve" class="level2">
+<h2 class="anchored" data-anchor-id="step-22-what-are-we-trying-to-achieve">Step 22: What are we trying to achieve?</h2>
+<ul>
+<li><p>Goal: make the app behave consistently for a single test-taker across multiple requests.</p></li>
+<li><p>Why it matters: without stable state, a ‘test’ is just random page loads.</p></li>
+<li><p>What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.</p></li>
+<li><p>Common pitfall: changing too many things at once; fix the minimal root cause first.</p></li>
+</ul>
+</section>
+<section id="step-23-what-are-we-trying-to-achieve" class="level2">
+<h2 class="anchored" data-anchor-id="step-23-what-are-we-trying-to-achieve">Step 23: What are we trying to achieve?</h2>
+<ul>
+<li><p>Goal: make the app behave consistently for a single test-taker across multiple requests.</p></li>
+<li><p>Why it matters: without stable state, a ‘test’ is just random page loads.</p></li>
+<li><p>What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.</p></li>
+<li><p>Common pitfall: changing too many things at once; fix the minimal root cause first.</p></li>
+</ul>
+</section>
+<section id="step-24-what-are-we-trying-to-achieve" class="level2">
+<h2 class="anchored" data-anchor-id="step-24-what-are-we-trying-to-achieve">Step 24: What are we trying to achieve?</h2>
+<ul>
+<li><p>Goal: make the app behave consistently for a single test-taker across multiple requests.</p></li>
+<li><p>Why it matters: without stable state, a ‘test’ is just random page loads.</p></li>
+<li><p>What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.</p></li>
+<li><p>Common pitfall: changing too many things at once; fix the minimal root cause first.</p></li>
+</ul>
+</section>
+<section id="step-25-what-are-we-trying-to-achieve" class="level2">
+<h2 class="anchored" data-anchor-id="step-25-what-are-we-trying-to-achieve">Step 25: What are we trying to achieve?</h2>
+<ul>
+<li><p>Goal: make the app behave consistently for a single test-taker across multiple requests.</p></li>
+<li><p>Why it matters: without stable state, a ‘test’ is just random page loads.</p></li>
+<li><p>What to look for in the chapter: session keys, routes, and the bug-fix narrative with Tabnine.</p></li>
+<li><p>Common pitfall: changing too many things at once; fix the minimal root cause first.</p></li>
 </ul>
 
 
@@ -1382,13 +1679,13 @@ images[0].save(
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../notes/notes_5.html" class="pagination-link" aria-label="Notes 05 🐍">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Notes 05 🐍</span>
+      <a href="../notes/notes_5.html" class="pagination-link" aria-label="Notes 05 🤖">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Notes 05 🤖</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../notes/notes_7.html" class="pagination-link" aria-label="Notes 07 🐍">
-        <span class="nav-page-text">Notes 07 🐍</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../notes/notes_7.html" class="pagination-link" aria-label="Notes 07 🤖">
+        <span class="nav-page-text">Notes 07 🤖</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

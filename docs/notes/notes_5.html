@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -77,7 +112,10 @@ ul.task-list li input[type="checkbox"] {
 
 
 <meta property="og:title" content="Real World AI">
+<meta property="og:image" content="https://SQ4014-2025.github.io/website/notes/images/week_05/fig_01.png">
 <meta property="og:site_name" content="Real World AI">
+<meta property="og:image:height" content="708">
+<meta property="og:image:width" content="1039">
 <meta name="twitter:title" content="Real World AI">
 <meta name="twitter:image" content="https://SQ4014-2025.github.io/website/notes/images/twitter-card.png">
 <meta name="twitter:creator" content="@EdHarris9000">
@@ -255,7 +293,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/notes_0.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/notes_5.html">Notes 05 🐍</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/notes_1.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/notes_5.html">Notes 05 🤖</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -335,61 +373,61 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_0.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 00 🐍</span></a>
+ <span class="menu-text">Lecture 00 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_1.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 01 🐍</span></a>
+ <span class="menu-text">Lecture 01 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_2.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 02 🐍</span></a>
+ <span class="menu-text">Lecture 02 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_3.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 03 🐍</span></a>
+ <span class="menu-text">Lecture 03 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_4.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 04 🐍</span></a>
+ <span class="menu-text">Lecture 04 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_5.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 05 🐍</span></a>
+ <span class="menu-text">Lecture 05 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_6.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 06 🐍</span></a>
+ <span class="menu-text">Lecture 06 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_7.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 07 🐍</span></a>
+ <span class="menu-text">Lecture 07 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_8.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 08 🐍</span></a>
+ <span class="menu-text">Lecture 08 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lectures/slides_9.pptx" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture 09 🐍</span></a>
+ <span class="menu-text">Lecture 09 🤖</span></a>
   </div>
 </li>
       </ul>
@@ -405,62 +443,62 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notes/notes_0.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 00 🐍</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../notes/notes_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 01 🐍</span></a>
+ <span class="menu-text">Notes 01 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 02 🐍</span></a>
+ <span class="menu-text">Notes 02 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 03 🐍</span></a>
+ <span class="menu-text">Notes 03 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 04 🐍</span></a>
+ <span class="menu-text">Notes 04 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_5.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Notes 05 🐍</span></a>
+ <span class="menu-text">Notes 05 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 06 🐍</span></a>
+ <span class="menu-text">Notes 06 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 07 🐍</span></a>
+ <span class="menu-text">Notes 07 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 08 🐍</span></a>
+ <span class="menu-text">Notes 08 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notes_9.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes 09 🐍</span></a>
+ <span class="menu-text">Notes 09 🤖</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notes/notes_10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes 10 🤖</span></a>
   </div>
 </li>
       </ul>
@@ -477,61 +515,61 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src0" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 00 🐍</span></a>
+ <span class="menu-text">Code 00 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src1" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 01 🐍</span></a>
+ <span class="menu-text">Code 01 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src2" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 02 🐍</span></a>
+ <span class="menu-text">Code 02 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src3" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 03 🐍</span></a>
+ <span class="menu-text">Code 03 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src4" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 04 🐍</span></a>
+ <span class="menu-text">Code 04 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src5" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 05 🐍</span></a>
+ <span class="menu-text">Code 05 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src6" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 06 🐍</span></a>
+ <span class="menu-text">Code 06 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src7" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 07 🐍</span></a>
+ <span class="menu-text">Code 07 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src8" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 08 🐍</span></a>
+ <span class="menu-text">Code 08 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://github.com/SQ4011-2025/website/tree/master/code/src9" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code 09 🐍</span></a>
+ <span class="menu-text">Code 09 🤖</span></a>
   </div>
 </li>
       </ul>
@@ -548,55 +586,55 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_0/pset_0.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 00 🐍</span></a>
+ <span class="menu-text">Problem Set 00 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_1/pset_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 01 🐍</span></a>
+ <span class="menu-text">Problem Set 01 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_2/pset_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 02 🐍</span></a>
+ <span class="menu-text">Problem Set 02 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_3/pset_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 03 🐍</span></a>
+ <span class="menu-text">Problem Set 03 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_4/pset_4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 04 🐍</span></a>
+ <span class="menu-text">Problem Set 04 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_5/pset_5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 05 🐍</span></a>
+ <span class="menu-text">Problem Set 05 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_6/pset_6.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 06 🐍</span></a>
+ <span class="menu-text">Problem Set 06 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_7/pset_7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 07 🐍</span></a>
+ <span class="menu-text">Problem Set 07 🤖</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../problems/pset_8/pset_8.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem Set 08 🐍</span></a>
+ <span class="menu-text">Problem Set 08 🤖</span></a>
   </div>
 </li>
       </ul>
@@ -611,341 +649,359 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#week-5-notes" id="toc-week-5-notes" class="nav-link active" data-scroll-target="#week-5-notes">Week 5 Notes</a></li>
-  <li><a href="#lecture-5" id="toc-lecture-5" class="nav-link" data-scroll-target="#lecture-5">Lecture 5</a>
+  <li><a href="#week-05-application-development-with-blackbox-ai" id="toc-week-05-application-development-with-blackbox-ai" class="nav-link active" data-scroll-target="#week-05-application-development-with-blackbox-ai">Week 05 — Application development with Blackbox AI</a>
   <ul class="collapse">
-  <li><a href="#unit-tests" id="toc-unit-tests" class="nav-link" data-scroll-target="#unit-tests">Unit Tests</a></li>
-  <li><a href="#assert" id="toc-assert" class="nav-link" data-scroll-target="#assert"><code>assert</code></a></li>
-  <li><a href="#pytest" id="toc-pytest" class="nav-link" data-scroll-target="#pytest"><code>pytest</code></a></li>
-  <li><a href="#testing-strings" id="toc-testing-strings" class="nav-link" data-scroll-target="#testing-strings">Testing Strings</a></li>
-  <li><a href="#organizing-tests-into-folders" id="toc-organizing-tests-into-folders" class="nav-link" data-scroll-target="#organizing-tests-into-folders">Organizing Tests into Folders</a></li>
-  <li><a href="#summing-up" id="toc-summing-up" class="nav-link" data-scroll-target="#summing-up">Summing Up</a></li>
+  <li><a href="#using-blackbox-ai-to-generate-base-code" id="toc-using-blackbox-ai-to-generate-base-code" class="nav-link" data-scroll-target="#using-blackbox-ai-to-generate-base-code">Using Blackbox AI to generate base code</a>
+  <ul class="collapse">
+  <li><a href="#key-terms-you-must-own-by-the-end-of-this-week" id="toc-key-terms-you-must-own-by-the-end-of-this-week" class="nav-link" data-scroll-target="#key-terms-you-must-own-by-the-end-of-this-week">Key terms you must own by the end of this week</a></li>
+  </ul></li>
+  <li><a href="#application-development-with-generative-ai-tools" id="toc-application-development-with-generative-ai-tools" class="nav-link" data-scroll-target="#application-development-with-generative-ai-tools">Application development with generative AI tools</a>
+  <ul class="collapse">
+  <li><a href="#prompting-as-a-software-skill" id="toc-prompting-as-a-software-skill" class="nav-link" data-scroll-target="#prompting-as-a-software-skill">Prompting as a software skill</a></li>
+  </ul></li>
+  <li><a href="#setting-up-the-development-environment" id="toc-setting-up-the-development-environment" class="nav-link" data-scroll-target="#setting-up-the-development-environment">Setting up the development environment</a></li>
+  <li><a href="#developing-core-features" id="toc-developing-core-features" class="nav-link" data-scroll-target="#developing-core-features">Developing core features</a>
+  <ul class="collapse">
+  <li><a href="#creating-the-database" id="toc-creating-the-database" class="nav-link" data-scroll-target="#creating-the-database">Creating the database</a></li>
+  <li><a href="#connecting-to-our-database" id="toc-connecting-to-our-database" class="nav-link" data-scroll-target="#connecting-to-our-database">Connecting to our database</a></li>
+  <li><a href="#calling-our-database-from-the-frontend" id="toc-calling-our-database-from-the-frontend" class="nav-link" data-scroll-target="#calling-our-database-from-the-frontend">Calling our database from the frontend</a></li>
+  <li><a href="#refactoring-our-questions-class" id="toc-refactoring-our-questions-class" class="nav-link" data-scroll-target="#refactoring-our-questions-class">Refactoring our Questions class</a></li>
+  <li><a href="#modifying-our-entry-point-app-py" id="toc-modifying-our-entry-point-app-py" class="nav-link" data-scroll-target="#modifying-our-entry-point-app-py">Modifying our entry point (App.py)</a></li>
+  <li><a href="#pulling-a-set-of-questions" id="toc-pulling-a-set-of-questions" class="nav-link" data-scroll-target="#pulling-a-set-of-questions">Pulling a set of questions</a></li>
+  <li><a href="#creating-a-test-session-in-the-database" id="toc-creating-a-test-session-in-the-database" class="nav-link" data-scroll-target="#creating-a-test-session-in-the-database">Creating a test session in the database</a></li>
+  <li><a href="#creating-code-for-the-test-session" id="toc-creating-code-for-the-test-session" class="nav-link" data-scroll-target="#creating-code-for-the-test-session">Creating code for the test session</a></li>
+  <li><a href="#generating-a-question-set" id="toc-generating-a-question-set" class="nav-link" data-scroll-target="#generating-a-question-set">Generating a question set</a></li>
+  <li><a href="#verifying-our-test-session-was-created" id="toc-verifying-our-test-session-was-created" class="nav-link" data-scroll-target="#verifying-our-test-session-was-created">Verifying our test session was created</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#figures-extracted-from-week-05" id="toc-figures-extracted-from-week-05" class="nav-link" data-scroll-target="#figures-extracted-from-week-05">Figures extracted from Week 05</a></li>
+  <li><a href="#extra-notes-common-failure-modes" id="toc-extra-notes-common-failure-modes" class="nav-link" data-scroll-target="#extra-notes-common-failure-modes">Extra notes: common failure modes when using AI drafts</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/SQ4014-2025/website/edit/master/notes/notes_5.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/SQ4014-2025/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/notes_0.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/notes_5.html">Notes 05 🐍</a></li></ol></nav></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notes/notes_1.html">Notes</a></li><li class="breadcrumb-item"><a href="../notes/notes_5.html">Notes 05 🤖</a></li></ol></nav></header>
 
 
 
 
 
-<section id="week-5-notes" class="level1">
-<h1>Week 5 Notes</h1>
-<hr>
-</section>
-<section id="lecture-5" class="level1">
-<h1>Lecture 5</h1>
+<section id="week-05-application-development-with-blackbox-ai" class="level1">
+<h1>Week 05 — Application development with Blackbox AI</h1>
 <ul>
-<li><a href="#unit-tests">Unit Tests</a></li>
-<li><a href="#assert"><code>assert</code></a></li>
-<li><a href="#pytest"><code>pytest</code></a></li>
-<li><a href="#testing-strings">Testing Strings</a></li>
-<li><a href="#organizing-tests-into-folders">Organizing Tests into Folders</a></li>
-<li><a href="#summing-up">Summing Up</a></li>
+<li><a href="#using-blackbox-ai-to-generate-base-code">Using Blackbox AI to generate base code</a></li>
+<li><a href="#application-development-with-generative-ai-tools">Application development with generative AI tools</a></li>
+<li><a href="#setting-up-the-development-environment">Setting up the development environment</a></li>
+<li><a href="#developing-core-features">Developing core features</a></li>
+<li><a href="#creating-the-database">Creating the database</a></li>
+<li><a href="#connecting-to-our-database">Connecting to our database</a></li>
+<li><a href="#calling-our-database-from-the-frontend">Calling our database from the frontend</a></li>
+<li><a href="#refactoring-our-questions-class">Refactoring our Questions class</a></li>
+<li><a href="#modifying-our-entry-point-app-py">Modifying our entry point (App.py)</a></li>
+<li><a href="#pulling-a-set-of-questions">Pulling a set of questions</a></li>
+<li><a href="#creating-a-test-session-in-the-database">Creating a test session in the database</a></li>
+<li><a href="#creating-code-for-the-test-session">Creating code for the test session</a></li>
+<li><a href="#generating-a-question-set">Generating a question set</a></li>
+<li><a href="#verifying-our-test-session-was-created">Verifying our test session was created</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+<li><a href="#figures-extracted-from-week-05">Figures extracted from Week 05</a></li>
 </ul>
-<section id="unit-tests" class="level2">
-<h2 class="anchored" data-anchor-id="unit-tests">Unit Tests</h2>
+<section id="using-blackbox-ai-to-generate-base-code" class="level2">
+<h2 class="anchored" data-anchor-id="using-blackbox-ai-to-generate-base-code">Using Blackbox AI to generate base code</h2>
 <ul>
-<li><p>Up until now, you have been likely testing your own code using <code>print</code> statements.</p></li>
-<li><p>It’s most common in industry to write code to test your own programs.</p></li>
-<li><p>In your console window, type <code>code calculator.py</code>. Note that you may have previously coded this file in a previous lecture. In the text editor, make sure that your code appears as follows:</p>
-<pre><code>def main():
-    x = int(input("What's x? "))
-    print("x squared is", square(x))
-
-
-def square(n):
-    return n * n
-
-
-if __name__ == "__main__":
-    main()</code></pre>
-<p>Notice that you could plausibly test the above code on your own using some obvious numbers such as <code>2</code>. However, consider why you might want to create a test that ensures that the above code functions appropriately.</p></li>
-<li><p>Following convention, let’s create a new test program by typing <code>code test_calculator.py</code> and modify your code in the text editor as follows:</p>
-<pre><code>from calculator import square
-
-
-def main():
-    test_square()
-
-
-def test_square():
-    if square(2) != 4:
-        print("2 squared was not 4")
-    if square(3) != 9:
-        print("3 squared was not 9")
-
-
-if __name__ == "__main__":
-    main()</code></pre>
-<p>Notice that we are importing the <code>square</code> function from <code>calculator.py</code> on the first line of code.</p></li>
-<li><p>In the console window, type <code>python test_calculator.py</code>. You’ll notice that nothing is being outputted. It could be that everything is running fine! Alternatively, it could be that our test function did not discover one of the “corner cases” that could produce an error.</p></li>
-<li><p>Right now, our code tests two conditions. If we wanted to test many more conditions, our test code could easily become bloated. How could we expand our test capabilities without expanding our test code?</p></li>
+<li>This week builds the next slice of the HAM radio practice-exam app using <strong>Blackbox AI</strong> as your “code draft engine”.</li>
+<li>This week’s theme is not “let AI build everything.” It’s <strong>co-development</strong>: you steer architecture; AI accelerates implementation.</li>
+</ul>
+<p>A good sentence to keep in mind from this week:</p>
+<ul>
+<li>“The goal is to demonstrate effective cooperation between human expertise and AI.”</li>
+</ul>
+<section id="key-terms-you-must-own-by-the-end-of-this-week" class="level3">
+<h3 class="anchored" data-anchor-id="key-terms-you-must-own-by-the-end-of-this-week">Key terms you must own by the end of this week</h3>
+<ul>
+<li><strong>Blackbox AI</strong> — a coding assistant used here to generate base implementations quickly, especially for repetitive web-app scaffolding.</li>
+<li><strong>Persistent session</strong> — a user state that survives across requests (in Flask, commonly via signed cookies + server-side data decisions).</li>
+<li><strong>Separation of concerns</strong> — keeping responsibilities split (routes vs data access vs domain logic), so fixes don’t ripple everywhere.</li>
+<li><strong>Question set</strong> — a reproducible list of question IDs that defines an exam attempt (so the test can be resumed/graded).</li>
+<li><strong>Test session</strong> — a database record that tracks a user’s progress through a question set (position, answers, score).</li>
 </ul>
 </section>
-<section id="assert" class="level2">
-<h2 class="anchored" data-anchor-id="assert"><code>assert</code></h2>
-<ul>
-<li><p>Python’s <code>assert</code> command allows us to tell the interpreter that something, some assertion, is true. We can apply this to our test code as follows:</p>
-<pre><code>from calculator import square
-
-
-def main():
-    test_square()
-
-
-def test_square():
-    assert square(2) == 4
-    assert square(3) == 9
-
-
-if __name__ == "__main__":
-    main()</code></pre>
-<p>Notice that we are definitively asserting what <code>square(2)</code> and <code>square(3)</code> should equal. Our code is reduced from four test lines down to two.</p></li>
-<li><p>We can purposely break our calculator code by modifying it as follows:</p>
-<pre><code>def main():
-    x = int(input("What's x? "))
-    print("x squared is", square(x))
-
-
-def square(n):
-    return n + n
-
-
-if __name__ == "__main__":
-    main()</code></pre>
-<p>Notice that we have changed the <code>*</code> operator to a <code>+</code> in the square function.</p></li>
-<li><p>Now running <code>python test_calculator.py</code> in the console window, you will notice that an <code>AssertionError</code> is raised by the interpreter. Essentially, this is the interpreter telling us that one of our conditions was not met.</p></li>
-<li><p>One of the challenges that we are now facing is that our code could become even more burdensome if we wanted to provide more descriptive error output to our users. Plausibly, we could code as follows:</p>
-<pre><code>from calculator import square
-
-
-def main():
-    test_square()
-
-
-def test_square():
-    try:
-        assert square(2) == 4
-    except AssertionError:
-        print("2 squared is not 4")
-    try:
-        assert square(3) == 9
-    except AssertionError:
-        print("3 squared is not 9")
-    try:
-        assert square(-2) == 4
-    except AssertionError:
-        print("-2 squared is not 4")
-    try:
-        assert square(-3) == 9
-    except AssertionError:
-        print("-3 squared is not 9")
-    try:
-        assert square(0) == 0
-    except AssertionError:
-        print("0 squared is not 0")
-
-
-if __name__ == "__main__":
-    main()</code></pre>
-<p>Notice that running this code will produce multiple errors. However, it’s not producing all the errors above. This is a good illustration that it’s worth testing multiple cases such that you might catch situations where there are coding mistakes.</p></li>
-<li><p>The above code illustrates a major challenge: How could we make it easier to test your code without dozens of lines of code like the above?</p></li>
-</ul>
-<p>You can learn more in Python’s documentation of <a href="https://docs.python.org/3/reference/simple_stmts.html#assert"><code>assert</code></a>.</p>
 </section>
-<section id="pytest" class="level2">
-<h2 class="anchored" data-anchor-id="pytest"><code>pytest</code></h2>
+<section id="application-development-with-generative-ai-tools" class="level2">
+<h2 class="anchored" data-anchor-id="application-development-with-generative-ai-tools">Application development with generative AI tools</h2>
 <ul>
-<li><p><code>pytest</code> is a third-party library that allows you to unit test your program. That is, you can test your functions within your program.</p></li>
-<li><p>To utilize <code>pytest</code> please type <code>pip install pytest</code> into your console window.</p></li>
-<li><p>Before applying <code>pytest</code> to our own program, modify your <code>test_square</code> function as follows:</p>
-<pre><code>from calculator import square
-
-
-def main():
-    test_square()
-
-
-def test_square():
-    assert square(2) == 4
-    assert square(3) == 9
-    assert square(-2) == 4
-    assert square(-3) == 9
-    assert square(0) == 0</code></pre>
-<p>Notice how the above code asserts all the conditions that we want to test.</p></li>
-<li><p><code>pytest</code> allows us to run our program directly through it, such that we can more easily view the results of our test conditions.</p></li>
-<li><p>In the terminal window, type <code>pytest test_calculator.py</code>. You’ll immediately notice that output will be provided. Notice the red <code>F</code> near the top of the output, indicating that something in your code failed. Further, notice that the red <code>E</code> provides some hints about the errors in your <code>calculator.py</code> program. Based upon the output, you can imagine a scenario where <code>3 * 3</code> has outputted <code>6</code> instead of <code>9</code>. Based on the results of this test, we can go correct our <code>calculator.py</code> code as follows:</p>
-<pre><code>def main():
-    x = int(input("What's x? "))
-    print("x squared is", square(x))
-
-
-def square(n):
-    return n * n
-
-
-if __name__ == "__main__":
-    main()</code></pre>
-<p>Notice that we have changed the <code>+</code> operator to a <code>*</code> in the square function, returning it to a working state.</p></li>
-<li><p>Re-running <code>pytest test_calculator.py</code>, notice how no errors are produced. Congratulations!</p></li>
-<li><p>At the moment, it is not ideal that <code>pytest</code> will stop running after the first failed test. Again, let’s return our <code>calculator.py</code> code back to its broken state:</p>
-<pre><code>def main():
-    x = int(input("What's x? "))
-    print("x squared is", square(x))
-
-
-def square(n):
-    return n + n
-
-
-if __name__ == "__main__":
-    main()</code></pre>
-<p>Notice that we have changed the <code>*</code> operator to a <code>+</code> in the square function, returning it to a broken state.</p></li>
-<li><p>To improve our test code, let’s modify <code>test_calculator.py</code> to divide the code into different groups of tests:</p>
-<pre><code>from calculator import square
-
-
-def test_positive():
-    assert square(2) == 4
-    assert square(3) == 9
-
-
-def test_negative():
-    assert square(-2) == 4
-    assert square(-3) == 9
-
-
-def test_zero():
-    assert square(0) == 0</code></pre>
-<p>Notice that we have divided the same five tests into three different functions. Testing frameworks like <code>pytest</code> will run each function, even if there was a failure in one of them. Re-running <code>pytest test_calculator.py</code>, you will notice that many more errors are being displayed. More error output allows you to further explore what might be producing the problems within your code.</p></li>
-<li><p>Having improved our test code, return your <code>calculator.py</code> code to fully working order:</p>
-<pre><code>def main():
-    x = int(input("What's x? "))
-    print("x squared is", square(x))
-
-
-def square(n):
-    return n * n
-
-
-if __name__ == "__main__":
-    main()</code></pre>
-<p>Notice that we have changed the <code>+</code> operator to a <code>*</code> in the square function, returning it to a working state.</p></li>
-<li><p>Re-running <code>pytest test_calculator.py</code>, you will notice that no errors are found.</p></li>
-<li><p>Finally, we can test that our program handles exceptions. Let’s modify <code>test_calculator.py</code> to do just that.</p></li>
+<li>The author frames AI tools as a multiplier: you still need to decide <em>what the system is</em> and <em>where things live</em> (files/modules/classes).</li>
+<li>A practical mental model: treat the assistant like a very fast junior developer—great at drafting, weak at reading your mind.</li>
 </ul>
-<pre><code>  import pytest
-
-  from calculator import square
-
-
-  def test_positive():
-      assert square(2) == 4
-      assert square(3) == 9
-
-
-  def test_negative():
-      assert square(-2) == 4
-      assert square(-3) == 9
-
-
-  def test_zero():
-      assert square(0) == 0
-
-
-  def test_str():
-      with pytest.raises(TypeError):
-          square("cat")</code></pre>
-<p>Notice that instead of using <code>assert</code>, we are taking advantage of a function within the <code>pytest</code> library itself called <code>raises</code> which allows you to express that you expect an error to be raised. We need to go to the top of our program and add <code>import pytest</code> and then call <code>pytest.raises</code> with the type of error we are expecting.</p>
+<p>From this week’s “what this covers” list, one line basically describes the architectural bar:</p>
 <ul>
-<li>Again, re-running <code>pytest test_calculator.py</code>, you will notice that no errors are found.</li>
-<li>In summary, it’s up to you as a coder to define as many test conditions as you see fit!</li>
+<li>“¡ Maintain separation of concerns—Even fast development benefits from clean architecture.”</li>
 </ul>
-<p>You can learn more in Pytest’s documentation of <a href="https://docs.pytest.org/en/7.1.x/getting-started.html"><code>pytest</code></a>.</p>
-</section>
-<section id="testing-strings" class="level2">
-<h2 class="anchored" data-anchor-id="testing-strings">Testing Strings</h2>
+<p>What that means in practice:</p>
 <ul>
-<li><p>Going back in time, consider the following code <code>hello.py</code>:</p>
-<pre><code>def main():
-    name = input("What's your name? ")
-    hello(name)
-
-
-def hello(to="world"):
-    print("hello,", to)
-
-
-if __name__ == "__main__":
-    main()</code></pre>
-<p>Notice that we may wish to test the result of the <code>hello</code> function.</p></li>
-<li><p>Consider the following code for <code>test_hello.py</code>:</p>
-<pre><code>from hello import hello
-
-
-def test_hello():
-    assert hello("David") == "hello, David"
-    assert hello() == "hello, world"</code></pre>
-<p>Looking at this code, do you think that this approach to testing will work well? Why might this test not work well? Notice that the <code>hello</code> function in <code>hello.py</code> prints something: That is, it does not return a value!</p></li>
-<li><p>We can change our <code>hello</code> function within <code>hello.py</code> as follows:</p>
-<pre><code>def main():
-    name = input("What's your name? ")
-    print(hello(name))
-
-
-def hello(to="world"):
-    return f"hello, {to}"
-
-
-if __name__ == "__main__":
-    main()</code></pre>
-<p>Notice that we changed our <code>hello</code> function to return a string. This effectively means that we can now use <code>pytest</code> to test the <code>hello</code> function.</p></li>
-<li><p>Running <code>pytest test_hello.py</code>, our code will pass all tests!</p></li>
-<li><p>As with our previous test case in this lesson, we can break out our tests separately:</p>
-<pre><code>from hello import hello
-
-
-def test_default():
-    assert hello() == "hello, world"
-
-
-def test_argument():
-    assert hello("David") == "hello, David"</code></pre>
-<p>Notice that the above code separates our test into multiple functions such that they will all run, even if an error is produced.</p></li>
+<li>You can accept AI-generated code as a <em>starting point</em>, but you should refactor it into your architecture.</li>
+<li>When the AI suggests putting everything into one file, you should resist. This week is about improving structure while moving fast.</li>
+</ul>
+<section id="prompting-as-a-software-skill" class="level3">
+<h3 class="anchored" data-anchor-id="prompting-as-a-software-skill">Prompting as a software skill</h3>
+<ul>
+<li>Prompts are interfaces. If your prompt is vague, the “API response” (generated code) will be unpredictable.</li>
+<li>If your prompt is too rigid, you’ll spend more time fighting the output than writing code yourself.</li>
+<li>The sweet spot is a <em>well-scoped</em> prompt that includes context + constraints + expected behaviour.</li>
+</ul>
+<p>Two short reminders from this week:</p>
+<ul>
+<li>“This prompt will tell Blackbox what we want it to do and give specificity.”</li>
+<li>“Treat the comment as a prompt.”</li>
 </ul>
 </section>
-<section id="organizing-tests-into-folders" class="level2">
-<h2 class="anchored" data-anchor-id="organizing-tests-into-folders">Organizing Tests into Folders</h2>
-<ul>
-<li><p>Unit testing code using multiple tests is so common that you have the ability to run a whole folder of tests with a single command.</p></li>
-<li><p>First, in the terminal window, execute <code>mkdir test</code> to create a folder called <code>test</code>.</p></li>
-<li><p>Then, to create a test within that folder, type in the terminal window <code>code test/test_hello.py</code>. Notice that <code>test/</code> instructs the terminal to create <code>test_hello.py</code> in the folder called <code>test</code>.</p></li>
-<li><p>In the text editor window, modify the file to include the following code:</p>
-<pre><code>from hello import hello
-
-
-def test_default():
-    assert hello() == "hello, world"
-
-
-def test_argument():
-    assert hello("David") == "hello, David"</code></pre>
-<p>Notice that we are creating a test just as we did before.</p></li>
-<li><p><code>pytest</code> will not allow us to run tests as a folder simply with this file (or a whole set of files) alone without a special <code>__init__</code> file. In your terminal window, create this file by typing <code>code test/__init__.py</code>. Note the <code>test/</code> as before, as well as the double underscores on either side of <code>init</code>. Even leaving this <code>__init__.py</code> file empty, <code>pytest</code> is informed that the whole folder containing <code>__init__.py</code> has tests that can be run.</p></li>
-<li><p>Now, typing <code>pytest test</code> in the terminal, you can run the entire <code>test</code> folder of code.</p></li>
-</ul>
-<p>You can learn more in Pytest’s documentation of <a href="https://docs.pytest.org/en/7.1.x/explanation/pythonpath.html?highlight=folder#pytest-import-mechanisms-and-sys-path-pythonpath">import mechanisms</a>.</p>
 </section>
-<section id="summing-up" class="level2">
-<h2 class="anchored" data-anchor-id="summing-up">Summing Up</h2>
-<p>Testing your code is a natural part of the programming process. Unit tests allow you to test specific aspects of your code. You can create your own programs that test your code. Alternatively, you can utilize frameworks like <code>pytest</code> to run your unit tests for you. In this lecture, you learned about…</p>
+<section id="setting-up-the-development-environment" class="level2">
+<h2 class="anchored" data-anchor-id="setting-up-the-development-environment">Setting up the development environment</h2>
 <ul>
-<li>Unit tests</li>
-<li><code>assert</code></li>
-<li><code>pytest</code></li>
+<li>This week assumes you already have a working Flask project from earlier weeks.</li>
+<li>You’re now adding <em>state</em>: question sets and test sessions need to persist across pages and across time.</li>
+</ul>
+<p>Minimum local setup (student-friendly):</p>
+<ul>
+<li>Create a virtual environment and install Flask.</li>
+<li>Decide where your database file lives (for a student project, a local SQLite file is fine).</li>
+<li>Ensure your project has a clear module boundary between routes and data access.</li>
+</ul>
+<p>A minimal runnable Flask skeleton:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> flask <span class="im">import</span> Flask</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>app <span class="op">=</span> Flask(<span class="va">__name__</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">@app.get</span>(<span class="st">"/"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> index():</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {<span class="st">"status"</span>: <span class="st">"ok"</span>}</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">"__main__"</span>:</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    app.run(debug<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="developing-core-features" class="level2">
+<h2 class="anchored" data-anchor-id="developing-core-features">Developing core features</h2>
+<ul>
+<li>This week’s development plan is incremental: add the database layer, wire it to the UI, then improve architecture.</li>
+<li>This is where “separation of concerns” stops being an academic phrase and becomes a survival tool.</li>
+</ul>
+<section id="creating-the-database" class="level3">
+<h3 class="anchored" data-anchor-id="creating-the-database">Creating the database</h3>
+<p>The author’s first instinct is direct:</p>
+<ul>
+<li>“I start with the database.”</li>
+</ul>
+<p>Why start here?</p>
+<ul>
+<li>Web apps are stateful experiences built on stateless HTTP. If you don’t persist state, you’ll rebuild it on every request (painful).</li>
+<li>A database is the simplest shared memory for user progress (even if you later swap SQLite for Postgres).</li>
+</ul>
+<p>Another sentence in this week explains the concrete requirement:</p>
+<ul>
+<li>“Now I just need to create a table that will store these IDs and some session data for our students.”</li>
+</ul>
+<section id="a-sane-starter-schema" class="level4">
+<h4 class="anchored" data-anchor-id="a-sane-starter-schema">A sane starter schema</h4>
+<ul>
+<li><code>question_sets</code>: store a reproducible list of question IDs for an exam attempt.</li>
+<li><code>test_sessions</code>: store progress through a question set (index, answers, score).</li>
+</ul>
+<p>Runnable SQLite setup (creates tables):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>DB_PATH <span class="op">=</span> <span class="st">"week05_demo.sqlite"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>schema_sql <span class="op">=</span> <span class="st">"""</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="st">CREATE TABLE IF NOT EXISTS question_sets (</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="st">  id INTEGER PRIMARY KEY AUTOINCREMENT,</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="st">  created_at TEXT DEFAULT CURRENT_TIMESTAMP,</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="st">  question_ids TEXT NOT NULL</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="st">);</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="st">CREATE TABLE IF NOT EXISTS test_sessions (</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="st">  id INTEGER PRIMARY KEY AUTOINCREMENT,</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="st">  question_set_id INTEGER NOT NULL,</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="st">  current_index INTEGER DEFAULT 0,</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="st">  score INTEGER DEFAULT 0,</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="st">  created_at TEXT DEFAULT CURRENT_TIMESTAMP,</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="st">  FOREIGN KEY(question_set_id) REFERENCES question_sets(id)</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="st">);</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> sqlite3.<span class="ex">connect</span>(DB_PATH) <span class="im">as</span> conn:</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    conn.executescript(schema_sql)</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"OK: tables created in"</span>, DB_PATH)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="connecting-to-our-database" class="level3">
+<h3 class="anchored" data-anchor-id="connecting-to-our-database">Connecting to our database</h3>
+<p>This week uses SQLite for simplicity. The key engineering decision is <strong>where</strong> to put connection logic.</p>
+<ul>
+<li>Good: <code>db.py</code> (or <code>database.py</code>) owns connection creation, and other modules import helper functions.</li>
+<li>Risky: every route creates its own SQL strings and connections inline (hard to test, hard to debug).</li>
+</ul>
+<p>A minimal “db helper” module pattern:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># db.py</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>DB_PATH <span class="op">=</span> Path(<span class="st">"week05_demo.sqlite"</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_conn():</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    conn <span class="op">=</span> sqlite3.<span class="ex">connect</span>(DB_PATH)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    conn.row_factory <span class="op">=</span> sqlite3.Row</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> conn</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="calling-our-database-from-the-frontend" class="level3">
+<h3 class="anchored" data-anchor-id="calling-our-database-from-the-frontend">Calling our database from the frontend</h3>
+<ul>
+<li>The UI needs to request “the next question” and submit “an answer”.</li>
+<li>The backend needs to read/write the current test session (progress, scoring).</li>
+</ul>
+<p>A minimal pattern: use routes as thin controllers; keep SQL out of the route when possible.</p>
+</section>
+<section id="refactoring-our-questions-class" class="level3">
+<h3 class="anchored" data-anchor-id="refactoring-our-questions-class">Refactoring our Questions class</h3>
+<ul>
+<li>As features grow, a “Questions” class tends to become a dumping ground.</li>
+<li>Refactoring here is about separating: (1) question bank access, (2) question selection, (3) rendering/formatting.</li>
+</ul>
+</section>
+<section id="modifying-our-entry-point-app-py" class="level3">
+<h3 class="anchored" data-anchor-id="modifying-our-entry-point-app-py">Modifying our entry point (App.py)</h3>
+<ul>
+<li>Entry points tend to accumulate imports, global objects, and configuration.</li>
+<li>This week nudges you toward clarity: keep initialization in one place, but push functionality into modules.</li>
+</ul>
+</section>
+<section id="pulling-a-set-of-questions" class="level3">
+<h3 class="anchored" data-anchor-id="pulling-a-set-of-questions">Pulling a set of questions</h3>
+<ul>
+<li>A <strong>question set</strong> is your “frozen exam”. Once created, you should be able to reproduce it exactly.</li>
+<li>This prevents the classic bug where refreshing the page gives a different test.</li>
+</ul>
+</section>
+<section id="creating-a-test-session-in-the-database" class="level3">
+<h3 class="anchored" data-anchor-id="creating-a-test-session-in-the-database">Creating a test session in the database</h3>
+<ul>
+<li>A <strong>test session</strong> is a record that points to a question set + stores progress.</li>
+<li>This is also where session cookies + DB state meet: cookie identifies the browser; DB stores the durable progress.</li>
+</ul>
+<p>A student-friendly session cookie setup in Flask:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> flask <span class="im">import</span> Flask, session</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>app <span class="op">=</span> Flask(<span class="va">__name__</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>app.secret_key <span class="op">=</span> <span class="st">"dev-only-change-me"</span>  <span class="co"># in real apps, use env vars</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="at">@app.get</span>(<span class="st">"/set"</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> set_value():</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    session[<span class="st">"user_id"</span>] <span class="op">=</span> <span class="dv">123</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {<span class="st">"ok"</span>: <span class="va">True</span>}</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="at">@app.get</span>(<span class="st">"/get"</span>)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_value():</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {<span class="st">"user_id"</span>: session.get(<span class="st">"user_id"</span>)}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="creating-code-for-the-test-session" class="level3">
+<h3 class="anchored" data-anchor-id="creating-code-for-the-test-session">Creating code for the test session</h3>
+<ul>
+<li>This week’s practical point: let AI draft the route handlers, but you must ensure they call <em>your</em> data layer cleanly.</li>
+<li>Keep the contract obvious: <code>create_session(question_set_id) -&gt; session_id</code> and <code>get_session(session_id) -&gt; record</code>.</li>
+</ul>
+</section>
+<section id="generating-a-question-set" class="level3">
+<h3 class="anchored" data-anchor-id="generating-a-question-set">Generating a question set</h3>
+<ul>
+<li>Generating here means: selecting question IDs (not generating new questions).</li>
+<li>You want deterministic reproducibility: store the IDs you chose.</li>
+</ul>
+</section>
+<section id="verifying-our-test-session-was-created" class="level3">
+<h3 class="anchored" data-anchor-id="verifying-our-test-session-was-created">Verifying our test session was created</h3>
+<ul>
+<li>Verification is not optional. AI makes it easy to write code that “looks right” but fails at runtime.</li>
+<li>Check: DB rows exist, foreign keys match, and the UI can resume where it left off.</li>
+</ul>
+<p>A tiny verification query (runnable):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>DB_PATH <span class="op">=</span> <span class="st">"week05_demo.sqlite"</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> sqlite3.<span class="ex">connect</span>(DB_PATH) <span class="im">as</span> conn:</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    qs <span class="op">=</span> conn.execute(<span class="st">"SELECT COUNT(*) FROM question_sets"</span>).fetchone()[<span class="dv">0</span>]</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    ts <span class="op">=</span> conn.execute(<span class="st">"SELECT COUNT(*) FROM test_sessions"</span>).fetchone()[<span class="dv">0</span>]</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>({<span class="st">"question_sets"</span>: qs, <span class="st">"test_sessions"</span>: ts})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<ul>
+<li>This week is a case study in using <strong>Blackbox AI</strong> for speed while still enforcing architecture.</li>
+<li>The most important engineering idea is <strong>separation of concerns</strong>: routes orchestrate, domain logic decides, data layer persists.</li>
+<li>The product outcome is a test experience that can persist progress across pages: <strong>question sets</strong> + <strong>test sessions</strong>.</li>
+</ul>
+</section>
+<section id="figures-extracted-from-week-05" class="level2">
+<h2 class="anchored" data-anchor-id="figures-extracted-from-week-05">Figures extracted from Week 05</h2>
+<p>The following images were extracted from the Week 05 materials.</p>
+<p><img src="images/week_05/fig_01.png" class="img-fluid"> <img src="images/week_05/fig_02.jpeg" class="img-fluid"> <img src="images/week_05/fig_03.jpeg" class="img-fluid"> <img src="images/week_05/fig_04.jpeg" class="img-fluid"> <img src="images/week_05/fig_05.jpeg" class="img-fluid"> <img src="images/week_05/fig_06.jpeg" class="img-fluid"> <img src="images/week_05/fig_07.jpeg" class="img-fluid"> <img src="images/week_05/fig_08.jpeg" class="img-fluid"> <img src="images/week_05/fig_09.jpeg" class="img-fluid"> <img src="images/week_05/fig_10.jpeg" class="img-fluid"> <img src="images/week_05/fig_11.png" class="img-fluid"> <img src="images/week_05/fig_12.jpeg" class="img-fluid"> <img src="images/week_05/fig_13.jpeg" class="img-fluid"> <img src="images/week_05/fig_14.jpeg" class="img-fluid"> <img src="images/week_05/fig_15.jpeg" class="img-fluid"> <img src="images/week_05/fig_16.jpeg" class="img-fluid"> <img src="images/week_05/fig_17.jpeg" class="img-fluid"> <img src="images/week_05/fig_18.jpeg" class="img-fluid"> <img src="images/week_05/fig_19.jpeg" class="img-fluid"> <img src="images/week_05/fig_20.jpeg" class="img-fluid"> <img src="images/week_05/fig_21.jpeg" class="img-fluid"> <img src="images/week_05/fig_22.jpeg" class="img-fluid"> <img src="images/week_05/fig_23.jpeg" class="img-fluid"> <img src="images/week_05/fig_24.jpeg" class="img-fluid"> <img src="images/week_05/fig_25.jpeg" class="img-fluid"> <img src="images/week_05/fig_26.png" class="img-fluid"> <img src="images/week_05/fig_27.jpeg" class="img-fluid"> <img src="images/week_05/fig_28.jpeg" class="img-fluid"> <img src="images/week_05/fig_29.jpeg" class="img-fluid"> <img src="images/week_05/fig_30.jpeg" class="img-fluid"> <img src="images/week_05/fig_31.png" class="img-fluid"> <img src="images/week_05/fig_32.jpeg" class="img-fluid"> <img src="images/week_05/fig_33.png" class="img-fluid"> <img src="images/week_05/fig_34.jpeg" class="img-fluid"> <img src="images/week_05/fig_35.jpeg" class="img-fluid"> <img src="images/week_05/fig_36.jpeg" class="img-fluid"> <img src="images/week_05/fig_37.jpeg" class="img-fluid"> <img src="images/week_05/fig_38.jpeg" class="img-fluid"> <img src="images/week_05/fig_39.jpeg" class="img-fluid"> <img src="images/week_05/fig_40.png" class="img-fluid"> <img src="images/week_05/fig_41.png" class="img-fluid"> <img src="images/week_05/fig_42.png" class="img-fluid"> <img src="images/week_05/fig_43.png" class="img-fluid"> <img src="images/week_05/fig_44.png" class="img-fluid"> <img src="images/week_05/fig_45.jpeg" class="img-fluid"> <img src="images/week_05/fig_46.jpeg" class="img-fluid"> <img src="images/week_05/fig_47.png" class="img-fluid"> <img src="images/week_05/fig_48.jpeg" class="img-fluid"> <img src="images/week_05/fig_49.jpeg" class="img-fluid"> <img src="images/week_05/fig_50.png" class="img-fluid"> <img src="images/week_05/fig_51.jpeg" class="img-fluid"> <img src="images/week_05/fig_52.jpeg" class="img-fluid"> <img src="images/week_05/fig_53.jpeg" class="img-fluid"> <img src="images/week_05/fig_54.jpeg" class="img-fluid"> <img src="images/week_05/fig_55.jpeg" class="img-fluid"> <img src="images/week_05/fig_56.jpeg" class="img-fluid"> <img src="images/week_05/fig_57.jpeg" class="img-fluid"> <img src="images/week_05/fig_58.png" class="img-fluid"> <img src="images/week_05/fig_59.jpeg" class="img-fluid"> <img src="images/week_05/fig_60.jpeg" class="img-fluid"> <img src="images/week_05/fig_61.jpeg" class="img-fluid"> <img src="images/week_05/fig_62.jpeg" class="img-fluid"> <img src="images/week_05/fig_63.jpeg" class="img-fluid"> <img src="images/week_05/fig_64.jpeg" class="img-fluid"> <img src="images/week_05/fig_65.jpeg" class="img-fluid"> <img src="images/week_05/fig_66.png" class="img-fluid"> <img src="images/week_05/fig_67.jpeg" class="img-fluid"> <img src="images/week_05/fig_68.jpeg" class="img-fluid"> <img src="images/week_05/fig_69.jpeg" class="img-fluid"> <img src="images/week_05/fig_70.jpeg" class="img-fluid"> <img src="images/week_05/fig_71.jpeg" class="img-fluid"> <img src="images/week_05/fig_72.jpeg" class="img-fluid"> <img src="images/week_05/fig_73.jpeg" class="img-fluid"> <img src="images/week_05/fig_74.jpeg" class="img-fluid"> <img src="images/week_05/fig_75.jpeg" class="img-fluid"> <img src="images/week_05/fig_76.jpeg" class="img-fluid"> <img src="images/week_05/fig_77.jpeg" class="img-fluid"> <img src="images/week_05/fig_78.jpeg" class="img-fluid"> <img src="images/week_05/fig_79.jpeg" class="img-fluid"> <img src="images/week_05/fig_80.jpeg" class="img-fluid"> <img src="images/week_05/fig_81.png" class="img-fluid"> <img src="images/week_05/fig_82.jpeg" class="img-fluid"> <img src="images/week_05/fig_83.jpeg" class="img-fluid"> <img src="images/week_05/fig_84.jpeg" class="img-fluid"> <img src="images/week_05/fig_85.jpeg" class="img-fluid"> <img src="images/week_05/fig_86.jpeg" class="img-fluid"> <img src="images/week_05/fig_87.jpeg" class="img-fluid"> <img src="images/week_05/fig_88.jpeg" class="img-fluid"> <img src="images/week_05/fig_89.jpeg" class="img-fluid"> <img src="images/week_05/fig_90.jpeg" class="img-fluid"> <img src="images/week_05/fig_91.png" class="img-fluid"> <img src="images/week_05/fig_92.png" class="img-fluid"> <img src="images/week_05/fig_93.jpeg" class="img-fluid"> <img src="images/week_05/fig_94.jpeg" class="img-fluid"> <img src="images/week_05/fig_95.jpeg" class="img-fluid"> <img src="images/week_05/fig_96.jpeg" class="img-fluid"></p>
+</section>
+<section id="extra-notes-common-failure-modes" class="level2">
+<h2 class="anchored" data-anchor-id="extra-notes-common-failure-modes">Extra notes: common failure modes when using AI drafts</h2>
+<ul>
+<li>Mixing layers: SQL and HTML string-building inside routes leads to fragile code.</li>
+<li>Hidden state: relying only on cookies without DB persistence breaks resuming tests.</li>
+<li>Unverified assumptions: AI may invent library functions or routes that do not exist.</li>
+<li>Over-trusting generated code: always run, print, and inspect DB rows early.</li>
+<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
+<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
+<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
+<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
+<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
+<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
+<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
+<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
+<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
+<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
+<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
+<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
+<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
+<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
+<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
+<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
+<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
+<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
+<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
+<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
+<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
+<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
+<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
+<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
+<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
+<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
+<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
+<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
+<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
+<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
+<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
+<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
+<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
+<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
+<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
+<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
+<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
+<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
+<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
+<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
+<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
+<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
+<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
+<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
+<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
+<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
 </ul>
 
 
@@ -1368,13 +1424,13 @@ def test_argument():
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../notes/notes_4.html" class="pagination-link" aria-label="Notes 04 🐍">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Notes 04 🐍</span>
+      <a href="../notes/notes_4.html" class="pagination-link" aria-label="Notes 04 🤖">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Notes 04 🤖</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../notes/notes_6.html" class="pagination-link" aria-label="Notes 06 🐍">
-        <span class="nav-page-text">Notes 06 🐍</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../notes/notes_6.html" class="pagination-link" aria-label="Notes 06 🤖">
+        <span class="nav-page-text">Notes 06 🤖</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

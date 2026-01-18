@@ -112,11 +112,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <meta property="og:title" content="Real World AI">
-<meta property="og:image" content="https://SQ4014-2025.github.io/website/notes/images/week_03/fig_01.png">
 <meta property="og:site_name" content="Real World AI">
-<meta property="og:image:alt" content="Figure from Week 03">
-<meta property="og:image:height" content="658">
-<meta property="og:image:width" content="1129">
 <meta name="twitter:title" content="Real World AI">
 <meta name="twitter:image" content="https://SQ4014-2025.github.io/website/notes/images/twitter-card.png">
 <meta name="twitter:creator" content="@EdHarris9000">
@@ -587,41 +583,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#week-03-designing-your-first-prompt" id="toc-week-03-designing-your-first-prompt" class="nav-link active" data-scroll-target="#week-03-designing-your-first-prompt">Week 03 — Designing Your First Prompt</a>
   <ul class="collapse">
-  <li><a href="#contents" id="toc-contents" class="nav-link" data-scroll-target="#contents">Contents</a></li>
-  <li><a href="#figures-used-in-this-week" id="toc-figures-used-in-this-week" class="nav-link" data-scroll-target="#figures-used-in-this-week">Figures used in this week</a></li>
   <li><a href="#why-prompting-is-a-design-skill" id="toc-why-prompting-is-a-design-skill" class="nav-link" data-scroll-target="#why-prompting-is-a-design-skill">Why prompting is a design skill</a>
   <ul class="collapse">
-  <li><a href="#micro-quote" id="toc-micro-quote" class="nav-link" data-scroll-target="#micro-quote">Micro-quote</a></li>
+  <li><a href="#the-two-jobs-of-a-good-prompt" id="toc-the-two-jobs-of-a-good-prompt" class="nav-link" data-scroll-target="#the-two-jobs-of-a-good-prompt">The two jobs of a good prompt</a></li>
   </ul></li>
   <li><a href="#prompt-anatomy" id="toc-prompt-anatomy" class="nav-link" data-scroll-target="#prompt-anatomy">Prompt anatomy</a>
   <ul class="collapse">
-  <li><a href="#chapter-keywords-bold-first-use" id="toc-chapter-keywords-bold-first-use" class="nav-link" data-scroll-target="#chapter-keywords-bold-first-use">Chapter keywords (bold first use)</a></li>
+  <li><a href="#keywords-to-look-out-for" id="toc-keywords-to-look-out-for" class="nav-link" data-scroll-target="#keywords-to-look-out-for">Keywords to look out for</a></li>
   <li><a href="#example-minimal-vs-engineered-prompt" id="toc-example-minimal-vs-engineered-prompt" class="nav-link" data-scroll-target="#example-minimal-vs-engineered-prompt">Example: minimal vs engineered prompt</a></li>
   </ul></li>
   <li><a href="#from-vague-to-specific" id="toc-from-vague-to-specific" class="nav-link" data-scroll-target="#from-vague-to-specific">From vague to specific</a>
   <ul class="collapse">
-  <li><a href="#micro-quote-1" id="toc-micro-quote-1" class="nav-link" data-scroll-target="#micro-quote-1">Micro-quote</a></li>
   <li><a href="#a-reusable-rewrite-pattern" id="toc-a-reusable-rewrite-pattern" class="nav-link" data-scroll-target="#a-reusable-rewrite-pattern">A reusable rewrite pattern</a></li>
   </ul></li>
   <li><a href="#constraints-rubrics-and-acceptance-tests" id="toc-constraints-rubrics-and-acceptance-tests" class="nav-link" data-scroll-target="#constraints-rubrics-and-acceptance-tests">Constraints, rubrics, and acceptance tests</a>
   <ul class="collapse">
-  <li><a href="#micro-quote-2" id="toc-micro-quote-2" class="nav-link" data-scroll-target="#micro-quote-2">Micro-quote</a></li>
   <li><a href="#code-acceptance-test-mindset" id="toc-code-acceptance-test-mindset" class="nav-link" data-scroll-target="#code-acceptance-test-mindset">Code: acceptance-test mindset</a></li>
   </ul></li>
   <li><a href="#few-shot-examples" id="toc-few-shot-examples" class="nav-link" data-scroll-target="#few-shot-examples">Few-shot examples</a>
   <ul class="collapse">
   <li><a href="#when-few-shot-helps" id="toc-when-few-shot-helps" class="nav-link" data-scroll-target="#when-few-shot-helps">When few-shot helps</a></li>
-  <li><a href="#micro-quote-3" id="toc-micro-quote-3" class="nav-link" data-scroll-target="#micro-quote-3">Micro-quote</a></li>
   <li><a href="#example-prompt-with-one-example-pair" id="toc-example-prompt-with-one-example-pair" class="nav-link" data-scroll-target="#example-prompt-with-one-example-pair">Example prompt with one example pair</a></li>
   </ul></li>
   <li><a href="#output-formats-that-dont-break" id="toc-output-formats-that-dont-break" class="nav-link" data-scroll-target="#output-formats-that-dont-break">Output formats that don’t break</a>
   <ul class="collapse">
-  <li><a href="#micro-quote-4" id="toc-micro-quote-4" class="nav-link" data-scroll-target="#micro-quote-4">Micro-quote</a></li>
   <li><a href="#code-strict-json-parsing" id="toc-code-strict-json-parsing" class="nav-link" data-scroll-target="#code-strict-json-parsing">Code: strict JSON parsing</a></li>
   </ul></li>
   <li><a href="#iteration-loop" id="toc-iteration-loop" class="nav-link" data-scroll-target="#iteration-loop">Iteration loop</a>
   <ul class="collapse">
-  <li><a href="#micro-quote-5" id="toc-micro-quote-5" class="nav-link" data-scroll-target="#micro-quote-5">Micro-quote</a></li>
   <li><a href="#code-prompt-versioning-idea" id="toc-code-prompt-versioning-idea" class="nav-link" data-scroll-target="#code-prompt-versioning-idea">Code: prompt versioning idea</a></li>
   </ul></li>
   <li><a href="#failure-modes-debugging-prompts" id="toc-failure-modes-debugging-prompts" class="nav-link" data-scroll-target="#failure-modes-debugging-prompts">Failure modes + debugging prompts</a>
@@ -662,7 +651,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Week focus:</strong> turning vague intent into reliable, testable prompt instructions.</p>
 </blockquote>
 <ul>
-<li><a href="#contents">Contents</a></li>
 <li><a href="#figures-used-in-this-week">Figures used in this week</a></li>
 <li><a href="#why-prompting-is-a-design-skill">Why prompting is a design skill</a></li>
 <li><a href="#prompt-anatomy">Prompt anatomy</a></li>
@@ -676,13 +664,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="#summing-up">Summing Up</a></li>
 <li><a href="#appendix-a-worked-walkthrough-building-a-prompt-step-by-step">Appendix A — Worked walkthrough: building a prompt step by step</a></li>
 </ul>
-<section id="contents" class="level2">
-<h2 class="anchored" data-anchor-id="contents">Contents</h2>
-</section>
-<section id="figures-used-in-this-week" class="level2">
-<h2 class="anchored" data-anchor-id="figures-used-in-this-week">Figures used in this week</h2>
-<p><img src="images/week_03/fig_01.png" class="img-fluid" style="width:85.0%" alt="Figure from Week 03"> <img src="images/week_03/fig_02.png" class="img-fluid" style="width:85.0%" alt="Figure from Week 03"></p>
-</section>
 <section id="why-prompting-is-a-design-skill" class="level2">
 <h2 class="anchored" data-anchor-id="why-prompting-is-a-design-skill">Why prompting is a design skill</h2>
 <p>Prompting is not “asking nicely”. In the real world, you use prompts to <strong>specify behaviour</strong> under constraints:</p>
@@ -693,18 +674,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>you want it to behave sensibly when information is missing</li>
 </ul>
 <p>A useful mindset: a prompt is closer to a <strong>function signature</strong> than a conversation.</p>
-<section id="micro-quote" class="level3">
-<h3 class="anchored" data-anchor-id="micro-quote">Micro-quote</h3>
 <blockquote class="blockquote">
 <p>“A prompt is a program in natural language.”</p>
 </blockquote>
-<section id="the-two-jobs-of-a-good-prompt" class="level4">
-<h4 class="anchored" data-anchor-id="the-two-jobs-of-a-good-prompt">The two jobs of a good prompt</h4>
+<section id="the-two-jobs-of-a-good-prompt" class="level3">
+<h3 class="anchored" data-anchor-id="the-two-jobs-of-a-good-prompt">The two jobs of a good prompt</h3>
 <ol type="1">
 <li><strong>Explain the task</strong> (what success looks like)</li>
 <li><strong>Constrain the output</strong> (how the response must be shaped)</li>
 </ol>
-</section>
 </section>
 </section>
 <section id="prompt-anatomy" class="level2">
@@ -719,8 +697,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Output format</strong>: JSON, Markdown, table, bullet list, etc</li>
 <li><strong>Quality bar</strong>: rubric / checklist / tests</li>
 </ul>
-<section id="chapter-keywords-bold-first-use" class="level3">
-<h3 class="anchored" data-anchor-id="chapter-keywords-bold-first-use">Chapter keywords (bold first use)</h3>
+<section id="keywords-to-look-out-for" class="level3">
+<h3 class="anchored" data-anchor-id="keywords-to-look-out-for">Keywords to look out for</h3>
 <ul>
 <li><strong>Role prompting</strong>: framing the model’s perspective and responsibilities.</li>
 <li><strong>Constraints</strong>: explicit limits that prevent unwanted behaviour or formats.</li>
@@ -744,7 +722,7 @@ Output as markdown with headings and a final summary.</code></pre>
 </section>
 <section id="from-vague-to-specific" class="level2">
 <h2 class="anchored" data-anchor-id="from-vague-to-specific">From vague to specific</h2>
-<p>Most student prompts fail because they skip <strong>specification</strong>. You can convert vague intent into a usable prompt by answering:</p>
+<p>Many prompts fail because they skip <strong>specification</strong>. You can convert vague intent into a usable prompt by answering:</p>
 <ul>
 <li>What is the <em>deliverable</em>? (an explanation / a plan / code / critique)</li>
 <li>Who is the <em>audience</em>?</li>
@@ -752,12 +730,9 @@ Output as markdown with headings and a final summary.</code></pre>
 <li>What does <em>success</em> look like? (rubric / checklist)</li>
 <li>What should <em>never</em> happen? (anti-requirements)</li>
 </ul>
-<section id="micro-quote-1" class="level3">
-<h3 class="anchored" data-anchor-id="micro-quote-1">Micro-quote</h3>
 <blockquote class="blockquote">
 <p>“Be specific about what you want and what you don’t want.”</p>
 </blockquote>
-</section>
 <section id="a-reusable-rewrite-pattern" class="level3">
 <h3 class="anchored" data-anchor-id="a-reusable-rewrite-pattern">A reusable rewrite pattern</h3>
 <p>Take the vague prompt:</p>
@@ -779,12 +754,9 @@ Keep changes minimal.</code></pre>
 <li>An acceptance test (unit tests, schema validation)</li>
 <li>A format requirement (JSON schema, markdown headings)</li>
 </ul>
-<section id="micro-quote-2" class="level3">
-<h3 class="anchored" data-anchor-id="micro-quote-2">Micro-quote</h3>
 <blockquote class="blockquote">
 <p>“Make the output easy to verify.”</p>
 </blockquote>
-</section>
 <section id="code-acceptance-test-mindset" class="level3">
 <h3 class="anchored" data-anchor-id="code-acceptance-test-mindset">Code: acceptance-test mindset</h3>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A tiny “acceptance test” for AI-written text outputs</span></span>
@@ -805,9 +777,6 @@ Keep changes minimal.</code></pre>
 <li>When the task is ambiguous (many valid interpretations)</li>
 <li>When you care about edge-cases</li>
 </ul>
-</section>
-<section id="micro-quote-3" class="level3">
-<h3 class="anchored" data-anchor-id="micro-quote-3">Micro-quote</h3>
 <blockquote class="blockquote">
 <p>“Examples reduce ambiguity.”</p>
 </blockquote>
@@ -836,12 +805,9 @@ Now do the same for: "FULL JOIN keeps all rows from both"</code></pre>
 <h2 class="anchored" data-anchor-id="output-formats-that-dont-break">Output formats that don’t break</h2>
 <p>In real workflows, AI output often becomes input to something else: - a script - a web app - a report - a database</p>
 <p>That means formatting matters. If you don’t force structure, you’ll get “pretty” output that is unusable.</p>
-<section id="micro-quote-4" class="level3">
-<h3 class="anchored" data-anchor-id="micro-quote-4">Micro-quote</h3>
 <blockquote class="blockquote">
 <p>“Ask for the output format you need.”</p>
 </blockquote>
-</section>
 <section id="code-strict-json-parsing" class="level3">
 <h3 class="anchored" data-anchor-id="code-strict-json-parsing">Code: strict JSON parsing</h3>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
@@ -864,12 +830,9 @@ Now do the same for: "FULL JOIN keeps all rows from both"</code></pre>
 <li>Add constraints / examples</li>
 <li>Re-run</li>
 </ol>
-<section id="micro-quote-5" class="level3">
-<h3 class="anchored" data-anchor-id="micro-quote-5">Micro-quote</h3>
 <blockquote class="blockquote">
 <p>“Iterate on prompts like you iterate on code.”</p>
 </blockquote>
-</section>
 <section id="code-prompt-versioning-idea" class="level3">
 <h3 class="anchored" data-anchor-id="code-prompt-versioning-idea">Code: prompt versioning idea</h3>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>PROMPT_V1 <span class="op">=</span> <span class="st">"Summarise this article."</span></span>

@@ -1,8 +1,5 @@
 # Week 07 — Building user interfaces with ChatGPT
 
-> **Micro-quotes:** "Even seasoned developers can find UI design tough, and generative AI tools help tremendously." "AI tools provide a big boost for developers who aren't great at UI." "First, we need to build a great prompt for this." "7.1 Getting our strategy from our AI tools Before we approach these tools, we should think carefully about our prompt." "If we say "generate a frontend for my application" without enough information, the guidance will be too vague." "There is a time and a place for brief prompts."
-
-
 -   [What this week is doing (big picture)](#what-this-week-is-doing-big-picture)
 -   [Key terms (bolded the first time)](#key-terms-bolded-the-first-time)
 -   [Figures extracted from the PDF](#figures-extracted-from-the-pdf)
@@ -20,11 +17,13 @@
 -   [Summing Up](#summing-up)
 -   [Quick checklist (week skills)](#quick-checklist-week-skills)
 
+> "Interesting people like Data Scientists and software developers can find UI design tough, and generative AI tools help tremendously." 
+
 ## What this week is doing (big picture) {#what-this-week-is-doing-big-picture}
 
 This week switches focus from **backend logic** to the part users actually *touch*: the **user interface (UI)**. The aim is to use chat-based generative AI (especially ChatGPT) as a *pair designer + pair developer* to:
 
--   propose a UI strategy (pages around 179–181)
+-   propose a UI strategy
 -   write structured prompts that produce targeted UI guidance and code
 -   convert wireframes and flows into Flask templates + components
 -   add responsive HTML/CSS elements without being a frontend expert
@@ -40,22 +39,6 @@ We will use these week-specific ideas repeatedly:
 -   **Jinja2** — the templating language Flask uses to inject variables/loops/conditionals into HTML.
 -   **Responsive design** — designing pages so they work on different screen sizes (mobile, tablet, desktop).
 -   **Prompt scaffolding** — structuring a prompt into sections (objective, constraints, inputs, outputs) so the AI returns usable results.
-
-## Figures extracted from the PDF {#figures-extracted-from-the-pdf}
-
-These are images embedded in the PDF pages for Week 07. Not all are equally useful (some are icons/background elements), but they are extracted and downloadable.
-
-![](images/week_07/fig_01.png){fig-alt="Week 07 extracted figure 1"}
-
-![](images/week_07/fig_02.png){fig-alt="Week 07 extracted figure 2"}
-
-![](images/week_07/fig_03.png){fig-alt="Week 07 extracted figure 3"}
-
-![](images/week_07/fig_04.png){fig-alt="Week 07 extracted figure 4"}
-
-![](images/week_07/fig_05.png){fig-alt="Week 07 extracted figure 5"}
-
-![](images/week_07/fig_06.png){fig-alt="Week 07 extracted figure 6"}
 
 ## Getting our strategy from our AI tools {#getting-our-strategy-from-our-ai-tools}
 
@@ -100,83 +83,57 @@ print(prompt)
 
 ## From flows to pages: what screens does the user need? {#from-flows-to-pages-what-screens-does-the-user-need}
 
-This week frames UI work as a **user journey**: what does the user do first, next, and last?
-
-A practical approach is to list screens as verbs: *Log in*, *Choose a quiz*, *Answer questions*, *See results*.
-
-Once screens exist, you map navigation: where can the user go from each screen?
-
-This is where AI is helpful: it can suggest missing pages (e.g., error states, empty-state screens).
+- This week frames UI work as a **user journey**: what does the user do first, next, and last?
+- A practical approach is to list screens as verbs: *Log in*, *Choose a quiz*, *Answer questions*, *See results*.
+- Once screens exist, you map navigation: where can the user go from each screen?
+- This is where AI is helpful: it can suggest missing pages (e.g., error states, empty-state screens).
 
 ## Translating requirements into template structure {#translating-requirements-into-template-structure}
 
-This week emphasises organising your project so templates don’t become a mess.
-
-In Flask, a common pattern is a `templates/` folder and a `static/` folder.
-
-Templates contain HTML/Jinja; static contains CSS, JavaScript, and images.
-
-AI can draft a sensible baseline structure, but *you* must keep it consistent.
-
-If your templates are inconsistent (different nav bars per page), your UI will feel broken.
+- This week emphasises organising your project so templates don’t become a mess.
+- In Flask, a common pattern is a `templates/` folder and a `static/` folder.
+- Templates contain HTML/Jinja; static contains CSS, JavaScript, and images.
+- AI can draft a sensible baseline structure, but *you* must keep it consistent.
+- If your templates are inconsistent (different nav bars per page), your UI will feel broken.
 
 ## Wireframes: how to ask the AI for layout help {#wireframes-how-to-ask-the-ai-for-layout-help}
 
-A **wireframe** is not pretty — it is a constraint tool.
-
-You describe boxes: header, sidebar, main content, footer.
-
-This week shows using AI to turn a description into HTML skeleton.
-
-When prompting: specify grid/layout system (Flexbox, CSS grid, Bootstrap) or you’ll get random HTML.
-
-Be explicit about which elements repeat across pages (navbar, footer).
+- A **wireframe** is not pretty — it is a constraint tool.
+- You describe boxes: header, sidebar, main content, footer.
+- This week shows using AI to turn a description into HTML skeleton.
+- When prompting: specify grid/layout system (Flexbox, CSS grid, Bootstrap) or you’ll get random HTML.
+- Be explicit about which elements repeat across pages (navbar, footer).
 
 ## Responsive design basics (what this week wants you to learn) {#responsive-design-basics-what-this-week-wants-you-to-learn}
 
-This week's promise: you can achieve modern UI behaviour without deep frontend knowledge.
-
-Responsive design usually means: a single codebase that adapts to screen width.
-
-Practical knobs: `max-width`, `min-width`, breakpoints, and flexible grids.
-
-AI is good at generating starter CSS, but you need to test in the browser.
-
-Common failure: the UI looks fine on desktop but unusable on mobile.
+- This week's promise: you can achieve modern UI behaviour without deep frontend knowledge.
+- Responsive design usually means: a single codebase that adapts to screen width.
+- Practical knobs: `max-width`, `min-width`, breakpoints, and flexible grids.
+- AI is good at generating starter CSS, but you need to test in the browser.
+- Common failure: the UI looks fine on desktop but unusable on mobile.
 
 ## Jinja2 integration: UI that actually connects to backend data {#jinja2-integration-ui-that-actually-connects-to-backend-data}
 
-Static HTML is easy. The challenge is making pages dynamic.
-
-This week expects you to connect templates to Flask route variables.
-
-In Jinja2 you often loop over data: quizzes, questions, or results.
-
-AI can generate the loop structure quickly, but you must match variable names to your actual Python.
-
-Always confirm: what does the route pass into the template?
+- Static HTML is easy. The challenge is making pages dynamic.
+- This week expects you to connect templates to Flask route variables.
+- In Jinja2 you often loop over data: quizzes, questions, or results.
+- AI can generate the loop structure quickly, but you must match variable names to your actual Python.
+- Always confirm: what does the route pass into the template?
 
 ## Building components: avoiding copy/paste templates {#building-components-avoiding-copy-paste-templates}
 
-As your UI grows, duplication becomes the enemy.
-
-In Flask/Jinja, you can create a base template and extend it.
-
-This week's workflow benefits from: a base layout, then child pages.
-
-AI can scaffold a `base.html` with blocks (`content`, `scripts`).
-
-Pitfall: students forget to keep blocks consistent and pages break silently.
+- As your UI grows, duplication becomes the enemy.
+- In Flask/Jinja, you can create a base template and extend it.
+- This week's workflow benefits from: a base layout, then child pages.
+- AI can scaffold a `base.html` with blocks (`content`, `scripts`).
+- Pitfall: students forget to keep blocks consistent and pages break silently.
 
 ## Testing UI logic (lightweight sanity checks) {#testing-ui-logic-lightweight-sanity-checks}
 
-Week 07 is not a testing week, but UI work still needs verification.
-
-At minimum: confirm routes render, form submissions work, and nav links don’t 404.
-
-AI can help generate checklists for manual testing.
-
-If you have time, write a tiny smoke test using Flask’s test client.
+- Week 07 is not a testing week, but UI work still needs verification.
+- At minimum: confirm routes render, form submissions work, and nav links don’t 404.
+- AI can help generate checklists for manual testing.
+- If you have time, write a tiny smoke test using Flask’s test client.
 
 ## Code example: simple Jinja2 loop for quiz list {#code-example-simple-jinja2-loop-for-quiz-list}
 
@@ -213,10 +170,3 @@ nav a { margin-right: 1rem; }
 -   Flask templates + Jinja2 are the bridge between Python data and the UI.
 -   Responsive design is essential: test on multiple screen sizes early.
 
-## Quick checklist (week skills) {#quick-checklist-week-skills}
-
--   [ ] I can write a “strategy prompt” before asking for UI code.
--   [ ] I can list UI screens for a Flask app and map navigation between them.
--   [ ] I can scaffold templates/static folders for a maintainable frontend.
--   [ ] I can implement a base template + child templates with Jinja2 blocks.
--   [ ] I can add basic responsive CSS and verify it in a browser.

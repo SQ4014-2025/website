@@ -3,7 +3,6 @@
 > **Week focus:** turning vague intent into reliable, testable prompt instructions.
 
 
--   [Contents](#contents)
 -   [Figures used in this week](#figures-used-in-this-week)
 -   [Why prompting is a design skill](#why-prompting-is-a-design-skill)
 -   [Prompt anatomy](#prompt-anatomy)
@@ -17,12 +16,6 @@
 -   [Summing Up](#summing-up)
 -   [Appendix A — Worked walkthrough: building a prompt step by step](#appendix-a-worked-walkthrough-building-a-prompt-step-by-step)
 
-## Contents {#contents}
-
-## Figures used in this week {#figures-used-in-this-week}
-
-![](images/week_03/fig_01.png){fig-alt="Figure from Week 03" width="85%"} ![](images/week_03/fig_02.png){fig-alt="Figure from Week 03" width="85%"}
-
 ## Why prompting is a design skill {#why-prompting-is-a-design-skill}
 
 Prompting is not “asking nicely”. In the real world, you use prompts to **specify behaviour** under constraints:
@@ -34,11 +27,9 @@ Prompting is not “asking nicely”. In the real world, you use prompts to **sp
 
 A useful mindset: a prompt is closer to a **function signature** than a conversation.
 
-### Micro-quote
-
 > "A prompt is a program in natural language."
 
-#### The two jobs of a good prompt
+### The two jobs of a good prompt
 
 1)  **Explain the task** (what success looks like)
 2)  **Constrain the output** (how the response must be shaped)
@@ -55,7 +46,7 @@ A practical prompt usually contains these parts (not always in this order):
 -   **Output format**: JSON, Markdown, table, bullet list, etc
 -   **Quality bar**: rubric / checklist / tests
 
-### Chapter keywords (bold first use)
+### Keywords to look out for
 
 -   **Role prompting**: framing the model’s perspective and responsibilities.
 -   **Constraints**: explicit limits that prevent unwanted behaviour or formats.
@@ -84,15 +75,13 @@ Output as markdown with headings and a final summary.
 
 ## From vague to specific {#from-vague-to-specific}
 
-Most student prompts fail because they skip **specification**. You can convert vague intent into a usable prompt by answering:
+Many prompts fail because they skip **specification**. You can convert vague intent into a usable prompt by answering:
 
 -   What is the *deliverable*? (an explanation / a plan / code / critique)
 -   Who is the *audience*?
 -   What *constraints* exist? (length, style, tools, time)
 -   What does *success* look like? (rubric / checklist)
 -   What should *never* happen? (anti-requirements)
-
-### Micro-quote
 
 > "Be specific about what you want and what you don’t want."
 
@@ -123,8 +112,6 @@ If you want outputs you can trust, you need a **quality gate**. This can be:
 -   An acceptance test (unit tests, schema validation)
 -   A format requirement (JSON schema, markdown headings)
 
-### Micro-quote
-
 > "Make the output easy to verify."
 
 ### Code: acceptance-test mindset
@@ -147,8 +134,6 @@ print(contains_required_phrases(sample, ["INNER JOIN", "LEFT JOIN", "FULL JOIN"]
 -   When outputs must match a “house style”
 -   When the task is ambiguous (many valid interpretations)
 -   When you care about edge-cases
-
-### Micro-quote
 
 > "Examples reduce ambiguity."
 
@@ -179,8 +164,6 @@ In real workflows, AI output often becomes input to something else: - a script -
 
 That means formatting matters. If you don’t force structure, you’ll get “pretty” output that is unusable.
 
-### Micro-quote
-
 > "Ask for the output format you need."
 
 ### Code: strict JSON parsing
@@ -205,8 +188,6 @@ Prompting is iterative. A common loop is:
 3)  Diagnose failure modes
 4)  Add constraints / examples
 5)  Re-run
-
-### Micro-quote
 
 > "Iterate on prompts like you iterate on code."
 

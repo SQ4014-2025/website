@@ -112,10 +112,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <meta property="og:title" content="Real World AI">
-<meta property="og:image" content="https://SQ4014-2025.github.io/website/notes/images/week_05/fig_01.png">
 <meta property="og:site_name" content="Real World AI">
-<meta property="og:image:height" content="708">
-<meta property="og:image:width" content="1039">
 <meta name="twitter:title" content="Real World AI">
 <meta name="twitter:image" content="https://SQ4014-2025.github.io/website/notes/images/twitter-card.png">
 <meta name="twitter:creator" content="@EdHarris9000">
@@ -588,7 +585,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#using-blackbox-ai-to-generate-base-code" id="toc-using-blackbox-ai-to-generate-base-code" class="nav-link" data-scroll-target="#using-blackbox-ai-to-generate-base-code">Using Blackbox AI to generate base code</a>
   <ul class="collapse">
-  <li><a href="#key-terms-you-must-own-by-the-end-of-this-week" id="toc-key-terms-you-must-own-by-the-end-of-this-week" class="nav-link" data-scroll-target="#key-terms-you-must-own-by-the-end-of-this-week">Key terms you must own by the end of this week</a></li>
+  <li><a href="#key-terms" id="toc-key-terms" class="nav-link" data-scroll-target="#key-terms">Key terms</a></li>
   </ul></li>
   <li><a href="#application-development-with-generative-ai-tools" id="toc-application-development-with-generative-ai-tools" class="nav-link" data-scroll-target="#application-development-with-generative-ai-tools">Application development with generative AI tools</a>
   <ul class="collapse">
@@ -609,8 +606,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#verifying-our-test-session-was-created" id="toc-verifying-our-test-session-was-created" class="nav-link" data-scroll-target="#verifying-our-test-session-was-created">Verifying our test session was created</a></li>
   </ul></li>
   <li><a href="#summing-up" id="toc-summing-up" class="nav-link" data-scroll-target="#summing-up">Summing Up</a></li>
-  <li><a href="#figures-extracted-from-week-05" id="toc-figures-extracted-from-week-05" class="nav-link" data-scroll-target="#figures-extracted-from-week-05">Figures extracted from Week 05</a></li>
-  <li><a href="#extra-notes-common-failure-modes" id="toc-extra-notes-common-failure-modes" class="nav-link" data-scroll-target="#extra-notes-common-failure-modes">Extra notes: common failure modes when using AI drafts</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/SQ4014-2025/website/edit/master/notes/notes_5.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/SQ4014-2025/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -648,12 +643,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>This week builds the next slice of the HAM radio practice-exam app using <strong>Blackbox AI</strong> as your “code draft engine”.</li>
 <li>This week’s theme is not “let AI build everything.” It’s <strong>co-development</strong>: you steer architecture; AI accelerates implementation.</li>
 </ul>
-<p>A good sentence to keep in mind from this week:</p>
-<ul>
-<li>“The goal is to demonstrate effective cooperation between human expertise and AI.”</li>
-</ul>
-<section id="key-terms-you-must-own-by-the-end-of-this-week" class="level3">
-<h3 class="anchored" data-anchor-id="key-terms-you-must-own-by-the-end-of-this-week">Key terms you must own by the end of this week</h3>
+<blockquote class="blockquote">
+<p>“The goal is to demonstrate effective cooperation between human expertise and AI.”</p>
+</blockquote>
+<section id="key-terms" class="level3">
+<h3 class="anchored" data-anchor-id="key-terms">Key terms</h3>
 <ul>
 <li><strong>Blackbox AI</strong> — a coding assistant used here to generate base implementations quickly, especially for repetitive web-app scaffolding.</li>
 <li><strong>Persistent session</strong> — a user state that survives across requests (in Flask, commonly via signed cookies + server-side data decisions).</li>
@@ -668,16 +662,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>The author frames AI tools as a multiplier: you still need to decide <em>what the system is</em> and <em>where things live</em> (files/modules/classes).</li>
 <li>A practical mental model: treat the assistant like a very fast junior developer—great at drafting, weak at reading your mind.</li>
-</ul>
-<p>From this week’s “what this covers” list, one line basically describes the architectural bar:</p>
-<ul>
-<li>“¡ Maintain separation of concerns—Even fast development benefits from clean architecture.”</li>
-</ul>
-<p>What that means in practice:</p>
-<ul>
 <li>You can accept AI-generated code as a <em>starting point</em>, but you should refactor it into your architecture.</li>
 <li>When the AI suggests putting everything into one file, you should resist. This week is about improving structure while moving fast.</li>
 </ul>
+<blockquote class="blockquote">
+<p>“Maintain separation of concerns—Even fast development benefits from clean architecture.”</p>
+</blockquote>
 <section id="prompting-as-a-software-skill" class="level3">
 <h3 class="anchored" data-anchor-id="prompting-as-a-software-skill">Prompting as a software skill</h3>
 <ul>
@@ -685,11 +675,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>If your prompt is too rigid, you’ll spend more time fighting the output than writing code yourself.</li>
 <li>The sweet spot is a <em>well-scoped</em> prompt that includes context + constraints + expected behaviour.</li>
 </ul>
-<p>Two short reminders from this week:</p>
-<ul>
-<li>“This prompt will tell Blackbox what we want it to do and give specificity.”</li>
-<li>“Treat the comment as a prompt.”</li>
-</ul>
+<blockquote class="blockquote">
+<p>“This prompt will tell Blackbox what we want it to do and give specificity.”</p>
+</blockquote>
 </section>
 </section>
 <section id="setting-up-the-development-environment" class="level2">
@@ -698,7 +686,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>This week assumes you already have a working Flask project from earlier weeks.</li>
 <li>You’re now adding <em>state</em>: question sets and test sessions need to persist across pages and across time.</li>
 </ul>
-<p>Minimum local setup (student-friendly):</p>
+<p>Minimum local setup:</p>
 <ul>
 <li>Create a virtual environment and install Flask.</li>
 <li>Decide where your database file lives (for a student project, a local SQLite file is fine).</li>
@@ -877,66 +865,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>This week is a case study in using <strong>Blackbox AI</strong> for speed while still enforcing architecture.</li>
 <li>The most important engineering idea is <strong>separation of concerns</strong>: routes orchestrate, domain logic decides, data layer persists.</li>
 <li>The product outcome is a test experience that can persist progress across pages: <strong>question sets</strong> + <strong>test sessions</strong>.</li>
-</ul>
-</section>
-<section id="figures-extracted-from-week-05" class="level2">
-<h2 class="anchored" data-anchor-id="figures-extracted-from-week-05">Figures extracted from Week 05</h2>
-<p>The following images were extracted from the Week 05 materials.</p>
-<p><img src="images/week_05/fig_01.png" class="img-fluid"> <img src="images/week_05/fig_02.jpeg" class="img-fluid"> <img src="images/week_05/fig_03.jpeg" class="img-fluid"> <img src="images/week_05/fig_04.jpeg" class="img-fluid"> <img src="images/week_05/fig_05.jpeg" class="img-fluid"> <img src="images/week_05/fig_06.jpeg" class="img-fluid"> <img src="images/week_05/fig_07.jpeg" class="img-fluid"> <img src="images/week_05/fig_08.jpeg" class="img-fluid"> <img src="images/week_05/fig_09.jpeg" class="img-fluid"> <img src="images/week_05/fig_10.jpeg" class="img-fluid"> <img src="images/week_05/fig_11.png" class="img-fluid"> <img src="images/week_05/fig_12.jpeg" class="img-fluid"> <img src="images/week_05/fig_13.jpeg" class="img-fluid"> <img src="images/week_05/fig_14.jpeg" class="img-fluid"> <img src="images/week_05/fig_15.jpeg" class="img-fluid"> <img src="images/week_05/fig_16.jpeg" class="img-fluid"> <img src="images/week_05/fig_17.jpeg" class="img-fluid"> <img src="images/week_05/fig_18.jpeg" class="img-fluid"> <img src="images/week_05/fig_19.jpeg" class="img-fluid"> <img src="images/week_05/fig_20.jpeg" class="img-fluid"> <img src="images/week_05/fig_21.jpeg" class="img-fluid"> <img src="images/week_05/fig_22.jpeg" class="img-fluid"> <img src="images/week_05/fig_23.jpeg" class="img-fluid"> <img src="images/week_05/fig_24.jpeg" class="img-fluid"> <img src="images/week_05/fig_25.jpeg" class="img-fluid"> <img src="images/week_05/fig_26.png" class="img-fluid"> <img src="images/week_05/fig_27.jpeg" class="img-fluid"> <img src="images/week_05/fig_28.jpeg" class="img-fluid"> <img src="images/week_05/fig_29.jpeg" class="img-fluid"> <img src="images/week_05/fig_30.jpeg" class="img-fluid"> <img src="images/week_05/fig_31.png" class="img-fluid"> <img src="images/week_05/fig_32.jpeg" class="img-fluid"> <img src="images/week_05/fig_33.png" class="img-fluid"> <img src="images/week_05/fig_34.jpeg" class="img-fluid"> <img src="images/week_05/fig_35.jpeg" class="img-fluid"> <img src="images/week_05/fig_36.jpeg" class="img-fluid"> <img src="images/week_05/fig_37.jpeg" class="img-fluid"> <img src="images/week_05/fig_38.jpeg" class="img-fluid"> <img src="images/week_05/fig_39.jpeg" class="img-fluid"> <img src="images/week_05/fig_40.png" class="img-fluid"> <img src="images/week_05/fig_41.png" class="img-fluid"> <img src="images/week_05/fig_42.png" class="img-fluid"> <img src="images/week_05/fig_43.png" class="img-fluid"> <img src="images/week_05/fig_44.png" class="img-fluid"> <img src="images/week_05/fig_45.jpeg" class="img-fluid"> <img src="images/week_05/fig_46.jpeg" class="img-fluid"> <img src="images/week_05/fig_47.png" class="img-fluid"> <img src="images/week_05/fig_48.jpeg" class="img-fluid"> <img src="images/week_05/fig_49.jpeg" class="img-fluid"> <img src="images/week_05/fig_50.png" class="img-fluid"> <img src="images/week_05/fig_51.jpeg" class="img-fluid"> <img src="images/week_05/fig_52.jpeg" class="img-fluid"> <img src="images/week_05/fig_53.jpeg" class="img-fluid"> <img src="images/week_05/fig_54.jpeg" class="img-fluid"> <img src="images/week_05/fig_55.jpeg" class="img-fluid"> <img src="images/week_05/fig_56.jpeg" class="img-fluid"> <img src="images/week_05/fig_57.jpeg" class="img-fluid"> <img src="images/week_05/fig_58.png" class="img-fluid"> <img src="images/week_05/fig_59.jpeg" class="img-fluid"> <img src="images/week_05/fig_60.jpeg" class="img-fluid"> <img src="images/week_05/fig_61.jpeg" class="img-fluid"> <img src="images/week_05/fig_62.jpeg" class="img-fluid"> <img src="images/week_05/fig_63.jpeg" class="img-fluid"> <img src="images/week_05/fig_64.jpeg" class="img-fluid"> <img src="images/week_05/fig_65.jpeg" class="img-fluid"> <img src="images/week_05/fig_66.png" class="img-fluid"> <img src="images/week_05/fig_67.jpeg" class="img-fluid"> <img src="images/week_05/fig_68.jpeg" class="img-fluid"> <img src="images/week_05/fig_69.jpeg" class="img-fluid"> <img src="images/week_05/fig_70.jpeg" class="img-fluid"> <img src="images/week_05/fig_71.jpeg" class="img-fluid"> <img src="images/week_05/fig_72.jpeg" class="img-fluid"> <img src="images/week_05/fig_73.jpeg" class="img-fluid"> <img src="images/week_05/fig_74.jpeg" class="img-fluid"> <img src="images/week_05/fig_75.jpeg" class="img-fluid"> <img src="images/week_05/fig_76.jpeg" class="img-fluid"> <img src="images/week_05/fig_77.jpeg" class="img-fluid"> <img src="images/week_05/fig_78.jpeg" class="img-fluid"> <img src="images/week_05/fig_79.jpeg" class="img-fluid"> <img src="images/week_05/fig_80.jpeg" class="img-fluid"> <img src="images/week_05/fig_81.png" class="img-fluid"> <img src="images/week_05/fig_82.jpeg" class="img-fluid"> <img src="images/week_05/fig_83.jpeg" class="img-fluid"> <img src="images/week_05/fig_84.jpeg" class="img-fluid"> <img src="images/week_05/fig_85.jpeg" class="img-fluid"> <img src="images/week_05/fig_86.jpeg" class="img-fluid"> <img src="images/week_05/fig_87.jpeg" class="img-fluid"> <img src="images/week_05/fig_88.jpeg" class="img-fluid"> <img src="images/week_05/fig_89.jpeg" class="img-fluid"> <img src="images/week_05/fig_90.jpeg" class="img-fluid"> <img src="images/week_05/fig_91.png" class="img-fluid"> <img src="images/week_05/fig_92.png" class="img-fluid"> <img src="images/week_05/fig_93.jpeg" class="img-fluid"> <img src="images/week_05/fig_94.jpeg" class="img-fluid"> <img src="images/week_05/fig_95.jpeg" class="img-fluid"> <img src="images/week_05/fig_96.jpeg" class="img-fluid"></p>
-</section>
-<section id="extra-notes-common-failure-modes" class="level2">
-<h2 class="anchored" data-anchor-id="extra-notes-common-failure-modes">Extra notes: common failure modes when using AI drafts</h2>
-<ul>
-<li>Mixing layers: SQL and HTML string-building inside routes leads to fragile code.</li>
-<li>Hidden state: relying only on cookies without DB persistence breaks resuming tests.</li>
-<li>Unverified assumptions: AI may invent library functions or routes that do not exist.</li>
-<li>Over-trusting generated code: always run, print, and inspect DB rows early.</li>
-<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
-<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
-<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
-<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
-<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
-<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
-<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
-<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
-<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
-<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
-<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
-<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
-<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
-<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
-<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
-<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
-<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
-<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
-<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
-<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
-<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
-<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
-<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
-<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
-<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
-<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
-<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
-<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
-<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
-<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
-<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
-<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
-<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
-<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
-<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
-<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
-<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
-<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
-<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
-<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
-<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
-<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
-<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
-<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
-<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
-<li>Practice: write one small prompt per function (create session, load session, save answer) and test each independently.</li>
 </ul>
 
 

@@ -13,15 +13,17 @@
 
 ## Why testing matters in AI-assisted coding {#why-testing-matters}
 
--   Week 08 focuses on using generative AI to produce tests, but this week is really about *trust*.
+Week 08 focuses on using generative AI to produce tests, but this week is really about *trust*.
+
 -   A test suite is your “contract” with future you: it describes what must stay true as code changes.
 -   AI can write tests quickly, but speed is useless if the tests are brittle, shallow, or wrong.
 -   "Generative AI tools are changing this boring, repetitive process."
 -   "They can automatically create detailed test suites, spot edge cases, and generate boilerplate code."
--   In AI-assisted workflows, tests do two jobs at once:
--   
+
+In AI-assisted workflows, tests do two jobs at once:
     1)  catch regressions, and 2) detect when the AI has hallucinated an API, edge case, or assumption.
--   A bad test suite can make things worse by giving you false confidence.
+
+> A bad test suite can make things worse by giving you false confidence.
 
 ## Key terms you must be able to use {#key-terms}
 
@@ -207,51 +209,24 @@ def test_area_positive():
 # Try changing area() to return 0 and rerun the test.
 ```
 
-## Extracted figures from Week 08 {#figures}
-
-![](images/week_08/fig_01.png){fig-alt="Week 08 extracted figure 1"} ![](images/week_08/fig_02.png){fig-alt="Week 08 extracted figure 2"} ![](images/week_08/fig_03.png){fig-alt="Week 08 extracted figure 3"} ![](images/week_08/fig_04.png){fig-alt="Week 08 extracted figure 4"} ![](images/week_08/fig_05.png){fig-alt="Week 08 extracted figure 5"} ![](images/week_08/fig_06.png){fig-alt="Week 08 extracted figure 6"} ![](images/week_08/fig_07.png){fig-alt="Week 08 extracted figure 7"} ![](images/week_08/fig_08.png){fig-alt="Week 08 extracted figure 8"} ![](images/week_08/fig_09.png){fig-alt="Week 08 extracted figure 9"} ![](images/week_08/fig_10.png){fig-alt="Week 08 extracted figure 10"}
-
-## Summing Up {#summing-up}
-
--   AI is a powerful assistant for *drafting* tests, but you still own correctness.
--   The best prompts specify behaviour, edge cases, and constraints (framework, fixtures, mocking).
--   Always run, review, and refactor generated tests; treat them like code written by a junior dev.
--   In-memory databases and isolated environments are key to reliable automated testing.
-
 ## Sanity checks and self-test {#sanity}
 
 -   Quick checklist before you trust an AI-generated test suite:
-
 -   Does each test name describe behaviour (not implementation)?
-
 -   Do the tests include at least one negative case?
-
 -   Are edge cases explicit, not implied?
-
 -   Is the database/file system/network isolated or mocked?
-
 -   Would the tests still pass if you replaced your function body with `pass`?
-
 -   Do failures produce actionable error messages?
-
 -   Do fixtures reduce duplication (but not hide important details)?
-
 -   Are time-dependent values controlled (freeze time or inject clocks)?
-
 -   Are random values seeded?
-
 -   Are you asserting the right thing (outputs/side effects) rather than intermediate variables?
-
 -   Mini Q&A (the kinds of questions you should be able to answer):
-
 -   What is a “test oracle” and why is it hard for AI?
-
 -   When is mocking harmful?
-
 -   Why is an in-memory database useful but sometimes misleading?
-
 -   How do you know a test is not “too shallow”?
-
 -   What prompt information tends to improve assertion quality?
 
 ## Prompt patterns for test generation {#prompt-patterns-for-test-generation}
@@ -262,18 +237,11 @@ def test_area_positive():
 ### A practical prompt template
 
 -   Use this structure (adapt the wording, keep the slots):
-
 -   **System/role**: “You are a software tester writing pytest tests.”
-
 -   **Goal**: “Generate tests for function `X`.”
-
 -   **Behaviour spec**: list rules as bullets.
-
 -   **Edge cases**: list edge cases explicitly.
-
 -   **Constraints**:
-
--   
 
     ```         
     - no network
@@ -292,9 +260,7 @@ def test_area_positive():
     ```
 
 -   **Output format**: “Return only test code in one file.”
-
 -   A useful trick: ask the model to first list *test cases* (names + what they check), then write the code.
-
 -   If you do that, you can review the case list quickly before trusting the code.
 
 ### Prompt levers that usually improve assertions
@@ -432,35 +398,17 @@ def test_insert_and_query():
 ## Where AI-generated tests go wrong {#where-ai-tests-go-wrong}
 
 -   Common failure patterns (and how to spot them):
-
 -   **Asserting implementation details**: tests break when you refactor harmlessly.
-
 -   **Brittle data**: hard-coded timestamps, random ids, order-dependent lists.
-
 -   **Mocking the wrong thing**: you end up testing the mock, not the behaviour.
-
 -   **Testing the tool’s hallucination**: the model invents functions/options that do not exist.
-
 -   Defensive habits:
-
 -   run tests immediately
-
 -   read assertions carefully
-
 -   check that fixtures actually model the real domain
-
-## Micro-quotes from Week 08 {#micro-quotes-week8}
-
--   "Generative AI tools are changing this boring, repetitive process."
--   "They can automatically create detailed test suites, spot edge cases, and generate boilerplate code."
--   "This week shows how GitHub Copilot, Tabnine, and Blackbox AI can enhance your testing workflow."
--   "High-quality tests are vital for reliable software."
--   "They catch bugs early and ensure new features don’t break existing code."
--   "They also document how the code should behave."
 
 ## Summing Up {#summing-up-week8}
 
--   Week 08's main message: AI can draft tests quickly, but *good tests require judgement*.
--   Your workflow should be:
--   specify behaviour → generate tests → run → review assertions → improve prompts → repeat.
+-   AI can draft tests quickly, but *good tests require judgement*.
+-   Your workflow should be:  specify behaviour → generate tests → run → review assertions → improve prompts → repeat.
 -   The fastest way to level up is to treat tests as communication: a clear story about what the code must do.

@@ -617,8 +617,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#a-typical-flask-project-layout" id="toc-a-typical-flask-project-layout" class="nav-link" data-scroll-target="#a-typical-flask-project-layout">A typical Flask project layout</a></li>
   </ul></li>
-  <li><a href="#flask-request-lifecycle-what-actually-happens" id="toc-flask-request-lifecycle-what-actually-happens" class="nav-link" data-scroll-target="#flask-request-lifecycle-what-actually-happens">Flask request lifecycle (what actually happens)</a></li>
-  <li><a href="#templates-expanded" id="toc-templates-expanded" class="nav-link" data-scroll-target="#templates-expanded">Templates (expanded)</a>
+  <li><a href="#flask-request-lifecycle-what-actually-happens" id="toc-flask-request-lifecycle-what-actually-happens" class="nav-link" data-scroll-target="#flask-request-lifecycle-what-actually-happens">Flask request lifecycle (what actually happens)</a>
   <ul class="collapse">
   <li><a href="#minimal-jinja-template-example" id="toc-minimal-jinja-template-example" class="nav-link" data-scroll-target="#minimal-jinja-template-example">Minimal Jinja template example</a></li>
   </ul></li>
@@ -692,11 +691,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="setting-up-your-python-environment" class="level2">
 <h2 class="anchored" data-anchor-id="setting-up-your-python-environment">Setting up your Python environment</h2>
 <ul>
-<li><p>Python projects should isolate libraries per project using a <strong>virtual environment</strong> (often abbreviated <em>venv</em>).</p></li>
-<li><p>Isolation matters because different projects need different versions of the same library (a common source of ‘works on my machine’ bugs).</p></li>
-<li><p>We care about this early because it teaches reproducibility and reduces setup friction later. ### Create and activate a venv</p></li>
-<li><p>Create the environment in your project folder (name is conventional: <code>.venv</code>).</p></li>
-<li><p>Activate it before installing packages so installs go into the venv, not your global Python.</p></li>
+<li>Python projects should isolate libraries per project using a <strong>virtual environment</strong> (often abbreviated <em>venv</em>).</li>
+<li>Isolation matters because different projects need different versions of the same library (a common source of ‘works on my machine’ bugs).</li>
+<li>We care about this early because it teaches reproducibility and reduces setup friction later. ### Create and activate a venv</li>
+<li>Create the environment in your project folder (name is conventional: <code>.venv</code>).</li>
+<li>Activate it before installing packages so installs go into the venv, not your global Python.</li>
 </ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> venv .venv</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> .venv/bin/activate  <span class="co"># macOS/Linux</span></span>
@@ -1036,13 +1035,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 <li><p>You must disable debug mode for production.</p></li>
 </ul>
-</section>
-<section id="templates-expanded" class="level2">
-<h2 class="anchored" data-anchor-id="templates-expanded">Templates (expanded)</h2>
-<ul>
-<li>Chapter 4 pushes you toward templates early, which is good practice.</li>
-<li>Templates help you avoid mixing Python logic with HTML.</li>
-</ul>
 <section id="minimal-jinja-template-example" class="level3">
 <h3 class="anchored" data-anchor-id="minimal-jinja-template-example">Minimal Jinja template example</h3>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- templates/index.html --&gt;</span></span>
@@ -1124,8 +1116,8 @@ Return: the full updated app.py and new about.html</code></pre>
 <section id="summing-up" class="level2">
 <h2 class="anchored" data-anchor-id="summing-up">Summing Up</h2>
 <ul>
-<li><p>Chapter 4 is where your project becomes “real”: an app skeleton you can run.</p></li>
-<li><p>The highest-value skills from this week:</p>
+<li><p>This week is where your project becomes “real”: an app skeleton you can run.</p></li>
+<li><p>The highest-value skills:</p>
 <ul>
 <li>turning a vague design idea into concrete requirements</li>
 <li>creating a reproducible Python environment</li>

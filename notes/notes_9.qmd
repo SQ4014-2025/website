@@ -1,12 +1,8 @@
 # Week 09 — Prompt engineering
 
-> **Core idea:** Prompt engineering is *interface design* for AI tools. You are not "asking a question" — you are specifying an input contract (context + constraints + success criteria) so the output is testable.
 
-
--   [Week map (what we're actually learning)](#week-map-what-were-actually-learning)
--   [Micro-quotes from this week (short + placed where relevant)](#micro-quotes-from-this-week-short--placed-where-relevant)
+-   [Objectives](#objectives)
 -   [Key terms (bold on first use)](#key-terms-bold-on-first-use)
--   [Figures used in these notes (≈10 max, placed where they matter)](#figures-used-in-these-notes-10-max-placed-where-they-matter)
 -   [Understanding prompt engineering](#understanding-prompt-engineering)
 -   [Anatomy of a prompt](#anatomy-of-a-prompt)
 -   [Crafting the ultimate prompt](#crafting-the-ultimate-prompt)
@@ -16,10 +12,10 @@
 -   [Worked examples (week-aligned)](#worked-examples-week-aligned)
 -   [Pitfalls and anti-patterns](#pitfalls-and-anti-patterns)
 -   [Summing Up](#summing-up)
--   [Quick self-check (5 minutes)](#quick-self-check-5-minutes)
--   [Verification report (Week 9)](#verification-report-week-9)
 
-## Week map (what we're actually learning) {#week-map-what-were-actually-learning}
+> Prompt engineering is *interface design* for AI tools. You are not "asking a question" — you are specifying an input contract (context + constraints + success criteria) so the output is testable.
+
+## Objectives {#objectives}
 
 This week builds a practical toolkit for getting reliable work out of coding assistants.
 
@@ -30,24 +26,6 @@ This week builds a practical toolkit for getting reliable work out of coding ass
 -   **Advanced prompt types**: chain-of-thought, recursive prompting, context manipulation, refinement, output control
 -   **Prompt techniques for programmers**: how this becomes a daily workflow habit
 
-## Micro-quotes from this week (short + placed where relevant) {#micro-quotes-from-this-week-short--placed-where-relevant}
-
-> "Instead of getting generic responses, strong prompts can greatly enhance the quality, accuracy, and usefulness of AI-generated code and documents."
-
-> "Some parts of prompt engineering may seem natural—like how we learned to improve our search engine questions over time."
-
-> "Let’s explore how to create better prompts to get the best results, save time, and increase productivity."
-
-> "Context is the backbone of any good prompt."
-
-> "Provide concrete examples to illustrate desired output."
-
-> "Zero-shot prompts are very basic and concise."
-
-> "Few-shot prompting lets models generate from just a few examples."
-
-> "These types of prompts limit the scope of the model’s response."
-
 ## Key terms (bold on first use) {#key-terms-bold-on-first-use}
 
 -   **prompt**: the input you send the model; in practice it’s a *specification* of what you want.
@@ -56,10 +34,6 @@ This week builds a practical toolkit for getting reliable work out of coding ass
 -   **few-shot**: showing a couple of examples so the model copies the pattern.
 -   **structured prompt**: a prompt that forces the output into a predictable structure (JSON, table, sections).
 -   **output control**: techniques that reduce randomness by restricting response shape.
-
-## Figures used in these notes (≈10 max, placed where they matter) {#figures-used-in-these-notes-10-max-placed-where-they-matter}
-
-> These images were extracted from the Week 09 PDF and are used inline below.
 
 ## Understanding prompt engineering {#understanding-prompt-engineering}
 
@@ -163,19 +137,15 @@ So you specify:
 
 ## Crafting the ultimate prompt {#crafting-the-ultimate-prompt}
 
-This section introduces a powerful move:
-
 ✅ **Use an LLM to improve your prompt before using it for the real task.**
 
 Instead of:
 
--   “Write an API request tutorial”
+> “Write an API request tutorial”
 
-You ask the model:
+Ask the model:
 
--   “Improve this prompt so it produces the best possible tutorial.”
-
-![](images/week_09/fig_03.png)
+> “Improve this prompt so it produces the best possible tutorial.”
 
 ### Prompt-refinement template
 
@@ -210,7 +180,7 @@ What you’re doing:
 
 This week introduces several “prompt families”.
 
-### 9.4.1 Zero-shot prompting
+### Zero-shot prompting
 
 Zero-shot = **no examples**.
 
@@ -232,7 +202,7 @@ zero_shot = "Write a Python function that validates an email address."
 print(zero_shot)
 ```
 
-### 9.4.2 Few-shot prompting
+### Few-shot prompting
 
 Few-shot = provide examples.
 
@@ -259,7 +229,7 @@ def cube(x):
 print(few_shot)
 ```
 
-### 9.4.3 Open-ended prompts
+### Open-ended prompts
 
 Open-ended = exploration.
 
@@ -273,7 +243,7 @@ Bad for:
 
 -   precise code requirements
 
-### 9.4.4 Constrained prompts
+### Constrained prompts
 
 Constrained prompts are strict.
 
@@ -282,14 +252,12 @@ Examples:
 -   “List exactly three built-in Python data structures.”
 -   “Return only code.”
 
-![](images/week_09/fig_04.png)
-
 ```python
 constrained = "List exactly three built-in Python data structures."
 print(constrained)
 ```
 
-### 9.4.5 Iterative prompts
+### Iterative prompts
 
 Iterative prompting = conversation loop.
 
@@ -308,7 +276,7 @@ print(prompt_v1)
 print(prompt_v2)
 ```
 
-### 9.4.6 Structured prompts
+### Structured prompts
 
 Structured prompts enforce a schema.
 
@@ -334,7 +302,7 @@ print(structured)
 
 These techniques are about increasing reliability.
 
-### 9.5.1 Chain-of-thought prompting
+### Chain-of-thought prompting
 
 In this week, chain-of-thought means:
 
@@ -343,9 +311,7 @@ In this week, chain-of-thought means:
 
 Use carefully: the model may sound confident even when wrong.
 
-![](images/week_09/fig_05.png)
-
-### 9.5.2 Recursive prompting
+### Recursive prompting
 
 Recursive prompting = prompt → output → prompt again.
 
@@ -360,7 +326,7 @@ This is similar to:
 -   code review loops
 -   iterative refactoring
 
-### 9.5.3 Context manipulation
+### Context manipulation
 
 Context manipulation = changing what the model sees.
 
@@ -370,7 +336,7 @@ Examples:
 -   provide a minimal failing example
 -   redact secrets and irrelevant text
 
-### 9.5.4 Instruction refinement
+### Instruction refinement
 
 Instruction refinement = tuning wording.
 
@@ -380,9 +346,7 @@ Small changes matter:
 -   “brief” vs “detailed”
 -   “code only” vs “code + rationale”
 
-![](images/week_09/fig_06.png)
-
-### 9.5.5 Output control
+### Output control
 
 Output control = forcing response format.
 
@@ -393,8 +357,6 @@ This is key when you need:
 -   structured change requests
 
 ## Prompt techniques for programmers {#prompt-techniques-for-programmers}
-
-This part is where this week becomes “real world”.
 
 ### Use prompts like tool interfaces
 
@@ -435,8 +397,6 @@ Why this works:
 -   explicit requirements
 -   predictable output
 
-![](images/week_09/fig_07.png)
-
 ## Worked examples (week-aligned) {#worked-examples-week-aligned}
 
 ### Example A: Debugging with context + constraints
@@ -459,8 +419,6 @@ If you want documentation:
 -   specify sections
 -   specify formatting
 
-![](images/week_09/fig_08.png)
-
 ### Example C: Writing tests as a contract
 
 Strong prompts include:
@@ -468,8 +426,6 @@ Strong prompts include:
 -   what to test
 -   edge cases
 -   expected failures
-
-![](images/week_09/fig_09.png)
 
 ## Pitfalls and anti-patterns {#pitfalls-and-anti-patterns}
 
@@ -496,8 +452,6 @@ Use:
 -   minimal failing examples
 -   focused snippets
 
-![](images/week_09/fig_10.png)
-
 ## Summing Up {#summing-up}
 
 -   Prompts are **specs**, not questions
@@ -507,16 +461,3 @@ Use:
 -   Output control makes responses testable
 -   Iteration is normal — treat it like debugging
 
-## Quick self-check (5 minutes) {#quick-self-check-5-minutes}
-
-1.  Rewrite a bad prompt into a structured prompt.
-2.  Add one constraint that prevents security issues.
-3.  Add an output format that makes the result testable.
-4.  Add one example to enforce consistent style.
-
-## Verification report (Week 9) {#verification-report-week-9}
-
--   line count: 507
--   number of code blocks: 7
--   number of micro-quotes: 8
--   number of images referenced: 10

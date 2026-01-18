@@ -1,6 +1,6 @@
 # Week 02: First steps with AI-assisted coding
 
-> Micro-quote (Ch2): "Imagine having an intelligent assistant that helps you with coding."
+> "Imagine having an intelligent assistant that helps you with coding."
 
 
 -   [Week focus](#week-focus)
@@ -31,9 +31,7 @@ We’ll work through:
 -   Why context matters (and how to control it)
 -   A mini Python project (word frequency) that’s perfect for practicing AI-assisted workflow
 
-### What students should be able to do by the end
-
-By the end of Week 2, students should be able to:
+### What should you be able to do by the end of this week?
 
 -   Explain what **GitHub Copilot** does (and what it does *not* do)
 -   Use **code completion** and **chat-style** assistance appropriately
@@ -43,7 +41,7 @@ By the end of Week 2, students should be able to:
 
 ## What is GitHub Copilot? {#what-is-github-copilot}
 
-> Micro-quote (Ch2): "Do you remember the “rubber duck” debugging method?"
+> "Do you remember the “rubber duck” debugging method?"
 
 This week frames Copilot as a **smarter rubber duck**: a helper you can "talk to" while you're coding. The difference is that Copilot can *respond* with suggestions and complete code.
 
@@ -79,7 +77,7 @@ A useful way to say it:
 
 In this week, Copilot is described as integrated into popular tools.
 
-> Micro-quote (Ch2): "GitHub Copilot is available for Visual Studio, Visual Studio Code …"
+> "GitHub Copilot is available for Visual Studio, Visual Studio Code …"
 
 In practice you’ll encounter Copilot mainly in:
 
@@ -95,7 +93,7 @@ The UX matters because the tool “feels” different depending on editor:
 
 ## How GitHub Copilot works {#how-github-copilot-works}
 
-> Micro-quote (Ch2): "GitHub Copilot is trained on public source code."
+> "GitHub Copilot is trained on public source code."
 
 At a high level Copilot is trained on lots of code and learns patterns like:
 
@@ -351,9 +349,7 @@ In real world AI coding:
 
 This week includes a mini Python project to practice working with Copilot. It analyses **word frequency** in a text.
 
-### Why this project is a good teaching choice
-
-It’s perfect for first-year level because it uses:
+We'll encounter:
 
 -   file reading
 -   strings
@@ -368,7 +364,7 @@ And it scales easily:
 -   plot results
 -   compute TF-IDF later
 
-### 2.5.1 Preparing your development environment
+### Preparing your development environment
 
 A minimal setup:
 
@@ -382,7 +378,7 @@ source .venv/bin/activate
 python -V
 ```
 
-### 2.5.2 Creating the application
+### Creating the application
 
 We’ll build the program in small, testable pieces.
 
@@ -469,7 +465,7 @@ It’s ideal for Copilot because:
 -   the structure is predictable
 -   the errors are easy to spot
 
-### 2.5.3 Side quest: Testing the function speed
+### Side quest: Testing the function speed
 
 Once you have correctness, you can explore performance.
 
@@ -492,21 +488,11 @@ Students should learn the ordering:
 2)  readable
 3)  only then faster
 
-## Images from Week 02 {#images-from-week-02}
-
-Below are extracted figures from the week 02 materials.
-
-![](%7Bimg_rel%7D/fig_01.jpeg)
-
-![](%7Bimg_rel%7D/fig_02.jpeg)
-
-![](%7Bimg_rel%7D/fig_03.png)
-
 ## Summing Up {#summing-up}
 
 ### The core lesson
 
-**The assistant is only as good as the context you give it.**
+> **The assistant is only as good as the context you give it.**
 
 ### Your workflow should look like this
 
@@ -516,17 +502,3 @@ Below are extracted figures from the week 02 materials.
 4)  Refactor
 5)  Repeat
 
-### A checklist you should keep
-
--   Did I name functions clearly?
--   Did I include a docstring that states requirements?
--   Did I constrain libraries and format?
--   Did I ask for tests?
--   Did I verify results on real inputs?
-
-## Verification report (Week 02) {#verification-report-week-02}
-
--   Line count: 546
--   Code blocks: 10
--   Quotes: 5
--   Images referenced: 3

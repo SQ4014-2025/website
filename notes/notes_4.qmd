@@ -49,13 +49,9 @@
 ## Setting up your Python environment {#setting-up-your-python-environment}
 
 -   Python projects should isolate libraries per project using a **virtual environment** (often abbreviated *venv*).
-
 -   Isolation matters because different projects need different versions of the same library (a common source of ‘works on my machine’ bugs).
-
 -   We care about this early because it teaches reproducibility and reduces setup friction later. \### Create and activate a venv
-
 -   Create the environment in your project folder (name is conventional: `.venv`).
-
 -   Activate it before installing packages so installs go into the venv, not your global Python.
 
 ```bash
@@ -390,11 +386,6 @@ if __name__ == "__main__":
 
 -   You must disable debug mode for production.
 
-## Templates (expanded) {#templates-expanded}
-
--   Chapter 4 pushes you toward templates early, which is good practice.
--   Templates help you avoid mixing Python logic with HTML.
-
 ### Minimal Jinja template example
 
 ```html
@@ -475,9 +466,9 @@ Return: the full updated app.py and new about.html
 
 ## Summing Up {#summing-up}
 
--   Chapter 4 is where your project becomes “real”: an app skeleton you can run.
+-   This week is where your project becomes “real”: an app skeleton you can run.
 
--   The highest-value skills from this week:
+-   The highest-value skills:
 
     -   turning a vague design idea into concrete requirements
     -   creating a reproducible Python environment

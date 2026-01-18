@@ -586,10 +586,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#week-09-prompt-engineering" id="toc-week-09-prompt-engineering" class="nav-link active" data-scroll-target="#week-09-prompt-engineering">Week 09 — Prompt engineering</a>
   <ul class="collapse">
-  <li><a href="#week-map-what-were-actually-learning" id="toc-week-map-what-were-actually-learning" class="nav-link" data-scroll-target="#week-map-what-were-actually-learning">Week map (what we’re actually learning)</a></li>
-  <li><a href="#micro-quotes-from-this-week-short--placed-where-relevant" id="toc-micro-quotes-from-this-week-short--placed-where-relevant" class="nav-link" data-scroll-target="#micro-quotes-from-this-week-short--placed-where-relevant">Micro-quotes from this week (short + placed where relevant)</a></li>
+  <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives">Objectives</a></li>
   <li><a href="#key-terms-bold-on-first-use" id="toc-key-terms-bold-on-first-use" class="nav-link" data-scroll-target="#key-terms-bold-on-first-use">Key terms (bold on first use)</a></li>
-  <li><a href="#figures-used-in-these-notes-10-max-placed-where-they-matter" id="toc-figures-used-in-these-notes-10-max-placed-where-they-matter" class="nav-link" data-scroll-target="#figures-used-in-these-notes-10-max-placed-where-they-matter">Figures used in these notes (≈10 max, placed where they matter)</a></li>
   <li><a href="#understanding-prompt-engineering" id="toc-understanding-prompt-engineering" class="nav-link" data-scroll-target="#understanding-prompt-engineering">Understanding prompt engineering</a>
   <ul class="collapse">
   <li><a href="#why-prompts-fail-in-coding" id="toc-why-prompts-fail-in-coding" class="nav-link" data-scroll-target="#why-prompts-fail-in-coding">Why prompts fail in coding</a></li>
@@ -608,20 +606,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#fundamental-prompt-types" id="toc-fundamental-prompt-types" class="nav-link" data-scroll-target="#fundamental-prompt-types">Fundamental prompt types</a>
   <ul class="collapse">
-  <li><a href="#zero-shot-prompting" id="toc-zero-shot-prompting" class="nav-link" data-scroll-target="#zero-shot-prompting">9.4.1 Zero-shot prompting</a></li>
-  <li><a href="#few-shot-prompting" id="toc-few-shot-prompting" class="nav-link" data-scroll-target="#few-shot-prompting">9.4.2 Few-shot prompting</a></li>
-  <li><a href="#open-ended-prompts" id="toc-open-ended-prompts" class="nav-link" data-scroll-target="#open-ended-prompts">9.4.3 Open-ended prompts</a></li>
-  <li><a href="#constrained-prompts" id="toc-constrained-prompts" class="nav-link" data-scroll-target="#constrained-prompts">9.4.4 Constrained prompts</a></li>
-  <li><a href="#iterative-prompts" id="toc-iterative-prompts" class="nav-link" data-scroll-target="#iterative-prompts">9.4.5 Iterative prompts</a></li>
-  <li><a href="#structured-prompts" id="toc-structured-prompts" class="nav-link" data-scroll-target="#structured-prompts">9.4.6 Structured prompts</a></li>
+  <li><a href="#zero-shot-prompting" id="toc-zero-shot-prompting" class="nav-link" data-scroll-target="#zero-shot-prompting">Zero-shot prompting</a></li>
+  <li><a href="#few-shot-prompting" id="toc-few-shot-prompting" class="nav-link" data-scroll-target="#few-shot-prompting">Few-shot prompting</a></li>
+  <li><a href="#open-ended-prompts" id="toc-open-ended-prompts" class="nav-link" data-scroll-target="#open-ended-prompts">Open-ended prompts</a></li>
+  <li><a href="#constrained-prompts" id="toc-constrained-prompts" class="nav-link" data-scroll-target="#constrained-prompts">Constrained prompts</a></li>
+  <li><a href="#iterative-prompts" id="toc-iterative-prompts" class="nav-link" data-scroll-target="#iterative-prompts">Iterative prompts</a></li>
+  <li><a href="#structured-prompts" id="toc-structured-prompts" class="nav-link" data-scroll-target="#structured-prompts">Structured prompts</a></li>
   </ul></li>
   <li><a href="#advanced-prompt-types" id="toc-advanced-prompt-types" class="nav-link" data-scroll-target="#advanced-prompt-types">Advanced prompt types</a>
   <ul class="collapse">
-  <li><a href="#chain-of-thought-prompting" id="toc-chain-of-thought-prompting" class="nav-link" data-scroll-target="#chain-of-thought-prompting">9.5.1 Chain-of-thought prompting</a></li>
-  <li><a href="#recursive-prompting" id="toc-recursive-prompting" class="nav-link" data-scroll-target="#recursive-prompting">9.5.2 Recursive prompting</a></li>
-  <li><a href="#context-manipulation" id="toc-context-manipulation" class="nav-link" data-scroll-target="#context-manipulation">9.5.3 Context manipulation</a></li>
-  <li><a href="#instruction-refinement" id="toc-instruction-refinement" class="nav-link" data-scroll-target="#instruction-refinement">9.5.4 Instruction refinement</a></li>
-  <li><a href="#output-control" id="toc-output-control" class="nav-link" data-scroll-target="#output-control">9.5.5 Output control</a></li>
+  <li><a href="#chain-of-thought-prompting" id="toc-chain-of-thought-prompting" class="nav-link" data-scroll-target="#chain-of-thought-prompting">Chain-of-thought prompting</a></li>
+  <li><a href="#recursive-prompting" id="toc-recursive-prompting" class="nav-link" data-scroll-target="#recursive-prompting">Recursive prompting</a></li>
+  <li><a href="#context-manipulation" id="toc-context-manipulation" class="nav-link" data-scroll-target="#context-manipulation">Context manipulation</a></li>
+  <li><a href="#instruction-refinement" id="toc-instruction-refinement" class="nav-link" data-scroll-target="#instruction-refinement">Instruction refinement</a></li>
+  <li><a href="#output-control" id="toc-output-control" class="nav-link" data-scroll-target="#output-control">Output control</a></li>
   </ul></li>
   <li><a href="#prompt-techniques-for-programmers" id="toc-prompt-techniques-for-programmers" class="nav-link" data-scroll-target="#prompt-techniques-for-programmers">Prompt techniques for programmers</a>
   <ul class="collapse">
@@ -641,8 +639,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#overloading-the-prompt" id="toc-overloading-the-prompt" class="nav-link" data-scroll-target="#overloading-the-prompt">3) Overloading the prompt</a></li>
   </ul></li>
   <li><a href="#summing-up" id="toc-summing-up" class="nav-link" data-scroll-target="#summing-up">Summing Up</a></li>
-  <li><a href="#quick-self-check-5-minutes" id="toc-quick-self-check-5-minutes" class="nav-link" data-scroll-target="#quick-self-check-5-minutes">Quick self-check (5 minutes)</a></li>
-  <li><a href="#verification-report-week-9" id="toc-verification-report-week-9" class="nav-link" data-scroll-target="#verification-report-week-9">Verification report (Week 9)</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/SQ4014-2025/website/edit/master/notes/notes_9.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/SQ4014-2025/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -656,14 +652,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="week-09-prompt-engineering" class="level1">
 <h1>Week 09 — Prompt engineering</h1>
-<blockquote class="blockquote">
-<p><strong>Core idea:</strong> Prompt engineering is <em>interface design</em> for AI tools. You are not “asking a question” — you are specifying an input contract (context + constraints + success criteria) so the output is testable.</p>
-</blockquote>
 <ul>
-<li><a href="#week-map-what-were-actually-learning">Week map (what we’re actually learning)</a></li>
-<li><a href="#micro-quotes-from-this-week-short--placed-where-relevant">Micro-quotes from this week (short + placed where relevant)</a></li>
+<li><a href="#objectives">Objectives</a></li>
 <li><a href="#key-terms-bold-on-first-use">Key terms (bold on first use)</a></li>
-<li><a href="#figures-used-in-these-notes-10-max-placed-where-they-matter">Figures used in these notes (≈10 max, placed where they matter)</a></li>
 <li><a href="#understanding-prompt-engineering">Understanding prompt engineering</a></li>
 <li><a href="#anatomy-of-a-prompt">Anatomy of a prompt</a></li>
 <li><a href="#crafting-the-ultimate-prompt">Crafting the ultimate prompt</a></li>
@@ -673,11 +664,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="#worked-examples-week-aligned">Worked examples (week-aligned)</a></li>
 <li><a href="#pitfalls-and-anti-patterns">Pitfalls and anti-patterns</a></li>
 <li><a href="#summing-up">Summing Up</a></li>
-<li><a href="#quick-self-check-5-minutes">Quick self-check (5 minutes)</a></li>
-<li><a href="#verification-report-week-9">Verification report (Week 9)</a></li>
 </ul>
-<section id="week-map-what-were-actually-learning" class="level2">
-<h2 class="anchored" data-anchor-id="week-map-what-were-actually-learning">Week map (what we’re actually learning)</h2>
+<blockquote class="blockquote">
+<p>Prompt engineering is <em>interface design</em> for AI tools. You are not “asking a question” — you are specifying an input contract (context + constraints + success criteria) so the output is testable.</p>
+</blockquote>
+<section id="objectives" class="level2">
+<h2 class="anchored" data-anchor-id="objectives">Objectives</h2>
 <p>This week builds a practical toolkit for getting reliable work out of coding assistants.</p>
 <ul>
 <li><strong>Understanding prompt engineering</strong>: why prompts fail, and what “better prompts” look like</li>
@@ -687,33 +679,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Advanced prompt types</strong>: chain-of-thought, recursive prompting, context manipulation, refinement, output control</li>
 <li><strong>Prompt techniques for programmers</strong>: how this becomes a daily workflow habit</li>
 </ul>
-</section>
-<section id="micro-quotes-from-this-week-short--placed-where-relevant" class="level2">
-<h2 class="anchored" data-anchor-id="micro-quotes-from-this-week-short--placed-where-relevant">Micro-quotes from this week (short + placed where relevant)</h2>
-<blockquote class="blockquote">
-<p>“Instead of getting generic responses, strong prompts can greatly enhance the quality, accuracy, and usefulness of AI-generated code and documents.”</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>“Some parts of prompt engineering may seem natural—like how we learned to improve our search engine questions over time.”</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>“Let’s explore how to create better prompts to get the best results, save time, and increase productivity.”</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>“Context is the backbone of any good prompt.”</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>“Provide concrete examples to illustrate desired output.”</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>“Zero-shot prompts are very basic and concise.”</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>“Few-shot prompting lets models generate from just a few examples.”</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>“These types of prompts limit the scope of the model’s response.”</p>
-</blockquote>
 </section>
 <section id="key-terms-bold-on-first-use" class="level2">
 <h2 class="anchored" data-anchor-id="key-terms-bold-on-first-use">Key terms (bold on first use)</h2>
@@ -725,12 +690,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>structured prompt</strong>: a prompt that forces the output into a predictable structure (JSON, table, sections).</li>
 <li><strong>output control</strong>: techniques that reduce randomness by restricting response shape.</li>
 </ul>
-</section>
-<section id="figures-used-in-these-notes-10-max-placed-where-they-matter" class="level2">
-<h2 class="anchored" data-anchor-id="figures-used-in-these-notes-10-max-placed-where-they-matter">Figures used in these notes (≈10 max, placed where they matter)</h2>
-<blockquote class="blockquote">
-<p>These images were extracted from the Week 09 PDF and are used inline below.</p>
-</blockquote>
 </section>
 <section id="understanding-prompt-engineering" class="level2">
 <h2 class="anchored" data-anchor-id="understanding-prompt-engineering">Understanding prompt engineering</h2>
@@ -836,17 +795,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="crafting-the-ultimate-prompt" class="level2">
 <h2 class="anchored" data-anchor-id="crafting-the-ultimate-prompt">Crafting the ultimate prompt</h2>
-<p>This section introduces a powerful move:</p>
 <p>✅ <strong>Use an LLM to improve your prompt before using it for the real task.</strong></p>
 <p>Instead of:</p>
-<ul>
-<li>“Write an API request tutorial”</li>
-</ul>
-<p>You ask the model:</p>
-<ul>
-<li>“Improve this prompt so it produces the best possible tutorial.”</li>
-</ul>
-<p><img src="images/week_09/fig_03.png" class="img-fluid"></p>
+<blockquote class="blockquote">
+<p>“Write an API request tutorial”</p>
+</blockquote>
+<p>Ask the model:</p>
+<blockquote class="blockquote">
+<p>“Improve this prompt so it produces the best possible tutorial.”</p>
+</blockquote>
 <section id="prompt-refinement-template" class="level3">
 <h3 class="anchored" data-anchor-id="prompt-refinement-template">Prompt-refinement template</h3>
 <p>Use this when you want a <em>high-quality</em> response.</p>
@@ -878,7 +835,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="fundamental-prompt-types">Fundamental prompt types</h2>
 <p>This week introduces several “prompt families”.</p>
 <section id="zero-shot-prompting" class="level3">
-<h3 class="anchored" data-anchor-id="zero-shot-prompting">9.4.1 Zero-shot prompting</h3>
+<h3 class="anchored" data-anchor-id="zero-shot-prompting">Zero-shot prompting</h3>
 <p>Zero-shot = <strong>no examples</strong>.</p>
 <p>Example:</p>
 <ul>
@@ -897,7 +854,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(zero_shot)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="few-shot-prompting" class="level3">
-<h3 class="anchored" data-anchor-id="few-shot-prompting">9.4.2 Few-shot prompting</h3>
+<h3 class="anchored" data-anchor-id="few-shot-prompting">Few-shot prompting</h3>
 <p>Few-shot = provide examples.</p>
 <p>Best when:</p>
 <ul>
@@ -921,7 +878,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(few_shot)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="open-ended-prompts" class="level3">
-<h3 class="anchored" data-anchor-id="open-ended-prompts">9.4.3 Open-ended prompts</h3>
+<h3 class="anchored" data-anchor-id="open-ended-prompts">Open-ended prompts</h3>
 <p>Open-ended = exploration.</p>
 <p>Best for:</p>
 <ul>
@@ -935,19 +892,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 </section>
 <section id="constrained-prompts" class="level3">
-<h3 class="anchored" data-anchor-id="constrained-prompts">9.4.4 Constrained prompts</h3>
+<h3 class="anchored" data-anchor-id="constrained-prompts">Constrained prompts</h3>
 <p>Constrained prompts are strict.</p>
 <p>Examples:</p>
 <ul>
 <li>“List exactly three built-in Python data structures.”</li>
 <li>“Return only code.”</li>
 </ul>
-<p><img src="images/week_09/fig_04.png" class="img-fluid"></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>constrained <span class="op">=</span> <span class="st">"List exactly three built-in Python data structures."</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(constrained)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="iterative-prompts" class="level3">
-<h3 class="anchored" data-anchor-id="iterative-prompts">9.4.5 Iterative prompts</h3>
+<h3 class="anchored" data-anchor-id="iterative-prompts">Iterative prompts</h3>
 <p>Iterative prompting = conversation loop.</p>
 <p>You:</p>
 <ol type="1">
@@ -962,7 +918,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(prompt_v2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="structured-prompts" class="level3">
-<h3 class="anchored" data-anchor-id="structured-prompts">9.4.6 Structured prompts</h3>
+<h3 class="anchored" data-anchor-id="structured-prompts">Structured prompts</h3>
 <p>Structured prompts enforce a schema.</p>
 <p>Example:</p>
 <ul>
@@ -984,17 +940,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="advanced-prompt-types">Advanced prompt types</h2>
 <p>These techniques are about increasing reliability.</p>
 <section id="chain-of-thought-prompting" class="level3">
-<h3 class="anchored" data-anchor-id="chain-of-thought-prompting">9.5.1 Chain-of-thought prompting</h3>
+<h3 class="anchored" data-anchor-id="chain-of-thought-prompting">Chain-of-thought prompting</h3>
 <p>In this week, chain-of-thought means:</p>
 <ul>
 <li>encourage step-by-step reasoning</li>
 <li>reduce “jumping to conclusions”</li>
 </ul>
 <p>Use carefully: the model may sound confident even when wrong.</p>
-<p><img src="images/week_09/fig_05.png" class="img-fluid"></p>
 </section>
 <section id="recursive-prompting" class="level3">
-<h3 class="anchored" data-anchor-id="recursive-prompting">9.5.2 Recursive prompting</h3>
+<h3 class="anchored" data-anchor-id="recursive-prompting">Recursive prompting</h3>
 <p>Recursive prompting = prompt → output → prompt again.</p>
 <p>Example workflow:</p>
 <ol type="1">
@@ -1009,7 +964,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 </section>
 <section id="context-manipulation" class="level3">
-<h3 class="anchored" data-anchor-id="context-manipulation">9.5.3 Context manipulation</h3>
+<h3 class="anchored" data-anchor-id="context-manipulation">Context manipulation</h3>
 <p>Context manipulation = changing what the model sees.</p>
 <p>Examples:</p>
 <ul>
@@ -1019,7 +974,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 </section>
 <section id="instruction-refinement" class="level3">
-<h3 class="anchored" data-anchor-id="instruction-refinement">9.5.4 Instruction refinement</h3>
+<h3 class="anchored" data-anchor-id="instruction-refinement">Instruction refinement</h3>
 <p>Instruction refinement = tuning wording.</p>
 <p>Small changes matter:</p>
 <ul>
@@ -1027,10 +982,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>“brief” vs “detailed”</li>
 <li>“code only” vs “code + rationale”</li>
 </ul>
-<p><img src="images/week_09/fig_06.png" class="img-fluid"></p>
 </section>
 <section id="output-control" class="level3">
-<h3 class="anchored" data-anchor-id="output-control">9.5.5 Output control</h3>
+<h3 class="anchored" data-anchor-id="output-control">Output control</h3>
 <p>Output control = forcing response format.</p>
 <p>This is key when you need:</p>
 <ul>
@@ -1042,7 +996,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="prompt-techniques-for-programmers" class="level2">
 <h2 class="anchored" data-anchor-id="prompt-techniques-for-programmers">Prompt techniques for programmers</h2>
-<p>This part is where this week becomes “real world”.</p>
 <section id="use-prompts-like-tool-interfaces" class="level3">
 <h3 class="anchored" data-anchor-id="use-prompts-like-tool-interfaces">Use prompts like tool interfaces</h3>
 <p>Think:</p>
@@ -1080,7 +1033,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>explicit requirements</li>
 <li>predictable output</li>
 </ul>
-<p><img src="images/week_09/fig_07.png" class="img-fluid"></p>
 </section>
 </section>
 <section id="worked-examples-week-aligned" class="level2">
@@ -1106,7 +1058,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>specify sections</li>
 <li>specify formatting</li>
 </ul>
-<p><img src="images/week_09/fig_08.png" class="img-fluid"></p>
 </section>
 <section id="example-c-writing-tests-as-a-contract" class="level3">
 <h3 class="anchored" data-anchor-id="example-c-writing-tests-as-a-contract">Example C: Writing tests as a contract</h3>
@@ -1116,7 +1067,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>edge cases</li>
 <li>expected failures</li>
 </ul>
-<p><img src="images/week_09/fig_09.png" class="img-fluid"></p>
 </section>
 </section>
 <section id="pitfalls-and-anti-patterns" class="level2">
@@ -1143,7 +1093,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>minimal failing examples</li>
 <li>focused snippets</li>
 </ul>
-<p><img src="images/week_09/fig_10.png" class="img-fluid"></p>
 </section>
 </section>
 <section id="summing-up" class="level2">
@@ -1155,24 +1104,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Examples control style</li>
 <li>Output control makes responses testable</li>
 <li>Iteration is normal — treat it like debugging</li>
-</ul>
-</section>
-<section id="quick-self-check-5-minutes" class="level2">
-<h2 class="anchored" data-anchor-id="quick-self-check-5-minutes">Quick self-check (5 minutes)</h2>
-<ol type="1">
-<li>Rewrite a bad prompt into a structured prompt.</li>
-<li>Add one constraint that prevents security issues.</li>
-<li>Add an output format that makes the result testable.</li>
-<li>Add one example to enforce consistent style.</li>
-</ol>
-</section>
-<section id="verification-report-week-9" class="level2">
-<h2 class="anchored" data-anchor-id="verification-report-week-9">Verification report (Week 9)</h2>
-<ul>
-<li>line count: 507</li>
-<li>number of code blocks: 7</li>
-<li>number of micro-quotes: 8</li>
-<li>number of images referenced: 10</li>
 </ul>
 
 

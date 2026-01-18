@@ -22,11 +22,9 @@
 -   This week builds the next slice of the HAM radio practice-exam app using **Blackbox AI** as your "code draft engine".
 -   This week's theme is not "let AI build everything." It's **co-development**: you steer architecture; AI accelerates implementation.
 
-A good sentence to keep in mind from this week:
+> "The goal is to demonstrate effective cooperation between human expertise and AI."
 
--   "The goal is to demonstrate effective cooperation between human expertise and AI."
-
-### Key terms you must own by the end of this week
+### Key terms
 
 -   **Blackbox AI** — a coding assistant used here to generate base implementations quickly, especially for repetitive web-app scaffolding.
 -   **Persistent session** — a user state that survives across requests (in Flask, commonly via signed cookies + server-side data decisions).
@@ -38,15 +36,10 @@ A good sentence to keep in mind from this week:
 
 -   The author frames AI tools as a multiplier: you still need to decide *what the system is* and *where things live* (files/modules/classes).
 -   A practical mental model: treat the assistant like a very fast junior developer—great at drafting, weak at reading your mind.
-
-From this week's "what this covers" list, one line basically describes the architectural bar:
-
--   "¡ Maintain separation of concerns—Even fast development benefits from clean architecture."
-
-What that means in practice:
-
 -   You can accept AI-generated code as a *starting point*, but you should refactor it into your architecture.
 -   When the AI suggests putting everything into one file, you should resist. This week is about improving structure while moving fast.
+
+>  "Maintain separation of concerns—Even fast development benefits from clean architecture."
 
 ### Prompting as a software skill
 
@@ -54,17 +47,14 @@ What that means in practice:
 -   If your prompt is too rigid, you’ll spend more time fighting the output than writing code yourself.
 -   The sweet spot is a *well-scoped* prompt that includes context + constraints + expected behaviour.
 
-Two short reminders from this week:
-
--   "This prompt will tell Blackbox what we want it to do and give specificity."
--   "Treat the comment as a prompt."
+> "This prompt will tell Blackbox what we want it to do and give specificity."
 
 ## Setting up the development environment {#setting-up-the-development-environment}
 
 -   This week assumes you already have a working Flask project from earlier weeks.
 -   You’re now adding *state*: question sets and test sessions need to persist across pages and across time.
 
-Minimum local setup (student-friendly):
+Minimum local setup:
 
 -   Create a virtual environment and install Flask.
 -   Decide where your database file lives (for a student project, a local SQLite file is fine).
@@ -241,61 +231,3 @@ print({"question_sets": qs, "test_sessions": ts})
 -   The most important engineering idea is **separation of concerns**: routes orchestrate, domain logic decides, data layer persists.
 -   The product outcome is a test experience that can persist progress across pages: **question sets** + **test sessions**.
 
-## Figures extracted from Week 05 {#figures-extracted-from-week-05}
-
-The following images were extracted from the Week 05 materials.
-
-![](images/week_05/fig_01.png) ![](images/week_05/fig_02.jpeg) ![](images/week_05/fig_03.jpeg) ![](images/week_05/fig_04.jpeg) ![](images/week_05/fig_05.jpeg) ![](images/week_05/fig_06.jpeg) ![](images/week_05/fig_07.jpeg) ![](images/week_05/fig_08.jpeg) ![](images/week_05/fig_09.jpeg) ![](images/week_05/fig_10.jpeg) ![](images/week_05/fig_11.png) ![](images/week_05/fig_12.jpeg) ![](images/week_05/fig_13.jpeg) ![](images/week_05/fig_14.jpeg) ![](images/week_05/fig_15.jpeg) ![](images/week_05/fig_16.jpeg) ![](images/week_05/fig_17.jpeg) ![](images/week_05/fig_18.jpeg) ![](images/week_05/fig_19.jpeg) ![](images/week_05/fig_20.jpeg) ![](images/week_05/fig_21.jpeg) ![](images/week_05/fig_22.jpeg) ![](images/week_05/fig_23.jpeg) ![](images/week_05/fig_24.jpeg) ![](images/week_05/fig_25.jpeg) ![](images/week_05/fig_26.png) ![](images/week_05/fig_27.jpeg) ![](images/week_05/fig_28.jpeg) ![](images/week_05/fig_29.jpeg) ![](images/week_05/fig_30.jpeg) ![](images/week_05/fig_31.png) ![](images/week_05/fig_32.jpeg) ![](images/week_05/fig_33.png) ![](images/week_05/fig_34.jpeg) ![](images/week_05/fig_35.jpeg) ![](images/week_05/fig_36.jpeg) ![](images/week_05/fig_37.jpeg) ![](images/week_05/fig_38.jpeg) ![](images/week_05/fig_39.jpeg) ![](images/week_05/fig_40.png) ![](images/week_05/fig_41.png) ![](images/week_05/fig_42.png) ![](images/week_05/fig_43.png) ![](images/week_05/fig_44.png) ![](images/week_05/fig_45.jpeg) ![](images/week_05/fig_46.jpeg) ![](images/week_05/fig_47.png) ![](images/week_05/fig_48.jpeg) ![](images/week_05/fig_49.jpeg) ![](images/week_05/fig_50.png) ![](images/week_05/fig_51.jpeg) ![](images/week_05/fig_52.jpeg) ![](images/week_05/fig_53.jpeg) ![](images/week_05/fig_54.jpeg) ![](images/week_05/fig_55.jpeg) ![](images/week_05/fig_56.jpeg) ![](images/week_05/fig_57.jpeg) ![](images/week_05/fig_58.png) ![](images/week_05/fig_59.jpeg) ![](images/week_05/fig_60.jpeg) ![](images/week_05/fig_61.jpeg) ![](images/week_05/fig_62.jpeg) ![](images/week_05/fig_63.jpeg) ![](images/week_05/fig_64.jpeg) ![](images/week_05/fig_65.jpeg) ![](images/week_05/fig_66.png) ![](images/week_05/fig_67.jpeg) ![](images/week_05/fig_68.jpeg) ![](images/week_05/fig_69.jpeg) ![](images/week_05/fig_70.jpeg) ![](images/week_05/fig_71.jpeg) ![](images/week_05/fig_72.jpeg) ![](images/week_05/fig_73.jpeg) ![](images/week_05/fig_74.jpeg) ![](images/week_05/fig_75.jpeg) ![](images/week_05/fig_76.jpeg) ![](images/week_05/fig_77.jpeg) ![](images/week_05/fig_78.jpeg) ![](images/week_05/fig_79.jpeg) ![](images/week_05/fig_80.jpeg) ![](images/week_05/fig_81.png) ![](images/week_05/fig_82.jpeg) ![](images/week_05/fig_83.jpeg) ![](images/week_05/fig_84.jpeg) ![](images/week_05/fig_85.jpeg) ![](images/week_05/fig_86.jpeg) ![](images/week_05/fig_87.jpeg) ![](images/week_05/fig_88.jpeg) ![](images/week_05/fig_89.jpeg) ![](images/week_05/fig_90.jpeg) ![](images/week_05/fig_91.png) ![](images/week_05/fig_92.png) ![](images/week_05/fig_93.jpeg) ![](images/week_05/fig_94.jpeg) ![](images/week_05/fig_95.jpeg) ![](images/week_05/fig_96.jpeg)
-
-## Extra notes: common failure modes when using AI drafts {#extra-notes-common-failure-modes}
-
--   Mixing layers: SQL and HTML string-building inside routes leads to fragile code.
--   Hidden state: relying only on cookies without DB persistence breaks resuming tests.
--   Unverified assumptions: AI may invent library functions or routes that do not exist.
--   Over-trusting generated code: always run, print, and inspect DB rows early.
--   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
--   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
--   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
--   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
--   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
--   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
--   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
--   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
--   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
--   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
--   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
--   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
--   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
--   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
--   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
--   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
--   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
--   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
--   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
--   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
--   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
--   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
--   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
--   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
--   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
--   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
--   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
--   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
--   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
--   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
--   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
--   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
--   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
--   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
--   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
--   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
--   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
--   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
--   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
--   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
--   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
--   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
--   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
--   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
--   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.
--   Practice: write one small prompt per function (create session, load session, save answer) and test each independently.

@@ -112,11 +112,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <meta property="og:title" content="Real World AI">
-<meta property="og:image" content="https://SQ4014-2025.github.io/website/notes/images/week_08/fig_01.png">
 <meta property="og:site_name" content="Real World AI">
-<meta property="og:image:alt" content="Week 08 extracted figure 1">
-<meta property="og:image:height" content="1196">
-<meta property="og:image:width" content="1249">
 <meta name="twitter:title" content="Real World AI">
 <meta name="twitter:image" content="https://SQ4014-2025.github.io/website/notes/images/twitter-card.png">
 <meta name="twitter:creator" content="@EdHarris9000">
@@ -604,8 +600,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#prompt-template-you-can-reuse-stored-as-a-string" id="toc-prompt-template-you-can-reuse-stored-as-a-string" class="nav-link" data-scroll-target="#prompt-template-you-can-reuse-stored-as-a-string">Prompt template you can reuse (stored as a string)</a></li>
   <li><a href="#a-tiny-evaluation-trick-do-tests-fail-when-code-is-wrong" id="toc-a-tiny-evaluation-trick-do-tests-fail-when-code-is-wrong" class="nav-link" data-scroll-target="#a-tiny-evaluation-trick-do-tests-fail-when-code-is-wrong">A tiny evaluation trick: do tests fail when code is wrong?</a></li>
   </ul></li>
-  <li><a href="#figures" id="toc-figures" class="nav-link" data-scroll-target="#figures">Extracted figures from Week 08</a></li>
-  <li><a href="#summing-up" id="toc-summing-up" class="nav-link" data-scroll-target="#summing-up">Summing Up</a></li>
   <li><a href="#sanity" id="toc-sanity" class="nav-link" data-scroll-target="#sanity">Sanity checks and self-test</a></li>
   <li><a href="#prompt-patterns-for-test-generation" id="toc-prompt-patterns-for-test-generation" class="nav-link" data-scroll-target="#prompt-patterns-for-test-generation">Prompt patterns for test generation</a>
   <ul class="collapse">
@@ -624,7 +618,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#sqlite-in-memory-pattern" id="toc-sqlite-in-memory-pattern" class="nav-link" data-scroll-target="#sqlite-in-memory-pattern">SQLite in-memory pattern</a></li>
   </ul></li>
   <li><a href="#where-ai-tests-go-wrong" id="toc-where-ai-tests-go-wrong" class="nav-link" data-scroll-target="#where-ai-tests-go-wrong">Where AI-generated tests go wrong</a></li>
-  <li><a href="#micro-quotes-week8" id="toc-micro-quotes-week8" class="nav-link" data-scroll-target="#micro-quotes-week8">Micro-quotes from Week 08</a></li>
   <li><a href="#summing-up-week8" id="toc-summing-up-week8" class="nav-link" data-scroll-target="#summing-up-week8">Summing Up</a></li>
   </ul></li>
   </ul>
@@ -653,18 +646,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <section id="why-testing-matters" class="level2">
 <h2 class="anchored" data-anchor-id="why-testing-matters">Why testing matters in AI-assisted coding</h2>
+<p>Week 08 focuses on using generative AI to produce tests, but this week is really about <em>trust</em>.</p>
 <ul>
-<li>Week 08 focuses on using generative AI to produce tests, but this week is really about <em>trust</em>.</li>
 <li>A test suite is your “contract” with future you: it describes what must stay true as code changes.</li>
 <li>AI can write tests quickly, but speed is useless if the tests are brittle, shallow, or wrong.</li>
 <li>“Generative AI tools are changing this boring, repetitive process.”</li>
 <li>“They can automatically create detailed test suites, spot edge cases, and generate boilerplate code.”</li>
-<li>In AI-assisted workflows, tests do two jobs at once:</li>
-<li><ol type="1">
-<li>catch regressions, and 2) detect when the AI has hallucinated an API, edge case, or assumption.</li>
-</ol></li>
-<li>A bad test suite can make things worse by giving you false confidence.</li>
 </ul>
+<p>In AI-assisted workflows, tests do two jobs at once: 1) catch regressions, and 2) detect when the AI has hallucinated an API, edge case, or assumption.</p>
+<blockquote class="blockquote">
+<p>A bad test suite can make things worse by giving you false confidence.</p>
+</blockquote>
 </section>
 <section id="key-terms" class="level2">
 <h2 class="anchored" data-anchor-id="key-terms">Key terms you must be able to use</h2>
@@ -854,39 +846,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Try changing area() to return 0 and rerun the test.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
-<section id="figures" class="level2">
-<h2 class="anchored" data-anchor-id="figures">Extracted figures from Week 08</h2>
-<p><img src="images/week_08/fig_01.png" class="img-fluid" alt="Week 08 extracted figure 1"> <img src="images/week_08/fig_02.png" class="img-fluid" alt="Week 08 extracted figure 2"> <img src="images/week_08/fig_03.png" class="img-fluid" alt="Week 08 extracted figure 3"> <img src="images/week_08/fig_04.png" class="img-fluid" alt="Week 08 extracted figure 4"> <img src="images/week_08/fig_05.png" class="img-fluid" alt="Week 08 extracted figure 5"> <img src="images/week_08/fig_06.png" class="img-fluid" alt="Week 08 extracted figure 6"> <img src="images/week_08/fig_07.png" class="img-fluid" alt="Week 08 extracted figure 7"> <img src="images/week_08/fig_08.png" class="img-fluid" alt="Week 08 extracted figure 8"> <img src="images/week_08/fig_09.png" class="img-fluid" alt="Week 08 extracted figure 9"> <img src="images/week_08/fig_10.png" class="img-fluid" alt="Week 08 extracted figure 10"></p>
-</section>
-<section id="summing-up" class="level2">
-<h2 class="anchored" data-anchor-id="summing-up">Summing Up</h2>
-<ul>
-<li>AI is a powerful assistant for <em>drafting</em> tests, but you still own correctness.</li>
-<li>The best prompts specify behaviour, edge cases, and constraints (framework, fixtures, mocking).</li>
-<li>Always run, review, and refactor generated tests; treat them like code written by a junior dev.</li>
-<li>In-memory databases and isolated environments are key to reliable automated testing.</li>
-</ul>
-</section>
 <section id="sanity" class="level2">
 <h2 class="anchored" data-anchor-id="sanity">Sanity checks and self-test</h2>
 <ul>
-<li><p>Quick checklist before you trust an AI-generated test suite:</p></li>
-<li><p>Does each test name describe behaviour (not implementation)?</p></li>
-<li><p>Do the tests include at least one negative case?</p></li>
-<li><p>Are edge cases explicit, not implied?</p></li>
-<li><p>Is the database/file system/network isolated or mocked?</p></li>
-<li><p>Would the tests still pass if you replaced your function body with <code>pass</code>?</p></li>
-<li><p>Do failures produce actionable error messages?</p></li>
-<li><p>Do fixtures reduce duplication (but not hide important details)?</p></li>
-<li><p>Are time-dependent values controlled (freeze time or inject clocks)?</p></li>
-<li><p>Are random values seeded?</p></li>
-<li><p>Are you asserting the right thing (outputs/side effects) rather than intermediate variables?</p></li>
-<li><p>Mini Q&amp;A (the kinds of questions you should be able to answer):</p></li>
-<li><p>What is a “test oracle” and why is it hard for AI?</p></li>
-<li><p>When is mocking harmful?</p></li>
-<li><p>Why is an in-memory database useful but sometimes misleading?</p></li>
-<li><p>How do you know a test is not “too shallow”?</p></li>
-<li><p>What prompt information tends to improve assertion quality?</p></li>
+<li>Quick checklist before you trust an AI-generated test suite:</li>
+<li>Does each test name describe behaviour (not implementation)?</li>
+<li>Do the tests include at least one negative case?</li>
+<li>Are edge cases explicit, not implied?</li>
+<li>Is the database/file system/network isolated or mocked?</li>
+<li>Would the tests still pass if you replaced your function body with <code>pass</code>?</li>
+<li>Do failures produce actionable error messages?</li>
+<li>Do fixtures reduce duplication (but not hide important details)?</li>
+<li>Are time-dependent values controlled (freeze time or inject clocks)?</li>
+<li>Are random values seeded?</li>
+<li>Are you asserting the right thing (outputs/side effects) rather than intermediate variables?</li>
+<li>Mini Q&amp;A (the kinds of questions you should be able to answer):</li>
+<li>What is a “test oracle” and why is it hard for AI?</li>
+<li>When is mocking harmful?</li>
+<li>Why is an in-memory database useful but sometimes misleading?</li>
+<li>How do you know a test is not “too shallow”?</li>
+<li>What prompt information tends to improve assertion quality?</li>
 </ul>
 </section>
 <section id="prompt-patterns-for-test-generation" class="level2">
@@ -903,8 +882,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><strong>Goal</strong>: “Generate tests for function <code>X</code>.”</p></li>
 <li><p><strong>Behaviour spec</strong>: list rules as bullets.</p></li>
 <li><p><strong>Edge cases</strong>: list edge cases explicitly.</p></li>
-<li><p><strong>Constraints</strong>:</p></li>
-<li><pre><code>- no network</code></pre></li>
+<li><p><strong>Constraints</strong>:</p>
+<pre><code>- no network</code></pre></li>
 <li><pre><code>- no real filesystem writes</code></pre></li>
 <li><pre><code>- deterministic outcomes (freeze time or inject clock)</code></pre></li>
 <li><p><strong>Output format</strong>: “Return only test code in one file.”</p></li>
@@ -1052,34 +1031,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="where-ai-tests-go-wrong" class="level2">
 <h2 class="anchored" data-anchor-id="where-ai-tests-go-wrong">Where AI-generated tests go wrong</h2>
 <ul>
-<li><p>Common failure patterns (and how to spot them):</p></li>
-<li><p><strong>Asserting implementation details</strong>: tests break when you refactor harmlessly.</p></li>
-<li><p><strong>Brittle data</strong>: hard-coded timestamps, random ids, order-dependent lists.</p></li>
-<li><p><strong>Mocking the wrong thing</strong>: you end up testing the mock, not the behaviour.</p></li>
-<li><p><strong>Testing the tool’s hallucination</strong>: the model invents functions/options that do not exist.</p></li>
-<li><p>Defensive habits:</p></li>
-<li><p>run tests immediately</p></li>
-<li><p>read assertions carefully</p></li>
-<li><p>check that fixtures actually model the real domain</p></li>
-</ul>
-</section>
-<section id="micro-quotes-week8" class="level2">
-<h2 class="anchored" data-anchor-id="micro-quotes-week8">Micro-quotes from Week 08</h2>
-<ul>
-<li>“Generative AI tools are changing this boring, repetitive process.”</li>
-<li>“They can automatically create detailed test suites, spot edge cases, and generate boilerplate code.”</li>
-<li>“This week shows how GitHub Copilot, Tabnine, and Blackbox AI can enhance your testing workflow.”</li>
-<li>“High-quality tests are vital for reliable software.”</li>
-<li>“They catch bugs early and ensure new features don’t break existing code.”</li>
-<li>“They also document how the code should behave.”</li>
+<li>Common failure patterns (and how to spot them):</li>
+<li><strong>Asserting implementation details</strong>: tests break when you refactor harmlessly.</li>
+<li><strong>Brittle data</strong>: hard-coded timestamps, random ids, order-dependent lists.</li>
+<li><strong>Mocking the wrong thing</strong>: you end up testing the mock, not the behaviour.</li>
+<li><strong>Testing the tool’s hallucination</strong>: the model invents functions/options that do not exist.</li>
+<li>Defensive habits:</li>
+<li>run tests immediately</li>
+<li>read assertions carefully</li>
+<li>check that fixtures actually model the real domain</li>
 </ul>
 </section>
 <section id="summing-up-week8" class="level2">
 <h2 class="anchored" data-anchor-id="summing-up-week8">Summing Up</h2>
 <ul>
-<li>Week 08’s main message: AI can draft tests quickly, but <em>good tests require judgement</em>.</li>
-<li>Your workflow should be:</li>
-<li>specify behaviour → generate tests → run → review assertions → improve prompts → repeat.</li>
+<li>AI can draft tests quickly, but <em>good tests require judgement</em>.</li>
+<li>Your workflow should be: specify behaviour → generate tests → run → review assertions → improve prompts → repeat.</li>
 <li>The fastest way to level up is to treat tests as communication: a clear story about what the code must do.</li>
 </ul>
 

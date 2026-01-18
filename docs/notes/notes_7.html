@@ -112,11 +112,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <meta property="og:title" content="Real World AI">
-<meta property="og:image" content="https://SQ4014-2025.github.io/website/notes/images/week_07/fig_01.png">
 <meta property="og:site_name" content="Real World AI">
-<meta property="og:image:alt" content="Week 07 extracted figure 1">
-<meta property="og:image:height" content="93">
-<meta property="og:image:width" content="93">
 <meta name="twitter:title" content="Real World AI">
 <meta name="twitter:image" content="https://SQ4014-2025.github.io/website/notes/images/twitter-card.png">
 <meta name="twitter:creator" content="@EdHarris9000">
@@ -589,7 +585,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#what-this-week-is-doing-big-picture" id="toc-what-this-week-is-doing-big-picture" class="nav-link" data-scroll-target="#what-this-week-is-doing-big-picture">What this week is doing (big picture)</a></li>
   <li><a href="#key-terms-bolded-the-first-time" id="toc-key-terms-bolded-the-first-time" class="nav-link" data-scroll-target="#key-terms-bolded-the-first-time">Key terms (bolded the first time)</a></li>
-  <li><a href="#figures-extracted-from-the-pdf" id="toc-figures-extracted-from-the-pdf" class="nav-link" data-scroll-target="#figures-extracted-from-the-pdf">Figures extracted from the PDF</a></li>
   <li><a href="#getting-our-strategy-from-our-ai-tools" id="toc-getting-our-strategy-from-our-ai-tools" class="nav-link" data-scroll-target="#getting-our-strategy-from-our-ai-tools">Getting our strategy from our AI tools</a>
   <ul class="collapse">
   <li><a href="#why-strategy-first-matters" id="toc-why-strategy-first-matters" class="nav-link" data-scroll-target="#why-strategy-first-matters">Why “strategy first” matters</a></li>
@@ -606,7 +601,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#code-example-simple-jinja2-loop-for-quiz-list" id="toc-code-example-simple-jinja2-loop-for-quiz-list" class="nav-link" data-scroll-target="#code-example-simple-jinja2-loop-for-quiz-list">Code example: simple Jinja2 loop for quiz list</a></li>
   <li><a href="#code-example-minimal-responsive-css-skeleton" id="toc-code-example-minimal-responsive-css-skeleton" class="nav-link" data-scroll-target="#code-example-minimal-responsive-css-skeleton">Code example: minimal responsive CSS skeleton</a></li>
   <li><a href="#summing-up" id="toc-summing-up" class="nav-link" data-scroll-target="#summing-up">Summing Up</a></li>
-  <li><a href="#quick-checklist-week-skills" id="toc-quick-checklist-week-skills" class="nav-link" data-scroll-target="#quick-checklist-week-skills">Quick checklist (week skills)</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/SQ4014-2025/website/edit/master/notes/notes_7.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/SQ4014-2025/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -620,9 +614,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="week-07-building-user-interfaces-with-chatgpt" class="level1">
 <h1>Week 07 — Building user interfaces with ChatGPT</h1>
-<blockquote class="blockquote">
-<p><strong>Micro-quotes:</strong> “Even seasoned developers can find UI design tough, and generative AI tools help tremendously.” “AI tools provide a big boost for developers who aren’t great at UI.” “First, we need to build a great prompt for this.” “7.1 Getting our strategy from our AI tools Before we approach these tools, we should think carefully about our prompt.” “If we say”generate a frontend for my application” without enough information, the guidance will be too vague.” “There is a time and a place for brief prompts.”</p>
-</blockquote>
 <ul>
 <li><a href="#what-this-week-is-doing-big-picture">What this week is doing (big picture)</a></li>
 <li><a href="#key-terms-bolded-the-first-time">Key terms (bolded the first time)</a></li>
@@ -641,11 +632,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="#summing-up">Summing Up</a></li>
 <li><a href="#quick-checklist-week-skills">Quick checklist (week skills)</a></li>
 </ul>
+<blockquote class="blockquote">
+<p>“Interesting people like Data Scientists and software developers can find UI design tough, and generative AI tools help tremendously.”</p>
+</blockquote>
 <section id="what-this-week-is-doing-big-picture" class="level2">
 <h2 class="anchored" data-anchor-id="what-this-week-is-doing-big-picture">What this week is doing (big picture)</h2>
 <p>This week switches focus from <strong>backend logic</strong> to the part users actually <em>touch</em>: the <strong>user interface (UI)</strong>. The aim is to use chat-based generative AI (especially ChatGPT) as a <em>pair designer + pair developer</em> to:</p>
 <ul>
-<li>propose a UI strategy (pages around 179–181)</li>
+<li>propose a UI strategy</li>
 <li>write structured prompts that produce targeted UI guidance and code</li>
 <li>convert wireframes and flows into Flask templates + components</li>
 <li>add responsive HTML/CSS elements without being a frontend expert</li>
@@ -662,16 +656,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Responsive design</strong> — designing pages so they work on different screen sizes (mobile, tablet, desktop).</li>
 <li><strong>Prompt scaffolding</strong> — structuring a prompt into sections (objective, constraints, inputs, outputs) so the AI returns usable results.</li>
 </ul>
-</section>
-<section id="figures-extracted-from-the-pdf" class="level2">
-<h2 class="anchored" data-anchor-id="figures-extracted-from-the-pdf">Figures extracted from the PDF</h2>
-<p>These are images embedded in the PDF pages for Week 07. Not all are equally useful (some are icons/background elements), but they are extracted and downloadable.</p>
-<p><img src="images/week_07/fig_01.png" class="img-fluid" alt="Week 07 extracted figure 1"></p>
-<p><img src="images/week_07/fig_02.png" class="img-fluid" alt="Week 07 extracted figure 2"></p>
-<p><img src="images/week_07/fig_03.png" class="img-fluid" alt="Week 07 extracted figure 3"></p>
-<p><img src="images/week_07/fig_04.png" class="img-fluid" alt="Week 07 extracted figure 4"></p>
-<p><img src="images/week_07/fig_05.png" class="img-fluid" alt="Week 07 extracted figure 5"></p>
-<p><img src="images/week_07/fig_06.png" class="img-fluid" alt="Week 07 extracted figure 6"></p>
 </section>
 <section id="getting-our-strategy-from-our-ai-tools" class="level2">
 <h2 class="anchored" data-anchor-id="getting-our-strategy-from-our-ai-tools">Getting our strategy from our AI tools</h2>
@@ -717,57 +701,71 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="from-flows-to-pages-what-screens-does-the-user-need" class="level2">
 <h2 class="anchored" data-anchor-id="from-flows-to-pages-what-screens-does-the-user-need">From flows to pages: what screens does the user need?</h2>
-<p>This week frames UI work as a <strong>user journey</strong>: what does the user do first, next, and last?</p>
-<p>A practical approach is to list screens as verbs: <em>Log in</em>, <em>Choose a quiz</em>, <em>Answer questions</em>, <em>See results</em>.</p>
-<p>Once screens exist, you map navigation: where can the user go from each screen?</p>
-<p>This is where AI is helpful: it can suggest missing pages (e.g., error states, empty-state screens).</p>
+<ul>
+<li>This week frames UI work as a <strong>user journey</strong>: what does the user do first, next, and last?</li>
+<li>A practical approach is to list screens as verbs: <em>Log in</em>, <em>Choose a quiz</em>, <em>Answer questions</em>, <em>See results</em>.</li>
+<li>Once screens exist, you map navigation: where can the user go from each screen?</li>
+<li>This is where AI is helpful: it can suggest missing pages (e.g., error states, empty-state screens).</li>
+</ul>
 </section>
 <section id="translating-requirements-into-template-structure" class="level2">
 <h2 class="anchored" data-anchor-id="translating-requirements-into-template-structure">Translating requirements into template structure</h2>
-<p>This week emphasises organising your project so templates don’t become a mess.</p>
-<p>In Flask, a common pattern is a <code>templates/</code> folder and a <code>static/</code> folder.</p>
-<p>Templates contain HTML/Jinja; static contains CSS, JavaScript, and images.</p>
-<p>AI can draft a sensible baseline structure, but <em>you</em> must keep it consistent.</p>
-<p>If your templates are inconsistent (different nav bars per page), your UI will feel broken.</p>
+<ul>
+<li>This week emphasises organising your project so templates don’t become a mess.</li>
+<li>In Flask, a common pattern is a <code>templates/</code> folder and a <code>static/</code> folder.</li>
+<li>Templates contain HTML/Jinja; static contains CSS, JavaScript, and images.</li>
+<li>AI can draft a sensible baseline structure, but <em>you</em> must keep it consistent.</li>
+<li>If your templates are inconsistent (different nav bars per page), your UI will feel broken.</li>
+</ul>
 </section>
 <section id="wireframes-how-to-ask-the-ai-for-layout-help" class="level2">
 <h2 class="anchored" data-anchor-id="wireframes-how-to-ask-the-ai-for-layout-help">Wireframes: how to ask the AI for layout help</h2>
-<p>A <strong>wireframe</strong> is not pretty — it is a constraint tool.</p>
-<p>You describe boxes: header, sidebar, main content, footer.</p>
-<p>This week shows using AI to turn a description into HTML skeleton.</p>
-<p>When prompting: specify grid/layout system (Flexbox, CSS grid, Bootstrap) or you’ll get random HTML.</p>
-<p>Be explicit about which elements repeat across pages (navbar, footer).</p>
+<ul>
+<li>A <strong>wireframe</strong> is not pretty — it is a constraint tool.</li>
+<li>You describe boxes: header, sidebar, main content, footer.</li>
+<li>This week shows using AI to turn a description into HTML skeleton.</li>
+<li>When prompting: specify grid/layout system (Flexbox, CSS grid, Bootstrap) or you’ll get random HTML.</li>
+<li>Be explicit about which elements repeat across pages (navbar, footer).</li>
+</ul>
 </section>
 <section id="responsive-design-basics-what-this-week-wants-you-to-learn" class="level2">
 <h2 class="anchored" data-anchor-id="responsive-design-basics-what-this-week-wants-you-to-learn">Responsive design basics (what this week wants you to learn)</h2>
-<p>This week’s promise: you can achieve modern UI behaviour without deep frontend knowledge.</p>
-<p>Responsive design usually means: a single codebase that adapts to screen width.</p>
-<p>Practical knobs: <code>max-width</code>, <code>min-width</code>, breakpoints, and flexible grids.</p>
-<p>AI is good at generating starter CSS, but you need to test in the browser.</p>
-<p>Common failure: the UI looks fine on desktop but unusable on mobile.</p>
+<ul>
+<li>This week’s promise: you can achieve modern UI behaviour without deep frontend knowledge.</li>
+<li>Responsive design usually means: a single codebase that adapts to screen width.</li>
+<li>Practical knobs: <code>max-width</code>, <code>min-width</code>, breakpoints, and flexible grids.</li>
+<li>AI is good at generating starter CSS, but you need to test in the browser.</li>
+<li>Common failure: the UI looks fine on desktop but unusable on mobile.</li>
+</ul>
 </section>
 <section id="jinja2-integration-ui-that-actually-connects-to-backend-data" class="level2">
 <h2 class="anchored" data-anchor-id="jinja2-integration-ui-that-actually-connects-to-backend-data">Jinja2 integration: UI that actually connects to backend data</h2>
-<p>Static HTML is easy. The challenge is making pages dynamic.</p>
-<p>This week expects you to connect templates to Flask route variables.</p>
-<p>In Jinja2 you often loop over data: quizzes, questions, or results.</p>
-<p>AI can generate the loop structure quickly, but you must match variable names to your actual Python.</p>
-<p>Always confirm: what does the route pass into the template?</p>
+<ul>
+<li>Static HTML is easy. The challenge is making pages dynamic.</li>
+<li>This week expects you to connect templates to Flask route variables.</li>
+<li>In Jinja2 you often loop over data: quizzes, questions, or results.</li>
+<li>AI can generate the loop structure quickly, but you must match variable names to your actual Python.</li>
+<li>Always confirm: what does the route pass into the template?</li>
+</ul>
 </section>
 <section id="building-components-avoiding-copy-paste-templates" class="level2">
 <h2 class="anchored" data-anchor-id="building-components-avoiding-copy-paste-templates">Building components: avoiding copy/paste templates</h2>
-<p>As your UI grows, duplication becomes the enemy.</p>
-<p>In Flask/Jinja, you can create a base template and extend it.</p>
-<p>This week’s workflow benefits from: a base layout, then child pages.</p>
-<p>AI can scaffold a <code>base.html</code> with blocks (<code>content</code>, <code>scripts</code>).</p>
-<p>Pitfall: students forget to keep blocks consistent and pages break silently.</p>
+<ul>
+<li>As your UI grows, duplication becomes the enemy.</li>
+<li>In Flask/Jinja, you can create a base template and extend it.</li>
+<li>This week’s workflow benefits from: a base layout, then child pages.</li>
+<li>AI can scaffold a <code>base.html</code> with blocks (<code>content</code>, <code>scripts</code>).</li>
+<li>Pitfall: students forget to keep blocks consistent and pages break silently.</li>
+</ul>
 </section>
 <section id="testing-ui-logic-lightweight-sanity-checks" class="level2">
 <h2 class="anchored" data-anchor-id="testing-ui-logic-lightweight-sanity-checks">Testing UI logic (lightweight sanity checks)</h2>
-<p>Week 07 is not a testing week, but UI work still needs verification.</p>
-<p>At minimum: confirm routes render, form submissions work, and nav links don’t 404.</p>
-<p>AI can help generate checklists for manual testing.</p>
-<p>If you have time, write a tiny smoke test using Flask’s test client.</p>
+<ul>
+<li>Week 07 is not a testing week, but UI work still needs verification.</li>
+<li>At minimum: confirm routes render, form submissions work, and nav links don’t 404.</li>
+<li>AI can help generate checklists for manual testing.</li>
+<li>If you have time, write a tiny smoke test using Flask’s test client.</li>
+</ul>
 </section>
 <section id="code-example-simple-jinja2-loop-for-quiz-list" class="level2">
 <h2 class="anchored" data-anchor-id="code-example-simple-jinja2-loop-for-quiz-list">Code example: simple Jinja2 loop for quiz list</h2>
@@ -799,16 +797,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Wireframes + flows keep AI output grounded.</li>
 <li>Flask templates + Jinja2 are the bridge between Python data and the UI.</li>
 <li>Responsive design is essential: test on multiple screen sizes early.</li>
-</ul>
-</section>
-<section id="quick-checklist-week-skills" class="level2">
-<h2 class="anchored" data-anchor-id="quick-checklist-week-skills">Quick checklist (week skills)</h2>
-<ul class="task-list">
-<li><label><input type="checkbox">I can write a “strategy prompt” before asking for UI code.</label></li>
-<li><label><input type="checkbox">I can list UI screens for a Flask app and map navigation between them.</label></li>
-<li><label><input type="checkbox">I can scaffold templates/static folders for a maintainable frontend.</label></li>
-<li><label><input type="checkbox">I can implement a base template + child templates with Jinja2 blocks.</label></li>
-<li><label><input type="checkbox">I can add basic responsive CSS and verify it in a browser.</label></li>
 </ul>
 
 

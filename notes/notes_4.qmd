@@ -1,5 +1,8 @@
 # Week 04 — Coding the first version of our application
 
+> "How can generative AI speed up the design process?"
+
+
 -   [Week focus](#week-focus)
 -   [From design to code: extracting requirements](#from-design-to-code-extracting-requirements)
 -   [Setting up your Python environment](#setting-up-your-python-environment)
@@ -10,6 +13,17 @@
 -   [Run, observe, iterate](#run-observe-iterate)
 -   [Common failure modes](#common-failure-modes)
 -   [Summing Up](#summing-up)
+-   [Appendix: check your understanding](#appendix-check-your-understanding)
+-   [Deep dive: mapping requirements to routes](#deep-dive-mapping-requirements-to-routes)
+-   [Deep dive: keeping state (for now)](#deep-dive-keeping-state-for-now)
+-   [Deep dive: debugging discipline](#deep-dive-debugging-discipline)
+-   [A worked walkthrough: turning an idea into a plan](#a-worked-walkthrough-turning-the-week-into-a-plan)
+-   [Setting up your Python environment (deeper notes)](#setting-up-your-python-environment-deeper-notes)
+-   [Laying out the application skeleton (deeper notes)](#laying-out-the-application-skeleton-deeper-notes)
+-   [Flask request lifecycle (what actually happens)](#flask-request-lifecycle-what-actually-happens)
+-   [Templates (expanded)](#templates-expanded)
+-   [Using AI tools without losing control](#using-ai-tools-without-losing-control)
+-   [Checklist](#checklist)
 
 ## Week focus {#week-focus}
 
@@ -18,17 +32,6 @@
 -   Key theme: you don’t need the *perfect* design before you start coding — but you do need a **clear first version**.
 -   We’re practising how to translate text descriptions into code artefacts: folders, files, functions, and routes.
 -   This week includes visual callouts/figures; we'll reference the key ones as we go.
-
-![](images/week_04/fig_01.png)
-
-### Micro-quotes from this week
-
--   "56 Building applications with AI assistance up project structure and create your first working application"
--   "Week 05 dives into advanced development techniques using tools such as Tabnine and BlackboxAI"
--   "Finally Week 06 focuses on building strong user interfaces and managing sessions with AI-generated code"
--   "I ve done this too"
--   "Taking time to plan an app s architecture leads to happy users and lower maintenance costs"
--   "How can generative AI speed up the design process"
 
 ## From design to code: extracting requirements {#from-design-to-code-extracting-requirements}
 
@@ -49,7 +52,7 @@
 
 -   Isolation matters because different projects need different versions of the same library (a common source of ‘works on my machine’ bugs).
 
--   In a first-year course, we care about this early because it teaches reproducibility and reduces setup friction later. \### Create and activate a venv
+-   We care about this early because it teaches reproducibility and reduces setup friction later. \### Create and activate a venv
 
 -   Create the environment in your project folder (name is conventional: `.venv`).
 
@@ -90,7 +93,7 @@ myapp/
 ```
 
 -   You can evolve this into a package layout (`myapp/__init__.py`) later. Start simple.
--   Keep `templates/` for HTML templates and `static/` for CSS/JS/images, matching Flask conventions. ![](images/week_04/fig_03.jpeg)
+-   Keep `templates/` for HTML templates and `static/` for CSS/JS/images, matching Flask conventions. 
 
 ## Your first Flask app: routes, requests, responses {#your-first-flask-app-routes-requests-responses}
 
@@ -157,7 +160,7 @@ def home():
 ```
 
 -   Jinja placeholders like `{{ title }}` are replaced at render time.
--   When you later add forms, you’ll pass user-submitted values into templates to show results. ![](images/week_04/fig_04.png)
+-   When you later add forms, you’ll pass user-submitted values into templates to show results. 
 
 ## Configuration, dependencies, and reproducibility {#configuration-dependencies-and-reproducibility}
 
@@ -190,23 +193,14 @@ flowchart TD
 ## Common failure modes {#common-failure-modes}
 
 -   **Venv not activated**: `pip install` went to global Python; Flask isn’t found when running.
-
 -   Wrong working directory: you run `python app.py` from a different folder and Flask can’t find `templates/`.
-
 -   Port already in use: another process is using 5000; you’ll see an ‘Address already in use’ message.
-
 -   Template errors: misspelt variable names in Jinja; look at the stack trace and the highlighted line.
-
 -   Import cycles when you split files too early: keep it simple until you understand module imports. \## Summing Up {#summing-up}
-
 -   Week 04 is about moving from idea to a runnable first version.
-
 -   You practised translating requirements into a project skeleton and basic routes.
-
 -   You set up a virtual environment, installed Flask, and captured dependencies for reproducibility.
-
 -   You learned the core web mental model: request → route → response, then grew it into templates.
-
 -   Next weeks build on this baseline by generating more code with AI tools and expanding the app's features.
 
 ## Appendix: check your understanding {#appendix-check-your-understanding}
@@ -239,7 +233,7 @@ flowchart TD
 -   Change one thing at a time; rerun; confirm the effect.
 -   Avoid random guessing — it’s slower than systematic diagnosis.
 
-## A worked walkthrough: turning the week into a plan {#a-worked-walkthrough-turning-the-week-into-a-plan}
+## A worked walkthrough: turning an idea into a plan {#a-worked-walkthrough-turning-the-week-into-a-plan}
 
 -   This week's core move is: **design artefacts → requirements → code skeleton**.
 
@@ -358,13 +352,6 @@ myapp/
     -   templates are rendered by Flask (HTML with placeholders)
     -   static files are served directly (CSS, images, JS)
 
-### Figure: Chapter 4 structure and setup visuals
-
-![](images/week_04/fig_01.png)
-
-![](images/week_04/fig_02.png)
-
--   Use these figures as reminders of the “shape” of a small web app.
 
 ## Flask request lifecycle (what actually happens) {#flask-request-lifecycle-what-actually-happens}
 
@@ -466,17 +453,7 @@ Return: the full updated app.py and new about.html
 
 -   This kind of prompt reduces “AI drift” (the model inventing extra features).
 
-## More micro-quotes from the chapter {#more-micro-quotes-from-the-chapter}
-
--   Here are a few short phrases from Chapter 4 that capture the intent:
-
-    -   "we’re diving headfirst into the wild world"
-    -   "building a useful application"
-    -   "integrating these tools into your workflow"
-
--   Use these as “north stars”: the goal is a *working workflow*, not perfect code.
-
-## Extended checklist for students {#extended-checklist-for-students}
+## Checklist {#checklist}
 
 -   Before you start coding:
 

@@ -115,10 +115,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <meta property="og:title" content="Real World AI">
-<meta property="og:image" content="https://SQ4014-2025.github.io/website/notes/images/week_04/fig_01.png">
+<meta property="og:image" content="https://SQ4014-2025.github.io/website/notes/images/week_04/fig_02.png">
 <meta property="og:site_name" content="Real World AI">
-<meta property="og:image:height" content="93">
-<meta property="og:image:width" content="93">
+<meta property="og:image:height" content="658">
+<meta property="og:image:width" content="1129">
 <meta name="twitter:title" content="Real World AI">
 <meta name="twitter:image" content="https://SQ4014-2025.github.io/website/notes/images/twitter-card.png">
 <meta name="twitter:creator" content="@EdHarris9000">
@@ -589,10 +589,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#week-04-coding-the-first-version-of-our-application" id="toc-week-04-coding-the-first-version-of-our-application" class="nav-link active" data-scroll-target="#week-04-coding-the-first-version-of-our-application">Week 04 — Coding the first version of our application</a>
   <ul class="collapse">
-  <li><a href="#week-focus" id="toc-week-focus" class="nav-link" data-scroll-target="#week-focus">Week focus</a>
-  <ul class="collapse">
-  <li><a href="#micro-quotes-from-this-week" id="toc-micro-quotes-from-this-week" class="nav-link" data-scroll-target="#micro-quotes-from-this-week">Micro-quotes from this week</a></li>
-  </ul></li>
+  <li><a href="#week-focus" id="toc-week-focus" class="nav-link" data-scroll-target="#week-focus">Week focus</a></li>
   <li><a href="#from-design-to-code-extracting-requirements" id="toc-from-design-to-code-extracting-requirements" class="nav-link" data-scroll-target="#from-design-to-code-extracting-requirements">From design to code: extracting requirements</a></li>
   <li><a href="#setting-up-your-python-environment" id="toc-setting-up-your-python-environment" class="nav-link" data-scroll-target="#setting-up-your-python-environment">Setting up your Python environment</a>
   <ul class="collapse">
@@ -610,7 +607,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#deep-dive-mapping-requirements-to-routes" id="toc-deep-dive-mapping-requirements-to-routes" class="nav-link" data-scroll-target="#deep-dive-mapping-requirements-to-routes">Deep dive: mapping requirements to routes</a></li>
   <li><a href="#deep-dive-keeping-state-for-now" id="toc-deep-dive-keeping-state-for-now" class="nav-link" data-scroll-target="#deep-dive-keeping-state-for-now">Deep dive: keeping state (for now)</a></li>
   <li><a href="#deep-dive-debugging-discipline" id="toc-deep-dive-debugging-discipline" class="nav-link" data-scroll-target="#deep-dive-debugging-discipline">Deep dive: debugging discipline</a></li>
-  <li><a href="#a-worked-walkthrough-turning-the-week-into-a-plan" id="toc-a-worked-walkthrough-turning-the-week-into-a-plan" class="nav-link" data-scroll-target="#a-worked-walkthrough-turning-the-week-into-a-plan">A worked walkthrough: turning the week into a plan</a>
+  <li><a href="#a-worked-walkthrough-turning-the-week-into-a-plan" id="toc-a-worked-walkthrough-turning-the-week-into-a-plan" class="nav-link" data-scroll-target="#a-worked-walkthrough-turning-the-week-into-a-plan">A worked walkthrough: turning an idea into a plan</a>
   <ul class="collapse">
   <li><a href="#example-extract-requirements-from-a-paragraph" id="toc-example-extract-requirements-from-a-paragraph" class="nav-link" data-scroll-target="#example-extract-requirements-from-a-paragraph">Example: extract requirements from a paragraph</a></li>
   </ul></li>
@@ -622,7 +619,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#laying-out-the-application-skeleton-deeper-notes" id="toc-laying-out-the-application-skeleton-deeper-notes" class="nav-link" data-scroll-target="#laying-out-the-application-skeleton-deeper-notes">Laying out the application skeleton (deeper notes)</a>
   <ul class="collapse">
   <li><a href="#a-typical-flask-project-layout" id="toc-a-typical-flask-project-layout" class="nav-link" data-scroll-target="#a-typical-flask-project-layout">A typical Flask project layout</a></li>
-  <li><a href="#figure-chapter-4-structure-and-setup-visuals" id="toc-figure-chapter-4-structure-and-setup-visuals" class="nav-link" data-scroll-target="#figure-chapter-4-structure-and-setup-visuals">Figure: Chapter 4 structure and setup visuals</a></li>
   </ul></li>
   <li><a href="#flask-request-lifecycle-what-actually-happens" id="toc-flask-request-lifecycle-what-actually-happens" class="nav-link" data-scroll-target="#flask-request-lifecycle-what-actually-happens">Flask request lifecycle (what actually happens)</a></li>
   <li><a href="#templates-expanded" id="toc-templates-expanded" class="nav-link" data-scroll-target="#templates-expanded">Templates (expanded)</a>
@@ -630,8 +626,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#minimal-jinja-template-example" id="toc-minimal-jinja-template-example" class="nav-link" data-scroll-target="#minimal-jinja-template-example">Minimal Jinja template example</a></li>
   </ul></li>
   <li><a href="#using-ai-tools-without-losing-control" id="toc-using-ai-tools-without-losing-control" class="nav-link" data-scroll-target="#using-ai-tools-without-losing-control">Using AI tools without losing control</a></li>
-  <li><a href="#more-micro-quotes-from-the-chapter" id="toc-more-micro-quotes-from-the-chapter" class="nav-link" data-scroll-target="#more-micro-quotes-from-the-chapter">More micro-quotes from the chapter</a></li>
-  <li><a href="#extended-checklist-for-students" id="toc-extended-checklist-for-students" class="nav-link" data-scroll-target="#extended-checklist-for-students">Extended checklist for students</a></li>
+  <li><a href="#checklist" id="toc-checklist" class="nav-link" data-scroll-target="#checklist">Checklist</a></li>
   <li><a href="#summing-up" id="toc-summing-up" class="nav-link" data-scroll-target="#summing-up">Summing Up</a></li>
   </ul></li>
   </ul>
@@ -646,6 +641,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="week-04-coding-the-first-version-of-our-application" class="level1">
 <h1>Week 04 — Coding the first version of our application</h1>
+<blockquote class="blockquote">
+<p>“How can generative AI speed up the design process?”</p>
+</blockquote>
 <ul>
 <li><a href="#week-focus">Week focus</a></li>
 <li><a href="#from-design-to-code-extracting-requirements">From design to code: extracting requirements</a></li>
@@ -657,6 +655,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="#run-observe-iterate">Run, observe, iterate</a></li>
 <li><a href="#common-failure-modes">Common failure modes</a></li>
 <li><a href="#summing-up">Summing Up</a></li>
+<li><a href="#appendix-check-your-understanding">Appendix: check your understanding</a></li>
+<li><a href="#deep-dive-mapping-requirements-to-routes">Deep dive: mapping requirements to routes</a></li>
+<li><a href="#deep-dive-keeping-state-for-now">Deep dive: keeping state (for now)</a></li>
+<li><a href="#deep-dive-debugging-discipline">Deep dive: debugging discipline</a></li>
+<li><a href="#a-worked-walkthrough-turning-the-week-into-a-plan">A worked walkthrough: turning an idea into a plan</a></li>
+<li><a href="#setting-up-your-python-environment-deeper-notes">Setting up your Python environment (deeper notes)</a></li>
+<li><a href="#laying-out-the-application-skeleton-deeper-notes">Laying out the application skeleton (deeper notes)</a></li>
+<li><a href="#flask-request-lifecycle-what-actually-happens">Flask request lifecycle (what actually happens)</a></li>
+<li><a href="#templates-expanded">Templates (expanded)</a></li>
+<li><a href="#using-ai-tools-without-losing-control">Using AI tools without losing control</a></li>
+<li><a href="#checklist">Checklist</a></li>
 </ul>
 <section id="week-focus" class="level2">
 <h2 class="anchored" data-anchor-id="week-focus">Week focus</h2>
@@ -667,18 +676,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>We’re practising how to translate text descriptions into code artefacts: folders, files, functions, and routes.</li>
 <li>This week includes visual callouts/figures; we’ll reference the key ones as we go.</li>
 </ul>
-<p><img src="images/week_04/fig_01.png" class="img-fluid"></p>
-<section id="micro-quotes-from-this-week" class="level3">
-<h3 class="anchored" data-anchor-id="micro-quotes-from-this-week">Micro-quotes from this week</h3>
-<ul>
-<li>“56 Building applications with AI assistance up project structure and create your first working application”</li>
-<li>“Week 05 dives into advanced development techniques using tools such as Tabnine and BlackboxAI”</li>
-<li>“Finally Week 06 focuses on building strong user interfaces and managing sessions with AI-generated code”</li>
-<li>“I ve done this too”</li>
-<li>“Taking time to plan an app s architecture leads to happy users and lower maintenance costs”</li>
-<li>“How can generative AI speed up the design process”</li>
-</ul>
-</section>
 </section>
 <section id="from-design-to-code-extracting-requirements" class="level2">
 <h2 class="anchored" data-anchor-id="from-design-to-code-extracting-requirements">From design to code: extracting requirements</h2>
@@ -700,7 +697,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li><p>Python projects should isolate libraries per project using a <strong>virtual environment</strong> (often abbreviated <em>venv</em>).</p></li>
 <li><p>Isolation matters because different projects need different versions of the same library (a common source of ‘works on my machine’ bugs).</p></li>
-<li><p>In a first-year course, we care about this early because it teaches reproducibility and reduces setup friction later. ### Create and activate a venv</p></li>
+<li><p>We care about this early because it teaches reproducibility and reduces setup friction later. ### Create and activate a venv</p></li>
 <li><p>Create the environment in your project folder (name is conventional: <code>.venv</code>).</p></li>
 <li><p>Activate it before installing packages so installs go into the venv, not your global Python.</p></li>
 </ul>
@@ -735,7 +732,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   README.md</code></pre>
 <ul>
 <li>You can evolve this into a package layout (<code>myapp/__init__.py</code>) later. Start simple.</li>
-<li>Keep <code>templates/</code> for HTML templates and <code>static/</code> for CSS/JS/images, matching Flask conventions. <img src="images/week_04/fig_03.jpeg" class="img-fluid"></li>
+<li>Keep <code>templates/</code> for HTML templates and <code>static/</code> for CSS/JS/images, matching Flask conventions.</li>
 </ul>
 </section>
 <section id="your-first-flask-app-routes-requests-responses" class="level2">
@@ -790,7 +787,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>Jinja placeholders like <code>{ title }</code> are replaced at render time.</li>
-<li>When you later add forms, you’ll pass user-submitted values into templates to show results. <img src="images/week_04/fig_04.png" class="img-fluid"></li>
+<li>When you later add forms, you’ll pass user-submitted values into templates to show results.</li>
 </ul>
 </section>
 </section>
@@ -834,16 +831,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="common-failure-modes" class="level2">
 <h2 class="anchored" data-anchor-id="common-failure-modes">Common failure modes</h2>
 <ul>
-<li><p><strong>Venv not activated</strong>: <code>pip install</code> went to global Python; Flask isn’t found when running.</p></li>
-<li><p>Wrong working directory: you run <code>python app.py</code> from a different folder and Flask can’t find <code>templates/</code>.</p></li>
-<li><p>Port already in use: another process is using 5000; you’ll see an ‘Address already in use’ message.</p></li>
-<li><p>Template errors: misspelt variable names in Jinja; look at the stack trace and the highlighted line.</p></li>
-<li><p>Import cycles when you split files too early: keep it simple until you understand module imports. ## Summing Up {#summing-up}</p></li>
-<li><p>Week 04 is about moving from idea to a runnable first version.</p></li>
-<li><p>You practised translating requirements into a project skeleton and basic routes.</p></li>
-<li><p>You set up a virtual environment, installed Flask, and captured dependencies for reproducibility.</p></li>
-<li><p>You learned the core web mental model: request → route → response, then grew it into templates.</p></li>
-<li><p>Next weeks build on this baseline by generating more code with AI tools and expanding the app’s features.</p></li>
+<li><strong>Venv not activated</strong>: <code>pip install</code> went to global Python; Flask isn’t found when running.</li>
+<li>Wrong working directory: you run <code>python app.py</code> from a different folder and Flask can’t find <code>templates/</code>.</li>
+<li>Port already in use: another process is using 5000; you’ll see an ‘Address already in use’ message.</li>
+<li>Template errors: misspelt variable names in Jinja; look at the stack trace and the highlighted line.</li>
+<li>Import cycles when you split files too early: keep it simple until you understand module imports. ## Summing Up {#summing-up}</li>
+<li>Week 04 is about moving from idea to a runnable first version.</li>
+<li>You practised translating requirements into a project skeleton and basic routes.</li>
+<li>You set up a virtual environment, installed Flask, and captured dependencies for reproducibility.</li>
+<li>You learned the core web mental model: request → route → response, then grew it into templates.</li>
+<li>Next weeks build on this baseline by generating more code with AI tools and expanding the app’s features.</li>
 </ul>
 </section>
 <section id="appendix-check-your-understanding" class="level2">
@@ -885,7 +882,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 </section>
 <section id="a-worked-walkthrough-turning-the-week-into-a-plan" class="level2">
-<h2 class="anchored" data-anchor-id="a-worked-walkthrough-turning-the-week-into-a-plan">A worked walkthrough: turning the week into a plan</h2>
+<h2 class="anchored" data-anchor-id="a-worked-walkthrough-turning-the-week-into-a-plan">A worked walkthrough: turning an idea into a plan</h2>
 <ul>
 <li><p>This week’s core move is: <strong>design artefacts → requirements → code skeleton</strong>.</p></li>
 <li><p>A useful mental model is to treat every paragraph of your design document as one of:</p>
@@ -1005,14 +1002,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 </ul>
 </section>
-<section id="figure-chapter-4-structure-and-setup-visuals" class="level3">
-<h3 class="anchored" data-anchor-id="figure-chapter-4-structure-and-setup-visuals">Figure: Chapter 4 structure and setup visuals</h3>
-<p><img src="images/week_04/fig_01.png" class="img-fluid"></p>
-<p><img src="images/week_04/fig_02.png" class="img-fluid"></p>
-<ul>
-<li>Use these figures as reminders of the “shape” of a small web app.</li>
-</ul>
-</section>
 </section>
 <section id="flask-request-lifecycle-what-actually-happens" class="level2">
 <h2 class="anchored" data-anchor-id="flask-request-lifecycle-what-actually-happens">Flask request lifecycle (what actually happens)</h2>
@@ -1112,20 +1101,8 @@ Return: the full updated app.py and new about.html</code></pre>
 <li>This kind of prompt reduces “AI drift” (the model inventing extra features).</li>
 </ul>
 </section>
-<section id="more-micro-quotes-from-the-chapter" class="level2">
-<h2 class="anchored" data-anchor-id="more-micro-quotes-from-the-chapter">More micro-quotes from the chapter</h2>
-<ul>
-<li><p>Here are a few short phrases from Chapter 4 that capture the intent:</p>
-<ul>
-<li>“we’re diving headfirst into the wild world”</li>
-<li>“building a useful application”</li>
-<li>“integrating these tools into your workflow”</li>
-</ul></li>
-<li><p>Use these as “north stars”: the goal is a <em>working workflow</em>, not perfect code.</p></li>
-</ul>
-</section>
-<section id="extended-checklist-for-students" class="level2">
-<h2 class="anchored" data-anchor-id="extended-checklist-for-students">Extended checklist for students</h2>
+<section id="checklist" class="level2">
+<h2 class="anchored" data-anchor-id="checklist">Checklist</h2>
 <ul>
 <li><p>Before you start coding:</p>
 <ul>

@@ -57,28 +57,28 @@ website:
         text: FAQ
       - href: module-project.qmd
         text: Final Project
-      - section: "Lectures"
+      - section: "Readings"
         contents:
-          - href: lectures/slides_0.pptx
-            text: "Lecture 00 🤖"
-          - href: lectures/slides_1.pptx
-            text: "Lecture 01 🤖"
-          - href: lectures/slides_2.pptx
-            text: "Lecture 02 🤖"
-          - href: lectures/slides_3.pptx
-            text: "Lecture 03 🤖"
-          - href: lectures/slides_4.pptx
-            text: "Lecture 04 🤖"
-          - href: lectures/slides_5.pptx
-            text: "Lecture 05 🤖"
-          - href: lectures/slides_6.pptx
-            text: "Lecture 06 🤖"
-          - href: lectures/slides_7.pptx
-            text: "Lecture 07 🤖"
-          - href: lectures/slides_8.pptx
-            text: "Lecture 08 🤖"
-          - href: lectures/slides_9.pptx
-            text: "Lecture 09 🤖"
+          - href: book/Chapter_1.pdf
+            text: "Chapter 01 📒"
+          - href: book/Chapter_2.pdf
+            text: "Chapter 02 📒"
+          - href: book/Chapter_3.pdf
+            text: "Chapter 03 📒"
+          - href: book/Chapter_4.pdf
+            text: "Chapter 04 📒"
+          - href: book/Chapter_5.pdf
+            text: "Chapter 05 📒"
+          - href: book/Chapter_6.pdf
+            text: "Chapter 06 📒"
+          - href: book/Chapter_7.pdf
+            text: "Chapter 07 📒"
+          - href: book/Chapter_8.pdf
+            text: "Chapter 08 📒"
+          - href: book/Chapter_9.pdf
+            text: "Chapter 09 📒"
+          - href: book/Chapter_10.pdf
+            text: "Chapter 10 📒"
       - section: "Notes"
         contents:
           - href: notes/notes_1.qmd
@@ -101,28 +101,6 @@ website:
             text: "Notes 09 🤖"
           - href: notes/notes_10.qmd
             text: "Notes 10 🤖"
-      - section: "Code"
-        contents:
-          - href: https://github.com/SQ4011-2025/website/tree/master/code/src0
-            text: "Code 00 🤖"
-          - href: https://github.com/SQ4011-2025/website/tree/master/code/src1
-            text: "Code 01 🤖"
-          - href: https://github.com/SQ4011-2025/website/tree/master/code/src2
-            text: "Code 02 🤖"
-          - href: https://github.com/SQ4011-2025/website/tree/master/code/src3
-            text: "Code 03 🤖"
-          - href: https://github.com/SQ4011-2025/website/tree/master/code/src4
-            text: "Code 04 🤖"
-          - href: https://github.com/SQ4011-2025/website/tree/master/code/src5
-            text: "Code 05 🤖"
-          - href: https://github.com/SQ4011-2025/website/tree/master/code/src6
-            text: "Code 06 🤖"
-          - href: https://github.com/SQ4011-2025/website/tree/master/code/src7
-            text: "Code 07 🤖"
-          - href: https://github.com/SQ4011-2025/website/tree/master/code/src8
-            text: "Code 08 🤖"
-          - href: https://github.com/SQ4011-2025/website/tree/master/code/src9
-            text: "Code 09 🤖"
 format:
   html:
     theme:

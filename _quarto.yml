@@ -82,25 +82,25 @@ website:
       - section: "Notes"
         contents:
           - href: notes/notes_1.qmd
-            text: "Notes 01 🤖"
+            text: "Notes 01 📕"
           - href: notes/notes_2.qmd
-            text: "Notes 02 🤖"
+            text: "Notes 02 📕"
           - href: notes/notes_3.qmd
-            text: "Notes 03 🤖"
+            text: "Notes 03 📕"
           - href: notes/notes_4.qmd
-            text: "Notes 04 🤖"
+            text: "Notes 04 📕"
           - href: notes/notes_5.qmd
-            text: "Notes 05 🤖"
+            text: "Notes 05 📕"
           - href: notes/notes_6.qmd
-            text: "Notes 06 🤖"
+            text: "Notes 06 📕"
           - href: notes/notes_7.qmd
-            text: "Notes 07 🤖"
+            text: "Notes 07 📕"
           - href: notes/notes_8.qmd
-            text: "Notes 08 🤖"
+            text: "Notes 08 📕"
           - href: notes/notes_9.qmd
-            text: "Notes 09 🤖"
+            text: "Notes 09 📕"
           - href: notes/notes_10.qmd
-            text: "Notes 10 🤖"
+            text: "Notes 10 📕"
 format:
   html:
     theme:

@@ -2,26 +2,28 @@
 
 > **Week focus:** turning vague intent into reliable, testable prompt instructions.
 
-## Contents
 
--   [1. Why prompting is a design skill](#1-why-prompting-is-a-design-skill)
--   [2. Prompt anatomy](#2-prompt-anatomy)
--   [3. From vague to specific](#3-from-vague-to-specific)
--   [4. Constraints, rubrics, and acceptance tests](#4-constraints-rubrics-and-acceptance-tests)
--   [5. Few-shot examples](#5-few-shot-examples)
--   [6. Output formats that don’t break](#6-output-formats-that-dont-break)
--   [7. Iteration loop](#7-iteration-loop)
--   [8. Failure modes + debugging prompts](#8-failure-modes--debugging-prompts)
--   [9. Prompt patterns you can reuse](#9-prompt-patterns-you-can-reuse)
--   [10. Summary](#10-summary)
+-   [Contents](#contents)
+-   [Figures used in this week](#figures-used-in-this-week)
+-   [Why prompting is a design skill](#why-prompting-is-a-design-skill)
+-   [Prompt anatomy](#prompt-anatomy)
+-   [From vague to specific](#from-vague-to-specific)
+-   [Constraints, rubrics, and acceptance tests](#constraints-rubrics-and-acceptance-tests)
+-   [Few-shot examples](#few-shot-examples)
+-   [Output formats that don't break](#output-formats-that-dont-break)
+-   [Iteration loop](#iteration-loop)
+-   [Failure modes + debugging prompts](#failure-modes-debugging-prompts)
+-   [Prompt patterns you can reuse](#prompt-patterns-you-can-reuse)
+-   [Summing Up](#summing-up)
+-   [Appendix A — Worked walkthrough: building a prompt step by step](#appendix-a-worked-walkthrough-building-a-prompt-step-by-step)
 
-## Figures used in this week
+## Contents {#contents}
+
+## Figures used in this week {#figures-used-in-this-week}
 
 ![](images/week_03/fig_01.png){fig-alt="Figure from Week 03" width="85%"} ![](images/week_03/fig_02.png){fig-alt="Figure from Week 03" width="85%"}
 
-------------------------------------------------------------------------
-
-## 1. Why prompting is a design skill
+## Why prompting is a design skill {#why-prompting-is-a-design-skill}
 
 Prompting is not “asking nicely”. In the real world, you use prompts to **specify behaviour** under constraints:
 
@@ -41,9 +43,7 @@ A useful mindset: a prompt is closer to a **function signature** than a conversa
 1)  **Explain the task** (what success looks like)
 2)  **Constrain the output** (how the response must be shaped)
 
-------------------------------------------------------------------------
-
-## 2. Prompt anatomy
+## Prompt anatomy {#prompt-anatomy}
 
 A practical prompt usually contains these parts (not always in this order):
 
@@ -82,9 +82,7 @@ Explain SQL joins to beginners using:
 Output as markdown with headings and a final summary.
 ```
 
-------------------------------------------------------------------------
-
-## 3. From vague to specific
+## From vague to specific {#from-vague-to-specific}
 
 Most student prompts fail because they skip **specification**. You can convert vague intent into a usable prompt by answering:
 
@@ -117,9 +115,7 @@ You are a Python tutor. I will paste code and an error message.
 Keep changes minimal.
 ```
 
-------------------------------------------------------------------------
-
-## 4. Constraints, rubrics, and acceptance tests
+## Constraints, rubrics, and acceptance tests {#constraints-rubrics-and-acceptance-tests}
 
 If you want outputs you can trust, you need a **quality gate**. This can be:
 
@@ -142,9 +138,7 @@ sample = "This answer covers INNER JOIN, LEFT JOIN and FULL JOIN."
 print(contains_required_phrases(sample, ["INNER JOIN", "LEFT JOIN", "FULL JOIN"]))
 ```
 
-------------------------------------------------------------------------
-
-## 5. Few-shot examples
+## Few-shot examples {#few-shot-examples}
 
 **Few-shot prompting** is when you show the model examples of the behaviour you want. This is especially powerful when you want consistent style or formatting.
 
@@ -179,9 +173,7 @@ Common mistake: Confusing with INNER JOIN.
 Now do the same for: "FULL JOIN keeps all rows from both"
 ```
 
-------------------------------------------------------------------------
-
-## 6. Output formats that don’t break
+## Output formats that don't break {#output-formats-that-dont-break}
 
 In real workflows, AI output often becomes input to something else: - a script - a web app - a report - a database
 
@@ -204,9 +196,7 @@ data = json.loads(raw)
 print(data["title"], data["points"])
 ```
 
-------------------------------------------------------------------------
-
-## 7. Iteration loop
+## Iteration loop {#iteration-loop}
 
 Prompting is iterative. A common loop is:
 
@@ -231,9 +221,7 @@ for i, p in enumerate([PROMPT_V1, PROMPT_V2, PROMPT_V3], start=1):
     print(f"v{i}: {p}")
 ```
 
-------------------------------------------------------------------------
-
-## 8. Failure modes + debugging prompts
+## Failure modes + debugging prompts {#failure-modes-debugging-prompts}
 
 Common failure modes in early prompting:
 
@@ -252,9 +240,7 @@ Explain why it failed and produce a corrected version.
 Then provide a checklist to prevent the same failure next time.
 ```
 
-------------------------------------------------------------------------
-
-## 9. Prompt patterns you can reuse
+## Prompt patterns you can reuse {#prompt-patterns-you-can-reuse}
 
 Below are reusable patterns you can copy into real work.
 
@@ -280,9 +266,7 @@ Give 3 options. For each, include: benefits, drawbacks, best use-case.
 Finish with a recommendation for a beginner.
 ```
 
-------------------------------------------------------------------------
-
-## 10. Summary
+## Summing Up {#summing-up}
 
 -   Prompting is best treated as **specification** and **design**.
 -   Good prompts include constraints, a format, and a quality gate.
@@ -290,9 +274,7 @@ Finish with a recommendation for a beginner.
 -   Iteration is normal: test, debug, refine.
 -   Outputs should be structured so they can be verified and reused.
 
-------------------------------------------------------------------------
-
-## Appendix A — Worked walkthrough: building a prompt step by step
+## Appendix A — Worked walkthrough: building a prompt step by step {#appendix-a-worked-walkthrough-building-a-prompt-step-by-step}
 
 ### Step 1: Start vague
 

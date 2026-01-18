@@ -2,20 +2,35 @@
 
 > **Core idea:** Prompt engineering is *interface design* for AI tools. You are not "asking a question" — you are specifying an input contract (context + constraints + success criteria) so the output is testable.
 
-## Week map (what we're actually learning)
+
+-   [Week map (what we're actually learning)](#week-map-what-were-actually-learning)
+-   [Micro-quotes from this week (short + placed where relevant)](#micro-quotes-from-this-week-short--placed-where-relevant)
+-   [Key terms (bold on first use)](#key-terms-bold-on-first-use)
+-   [Figures used in these notes (≈10 max, placed where they matter)](#figures-used-in-these-notes-10-max-placed-where-they-matter)
+-   [Understanding prompt engineering](#understanding-prompt-engineering)
+-   [Anatomy of a prompt](#anatomy-of-a-prompt)
+-   [Crafting the ultimate prompt](#crafting-the-ultimate-prompt)
+-   [Fundamental prompt types](#fundamental-prompt-types)
+-   [Advanced prompt types](#advanced-prompt-types)
+-   [Prompt techniques for programmers](#prompt-techniques-for-programmers)
+-   [Worked examples (week-aligned)](#worked-examples-week-aligned)
+-   [Pitfalls and anti-patterns](#pitfalls-and-anti-patterns)
+-   [Summing Up](#summing-up)
+-   [Quick self-check (5 minutes)](#quick-self-check-5-minutes)
+-   [Verification report (Week 9)](#verification-report-week-9)
+
+## Week map (what we're actually learning) {#week-map-what-were-actually-learning}
 
 This week builds a practical toolkit for getting reliable work out of coding assistants.
 
--   **9.1 Understanding prompt engineering**: why prompts fail, and what “better prompts” look like
--   **9.2 Anatomy of a prompt**: context, instructions, examples, and expected format
--   **9.3 Crafting the ultimate prompt**: using the model to improve your own prompts
--   **9.4 Fundamental prompt types**: zero-shot, few-shot, open-ended, constrained, structured
--   **9.5 Advanced prompt types**: chain-of-thought, recursive prompting, context manipulation, refinement, output control
--   **9.6 Prompt techniques for programmers**: how this becomes a daily workflow habit
+-   **Understanding prompt engineering**: why prompts fail, and what "better prompts" look like
+-   **Anatomy of a prompt**: context, instructions, examples, and expected format
+-   **Crafting the ultimate prompt**: using the model to improve your own prompts
+-   **Fundamental prompt types**: zero-shot, few-shot, open-ended, constrained, structured
+-   **Advanced prompt types**: chain-of-thought, recursive prompting, context manipulation, refinement, output control
+-   **Prompt techniques for programmers**: how this becomes a daily workflow habit
 
-------------------------------------------------------------------------
-
-## Micro-quotes from this week (short + placed where relevant)
+## Micro-quotes from this week (short + placed where relevant) {#micro-quotes-from-this-week-short--placed-where-relevant}
 
 > "Instead of getting generic responses, strong prompts can greatly enhance the quality, accuracy, and usefulness of AI-generated code and documents."
 
@@ -33,9 +48,7 @@ This week builds a practical toolkit for getting reliable work out of coding ass
 
 > "These types of prompts limit the scope of the model’s response."
 
-------------------------------------------------------------------------
-
-## Key terms (bold on first use)
+## Key terms (bold on first use) {#key-terms-bold-on-first-use}
 
 -   **prompt**: the input you send the model; in practice it’s a *specification* of what you want.
 -   **context**: background info the model needs to interpret the task (code, data shape, constraints).
@@ -44,15 +57,11 @@ This week builds a practical toolkit for getting reliable work out of coding ass
 -   **structured prompt**: a prompt that forces the output into a predictable structure (JSON, table, sections).
 -   **output control**: techniques that reduce randomness by restricting response shape.
 
-------------------------------------------------------------------------
-
-## Figures used in these notes (≈10 max, placed where they matter)
+## Figures used in these notes (≈10 max, placed where they matter) {#figures-used-in-these-notes-10-max-placed-where-they-matter}
 
 > These images were extracted from the Week 09 PDF and are used inline below.
 
-------------------------------------------------------------------------
-
-## 9.1 Understanding prompt engineering
+## Understanding prompt engineering {#understanding-prompt-engineering}
 
 Prompt engineering is not “tricking” the model. It’s about **reducing ambiguity**.
 
@@ -89,9 +98,7 @@ Instead, you want a prompt that provides:
 -   what you already tried
 -   how you want the answer returned
 
-------------------------------------------------------------------------
-
-## 9.2 Anatomy of a prompt
+## Anatomy of a prompt {#anatomy-of-a-prompt}
 
 A good prompt is a **communication bundle**.
 
@@ -154,9 +161,7 @@ So you specify:
 -   “return only Python code”
 -   “return a markdown checklist”
 
-------------------------------------------------------------------------
-
-## 9.3 Crafting the ultimate prompt
+## Crafting the ultimate prompt {#crafting-the-ultimate-prompt}
 
 This section introduces a powerful move:
 
@@ -201,9 +206,7 @@ What you’re doing:
 -   turning fuzzy intent into a structured request
 -   forcing the model to ask missing questions
 
-------------------------------------------------------------------------
-
-## 9.4 Fundamental prompt types
+## Fundamental prompt types {#fundamental-prompt-types}
 
 This week introduces several “prompt families”.
 
@@ -327,9 +330,7 @@ Task: Propose refactor changes for a small Python script.
 print(structured)
 ```
 
-------------------------------------------------------------------------
-
-## 9.5 Advanced prompt types
+## Advanced prompt types {#advanced-prompt-types}
 
 These techniques are about increasing reliability.
 
@@ -391,9 +392,7 @@ This is key when you need:
 -   commit messages
 -   structured change requests
 
-------------------------------------------------------------------------
-
-## 9.6 Prompt techniques for programmers
+## Prompt techniques for programmers {#prompt-techniques-for-programmers}
 
 This part is where this week becomes “real world”.
 
@@ -438,9 +437,7 @@ Why this works:
 
 ![](images/week_09/fig_07.png)
 
-------------------------------------------------------------------------
-
-## Worked examples (week-aligned)
+## Worked examples (week-aligned) {#worked-examples-week-aligned}
 
 ### Example A: Debugging with context + constraints
 
@@ -474,9 +471,7 @@ Strong prompts include:
 
 ![](images/week_09/fig_09.png)
 
-------------------------------------------------------------------------
-
-## Pitfalls and anti-patterns
+## Pitfalls and anti-patterns {#pitfalls-and-anti-patterns}
 
 ### 1) Assuming the model “knows what you mean”
 
@@ -503,9 +498,7 @@ Use:
 
 ![](images/week_09/fig_10.png)
 
-------------------------------------------------------------------------
-
-## Summary: what you should actually remember
+## Summing Up {#summing-up}
 
 -   Prompts are **specs**, not questions
 -   Context prevents guessing
@@ -514,18 +507,14 @@ Use:
 -   Output control makes responses testable
 -   Iteration is normal — treat it like debugging
 
-------------------------------------------------------------------------
-
-## Quick self-check (5 minutes)
+## Quick self-check (5 minutes) {#quick-self-check-5-minutes}
 
 1.  Rewrite a bad prompt into a structured prompt.
 2.  Add one constraint that prevents security issues.
 3.  Add an output format that makes the result testable.
 4.  Add one example to enforce consistent style.
 
-------------------------------------------------------------------------
-
-## Verification report (Week 9)
+## Verification report (Week 9) {#verification-report-week-9}
 
 -   line count: 507
 -   number of code blocks: 7

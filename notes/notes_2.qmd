@@ -2,7 +2,20 @@
 
 > Micro-quote (Ch2): "Imagine having an intelligent assistant that helps you with coding."
 
-## Week focus
+
+-   [Week focus](#week-focus)
+-   [What is GitHub Copilot?](#what-is-github-copilot)
+-   [How GitHub Copilot works](#how-github-copilot-works)
+-   [Interacting with GitHub Copilot](#interacting-with-github-copilot)
+-   [Common patterns](#common-patterns)
+-   [Context is everything](#context-is-everything)
+-   [What is NLP?](#what-is-nlp)
+-   [A simple Python project](#a-simple-python-project)
+-   [Images from Week 02](#images-from-week-02)
+-   [Summing Up](#summing-up)
+-   [Verification report (Week 02)](#verification-report-week-02)
+
+## Week focus {#week-focus}
 
 This week is your practical starting point: **using an AI coding assistant while you write real code**. This week uses **GitHub Copilot** as the main example and builds up three big ideas:
 
@@ -28,9 +41,7 @@ By the end of Week 2, students should be able to:
 -   Control **context** by isolating files, adding examples, and writing better docstrings
 -   Build a small Python script that is correct, testable, and easy to extend
 
-------------------------------------------------------------------------
-
-## 2.1 What is GitHub Copilot?
+## What is GitHub Copilot? {#what-is-github-copilot}
 
 > Micro-quote (Ch2): "Do you remember the “rubber duck” debugging method?"
 
@@ -82,9 +93,7 @@ The UX matters because the tool “feels” different depending on editor:
 -   chat can appear in a sidebar
 -   suggestions can appear as full blocks
 
-------------------------------------------------------------------------
-
-## 2.1.1 How GitHub Copilot works
+## How GitHub Copilot works {#how-github-copilot-works}
 
 > Micro-quote (Ch2): "GitHub Copilot is trained on public source code."
 
@@ -127,9 +136,7 @@ flowchart LR
 
 If your editor context is poor (no clear requirements, no types, no examples), output quality drops.
 
-------------------------------------------------------------------------
-
-## 2.1.2 Interacting with GitHub Copilot
+## Interacting with GitHub Copilot {#interacting-with-github-copilot}
 
 This week highlights multiple interaction modes. You should deliberately choose the mode that fits the task.
 
@@ -202,9 +209,7 @@ def normalize_text(s: str) -> str:
 
 Even if Copilot isn’t available, this is *good engineering*: it communicates intent to humans too.
 
-------------------------------------------------------------------------
-
-## 2.2 Common patterns
+## Common patterns {#common-patterns}
 
 This is where this week becomes highly practical. The goal is to build a toolbox of repeatable patterns rather than "asking AI to code the whole thing".
 
@@ -270,9 +275,7 @@ This reduces:
 -   hidden complexity
 -   magic one-liners that students can’t read
 
-------------------------------------------------------------------------
-
-## 2.3 Context is everything
+## Context is everything {#context-is-everything}
 
 This is one of the most important ideas in the early weeks.
 
@@ -315,9 +318,7 @@ If your code is clean:
 
 Copilot will often “lock on” and become extremely productive.
 
-------------------------------------------------------------------------
-
-## 2.4 What is NLP?
+## What is NLP? {#what-is-nlp}
 
 This week includes a section on **Natural Language Processing (NLP)** to support the mini project.
 
@@ -346,9 +347,7 @@ In real world AI coding:
 -   steps 1–4 are easy to automate
 -   step 5 is where humans add meaning
 
-------------------------------------------------------------------------
-
-## 2.5 A simple Python project
+## A simple Python project {#a-simple-python-project}
 
 This week includes a mini Python project to practice working with Copilot. It analyses **word frequency** in a text.
 
@@ -493,9 +492,7 @@ Students should learn the ordering:
 2)  readable
 3)  only then faster
 
-------------------------------------------------------------------------
-
-## Images from Week 02
+## Images from Week 02 {#images-from-week-02}
 
 Below are extracted figures from the week 02 materials.
 
@@ -505,9 +502,7 @@ Below are extracted figures from the week 02 materials.
 
 ![](%7Bimg_rel%7D/fig_03.png)
 
-------------------------------------------------------------------------
-
-## Summary and takeaways
+## Summing Up {#summing-up}
 
 ### The core lesson
 
@@ -529,9 +524,7 @@ Below are extracted figures from the week 02 materials.
 -   Did I ask for tests?
 -   Did I verify results on real inputs?
 
-------------------------------------------------------------------------
-
-## Verification report (Week 02)
+## Verification report (Week 02) {#verification-report-week-02}
 
 -   Line count: 546
 -   Code blocks: 10

@@ -14,7 +14,7 @@
 -   [Creating code for the test session](#creating-code-for-the-test-session)
 -   [Generating a question set](#generating-a-question-set)
 -   [Verifying our test session was created](#verifying-our-test-session-was-created)
--   [Conclusion](#conclusion)
+-   [Summing Up](#summing-up)
 -   [Figures extracted from Week 05](#figures-extracted-from-week-05)
 
 ## Using Blackbox AI to generate base code {#using-blackbox-ai-to-generate-base-code}
@@ -235,7 +235,7 @@ with sqlite3.connect(DB_PATH) as conn:
 print({"question_sets": qs, "test_sessions": ts})
 ```
 
-## Conclusion {#conclusion}
+## Summing Up {#summing-up}
 
 -   This week is a case study in using **Blackbox AI** for speed while still enforcing architecture.
 -   The most important engineering idea is **separation of concerns**: routes orchestrate, domain logic decides, data layer persists.

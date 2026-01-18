@@ -1,8 +1,26 @@
 # Week 07 — Building user interfaces with ChatGPT
 
-> **Micro-quotes:** "Even seasoned developers can find UI design tough, and generative AI tools help tremendously." "AI tools provide a big boost for developers who aren’t great at UI." "First, we need to build a great prompt for this." "7.1 Getting our strategy from our AI tools Before we approach these tools, we should think carefully about our prompt." "If we say “generate a frontend for my application” without enough information, the guidance will be too vague." "There is a time and a place for brief prompts."
+> **Micro-quotes:** "Even seasoned developers can find UI design tough, and generative AI tools help tremendously." "AI tools provide a big boost for developers who aren't great at UI." "First, we need to build a great prompt for this." "7.1 Getting our strategy from our AI tools Before we approach these tools, we should think carefully about our prompt." "If we say "generate a frontend for my application" without enough information, the guidance will be too vague." "There is a time and a place for brief prompts."
 
-## What this week is doing (big picture)
+
+-   [What this week is doing (big picture)](#what-this-week-is-doing-big-picture)
+-   [Key terms (bolded the first time)](#key-terms-bolded-the-first-time)
+-   [Figures extracted from the PDF](#figures-extracted-from-the-pdf)
+-   [Getting our strategy from our AI tools](#getting-our-strategy-from-our-ai-tools)
+-   [Worked example: prompting for a UI plan (Quarto runnable code)](#worked-example-prompting-for-a-ui-plan-quarto-runnable-code)
+-   [From flows to pages: what screens does the user need?](#from-flows-to-pages-what-screens-does-the-user-need)
+-   [Translating requirements into template structure](#translating-requirements-into-template-structure)
+-   [Wireframes: how to ask the AI for layout help](#wireframes-how-to-ask-the-ai-for-layout-help)
+-   [Responsive design basics (what this week wants you to learn)](#responsive-design-basics-what-this-week-wants-you-to-learn)
+-   [Jinja2 integration: UI that actually connects to backend data](#jinja2-integration-ui-that-actually-connects-to-backend-data)
+-   [Building components: avoiding copy/paste templates](#building-components-avoiding-copy-paste-templates)
+-   [Testing UI logic (lightweight sanity checks)](#testing-ui-logic-lightweight-sanity-checks)
+-   [Code example: simple Jinja2 loop for quiz list](#code-example-simple-jinja2-loop-for-quiz-list)
+-   [Code example: minimal responsive CSS skeleton](#code-example-minimal-responsive-css-skeleton)
+-   [Summing Up](#summing-up)
+-   [Quick checklist (week skills)](#quick-checklist-week-skills)
+
+## What this week is doing (big picture) {#what-this-week-is-doing-big-picture}
 
 This week switches focus from **backend logic** to the part users actually *touch*: the **user interface (UI)**. The aim is to use chat-based generative AI (especially ChatGPT) as a *pair designer + pair developer* to:
 
@@ -13,7 +31,7 @@ This week switches focus from **backend logic** to the part users actually *touc
 
 This week is very *workflow heavy*: it is less "what is a transformer?" and more "how do we get from backend routes to a usable application screen?"
 
-## Key terms (bolded the first time)
+## Key terms (bolded the first time) {#key-terms-bolded-the-first-time}
 
 We will use these week-specific ideas repeatedly:
 
@@ -23,7 +41,7 @@ We will use these week-specific ideas repeatedly:
 -   **Responsive design** — designing pages so they work on different screen sizes (mobile, tablet, desktop).
 -   **Prompt scaffolding** — structuring a prompt into sections (objective, constraints, inputs, outputs) so the AI returns usable results.
 
-## Figures extracted from the PDF
+## Figures extracted from the PDF {#figures-extracted-from-the-pdf}
 
 These are images embedded in the PDF pages for Week 07. Not all are equally useful (some are icons/background elements), but they are extracted and downloadable.
 
@@ -39,7 +57,7 @@ These are images embedded in the PDF pages for Week 07. Not all are equally usef
 
 ![](images/week_07/fig_06.png){fig-alt="Week 07 extracted figure 6"}
 
-## 7.1 Getting our strategy from our AI tools
+## Getting our strategy from our AI tools {#getting-our-strategy-from-our-ai-tools}
 
 A key idea early in this week: do **strategy first**, then **code second**. The point is that you can waste a lot of time prompting for code before you have agreed what the UI is supposed to *do* and *feel like*.
 
@@ -61,7 +79,7 @@ This week demonstrates writing a prompt with explicit blocks:
 
 > "If we say "generate a frontend for my application" without enough information, the guidance will be too vague."
 
-## Worked example: prompting for a UI plan (Quarto runnable code)
+## Worked example: prompting for a UI plan (Quarto runnable code) {#worked-example-prompting-for-a-ui-plan-quarto-runnable-code}
 
 Below is a “prompt builder” approach: you store prompt sections as strings and assemble them. This makes prompts easier to iterate and reuse.
 
@@ -80,7 +98,7 @@ prompt = "
 print(prompt)
 ```
 
-## 7.2 From flows to pages: what screens does the user need?
+## From flows to pages: what screens does the user need? {#from-flows-to-pages-what-screens-does-the-user-need}
 
 This week frames UI work as a **user journey**: what does the user do first, next, and last?
 
@@ -90,7 +108,7 @@ Once screens exist, you map navigation: where can the user go from each screen?
 
 This is where AI is helpful: it can suggest missing pages (e.g., error states, empty-state screens).
 
-## 7.3 Translating requirements into template structure
+## Translating requirements into template structure {#translating-requirements-into-template-structure}
 
 This week emphasises organising your project so templates don’t become a mess.
 
@@ -102,7 +120,7 @@ AI can draft a sensible baseline structure, but *you* must keep it consistent.
 
 If your templates are inconsistent (different nav bars per page), your UI will feel broken.
 
-## 7.4 Wireframes: how to ask the AI for layout help
+## Wireframes: how to ask the AI for layout help {#wireframes-how-to-ask-the-ai-for-layout-help}
 
 A **wireframe** is not pretty — it is a constraint tool.
 
@@ -114,7 +132,7 @@ When prompting: specify grid/layout system (Flexbox, CSS grid, Bootstrap) or you
 
 Be explicit about which elements repeat across pages (navbar, footer).
 
-## 7.5 Responsive design basics (what this week wants you to learn)
+## Responsive design basics (what this week wants you to learn) {#responsive-design-basics-what-this-week-wants-you-to-learn}
 
 This week's promise: you can achieve modern UI behaviour without deep frontend knowledge.
 
@@ -126,7 +144,7 @@ AI is good at generating starter CSS, but you need to test in the browser.
 
 Common failure: the UI looks fine on desktop but unusable on mobile.
 
-## 7.6 Jinja2 integration: UI that actually connects to backend data
+## Jinja2 integration: UI that actually connects to backend data {#jinja2-integration-ui-that-actually-connects-to-backend-data}
 
 Static HTML is easy. The challenge is making pages dynamic.
 
@@ -138,7 +156,7 @@ AI can generate the loop structure quickly, but you must match variable names to
 
 Always confirm: what does the route pass into the template?
 
-## 7.7 Building components: avoiding copy/paste templates
+## Building components: avoiding copy/paste templates {#building-components-avoiding-copy-paste-templates}
 
 As your UI grows, duplication becomes the enemy.
 
@@ -150,7 +168,7 @@ AI can scaffold a `base.html` with blocks (`content`, `scripts`).
 
 Pitfall: students forget to keep blocks consistent and pages break silently.
 
-## 7.8 Testing UI logic (lightweight sanity checks)
+## Testing UI logic (lightweight sanity checks) {#testing-ui-logic-lightweight-sanity-checks}
 
 Week 07 is not a testing week, but UI work still needs verification.
 
@@ -160,7 +178,7 @@ AI can help generate checklists for manual testing.
 
 If you have time, write a tiny smoke test using Flask’s test client.
 
-## Code example: simple Jinja2 loop for quiz list
+## Code example: simple Jinja2 loop for quiz list {#code-example-simple-jinja2-loop-for-quiz-list}
 
 This matches this week's theme of converting backend data into pages.
 
@@ -176,7 +194,7 @@ This matches this week's theme of converting backend data into pages.
 {% endblock %}
 ```
 
-## Code example: minimal responsive CSS skeleton
+## Code example: minimal responsive CSS skeleton {#code-example-minimal-responsive-css-skeleton}
 
 ```css
 body { max-width: 960px; margin: 0 auto; padding: 1rem; }
@@ -187,7 +205,7 @@ nav a { margin-right: 1rem; }
 }
 ```
 
-## Summing up
+## Summing Up {#summing-up}
 
 -   Week 07 uses ChatGPT to move from “backend works” to “users can actually use it”.
 -   The skill is not magic HTML generation: it’s **prompt scaffolding** + iteration.
@@ -195,7 +213,7 @@ nav a { margin-right: 1rem; }
 -   Flask templates + Jinja2 are the bridge between Python data and the UI.
 -   Responsive design is essential: test on multiple screen sizes early.
 
-## Quick checklist (week skills)
+## Quick checklist (week skills) {#quick-checklist-week-skills}
 
 -   [ ] I can write a “strategy prompt” before asking for UI code.
 -   [ ] I can list UI screens for a Flask app and map navigation between them.

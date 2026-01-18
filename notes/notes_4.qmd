@@ -44,7 +44,7 @@
 -   Start with the smallest end-to-end ‘thin slice’ (a page that loads; a form that submits; a result that displays).
 -   List the minimal data objects you need (e.g., a question bank, callsigns, categories, logs).
 -   Identify the ‘edges’: inputs (forms/API), outputs (HTML pages), and storage (files/DB).
--   Only then decide folder structure and module boundaries. ![](images/week_04/fig_02.png)
+-   Only then decide folder structure and module boundaries. 
 
 ## Setting up your Python environment {#setting-up-your-python-environment}
 

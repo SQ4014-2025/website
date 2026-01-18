@@ -636,9 +636,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#code-example-quick-smoke-test-with-requests" id="toc-code-example-quick-smoke-test-with-requests" class="nav-link" data-scroll-target="#code-example-quick-smoke-test-with-requests">Code example: quick smoke test with requests</a></li>
   <li><a href="#common-error-classes-in-this-week" id="toc-common-error-classes-in-this-week" class="nav-link" data-scroll-target="#common-error-classes-in-this-week">Common error classes in this week</a></li>
   </ul></li>
-  <li><a href="#figures-from-chapter-6-extracted" id="toc-figures-from-chapter-6-extracted" class="nav-link" data-scroll-target="#figures-from-chapter-6-extracted">Figures from Chapter 6 (extracted)</a></li>
-  <li><a href="#summing-up" id="toc-summing-up" class="nav-link" data-scroll-target="#summing-up">Summing up</a>
+  <li><a href="#figures-from-chapter-6-extracted" id="toc-figures-from-chapter-6-extracted" class="nav-link" data-scroll-target="#figures-from-chapter-6-extracted">Figures from Chapter 6 (extracted)</a>
   <ul class="collapse">
+  <li><a href="#summing-up" id="toc-summing-up" class="nav-link" data-scroll-target="#summing-up">Summing Up</a></li>
   <li><a href="#checks-for-understanding" id="toc-checks-for-understanding" class="nav-link" data-scroll-target="#checks-for-understanding">Checks for understanding</a></li>
   </ul></li>
   <li><a href="#guided-walkthrough-dense-notes" id="toc-guided-walkthrough-dense-notes" class="nav-link" data-scroll-target="#guided-walkthrough-dense-notes">Guided walkthrough (dense notes)</a>
@@ -683,6 +683,50 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Week 06 — Generating a software backend</h1>
 <p>This week focuses on <em>Generating a software backend</em>.</p>
 <p>We are continuing the HAM radio practice-test app. In Week 05 we got a working scaffold (database + basic page). In <strong>Week 06</strong> the focus shifts from “it runs” to “it behaves like a real application”: it must keep track of a test-taker over multiple clicks, handle restarts, and recover cleanly from bugs.</p>
+<ul>
+<li><a href="#what-this-week-covers-in-plain-language">What this week covers (in plain language)</a></li>
+<li><a href="#recap-of-the-app-architecture-so-far">Recap of the app architecture so far</a></li>
+<li><a href="#why-backend-work-matters-here">Why backend work matters here</a></li>
+<li><a href="#symptom-driven-debugging">Symptom-driven debugging</a></li>
+<li><a href="#why-this-is-a-good-learning-bug">Why this is a good learning bug</a></li>
+<li><a href="#what-tabnine-is-good-at">What Tabnine is good at</a></li>
+<li><a href="#what-tabnine-is-bad-at-unless-you-guide-it">What Tabnine is bad at (unless you guide it)</a></li>
+<li><a href="#a-minimal-but-clean-flask-app-structure">A minimal but clean Flask app structure</a></li>
+<li><a href="#code-example-enabling-sessions-and-setting-a-secret-key">Code example: enabling sessions and setting a secret key</a></li>
+<li><a href="#code-example-selecting-questions-once-per-session">Code example: selecting questions once per session</a></li>
+<li><a href="#code-example-route-that-shows-the-current-question">Code example: route that shows the current question</a></li>
+<li><a href="#code-example-recording-an-answer-post">Code example: recording an answer (POST)</a></li>
+<li><a href="#make-failures-reproducible">Make failures reproducible</a></li>
+<li><a href="#code-example-quick-smoke-test-with-requests">Code example: quick smoke test with requests</a></li>
+<li><a href="#common-error-classes-in-this-week">Common error classes in this week</a></li>
+<li><a href="#summing-up">Summing Up</a></li>
+<li><a href="#checks-for-understanding">Checks for understanding</a></li>
+<li><a href="#step-1-what-are-we-trying-to-achieve">Step 1: What are we trying to achieve?</a></li>
+<li><a href="#step-2-what-are-we-trying-to-achieve">Step 2: What are we trying to achieve?</a></li>
+<li><a href="#step-3-what-are-we-trying-to-achieve">Step 3: What are we trying to achieve?</a></li>
+<li><a href="#step-4-what-are-we-trying-to-achieve">Step 4: What are we trying to achieve?</a></li>
+<li><a href="#step-5-what-are-we-trying-to-achieve">Step 5: What are we trying to achieve?</a></li>
+<li><a href="#step-6-what-are-we-trying-to-achieve">Step 6: What are we trying to achieve?</a></li>
+<li><a href="#step-7-what-are-we-trying-to-achieve">Step 7: What are we trying to achieve?</a></li>
+<li><a href="#step-8-what-are-we-trying-to-achieve">Step 8: What are we trying to achieve?</a></li>
+<li><a href="#step-9-what-are-we-trying-to-achieve">Step 9: What are we trying to achieve?</a></li>
+<li><a href="#step-10-what-are-we-trying-to-achieve">Step 10: What are we trying to achieve?</a></li>
+<li><a href="#step-11-what-are-we-trying-to-achieve">Step 11: What are we trying to achieve?</a></li>
+<li><a href="#step-12-what-are-we-trying-to-achieve">Step 12: What are we trying to achieve?</a></li>
+<li><a href="#step-13-what-are-we-trying-to-achieve">Step 13: What are we trying to achieve?</a></li>
+<li><a href="#step-14-what-are-we-trying-to-achieve">Step 14: What are we trying to achieve?</a></li>
+<li><a href="#step-15-what-are-we-trying-to-achieve">Step 15: What are we trying to achieve?</a></li>
+<li><a href="#step-16-what-are-we-trying-to-achieve">Step 16: What are we trying to achieve?</a></li>
+<li><a href="#step-17-what-are-we-trying-to-achieve">Step 17: What are we trying to achieve?</a></li>
+<li><a href="#step-18-what-are-we-trying-to-achieve">Step 18: What are we trying to achieve?</a></li>
+<li><a href="#step-19-what-are-we-trying-to-achieve">Step 19: What are we trying to achieve?</a></li>
+<li><a href="#step-20-what-are-we-trying-to-achieve">Step 20: What are we trying to achieve?</a></li>
+<li><a href="#step-21-what-are-we-trying-to-achieve">Step 21: What are we trying to achieve?</a></li>
+<li><a href="#step-22-what-are-we-trying-to-achieve">Step 22: What are we trying to achieve?</a></li>
+<li><a href="#step-23-what-are-we-trying-to-achieve">Step 23: What are we trying to achieve?</a></li>
+<li><a href="#step-24-what-are-we-trying-to-achieve">Step 24: What are we trying to achieve?</a></li>
+<li><a href="#step-25-what-are-we-trying-to-achieve">Step 25: What are we trying to achieve?</a></li>
+</ul>
 <section id="what-this-week-covers-in-plain-language" class="level2">
 <h2 class="anchored" data-anchor-id="what-this-week-covers-in-plain-language">What this week covers (in plain language)</h2>
 <ul>
@@ -949,14 +993,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="figures-from-chapter-6-extracted" class="level1">
 <h1>Figures from Chapter 6 (extracted)</h1>
 <p><img src="images/week_06/fig_001.jpeg" class="img-fluid" alt="Extracted figure 1 from Chapter 6"> <img src="images/week_06/fig_002.jpeg" class="img-fluid" alt="Extracted figure 2 from Chapter 6"> <img src="images/week_06/fig_003.png" class="img-fluid" alt="Extracted figure 3 from Chapter 6"> <img src="images/week_06/fig_004.jpeg" class="img-fluid" alt="Extracted figure 4 from Chapter 6"> <img src="images/week_06/fig_005.jpeg" class="img-fluid" alt="Extracted figure 5 from Chapter 6"> <img src="images/week_06/fig_006.jpeg" class="img-fluid" alt="Extracted figure 6 from Chapter 6"> <img src="images/week_06/fig_007.png" class="img-fluid" alt="Extracted figure 7 from Chapter 6"> <img src="images/week_06/fig_008.jpeg" class="img-fluid" alt="Extracted figure 8 from Chapter 6"> <img src="images/week_06/fig_009.jpeg" class="img-fluid" alt="Extracted figure 9 from Chapter 6"> <img src="images/week_06/fig_010.png" class="img-fluid" alt="Extracted figure 10 from Chapter 6"> <img src="images/week_06/fig_011.jpeg" class="img-fluid" alt="Extracted figure 11 from Chapter 6"> <img src="images/week_06/fig_012.png" class="img-fluid" alt="Extracted figure 12 from Chapter 6"> <img src="images/week_06/fig_013.jpeg" class="img-fluid" alt="Extracted figure 13 from Chapter 6"> <img src="images/week_06/fig_014.jpeg" class="img-fluid" alt="Extracted figure 14 from Chapter 6"> <img src="images/week_06/fig_015.jpeg" class="img-fluid" alt="Extracted figure 15 from Chapter 6"> <img src="images/week_06/fig_016.jpeg" class="img-fluid" alt="Extracted figure 16 from Chapter 6"> <img src="images/week_06/fig_017.jpeg" class="img-fluid" alt="Extracted figure 17 from Chapter 6"> <img src="images/week_06/fig_018.png" class="img-fluid" alt="Extracted figure 18 from Chapter 6"> <img src="images/week_06/fig_019.jpeg" class="img-fluid" alt="Extracted figure 19 from Chapter 6"> <img src="images/week_06/fig_020.jpeg" class="img-fluid" alt="Extracted figure 20 from Chapter 6"> <img src="images/week_06/fig_021.jpeg" class="img-fluid" alt="Extracted figure 21 from Chapter 6"> <img src="images/week_06/fig_022.jpeg" class="img-fluid" alt="Extracted figure 22 from Chapter 6"> <img src="images/week_06/fig_023.jpeg" class="img-fluid" alt="Extracted figure 23 from Chapter 6"> <img src="images/week_06/fig_024.jpeg" class="img-fluid" alt="Extracted figure 24 from Chapter 6"> <img src="images/week_06/fig_025.jpeg" class="img-fluid" alt="Extracted figure 25 from Chapter 6"> <img src="images/week_06/fig_026.jpeg" class="img-fluid" alt="Extracted figure 26 from Chapter 6"> <img src="images/week_06/fig_027.jpeg" class="img-fluid" alt="Extracted figure 27 from Chapter 6"> <img src="images/week_06/fig_028.jpeg" class="img-fluid" alt="Extracted figure 28 from Chapter 6"> <img src="images/week_06/fig_029.jpeg" class="img-fluid" alt="Extracted figure 29 from Chapter 6"> <img src="images/week_06/fig_030.jpeg" class="img-fluid" alt="Extracted figure 30 from Chapter 6"> <img src="images/week_06/fig_031.jpeg" class="img-fluid" alt="Extracted figure 31 from Chapter 6"> <img src="images/week_06/fig_032.jpeg" class="img-fluid" alt="Extracted figure 32 from Chapter 6"> <img src="images/week_06/fig_033.jpeg" class="img-fluid" alt="Extracted figure 33 from Chapter 6"> <img src="images/week_06/fig_034.jpeg" class="img-fluid" alt="Extracted figure 34 from Chapter 6"> <img src="images/week_06/fig_035.jpeg" class="img-fluid" alt="Extracted figure 35 from Chapter 6"> <img src="images/week_06/fig_036.png" class="img-fluid" alt="Extracted figure 36 from Chapter 6"> <img src="images/week_06/fig_037.jpeg" class="img-fluid" alt="Extracted figure 37 from Chapter 6"> <img src="images/week_06/fig_038.jpeg" class="img-fluid" alt="Extracted figure 38 from Chapter 6"> <img src="images/week_06/fig_039.jpeg" class="img-fluid" alt="Extracted figure 39 from Chapter 6"> <img src="images/week_06/fig_040.jpeg" class="img-fluid" alt="Extracted figure 40 from Chapter 6"> <img src="images/week_06/fig_041.jpeg" class="img-fluid" alt="Extracted figure 41 from Chapter 6"> <img src="images/week_06/fig_042.jpeg" class="img-fluid" alt="Extracted figure 42 from Chapter 6"> <img src="images/week_06/fig_043.png" class="img-fluid" alt="Extracted figure 43 from Chapter 6"> <img src="images/week_06/fig_044.jpeg" class="img-fluid" alt="Extracted figure 44 from Chapter 6"> <img src="images/week_06/fig_045.png" class="img-fluid" alt="Extracted figure 45 from Chapter 6"> <img src="images/week_06/fig_046.jpeg" class="img-fluid" alt="Extracted figure 46 from Chapter 6"></p>
-</section>
-<section id="summing-up" class="level1">
-<h1>Summing up</h1>
+<section id="summing-up" class="level2">
+<h2 class="anchored" data-anchor-id="summing-up">Summing Up</h2>
 <ul>
 <li>Chapter 6 is about turning a basic Flask + SQLite app into an interactive experience.</li>
 <li>The technical core is <strong>sessions</strong>: how to persist a user’s progress across requests.</li>
 <li>The practical workflow skill is using <strong>Tabnine</strong> effectively: provide context, ask for minimal diffs, and validate with tests.</li>
 </ul>
+</section>
 <section id="checks-for-understanding" class="level2">
 <h2 class="anchored" data-anchor-id="checks-for-understanding">Checks for understanding</h2>
 <ul>

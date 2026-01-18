@@ -4,7 +4,31 @@
 
 These notes follow Week 10 and show **how** Cursor changes the way you write software, **why** it works, and the **pitfalls** that catch beginners.
 
-## What this week covers (and why you should care)
+
+-   [What this week covers (and why you should care)](#what-this-week-covers-and-why-you-should-care)
+-   [What is **vibe coding**?](#what-is-vibe-coding)
+-   [Figure: the vibe-coding workflow at a glance](#figure-the-vibe-coding-workflow-at-a-glance)
+-   [What is **Cursor**, and why is it different?](#what-is-cursor-and-why-is-it-different)
+-   [The interface (what each panel is for)](#the-interface-what-each-panel-is-for)
+-   [Project-wide context and customization](#project-wide-context-and-customization)
+-   [First concept: build something small, then improve it](#first-concept-build-something-small-then-improve-it)
+-   [The initial prompt to build our game](#the-initial-prompt-to-build-our-game)
+-   [Cursor basics (chat vs edit vs autocomplete)](#cursor-basics-chat-vs-edit-vs-autocomplete)
+-   [Giving feedback (how to steer the model)](#giving-feedback-how-to-steer-the-model)
+-   [Adding context (what to paste into chat)](#adding-context-what-to-paste-into-chat)
+-   [Selecting a mode (decision table)](#selecting-a-mode-decision-table)
+-   [Model selection (speed vs quality)](#model-selection-speed-vs-quality)
+-   [MAX mode (when you need the heavy hammer)](#max-mode-when-you-need-the-heavy-hammer)
+-   [Results from the first prompt: expect rough edges](#results-from-the-first-prompt-expect-rough-edges)
+-   [Running our game for the first time (environment + dependencies)](#running-our-game-for-the-first-time-environment--dependencies)
+-   [Making changes to our game: small diffs win](#making-changes-to-our-game-small-diffs-win)
+-   [The second prompt (iteration with structure)](#the-second-prompt-iteration-with-structure)
+-   [Debugging in a vibe-coding workflow](#debugging-in-a-vibe-coding-workflow)
+-   [Figure: example UI / gameplay snapshot](#figure-example-ui--gameplay-snapshot)
+-   [Rapid-fire practical reminders (for students)](#rapid-fire-practical-reminders-for-students)
+-   [Extra extracted figures (from this week)](#extra-extracted-figures-from-this-week)
+
+## What this week covers (and why you should care) {#what-this-week-covers-and-why-you-should-care}
 
 Week 10 moves from "coding with AI as a helper" to a **conversational programming** workflow where your editor + model become a co-author.
 
@@ -18,7 +42,7 @@ You’ll see:
 
 **Real-world framing:** this is the difference between “asking AI questions” and **shipping software with AI in the loop**.
 
-## 10.1 What is **vibe coding**?
+## What is **vibe coding**? {#what-is-vibe-coding}
 
 > "At one end of the spectrum..."
 
@@ -52,7 +76,7 @@ If you do that, you get brittle code and mysterious failures.
 -   **Under-specifying**: vague goals produce vague programs.
 -   **Context leakage**: if your project contains confusing files, the model can copy the wrong patterns.
 
-## Figure: the vibe-coding workflow at a glance
+## Figure: the vibe-coding workflow at a glance {#figure-the-vibe-coding-workflow-at-a-glance}
 
 ![](images/week_10/fig_01.png)
 
@@ -64,7 +88,7 @@ Use this figure to remember the mental model:
 4.  Debug + refine\
 5.  Repeat until correct
 
-## 10.2 What is **Cursor**, and why is it different?
+## What is **Cursor**, and why is it different? {#what-is-cursor-and-why-is-it-different}
 
 > "What is Cursor, and why is it different?"
 
@@ -87,7 +111,7 @@ In other words, it’s not “chatting about code” — it’s **editing code w
 -   Cursor can make *too many edits* if your prompt is broad.
 -   Always review diffs like you would a teammate PR.
 
-## 10.2.1 The interface (what each panel is for)
+## The interface (what each panel is for) {#the-interface-what-each-panel-is-for}
 
 ![](images/week_10/fig_02.png)
 
@@ -104,7 +128,7 @@ A typical Cursor workspace gives you:
 
 **Teaching point:** students must learn that *the editor is the source of truth* — not the chat transcript.
 
-## 10.2.2 Project-wide context and customization
+## Project-wide context and customization {#project-wide-context-and-customization}
 
 > "Project-wide context..."
 
@@ -135,7 +159,7 @@ Fix it by adding:
 -   examples (“here is one correct pattern in this repo”)
 -   a test (“this must pass”)
 
-## 10.3 First concept: build something small, then improve it
+## First concept: build something small, then improve it {#first-concept-build-something-small-then-improve-it}
 
 Week 10 demonstrates vibe coding by building a small game (a simple working program you can run).
 
@@ -155,7 +179,7 @@ You want early success:
 
 Then you polish.
 
-## 10.4 The initial prompt to build our game
+## The initial prompt to build our game {#the-initial-prompt-to-build-our-game}
 
 > "The initial prompt to build our game"
 
@@ -194,7 +218,7 @@ Output:
 -   It defines *inputs* (controls), *outputs* (score), and *stop condition* (quit).
 -   It sets the **difficulty level** (beginner friendly).
 
-## 10.5 Cursor basics (chat vs edit vs autocomplete)
+## Cursor basics (chat vs edit vs autocomplete) {#cursor-basics-chat-vs-edit-vs-autocomplete}
 
 > "Cursor basics"
 
@@ -226,7 +250,7 @@ Use for:
 
 **Teaching tip:** chat is best when you *don’t know what to do*, edit is best when you *know what you want changed*.
 
-## 10.5.1 Giving feedback (how to steer the model)
+## Giving feedback (how to steer the model) {#giving-feedback-how-to-steer-the-model}
 
 > "Giving feedback"
 
@@ -250,7 +274,7 @@ Bad feedback is:
 -   Where in the code does that behavior live?
 -   What is the smallest change that could fix it?
 
-## 10.5.2 Adding context (what to paste into chat)
+## Adding context (what to paste into chat) {#adding-context-what-to-paste-into-chat}
 
 The temptation is to paste everything. Don’t.
 
@@ -282,7 +306,7 @@ Here is the movement code (lines 41-68):
 
 This gives the model a “debug ticket” it can solve.
 
-## 10.5.3 Selecting a mode (decision table)
+## Selecting a mode (decision table) {#selecting-a-mode-decision-table}
 
 | Task                     | Best Cursor mode | Why                   |
 |--------------------------|------------------|-----------------------|
@@ -292,7 +316,7 @@ This gives the model a “debug ticket” it can solve.
 | "Finish this for-loop"   | Autocomplete     | predictable           |
 | "Design a module layout" | Chat             | brainstorming         |
 
-## 10.5.4 Model selection (speed vs quality)
+## Model selection (speed vs quality) {#model-selection-speed-vs-quality}
 
 > "Model selection"
 
@@ -307,7 +331,7 @@ Students should learn:
 -   use the “smart” model for big architectural tasks
 -   use the “fast” model for repetitive refactors
 
-## 10.5.5 MAX mode (when you need the heavy hammer)
+## MAX mode (when you need the heavy hammer) {#max-mode-when-you-need-the-heavy-hammer}
 
 > "MAX mode"
 
@@ -321,7 +345,7 @@ But it can also lead to over-editing.
 
 **Rule:** MAX mode is for *design + sweeping edits*, not for “change one line”.
 
-## 10.6 Results from the first prompt: expect rough edges
+## Results from the first prompt: expect rough edges {#results-from-the-first-prompt-expect-rough-edges}
 
 > "Results from the first prompt"
 
@@ -335,7 +359,7 @@ That’s normal.
 
 What matters is: **we have something to iterate on**.
 
-## 10.7 Running our game for the first time (environment + dependencies)
+## Running our game for the first time (environment + dependencies) {#running-our-game-for-the-first-time-environment--dependencies}
 
 ![](images/week_10/fig_06.png)
 
@@ -367,7 +391,7 @@ python -c "import sys; print(sys.executable)"
 python -c "import pygame; print(pygame.__version__)"
 ```
 
-## 10.8 Making changes to our game: small diffs win
+## Making changes to our game: small diffs win {#making-changes-to-our-game-small-diffs-win}
 
 > "Making changes to our game"
 
@@ -399,7 +423,7 @@ Return the exact diff as a unified patch.
 
 That kind of constraint reduces collateral damage.
 
-## 10.9 The second prompt (iteration with structure)
+## The second prompt (iteration with structure) {#the-second-prompt-iteration-with-structure}
 
 This week shows that iteration isn’t random — it’s structured prompting.
 
@@ -412,7 +436,7 @@ A “second prompt” is usually one of:
 
 **Key skill:** describe the change in terms of **inputs → behavior → output**.
 
-## Debugging in a vibe-coding workflow
+## Debugging in a vibe-coding workflow {#debugging-in-a-vibe-coding-workflow}
 
 When students rely on AI, they sometimes stop debugging. That’s dangerous.
 
@@ -449,7 +473,7 @@ Task:
 3) Provide the corrected code for the Ball class only
 ```
 
-## Figure: example UI / gameplay snapshot
+## Figure: example UI / gameplay snapshot {#figure-example-ui--gameplay-snapshot}
 
 ![](images/week_10/fig_03.png)
 
@@ -460,7 +484,7 @@ Use screenshots like this to talk about:
 -   score placement
 -   readability
 
-## Rapid-fire practical reminders (for students)
+## Rapid-fire practical reminders (for students) {#rapid-fire-practical-reminders-for-students}
 
 -   Practical reminder 1: Commit, run, and review diffs — every iteration.
 -   Practical reminder 2: Commit, run, and review diffs — every iteration.
@@ -483,6 +507,6 @@ Use screenshots like this to talk about:
 -   Practical reminder 19: Commit, run, and review diffs — every iteration.
 -   Practical reminder 20: Commit, run, and review diffs — every iteration.
 
-## Extra extracted figures (from this week)
+## Extra extracted figures (from this week) {#extra-extracted-figures-from-this-week}
 
 ![](images/week_10/fig_07.png) ![](images/week_10/fig_08.png) ![](images/week_10/fig_09.png) ![](images/week_10/fig_10.png)

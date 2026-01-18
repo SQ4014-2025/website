@@ -9,7 +9,7 @@
 -   [Evaluating and fixing AI-generated tests](#evaluating)
 -   [Common failure modes and how to debug](#failure-modes)
 -   [Using generated tests in CI](#ci)
--   [Summing up](#summing-up)
+-   [Summing Up](#summing-up)
 
 ## Why testing matters in AI-assisted coding {#why-testing-matters}
 
@@ -211,7 +211,7 @@ def test_area_positive():
 
 ![](images/week_08/fig_01.png){fig-alt="Week 08 extracted figure 1"} ![](images/week_08/fig_02.png){fig-alt="Week 08 extracted figure 2"} ![](images/week_08/fig_03.png){fig-alt="Week 08 extracted figure 3"} ![](images/week_08/fig_04.png){fig-alt="Week 08 extracted figure 4"} ![](images/week_08/fig_05.png){fig-alt="Week 08 extracted figure 5"} ![](images/week_08/fig_06.png){fig-alt="Week 08 extracted figure 6"} ![](images/week_08/fig_07.png){fig-alt="Week 08 extracted figure 7"} ![](images/week_08/fig_08.png){fig-alt="Week 08 extracted figure 8"} ![](images/week_08/fig_09.png){fig-alt="Week 08 extracted figure 9"} ![](images/week_08/fig_10.png){fig-alt="Week 08 extracted figure 10"}
 
-## Summing up {#summing-up}
+## Summing Up {#summing-up}
 
 -   AI is a powerful assistant for *drafting* tests, but you still own correctness.
 -   The best prompts specify behaviour, edge cases, and constraints (framework, fixtures, mocking).

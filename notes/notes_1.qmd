@@ -4,7 +4,26 @@
 
 > "...use your existing Python expertise alongside AI that understands your code context..."
 
-## Overview
+
+-   [Overview](#overview)
+-   [Why this matters for "Real World AI"](#why-this-matters-for-real-world-ai)
+-   [Generative AI for coders](#generative-ai-for-coders)
+-   [Developer tools landscape](#developer-tools-landscape)
+-   [How does generative AI work?](#how-does-generative-ai-work)
+-   [What an LLM is (and isn't)](#what-an-llm-is-and-isnt)
+-   [The potential of LLMs](#the-potential-of-llms)
+-   [Generative AI vs code completion](#generative-ai-vs-code-completion)
+-   [Other types of generative AI (quick map)](#other-types-of-generative-ai-quick-map)
+-   [Project workflow with AI assistance](#project-workflow-with-ai-assistance)
+-   [Choosing the right generative AI tools](#choosing-the-right-generative-ai-tools)
+-   [Common failure modes (what students must learn)](#common-failure-modes-what-students-must-learn)
+-   [Go forth and code!](#go-forth-and-code)
+-   [A simple "AI as refactor assistant" workflow](#a-simple-ai-as-refactor-assistant-workflow)
+-   [Turning a prompt into a structured specification](#turning-a-prompt-into-a-structured-specification)
+-   [A minimal test-first habit](#a-minimal-test-first-habit)
+-   [Summing Up](#summing-up)
+
+## Overview {#overview}
 
 > "Supercharge your coding with AI" "No AI expertise is required." -Some AI Bro
 
@@ -17,9 +36,7 @@ In this week we introduce **generative AI** as a practical toolset for real soft
 -   A mental model for *how LLMs work* at a useful, developer-friendly level.
 -   A realistic view of benefits *and* failure modes (hallucinations, shallow tests, brittle outputs).
 
-------------------------------------------------------------------------
-
-## 1.0 Why this matters for "Real World AI"
+## Why this matters for "Real World AI" {#why-this-matters-for-real-world-ai}
 
 The week frames AI coding tools as an "extra pair of hands" for experienced developers. The promise is not magic — it’s leverage:
 
@@ -38,9 +55,7 @@ The course lens: *real world* means we care about:
 -   correctness
 -   team workflows
 
-------------------------------------------------------------------------
-
-## 1.1 Generative AI for coders
+## Generative AI for coders {#generative-ai-for-coders}
 
 ### What is generative AI
 
@@ -112,9 +127,7 @@ So we’ll keep a rule of thumb:
 
 > Test behaviour, not the code’s current shape.
 
-------------------------------------------------------------------------
-
-## 1.2 Developer tools landscape
+## Developer tools landscape {#developer-tools-landscape}
 
 This week separates tools into categories. You should be able to explain *what each category is good for*.
 
@@ -153,9 +166,7 @@ This week calls out tools like Cursor, Blackbox AI, and Tabnine later. Your skil
 
 > "...practical guide to using AI tools to supercharge your coding..."
 
-------------------------------------------------------------------------
-
-## 1.3 How does generative AI work?
+## How does generative AI work? {#how-does-generative-ai-work}
 
 This is the part where people often get intimidated. This week's key message is:
 
@@ -209,9 +220,7 @@ When you see a model forget instructions, it’s often because:
 -   the instruction got buried
 -   the model weighted other tokens as more relevant
 
-------------------------------------------------------------------------
-
-## 1.4 What an LLM is (and isn’t)
+## What an LLM is (and isn't) {#what-an-llm-is-and-isnt}
 
 ### What it *is*
 
@@ -237,9 +246,7 @@ This week hints at the most important practical issue:
 
 > "...determines whether 'this is most likely to be correct and functional source code'"
 
-------------------------------------------------------------------------
-
-## 1.5 The potential of LLMs
+## The potential of LLMs {#the-potential-of-llms}
 
 This is where this week is optimistic. The potential is that AI tools can shift your role upward:
 
@@ -261,9 +268,7 @@ But only if you adopt a workflow that includes:
 -   tests
 -   iteration
 
-------------------------------------------------------------------------
-
-## 1.6 Generative AI vs code completion
+## Generative AI vs code completion {#generative-ai-vs-code-completion}
 
 Many students confuse these. This week draws a distinction:
 
@@ -285,9 +290,7 @@ The key point:
 
 **Generative AI is a collaborator**. **Code completion is a convenience feature**.
 
-------------------------------------------------------------------------
-
-## 1.7 Other types of generative AI (quick map)
+## Other types of generative AI (quick map) {#other-types-of-generative-ai-quick-map}
 
 Even though this week is coding-focused, generative AI includes:
 
@@ -300,9 +303,7 @@ Why you should care:
 -   real products combine modalities
 -   documentation and UI work often needs imagery
 
-------------------------------------------------------------------------
-
-## 1.8 Project workflow with AI assistance
+## Project workflow with AI assistance {#project-workflow-with-ai-assistance}
 
 This is the most “real world” section. It breaks software development into stages where AI can help.
 
@@ -369,9 +370,7 @@ Risk:
 
 > "This cycle creates a powerful symbiotic relationship..."
 
-------------------------------------------------------------------------
-
-## 1.9 Choosing the right generative AI tools
+## Choosing the right generative AI tools {#choosing-the-right-generative-ai-tools}
 
 This week emphasises selection criteria. In real teams, you choose tools based on:
 
@@ -387,9 +386,7 @@ This week emphasises selection criteria. In real teams, you choose tools based o
 -   Does it help you refactor safely?
 -   Does it provide citations or traceability?
 
-------------------------------------------------------------------------
-
-## 1.10 Common failure modes (what students must learn)
+## Common failure modes (what students must learn) {#common-failure-modes-what-students-must-learn}
 
 This week implies several failure modes. We make them explicit because they will recur all term.
 
@@ -428,9 +425,7 @@ Mitigation:
 -   test behaviour
 -   add negative tests
 
-------------------------------------------------------------------------
-
-## 1.11 Go forth and code!
+## Go forth and code! {#go-forth-and-code}
 
 This final section is motivational. This week's message is:
 
@@ -438,11 +433,7 @@ This final section is motivational. This week's message is:
 -   treat them as assistants
 -   keep your engineering discipline
 
-------------------------------------------------------------------------
-
-
-
-## Example 1: A simple "AI as refactor assistant" workflow
+## A simple "AI as refactor assistant" workflow {#a-simple-ai-as-refactor-assistant-workflow}
 
 ```python
 # A tiny refactor candidate
@@ -454,7 +445,7 @@ def total_cost(prices, tax_rate):
 print(total_cost([10, 20, 30], 0.2))
 ```
 
-## Example 2: Turning a prompt into a structured specification
+## Turning a prompt into a structured specification {#turning-a-prompt-into-a-structured-specification}
 
 ```python
 from dataclasses import dataclass
@@ -478,7 +469,7 @@ spec = FeatureSpec(
 print(spec)
 ```
 
-## Example 3: A minimal test-first habit
+## A minimal test-first habit {#a-minimal-test-first-habit}
 
 ```python
 # Simple behaviour test (no frameworks yet)
@@ -491,9 +482,7 @@ assert add(-1, 1) == 0
 print("All tests passed")
 ```
 
-------------------------------------------------------------------------
-
-# Summing up
+## Summing Up {#summing-up}
 
 -   **Generative AI** can improve coding productivity, but it must be combined with testing and review.
 -   The developer tool landscape includes chat models, IDE assistants, and specialised coding tools.

@@ -4,7 +4,51 @@ This week focuses on *Generating a software backend*.
 
 We are continuing the HAM radio practice-test app. In Week 05 we got a working scaffold (database + basic page). In **Week 06** the focus shifts from "it runs" to "it behaves like a real application": it must keep track of a test-taker over multiple clicks, handle restarts, and recover cleanly from bugs.
 
-## What this week covers (in plain language)
+
+-   [What this week covers (in plain language)](#what-this-week-covers-in-plain-language)
+-   [Recap of the app architecture so far](#recap-of-the-app-architecture-so-far)
+-   [Why backend work matters here](#why-backend-work-matters-here)
+-   [Symptom-driven debugging](#symptom-driven-debugging)
+-   [Why this is a good learning bug](#why-this-is-a-good-learning-bug)
+-   [What Tabnine is good at](#what-tabnine-is-good-at)
+-   [What Tabnine is bad at (unless you guide it)](#what-tabnine-is-bad-at-unless-you-guide-it)
+-   [A minimal but clean Flask app structure](#a-minimal-but-clean-flask-app-structure)
+-   [Code example: enabling sessions and setting a secret key](#code-example-enabling-sessions-and-setting-a-secret-key)
+-   [Code example: selecting questions once per session](#code-example-selecting-questions-once-per-session)
+-   [Code example: route that shows the current question](#code-example-route-that-shows-the-current-question)
+-   [Code example: recording an answer (POST)](#code-example-recording-an-answer-post)
+-   [Make failures reproducible](#make-failures-reproducible)
+-   [Code example: quick smoke test with requests](#code-example-quick-smoke-test-with-requests)
+-   [Common error classes in this week](#common-error-classes-in-this-week)
+-   [Summing Up](#summing-up)
+-   [Checks for understanding](#checks-for-understanding)
+-   [Step 1: What are we trying to achieve?](#step-1-what-are-we-trying-to-achieve)
+-   [Step 2: What are we trying to achieve?](#step-2-what-are-we-trying-to-achieve)
+-   [Step 3: What are we trying to achieve?](#step-3-what-are-we-trying-to-achieve)
+-   [Step 4: What are we trying to achieve?](#step-4-what-are-we-trying-to-achieve)
+-   [Step 5: What are we trying to achieve?](#step-5-what-are-we-trying-to-achieve)
+-   [Step 6: What are we trying to achieve?](#step-6-what-are-we-trying-to-achieve)
+-   [Step 7: What are we trying to achieve?](#step-7-what-are-we-trying-to-achieve)
+-   [Step 8: What are we trying to achieve?](#step-8-what-are-we-trying-to-achieve)
+-   [Step 9: What are we trying to achieve?](#step-9-what-are-we-trying-to-achieve)
+-   [Step 10: What are we trying to achieve?](#step-10-what-are-we-trying-to-achieve)
+-   [Step 11: What are we trying to achieve?](#step-11-what-are-we-trying-to-achieve)
+-   [Step 12: What are we trying to achieve?](#step-12-what-are-we-trying-to-achieve)
+-   [Step 13: What are we trying to achieve?](#step-13-what-are-we-trying-to-achieve)
+-   [Step 14: What are we trying to achieve?](#step-14-what-are-we-trying-to-achieve)
+-   [Step 15: What are we trying to achieve?](#step-15-what-are-we-trying-to-achieve)
+-   [Step 16: What are we trying to achieve?](#step-16-what-are-we-trying-to-achieve)
+-   [Step 17: What are we trying to achieve?](#step-17-what-are-we-trying-to-achieve)
+-   [Step 18: What are we trying to achieve?](#step-18-what-are-we-trying-to-achieve)
+-   [Step 19: What are we trying to achieve?](#step-19-what-are-we-trying-to-achieve)
+-   [Step 20: What are we trying to achieve?](#step-20-what-are-we-trying-to-achieve)
+-   [Step 21: What are we trying to achieve?](#step-21-what-are-we-trying-to-achieve)
+-   [Step 22: What are we trying to achieve?](#step-22-what-are-we-trying-to-achieve)
+-   [Step 23: What are we trying to achieve?](#step-23-what-are-we-trying-to-achieve)
+-   [Step 24: What are we trying to achieve?](#step-24-what-are-we-trying-to-achieve)
+-   [Step 25: What are we trying to achieve?](#step-25-what-are-we-trying-to-achieve)
+
+## What this week covers (in plain language) {#what-this-week-covers-in-plain-language}
 
 -   Turning a static “dump of questions” into an interactive workflow.
 -   Creating and maintaining **persistent sessions** so each student sees a consistent test flow.
@@ -25,7 +69,7 @@ We are continuing the HAM radio practice-test app. In Week 05 we got a working s
 
 # Where we are in the project
 
-## Recap of the app architecture so far
+## Recap of the app architecture so far {#recap-of-the-app-architecture-so-far}
 
 By now you have:
 
@@ -37,7 +81,7 @@ The problem: the app *works once*, then fails on reload / restart / second sessi
 
 That is a classic “state + lifecycle” bug.
 
-## Why backend work matters here
+## Why backend work matters here {#why-backend-work-matters-here}
 
 A lot of beginner web apps fail because they confuse:
 
@@ -82,7 +126,7 @@ Typical items:
 
 # Debugging the “works once” problem
 
-## Symptom-driven debugging
+## Symptom-driven debugging {#symptom-driven-debugging}
 
 When an app works once and fails on the second run, the cause is often one of:
 
@@ -94,7 +138,7 @@ When an app works once and fails on the second run, the cause is often one of:
 
 This week shows a concrete example: a **SQLite error** that appears when loading again.
 
-## Why this is a good learning bug
+## Why this is a good learning bug {#why-this-is-a-good-learning-bug}
 
 It forces you to think in layers:
 
@@ -104,14 +148,14 @@ It forces you to think in layers:
 
 # Working with Tabnine as a coding partner
 
-## What Tabnine is good at
+## What Tabnine is good at {#what-tabnine-is-good-at}
 
 -   producing “starter” implementations quickly
 -   suggesting fixes when you show a stack trace
 -   refactoring repetitive code into functions/classes
 -   generating tests and edge cases (if you ask clearly)
 
-## What Tabnine is bad at (unless you guide it)
+## What Tabnine is bad at (unless you guide it) {#what-tabnine-is-bad-at-unless-you-guide-it}
 
 -   understanding your full codebase without context
 -   making architectural decisions *for you*
@@ -133,7 +177,7 @@ Example prompt structure (adapt for Tabnine or any assistant):
 
 # Implementing the backend features (Flask + DB)
 
-## A minimal but clean Flask app structure
+## A minimal but clean Flask app structure {#a-minimal-but-clean-flask-app-structure}
 
 A simple, testable structure often looks like:
 
@@ -149,7 +193,7 @@ This week keeps things lightweight but pushes toward separation:
 -   database code should be isolated
 -   “session state” should be explicit
 
-## Code example: enabling sessions and setting a secret key
+## Code example: enabling sessions and setting a secret key {#code-example-enabling-sessions-and-setting-a-secret-key}
 
 ```python
 from flask import Flask
@@ -165,7 +209,7 @@ def create_app():
 
 Flask signs session cookies. If the key changes between runs, the server can’t validate old cookies. That can look like “random” session failures.
 
-## Code example: selecting questions once per session
+## Code example: selecting questions once per session {#code-example-selecting-questions-once-per-session}
 
 ```python
 import random
@@ -183,7 +227,7 @@ def init_test_session(question_ids, n=35):
 
 If you re-sample on every request, the test becomes inconsistent.
 
-## Code example: route that shows the current question
+## Code example: route that shows the current question {#code-example-route-that-shows-the-current-question}
 
 ```python
 from flask import render_template, session, redirect, url_for
@@ -201,7 +245,7 @@ def show_question():
     return render_template("question.html", question=question, index=idx+1, total=len(ids))
 ```
 
-## Code example: recording an answer (POST)
+## Code example: recording an answer (POST) {#code-example-recording-an-answer-post}
 
 ```python
 from flask import request
@@ -225,7 +269,7 @@ With cookie-based sessions, Flask detects modifications when you set a key. Muta
 
 # Testing and troubleshooting
 
-## Make failures reproducible
+## Make failures reproducible {#make-failures-reproducible}
 
 Good debugging is about making “sometimes” become “always”.
 
@@ -235,7 +279,7 @@ Try:
 -   open private window (new session), repeat
 -   delete cookies, repeat
 
-## Code example: quick smoke test with requests
+## Code example: quick smoke test with requests {#code-example-quick-smoke-test-with-requests}
 
 ```python
 import requests
@@ -248,7 +292,7 @@ with requests.Session() as s:
     print(r.status_code, len(r.text))
 ```
 
-## Common error classes in this week
+## Common error classes in this week {#common-error-classes-in-this-week}
 
 -   SQLite “database is locked”
 -   file path errors (relative vs absolute)
@@ -259,13 +303,13 @@ with requests.Session() as s:
 
 ![](images/week_06/fig_001.jpeg){fig-alt="Extracted figure 1 from Chapter 6"} ![](images/week_06/fig_002.jpeg){fig-alt="Extracted figure 2 from Chapter 6"} ![](images/week_06/fig_003.png){fig-alt="Extracted figure 3 from Chapter 6"} ![](images/week_06/fig_004.jpeg){fig-alt="Extracted figure 4 from Chapter 6"} ![](images/week_06/fig_005.jpeg){fig-alt="Extracted figure 5 from Chapter 6"} ![](images/week_06/fig_006.jpeg){fig-alt="Extracted figure 6 from Chapter 6"} ![](images/week_06/fig_007.png){fig-alt="Extracted figure 7 from Chapter 6"} ![](images/week_06/fig_008.jpeg){fig-alt="Extracted figure 8 from Chapter 6"} ![](images/week_06/fig_009.jpeg){fig-alt="Extracted figure 9 from Chapter 6"} ![](images/week_06/fig_010.png){fig-alt="Extracted figure 10 from Chapter 6"} ![](images/week_06/fig_011.jpeg){fig-alt="Extracted figure 11 from Chapter 6"} ![](images/week_06/fig_012.png){fig-alt="Extracted figure 12 from Chapter 6"} ![](images/week_06/fig_013.jpeg){fig-alt="Extracted figure 13 from Chapter 6"} ![](images/week_06/fig_014.jpeg){fig-alt="Extracted figure 14 from Chapter 6"} ![](images/week_06/fig_015.jpeg){fig-alt="Extracted figure 15 from Chapter 6"} ![](images/week_06/fig_016.jpeg){fig-alt="Extracted figure 16 from Chapter 6"} ![](images/week_06/fig_017.jpeg){fig-alt="Extracted figure 17 from Chapter 6"} ![](images/week_06/fig_018.png){fig-alt="Extracted figure 18 from Chapter 6"} ![](images/week_06/fig_019.jpeg){fig-alt="Extracted figure 19 from Chapter 6"} ![](images/week_06/fig_020.jpeg){fig-alt="Extracted figure 20 from Chapter 6"} ![](images/week_06/fig_021.jpeg){fig-alt="Extracted figure 21 from Chapter 6"} ![](images/week_06/fig_022.jpeg){fig-alt="Extracted figure 22 from Chapter 6"} ![](images/week_06/fig_023.jpeg){fig-alt="Extracted figure 23 from Chapter 6"} ![](images/week_06/fig_024.jpeg){fig-alt="Extracted figure 24 from Chapter 6"} ![](images/week_06/fig_025.jpeg){fig-alt="Extracted figure 25 from Chapter 6"} ![](images/week_06/fig_026.jpeg){fig-alt="Extracted figure 26 from Chapter 6"} ![](images/week_06/fig_027.jpeg){fig-alt="Extracted figure 27 from Chapter 6"} ![](images/week_06/fig_028.jpeg){fig-alt="Extracted figure 28 from Chapter 6"} ![](images/week_06/fig_029.jpeg){fig-alt="Extracted figure 29 from Chapter 6"} ![](images/week_06/fig_030.jpeg){fig-alt="Extracted figure 30 from Chapter 6"} ![](images/week_06/fig_031.jpeg){fig-alt="Extracted figure 31 from Chapter 6"} ![](images/week_06/fig_032.jpeg){fig-alt="Extracted figure 32 from Chapter 6"} ![](images/week_06/fig_033.jpeg){fig-alt="Extracted figure 33 from Chapter 6"} ![](images/week_06/fig_034.jpeg){fig-alt="Extracted figure 34 from Chapter 6"} ![](images/week_06/fig_035.jpeg){fig-alt="Extracted figure 35 from Chapter 6"} ![](images/week_06/fig_036.png){fig-alt="Extracted figure 36 from Chapter 6"} ![](images/week_06/fig_037.jpeg){fig-alt="Extracted figure 37 from Chapter 6"} ![](images/week_06/fig_038.jpeg){fig-alt="Extracted figure 38 from Chapter 6"} ![](images/week_06/fig_039.jpeg){fig-alt="Extracted figure 39 from Chapter 6"} ![](images/week_06/fig_040.jpeg){fig-alt="Extracted figure 40 from Chapter 6"} ![](images/week_06/fig_041.jpeg){fig-alt="Extracted figure 41 from Chapter 6"} ![](images/week_06/fig_042.jpeg){fig-alt="Extracted figure 42 from Chapter 6"} ![](images/week_06/fig_043.png){fig-alt="Extracted figure 43 from Chapter 6"} ![](images/week_06/fig_044.jpeg){fig-alt="Extracted figure 44 from Chapter 6"} ![](images/week_06/fig_045.png){fig-alt="Extracted figure 45 from Chapter 6"} ![](images/week_06/fig_046.jpeg){fig-alt="Extracted figure 46 from Chapter 6"}
 
-# Summing up
+## Summing Up {#summing-up}
 
 -   Chapter 6 is about turning a basic Flask + SQLite app into an interactive experience.
 -   The technical core is **sessions**: how to persist a user’s progress across requests.
 -   The practical workflow skill is using **Tabnine** effectively: provide context, ask for minimal diffs, and validate with tests.
 
-## Checks for understanding
+## Checks for understanding {#checks-for-understanding}
 
 -   Explain the difference between a request, a session, and a server process.
 -   List 5 pieces of state you need for a practice test workflow.
@@ -274,7 +318,7 @@ with requests.Session() as s:
 
 # Guided walkthrough (dense notes)
 
-## Step 1: What are we trying to achieve?
+## Step 1: What are we trying to achieve? {#step-1-what-are-we-trying-to-achieve}
 
 -   Goal: make the app behave consistently for a single test-taker across multiple requests.
 
@@ -284,7 +328,7 @@ with requests.Session() as s:
 
 -   Common pitfall: changing too many things at once; fix the minimal root cause first.
 
-## Step 2: What are we trying to achieve?
+## Step 2: What are we trying to achieve? {#step-2-what-are-we-trying-to-achieve}
 
 -   Goal: make the app behave consistently for a single test-taker across multiple requests.
 
@@ -294,7 +338,7 @@ with requests.Session() as s:
 
 -   Common pitfall: changing too many things at once; fix the minimal root cause first.
 
-## Step 3: What are we trying to achieve?
+## Step 3: What are we trying to achieve? {#step-3-what-are-we-trying-to-achieve}
 
 -   Goal: make the app behave consistently for a single test-taker across multiple requests.
 
@@ -304,7 +348,7 @@ with requests.Session() as s:
 
 -   Common pitfall: changing too many things at once; fix the minimal root cause first.
 
-## Step 4: What are we trying to achieve?
+## Step 4: What are we trying to achieve? {#step-4-what-are-we-trying-to-achieve}
 
 -   Goal: make the app behave consistently for a single test-taker across multiple requests.
 
@@ -314,7 +358,7 @@ with requests.Session() as s:
 
 -   Common pitfall: changing too many things at once; fix the minimal root cause first.
 
-## Step 5: What are we trying to achieve?
+## Step 5: What are we trying to achieve? {#step-5-what-are-we-trying-to-achieve}
 
 -   Goal: make the app behave consistently for a single test-taker across multiple requests.
 
@@ -324,7 +368,7 @@ with requests.Session() as s:
 
 -   Common pitfall: changing too many things at once; fix the minimal root cause first.
 
-## Step 6: What are we trying to achieve?
+## Step 6: What are we trying to achieve? {#step-6-what-are-we-trying-to-achieve}
 
 -   Goal: make the app behave consistently for a single test-taker across multiple requests.
 
@@ -334,7 +378,7 @@ with requests.Session() as s:
 
 -   Common pitfall: changing too many things at once; fix the minimal root cause first.
 
-## Step 7: What are we trying to achieve?
+## Step 7: What are we trying to achieve? {#step-7-what-are-we-trying-to-achieve}
 
 -   Goal: make the app behave consistently for a single test-taker across multiple requests.
 
@@ -344,7 +388,7 @@ with requests.Session() as s:
 
 -   Common pitfall: changing too many things at once; fix the minimal root cause first.
 
-## Step 8: What are we trying to achieve?
+## Step 8: What are we trying to achieve? {#step-8-what-are-we-trying-to-achieve}
 
 -   Goal: make the app behave consistently for a single test-taker across multiple requests.
 
@@ -354,7 +398,7 @@ with requests.Session() as s:
 
 -   Common pitfall: changing too many things at once; fix the minimal root cause first.
 
-## Step 9: What are we trying to achieve?
+## Step 9: What are we trying to achieve? {#step-9-what-are-we-trying-to-achieve}
 
 -   Goal: make the app behave consistently for a single test-taker across multiple requests.
 
@@ -364,7 +408,7 @@ with requests.Session() as s:
 
 -   Common pitfall: changing too many things at once; fix the minimal root cause first.
 
-## Step 10: What are we trying to achieve?
+## Step 10: What are we trying to achieve? {#step-10-what-are-we-trying-to-achieve}
 
 -   Goal: make the app behave consistently for a single test-taker across multiple requests.
 
@@ -374,7 +418,7 @@ with requests.Session() as s:
 
 -   Common pitfall: changing too many things at once; fix the minimal root cause first.
 
-## Step 11: What are we trying to achieve?
+## Step 11: What are we trying to achieve? {#step-11-what-are-we-trying-to-achieve}
 
 -   Goal: make the app behave consistently for a single test-taker across multiple requests.
 
@@ -384,7 +428,7 @@ with requests.Session() as s:
 
 -   Common pitfall: changing too many things at once; fix the minimal root cause first.
 
-## Step 12: What are we trying to achieve?
+## Step 12: What are we trying to achieve? {#step-12-what-are-we-trying-to-achieve}
 
 -   Goal: make the app behave consistently for a single test-taker across multiple requests.
 
@@ -394,7 +438,7 @@ with requests.Session() as s:
 
 -   Common pitfall: changing too many things at once; fix the minimal root cause first.
 
-## Step 13: What are we trying to achieve?
+## Step 13: What are we trying to achieve? {#step-13-what-are-we-trying-to-achieve}
 
 -   Goal: make the app behave consistently for a single test-taker across multiple requests.
 
@@ -404,7 +448,7 @@ with requests.Session() as s:
 
 -   Common pitfall: changing too many things at once; fix the minimal root cause first.
 
-## Step 14: What are we trying to achieve?
+## Step 14: What are we trying to achieve? {#step-14-what-are-we-trying-to-achieve}
 
 -   Goal: make the app behave consistently for a single test-taker across multiple requests.
 
@@ -414,7 +458,7 @@ with requests.Session() as s:
 
 -   Common pitfall: changing too many things at once; fix the minimal root cause first.
 
-## Step 15: What are we trying to achieve?
+## Step 15: What are we trying to achieve? {#step-15-what-are-we-trying-to-achieve}
 
 -   Goal: make the app behave consistently for a single test-taker across multiple requests.
 
@@ -424,7 +468,7 @@ with requests.Session() as s:
 
 -   Common pitfall: changing too many things at once; fix the minimal root cause first.
 
-## Step 16: What are we trying to achieve?
+## Step 16: What are we trying to achieve? {#step-16-what-are-we-trying-to-achieve}
 
 -   Goal: make the app behave consistently for a single test-taker across multiple requests.
 
@@ -434,7 +478,7 @@ with requests.Session() as s:
 
 -   Common pitfall: changing too many things at once; fix the minimal root cause first.
 
-## Step 17: What are we trying to achieve?
+## Step 17: What are we trying to achieve? {#step-17-what-are-we-trying-to-achieve}
 
 -   Goal: make the app behave consistently for a single test-taker across multiple requests.
 
@@ -444,7 +488,7 @@ with requests.Session() as s:
 
 -   Common pitfall: changing too many things at once; fix the minimal root cause first.
 
-## Step 18: What are we trying to achieve?
+## Step 18: What are we trying to achieve? {#step-18-what-are-we-trying-to-achieve}
 
 -   Goal: make the app behave consistently for a single test-taker across multiple requests.
 
@@ -454,7 +498,7 @@ with requests.Session() as s:
 
 -   Common pitfall: changing too many things at once; fix the minimal root cause first.
 
-## Step 19: What are we trying to achieve?
+## Step 19: What are we trying to achieve? {#step-19-what-are-we-trying-to-achieve}
 
 -   Goal: make the app behave consistently for a single test-taker across multiple requests.
 
@@ -464,7 +508,7 @@ with requests.Session() as s:
 
 -   Common pitfall: changing too many things at once; fix the minimal root cause first.
 
-## Step 20: What are we trying to achieve?
+## Step 20: What are we trying to achieve? {#step-20-what-are-we-trying-to-achieve}
 
 -   Goal: make the app behave consistently for a single test-taker across multiple requests.
 
@@ -474,7 +518,7 @@ with requests.Session() as s:
 
 -   Common pitfall: changing too many things at once; fix the minimal root cause first.
 
-## Step 21: What are we trying to achieve?
+## Step 21: What are we trying to achieve? {#step-21-what-are-we-trying-to-achieve}
 
 -   Goal: make the app behave consistently for a single test-taker across multiple requests.
 
@@ -484,7 +528,7 @@ with requests.Session() as s:
 
 -   Common pitfall: changing too many things at once; fix the minimal root cause first.
 
-## Step 22: What are we trying to achieve?
+## Step 22: What are we trying to achieve? {#step-22-what-are-we-trying-to-achieve}
 
 -   Goal: make the app behave consistently for a single test-taker across multiple requests.
 
@@ -494,7 +538,7 @@ with requests.Session() as s:
 
 -   Common pitfall: changing too many things at once; fix the minimal root cause first.
 
-## Step 23: What are we trying to achieve?
+## Step 23: What are we trying to achieve? {#step-23-what-are-we-trying-to-achieve}
 
 -   Goal: make the app behave consistently for a single test-taker across multiple requests.
 
@@ -504,7 +548,7 @@ with requests.Session() as s:
 
 -   Common pitfall: changing too many things at once; fix the minimal root cause first.
 
-## Step 24: What are we trying to achieve?
+## Step 24: What are we trying to achieve? {#step-24-what-are-we-trying-to-achieve}
 
 -   Goal: make the app behave consistently for a single test-taker across multiple requests.
 
@@ -514,7 +558,7 @@ with requests.Session() as s:
 
 -   Common pitfall: changing too many things at once; fix the minimal root cause first.
 
-## Step 25: What are we trying to achieve?
+## Step 25: What are we trying to achieve? {#step-25-what-are-we-trying-to-achieve}
 
 -   Goal: make the app behave consistently for a single test-taker across multiple requests.
 

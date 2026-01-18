@@ -77,10 +77,10 @@ ul.task-list li input[type="checkbox"] {
 
 <meta property="og:title" content="Real World AI">
 <meta property="og:description" content="Real World Artificial Intelligence (AI) is an innovative module that focuses on the application of large language models (LLMs) and application programming interfaces (APIs) to automate generative AI workflows. The module introduces students to the dynamic world of data science, emphasising the use of cutting-edge technologies like vector databases and the OpenAI API. It is designed to develop skills in prompt engineering and the creation of efficient data processing systems, including customer service chatbots. This module is crucial for students aiming to excel in the rapidly evolving field of data science and technology, providing them with the skills necessary for developing advanced applications in various sectors">
-<meta property="og:image" content="https://SQ4014-2025.github.io/website/notes/images/week_10/fig_01.png">
+<meta property="og:image" content="https://SQ4014-2025.github.io/website/notes/images/week_10/fig_03.png">
 <meta property="og:site_name" content="Real World AI">
-<meta property="og:image:height" content="1120">
-<meta property="og:image:width" content="1663">
+<meta property="og:image:height" content="859">
+<meta property="og:image:width" content="1388">
 <meta name="twitter:title" content="Real World AI">
 <meta name="twitter:description" content="Real World Artificial Intelligence (AI) is an innovative module that focuses on the application of large language models (LLMs) and application programming interfaces (APIs) to automate generative AI workflows. The module introduces students to the dynamic world of data science, emphasising the use of cutting-edge technologies like vector databases and the OpenAI API. It is designed to develop skills in prompt engineering and the creation of efficient data processing systems, including customer service chatbots. This module is crucial for students aiming to excel in the rapidly evolving field of data science and technology, providing them with the skills necessary for developing advanced applications in various sectors">
 <meta name="twitter:image" content="https://SQ4014-2025.github.io/website/notes/images/twitter-card.png">
@@ -552,25 +552,21 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#week-10-vibe-coding-with-cursor" id="toc-week-10-vibe-coding-with-cursor" class="nav-link active" data-scroll-target="#week-10-vibe-coding-with-cursor">Week 10 — Vibe coding with Cursor</a>
   <ul class="collapse">
-  <li><a href="#what-this-week-covers-and-why-you-should-care" id="toc-what-this-week-covers-and-why-you-should-care" class="nav-link" data-scroll-target="#what-this-week-covers-and-why-you-should-care">What this week covers (and why you should care)</a></li>
+  <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives">Objectives</a></li>
   <li><a href="#what-is-vibe-coding" id="toc-what-is-vibe-coding" class="nav-link" data-scroll-target="#what-is-vibe-coding">What is <strong>vibe coding</strong>?</a>
   <ul class="collapse">
-  <li><a href="#the-core-idea" id="toc-the-core-idea" class="nav-link" data-scroll-target="#the-core-idea">The core idea</a></li>
   <li><a href="#why-it-works" id="toc-why-it-works" class="nav-link" data-scroll-target="#why-it-works">Why it works</a></li>
   <li><a href="#what-vibe-coding-is-not" id="toc-what-vibe-coding-is-not" class="nav-link" data-scroll-target="#what-vibe-coding-is-not">What vibe coding is NOT</a></li>
   <li><a href="#pitfalls" id="toc-pitfalls" class="nav-link" data-scroll-target="#pitfalls">Pitfalls</a></li>
   </ul></li>
-  <li><a href="#figure-the-vibe-coding-workflow-at-a-glance" id="toc-figure-the-vibe-coding-workflow-at-a-glance" class="nav-link" data-scroll-target="#figure-the-vibe-coding-workflow-at-a-glance">Figure: the vibe-coding workflow at a glance</a></li>
   <li><a href="#what-is-cursor-and-why-is-it-different" id="toc-what-is-cursor-and-why-is-it-different" class="nav-link" data-scroll-target="#what-is-cursor-and-why-is-it-different">What is <strong>Cursor</strong>, and why is it different?</a>
   <ul class="collapse">
   <li><a href="#practical-consequences" id="toc-practical-consequences" class="nav-link" data-scroll-target="#practical-consequences">Practical consequences</a></li>
   <li><a href="#pitfalls-1" id="toc-pitfalls-1" class="nav-link" data-scroll-target="#pitfalls-1">Pitfalls</a></li>
   </ul></li>
-  <li><a href="#the-interface-what-each-panel-is-for" id="toc-the-interface-what-each-panel-is-for" class="nav-link" data-scroll-target="#the-interface-what-each-panel-is-for">The interface (what each panel is for)</a></li>
   <li><a href="#project-wide-context-and-customization" id="toc-project-wide-context-and-customization" class="nav-link" data-scroll-target="#project-wide-context-and-customization">Project-wide context and customization</a>
   <ul class="collapse">
   <li><a href="#the-context-budget-problem" id="toc-the-context-budget-problem" class="nav-link" data-scroll-target="#the-context-budget-problem">The ‘context budget’ problem</a></li>
-  <li><a href="#a-simple-rule" id="toc-a-simple-rule" class="nav-link" data-scroll-target="#a-simple-rule">A simple rule</a></li>
   </ul></li>
   <li><a href="#first-concept-build-something-small-then-improve-it" id="toc-first-concept-build-something-small-then-improve-it" class="nav-link" data-scroll-target="#first-concept-build-something-small-then-improve-it">First concept: build something small, then improve it</a>
   <ul class="collapse">
@@ -610,9 +606,7 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#example-turning-an-error-into-a-good-prompt" id="toc-example-turning-an-error-into-a-good-prompt" class="nav-link" data-scroll-target="#example-turning-an-error-into-a-good-prompt">Example: turning an error into a good prompt</a></li>
   </ul></li>
-  <li><a href="#figure-example-ui--gameplay-snapshot" id="toc-figure-example-ui--gameplay-snapshot" class="nav-link" data-scroll-target="#figure-example-ui--gameplay-snapshot">Figure: example UI / gameplay snapshot</a></li>
-  <li><a href="#rapid-fire-practical-reminders-for-students" id="toc-rapid-fire-practical-reminders-for-students" class="nav-link" data-scroll-target="#rapid-fire-practical-reminders-for-students">Rapid-fire practical reminders (for students)</a></li>
-  <li><a href="#extra-extracted-figures-from-this-week" id="toc-extra-extracted-figures-from-this-week" class="nav-link" data-scroll-target="#extra-extracted-figures-from-this-week">Extra extracted figures (from this week)</a></li>
+  <li><a href="#figure-example-diff" id="toc-figure-example-diff" class="nav-link" data-scroll-target="#figure-example-diff">Figure: example diff</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/SQ4014-2025/website/edit/master/notes/notes_10.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/SQ4014-2025/website/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -626,16 +620,10 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="week-10-vibe-coding-with-cursor" class="level1">
 <h1>Week 10 — Vibe coding with Cursor</h1>
-<blockquote class="blockquote">
-<p>“Vibe coding” is a workflow, not a magic trick.</p>
-</blockquote>
-<p>These notes follow Week 10 and show <strong>how</strong> Cursor changes the way you write software, <strong>why</strong> it works, and the <strong>pitfalls</strong> that catch beginners.</p>
 <ul>
-<li><a href="#what-this-week-covers-and-why-you-should-care">What this week covers (and why you should care)</a></li>
+<li><a href="#objectives">Objectives</a></li>
 <li><a href="#what-is-vibe-coding">What is <strong>vibe coding</strong>?</a></li>
-<li><a href="#figure-the-vibe-coding-workflow-at-a-glance">Figure: the vibe-coding workflow at a glance</a></li>
 <li><a href="#what-is-cursor-and-why-is-it-different">What is <strong>Cursor</strong>, and why is it different?</a></li>
-<li><a href="#the-interface-what-each-panel-is-for">The interface (what each panel is for)</a></li>
 <li><a href="#project-wide-context-and-customization">Project-wide context and customization</a></li>
 <li><a href="#first-concept-build-something-small-then-improve-it">First concept: build something small, then improve it</a></li>
 <li><a href="#the-initial-prompt-to-build-our-game">The initial prompt to build our game</a></li>
@@ -650,14 +638,17 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="#making-changes-to-our-game-small-diffs-win">Making changes to our game: small diffs win</a></li>
 <li><a href="#the-second-prompt-iteration-with-structure">The second prompt (iteration with structure)</a></li>
 <li><a href="#debugging-in-a-vibe-coding-workflow">Debugging in a vibe-coding workflow</a></li>
-<li><a href="#figure-example-ui--gameplay-snapshot">Figure: example UI / gameplay snapshot</a></li>
+<li><a href="#figure-example-diff">Figure: example diff</a></li>
 <li><a href="#rapid-fire-practical-reminders-for-students">Rapid-fire practical reminders (for students)</a></li>
 <li><a href="#extra-extracted-figures-from-this-week">Extra extracted figures (from this week)</a></li>
 </ul>
-<section id="what-this-week-covers-and-why-you-should-care" class="level2">
-<h2 class="anchored" data-anchor-id="what-this-week-covers-and-why-you-should-care">What this week covers (and why you should care)</h2>
+<blockquote class="blockquote">
+<p>“Vibe coding” is a workflow, not a magic trick.</p>
+</blockquote>
+<p>This week we’ll explore vibe coding by building a small game (a simple working program you can run).</p>
+<section id="objectives" class="level2">
+<h2 class="anchored" data-anchor-id="objectives">Objectives</h2>
 <p>Week 10 moves from “coding with AI as a helper” to a <strong>conversational programming</strong> workflow where your editor + model become a co-author.</p>
-<p>You’ll see:</p>
 <ul>
 <li>How <strong>Cursor</strong> differs from “just ChatGPT in a browser”</li>
 <li>What <strong>vibe coding</strong> means in practice (and what it does <em>not</em> mean)</li>
@@ -665,23 +656,18 @@ ul.task-list li input[type="checkbox"] {
 <li>How to use Cursor’s modes (chat, edit, autocomplete) deliberately</li>
 <li>How to keep control: debugging, tests, and <em>small</em> edits instead of chaos</li>
 </ul>
-<p><strong>Real-world framing:</strong> this is the difference between “asking AI questions” and <strong>shipping software with AI in the loop</strong>.</p>
 </section>
 <section id="what-is-vibe-coding" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-vibe-coding">What is <strong>vibe coding</strong>?</h2>
-<blockquote class="blockquote">
-<p>“At one end of the spectrum…”</p>
-</blockquote>
-<p>The phrase “vibe coding” is basically: <em>you steer by intent and feedback</em>, not by writing every line from scratch.</p>
-<section id="the-core-idea" class="level3">
-<h3 class="anchored" data-anchor-id="the-core-idea">The core idea</h3>
 <ul>
+<li>“vibe coding” is basically: <em>you steer by intent and feedback</em>, not by writing every line from scratch.</li>
 <li>You start by describing <strong>behavior</strong> (what the program should do) rather than <strong>implementation</strong> (how it does it).</li>
 <li>The AI proposes code.</li>
 <li>You run it, observe, and then refine the prompt (or apply edits) until it behaves.</li>
 </ul>
-<p>That feedback loop is the “vibe”.</p>
-</section>
+<blockquote class="blockquote">
+<p>“The feedback loop is the “vibe”.”</p>
+</blockquote>
 <section id="why-it-works" class="level3">
 <h3 class="anchored" data-anchor-id="why-it-works">Why it works</h3>
 <ul>
@@ -693,11 +679,10 @@ ul.task-list li input[type="checkbox"] {
 <section id="what-vibe-coding-is-not" class="level3">
 <h3 class="anchored" data-anchor-id="what-vibe-coding-is-not">What vibe coding is NOT</h3>
 <ul>
-<li>Not “no thinking”.</li>
-<li>Not “trust the model blindly”.</li>
-<li>Not “skip debugging”.</li>
+<li>“no thinking”.</li>
+<li>“trust the model blindly”.</li>
+<li>“skip debugging”.</li>
 </ul>
-<p>If you do that, you get brittle code and mysterious failures.</p>
 </section>
 <section id="pitfalls" class="level3">
 <h3 class="anchored" data-anchor-id="pitfalls">Pitfalls</h3>
@@ -708,27 +693,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 </section>
-<section id="figure-the-vibe-coding-workflow-at-a-glance" class="level2">
-<h2 class="anchored" data-anchor-id="figure-the-vibe-coding-workflow-at-a-glance">Figure: the vibe-coding workflow at a glance</h2>
-<p><img src="images/week_10/fig_01.png" class="img-fluid"></p>
-<p>Use this figure to remember the mental model:</p>
-<ol type="1">
-<li>Describe intent<br>
-</li>
-<li>Generate a draft<br>
-</li>
-<li>Run it<br>
-</li>
-<li>Debug + refine<br>
-</li>
-<li>Repeat until correct</li>
-</ol>
-</section>
 <section id="what-is-cursor-and-why-is-it-different" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-cursor-and-why-is-it-different">What is <strong>Cursor</strong>, and why is it different?</h2>
-<blockquote class="blockquote">
-<p>“What is Cursor, and why is it different?”</p>
-</blockquote>
 <p>Cursor is an IDE designed to make AI part of the editing loop. The big difference is <strong>context + actions</strong>:</p>
 <ul>
 <li>It sees your open files, selections, and (optionally) the entire project.</li>
@@ -752,25 +718,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 </section>
-<section id="the-interface-what-each-panel-is-for" class="level2">
-<h2 class="anchored" data-anchor-id="the-interface-what-each-panel-is-for">The interface (what each panel is for)</h2>
-<p><img src="images/week_10/fig_02.png" class="img-fluid"></p>
-<p><img src="images/week_10/fig_04.png" class="img-fluid"></p>
-<p><img src="images/week_10/fig_05.png" class="img-fluid"></p>
-<p>A typical Cursor workspace gives you:</p>
-<ul>
-<li>Editor: where the truth lives (the code you run)</li>
-<li>Chat panel: ask for explanations, changes, scaffolding</li>
-<li>Inline suggestions: “autocomplete on steroids”</li>
-<li>Command palette actions: apply or rewrite sections quickly</li>
-</ul>
-<p><strong>Teaching point:</strong> students must learn that <em>the editor is the source of truth</em> — not the chat transcript.</p>
-</section>
 <section id="project-wide-context-and-customization" class="level2">
 <h2 class="anchored" data-anchor-id="project-wide-context-and-customization">Project-wide context and customization</h2>
-<blockquote class="blockquote">
-<p>“Project-wide context…”</p>
-</blockquote>
 <p>Cursor becomes powerful when it understands your project:</p>
 <ul>
 <li>Folder structure</li>
@@ -787,11 +736,7 @@ ul.task-list li input[type="checkbox"] {
 <li>Summarize what’s irrelevant</li>
 <li>Avoid dumping huge logs without focus</li>
 </ul>
-</section>
-<section id="a-simple-rule" class="level3">
-<h3 class="anchored" data-anchor-id="a-simple-rule">A simple rule</h3>
-<p>If the AI keeps making the same mistake, your context is missing something.</p>
-<p>Fix it by adding:</p>
+<p>If the AI keeps making the same mistake, your context is missing something. Fix it by adding:</p>
 <ul>
 <li>constraints (“do not change public API”)</li>
 <li>examples (“here is one correct pattern in this repo”)</li>
@@ -801,8 +746,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="first-concept-build-something-small-then-improve-it" class="level2">
 <h2 class="anchored" data-anchor-id="first-concept-build-something-small-then-improve-it">First concept: build something small, then improve it</h2>
-<p>Week 10 demonstrates vibe coding by building a small game (a simple working program you can run).</p>
-<p>This is a great teaching pattern because:</p>
+<p>This is a great productivity pattern because:</p>
 <ul>
 <li>Small apps expose <em>real</em> engineering problems quickly: I/O, state, loops, UI feedback</li>
 <li>Students can run + test without needing deployment</li>
@@ -822,9 +766,8 @@ ul.task-list li input[type="checkbox"] {
 <section id="the-initial-prompt-to-build-our-game" class="level2">
 <h2 class="anchored" data-anchor-id="the-initial-prompt-to-build-our-game">The initial prompt to build our game</h2>
 <blockquote class="blockquote">
-<p>“The initial prompt to build our game”</p>
+<p>“Don’t be vague!”</p>
 </blockquote>
-<p>This is the moment students usually mess up by being vague.</p>
 <p>A strong initial prompt contains:</p>
 <ul>
 <li>goal (what game?)</li>
@@ -861,9 +804,6 @@ Output:
 </section>
 <section id="cursor-basics-chat-vs-edit-vs-autocomplete" class="level2">
 <h2 class="anchored" data-anchor-id="cursor-basics-chat-vs-edit-vs-autocomplete">Cursor basics (chat vs edit vs autocomplete)</h2>
-<blockquote class="blockquote">
-<p>“Cursor basics”</p>
-</blockquote>
 <p>Cursor gives you multiple ways to use AI, and mixing them up causes pain.</p>
 <section id="chat-mode" class="level3">
 <h3 class="anchored" data-anchor-id="chat-mode">1) Chat mode</h3>
@@ -896,9 +836,6 @@ Output:
 </section>
 <section id="giving-feedback-how-to-steer-the-model" class="level2">
 <h2 class="anchored" data-anchor-id="giving-feedback-how-to-steer-the-model">Giving feedback (how to steer the model)</h2>
-<blockquote class="blockquote">
-<p>“Giving feedback”</p>
-</blockquote>
 <p>Feedback is the steering wheel of vibe coding.</p>
 <p>Good feedback is:</p>
 <ul>
@@ -986,19 +923,17 @@ Here is the movement code (lines 41-68):
 </tr>
 </tbody>
 </table>
+<p><strong>NB: </strong> Cursor is constantly being updated, the modes may have slightly different names or capabilities.</p>
 </section>
 <section id="model-selection-speed-vs-quality" class="level2">
 <h2 class="anchored" data-anchor-id="model-selection-speed-vs-quality">Model selection (speed vs quality)</h2>
-<blockquote class="blockquote">
-<p>“Model selection”</p>
-</blockquote>
 <p>Different models behave differently:</p>
 <ul>
 <li>some are faster, but more shallow</li>
 <li>some reason better, but slower</li>
 <li>some follow formatting better</li>
 </ul>
-<p>Students should learn:</p>
+<p>You should practice:</p>
 <ul>
 <li>use the “smart” model for big architectural tasks</li>
 <li>use the “fast” model for repetitive refactors</li>
@@ -1006,9 +941,6 @@ Here is the movement code (lines 41-68):
 </section>
 <section id="max-mode-when-you-need-the-heavy-hammer" class="level2">
 <h2 class="anchored" data-anchor-id="max-mode-when-you-need-the-heavy-hammer">MAX mode (when you need the heavy hammer)</h2>
-<blockquote class="blockquote">
-<p>“MAX mode”</p>
-</blockquote>
 <p>MAX mode is useful when:</p>
 <ul>
 <li>the codebase is large</li>
@@ -1034,8 +966,6 @@ Here is the movement code (lines 41-68):
 </section>
 <section id="running-our-game-for-the-first-time-environment--dependencies" class="level2">
 <h2 class="anchored" data-anchor-id="running-our-game-for-the-first-time-environment--dependencies">Running our game for the first time (environment + dependencies)</h2>
-<p><img src="images/week_10/fig_06.png" class="img-fluid"></p>
-<p>This week reminds you to treat environment setup as part of development.</p>
 <section id="minimal-setup-python" class="level3">
 <h3 class="anchored" data-anchor-id="minimal-setup-python">Minimal setup (Python)</h3>
 <pre class="code"><code>python -m venv .venv
@@ -1054,16 +984,13 @@ python game.py</code></pre>
 <li>Missing virtual environment activation</li>
 <li>Pygame not installed in the active env</li>
 </ul>
-<p>Teaching tip: make students <em>prove which python</em> they are using:</p>
+<p>Tip: <em>prove which python</em> you are using:</p>
 <pre class="code"><code>python -c "import sys; print(sys.executable)"
 python -c "import pygame; print(pygame.__version__)"</code></pre>
 </section>
 </section>
 <section id="making-changes-to-our-game-small-diffs-win" class="level2">
 <h2 class="anchored" data-anchor-id="making-changes-to-our-game-small-diffs-win">Making changes to our game: small diffs win</h2>
-<blockquote class="blockquote">
-<p>“Making changes to our game”</p>
-</blockquote>
 <p>Vibe coding works best with <strong>small, reviewable changes</strong>.</p>
 <p>Examples of small changes:</p>
 <ul>
@@ -1103,7 +1030,7 @@ Return the exact diff as a unified patch.</code></pre>
 </section>
 <section id="debugging-in-a-vibe-coding-workflow" class="level2">
 <h2 class="anchored" data-anchor-id="debugging-in-a-vibe-coding-workflow">Debugging in a vibe-coding workflow</h2>
-<p>When students rely on AI, they sometimes stop debugging. That’s dangerous.</p>
+<p>When you rely on AI, you sometimes stop debugging. That’s dangerous.</p>
 <p>Instead:</p>
 <ul>
 <li>use AI to <em>accelerate debugging</em>, not replace it</li>
@@ -1131,8 +1058,8 @@ Task:
 3) Provide the corrected code for the Ball class only</code></pre>
 </section>
 </section>
-<section id="figure-example-ui--gameplay-snapshot" class="level2">
-<h2 class="anchored" data-anchor-id="figure-example-ui--gameplay-snapshot">Figure: example UI / gameplay snapshot</h2>
+<section id="figure-example-diff" class="level2">
+<h2 class="anchored" data-anchor-id="figure-example-diff">Figure: example diff</h2>
 <p><img src="images/week_10/fig_03.png" class="img-fluid"></p>
 <p>Use screenshots like this to talk about:</p>
 <ul>
@@ -1141,35 +1068,6 @@ Task:
 <li>score placement</li>
 <li>readability</li>
 </ul>
-</section>
-<section id="rapid-fire-practical-reminders-for-students" class="level2">
-<h2 class="anchored" data-anchor-id="rapid-fire-practical-reminders-for-students">Rapid-fire practical reminders (for students)</h2>
-<ul>
-<li>Practical reminder 1: Commit, run, and review diffs — every iteration.</li>
-<li>Practical reminder 2: Commit, run, and review diffs — every iteration.</li>
-<li>Practical reminder 3: Commit, run, and review diffs — every iteration.</li>
-<li>Practical reminder 4: Commit, run, and review diffs — every iteration.</li>
-<li>Practical reminder 5: Commit, run, and review diffs — every iteration.</li>
-<li>Practical reminder 6: Commit, run, and review diffs — every iteration.</li>
-<li>Practical reminder 7: Commit, run, and review diffs — every iteration.</li>
-<li>Practical reminder 8: Commit, run, and review diffs — every iteration.</li>
-<li>Practical reminder 9: Commit, run, and review diffs — every iteration.</li>
-<li>Practical reminder 10: Commit, run, and review diffs — every iteration.</li>
-<li>Practical reminder 11: Commit, run, and review diffs — every iteration.</li>
-<li>Practical reminder 12: Commit, run, and review diffs — every iteration.</li>
-<li>Practical reminder 13: Commit, run, and review diffs — every iteration.</li>
-<li>Practical reminder 14: Commit, run, and review diffs — every iteration.</li>
-<li>Practical reminder 15: Commit, run, and review diffs — every iteration.</li>
-<li>Practical reminder 16: Commit, run, and review diffs — every iteration.</li>
-<li>Practical reminder 17: Commit, run, and review diffs — every iteration.</li>
-<li>Practical reminder 18: Commit, run, and review diffs — every iteration.</li>
-<li>Practical reminder 19: Commit, run, and review diffs — every iteration.</li>
-<li>Practical reminder 20: Commit, run, and review diffs — every iteration.</li>
-</ul>
-</section>
-<section id="extra-extracted-figures-from-this-week" class="level2">
-<h2 class="anchored" data-anchor-id="extra-extracted-figures-from-this-week">Extra extracted figures (from this week)</h2>
-<p><img src="images/week_10/fig_07.png" class="img-fluid"> <img src="images/week_10/fig_08.png" class="img-fluid"> <img src="images/week_10/fig_09.png" class="img-fluid"> <img src="images/week_10/fig_10.png" class="img-fluid"></p>
 
 
 </section>

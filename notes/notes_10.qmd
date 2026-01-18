@@ -1,15 +1,8 @@
 # Week 10 — Vibe coding with Cursor
 
-> "Vibe coding" is a workflow, not a magic trick.
-
-These notes follow Week 10 and show **how** Cursor changes the way you write software, **why** it works, and the **pitfalls** that catch beginners.
-
-
--   [What this week covers (and why you should care)](#what-this-week-covers-and-why-you-should-care)
+-   [Objectives](#objectives)
 -   [What is **vibe coding**?](#what-is-vibe-coding)
--   [Figure: the vibe-coding workflow at a glance](#figure-the-vibe-coding-workflow-at-a-glance)
 -   [What is **Cursor**, and why is it different?](#what-is-cursor-and-why-is-it-different)
--   [The interface (what each panel is for)](#the-interface-what-each-panel-is-for)
 -   [Project-wide context and customization](#project-wide-context-and-customization)
 -   [First concept: build something small, then improve it](#first-concept-build-something-small-then-improve-it)
 -   [The initial prompt to build our game](#the-initial-prompt-to-build-our-game)
@@ -24,15 +17,17 @@ These notes follow Week 10 and show **how** Cursor changes the way you write sof
 -   [Making changes to our game: small diffs win](#making-changes-to-our-game-small-diffs-win)
 -   [The second prompt (iteration with structure)](#the-second-prompt-iteration-with-structure)
 -   [Debugging in a vibe-coding workflow](#debugging-in-a-vibe-coding-workflow)
--   [Figure: example UI / gameplay snapshot](#figure-example-ui--gameplay-snapshot)
+-   [Figure: example diff](#figure-example-diff)
 -   [Rapid-fire practical reminders (for students)](#rapid-fire-practical-reminders-for-students)
 -   [Extra extracted figures (from this week)](#extra-extracted-figures-from-this-week)
 
-## What this week covers (and why you should care) {#what-this-week-covers-and-why-you-should-care}
+> "Vibe coding" is a workflow, not a magic trick.
+
+This week we'll explore vibe coding by building a small game (a simple working program you can run).
+
+## Objectives {#objectives}
 
 Week 10 moves from "coding with AI as a helper" to a **conversational programming** workflow where your editor + model become a co-author.
-
-You’ll see:
 
 -   How **Cursor** differs from “just ChatGPT in a browser”
 -   What **vibe coding** means in practice (and what it does *not* mean)
@@ -40,21 +35,14 @@ You’ll see:
 -   How to use Cursor’s modes (chat, edit, autocomplete) deliberately
 -   How to keep control: debugging, tests, and *small* edits instead of chaos
 
-**Real-world framing:** this is the difference between “asking AI questions” and **shipping software with AI in the loop**.
-
 ## What is **vibe coding**? {#what-is-vibe-coding}
 
-> "At one end of the spectrum..."
-
-The phrase “vibe coding” is basically: *you steer by intent and feedback*, not by writing every line from scratch.
-
-### The core idea
-
+-  “vibe coding” is basically: *you steer by intent and feedback*, not by writing every line from scratch.
 -   You start by describing **behavior** (what the program should do) rather than **implementation** (how it does it).
 -   The AI proposes code.
 -   You run it, observe, and then refine the prompt (or apply edits) until it behaves.
 
-That feedback loop is the “vibe”.
+> "The feedback loop is the “vibe”."
 
 ### Why it works
 
@@ -64,11 +52,9 @@ That feedback loop is the “vibe”.
 
 ### What vibe coding is NOT
 
--   Not “no thinking”.
--   Not “trust the model blindly”.
--   Not “skip debugging”.
-
-If you do that, you get brittle code and mysterious failures.
+-   “no thinking”.
+-   “trust the model blindly”.
+-   “skip debugging”.
 
 ### Pitfalls
 
@@ -76,21 +62,7 @@ If you do that, you get brittle code and mysterious failures.
 -   **Under-specifying**: vague goals produce vague programs.
 -   **Context leakage**: if your project contains confusing files, the model can copy the wrong patterns.
 
-## Figure: the vibe-coding workflow at a glance {#figure-the-vibe-coding-workflow-at-a-glance}
-
-![](images/week_10/fig_01.png)
-
-Use this figure to remember the mental model:
-
-1.  Describe intent\
-2.  Generate a draft\
-3.  Run it\
-4.  Debug + refine\
-5.  Repeat until correct
-
 ## What is **Cursor**, and why is it different? {#what-is-cursor-and-why-is-it-different}
-
-> "What is Cursor, and why is it different?"
 
 Cursor is an IDE designed to make AI part of the editing loop. The big difference is **context + actions**:
 
@@ -111,26 +83,7 @@ In other words, it’s not “chatting about code” — it’s **editing code w
 -   Cursor can make *too many edits* if your prompt is broad.
 -   Always review diffs like you would a teammate PR.
 
-## The interface (what each panel is for) {#the-interface-what-each-panel-is-for}
-
-![](images/week_10/fig_02.png)
-
-![](images/week_10/fig_04.png)
-
-![](images/week_10/fig_05.png)
-
-A typical Cursor workspace gives you:
-
--   Editor: where the truth lives (the code you run)
--   Chat panel: ask for explanations, changes, scaffolding
--   Inline suggestions: “autocomplete on steroids”
--   Command palette actions: apply or rewrite sections quickly
-
-**Teaching point:** students must learn that *the editor is the source of truth* — not the chat transcript.
-
 ## Project-wide context and customization {#project-wide-context-and-customization}
-
-> "Project-wide context..."
 
 Cursor becomes powerful when it understands your project:
 
@@ -149,11 +102,7 @@ Even with Cursor, models still have limited context windows. So the art is:
 -   Summarize what’s irrelevant
 -   Avoid dumping huge logs without focus
 
-### A simple rule
-
-If the AI keeps making the same mistake, your context is missing something.
-
-Fix it by adding:
+If the AI keeps making the same mistake, your context is missing something. Fix it by adding:
 
 -   constraints (“do not change public API”)
 -   examples (“here is one correct pattern in this repo”)
@@ -161,9 +110,7 @@ Fix it by adding:
 
 ## First concept: build something small, then improve it {#first-concept-build-something-small-then-improve-it}
 
-Week 10 demonstrates vibe coding by building a small game (a simple working program you can run).
-
-This is a great teaching pattern because:
+This is a great productivity pattern because:
 
 -   Small apps expose *real* engineering problems quickly: I/O, state, loops, UI feedback
 -   Students can run + test without needing deployment
@@ -181,9 +128,7 @@ Then you polish.
 
 ## The initial prompt to build our game {#the-initial-prompt-to-build-our-game}
 
-> "The initial prompt to build our game"
-
-This is the moment students usually mess up by being vague.
+> "Don't be vague!"
 
 A strong initial prompt contains:
 
@@ -220,8 +165,6 @@ Output:
 
 ## Cursor basics (chat vs edit vs autocomplete) {#cursor-basics-chat-vs-edit-vs-autocomplete}
 
-> "Cursor basics"
-
 Cursor gives you multiple ways to use AI, and mixing them up causes pain.
 
 ### 1) Chat mode
@@ -251,8 +194,6 @@ Use for:
 **Teaching tip:** chat is best when you *don’t know what to do*, edit is best when you *know what you want changed*.
 
 ## Giving feedback (how to steer the model) {#giving-feedback-how-to-steer-the-model}
-
-> "Giving feedback"
 
 Feedback is the steering wheel of vibe coding.
 
@@ -316,9 +257,9 @@ This gives the model a “debug ticket” it can solve.
 | "Finish this for-loop"   | Autocomplete     | predictable           |
 | "Design a module layout" | Chat             | brainstorming         |
 
-## Model selection (speed vs quality) {#model-selection-speed-vs-quality}
+**NB: ** Cursor is constantly being updated, the modes may have slightly different names or capabilities.
 
-> "Model selection"
+## Model selection (speed vs quality) {#model-selection-speed-vs-quality}
 
 Different models behave differently:
 
@@ -326,14 +267,12 @@ Different models behave differently:
 -   some reason better, but slower
 -   some follow formatting better
 
-Students should learn:
+You should practice:
 
 -   use the “smart” model for big architectural tasks
 -   use the “fast” model for repetitive refactors
 
 ## MAX mode (when you need the heavy hammer) {#max-mode-when-you-need-the-heavy-hammer}
-
-> "MAX mode"
 
 MAX mode is useful when:
 
@@ -361,10 +300,6 @@ What matters is: **we have something to iterate on**.
 
 ## Running our game for the first time (environment + dependencies) {#running-our-game-for-the-first-time-environment--dependencies}
 
-![](images/week_10/fig_06.png)
-
-This week reminds you to treat environment setup as part of development.
-
 ### Minimal setup (Python)
 
 ```code
@@ -384,7 +319,7 @@ python game.py
 -   Missing virtual environment activation
 -   Pygame not installed in the active env
 
-Teaching tip: make students *prove which python* they are using:
+Tip: *prove which python* you are using:
 
 ```code
 python -c "import sys; print(sys.executable)"
@@ -392,8 +327,6 @@ python -c "import pygame; print(pygame.__version__)"
 ```
 
 ## Making changes to our game: small diffs win {#making-changes-to-our-game-small-diffs-win}
-
-> "Making changes to our game"
 
 Vibe coding works best with **small, reviewable changes**.
 
@@ -438,7 +371,7 @@ A “second prompt” is usually one of:
 
 ## Debugging in a vibe-coding workflow {#debugging-in-a-vibe-coding-workflow}
 
-When students rely on AI, they sometimes stop debugging. That’s dangerous.
+When you rely on AI, you sometimes stop debugging. That’s dangerous.
 
 Instead:
 
@@ -473,7 +406,7 @@ Task:
 3) Provide the corrected code for the Ball class only
 ```
 
-## Figure: example UI / gameplay snapshot {#figure-example-ui--gameplay-snapshot}
+## Figure: example diff {#figure-example-diff}
 
 ![](images/week_10/fig_03.png)
 
@@ -484,29 +417,3 @@ Use screenshots like this to talk about:
 -   score placement
 -   readability
 
-## Rapid-fire practical reminders (for students) {#rapid-fire-practical-reminders-for-students}
-
--   Practical reminder 1: Commit, run, and review diffs — every iteration.
--   Practical reminder 2: Commit, run, and review diffs — every iteration.
--   Practical reminder 3: Commit, run, and review diffs — every iteration.
--   Practical reminder 4: Commit, run, and review diffs — every iteration.
--   Practical reminder 5: Commit, run, and review diffs — every iteration.
--   Practical reminder 6: Commit, run, and review diffs — every iteration.
--   Practical reminder 7: Commit, run, and review diffs — every iteration.
--   Practical reminder 8: Commit, run, and review diffs — every iteration.
--   Practical reminder 9: Commit, run, and review diffs — every iteration.
--   Practical reminder 10: Commit, run, and review diffs — every iteration.
--   Practical reminder 11: Commit, run, and review diffs — every iteration.
--   Practical reminder 12: Commit, run, and review diffs — every iteration.
--   Practical reminder 13: Commit, run, and review diffs — every iteration.
--   Practical reminder 14: Commit, run, and review diffs — every iteration.
--   Practical reminder 15: Commit, run, and review diffs — every iteration.
--   Practical reminder 16: Commit, run, and review diffs — every iteration.
--   Practical reminder 17: Commit, run, and review diffs — every iteration.
--   Practical reminder 18: Commit, run, and review diffs — every iteration.
--   Practical reminder 19: Commit, run, and review diffs — every iteration.
--   Practical reminder 20: Commit, run, and review diffs — every iteration.
-
-## Extra extracted figures (from this week) {#extra-extracted-figures-from-this-week}
-
-![](images/week_10/fig_07.png) ![](images/week_10/fig_08.png) ![](images/week_10/fig_09.png) ![](images/week_10/fig_10.png)
